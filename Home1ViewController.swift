@@ -14,76 +14,6 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
 
     @IBOutlet weak var back: UIButton!
     
-    func handleButton(sender: UIButton, event:UIEvent) {
-        
-        let touch = event.allTouches()?.first
-        let point = touch!.locationInView(self.tableView)
-        let indexPath = tableView.indexPathForRowAtPoint(point)
-        let postData = postArray[indexPath!.row]
-        if let uid = FIRAuth.auth()?.currentUser?.uid {
-            if postData.isLiked {
-               
-                var index = -1
-                for likeId in postData.join {
-                    if likeId == uid {
-                        index = postData.join.indexOf(likeId)!
-                        break
-                    }
-                }
-                let springButton = sender as! SpringButton
-                springButton.animation = "shake"
-                springButton.duration = 0.5
-                springButton.animate()
-                postData.join.removeAtIndex(index)
-            } else {
-                let springButton = sender as! SpringButton
-                springButton.animation = "shake"
-                springButton.duration = 0.5
-                springButton.animate()
-                postData.join.append(uid)
-            }
-            let imageData = UIImageJPEGRepresentation(postData.image!, 0.5)
-            let hiniti1 = postData.hiniti!
-            let zikoku1 = postData.zikoku!
-            let path1 = postData.path!
-            let station1 = postData.station!
-            let join = postData.join
-            let uid = postData.uid!
-            let post = ["hiniti": hiniti1, "image": imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength), "zikoku": zikoku1, "station": station1, "path":path1,"uid":uid,"join":join]
-            let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre)
-            postRef.child(postData.id!).setValue(post)        }
-    }
-
-    
-    func schemebtn(sender: UIButton, event:UIEvent) {
-        let touch = event.allTouches()?.first
-        let point = touch!.locationInView(self.tableView)
-        let indexPath = tableView.indexPathForRowAtPoint(point)
-        let postData = postArray[indexPath!.row]
-        let adress =  postData.path
-        let encodedString = adress!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
-        let url = NSURL(string: "http://maps.apple.com/?q=\(encodedString)")!
-        if (UIApplication.sharedApplication().canOpenURL(url)) {
-            UIApplication.sharedApplication().openURL(url)
-        }
-    }
-    
-    
-    func pro(sender: UIButton, event:UIEvent) {
-        let touch = event.allTouches()?.first
-        let point = touch!.locationInView(self.tableView)
-        let indexPath = tableView.indexPathForRowAtPoint(point)
-        let postData = postArray[indexPath!.row]
-        let pro = self.storyboard?.instantiateViewControllerWithIdentifier("Pi") as! ProIdouViewController
-        pro.uid = postData.uid
-        self.presentViewController(pro, animated: true, completion: nil)
-        
-    }
-
-    
-    
-    
-    //ここかなsetPostData
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell22", forIndexPath: indexPath) as! HomeTableViewCell1
         let uid = FIRAuth.auth()?.currentUser?.uid
@@ -100,7 +30,6 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
         cell.pro.addTarget(self, action:#selector(pro(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
         cell.join.addTarget(self, action:#selector(handleButton(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
         cell.iku.addTarget(self, action:#selector(proiti(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
-        
         return cell
     }
     
@@ -200,6 +129,75 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
     
 
     
+    func handleButton(sender: UIButton, event:UIEvent) {
+        
+        let touch = event.allTouches()?.first
+        let point = touch!.locationInView(self.tableView)
+        let indexPath = tableView.indexPathForRowAtPoint(point)
+        let postData = postArray[indexPath!.row]
+        if let uid = FIRAuth.auth()?.currentUser?.uid {
+            if postData.isLiked {
+                
+                var index = -1
+                for likeId in postData.join {
+                    if likeId == uid {
+                        index = postData.join.indexOf(likeId)!
+                        break
+                    }
+                }
+                let springButton = sender as! SpringButton
+                springButton.animation = "shake"
+                springButton.duration = 0.5
+                springButton.animate()
+                postData.join.removeAtIndex(index)
+            } else {
+                let springButton = sender as! SpringButton
+                springButton.animation = "shake"
+                springButton.duration = 0.5
+                springButton.animate()
+                postData.join.append(uid)
+            }
+            let imageData = UIImageJPEGRepresentation(postData.image!, 0.5)
+            let hiniti1 = postData.hiniti!
+            let zikoku1 = postData.zikoku!
+            let path1 = postData.path!
+            let station1 = postData.station!
+            let join = postData.join
+            let uid = postData.uid!
+            let post = ["hiniti": hiniti1, "image": imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength), "zikoku": zikoku1, "station": station1, "path":path1,"uid":uid,"join":join]
+            let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre)
+            postRef.child(postData.id!).setValue(post)        }
+    }
+    
+    
+    func schemebtn(sender: UIButton, event:UIEvent) {
+        let touch = event.allTouches()?.first
+        let point = touch!.locationInView(self.tableView)
+        let indexPath = tableView.indexPathForRowAtPoint(point)
+        let postData = postArray[indexPath!.row]
+        let adress =  postData.path
+        let encodedString = adress!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        let url = NSURL(string: "http://maps.apple.com/?q=\(encodedString)")!
+        if (UIApplication.sharedApplication().canOpenURL(url)) {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+    
+    
+    func pro(sender: UIButton, event:UIEvent) {
+        let touch = event.allTouches()?.first
+        let point = touch!.locationInView(self.tableView)
+        let indexPath = tableView.indexPathForRowAtPoint(point)
+        let postData = postArray[indexPath!.row]
+        let pro = self.storyboard?.instantiateViewControllerWithIdentifier("Pi") as! ProIdouViewController
+        pro.uid = postData.uid
+        self.presentViewController(pro, animated: true, completion: nil)
+        
+    }
+    
+    
+    
+
     
     
     
