@@ -230,9 +230,7 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
         super.didReceiveMemoryWarning()
     }
     
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
+    
     
     // セルをタップされたら何もせずに選択状態を解除する
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
