@@ -12,5 +12,5 @@ target 'Kiki' do
   pod 'Firebase/Database'
   pod 'SVProgressHUD'
   pod 'ESTabBarController'
-
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
 end

@@ -3,6 +3,8 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import Spring
+
 
 
 class TabViewController: UIViewController {
@@ -28,6 +30,7 @@ class TabViewController: UIViewController {
     
     
     @IBAction func recpic(sender: AnyObject) {
+      
         let TopViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Syuru")
         self.presentViewController(TopViewController!, animated: true, completion: nil)
     }

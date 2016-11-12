@@ -7,106 +7,181 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01AD2F04E0A1BE709972013325C44D4B /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1B31B83F68061C21D478DEDEFF0D0E2F /* SVProgressHUD.bundle */; };
-		0A48758BB59DCC3FEE3D2FDD85A40624 /* Pods-Kiki-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A2B3BBC8399E06008DF09AEAE8D14FB9 /* Pods-Kiki-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		10347E972246243C66C0E893CA247D6B /* ESTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E2150843C1A39BE67D74209B9A1509 /* ESTabBarController.m */; };
-		20C699948836DBC5C9B4436F1E53345D /* Pods-Kiki-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 51100D62725578663D6F49709DF67B2F /* Pods-Kiki-dummy.m */; };
+		02EB0BC96CDEB770861444F17345E570 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B2105C5385F4202810BF70F662D0B4 /* DesignableView.swift */; };
+		087EEFC4A30717806596AC2979E14081 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2EE04CE39CF170A5D2F4A0BC67D88 /* AsyncButton.swift */; };
+		0AC0B78080A5C7059A93A49D4C504438 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D043F00239E61EC61300250FDA0D5D /* DesignableTextField.swift */; };
+		0D763D53129EADE9E9B3E81C8B5D4704 /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6762BCD683EC5D73DE2E133808C7ED /* DesignableLabel.swift */; };
+		10347E972246243C66C0E893CA247D6B /* ESTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE7813FFBA32AE129A589544CE87FD3 /* ESTabBarController.m */; };
+		1275415A8827EBE9B2B7EB4A837C9EF1 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871A44C0F7D090AE1D9D4E53D344962 /* ImageLoader.swift */; };
+		15B6B85CCDC402B2EF4F306ED22B03C9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0B5C34B0704CE42DB8ACE437DB6B71 /* QuartzCore.framework */; };
+		1C7CE9A29F438C910D1E935864262969 /* DesignableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0884862ACFF497C74257B32D8E82E4C1 /* DesignableTextView.swift */; };
+		1E569FFC90D018BB2167BC3CD2500369 /* SpringImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94D7AF6F0276981CAA812847DD13290 /* SpringImageView.swift */; };
 		21C28F3B2CF3352560675B238D1BC5D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */; };
-		4404121DDB38FA79D1D1D34A764D0274 /* ESTabBarController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DB60EC08F92BA0D8AE5EFFB449205D19 /* ESTabBarController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		49F10CC92BF68DFF89E840E15990CB6D /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5210D51CEE4A52FA4D08186919146A0D /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		675645D758615EA1BAE656263004D301 /* ESTabBarController+Autolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 805BA09EDBE0FE3AED170C22B2A64B43 /* ESTabBarController+Autolayout.m */; };
-		67FFE7D7FA7004C4782B2F3FC1320860 /* UIButton+ESTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA9955E95AAD600E284A2CED4082609 /* UIButton+ESTabBar.m */; };
-		75DA990A41EAB30ADA9068EF4D552F59 /* SVProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 277C43FA88B70D7BE9785624CE9E8413 /* SVProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		76F2C4CD2C2B16840FF3A5CC26E50964 /* UIButton+ESTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 06D788920810032584772A9995EB4E10 /* UIButton+ESTabBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7A5024629F755B1C1D3F5ECDB74E4ADF /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = B0672CCA9E2974BA8B4D74F3ADC1FEAB /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		875182F3F99B60BC835FCD44720FFE7A /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 17204F35E90370DF9E8499A3DA653C68 /* SVRadialGradientLayer.m */; };
-		8C38FB4EA3AE5C7ACE7D3BB54CB57601 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0B5C34B0704CE42DB8ACE437DB6B71 /* QuartzCore.framework */; };
-		8C8EF50F57DEEC3BB6618122C281EFF8 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE0B67C71139B8BF7A877C04BD8453 /* SVProgressAnimatedView.m */; };
-		8D3AFA451B9C83329FA571865B646E69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */; };
-		93609DBA1B539B8D749D4923BF5D116D /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 47749B5DFE7A24E11484BFF3AD07E67A /* SVProgressHUD.m */; };
-		A0D13438A3C532B5C6ED2A01269B3B9D /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E30F0BE46E391F8C50CC6CC792771127 /* SVProgressHUD-dummy.m */; };
-		B0B8D4519A2A25FA1247EBD50C3BD62A /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3547FE615655F5FA7E1B9BD9D3BE98F2 /* SVRadialGradientLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8DF5C23F7B3197642B01D506F62DE3A /* ESTabBarController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B18526F7338CD20F94FAA808194EA652 /* ESTabBarController-dummy.m */; };
-		C31DD435333FCDF3F5DE0CE718257A3F /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BF6004B27856311E64FEC82F559A4A /* SVIndefiniteAnimatedView.m */; };
-		C3DC54942DE453C4EF74FD06456D78C5 /* ESTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F0A1B1A8957AD31DF26321593C75889 /* ESTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D505CEC5276FF13D987290BA911F37D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */; };
-		D9511ACD9EF28633FA7B37A2F6718784 /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = C1266EF86A134907FB00DD261E4E02F1 /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E326A9298E32653214DD3A160063D108 /* ESTabBarController+Autolayout.h in Headers */ = {isa = PBXBuildFile; fileRef = DCF6352FE99FC665B102E6DF23AE7EF7 /* ESTabBarController+Autolayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F59DA58CB749AE95D3EF85B4AE4EFCE2 /* ESTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51D9F5F4533145CFB6B93D2FACBE4924 /* ESTabBarController.xib */; };
+		255B9196E11E4F83490F04C602337260 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F1CB976D22101F5AB5751C1DF67E51 /* SpringAnimation.swift */; };
+		28D7004D4AE97CC34A5DB6074467A46A /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097EA3A5569B51F061D27F3ACB6D3901 /* Misc.swift */; };
+		319B33AB4412EEC7105BFC593B176D3B /* SVProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C95C4BC4305FCF57BED18652B51E249 /* SVProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		333BF75EC237FC4E83AEED2C17E6DBFE /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DD50C610C1ECF3382A90E2ABC6DE76 /* SpringView.swift */; };
+		35F1564DDBF54159AAADF598B10430AE /* SpringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4028901605E1930A5E87B10ABCCAB7EB /* SpringTextField.swift */; };
+		3FD8EE0B585C1D583DCF125CA075FCDD /* SpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49966F25E54346724BAAE624FF9C850 /* SpringLabel.swift */; };
+		405321094FF019AB93987B985C5C5C8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */; };
+		4404121DDB38FA79D1D1D34A764D0274 /* ESTabBarController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C224ED02252BF931E3EB864B80C739FE /* ESTabBarController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46CB90E71A8541A4476E387A3EB28276 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 322630807C9C17993F2D4530C6039924 /* SVProgressAnimatedView.m */; };
+		4969D70BDEF851A9AB46B7C2B58D425D /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD740597C72EEAB87C6918AC8B8AA51 /* TransitionZoom.swift */; };
+		4AEF90BB5D6E9772546CBC1F82E216CE /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A54C04B9E74A7FCE9CF07FD92D6F30 /* SVProgressHUD.m */; };
+		4E71E0A2F332D03F5181F565F83F27AA /* SpringTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B06DE07820916E0FD654FDAB6AF61C /* SpringTextView.swift */; };
+		6609699864738E2E5849748BF1A0DBB7 /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D4E01472AA068DE4088264637A21E7 /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		675645D758615EA1BAE656263004D301 /* ESTabBarController+Autolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE3FF8590436B3C23215548C6C1FCB /* ESTabBarController+Autolayout.m */; };
+		67FFE7D7FA7004C4782B2F3FC1320860 /* UIButton+ESTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E730F02C08699BC995F11B51E2B01F80 /* UIButton+ESTabBar.m */; };
+		6E75FB0E9294705AF5E1E29F1605BF5B /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A8ADA1D3FF2BBBB38AC02338E3630FAB /* SVProgressHUD.bundle */; };
+		76F2C4CD2C2B16840FF3A5CC26E50964 /* UIButton+ESTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = F6511958598942B9F65D59087068463A /* UIButton+ESTabBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		76FBFC737B2DEA1F57F333F00214A649 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E8234D50B791C8014CD7FAAB2FA77C /* AsyncImageView.swift */; };
+		78761C01DAEB5BB00AA546E7470CA38E /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 378E63127A6F1C00BF9C05E340BCB597 /* SVProgressHUD-dummy.m */; };
+		79E0B3B7F01CB19E72CB8665CDC76F8E /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196A73AB57FBBAAC66EB5CF177FE8595 /* LoadingView.xib */; };
+		7B9EC9AF9CE0932B58F0167B7933EB3D /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED76E89F96FF4DB41471AD2DCF9B24E7 /* SoundPlayer.swift */; };
+		89651E40E759491D051D1B3EDEE99026 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0CD2FF91C19A6FA269F942788065DEA /* Images.xcassets */; };
+		8E8C790E3A33754F98BBA0E398A050FB /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B5CE8E37144F9E0A49F7B5F6FD3A2E /* DesignableImageView.swift */; };
+		913128BD02D0C3055E910A80F3BDBB45 /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = EEEFB44CE8E66ABCBE3E4DB2E8E46492 /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9467515B4B46660E77C4D02338499E58 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9D87877641FFF25ADA11BFD414D390 /* BlurView.swift */; };
+		A4CE85766E3B568A0CD747D9BB4871A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */; };
+		ACD5E8F9CE9F29698B7CF84CFFA89B44 /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F77DBE7C0DA5B65432A5067A31535E9 /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0477C550370D6F8326DBD6A0CAB443C /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4819EA934977AECE93535D9CFE94B2 /* AutoTextView.swift */; };
+		B3EC4069177125B64ECF806F2C718D18 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2459FEF1FF5F36B823109891EFB2FA48 /* KeyboardLayoutConstraint.swift */; };
+		B8DF5C23F7B3197642B01D506F62DE3A /* ESTabBarController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6785B16E39B69D8394D6E3D2259926 /* ESTabBarController-dummy.m */; };
+		BA1D2328F3BE0B2C19C5888D261CD3B1 /* DesignableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B602D0CE69911C0B6D048773892B3EE /* DesignableTabBarController.swift */; };
+		BA35BE3030C141B4C418DEE61E581D8F /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270B5500B89706584A53CA97DC7F0009 /* UnwindSegue.swift */; };
+		C0CA5ABD1C26B97D8B948177C0520337 /* Pods-Kiki-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A2B3BBC8399E06008DF09AEAE8D14FB9 /* Pods-Kiki-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C1913493B144DD22CC4F1DDED359D6B4 /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B21AF30F1F93796F23569A8CADD23F1 /* SpringButton.swift */; };
+		C3DC54942DE453C4EF74FD06456D78C5 /* ESTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 99E948067F6984447A12E329B7F853E0 /* ESTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD42055B8016BADD9F0C995EA53E634F /* Spring-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 16EAB663201CD6BE103076D4815B0DA0 /* Spring-dummy.m */; };
+		D9EBCEA106ECF4F42EBF7F5AD3B199D3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503061069F6674716CDE3BDDB114B1C9 /* LoadingView.swift */; };
+		DEAE83015998B2285AA7D24B50BA422E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */; };
+		DFC14B7F24C9FD1465B4C05E3F63C44D /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403D471AF0329EA765F08CC68C8F8B00 /* Spring.swift */; };
+		E1B19EA7BAF765961B68F0DFC0F71C76 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D40A631CC86D406321554FB3A20C7350 /* SVRadialGradientLayer.m */; };
+		E2E1F8C0CF0EED75C7E55E253ED55B5B /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BA5895BDDE271AFF2AEC6EB9C75E7B5 /* SVRadialGradientLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E326A9298E32653214DD3A160063D108 /* ESTabBarController+Autolayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 2538B73FBFB8A3A57FB9CAB694E621EB /* ESTabBarController+Autolayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3527D9290657F0C6BADED788FE6F48B /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF301EAA07B5F2AB709F5C71877E38D0 /* SVIndefiniteAnimatedView.m */; };
+		E589A7008D156DC9E326381FB7B6A3D2 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE519546799B9C5D4B20FD6166E13FBE /* TransitionManager.swift */; };
+		EF80162DB1B7C49B7BDBFAAC3E02D503 /* Spring-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9306ED3471589D4CC1C8A0A409A6ABD /* Spring-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F3AC491AA8E0B0117EFE3C1A32BC1EE7 /* Pods-Kiki-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 51100D62725578663D6F49709DF67B2F /* Pods-Kiki-dummy.m */; };
+		F59DA58CB749AE95D3EF85B4AE4EFCE2 /* ESTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 363251C14118D8DD1F861DFA2D3E93DE /* ESTabBarController.xib */; };
+		FF16A31BB8D9469414A7BA4C838493AC /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E1D41B28D5ED56AD152A5570099859 /* DesignableButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		15E3478296345637C33E050C6DEAF037 /* PBXContainerItemProxy */ = {
+		1C529475DF2DB562AE8422E6BFE94EA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3678E2A4EBA5397C5A26173E55933235;
+			remoteInfo = Spring;
+		};
+		5DFE3E5484947888E31820FF4B7C57D1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 98CC43BA90B67A65698F64A933BC4566;
 			remoteInfo = ESTabBarController;
 		};
-		77AB7C46B30BF5D4D376535F85924C28 /* PBXContainerItemProxy */ = {
+		DF9F309AE64376788B2F2B0818AEE5CF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 01A9C9F17D619B420092CA964159E867;
+			remoteGlobalIDString = B0A8DB39D5559E58D146DB57CD36EE48;
 			remoteInfo = SVProgressHUD;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06D788920810032584772A9995EB4E10 /* UIButton+ESTabBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+ESTabBar.h"; path = "Source/Categories/UIButton+ESTabBar.h"; sourceTree = "<group>"; };
-		0B61DC9D415A32BA672A325016A60363 /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		17204F35E90370DF9E8499A3DA653C68 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
-		1B31B83F68061C21D478DEDEFF0D0E2F /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
-		2033777E99D2C65A02C477BE5E170959 /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		05D4E01472AA068DE4088264637A21E7 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		0884862ACFF497C74257B32D8E82E4C1 /* DesignableTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTextView.swift; path = Spring/DesignableTextView.swift; sourceTree = "<group>"; };
+		097EA3A5569B51F061D27F3ACB6D3901 /* Misc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Misc.swift; path = Spring/Misc.swift; sourceTree = "<group>"; };
+		0C95C4BC4305FCF57BED18652B51E249 /* SVProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-umbrella.h"; sourceTree = "<group>"; };
+		0DFF65D7DAA8BB5FDBFF0777DA638433 /* ESTabBarController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ESTabBarController-prefix.pch"; sourceTree = "<group>"; };
+		16EAB663201CD6BE103076D4815B0DA0 /* Spring-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Spring-dummy.m"; sourceTree = "<group>"; };
+		196A73AB57FBBAAC66EB5CF177FE8595 /* LoadingView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = LoadingView.xib; path = Spring/LoadingView.xib; sourceTree = "<group>"; };
+		1ECE3FF8590436B3C23215548C6C1FCB /* ESTabBarController+Autolayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ESTabBarController+Autolayout.m"; path = "Source/Categories/ESTabBarController+Autolayout.m"; sourceTree = "<group>"; };
 		21695AC7FD429F3972F40CCF7FECFF9F /* Pods-Kiki-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Kiki-acknowledgements.markdown"; sourceTree = "<group>"; };
-		277C43FA88B70D7BE9785624CE9E8413 /* SVProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-umbrella.h"; sourceTree = "<group>"; };
-		308E21D5E7E8E9D444F6DBECA20A48AF /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
-		3547FE615655F5FA7E1B9BD9D3BE98F2 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
-		3A3D4EBE83859A04558226C5334F6E19 /* SVProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SVProgressHUD.modulemap; sourceTree = "<group>"; };
+		2459FEF1FF5F36B823109891EFB2FA48 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardLayoutConstraint.swift; path = Spring/KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
+		2538B73FBFB8A3A57FB9CAB694E621EB /* ESTabBarController+Autolayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ESTabBarController+Autolayout.h"; path = "Source/Categories/ESTabBarController+Autolayout.h"; sourceTree = "<group>"; };
+		270B5500B89706584A53CA97DC7F0009 /* UnwindSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnwindSegue.swift; path = Spring/UnwindSegue.swift; sourceTree = "<group>"; };
+		2871A44C0F7D090AE1D9D4E53D344962 /* ImageLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageLoader.swift; path = Spring/ImageLoader.swift; sourceTree = "<group>"; };
+		2B21AF30F1F93796F23569A8CADD23F1 /* SpringButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringButton.swift; path = Spring/SpringButton.swift; sourceTree = "<group>"; };
+		2BFF108D7A812B96331409A31B2F4562 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
+		2FCC704F20412308F9A16C2BE65FD6E7 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Analytics/Sources/Firebase.h; sourceTree = "<group>"; };
+		322630807C9C17993F2D4530C6039924 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		363251C14118D8DD1F861DFA2D3E93DE /* ESTabBarController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ESTabBarController.xib; path = Source/Controllers/ESTabBarController.xib; sourceTree = "<group>"; };
+		378E63127A6F1C00BF9C05E340BCB597 /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		39A54C04B9E74A7FCE9CF07FD92D6F30 /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
+		39E1D41B28D5ED56AD152A5570099859 /* DesignableButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableButton.swift; path = Spring/DesignableButton.swift; sourceTree = "<group>"; };
 		3A621532E3A3AF769065B80E07CDF191 /* Pods-Kiki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Kiki.release.xcconfig"; sourceTree = "<group>"; };
-		44C3A82537EC97C159481C080FF2DD3A /* SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.xcconfig; sourceTree = "<group>"; };
-		47749B5DFE7A24E11484BFF3AD07E67A /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
-		4F0A1B1A8957AD31DF26321593C75889 /* ESTabBarController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ESTabBarController.h; path = Source/Controllers/ESTabBarController.h; sourceTree = "<group>"; };
+		3AD740597C72EEAB87C6918AC8B8AA51 /* TransitionZoom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionZoom.swift; path = Spring/TransitionZoom.swift; sourceTree = "<group>"; };
+		3DE7813FFBA32AE129A589544CE87FD3 /* ESTabBarController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ESTabBarController.m; path = Source/Controllers/ESTabBarController.m; sourceTree = "<group>"; };
+		3E9D87877641FFF25ADA11BFD414D390 /* BlurView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlurView.swift; path = Spring/BlurView.swift; sourceTree = "<group>"; };
+		3EB6F4867DC3456A850F6AA7F1D2EC44 /* SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.xcconfig; sourceTree = "<group>"; };
+		4028901605E1930A5E87B10ABCCAB7EB /* SpringTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringTextField.swift; path = Spring/SpringTextField.swift; sourceTree = "<group>"; };
+		403D471AF0329EA765F08CC68C8F8B00 /* Spring.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Spring.swift; path = Spring/Spring.swift; sourceTree = "<group>"; };
+		428628BC810A78D1A8CF682BFA29E4A7 /* Spring-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spring-prefix.pch"; sourceTree = "<group>"; };
+		4549B99E4240EFF52C5A08A18F064FFC /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
+		49F3E291F9C0375B556798AAB67FA986 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		4B602D0CE69911C0B6D048773892B3EE /* DesignableTabBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTabBarController.swift; path = Spring/DesignableTabBarController.swift; sourceTree = "<group>"; };
+		4FEEEF04AA91B16703E55B310D168D9F /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Frameworks/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
+		503061069F6674716CDE3BDDB114B1C9 /* LoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = Spring/LoadingView.swift; sourceTree = "<group>"; };
+		50B5CE8E37144F9E0A49F7B5F6FD3A2E /* DesignableImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableImageView.swift; path = Spring/DesignableImageView.swift; sourceTree = "<group>"; };
 		51100D62725578663D6F49709DF67B2F /* Pods-Kiki-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Kiki-dummy.m"; sourceTree = "<group>"; };
-		51D9F5F4533145CFB6B93D2FACBE4924 /* ESTabBarController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ESTabBarController.xib; path = Source/Controllers/ESTabBarController.xib; sourceTree = "<group>"; };
-		5210D51CEE4A52FA4D08186919146A0D /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		55A2EE04CE39CF170A5D2F4A0BC67D88 /* AsyncButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncButton.swift; path = Spring/AsyncButton.swift; sourceTree = "<group>"; };
 		57E53E1195EB692373448F87035428EA /* Pods-Kiki-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Kiki-frameworks.sh"; sourceTree = "<group>"; };
-		65A81A92D5D201DA0E38A465157AB8BC /* ESTabBarController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ESTabBarController.xcconfig; sourceTree = "<group>"; };
-		6919B3736DCEB98B579B256ACBF4D77F /* ESTabBarController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ESTabBarController-prefix.pch"; sourceTree = "<group>"; };
+		59B2105C5385F4202810BF70F662D0B4 /* DesignableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableView.swift; path = Spring/DesignableView.swift; sourceTree = "<group>"; };
+		5AD861037A59858680A51C6360669684 /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
+		5F77DBE7C0DA5B65432A5067A31535E9 /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
+		669320357D53238B543512402735F678 /* Spring.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Spring.xcconfig; sourceTree = "<group>"; };
+		6B526D5627AECE497701AA2537741917 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		714798F455D2CD144E10D6B76674E44C /* Pods-Kiki.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Kiki.modulemap"; sourceTree = "<group>"; };
-		73998434000419252C4008290BB86E4B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		73BF6004B27856311E64FEC82F559A4A /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
-		7C7B31C8D45D30886B86DA366D8EF0DB /* ESTabBarController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ESTabBarController.modulemap; sourceTree = "<group>"; };
-		805BA09EDBE0FE3AED170C22B2A64B43 /* ESTabBarController+Autolayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ESTabBarController+Autolayout.m"; path = "Source/Categories/ESTabBarController+Autolayout.m"; sourceTree = "<group>"; };
+		77AFE3049A00088ADB637A63A8469AFC /* Spring.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Spring.modulemap; sourceTree = "<group>"; };
+		843438379DA1A219C0BC1F035F9DF6C1 /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Frameworks/frameworks/FirebaseAuth.framework; sourceTree = "<group>"; };
 		8528D34886F8FC75F1ADAFBBE12729CF /* Pods-Kiki-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Kiki-resources.sh"; sourceTree = "<group>"; };
-		87898E13A65F6EF1C3FB0E0887D3CF0A /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		88A401CC3B2F1B61DBEB4F67D836E967 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		8BA5895BDDE271AFF2AEC6EB9C75E7B5 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
 		90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		94F582BA3F90A0B8C108ECC3BC79A851 /* Pods_Kiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		98AD8C98EB0558AD4E903D2CBB8FA73E /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
+		99E948067F6984447A12E329B7F853E0 /* ESTabBarController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ESTabBarController.h; path = Source/Controllers/ESTabBarController.h; sourceTree = "<group>"; };
+		9D6762BCD683EC5D73DE2E133808C7ED /* DesignableLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableLabel.swift; path = Spring/DesignableLabel.swift; sourceTree = "<group>"; };
 		A115FE16D601F9C31D63B1277AD53887 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2B3BBC8399E06008DF09AEAE8D14FB9 /* Pods-Kiki-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Kiki-umbrella.h"; sourceTree = "<group>"; };
-		A8EE0B67C71139B8BF7A877C04BD8453 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
-		AAA9955E95AAD600E284A2CED4082609 /* UIButton+ESTabBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+ESTabBar.m"; path = "Source/Categories/UIButton+ESTabBar.m"; sourceTree = "<group>"; };
-		B0672CCA9E2974BA8B4D74F3ADC1FEAB /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
-		B18526F7338CD20F94FAA808194EA652 /* ESTabBarController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ESTabBarController-dummy.m"; sourceTree = "<group>"; };
-		B4A8C04CFE0A2DA2C216FC80054F8888 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
-		BDF5B60E400C627C0F97ECCAFA57AC9F /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Frameworks/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
-		C1266EF86A134907FB00DD261E4E02F1 /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
-		C4E2150843C1A39BE67D74209B9A1509 /* ESTabBarController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ESTabBarController.m; path = Source/Controllers/ESTabBarController.m; sourceTree = "<group>"; };
-		CA265D5C732FAA42E1C16CE50D99F11D /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		CE634CE6D4E4123B202B27CE59BEBA5C /* ESTabBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ESTabBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6E1FCF06FEF7FEB4195AC8C1EAA9D8E /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
-		DA93905853219600574B4DF55E0F65AB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB60EC08F92BA0D8AE5EFFB449205D19 /* ESTabBarController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ESTabBarController-umbrella.h"; sourceTree = "<group>"; };
-		DCF6352FE99FC665B102E6DF23AE7EF7 /* ESTabBarController+Autolayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ESTabBarController+Autolayout.h"; path = "Source/Categories/ESTabBarController+Autolayout.h"; sourceTree = "<group>"; };
-		E30F0BE46E391F8C50CC6CC792771127 /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
-		EA0DA4A240ED449D6AF45D12A173C6E4 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
+		A64B6FDFFEDD9A81FB92DDC21D54C354 /* ESTabBarController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ESTabBarController.xcconfig; sourceTree = "<group>"; };
+		A8ADA1D3FF2BBBB38AC02338E3630FAB /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
+		AA3C0C2CFAAF86D6D2DC96C93F810778 /* SVProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SVProgressHUD.modulemap; sourceTree = "<group>"; };
+		ADC4FDCDE1CADD1EEC5F0053F9434176 /* ESTabBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ESTabBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE519546799B9C5D4B20FD6166E13FBE /* TransitionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionManager.swift; path = Spring/TransitionManager.swift; sourceTree = "<group>"; };
+		AF301EAA07B5F2AB709F5C71877E38D0 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		B3E8234D50B791C8014CD7FAAB2FA77C /* AsyncImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncImageView.swift; path = Spring/AsyncImageView.swift; sourceTree = "<group>"; };
+		B49966F25E54346724BAAE624FF9C850 /* SpringLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringLabel.swift; path = Spring/SpringLabel.swift; sourceTree = "<group>"; };
+		B544F8262705D249E87AA2558D556290 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		C0CD2FF91C19A6FA269F942788065DEA /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SpringApp/Images.xcassets; sourceTree = "<group>"; };
+		C1B06DE07820916E0FD654FDAB6AF61C /* SpringTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringTextView.swift; path = Spring/SpringTextView.swift; sourceTree = "<group>"; };
+		C224ED02252BF931E3EB864B80C739FE /* ESTabBarController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ESTabBarController-umbrella.h"; sourceTree = "<group>"; };
+		C73ADAA5D937A15D41EFFC3905B4F810 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		C7F1CB976D22101F5AB5751C1DF67E51 /* SpringAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringAnimation.swift; path = Spring/SpringAnimation.swift; sourceTree = "<group>"; };
+		CEA6F03F2DD1D6F5E328C3115CB6F76E /* ESTabBarController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ESTabBarController.modulemap; sourceTree = "<group>"; };
+		D40A631CC86D406321554FB3A20C7350 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		D5DD50C610C1ECF3382A90E2ABC6DE76 /* SpringView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringView.swift; path = Spring/SpringView.swift; sourceTree = "<group>"; };
+		D8D043F00239E61EC61300250FDA0D5D /* DesignableTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTextField.swift; path = Spring/DesignableTextField.swift; sourceTree = "<group>"; };
+		DAA8FCB5AADCB79B927AAE878DC61C92 /* Pods_Kiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF7DF99C5468B924ADE64BFBD3FCE1EE /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFD1748C841FC76D0F45DE3A0EAA55C0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E033CDD229DD1FBBC7D3999777E69D86 /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		E730F02C08699BC995F11B51E2B01F80 /* UIButton+ESTabBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+ESTabBar.m"; path = "Source/Categories/UIButton+ESTabBar.m"; sourceTree = "<group>"; };
+		E8F20F5CAEDB5B11D21F76FD023A4855 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E94D7AF6F0276981CAA812847DD13290 /* SpringImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringImageView.swift; path = Spring/SpringImageView.swift; sourceTree = "<group>"; };
 		EB0B5C34B0704CE42DB8ACE437DB6B71 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		ED76E89F96FF4DB41471AD2DCF9B24E7 /* SoundPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SoundPlayer.swift; path = Spring/SoundPlayer.swift; sourceTree = "<group>"; };
+		EE4819EA934977AECE93535D9CFE94B2 /* AutoTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoTextView.swift; path = Spring/AutoTextView.swift; sourceTree = "<group>"; };
+		EEEFB44CE8E66ABCBE3E4DB2E8E46492 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		F2BA3FB26EDB46FA3B9754E87C10A7A2 /* Pods-Kiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Kiki.debug.xcconfig"; sourceTree = "<group>"; };
-		F41E183D821BBF6907663B7416EE2EE0 /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Frameworks/frameworks/FirebaseAuth.framework; sourceTree = "<group>"; };
-		F460376FEFB550DF7DEA41D34ED260D9 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Analytics/Sources/Firebase.h; sourceTree = "<group>"; };
+		F6511958598942B9F65D59087068463A /* UIButton+ESTabBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+ESTabBar.h"; path = "Source/Categories/UIButton+ESTabBar.h"; sourceTree = "<group>"; };
+		F9306ED3471589D4CC1C8A0A409A6ABD /* Spring-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spring-umbrella.h"; sourceTree = "<group>"; };
 		FA292D077DD9960397FF6968F0A210CA /* Pods-Kiki-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Kiki-acknowledgements.plist"; sourceTree = "<group>"; };
+		FD1B1077EA0E774536083A93A3004298 /* Spring.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spring.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE6785B16E39B69D8394D6E3D2259926 /* ESTabBarController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ESTabBarController-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,26 +193,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		49C3B43A3E642EE4EB20982CF22A9501 /* Frameworks */ = {
+		D414E0566647AC739F6F0DB7B2029855 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D505CEC5276FF13D987290BA911F37D0 /* Foundation.framework in Frameworks */,
-				8C38FB4EA3AE5C7ACE7D3BB54CB57601 /* QuartzCore.framework in Frameworks */,
+				405321094FF019AB93987B985C5C5C8C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9289844E1D6B0AC62A54DACBC4092B6F /* Frameworks */ = {
+		E80B216484DE040F505CA9521DE1BAEF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D3AFA451B9C83329FA571865B646E69 /* Foundation.framework in Frameworks */,
+				DEAE83015998B2285AA7D24B50BA422E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC8CA0B10CCC6D6EEC4853558F3C305B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4CE85766E3B568A0CD747D9BB4871A3 /* Foundation.framework in Frameworks */,
+				15B6B85CCDC402B2EF4F306ED22B03C9 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0022131CF5789C9EA835E5691BCE7DE6 /* FirebaseAuth */ = {
+			isa = PBXGroup;
+			children = (
+				9D6694F5FE571C0FB0B58FF730F34CE4 /* Frameworks */,
+			);
+			path = FirebaseAuth;
+			sourceTree = "<group>";
+		};
 		0554C7127D2D5CAB9502CE6D224BF271 /* Pods-Kiki */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,58 +247,91 @@
 			path = "Target Support Files/Pods-Kiki";
 			sourceTree = "<group>";
 		};
-		0AC282C2740764E740670FDF83E555D9 /* Analytics */ = {
+		0F0EC65B1E0BDBF5E63501455153B07F /* Spring */ = {
 			isa = PBXGroup;
 			children = (
-				F460376FEFB550DF7DEA41D34ED260D9 /* Firebase.h */,
+				55A2EE04CE39CF170A5D2F4A0BC67D88 /* AsyncButton.swift */,
+				B3E8234D50B791C8014CD7FAAB2FA77C /* AsyncImageView.swift */,
+				EE4819EA934977AECE93535D9CFE94B2 /* AutoTextView.swift */,
+				3E9D87877641FFF25ADA11BFD414D390 /* BlurView.swift */,
+				39E1D41B28D5ED56AD152A5570099859 /* DesignableButton.swift */,
+				50B5CE8E37144F9E0A49F7B5F6FD3A2E /* DesignableImageView.swift */,
+				9D6762BCD683EC5D73DE2E133808C7ED /* DesignableLabel.swift */,
+				4B602D0CE69911C0B6D048773892B3EE /* DesignableTabBarController.swift */,
+				D8D043F00239E61EC61300250FDA0D5D /* DesignableTextField.swift */,
+				0884862ACFF497C74257B32D8E82E4C1 /* DesignableTextView.swift */,
+				59B2105C5385F4202810BF70F662D0B4 /* DesignableView.swift */,
+				2871A44C0F7D090AE1D9D4E53D344962 /* ImageLoader.swift */,
+				2459FEF1FF5F36B823109891EFB2FA48 /* KeyboardLayoutConstraint.swift */,
+				503061069F6674716CDE3BDDB114B1C9 /* LoadingView.swift */,
+				097EA3A5569B51F061D27F3ACB6D3901 /* Misc.swift */,
+				ED76E89F96FF4DB41471AD2DCF9B24E7 /* SoundPlayer.swift */,
+				403D471AF0329EA765F08CC68C8F8B00 /* Spring.swift */,
+				C7F1CB976D22101F5AB5751C1DF67E51 /* SpringAnimation.swift */,
+				2B21AF30F1F93796F23569A8CADD23F1 /* SpringButton.swift */,
+				E94D7AF6F0276981CAA812847DD13290 /* SpringImageView.swift */,
+				B49966F25E54346724BAAE624FF9C850 /* SpringLabel.swift */,
+				4028901605E1930A5E87B10ABCCAB7EB /* SpringTextField.swift */,
+				C1B06DE07820916E0FD654FDAB6AF61C /* SpringTextView.swift */,
+				D5DD50C610C1ECF3382A90E2ABC6DE76 /* SpringView.swift */,
+				AE519546799B9C5D4B20FD6166E13FBE /* TransitionManager.swift */,
+				3AD740597C72EEAB87C6918AC8B8AA51 /* TransitionZoom.swift */,
+				270B5500B89706584A53CA97DC7F0009 /* UnwindSegue.swift */,
+				70A7BF048EF03AD98E538C9F53737FA6 /* Resources */,
+				528F28586B07745D3CCC5D516EE851AC /* Support Files */,
 			);
-			name = Analytics;
+			path = Spring;
 			sourceTree = "<group>";
 		};
-		116606216C37FEC0E382EA4D63C4E370 /* GoogleSymbolUtilities */ = {
+		1031911704DBD3FE2E922747D8DD4749 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8F3319ACE4B0D22649D0B73288C0AB22 /* Frameworks */,
-			);
-			path = GoogleSymbolUtilities;
-			sourceTree = "<group>";
-		};
-		246D25A596DCB725C9EFDD082C56B5F9 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F41E183D821BBF6907663B7416EE2EE0 /* FirebaseAuth.framework */,
+				2BFF108D7A812B96331409A31B2F4562 /* GoogleUtilities.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		301BA4BF5C891421BCEFDC764E36BC80 /* FirebaseDatabase */ = {
+		133DC447EBD44110097C1BD43A86C99F /* FirebaseAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				6FFB88486931EE2FCA2F1AA4D302122B /* Frameworks */,
-			);
-			path = FirebaseDatabase;
-			sourceTree = "<group>";
-		};
-		329C3535EB813E8194B4A18BCBDE441A /* FirebaseAnalytics */ = {
-			isa = PBXGroup;
-			children = (
-				4D1859BE165B1D97695C0C9C0AB98B86 /* Frameworks */,
+				E53CB033E254BEE62C149CA7CE9A5FC1 /* Frameworks */,
 			);
 			path = FirebaseAnalytics;
 			sourceTree = "<group>";
 		};
-		380094B56FF5A0C680C3D763A3037030 /* Support Files */ = {
+		1EF58880750A56E6F00E9914033D3546 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7C7B31C8D45D30886B86DA366D8EF0DB /* ESTabBarController.modulemap */,
-				65A81A92D5D201DA0E38A465157AB8BC /* ESTabBarController.xcconfig */,
-				B18526F7338CD20F94FAA808194EA652 /* ESTabBarController-dummy.m */,
-				6919B3736DCEB98B579B256ACBF4D77F /* ESTabBarController-prefix.pch */,
-				DB60EC08F92BA0D8AE5EFFB449205D19 /* ESTabBarController-umbrella.h */,
-				73998434000419252C4008290BB86E4B /* Info.plist */,
+				ADC4FDCDE1CADD1EEC5F0053F9434176 /* ESTabBarController.framework */,
+				DAA8FCB5AADCB79B927AAE878DC61C92 /* Pods_Kiki.framework */,
+				FD1B1077EA0E774536083A93A3004298 /* Spring.framework */,
+				DF7DF99C5468B924ADE64BFBD3FCE1EE /* SVProgressHUD.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/ESTabBarController";
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F46BD3AD42C45500446C5E0DC9AB7B8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				363251C14118D8DD1F861DFA2D3E93DE /* ESTabBarController.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		42E4945204ACBDC73918BDCA4FEDD7CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5AD861037A59858680A51C6360669684 /* FirebaseDatabase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		42F886CC50123FC252AA0003975422BF /* GoogleUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				1031911704DBD3FE2E922747D8DD4749 /* Frameworks */,
+			);
+			path = GoogleUtilities;
 			sourceTree = "<group>";
 		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
@@ -218,59 +342,102 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4D1859BE165B1D97695C0C9C0AB98B86 /* Frameworks */ = {
+		51BA79B495A71C2D31355087419EDFFA /* FirebaseInstanceID */ = {
 			isa = PBXGroup;
 			children = (
-				CA265D5C732FAA42E1C16CE50D99F11D /* FirebaseAnalytics.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		54B8C7C8B5D363BA7881CC66816AB50A /* GoogleInterchangeUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				9AAAB0996AA343AC338A0542DFBFF313 /* Frameworks */,
-			);
-			path = GoogleInterchangeUtilities;
-			sourceTree = "<group>";
-		};
-		6263A4F2B1B99A2D44804438A6CC37F2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				87898E13A65F6EF1C3FB0E0887D3CF0A /* FirebaseInstanceID.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6FFB88486931EE2FCA2F1AA4D302122B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				98AD8C98EB0558AD4E903D2CBB8FA73E /* FirebaseDatabase.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		77490C66E2710554E81094138AA99549 /* FirebaseInstanceID */ = {
-			isa = PBXGroup;
-			children = (
-				EA0DA4A240ED449D6AF45D12A173C6E4 /* FIRInstanceID.h */,
-				6263A4F2B1B99A2D44804438A6CC37F2 /* Frameworks */,
+				4549B99E4240EFF52C5A08A18F064FFC /* FIRInstanceID.h */,
+				7DBCDC8674AEA37BBC89A7254DB752AA /* Frameworks */,
 			);
 			path = FirebaseInstanceID;
 			sourceTree = "<group>";
 		};
-		79ABCFB2E3B4B183A5D7B1A7BC3D3E00 /* Support Files */ = {
+		51FF8E4198F155018D9350C3D6924E9A /* GoogleNetworkingUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				DA93905853219600574B4DF55E0F65AB /* Info.plist */,
-				3A3D4EBE83859A04558226C5334F6E19 /* SVProgressHUD.modulemap */,
-				44C3A82537EC97C159481C080FF2DD3A /* SVProgressHUD.xcconfig */,
-				E30F0BE46E391F8C50CC6CC792771127 /* SVProgressHUD-dummy.m */,
-				2033777E99D2C65A02C477BE5E170959 /* SVProgressHUD-prefix.pch */,
-				277C43FA88B70D7BE9785624CE9E8413 /* SVProgressHUD-umbrella.h */,
+				82DF5C24C959D0502EC04249F2A69BCE /* Frameworks */,
+			);
+			path = GoogleNetworkingUtilities;
+			sourceTree = "<group>";
+		};
+		528F28586B07745D3CCC5D516EE851AC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8F20F5CAEDB5B11D21F76FD023A4855 /* Info.plist */,
+				77AFE3049A00088ADB637A63A8469AFC /* Spring.modulemap */,
+				669320357D53238B543512402735F678 /* Spring.xcconfig */,
+				16EAB663201CD6BE103076D4815B0DA0 /* Spring-dummy.m */,
+				428628BC810A78D1A8CF682BFA29E4A7 /* Spring-prefix.pch */,
+				F9306ED3471589D4CC1C8A0A409A6ABD /* Spring-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/SVProgressHUD";
+			path = "../Target Support Files/Spring";
+			sourceTree = "<group>";
+		};
+		61A2F8F85FFE5B657F4806D345EDF105 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92C13CFE11480E028706BD0446C967E3 /* ESTabBarController */,
+				A0D108D8647EC9F2C29100AE88AF0902 /* Firebase */,
+				133DC447EBD44110097C1BD43A86C99F /* FirebaseAnalytics */,
+				0022131CF5789C9EA835E5691BCE7DE6 /* FirebaseAuth */,
+				9D3FCF0FC35FFBAAC95219DEAEB5227F /* FirebaseDatabase */,
+				51BA79B495A71C2D31355087419EDFFA /* FirebaseInstanceID */,
+				AEBF00C020B392D706875316D6C715FB /* GoogleInterchangeUtilities */,
+				51FF8E4198F155018D9350C3D6924E9A /* GoogleNetworkingUtilities */,
+				C757E069C17F10BD9B5E3983BA1DE0E8 /* GoogleSymbolUtilities */,
+				42F886CC50123FC252AA0003975422BF /* GoogleUtilities */,
+				0F0EC65B1E0BDBF5E63501455153B07F /* Spring */,
+				7036EB7FA559B8CB7A00800A3DFB9A4A /* SVProgressHUD */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7036EB7FA559B8CB7A00800A3DFB9A4A /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				EEEFB44CE8E66ABCBE3E4DB2E8E46492 /* SVIndefiniteAnimatedView.h */,
+				AF301EAA07B5F2AB709F5C71877E38D0 /* SVIndefiniteAnimatedView.m */,
+				05D4E01472AA068DE4088264637A21E7 /* SVProgressAnimatedView.h */,
+				322630807C9C17993F2D4530C6039924 /* SVProgressAnimatedView.m */,
+				5F77DBE7C0DA5B65432A5067A31535E9 /* SVProgressHUD.h */,
+				39A54C04B9E74A7FCE9CF07FD92D6F30 /* SVProgressHUD.m */,
+				8BA5895BDDE271AFF2AEC6EB9C75E7B5 /* SVRadialGradientLayer.h */,
+				D40A631CC86D406321554FB3A20C7350 /* SVRadialGradientLayer.m */,
+				BBE9EDF17FC179D77B58D8C84324CCE3 /* Resources */,
+				C48D5B0FF8E0405C8A3FC8D521D3090C /* Support Files */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		70A7BF048EF03AD98E538C9F53737FA6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C0CD2FF91C19A6FA269F942788065DEA /* Images.xcassets */,
+				196A73AB57FBBAAC66EB5CF177FE8595 /* LoadingView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		710B9A46E07644024A9554F717AA22D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B544F8262705D249E87AA2558D556290 /* GoogleSymbolUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78C09B6BABB43A85991063315F2A52F5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CEA6F03F2DD1D6F5E328C3115CB6F76E /* ESTabBarController.modulemap */,
+				A64B6FDFFEDD9A81FB92DDC21D54C354 /* ESTabBarController.xcconfig */,
+				FE6785B16E39B69D8394D6E3D2259926 /* ESTabBarController-dummy.m */,
+				0DFF65D7DAA8BB5FDBFF0777DA638433 /* ESTabBarController-prefix.pch */,
+				C224ED02252BF931E3EB864B80C739FE /* ESTabBarController-umbrella.h */,
+				6B526D5627AECE497701AA2537741917 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ESTabBarController";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -278,28 +445,26 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				D9CCB9312312433A668CE961DDA1683D /* Pods */,
-				7F4DC799496645EDC6A171AE6667D956 /* Products */,
+				61A2F8F85FFE5B657F4806D345EDF105 /* Pods */,
+				1EF58880750A56E6F00E9914033D3546 /* Products */,
 				E318C125A22A4BB5863B215D36BAB25C /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		7F4DC799496645EDC6A171AE6667D956 /* Products */ = {
+		7DBCDC8674AEA37BBC89A7254DB752AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CE634CE6D4E4123B202B27CE59BEBA5C /* ESTabBarController.framework */,
-				94F582BA3F90A0B8C108ECC3BC79A851 /* Pods_Kiki.framework */,
-				0B61DC9D415A32BA672A325016A60363 /* SVProgressHUD.framework */,
+				C73ADAA5D937A15D41EFFC3905B4F810 /* FirebaseInstanceID.framework */,
 			);
-			name = Products;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		87FE7481D24B3AC3C1D9D28DA31A95A6 /* Resources */ = {
+		82DF5C24C959D0502EC04249F2A69BCE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1B31B83F68061C21D478DEDEFF0D0E2F /* SVProgressHUD.bundle */,
+				4FEEEF04AA91B16703E55B310D168D9F /* GoogleNetworkingUtilities.framework */,
 			);
-			name = Resources;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		89F803C7E2D77E11F2120CB28FE0B795 /* iOS */ = {
@@ -311,101 +476,89 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		8F3319ACE4B0D22649D0B73288C0AB22 /* Frameworks */ = {
+		92C13CFE11480E028706BD0446C967E3 /* ESTabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				D6E1FCF06FEF7FEB4195AC8C1EAA9D8E /* GoogleSymbolUtilities.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		91D8E8A32AC61C4704EEDE28CAD07FFA /* FirebaseAuth */ = {
-			isa = PBXGroup;
-			children = (
-				246D25A596DCB725C9EFDD082C56B5F9 /* Frameworks */,
-			);
-			path = FirebaseAuth;
-			sourceTree = "<group>";
-		};
-		923F3E54628734966891CC308561F93B /* GoogleNetworkingUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				F86B8AC3FD61E9C05F7059600F70726E /* Frameworks */,
-			);
-			path = GoogleNetworkingUtilities;
-			sourceTree = "<group>";
-		};
-		9867A88AF8E312010B177A3EFE4D68BD /* ESTabBarController */ = {
-			isa = PBXGroup;
-			children = (
-				4F0A1B1A8957AD31DF26321593C75889 /* ESTabBarController.h */,
-				C4E2150843C1A39BE67D74209B9A1509 /* ESTabBarController.m */,
-				DCF6352FE99FC665B102E6DF23AE7EF7 /* ESTabBarController+Autolayout.h */,
-				805BA09EDBE0FE3AED170C22B2A64B43 /* ESTabBarController+Autolayout.m */,
-				06D788920810032584772A9995EB4E10 /* UIButton+ESTabBar.h */,
-				AAA9955E95AAD600E284A2CED4082609 /* UIButton+ESTabBar.m */,
-				B74299F3533E26E8FA42586E664619B3 /* Resources */,
-				380094B56FF5A0C680C3D763A3037030 /* Support Files */,
+				99E948067F6984447A12E329B7F853E0 /* ESTabBarController.h */,
+				3DE7813FFBA32AE129A589544CE87FD3 /* ESTabBarController.m */,
+				2538B73FBFB8A3A57FB9CAB694E621EB /* ESTabBarController+Autolayout.h */,
+				1ECE3FF8590436B3C23215548C6C1FCB /* ESTabBarController+Autolayout.m */,
+				F6511958598942B9F65D59087068463A /* UIButton+ESTabBar.h */,
+				E730F02C08699BC995F11B51E2B01F80 /* UIButton+ESTabBar.m */,
+				3F46BD3AD42C45500446C5E0DC9AB7B8 /* Resources */,
+				78C09B6BABB43A85991063315F2A52F5 /* Support Files */,
 			);
 			path = ESTabBarController;
 			sourceTree = "<group>";
 		};
-		9AAAB0996AA343AC338A0542DFBFF313 /* Frameworks */ = {
+		9D3FCF0FC35FFBAAC95219DEAEB5227F /* FirebaseDatabase */ = {
 			isa = PBXGroup;
 			children = (
-				B4A8C04CFE0A2DA2C216FC80054F8888 /* GoogleInterchangeUtilities.framework */,
+				42E4945204ACBDC73918BDCA4FEDD7CC /* Frameworks */,
+			);
+			path = FirebaseDatabase;
+			sourceTree = "<group>";
+		};
+		9D6694F5FE571C0FB0B58FF730F34CE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				843438379DA1A219C0BC1F035F9DF6C1 /* FirebaseAuth.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9CD421964255700387365B0156F57CC6 /* GoogleUtilities */ = {
+		A0D108D8647EC9F2C29100AE88AF0902 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				A0BBEBCF1BE6847793A06C87931EAE20 /* Frameworks */,
-			);
-			path = GoogleUtilities;
-			sourceTree = "<group>";
-		};
-		A0BBEBCF1BE6847793A06C87931EAE20 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				308E21D5E7E8E9D444F6DBECA20A48AF /* GoogleUtilities.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B74299F3533E26E8FA42586E664619B3 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				51D9F5F4533145CFB6B93D2FACBE4924 /* ESTabBarController.xib */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		B881B23E6B3D3904DCA58FF043F242CF /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				0AC282C2740764E740670FDF83E555D9 /* Analytics */,
+				E6E965D496C68D2913E12C8F6D2DBB2B /* Analytics */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
 		};
-		D9CCB9312312433A668CE961DDA1683D /* Pods */ = {
+		AEBF00C020B392D706875316D6C715FB /* GoogleInterchangeUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				9867A88AF8E312010B177A3EFE4D68BD /* ESTabBarController */,
-				B881B23E6B3D3904DCA58FF043F242CF /* Firebase */,
-				329C3535EB813E8194B4A18BCBDE441A /* FirebaseAnalytics */,
-				91D8E8A32AC61C4704EEDE28CAD07FFA /* FirebaseAuth */,
-				301BA4BF5C891421BCEFDC764E36BC80 /* FirebaseDatabase */,
-				77490C66E2710554E81094138AA99549 /* FirebaseInstanceID */,
-				54B8C7C8B5D363BA7881CC66816AB50A /* GoogleInterchangeUtilities */,
-				923F3E54628734966891CC308561F93B /* GoogleNetworkingUtilities */,
-				116606216C37FEC0E382EA4D63C4E370 /* GoogleSymbolUtilities */,
-				9CD421964255700387365B0156F57CC6 /* GoogleUtilities */,
-				F7E3DEAF637DB198E03C7C1CF9E8430B /* SVProgressHUD */,
+				C4CC8E309F3572290F612DA02DFA4FFB /* Frameworks */,
 			);
-			name = Pods;
+			path = GoogleInterchangeUtilities;
+			sourceTree = "<group>";
+		};
+		BBE9EDF17FC179D77B58D8C84324CCE3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A8ADA1D3FF2BBBB38AC02338E3630FAB /* SVProgressHUD.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C48D5B0FF8E0405C8A3FC8D521D3090C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DFD1748C841FC76D0F45DE3A0EAA55C0 /* Info.plist */,
+				AA3C0C2CFAAF86D6D2DC96C93F810778 /* SVProgressHUD.modulemap */,
+				3EB6F4867DC3456A850F6AA7F1D2EC44 /* SVProgressHUD.xcconfig */,
+				378E63127A6F1C00BF9C05E340BCB597 /* SVProgressHUD-dummy.m */,
+				E033CDD229DD1FBBC7D3999777E69D86 /* SVProgressHUD-prefix.pch */,
+				0C95C4BC4305FCF57BED18652B51E249 /* SVProgressHUD-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SVProgressHUD";
+			sourceTree = "<group>";
+		};
+		C4CC8E309F3572290F612DA02DFA4FFB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49F3E291F9C0375B556798AAB67FA986 /* GoogleInterchangeUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C757E069C17F10BD9B5E3983BA1DE0E8 /* GoogleSymbolUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				710B9A46E07644024A9554F717AA22D5 /* Frameworks */,
+			);
+			path = GoogleSymbolUtilities;
 			sourceTree = "<group>";
 		};
 		E318C125A22A4BB5863B215D36BAB25C /* Targets Support Files */ = {
@@ -416,51 +569,42 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		F7E3DEAF637DB198E03C7C1CF9E8430B /* SVProgressHUD */ = {
+		E53CB033E254BEE62C149CA7CE9A5FC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B0672CCA9E2974BA8B4D74F3ADC1FEAB /* SVIndefiniteAnimatedView.h */,
-				73BF6004B27856311E64FEC82F559A4A /* SVIndefiniteAnimatedView.m */,
-				5210D51CEE4A52FA4D08186919146A0D /* SVProgressAnimatedView.h */,
-				A8EE0B67C71139B8BF7A877C04BD8453 /* SVProgressAnimatedView.m */,
-				C1266EF86A134907FB00DD261E4E02F1 /* SVProgressHUD.h */,
-				47749B5DFE7A24E11484BFF3AD07E67A /* SVProgressHUD.m */,
-				3547FE615655F5FA7E1B9BD9D3BE98F2 /* SVRadialGradientLayer.h */,
-				17204F35E90370DF9E8499A3DA653C68 /* SVRadialGradientLayer.m */,
-				87FE7481D24B3AC3C1D9D28DA31A95A6 /* Resources */,
-				79ABCFB2E3B4B183A5D7B1A7BC3D3E00 /* Support Files */,
-			);
-			path = SVProgressHUD;
-			sourceTree = "<group>";
-		};
-		F86B8AC3FD61E9C05F7059600F70726E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BDF5B60E400C627C0F97ECCAFA57AC9F /* GoogleNetworkingUtilities.framework */,
+				88A401CC3B2F1B61DBEB4F67D836E967 /* FirebaseAnalytics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6E965D496C68D2913E12C8F6D2DBB2B /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				2FCC704F20412308F9A16C2BE65FD6E7 /* Firebase.h */,
+			);
+			name = Analytics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0AD5324C0A927F28A0B323A8C2FAA377 /* Headers */ = {
+		006EE54A87C0321BFBE11E488BF320E0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A5024629F755B1C1D3F5ECDB74E4ADF /* SVIndefiniteAnimatedView.h in Headers */,
-				49F10CC92BF68DFF89E840E15990CB6D /* SVProgressAnimatedView.h in Headers */,
-				75DA990A41EAB30ADA9068EF4D552F59 /* SVProgressHUD-umbrella.h in Headers */,
-				D9511ACD9EF28633FA7B37A2F6718784 /* SVProgressHUD.h in Headers */,
-				B0B8D4519A2A25FA1247EBD50C3BD62A /* SVRadialGradientLayer.h in Headers */,
+				913128BD02D0C3055E910A80F3BDBB45 /* SVIndefiniteAnimatedView.h in Headers */,
+				6609699864738E2E5849748BF1A0DBB7 /* SVProgressAnimatedView.h in Headers */,
+				319B33AB4412EEC7105BFC593B176D3B /* SVProgressHUD-umbrella.h in Headers */,
+				ACD5E8F9CE9F29698B7CF84CFFA89B44 /* SVProgressHUD.h in Headers */,
+				E2E1F8C0CF0EED75C7E55E253ED55B5B /* SVRadialGradientLayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B816AF0F92F8CF3BD184CBB91CD9F96 /* Headers */ = {
+		3F430E206F3F61DBBAB779C1F795DD9E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A48758BB59DCC3FEE3D2FDD85A40624 /* Pods-Kiki-umbrella.h in Headers */,
+				C0CA5ABD1C26B97D8B948177C0520337 /* Pods-Kiki-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,44 +619,53 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DACB589AC182115579FAC39D87166E8D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF80162DB1B7C49B7BDBFAAC3E02D503 /* Spring-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		01A9C9F17D619B420092CA964159E867 /* SVProgressHUD */ = {
+		3678E2A4EBA5397C5A26173E55933235 /* Spring */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F25D393D848F70FD1020E149EB6C876 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */;
+			buildConfigurationList = B33ED31E863008E672E61E700A510520 /* Build configuration list for PBXNativeTarget "Spring" */;
 			buildPhases = (
-				E6C0B3500E818300EA34FD671C352B3D /* Sources */,
-				49C3B43A3E642EE4EB20982CF22A9501 /* Frameworks */,
-				0AD5324C0A927F28A0B323A8C2FAA377 /* Headers */,
-				3DED4E48019A60425EA9D3DA3AD5A74F /* Resources */,
+				27CFBA56CE0FD827A5ED00E7A97E8FE1 /* Sources */,
+				D414E0566647AC739F6F0DB7B2029855 /* Frameworks */,
+				5E58066DA4281B08A4F846B8F46F49B4 /* Resources */,
+				DACB589AC182115579FAC39D87166E8D /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SVProgressHUD;
-			productName = SVProgressHUD;
-			productReference = 0B61DC9D415A32BA672A325016A60363 /* SVProgressHUD.framework */;
+			name = Spring;
+			productName = Spring;
+			productReference = FD1B1077EA0E774536083A93A3004298 /* Spring.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		20692E74D7451F073A8CEC06E4F37083 /* Pods-Kiki */ = {
+		55572B908B49EB104D8ABF86B4F77E7C /* Pods-Kiki */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8B0033CC20E8CA853DD1EE9CC7CD4AB0 /* Build configuration list for PBXNativeTarget "Pods-Kiki" */;
+			buildConfigurationList = 27AC87D24348124D920E7F6E1A7230D0 /* Build configuration list for PBXNativeTarget "Pods-Kiki" */;
 			buildPhases = (
-				6144B1C4BA223935E92E4DACC9FF4699 /* Sources */,
-				9289844E1D6B0AC62A54DACBC4092B6F /* Frameworks */,
-				1B816AF0F92F8CF3BD184CBB91CD9F96 /* Headers */,
+				CC8A6DB314F6767919BC0F738B1A06D9 /* Sources */,
+				E80B216484DE040F505CA9521DE1BAEF /* Frameworks */,
+				3F430E206F3F61DBBAB779C1F795DD9E /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9D52BA9295EED4CA3C20B0B6E637239B /* PBXTargetDependency */,
-				A0F1CBA1877240180D62841C952FB8FE /* PBXTargetDependency */,
+				B3DCD368355F28228C075D8FF2B6DCB7 /* PBXTargetDependency */,
+				5BD7DA7769770CBEC856FE00D5C94FB5 /* PBXTargetDependency */,
+				C25E3098CD0C826FA8129129291DCBB0 /* PBXTargetDependency */,
 			);
 			name = "Pods-Kiki";
 			productName = "Pods-Kiki";
-			productReference = 94F582BA3F90A0B8C108ECC3BC79A851 /* Pods_Kiki.framework */;
+			productReference = DAA8FCB5AADCB79B927AAE878DC61C92 /* Pods_Kiki.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		98CC43BA90B67A65698F64A933BC4566 /* ESTabBarController */ = {
@@ -530,7 +683,25 @@
 			);
 			name = ESTabBarController;
 			productName = ESTabBarController;
-			productReference = CE634CE6D4E4123B202B27CE59BEBA5C /* ESTabBarController.framework */;
+			productReference = ADC4FDCDE1CADD1EEC5F0053F9434176 /* ESTabBarController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B0A8DB39D5559E58D146DB57CD36EE48 /* SVProgressHUD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9AD61533745FBCF9C4B429E7B9FF15AC /* Build configuration list for PBXNativeTarget "SVProgressHUD" */;
+			buildPhases = (
+				7AC178540085C56FBFF181F34B598696 /* Sources */,
+				EC8CA0B10CCC6D6EEC4853558F3C305B /* Frameworks */,
+				006EE54A87C0321BFBE11E488BF320E0 /* Headers */,
+				3FD9320D02D09330E359CD2C8DC937F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SVProgressHUD;
+			productName = SVProgressHUD;
+			productReference = DF7DF99C5468B924ADE64BFBD3FCE1EE /* SVProgressHUD.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -550,23 +721,33 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 7F4DC799496645EDC6A171AE6667D956 /* Products */;
+			productRefGroup = 1EF58880750A56E6F00E9914033D3546 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				98CC43BA90B67A65698F64A933BC4566 /* ESTabBarController */,
-				20692E74D7451F073A8CEC06E4F37083 /* Pods-Kiki */,
-				01A9C9F17D619B420092CA964159E867 /* SVProgressHUD */,
+				55572B908B49EB104D8ABF86B4F77E7C /* Pods-Kiki */,
+				3678E2A4EBA5397C5A26173E55933235 /* Spring */,
+				B0A8DB39D5559E58D146DB57CD36EE48 /* SVProgressHUD */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3DED4E48019A60425EA9D3DA3AD5A74F /* Resources */ = {
+		3FD9320D02D09330E359CD2C8DC937F2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01AD2F04E0A1BE709972013325C44D4B /* SVProgressHUD.bundle in Resources */,
+				6E75FB0E9294705AF5E1E29F1605BF5B /* SVProgressHUD.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E58066DA4281B08A4F846B8F46F49B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89651E40E759491D051D1B3EDEE99026 /* Images.xcassets in Resources */,
+				79E0B3B7F01CB19E72CB8665CDC76F8E /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,44 +773,181 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6144B1C4BA223935E92E4DACC9FF4699 /* Sources */ = {
+		27CFBA56CE0FD827A5ED00E7A97E8FE1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20C699948836DBC5C9B4436F1E53345D /* Pods-Kiki-dummy.m in Sources */,
+				087EEFC4A30717806596AC2979E14081 /* AsyncButton.swift in Sources */,
+				76FBFC737B2DEA1F57F333F00214A649 /* AsyncImageView.swift in Sources */,
+				B0477C550370D6F8326DBD6A0CAB443C /* AutoTextView.swift in Sources */,
+				9467515B4B46660E77C4D02338499E58 /* BlurView.swift in Sources */,
+				FF16A31BB8D9469414A7BA4C838493AC /* DesignableButton.swift in Sources */,
+				8E8C790E3A33754F98BBA0E398A050FB /* DesignableImageView.swift in Sources */,
+				0D763D53129EADE9E9B3E81C8B5D4704 /* DesignableLabel.swift in Sources */,
+				BA1D2328F3BE0B2C19C5888D261CD3B1 /* DesignableTabBarController.swift in Sources */,
+				0AC0B78080A5C7059A93A49D4C504438 /* DesignableTextField.swift in Sources */,
+				1C7CE9A29F438C910D1E935864262969 /* DesignableTextView.swift in Sources */,
+				02EB0BC96CDEB770861444F17345E570 /* DesignableView.swift in Sources */,
+				1275415A8827EBE9B2B7EB4A837C9EF1 /* ImageLoader.swift in Sources */,
+				B3EC4069177125B64ECF806F2C718D18 /* KeyboardLayoutConstraint.swift in Sources */,
+				D9EBCEA106ECF4F42EBF7F5AD3B199D3 /* LoadingView.swift in Sources */,
+				28D7004D4AE97CC34A5DB6074467A46A /* Misc.swift in Sources */,
+				7B9EC9AF9CE0932B58F0167B7933EB3D /* SoundPlayer.swift in Sources */,
+				CD42055B8016BADD9F0C995EA53E634F /* Spring-dummy.m in Sources */,
+				DFC14B7F24C9FD1465B4C05E3F63C44D /* Spring.swift in Sources */,
+				255B9196E11E4F83490F04C602337260 /* SpringAnimation.swift in Sources */,
+				C1913493B144DD22CC4F1DDED359D6B4 /* SpringButton.swift in Sources */,
+				1E569FFC90D018BB2167BC3CD2500369 /* SpringImageView.swift in Sources */,
+				3FD8EE0B585C1D583DCF125CA075FCDD /* SpringLabel.swift in Sources */,
+				35F1564DDBF54159AAADF598B10430AE /* SpringTextField.swift in Sources */,
+				4E71E0A2F332D03F5181F565F83F27AA /* SpringTextView.swift in Sources */,
+				333BF75EC237FC4E83AEED2C17E6DBFE /* SpringView.swift in Sources */,
+				E589A7008D156DC9E326381FB7B6A3D2 /* TransitionManager.swift in Sources */,
+				4969D70BDEF851A9AB46B7C2B58D425D /* TransitionZoom.swift in Sources */,
+				BA35BE3030C141B4C418DEE61E581D8F /* UnwindSegue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E6C0B3500E818300EA34FD671C352B3D /* Sources */ = {
+		7AC178540085C56FBFF181F34B598696 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C31DD435333FCDF3F5DE0CE718257A3F /* SVIndefiniteAnimatedView.m in Sources */,
-				8C8EF50F57DEEC3BB6618122C281EFF8 /* SVProgressAnimatedView.m in Sources */,
-				A0D13438A3C532B5C6ED2A01269B3B9D /* SVProgressHUD-dummy.m in Sources */,
-				93609DBA1B539B8D749D4923BF5D116D /* SVProgressHUD.m in Sources */,
-				875182F3F99B60BC835FCD44720FFE7A /* SVRadialGradientLayer.m in Sources */,
+				E3527D9290657F0C6BADED788FE6F48B /* SVIndefiniteAnimatedView.m in Sources */,
+				46CB90E71A8541A4476E387A3EB28276 /* SVProgressAnimatedView.m in Sources */,
+				78761C01DAEB5BB00AA546E7470CA38E /* SVProgressHUD-dummy.m in Sources */,
+				4AEF90BB5D6E9772546CBC1F82E216CE /* SVProgressHUD.m in Sources */,
+				E1B19EA7BAF765961B68F0DFC0F71C76 /* SVRadialGradientLayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC8A6DB314F6767919BC0F738B1A06D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3AC491AA8E0B0117EFE3C1A32BC1EE7 /* Pods-Kiki-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9D52BA9295EED4CA3C20B0B6E637239B /* PBXTargetDependency */ = {
+		5BD7DA7769770CBEC856FE00D5C94FB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SVProgressHUD;
+			target = B0A8DB39D5559E58D146DB57CD36EE48 /* SVProgressHUD */;
+			targetProxy = DF9F309AE64376788B2F2B0818AEE5CF /* PBXContainerItemProxy */;
+		};
+		B3DCD368355F28228C075D8FF2B6DCB7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ESTabBarController;
 			target = 98CC43BA90B67A65698F64A933BC4566 /* ESTabBarController */;
-			targetProxy = 15E3478296345637C33E050C6DEAF037 /* PBXContainerItemProxy */;
+			targetProxy = 5DFE3E5484947888E31820FF4B7C57D1 /* PBXContainerItemProxy */;
 		};
-		A0F1CBA1877240180D62841C952FB8FE /* PBXTargetDependency */ = {
+		C25E3098CD0C826FA8129129291DCBB0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SVProgressHUD;
-			target = 01A9C9F17D619B420092CA964159E867 /* SVProgressHUD */;
-			targetProxy = 77AB7C46B30BF5D4D376535F85924C28 /* PBXContainerItemProxy */;
+			name = Spring;
+			target = 3678E2A4EBA5397C5A26173E55933235 /* Spring */;
+			targetProxy = 1C529475DF2DB562AE8422E6BFE94EA1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		02C9B864E1520F2E97339A919E2D64D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EB6F4867DC3456A850F6AA7F1D2EC44 /* SVProgressHUD.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SVProgressHUD/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SVProgressHUD/SVProgressHUD.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SVProgressHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		054778B2339E3DE2F3DE04EB665CD8AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2BA3FB26EDB46FA3B9754E87C10A7A2 /* Pods-Kiki.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Kiki/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Kiki/Pods-Kiki.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Kiki;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		17A834C7FD0F5422EF70410BC9346F22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A621532E3A3AF769065B80E07CDF191 /* Pods-Kiki.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Kiki/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Kiki/Pods-Kiki.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Kiki;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		3FA451D268613890FA8A5A03801E11D5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -670,7 +988,7 @@
 		};
 		4066E7A0DDE872360F1B2AC755BCE60A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65A81A92D5D201DA0E38A465157AB8BC /* ESTabBarController.xcconfig */;
+			baseConfigurationReference = A64B6FDFFEDD9A81FB92DDC21D54C354 /* ESTabBarController.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -689,64 +1007,6 @@
 				MODULEMAP_FILE = "Target Support Files/ESTabBarController/ESTabBarController.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = ESTabBarController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		59C00783B120623B89E693E5E2469A0E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44C3A82537EC97C159481C080FF2DD3A /* SVProgressHUD.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SVProgressHUD/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SVProgressHUD/SVProgressHUD.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SVProgressHUD;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		5D1B463418F754C38015CFBFC3C5A157 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44C3A82537EC97C159481C080FF2DD3A /* SVProgressHUD.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SVProgressHUD/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SVProgressHUD/SVProgressHUD.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SVProgressHUD;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -797,9 +1057,38 @@
 			};
 			name = Debug;
 		};
-		9794BF6EA523433CC983F35B0B9FC557 /* Debug */ = {
+		6606CB32725C495E811DEA3EB3A04876 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F2BA3FB26EDB46FA3B9754E87C10A7A2 /* Pods-Kiki.debug.xcconfig */;
+			baseConfigurationReference = 3EB6F4867DC3456A850F6AA7F1D2EC44 /* SVProgressHUD.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SVProgressHUD/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SVProgressHUD/SVProgressHUD.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SVProgressHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		728118A133064AC3488B18B7F2458245 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 669320357D53238B543512402735F678 /* Spring.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -810,29 +1099,55 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Kiki/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Spring/Spring-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Spring/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Kiki/Pods-Kiki.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Spring/Spring.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Kiki;
+				PRODUCT_NAME = Spring;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
+		7F8A542059A4B4AFDE80FD02FD8087C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 669320357D53238B543512402735F678 /* Spring.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Spring/Spring-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Spring/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Spring/Spring.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Spring;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		DE1796C6A61695FF8B573E0DF93BC0CF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65A81A92D5D201DA0E38A465157AB8BC /* ESTabBarController.xcconfig */;
+			baseConfigurationReference = A64B6FDFFEDD9A81FB92DDC21D54C354 /* ESTabBarController.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -859,42 +1174,18 @@
 			};
 			name = Debug;
 		};
-		FED56B2FB10D30C89B629B737A1D993D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A621532E3A3AF769065B80E07CDF191 /* Pods-Kiki.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Kiki/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Kiki/Pods-Kiki.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Kiki;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		27AC87D24348124D920E7F6E1A7230D0 /* Build configuration list for PBXNativeTarget "Pods-Kiki" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				054778B2339E3DE2F3DE04EB665CD8AD /* Debug */,
+				17A834C7FD0F5422EF70410BC9346F22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -904,20 +1195,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F25D393D848F70FD1020E149EB6C876 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */ = {
+		9AD61533745FBCF9C4B429E7B9FF15AC /* Build configuration list for PBXNativeTarget "SVProgressHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				59C00783B120623B89E693E5E2469A0E /* Debug */,
-				5D1B463418F754C38015CFBFC3C5A157 /* Release */,
+				02C9B864E1520F2E97339A919E2D64D9 /* Debug */,
+				6606CB32725C495E811DEA3EB3A04876 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8B0033CC20E8CA853DD1EE9CC7CD4AB0 /* Build configuration list for PBXNativeTarget "Pods-Kiki" */ = {
+		B33ED31E863008E672E61E700A510520 /* Build configuration list for PBXNativeTarget "Spring" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9794BF6EA523433CC983F35B0B9FC557 /* Debug */,
-				FED56B2FB10D30C89B629B737A1D993D /* Release */,
+				728118A133064AC3488B18B7F2458245 /* Debug */,
+				7F8A542059A4B4AFDE80FD02FD8087C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
