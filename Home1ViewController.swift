@@ -32,7 +32,15 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
             } else {
                 postData.join.append(uid)
             }
-            let postData = ["join":postData.join]
+            let imageData = UIImageJPEGRepresentation(postData.image!, 0.5)
+            let hiniti1 = postData.hiniti!
+            let zikoku1 = postData.zikoku!
+            let path1 = postData.path!
+            let station1 = postData.station!
+            let join = postData.join
+            let nin = postData.nin!
+            let uid = postData.uid!
+            let postData = ["hiniti": hiniti1, "image": imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength), "zikoku": zikoku1, "station": station1, "path":path1,"uid":uid,"join":join,"nin":nin]
             let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre)
             postRef.childByAutoId().setValue(postData)
         }
@@ -82,6 +90,7 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
         cell.imageView1.image = image
         cell.pathGo.addTarget(self, action:#selector(schemebtn(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
         cell.pro.addTarget(self, action:#selector(pro(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
+        cell.join.addTarget(self, action: #selector(handleButton(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
         return cell
     }
     
