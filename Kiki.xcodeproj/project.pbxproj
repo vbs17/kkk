@@ -1,0 +1,594 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		354A3F113F48C667976D4459 /* Pods_Kiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6FEAA645A78AA6AC4A2E2B /* Pods_Kiki.framework */; };
+		B00501BB1DB610D200319866 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00501B81DB610D200319866 /* HomeTableViewCell.swift */; };
+		B00501BC1DB610D200319866 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B00501B91DB610D200319866 /* HomeTableViewCell.xib */; };
+		B00501BE1DB6420800319866 /* ItiranViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00501BD1DB6420800319866 /* ItiranViewController.swift */; };
+		B00501C41DB6428500319866 /* ItiranTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00501C11DB6428500319866 /* ItiranTableViewCell.swift */; };
+		B00501C51DB6428500319866 /* ItiranTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B00501C21DB6428500319866 /* ItiranTableViewCell.xib */; };
+		B00D7CF51DCEB5190042D04F /* MixerMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = B00D7CF41DCEB5190042D04F /* MixerMeter.m */; };
+		B0190A211DB20FE400FA066D /* KindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0190A201DB20FE400FA066D /* KindViewController.swift */; };
+		B03151761DAE6A06007EE64C /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03151751DAE6A06007EE64C /* PlayViewController.swift */; };
+		B042A0171DB983620068D205 /* BasyoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B042A0161DB983620068D205 /* BasyoViewController.swift */; };
+		B042A0191DB985180068D205 /* SyugoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B042A0181DB985180068D205 /* SyugoViewController.swift */; };
+		B042A01B1DB98A840068D205 /* Kind2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B042A01A1DB98A840068D205 /* Kind2ViewController.swift */; };
+		B042A01E1DB98BB30068D205 /* SyugoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B042A01C1DB98BB30068D205 /* SyugoTableViewCell.swift */; };
+		B042A01F1DB98BB30068D205 /* SyugoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B042A01D1DB98BB30068D205 /* SyugoTableViewCell.xib */; };
+		B042A0221DB991150068D205 /* SyuruViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B042A0211DB991150068D205 /* SyuruViewController.swift */; };
+		B05E343B1DC8A53800C271D3 /* ProViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343A1DC8A53800C271D3 /* ProViewController.swift */; };
+		B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */; };
+		B05E343F1DC8B57F00C271D3 /* PostData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343E1DC8B57F00C271D3 /* PostData2.swift */; };
+		B06968221DC60D6E00274DB1 /* PostData1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06968211DC60D6E00274DB1 /* PostData1.swift */; };
+		B06968241DC60E1400274DB1 /* Itiran1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06968231DC60E1400274DB1 /* Itiran1ViewController.swift */; };
+		B06968261DC60F7700274DB1 /* Home1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06968251DC60F7700274DB1 /* Home1ViewController.swift */; };
+		B06968291DC610C200274DB1 /* HomeTableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06968271DC610C200274DB1 /* HomeTableViewCell1.swift */; };
+		B069682A1DC610C200274DB1 /* HomeTableViewCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = B06968281DC610C200274DB1 /* HomeTableViewCell1.xib */; };
+		B071309B1DC22D8800B8EEC1 /* 2TViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071309A1DC22D8700B8EEC1 /* 2TViewController.swift */; };
+		B071309D1DC2352E00B8EEC1 /* Play2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071309C1DC2352E00B8EEC1 /* Play2ViewController.swift */; };
+		B071D9661DB4D6140017E287 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071D9651DB4D6140017E287 /* File.swift */; };
+		B071D9681DB4E5040017E287 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071D9671DB4E5040017E287 /* PostData.swift */; };
+		B071D96F1DB4EA9B0017E287 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071D96E1DB4EA9B0017E287 /* HomeViewController.swift */; };
+		B071D9711DB509FA0017E287 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071D9701DB509FA0017E287 /* TabViewController.swift */; };
+		B071D9731DB50C4E0017E287 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071D9721DB50C4E0017E287 /* LoginViewController.swift */; };
+		B071D9751DB50E670017E287 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071D9741DB50E670017E287 /* SetViewController.swift */; };
+		B07E94E71DCDC766009537A7 /* ProIdouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */; };
+		B08690781DB4A311006BB6FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B08690771DB4A311006BB6FD /* GoogleService-Info.plist */; };
+		B0A78FD61DACFF6500AC0513 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */; };
+		B0A78FD81DACFF6500AC0513 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A78FD71DACFF6500AC0513 /* ViewController.swift */; };
+		B0A78FDB1DACFF6500AC0513 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A78FD91DACFF6500AC0513 /* Main.storyboard */; };
+		B0A78FDD1DACFF6500AC0513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A78FDC1DACFF6500AC0513 /* Assets.xcassets */; };
+		B0A78FE01DACFF6500AC0513 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A78FDE1DACFF6500AC0513 /* LaunchScreen.storyboard */; };
+		B0A9A1741DB1FDE00021D1CF /* OkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A9A1731DB1FDE00021D1CF /* OkViewController.swift */; };
+		B0ABF85C1DB0EE21001987E7 /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ABF85B1DB0EE21001987E7 /* SendViewController.swift */; };
+		B0B4481C1DD5ACE4001DDD89 /* IkuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B4481B1DD5ACE4001DDD89 /* IkuViewController.swift */; };
+		B0B4481F1DD5AD04001DDD89 /* IkuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B4481D1DD5AD04001DDD89 /* IkuTableViewCell.swift */; };
+		B0B448201DD5AD04001DDD89 /* IkuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0B4481E1DD5AD04001DDD89 /* IkuTableViewCell.xib */; };
+		B0F582AB1DB38E5300654519 /* KindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F582A91DB38E5300654519 /* KindTableViewCell.swift */; };
+		B0F582AC1DB38E5300654519 /* KindTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F582AA1DB38E5300654519 /* KindTableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B6FEAA645A78AA6AC4A2E2B /* Pods_Kiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E6B0D253A1C1620CEF05707 /* Pods-Kiki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiki.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kiki/Pods-Kiki.release.xcconfig"; sourceTree = "<group>"; };
+		B00501B81DB610D200319866 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		B00501B91DB610D200319866 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		B00501BD1DB6420800319866 /* ItiranViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItiranViewController.swift; path = Kiki/ItiranViewController.swift; sourceTree = "<group>"; };
+		B00501C11DB6428500319866 /* ItiranTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiranTableViewCell.swift; sourceTree = "<group>"; };
+		B00501C21DB6428500319866 /* ItiranTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItiranTableViewCell.xib; sourceTree = "<group>"; };
+		B00D7CF21DCEB5180042D04F /* Kiki-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kiki-Bridging-Header.h"; sourceTree = "<group>"; };
+		B00D7CF31DCEB5190042D04F /* MixerMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixerMeter.h; sourceTree = "<group>"; };
+		B00D7CF41DCEB5190042D04F /* MixerMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MixerMeter.m; sourceTree = "<group>"; };
+		B0190A201DB20FE400FA066D /* KindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KindViewController.swift; sourceTree = "<group>"; };
+		B03151751DAE6A06007EE64C /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		B042A0161DB983620068D205 /* BasyoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasyoViewController.swift; sourceTree = "<group>"; };
+		B042A0181DB985180068D205 /* SyugoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyugoViewController.swift; sourceTree = "<group>"; };
+		B042A01A1DB98A840068D205 /* Kind2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kind2ViewController.swift; sourceTree = "<group>"; };
+		B042A01C1DB98BB30068D205 /* SyugoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyugoTableViewCell.swift; sourceTree = "<group>"; };
+		B042A01D1DB98BB30068D205 /* SyugoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SyugoTableViewCell.xib; sourceTree = "<group>"; };
+		B042A0211DB991150068D205 /* SyuruViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyuruViewController.swift; sourceTree = "<group>"; };
+		B05E343A1DC8A53800C271D3 /* ProViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProViewController.swift; sourceTree = "<group>"; };
+		B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProIViewController.swift; sourceTree = "<group>"; };
+		B05E343E1DC8B57F00C271D3 /* PostData2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData2.swift; sourceTree = "<group>"; };
+		B06968211DC60D6E00274DB1 /* PostData1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData1.swift; sourceTree = "<group>"; };
+		B06968231DC60E1400274DB1 /* Itiran1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Itiran1ViewController.swift; path = ../Itiran1ViewController.swift; sourceTree = "<group>"; };
+		B06968251DC60F7700274DB1 /* Home1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Home1ViewController.swift; path = ../Home1ViewController.swift; sourceTree = "<group>"; };
+		B06968271DC610C200274DB1 /* HomeTableViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell1.swift; sourceTree = "<group>"; };
+		B06968281DC610C200274DB1 /* HomeTableViewCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell1.xib; sourceTree = "<group>"; };
+		B071309A1DC22D8700B8EEC1 /* 2TViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 2TViewController.swift; sourceTree = "<group>"; };
+		B071309C1DC2352E00B8EEC1 /* Play2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Play2ViewController.swift; sourceTree = "<group>"; };
+		B071D9651DB4D6140017E287 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		B071D9671DB4E5040017E287 /* PostData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
+		B071D96E1DB4EA9B0017E287 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Kiki/HomeViewController.swift; sourceTree = "<group>"; };
+		B071D9701DB509FA0017E287 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		B071D9721DB50C4E0017E287 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B071D9741DB50E670017E287 /* SetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
+		B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProIdouViewController.swift; sourceTree = "<group>"; };
+		B08690771DB4A311006BB6FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B0A78FD21DACFF6400AC0513 /* Kiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B0A78FD71DACFF6500AC0513 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B0A78FDA1DACFF6500AC0513 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B0A78FDC1DACFF6500AC0513 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B0A78FDF1DACFF6500AC0513 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B0A78FE11DACFF6500AC0513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0A9A1731DB1FDE00021D1CF /* OkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OkViewController.swift; sourceTree = "<group>"; };
+		B0ABF85B1DB0EE21001987E7 /* SendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
+		B0B4481B1DD5ACE4001DDD89 /* IkuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IkuViewController.swift; sourceTree = "<group>"; };
+		B0B4481D1DD5AD04001DDD89 /* IkuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IkuTableViewCell.swift; sourceTree = "<group>"; };
+		B0B4481E1DD5AD04001DDD89 /* IkuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IkuTableViewCell.xib; sourceTree = "<group>"; };
+		B0F582A91DB38E5300654519 /* KindTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KindTableViewCell.swift; sourceTree = "<group>"; };
+		B0F582AA1DB38E5300654519 /* KindTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KindTableViewCell.xib; sourceTree = "<group>"; };
+		B8D29CE5422BA1688C21C169 /* Pods-Kiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiki.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kiki/Pods-Kiki.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B0A78FCF1DACFF6400AC0513 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				354A3F113F48C667976D4459 /* Pods_Kiki.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F50CD36192A9453F20C1EFD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8D29CE5422BA1688C21C169 /* Pods-Kiki.debug.xcconfig */,
+				9E6B0D253A1C1620CEF05707 /* Pods-Kiki.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		561F2EC0FDDD07A1BF6D0786 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B6FEAA645A78AA6AC4A2E2B /* Pods_Kiki.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B00501BA1DB610D200319866 /* 音源表示 */ = {
+			isa = PBXGroup;
+			children = (
+				B071D96E1DB4EA9B0017E287 /* HomeViewController.swift */,
+				B00501B81DB610D200319866 /* HomeTableViewCell.swift */,
+				B00501B91DB610D200319866 /* HomeTableViewCell.xib */,
+				B00501BD1DB6420800319866 /* ItiranViewController.swift */,
+				B00501C11DB6428500319866 /* ItiranTableViewCell.swift */,
+				B00501C21DB6428500319866 /* ItiranTableViewCell.xib */,
+			);
+			name = "音源表示";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B042A0201DB98BBE0068D205 /* 集合場所投稿 */ = {
+			isa = PBXGroup;
+			children = (
+				B042A0211DB991150068D205 /* SyuruViewController.swift */,
+				B042A0161DB983620068D205 /* BasyoViewController.swift */,
+				B042A0181DB985180068D205 /* SyugoViewController.swift */,
+				B042A01A1DB98A840068D205 /* Kind2ViewController.swift */,
+				B042A01C1DB98BB30068D205 /* SyugoTableViewCell.swift */,
+				B042A01D1DB98BB30068D205 /* SyugoTableViewCell.xib */,
+			);
+			name = "集合場所投稿";
+			sourceTree = "<group>";
+		};
+		B05E34401DC8B6CF00C271D3 /* PostData */ = {
+			isa = PBXGroup;
+			children = (
+				B071D9671DB4E5040017E287 /* PostData.swift */,
+				B06968211DC60D6E00274DB1 /* PostData1.swift */,
+				B05E343E1DC8B57F00C271D3 /* PostData2.swift */,
+				B071D9651DB4D6140017E287 /* File.swift */,
+			);
+			name = PostData;
+			sourceTree = "<group>";
+		};
+		B06491911DBAD0F000566A4B /* ログインとPROFILE */ = {
+			isa = PBXGroup;
+			children = (
+				B071D9721DB50C4E0017E287 /* LoginViewController.swift */,
+				B05E343A1DC8A53800C271D3 /* ProViewController.swift */,
+				B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */,
+				B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */,
+				B071D9741DB50E670017E287 /* SetViewController.swift */,
+			);
+			name = "ログインとPROFILE";
+			sourceTree = "<group>";
+		};
+		B0A78FC91DACFF6400AC0513 = {
+			isa = PBXGroup;
+			children = (
+				B0A78FD41DACFF6500AC0513 /* Kiki */,
+				B0A78FD31DACFF6400AC0513 /* Products */,
+				4F50CD36192A9453F20C1EFD /* Pods */,
+				561F2EC0FDDD07A1BF6D0786 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B0A78FD31DACFF6400AC0513 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0A78FD21DACFF6400AC0513 /* Kiki.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B0A78FD41DACFF6500AC0513 /* Kiki */ = {
+			isa = PBXGroup;
+			children = (
+				B0A78FD91DACFF6500AC0513 /* Main.storyboard */,
+				B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */,
+				B071D9701DB509FA0017E287 /* TabViewController.swift */,
+				B05E34401DC8B6CF00C271D3 /* PostData */,
+				B06491911DBAD0F000566A4B /* ログインとPROFILE */,
+				B00501BA1DB610D200319866 /* 音源表示 */,
+				B0B263D21DB7467100C0F2A3 /* 音源投稿 */,
+				B042A0201DB98BBE0068D205 /* 集合場所投稿 */,
+				B0BD80DE1DC71B0D0056E1A5 /* 集合場所表示 */,
+				B0A78FDC1DACFF6500AC0513 /* Assets.xcassets */,
+				B0A78FDE1DACFF6500AC0513 /* LaunchScreen.storyboard */,
+				B08690771DB4A311006BB6FD /* GoogleService-Info.plist */,
+				B0A78FE11DACFF6500AC0513 /* Info.plist */,
+				B00D7CF31DCEB5190042D04F /* MixerMeter.h */,
+				B00D7CF41DCEB5190042D04F /* MixerMeter.m */,
+				B00D7CF21DCEB5180042D04F /* Kiki-Bridging-Header.h */,
+			);
+			path = Kiki;
+			sourceTree = "<group>";
+		};
+		B0B263D21DB7467100C0F2A3 /* 音源投稿 */ = {
+			isa = PBXGroup;
+			children = (
+				B0A78FD71DACFF6500AC0513 /* ViewController.swift */,
+				B03151751DAE6A06007EE64C /* PlayViewController.swift */,
+				B071309A1DC22D8700B8EEC1 /* 2TViewController.swift */,
+				B071309C1DC2352E00B8EEC1 /* Play2ViewController.swift */,
+				B0ABF85B1DB0EE21001987E7 /* SendViewController.swift */,
+				B0A9A1731DB1FDE00021D1CF /* OkViewController.swift */,
+				B0190A201DB20FE400FA066D /* KindViewController.swift */,
+				B0F582A91DB38E5300654519 /* KindTableViewCell.swift */,
+				B0F582AA1DB38E5300654519 /* KindTableViewCell.xib */,
+			);
+			name = "音源投稿";
+			sourceTree = "<group>";
+		};
+		B0BD80DE1DC71B0D0056E1A5 /* 集合場所表示 */ = {
+			isa = PBXGroup;
+			children = (
+				B06968231DC60E1400274DB1 /* Itiran1ViewController.swift */,
+				B06968251DC60F7700274DB1 /* Home1ViewController.swift */,
+				B0B4481B1DD5ACE4001DDD89 /* IkuViewController.swift */,
+				B0B4481D1DD5AD04001DDD89 /* IkuTableViewCell.swift */,
+				B0B4481E1DD5AD04001DDD89 /* IkuTableViewCell.xib */,
+				B06968271DC610C200274DB1 /* HomeTableViewCell1.swift */,
+				B06968281DC610C200274DB1 /* HomeTableViewCell1.xib */,
+			);
+			name = "集合場所表示";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B0A78FD11DACFF6400AC0513 /* Kiki */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0A78FE41DACFF6500AC0513 /* Build configuration list for PBXNativeTarget "Kiki" */;
+			buildPhases = (
+				D4A949B89A55DEBBAFCED374 /* [CP] Check Pods Manifest.lock */,
+				B0A78FCE1DACFF6400AC0513 /* Sources */,
+				B0A78FCF1DACFF6400AC0513 /* Frameworks */,
+				B0A78FD01DACFF6400AC0513 /* Resources */,
+				EC6A283E547678DB25658196 /* [CP] Embed Pods Frameworks */,
+				703215552CDD41286C60DE24 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kiki;
+			productName = Kiki;
+			productReference = B0A78FD21DACFF6400AC0513 /* Kiki.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B0A78FCA1DACFF6400AC0513 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = mycompany;
+				TargetAttributes = {
+					B0A78FD11DACFF6400AC0513 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = JCVE6J4J9R;
+					};
+				};
+			};
+			buildConfigurationList = B0A78FCD1DACFF6400AC0513 /* Build configuration list for PBXProject "Kiki" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B0A78FC91DACFF6400AC0513;
+			productRefGroup = B0A78FD31DACFF6400AC0513 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B0A78FD11DACFF6400AC0513 /* Kiki */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B0A78FD01DACFF6400AC0513 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0F582AC1DB38E5300654519 /* KindTableViewCell.xib in Resources */,
+				B042A01F1DB98BB30068D205 /* SyugoTableViewCell.xib in Resources */,
+				B0A78FE01DACFF6500AC0513 /* LaunchScreen.storyboard in Resources */,
+				B08690781DB4A311006BB6FD /* GoogleService-Info.plist in Resources */,
+				B0A78FDD1DACFF6500AC0513 /* Assets.xcassets in Resources */,
+				B00501BC1DB610D200319866 /* HomeTableViewCell.xib in Resources */,
+				B069682A1DC610C200274DB1 /* HomeTableViewCell1.xib in Resources */,
+				B0A78FDB1DACFF6500AC0513 /* Main.storyboard in Resources */,
+				B00501C51DB6428500319866 /* ItiranTableViewCell.xib in Resources */,
+				B0B448201DD5AD04001DDD89 /* IkuTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		703215552CDD41286C60DE24 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kiki/Pods-Kiki-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4A949B89A55DEBBAFCED374 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EC6A283E547678DB25658196 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kiki/Pods-Kiki-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B0A78FCE1DACFF6400AC0513 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B071D9711DB509FA0017E287 /* TabViewController.swift in Sources */,
+				B0B4481C1DD5ACE4001DDD89 /* IkuViewController.swift in Sources */,
+				B00501BE1DB6420800319866 /* ItiranViewController.swift in Sources */,
+				B0190A211DB20FE400FA066D /* KindViewController.swift in Sources */,
+				B06968221DC60D6E00274DB1 /* PostData1.swift in Sources */,
+				B00501BB1DB610D200319866 /* HomeTableViewCell.swift in Sources */,
+				B05E343B1DC8A53800C271D3 /* ProViewController.swift in Sources */,
+				B06968261DC60F7700274DB1 /* Home1ViewController.swift in Sources */,
+				B071D9681DB4E5040017E287 /* PostData.swift in Sources */,
+				B0ABF85C1DB0EE21001987E7 /* SendViewController.swift in Sources */,
+				B00D7CF51DCEB5190042D04F /* MixerMeter.m in Sources */,
+				B071309D1DC2352E00B8EEC1 /* Play2ViewController.swift in Sources */,
+				B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */,
+				B0A78FD81DACFF6500AC0513 /* ViewController.swift in Sources */,
+				B03151761DAE6A06007EE64C /* PlayViewController.swift in Sources */,
+				B0F582AB1DB38E5300654519 /* KindTableViewCell.swift in Sources */,
+				B05E343F1DC8B57F00C271D3 /* PostData2.swift in Sources */,
+				B071D96F1DB4EA9B0017E287 /* HomeViewController.swift in Sources */,
+				B071309B1DC22D8800B8EEC1 /* 2TViewController.swift in Sources */,
+				B0B4481F1DD5AD04001DDD89 /* IkuTableViewCell.swift in Sources */,
+				B071D9661DB4D6140017E287 /* File.swift in Sources */,
+				B0A9A1741DB1FDE00021D1CF /* OkViewController.swift in Sources */,
+				B071D9751DB50E670017E287 /* SetViewController.swift in Sources */,
+				B071D9731DB50C4E0017E287 /* LoginViewController.swift in Sources */,
+				B06968241DC60E1400274DB1 /* Itiran1ViewController.swift in Sources */,
+				B042A0171DB983620068D205 /* BasyoViewController.swift in Sources */,
+				B00501C41DB6428500319866 /* ItiranTableViewCell.swift in Sources */,
+				B042A0191DB985180068D205 /* SyugoViewController.swift in Sources */,
+				B042A01E1DB98BB30068D205 /* SyugoTableViewCell.swift in Sources */,
+				B0A78FD61DACFF6500AC0513 /* AppDelegate.swift in Sources */,
+				B042A0221DB991150068D205 /* SyuruViewController.swift in Sources */,
+				B06968291DC610C200274DB1 /* HomeTableViewCell1.swift in Sources */,
+				B07E94E71DCDC766009537A7 /* ProIdouViewController.swift in Sources */,
+				B042A01B1DB98A840068D205 /* Kind2ViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B0A78FD91DACFF6500AC0513 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0A78FDA1DACFF6500AC0513 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B0A78FDE1DACFF6500AC0513 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0A78FDF1DACFF6500AC0513 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B0A78FE21DACFF6500AC0513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B0A78FE31DACFF6500AC0513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B0A78FE51DACFF6500AC0513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8D29CE5422BA1688C21C169 /* Pods-Kiki.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Kiki/FacebookSDKs-iOS-4",
+					"$(PROJECT_DIR)/Kiki",
+				);
+				INFOPLIST_FILE = Kiki/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mycompany.Kiki;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Kiki/Kiki-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B0A78FE61DACFF6500AC0513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E6B0D253A1C1620CEF05707 /* Pods-Kiki.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Kiki/FacebookSDKs-iOS-4",
+					"$(PROJECT_DIR)/Kiki",
+				);
+				INFOPLIST_FILE = Kiki/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mycompany.Kiki;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Kiki/Kiki-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B0A78FCD1DACFF6400AC0513 /* Build configuration list for PBXProject "Kiki" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0A78FE21DACFF6500AC0513 /* Debug */,
+				B0A78FE31DACFF6500AC0513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0A78FE41DACFF6500AC0513 /* Build configuration list for PBXNativeTarget "Kiki" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0A78FE51DACFF6500AC0513 /* Debug */,
+				B0A78FE61DACFF6500AC0513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B0A78FCA1DACFF6400AC0513 /* Project object */;
+}
