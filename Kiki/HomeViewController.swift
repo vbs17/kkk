@@ -331,8 +331,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     //全部大丈夫なのか
     @IBAction func backGo(sender: AnyObject) {
         
-        let ProViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Itiran")
-        self.presentViewController(ProViewController!, animated: true, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func updatePlayingTime() {
