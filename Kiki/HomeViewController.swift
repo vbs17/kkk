@@ -254,12 +254,11 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if postArray.count < 1 {
-            print("nodata")
-        }
         return postArray.count
     }
+    
+   
+
     
     func handleButton(sender: UIButton, event:UIEvent){
         let touch = event.allTouches()?.first

@@ -24,20 +24,31 @@ class TabViewController: UIViewController {
     }
     
     @IBAction func path(sender: AnyObject) {
+        let springButton = sender as! SpringButton
+        springButton.animation = "pop"
+        springButton.duration = 0.5
+        springButton.animate()
         let HomeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Itiran1")
-        self.presentViewController(HomeViewController!, animated: true, completion: nil)
+        self.presentViewController(HomeViewController!, animated: false, completion: nil)
     }
     
     
     @IBAction func recpic(sender: AnyObject) {
-      
+        let springButton = sender as! SpringButton
+        springButton.animation = "pop"
+        springButton.duration = 0.5
+        springButton.animate()
         let TopViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Syuru")
         self.presentViewController(TopViewController!, animated: true, completion: nil)
     }
     
     @IBAction func music(sender: AnyObject) {
+        let springButton = sender as! SpringButton
+        springButton.animation = "pop"
+        springButton.duration = 0.5
+        springButton.animate()
         let setViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Itiran")
-        self.presentViewController(setViewController!, animated: true, completion: nil)
+        self.presentViewController(setViewController!, animated: false, completion: nil)
     }
     
     override func viewDidLoad() {

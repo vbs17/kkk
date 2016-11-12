@@ -3,6 +3,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 import AVFoundation
+import Spring
 
 class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDelegate,AVAudioPlayerDelegate{
     var postArray: [PostData1] = []
@@ -21,6 +22,7 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
         let postData = postArray[indexPath!.row]
         if let uid = FIRAuth.auth()?.currentUser?.uid {
             if postData.isLiked {
+               
                 var index = -1
                 for likeId in postData.join {
                     if likeId == uid {
@@ -28,8 +30,16 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
                         break
                     }
                 }
+                let springButton = sender as! SpringButton
+                springButton.animation = "shake"
+                springButton.duration = 0.5
+                springButton.animate()
                 postData.join.removeAtIndex(index)
             } else {
+                let springButton = sender as! SpringButton
+                springButton.animation = "shake"
+                springButton.duration = 0.5
+                springButton.animate()
                 postData.join.append(uid)
             }
             let imageData = UIImageJPEGRepresentation(postData.image!, 0.5)
@@ -89,8 +99,21 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
         cell.pathGo.addTarget(self, action:#selector(schemebtn(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
         cell.pro.addTarget(self, action:#selector(pro(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
         cell.join.addTarget(self, action:#selector(handleButton(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
+        cell.iku.addTarget(self, action:#selector(proiti(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
+        
         return cell
     }
+    
+    func proiti(sender: UIButton, event:UIEvent) {
+        let touch = event.allTouches()?.first
+        let point = touch!.locationInView(self.tableView)
+        let indexPath = tableView.indexPathForRowAtPoint(point)
+        let postData = postArray[indexPath!.row]
+        let pro = self.storyboard?.instantiateViewControllerWithIdentifier("Iku") as! IkuViewController
+        self.presentViewController(pro, animated: true, completion: nil)
+        
+    }
+
     
     
     

@@ -19,6 +19,7 @@ class HomeTableViewCell1: UITableViewCell {
     @IBOutlet weak var join: UIButton!
     @IBOutlet weak var ikuhito: UILabel!
     
+    @IBOutlet weak var iku: UIButton!
     //参考
     func setPostData(postData: PostData1, myid: String) {
         ImageView.image = postData.image
