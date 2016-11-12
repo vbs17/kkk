@@ -180,7 +180,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="back" destination="q3A-T1-x0s" id="B2d-RG-ClJ"/>
-                        <outlet property="tableView" destination="Qar-Eg-Nxg" id="Ded-1d-k3f"/>
+                        <outlet property="tableView" destination="Qar-Eg-Nxg" id="0Ah-dq-5AE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l9N-2x-Gzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -220,6 +220,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="e6C-yN-SUp" id="34F-sF-rAx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xyb-QK-BwY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

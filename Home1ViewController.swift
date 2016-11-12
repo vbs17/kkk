@@ -10,8 +10,8 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
     var postArray2:[PostData2] = []
     var observing = false
     var genre: String!
-    var tableView: UITableView!
 
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var back: UIButton!
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -39,6 +39,7 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
         let indexPath = tableView.indexPathForRowAtPoint(point)
         let postData = postArray[indexPath!.row]
         let pro = self.storyboard?.instantiateViewControllerWithIdentifier("Iku") as! IkuViewController
+        pro.join = postData.join
         self.presentViewController(pro, animated: true, completion: nil)
         
     }

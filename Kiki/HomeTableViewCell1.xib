@@ -27,7 +27,7 @@
                                 <rect key="frame" x="301" y="41" width="46" height="30"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0y-2Q-aNd" customClass="SpringButton" customModule="Spring">
-                                <rect key="frame" x="224" y="41" width="46" height="30"/>
+                                <rect key="frame" x="223" y="41" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Join">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
