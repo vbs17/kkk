@@ -25,7 +25,18 @@ class HomeTableViewCell1: UITableViewCell {
         label1.text = postData.hiniti
         label2.text = postData.zikoku
         label3.text = postData.station
+        let likeNumber = postData.join.count
+        ikuhito.text = "\(likeNumber)"
+        
+        if postData.isLiked {
+            let buttonImage = UIImage(named: "IMG_2727 2")
+            join.setImage(buttonImage, forState: UIControlState.Normal)
+        } else {
+            let buttonImage = UIImage(named: "IMG_2728 2")
+            join.setImage(buttonImage, forState: UIControlState.Normal)
+        }
     }
+    
     
        
     

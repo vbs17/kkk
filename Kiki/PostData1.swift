@@ -13,8 +13,9 @@ class PostData1: NSObject{
     var station: String?
     var path: String?
     var uid: String?
-    var join: String?
     var nin: String?
+    var join: [String] = []
+    var isLiked: Bool = false
     
     
     init(snapshot: FIRDataSnapshot, myId: String){
@@ -27,9 +28,18 @@ class PostData1: NSObject{
         zikoku = valueDictionary["zikoku"] as? String
         station = valueDictionary["station"] as? String
         path = valueDictionary["path"] as? String
-        join = valueDictionary["join"] as? String
         nin = valueDictionary["nin"] as? String
         uid = valueDictionary["uid"] as? String
+        if let join = valueDictionary["join"] as? [String] {
+            self.join = join
+        }
+        
+        for likeId in join {
+            if likeId == myId {
+                isLiked = true
+                break
+            }
+        }
         
         
     }
