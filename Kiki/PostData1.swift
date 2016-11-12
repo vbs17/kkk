@@ -13,7 +13,6 @@ class PostData1: NSObject{
     var station: String?
     var path: String?
     var uid: String?
-    var nin: String?
     var join: [String] = []
     var isLiked: Bool = false
     
@@ -28,7 +27,6 @@ class PostData1: NSObject{
         zikoku = valueDictionary["zikoku"] as? String
         station = valueDictionary["station"] as? String
         path = valueDictionary["path"] as? String
-        nin = valueDictionary["nin"] as? String
         uid = valueDictionary["uid"] as? String
         if let join = valueDictionary["join"] as? [String] {
             self.join = join

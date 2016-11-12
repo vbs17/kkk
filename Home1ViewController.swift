@@ -38,12 +38,10 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
             let path1 = postData.path!
             let station1 = postData.station!
             let join = postData.join
-            let nin = postData.nin!
             let uid = postData.uid!
-            let postData = ["hiniti": hiniti1, "image": imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength), "zikoku": zikoku1, "station": station1, "path":path1,"uid":uid,"join":join,"nin":nin]
+            let post = ["hiniti": hiniti1, "image": imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength), "zikoku": zikoku1, "station": station1, "path":path1,"uid":uid,"join":join]
             let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre)
-            postRef.childByAutoId().setValue(postData)
-        }
+            postRef.child(postData.id!).setValue(post)        }
     }
 
     
@@ -90,7 +88,7 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
         cell.imageView1.image = image
         cell.pathGo.addTarget(self, action:#selector(schemebtn(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
         cell.pro.addTarget(self, action:#selector(pro(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
-        cell.join.addTarget(self, action: #selector(handleButton(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
+        cell.join.addTarget(self, action:#selector(handleButton(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
         return cell
     }
     
