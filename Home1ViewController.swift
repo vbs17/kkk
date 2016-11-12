@@ -13,7 +13,41 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
 
     @IBOutlet weak var back: UIButton!
     
+    func handleButton(sender: UIButton, event:UIEvent) {
         
+        let touch = event.allTouches()?.first
+        let point = touch!.locationInView(self.tableView)
+        let indexPath = tableView.indexPathForRowAtPoint(point)
+        let postData = postArray[indexPath!.row]
+        let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre)
+        if let uid = FIRAuth.auth()?.currentUser?.uid {
+            if postData.isLiked {
+                var index = -1
+                for likeId in postData.likes {
+                    if likeId == uid {
+                        index = postData.likes.indexOf(likeId)!
+                        break
+                    }
+                }
+                postData.likes.removeAtIndex(index)
+            } else {
+                postData.likes.append(uid)
+            }
+            
+            let imageData = UIImageJPEGRepresentation(postData.image!, 0.5)
+            let hiniti1:NSString = postData.hiniti!
+            let zikoku1:NSString = postData.zikoku!
+            let path1:NSString = postData.path!
+            let station1:NSString = postData.station!
+            let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)!
+            let join:NSString = postData.join!
+            let nin:NSString = postData.nin!
+            let postData = ["hiniti": hiniti1, "image": imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength), "zikoku": zikoku1, "station": station1, "path":path1,"uid":uid,"join":join,"nin":nin]
+            postRef.childByAutoId().setValue(postData)
+        }
+    }
+
+    
     func schemebtn(sender: UIButton, event:UIEvent) {
         let touch = event.allTouches()?.first
         let point = touch!.locationInView(self.tableView)
