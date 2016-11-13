@@ -146,31 +146,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                         cell!.star3.userInteractionEnabled = false
                         cell!.star4.userInteractionEnabled = false
                         cell!.star5.userInteractionEnabled = false
-        //switch sender.tag {
-        //case 1:
-            //cell?.star1.setImage(UIImage(named:"IMG_2727 2"), forState: UIControlState.Normal)
-        //case 2:
-            //cell?.star1.setImage(UIImage(named:"IMG_2727 2"), forState: UIControlState.Normal)
-            //cell?.star2.setImage(UIImage(named:"IMG_2727 2"), forState: UIControlState.Normal)
-        //case 3:
-            //cell?.star1.setImage(UIImage(named:"IMG_2727 2"), forState: UIControlState.Normal)
-            //cell?.star2.setImage(UIImage(named:"IMG_2727 2"), forState: UIControlState.Normal)
-            //cell?.star3.setImage(UIImage(named:"IMG_2727 2"), forState: UIControlState.Normal)
-        //case 4:
-            //cell?.star1.setImage(UIImage(named:"IMG_2727 2"), forState: UIControlState.Normal)
-            //cell?.star2.setImage(UIImage(named:"IMG_2727 2"), forState: UIControlState.Normal)
-            //cell?.star3.setImage(UIImage(named:"IMG_2727 2"), forState: UIControlState.Normal)
-            //cell?.star4.setImage(UIImage(named:"IMG_2727 2"), forState: UIControlState.Normal)
-        //case 5:
-            //cell?.star1.setImage(UIImage(named:"IMG_2727 2"), forState: UIControlState.Normal)
-            //cell?.star2.setImage(UIImage(named:"IMG_2727 2"), forState: UIControlState.Normal)
-            //cell?.star3.setImage(UIImage(named:"IMG_2727 2"), forState: UIControlState.Normal)
-            //cell?.star4.setImage(UIImage(named:"IMG_2727 2"), forState: UIControlState.Normal)
-            //cell?.star5.setImage(UIImage(named:"IMG_2727 2"), forState: UIControlState.Normal)
-
-        //default: break
-        //}
-       //配列との相性悪いせいでいちいち全部保存しなあかん
+       
         //どこのgenreのどのセルに星がついたか保存しなあかん
        
         let imageString = postData.imageString
