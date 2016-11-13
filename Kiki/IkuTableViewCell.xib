@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -15,17 +14,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="380" height="349"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E89-95-xcU">
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="349"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dTa-68-VWM">
                         <rect key="frame" x="62" y="30" width="254" height="232"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="254" id="4uO-Jy-F5T"/>
-                            <constraint firstAttribute="height" constant="232" id="5vJ-2c-dve"/>
+                            <constraint firstAttribute="width" constant="254" id="96C-QI-gRX"/>
+                            <constraint firstAttribute="height" constant="232" id="tIV-2g-ppc"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hu4-FH-AWa">
                         <rect key="frame" x="169" y="288" width="42" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="42" id="QPM-mo-LsW"/>
                             <constraint firstAttribute="height" constant="21" id="jbf-5k-sbb"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -39,17 +41,22 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="hu4-FH-AWa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="169" id="DaO-1G-JIP"/>
+                    <constraint firstItem="E89-95-xcU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="3dD-93-3UP"/>
+                    <constraint firstItem="E89-95-xcU" firstAttribute="centerX" secondItem="hu4-FH-AWa" secondAttribute="centerX" id="Dc0-FR-Cid"/>
+                    <constraint firstAttribute="bottom" secondItem="hu4-FH-AWa" secondAttribute="bottom" constant="40" id="ETH-sh-xUX"/>
                     <constraint firstAttribute="bottom" secondItem="hu4-FH-AWa" secondAttribute="bottom" constant="40" id="I2N-87-UlP"/>
-                    <constraint firstItem="dTa-68-VWM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="62" id="Joi-aR-cAv"/>
-                    <constraint firstItem="dTa-68-VWM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="22" id="MFD-1I-h5N"/>
+                    <constraint firstItem="dTa-68-VWM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="Jzj-nO-0Rk"/>
+                    <constraint firstAttribute="trailing" secondItem="hu4-FH-AWa" secondAttribute="trailing" constant="169" id="KBd-Ug-lFZ"/>
+                    <constraint firstItem="E89-95-xcU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="KyO-Ue-Uei"/>
                     <constraint firstItem="hu4-FH-AWa" firstAttribute="top" secondItem="dTa-68-VWM" secondAttribute="bottom" constant="26" id="MLc-Ac-PfW"/>
-                    <constraint firstItem="dTa-68-VWM" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-1" id="e2e-rf-EOO"/>
-                    <constraint firstItem="hu4-FH-AWa" firstAttribute="top" secondItem="dTa-68-VWM" secondAttribute="bottom" constant="26" id="jfX-za-dLv"/>
+                    <constraint firstAttribute="trailing" secondItem="dTa-68-VWM" secondAttribute="trailing" constant="64" id="Ugn-eu-y6B"/>
+                    <constraint firstItem="hu4-FH-AWa" firstAttribute="top" secondItem="dTa-68-VWM" secondAttribute="bottom" constant="26" id="bJM-JQ-uHI"/>
+                    <constraint firstAttribute="bottom" secondItem="dTa-68-VWM" secondAttribute="bottom" constant="87" id="bWc-Ix-D6s"/>
+                    <constraint firstItem="dTa-68-VWM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="62" id="bv4-cG-qha"/>
+                    <constraint firstAttribute="bottom" secondItem="E89-95-xcU" secondAttribute="bottom" id="cau-H7-qQ2"/>
                     <constraint firstItem="dTa-68-VWM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ldo-6h-329"/>
                     <constraint firstItem="dTa-68-VWM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="mZA-dE-Vvp"/>
-                    <constraint firstAttribute="trailing" secondItem="dTa-68-VWM" secondAttribute="trailing" constant="64" id="uEB-Jv-rmG"/>
-                    <constraint firstAttribute="trailing" secondItem="hu4-FH-AWa" secondAttribute="trailing" constant="169" id="vCp-12-YsD"/>
+                    <constraint firstItem="hu4-FH-AWa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="169" id="oyN-0z-tRj"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
@@ -65,7 +72,7 @@
                 <outlet property="imageview" destination="dTa-68-VWM" id="G8M-tk-q7T"/>
                 <outlet property="label" destination="hu4-FH-AWa" id="gI5-Rs-DD5"/>
             </connections>
-            <point key="canvasLocation" x="545" y="258"/>
+            <point key="canvasLocation" x="607" y="254"/>
         </tableViewCell>
     </objects>
 </document>

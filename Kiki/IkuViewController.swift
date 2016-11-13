@@ -13,7 +13,6 @@ class IkuViewController: UIViewController,UITableViewDataSource, UITableViewDele
     var postArray2:[PostData2] = []
     var join: [String] = []
     var observing = false
-    var genre: String!
 
 
     @IBAction func back(sender: AnyObject) {
@@ -32,17 +31,34 @@ class IkuViewController: UIViewController,UITableViewDataSource, UITableViewDele
         let uid = join[indexPath.row]
         var name:String = ""
         var image:UIImage? = nil
-        for id in postArray2{
+                for id in postArray2{
             if uid == id.uid{
                 name = id.name!
-                image = id.image
+                image = cropImageToSquare(id.image!)
             }
         }
         cell.label.text = name
         cell.imageView!.image = image
+
         return cell
     }
     
+    func cropImageToSquare(image:UIImage) -> UIImage? {
+        if image.size.width > image.size.height {
+            // 横長
+            let cropCGImageRef = CGImageCreateWithImageInRect(image.CGImage, CGRectMake(image.size.width/2 - image.size.height/2, 0, image.size.height, image.size.height))
+            
+            return UIImage(CGImage: cropCGImageRef!)
+        } else if image.size.width < image.size.height {
+            // 縦長
+            let cropCGImageRef = CGImageCreateWithImageInRect(image.CGImage, CGRectMake(0, 0, image.size.width, image.size.width))
+            
+            return UIImage(CGImage: cropCGImageRef!)
+        } else {
+            return image
+        }
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
