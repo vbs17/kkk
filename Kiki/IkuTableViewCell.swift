@@ -11,6 +11,8 @@ class IkuTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        imageView?.layer.cornerRadius = imageView!.frame.size.width / 2
+        imageview.clipsToBounds = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

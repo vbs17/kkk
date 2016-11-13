@@ -16,10 +16,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dTa-68-VWM">
-                        <rect key="frame" x="58" y="18" width="265" height="244"/>
+                        <rect key="frame" x="62" y="30" width="254" height="232"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="265" id="4uO-Jy-F5T"/>
-                            <constraint firstAttribute="height" constant="244" id="5vJ-2c-dve"/>
+                            <constraint firstAttribute="width" constant="254" id="4uO-Jy-F5T"/>
+                            <constraint firstAttribute="height" constant="232" id="5vJ-2c-dve"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hu4-FH-AWa">
@@ -41,14 +41,14 @@
                 <constraints>
                     <constraint firstItem="hu4-FH-AWa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="169" id="DaO-1G-JIP"/>
                     <constraint firstAttribute="bottom" secondItem="hu4-FH-AWa" secondAttribute="bottom" constant="40" id="I2N-87-UlP"/>
-                    <constraint firstItem="dTa-68-VWM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="58" id="Joi-aR-cAv"/>
-                    <constraint firstItem="dTa-68-VWM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="MFD-1I-h5N"/>
+                    <constraint firstItem="dTa-68-VWM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="62" id="Joi-aR-cAv"/>
+                    <constraint firstItem="dTa-68-VWM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="22" id="MFD-1I-h5N"/>
                     <constraint firstItem="hu4-FH-AWa" firstAttribute="top" secondItem="dTa-68-VWM" secondAttribute="bottom" constant="26" id="MLc-Ac-PfW"/>
-                    <constraint firstItem="dTa-68-VWM" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="e2e-rf-EOO"/>
+                    <constraint firstItem="dTa-68-VWM" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-1" id="e2e-rf-EOO"/>
                     <constraint firstItem="hu4-FH-AWa" firstAttribute="top" secondItem="dTa-68-VWM" secondAttribute="bottom" constant="26" id="jfX-za-dLv"/>
                     <constraint firstItem="dTa-68-VWM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ldo-6h-329"/>
                     <constraint firstItem="dTa-68-VWM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="mZA-dE-Vvp"/>
-                    <constraint firstAttribute="trailing" secondItem="dTa-68-VWM" secondAttribute="trailing" constant="57" id="uEB-Jv-rmG"/>
+                    <constraint firstAttribute="trailing" secondItem="dTa-68-VWM" secondAttribute="trailing" constant="64" id="uEB-Jv-rmG"/>
                     <constraint firstAttribute="trailing" secondItem="hu4-FH-AWa" secondAttribute="trailing" constant="169" id="vCp-12-YsD"/>
                 </constraints>
                 <variation key="default">
