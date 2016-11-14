@@ -129,13 +129,16 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
     }
     
 
-    
+    //ここ
     func handleButton(sender: UIButton, event:UIEvent) {
         
         let touch = event.allTouches()?.first
         let point = touch!.locationInView(self.tableView)
         let indexPath = tableView.indexPathForRowAtPoint(point)
         let postData = postArray[indexPath!.row]
+        let ud = NSUserDefaults.standardUserDefaults()
+        let isSavePlofile = ud.boolForKey(CommonConst.IsSavePlofileData )
+          if isSavePlofile == true {
         if let uid = FIRAuth.auth()?.currentUser?.uid {
             if postData.isLiked {
                 
@@ -151,13 +154,14 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
                 springButton.duration = 0.5
                 springButton.animate()
                 postData.join.removeAtIndex(index)
+                
             } else {
                 let springButton = sender as! SpringButton
                 springButton.animation = "shake"
                 springButton.duration = 0.5
                 springButton.animate()
                 postData.join.append(uid)
-            }
+            }}
             let imageData = UIImageJPEGRepresentation(postData.image!, 0.5)
             let hiniti1 = postData.hiniti!
             let zikoku1 = postData.zikoku!
@@ -167,10 +171,32 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
             let uid = postData.uid!
             let post = ["hiniti": hiniti1, "image": imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength), "zikoku": zikoku1, "station": station1, "path":path1,"uid":uid,"join":join]
             let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre)
-            postRef.child(postData.id!).setValue(post)        }
+            postRef.child(postData.id!).setValue(post)
+    }else if isSavePlofile == false {
+    let alert = UIAlertController()
+    let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellowColor()]
+    let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
+    alert.setValue(attributedTitle, forKey: "attributedTitle")
+    let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+    let attributedMessage = NSAttributedString(string: "Home画面に戻って　　　　　　　　　　　　　Profileで画像と名前を設定しよう", attributes: attributedMessageAttr)
+    alert.view.tintColor = UIColor.whiteColor()
+    alert.setValue(attributedMessage, forKey: "attributedMessage")
+    let subview = alert.view.subviews.first! as UIView
+    let alertContentView = subview.subviews.first! as UIView
+    alertContentView.backgroundColor = UIColor.grayColor()
+    
+    let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{
+    (action: UIAlertAction!) -> Void in
+    })
+    alert.addAction(defaultAction)
+    presentViewController(alert, animated: true, completion: nil)
+    alert.view.tintColor = UIColor.whiteColor()
     }
-    
-    
+}
+
+
+
+
     func schemebtn(sender: UIButton, event:UIEvent) {
         let touch = event.allTouches()?.first
         let point = touch!.locationInView(self.tableView)

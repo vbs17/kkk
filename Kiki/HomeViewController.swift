@@ -81,35 +81,58 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let indexPath = tableView.indexPathForRowAtPoint(point)
         return indexPath
     }
-     //ここが怪しい
+    //ここが怪しい
     func hyoukaGo(sender:UIButton, event:UIEvent){
         let indexPath = getIndexPath(event)
         let cell = tableView.cellForRowAtIndexPath(indexPath!) as! HomeTableViewCell?
-        cell!.hyouka.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
-        if cell!.edittingFlag == false{
-        cell!.edittingFlag = true
-        cell!.star1.userInteractionEnabled = true
-        cell!.star2.userInteractionEnabled = true
-        cell!.star3.userInteractionEnabled = true
-        cell!.star4.userInteractionEnabled = true
-        cell!.star5.userInteractionEnabled = true
-        cell?.star1.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
-        cell?.star2.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
-        cell?.star3.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
-        cell?.star4.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
-        cell?.star5.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
-        } else if cell!.edittingFlag == true{
-            cell!.hyouka.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-            cell!.edittingFlag = false
-            cell?.setPostData1(self.postArray[indexPath!.row])
-            cell!.star1.userInteractionEnabled = false
-            cell!.star2.userInteractionEnabled = false
-            cell!.star3.userInteractionEnabled = false
-            cell!.star4.userInteractionEnabled = false
-            cell!.star5.userInteractionEnabled = false
+        let ud = NSUserDefaults.standardUserDefaults()
+        let isSavePlofile = ud.boolForKey(CommonConst.IsSavePlofileData )
+        if isSavePlofile == true {
+            cell!.hyouka.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
+            if cell!.edittingFlag == false{
+                cell!.edittingFlag = true
+                cell!.star1.userInteractionEnabled = true
+                cell!.star2.userInteractionEnabled = true
+                cell!.star3.userInteractionEnabled = true
+                cell!.star4.userInteractionEnabled = true
+                cell!.star5.userInteractionEnabled = true
+                cell?.star1.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
+                cell?.star2.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
+                cell?.star3.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
+                cell?.star4.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
+                cell?.star5.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
+            } else if cell!.edittingFlag == true{
+                cell!.hyouka.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+                cell!.edittingFlag = false
+                cell?.setPostData1(self.postArray[indexPath!.row])
+                cell!.star1.userInteractionEnabled = false
+                cell!.star2.userInteractionEnabled = false
+                cell!.star3.userInteractionEnabled = false
+                cell!.star4.userInteractionEnabled = false
+                cell!.star5.userInteractionEnabled = false
+                
+            }
+        }else if isSavePlofile == false {
+            let alert = UIAlertController()
+            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellowColor()]
+            let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
+            alert.setValue(attributedTitle, forKey: "attributedTitle")
+            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+            let attributedMessage = NSAttributedString(string: "Home画面に戻って　　　　　　　　　　　　　Profileで画像と名前を設定しよう", attributes: attributedMessageAttr)
+            alert.view.tintColor = UIColor.whiteColor()
+            alert.setValue(attributedMessage, forKey: "attributedMessage")
+            let subview = alert.view.subviews.first! as UIView
+            let alertContentView = subview.subviews.first! as UIView
+            alertContentView.backgroundColor = UIColor.grayColor()
             
-        }
-    }
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{
+                (action: UIAlertAction!) -> Void in
+            })
+            alert.addAction(defaultAction)
+            presentViewController(alert, animated: true, completion: nil)
+            alert.view.tintColor = UIColor.whiteColor()
+        }}
+    
     //ここが怪しいhoshiした後に文字が赤なのはおかしい
     func hoshi(sender: UIButton, event:UIEvent){
         let touch = event.allTouches()?.first
@@ -117,7 +140,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let indexPath = tableView.indexPathForRowAtPoint(point)
         let postData = postArray[indexPath!.row]
         let cell = tableView.cellForRowAtIndexPath(indexPath!) as! HomeTableViewCell?
-        //どのセルかわかった
         cell!.hyouka.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
 
         if let uid = FIRAuth.auth()?.currentUser?.uid {
@@ -160,6 +182,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let postData2 = ["image":imageString!,"songname":name!,"ongen":song!,"byou":byou!,"realsong":realsong!,"star":star,"uid":uid]
         postRef.child(postData.id!).setValue(postData2)
     }
+
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
