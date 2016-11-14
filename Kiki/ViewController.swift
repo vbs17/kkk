@@ -20,6 +20,8 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     var count = 1
     var timeCount = 1
     let ApplicationDidEnterBackgroundNotification = "ApplicationDidEnterBackgroundNotification"
+    var count1: Bool = false
+
 
     
    
@@ -67,12 +69,12 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
             object: nil
         )
     }
-    //音源消す
+    //音源消す nilでいいのかどうか
     func applicationWillResignActive(notification: NSNotification) {
         print("applicationWillResignActive!")
-        if ( audioRecorder.recording ) {
-            self.timeCountTimer.invalidate()
+        if ( audioRecorder.recording || count1 == true ) {
             self.timer.invalidate()
+            self.timeCountTimer?.invalidate()
             audioRecorder.stop()
             self.dismissViewControllerAnimated(true, completion: nil)
         }
@@ -80,6 +82,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     
     @IBAction func recordStart(sender: UIButton) {
         if count == 1{
+            count1 = true
         recordImage!.enabled = false
         let image:UIImage! = UIImage(named: photos[0])
         imageView.image = image
@@ -97,21 +100,26 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
         
         var image:UIImage! = UIImage(named: photos[1])
         if count == 1{
+            count1 = true
             imageView.image = image;
             count += 1
         }else if count == 2{
+            count1 = true
             image = UIImage(named: photos[2])
             imageView.image = image
             count += 1
         }else if count == 3{
+            count1 = true
             image = UIImage(named: photos[3])
             imageView.image = image
             count += 1
         }else if count == 4{
+            count1 = true
             image = UIImage(named: photos[4])
             imageView.image = image
             count += 1
         }else if count == 5{
+            count1 = true
             image = UIImage(named: photos[5])
             imageView.image = image
             sender.invalidate()

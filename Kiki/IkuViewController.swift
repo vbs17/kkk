@@ -38,7 +38,7 @@ class IkuViewController: UIViewController,UITableViewDataSource, UITableViewDele
             }
         }
         cell.label.text = name
-        cell.imageView!.image = image
+        cell.imageview!.image = image
 
         return cell
     }

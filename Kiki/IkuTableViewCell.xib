@@ -14,13 +14,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="380" height="349"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dTa-68-VWM">
-                        <rect key="frame" x="63" y="30" width="254" height="232"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="254" id="96C-QI-gRX"/>
-                            <constraint firstAttribute="height" constant="232" id="tIV-2g-ppc"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hu4-FH-AWa">
                         <rect key="frame" x="169" y="288" width="42" height="21"/>
                         <constraints>
@@ -35,13 +28,20 @@
                             </mask>
                         </variation>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dTa-68-VWM">
+                        <rect key="frame" x="70" y="21" width="240" height="240"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="240" id="96C-QI-gRX"/>
+                            <constraint firstAttribute="height" constant="240" id="tIV-2g-ppc"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="hu4-FH-AWa" secondAttribute="bottom" constant="40" id="ETH-sh-xUX"/>
                     <constraint firstAttribute="bottom" secondItem="hu4-FH-AWa" secondAttribute="bottom" constant="40" id="I2N-87-UlP"/>
                     <constraint firstAttribute="trailing" secondItem="hu4-FH-AWa" secondAttribute="trailing" constant="169" id="KBd-Ug-lFZ"/>
                     <constraint firstItem="hu4-FH-AWa" firstAttribute="top" secondItem="dTa-68-VWM" secondAttribute="bottom" constant="26" id="MLc-Ac-PfW"/>
-                    <constraint firstItem="hu4-FH-AWa" firstAttribute="top" secondItem="dTa-68-VWM" secondAttribute="bottom" constant="26" id="bJM-JQ-uHI"/>
+                    <constraint firstItem="hu4-FH-AWa" firstAttribute="top" secondItem="dTa-68-VWM" secondAttribute="bottom" constant="27" id="bJM-JQ-uHI"/>
                     <constraint firstItem="dTa-68-VWM" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="h5h-Id-75t"/>
                     <constraint firstItem="dTa-68-VWM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ldo-6h-329"/>
                     <constraint firstItem="dTa-68-VWM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="mZA-dE-Vvp"/>
@@ -57,7 +57,6 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="imageView" destination="dTa-68-VWM" id="Ehd-xd-jt0"/>
                 <outlet property="imageview" destination="dTa-68-VWM" id="G8M-tk-q7T"/>
                 <outlet property="label" destination="hu4-FH-AWa" id="gI5-Rs-DD5"/>
             </connections>
