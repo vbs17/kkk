@@ -50,8 +50,8 @@ class LoginViewController: UIViewController{
                     
                     SVProgressHUD.dismiss()
                     
-                    self.dismissViewControllerAnimated(true, completion: nil)
-                }
+                    let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Tab")
+                    self.presentViewController(loginViewController!, animated: true, completion: nil)                }
             }
         }
     }
@@ -93,8 +93,8 @@ class LoginViewController: UIViewController{
                                         
                                         SVProgressHUD.dismiss()
                                         
-                                        self.dismissViewControllerAnimated(true, completion: nil)
-                                    }
+                                        let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Tab")
+                                        self.presentViewController(loginViewController!, animated: true, completion: nil)                                    }
                                 }
                             }
                         }

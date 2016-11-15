@@ -69,7 +69,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
             object: nil
         )
     }
-    //音源消す nilでいいのかどうか
+    //音源消す 最終確認
     func applicationWillResignActive(notification: NSNotification) {
         print("applicationWillResignActive!")
         if ( audioRecorder.recording || count1 == true ) {
