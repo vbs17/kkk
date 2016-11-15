@@ -40,6 +40,7 @@
 		B071D9751DB50E670017E287 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071D9741DB50E670017E287 /* SetViewController.swift */; };
 		B07E94E71DCDC766009537A7 /* ProIdouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */; };
 		B08690781DB4A311006BB6FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B08690771DB4A311006BB6FD /* GoogleService-Info.plist */; };
+		B088CB221DDB34C7007CE03D /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088CB211DDB34C7007CE03D /* Photos.framework */; };
 		B0A78FD61DACFF6500AC0513 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */; };
 		B0A78FD81DACFF6500AC0513 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A78FD71DACFF6500AC0513 /* ViewController.swift */; };
 		B0A78FDB1DACFF6500AC0513 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A78FD91DACFF6500AC0513 /* Main.storyboard */; };
@@ -91,6 +92,7 @@
 		B071D9741DB50E670017E287 /* SetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
 		B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProIdouViewController.swift; sourceTree = "<group>"; };
 		B08690771DB4A311006BB6FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B088CB211DDB34C7007CE03D /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		B0A78FD21DACFF6400AC0513 /* Kiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0A78FD71DACFF6500AC0513 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B088CB221DDB34C7007CE03D /* Photos.framework in Frameworks */,
 				354A3F113F48C667976D4459 /* Pods_Kiki.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +135,7 @@
 		561F2EC0FDDD07A1BF6D0786 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B088CB211DDB34C7007CE03D /* Photos.framework */,
 				1B6FEAA645A78AA6AC4A2E2B /* Pods_Kiki.framework */,
 			);
 			name = Frameworks;
