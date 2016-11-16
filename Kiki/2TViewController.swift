@@ -69,6 +69,9 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
                 let viewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Play") as! PlayViewController
                 //不要かどうか引き渡すの
                 viewcontroller.songData = self.songData
+                self.presentViewController(viewcontroller, animated: true, completion: nil)
+
+                
 
                 
                 break
