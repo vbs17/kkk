@@ -62,20 +62,34 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
         self.setupAudioRecorder()
         recordImage!.layer.cornerRadius = recordImage!.frame.size.width / 2
         recordImage!.clipsToBounds = true
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewDidDisappear(animated)
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: "applicationWillResignActive:",
+            selector: #selector(UIApplicationDelegate.applicationWillResignActive(_:)),
             name:UIApplicationWillResignActiveNotification,
             object: nil
         )
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     //音源消す 最終確認
     func applicationWillResignActive(notification: NSNotification) {
         print("applicationWillResignActive!")
         if ( audioRecorder.recording || count1 == true ) {
-            self.timer.invalidate()
-            self.timeCountTimer?.invalidate()
+            if ( self.timer != nil) {
+                self.timer.invalidate()
+            }
+            if ( self.timeCountTimer != nil) {
+                self.timeCountTimer.invalidate()
+            }
             audioRecorder.stop()
+            NSNotificationCenter.defaultCenter().removeObserver(self)
             self.dismissViewControllerAnimated(true, completion: nil)
         }
     }

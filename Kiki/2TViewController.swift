@@ -39,12 +39,6 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
         super.viewDidLoad()
         recImage!.layer.cornerRadius = 37
         recImage!.clipsToBounds = true
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector:"applicationWillResignActive:",
-            name:UIApplicationWillResignActiveNotification,
-            object: nil
-        )
         
     }
     
@@ -84,18 +78,36 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
     //音源消す
     func applicationWillResignActive(notification: NSNotification) {
         print("applicationWillResignActive!")
-        if ( audioEngine.running ) {
-            self.timeCountTimer.invalidate()
+        if ( self.timer != nil) {
             self.timer.invalidate()
-            audioEngine.mainMixerNode.removeTapOnBus(0)
-            audioEngine.stop()
-            NSNotificationCenter.defaultCenter().removeObserver(self)
-            self.dismissViewControllerAnimated(true, completion: nil)
         }
+        if ( self.timeCountTimer != nil) {
+            self.timeCountTimer.invalidate()
+        }
+        if ( audioEngine != nil ) {
+            if ( audioEngine.running ) {
+                audioEngine.mainMixerNode.removeTapOnBus(0)
+                audioEngine.stop()
+            }
+        }
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        self.dismissViewControllerAnimated(false, completion: nil)
     }
-        
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: #selector(UIApplicationDelegate.applicationWillResignActive(_:)),
+            name:UIApplicationWillResignActiveNotification,
+            object: nil
+        )
+    }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
     
     @IBAction func rec(sender: AnyObject) {
         if count == 1{
