@@ -19,6 +19,13 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
     var averagePower:Float32 = 0
     var songFile:NSURL!
     let mixerMeter = MixerMeter()
+    var iyahon:NSURL!
+    let recordSetting : [String : AnyObject] = [
+        AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+        AVNumberOfChannelsKey: 1 ,
+        AVSampleRateKey: 44100
+    ]
+
     
     @IBOutlet weak var recButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
@@ -38,7 +45,39 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
             name:UIApplicationWillResignActiveNotification,
             object: nil
         )
+        
     }
+    
+    /// Audio Session Route Change : ルートが変化した(ヘッドセットが抜き差しされた)
+    func audioSessionRouteChanged(notification: NSNotification) {
+        let reasonObj = notification.userInfo![AVAudioSessionRouteChangeReasonKey] as! NSNumber
+        if let reason = AVAudioSessionRouteChangeReason(rawValue: reasonObj.unsignedLongValue) {
+            switch reason {
+            case .NewDeviceAvailable:
+                // 新たなデバイスのルートが使用可能になった
+                // （ヘッドセットが差し込まれた）
+                
+                
+                break
+            case .OldDeviceUnavailable:
+                self.timeCountTimer.invalidate()
+                self.timer.invalidate()
+                audioEngine.mainMixerNode.removeTapOnBus(0)
+                audioEngine.stop()
+                let deleteSong = try!AVAudioRecorder(URL: iyahon,settings:recordSetting)
+                deleteSong.deleteRecording()
+                let viewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Play") as! PlayViewController
+                //不要かどうか引き渡すの
+                viewcontroller.songData = self.songData
+
+                
+                break
+            default:
+                break
+            }
+        }
+    }
+    
     //音源消す
     func applicationWillResignActive(notification: NSNotification) {
         print("applicationWillResignActive!")
@@ -115,7 +154,8 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
     
     
     func play() {
-        
+        //ヘッドセットの抜き差しを検出するようにします
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "audioSessionRouteChanged", name: AVAudioSessionRouteChangeNotification, object: nil)
         let documentDir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
         let filePath2 = NSURL(fileURLWithPath: documentDir + "/sample.m4a")
         songFile = filePath2
@@ -165,7 +205,7 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
         } else {
             print("File not found")
         }
-        
+        iyahon = songFile
     }
     
     func levelTimerCallback() {
