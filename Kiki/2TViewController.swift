@@ -91,7 +91,10 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
             }
         }
         NSNotificationCenter.defaultCenter().removeObserver(self)
-        self.dismissViewControllerAnimated(false, completion: nil)
+        
+        let ProViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Play") as! PlayViewController
+        ProViewController.songData = self.songData
+        self.presentViewController(ProViewController, animated: true, completion: nil)
     }
     
     override func viewWillAppear(animated: Bool) {

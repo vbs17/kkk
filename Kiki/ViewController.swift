@@ -90,7 +90,8 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
             }
             audioRecorder.stop()
             NSNotificationCenter.defaultCenter().removeObserver(self)
-            self.dismissViewControllerAnimated(true, completion: nil)
+            let playviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Syuru")
+            self.presentViewController(playviewcontroller!, animated: true, completion: nil)
         }
     }
     
