@@ -29,6 +29,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CEll", forIndexPath: indexPath) as! HomeTableViewCell
+        cell.hyouka.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         cell.edittingFlag = false
         cell.star1.userInteractionEnabled = false
         cell.star2.userInteractionEnabled = false
@@ -88,8 +89,8 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let ud = NSUserDefaults.standardUserDefaults()
         let isSavePlofile = ud.boolForKey(CommonConst.IsSavePlofileData )
         if isSavePlofile == true {
-            cell!.hyouka.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
             if cell!.edittingFlag == false{
+                cell!.hyouka.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
                 cell!.edittingFlag = true
                 cell!.star1.userInteractionEnabled = true
                 cell!.star2.userInteractionEnabled = true
