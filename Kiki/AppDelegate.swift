@@ -11,6 +11,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         FIRApp.configure()
         FIRDatabase.database().persistenceEnabled = true
@@ -20,6 +22,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         postPath2Ref.keepSynced(true)
         let ProfileRef = FIRDatabase.database().referenceWithPath(CommonConst.Profile)
         ProfileRef.keepSynced(true)
+        
+        let ud = NSUserDefaults.standardUserDefaults()
+        let isTutorial = ud.boolForKey(CommonConst.IsTutorial )
+        
+        if isTutorial == false {
+            let storyboard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+            let viewController:UIViewController = storyboard.instantiateViewControllerWithIdentifier("Tab")
+            self.window?.rootViewController = viewController
+            self.window?.makeKeyWindow()
+            
+            return true
+        }
+        
         return true
     }
     

@@ -6,6 +6,9 @@ class Tyu2ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let ud = NSUserDefaults.standardUserDefaults()
+        ud.setBool(true, forKey: CommonConst.IsTutorial)
+        ud.synchronize()
 
     }
 
