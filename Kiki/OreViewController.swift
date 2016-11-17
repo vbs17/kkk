@@ -14,8 +14,6 @@ class OreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.layer.cornerRadius = 55
-        imageView.clipsToBounds = true
         back1.layer.cornerRadius = back1.frame.size.width / 2
         back1.clipsToBounds = true
         text.layer.cornerRadius = 7
