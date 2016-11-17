@@ -52,6 +52,9 @@
 		B0B4481C1DD5ACE4001DDD89 /* IkuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B4481B1DD5ACE4001DDD89 /* IkuViewController.swift */; };
 		B0B4481F1DD5AD04001DDD89 /* IkuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B4481D1DD5AD04001DDD89 /* IkuTableViewCell.swift */; };
 		B0B448201DD5AD04001DDD89 /* IkuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0B4481E1DD5AD04001DDD89 /* IkuTableViewCell.xib */; };
+		B0BA8ADC1DDD79A800F00E38 /* TyuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BA8ADB1DDD79A800F00E38 /* TyuViewController.swift */; };
+		B0BA8ADE1DDD79BC00F00E38 /* Tyu2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BA8ADD1DDD79BC00F00E38 /* Tyu2ViewController.swift */; };
+		B0BA8AE01DDD79D800F00E38 /* Tyu3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BA8ADF1DDD79D800F00E38 /* Tyu3ViewController.swift */; };
 		B0F582AB1DB38E5300654519 /* KindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F582A91DB38E5300654519 /* KindTableViewCell.swift */; };
 		B0F582AC1DB38E5300654519 /* KindTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F582AA1DB38E5300654519 /* KindTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -107,6 +110,9 @@
 		B0B4481B1DD5ACE4001DDD89 /* IkuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IkuViewController.swift; sourceTree = "<group>"; };
 		B0B4481D1DD5AD04001DDD89 /* IkuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IkuTableViewCell.swift; sourceTree = "<group>"; };
 		B0B4481E1DD5AD04001DDD89 /* IkuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IkuTableViewCell.xib; sourceTree = "<group>"; };
+		B0BA8ADB1DDD79A800F00E38 /* TyuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TyuViewController.swift; sourceTree = "<group>"; };
+		B0BA8ADD1DDD79BC00F00E38 /* Tyu2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tyu2ViewController.swift; sourceTree = "<group>"; };
+		B0BA8ADF1DDD79D800F00E38 /* Tyu3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tyu3ViewController.swift; sourceTree = "<group>"; };
 		B0F582A91DB38E5300654519 /* KindTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KindTableViewCell.swift; sourceTree = "<group>"; };
 		B0F582AA1DB38E5300654519 /* KindTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KindTableViewCell.xib; sourceTree = "<group>"; };
 		B8D29CE5422BA1688C21C169 /* Pods-Kiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiki.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kiki/Pods-Kiki.debug.xcconfig"; sourceTree = "<group>"; };
@@ -216,6 +222,9 @@
 			children = (
 				B0A78FD91DACFF6500AC0513 /* Main.storyboard */,
 				B06B00441DDD4131000C545D /* OreViewController.swift */,
+				B0BA8ADB1DDD79A800F00E38 /* TyuViewController.swift */,
+				B0BA8ADD1DDD79BC00F00E38 /* Tyu2ViewController.swift */,
+				B0BA8ADF1DDD79D800F00E38 /* Tyu3ViewController.swift */,
 				B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */,
 				B071D9701DB509FA0017E287 /* TabViewController.swift */,
 				B05E34401DC8B6CF00C271D3 /* PostData */,
@@ -406,6 +415,7 @@
 				B071D9681DB4E5040017E287 /* PostData.swift in Sources */,
 				B0ABF85C1DB0EE21001987E7 /* SendViewController.swift in Sources */,
 				B00D7CF51DCEB5190042D04F /* MixerMeter.m in Sources */,
+				B0BA8AE01DDD79D800F00E38 /* Tyu3ViewController.swift in Sources */,
 				B071309D1DC2352E00B8EEC1 /* Play2ViewController.swift in Sources */,
 				B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */,
 				B0A78FD81DACFF6500AC0513 /* ViewController.swift in Sources */,
@@ -419,9 +429,11 @@
 				B0A9A1741DB1FDE00021D1CF /* OkViewController.swift in Sources */,
 				B071D9751DB50E670017E287 /* SetViewController.swift in Sources */,
 				B071D9731DB50C4E0017E287 /* LoginViewController.swift in Sources */,
+				B0BA8ADE1DDD79BC00F00E38 /* Tyu2ViewController.swift in Sources */,
 				B06968241DC60E1400274DB1 /* Itiran1ViewController.swift in Sources */,
 				B042A0171DB983620068D205 /* BasyoViewController.swift in Sources */,
 				B00501C41DB6428500319866 /* ItiranTableViewCell.swift in Sources */,
+				B0BA8ADC1DDD79A800F00E38 /* TyuViewController.swift in Sources */,
 				B042A0191DB985180068D205 /* SyugoViewController.swift in Sources */,
 				B042A01E1DB98BB30068D205 /* SyugoTableViewCell.swift in Sources */,
 				B0A78FD61DACFF6500AC0513 /* AppDelegate.swift in Sources */,

@@ -6,6 +6,7 @@ class OreViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var text: UILabel!
     @IBOutlet weak var back1: UIButton!
     @IBAction func back(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -13,10 +14,12 @@ class OreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.layer.cornerRadius = imageView.frame.size.width / 2
+        imageView.layer.cornerRadius = 55
         imageView.clipsToBounds = true
-        back1.layer.cornerRadius = imageView.frame.size.width / 2
+        back1.layer.cornerRadius = back1.frame.size.width / 2
         back1.clipsToBounds = true
+        text.layer.cornerRadius = 7
+        text.clipsToBounds = true
         
     }
 

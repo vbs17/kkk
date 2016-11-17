@@ -74,8 +74,8 @@ class TabViewController: UIViewController {
         
         if FIRAuth.auth()?.currentUser == nil {
             dispatch_async(dispatch_get_main_queue()) {
-                let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Login")
-                self.presentViewController(loginViewController!, animated: true, completion: nil)
+                let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Tyu")
+                self.presentViewController(loginViewController!, animated: false, completion: nil)
             }
             
         }
