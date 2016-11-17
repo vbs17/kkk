@@ -829,6 +829,78 @@
             </objects>
             <point key="canvasLocation" x="-2284.5" y="2557.5"/>
         </scene>
+        <!--Ore View Controller-->
+        <scene sceneID="nQx-6x-g7o">
+            <objects>
+                <viewController storyboardIdentifier="Ore" id="2rN-LC-sA6" customClass="OreViewController" customModule="Kiki" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jyg-k2-GfN"/>
+                        <viewControllerLayoutGuide type="bottom" id="6wt-jc-XCn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DoU-w6-Ygm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo-1415889455891-23bbf19ee5c7" translatesAutoresizingMaskIntoConstraints="NO" id="B0D-bG-bCR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_3346" translatesAutoresizingMaskIntoConstraints="NO" id="wYw-bq-GTM">
+                                <rect key="frame" x="67" y="81" width="240" height="240"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="super" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRI-U9-yYG">
+                                <rect key="frame" x="122" y="235" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sonic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvV-Ke-hai">
+                                <rect key="frame" x="211" y="235" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdg-NA-AoA">
+                                <rect key="frame" x="122" y="342" width="131" height="21"/>
+                                <color key="backgroundColor" red="0.13855000200000001" green="0.64952392739999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="@kei1990s" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tMp-At-MPL">
+                                <rect key="frame" x="79" y="377" width="216" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="        新しい機能 ,                         ジャンル(アーティスト)の追加    　　リクエストは上述のTwitterまで連絡してちょ　　　　　　" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lQ1-jS-HXx">
+                                <rect key="frame" x="67" y="428" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Diz-sm-Tiq">
+                                <rect key="frame" x="20" y="572" width="60" height="60"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="back">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="back:" destination="2rN-LC-sA6" eventType="touchUpInside" id="PM6-Sm-b52"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="back1" destination="Diz-sm-Tiq" id="z3W-FA-kF2"/>
+                        <outlet property="imageView" destination="wYw-bq-GTM" id="30x-dZ-dDl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kZ1-Nm-rqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2740.5" y="1080.5"/>
+        </scene>
         <!--Basyo View Controller-->
         <scene sceneID="sTM-dt-cqi">
             <objects>
@@ -1963,7 +2035,9 @@
         <image name="IMG_2846" width="1568" height="1044"/>
         <image name="IMG_3064 2" width="3024" height="4032"/>
         <image name="IMG_3224 2" width="750" height="1334"/>
+        <image name="IMG_3346" width="1932" height="2576"/>
         <image name="jobs" width="1350" height="898"/>
+        <image name="photo-1415889455891-23bbf19ee5c7" width="4836" height="3203"/>
         <image name="photo-1474925558543-e7a5f06e733e" width="5760" height="3840"/>
     </resources>
 </document>

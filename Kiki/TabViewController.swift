@@ -16,6 +16,9 @@ class TabViewController: UIViewController {
     @IBOutlet weak var guitar: UIButton!
     
     @IBAction func guitargo(sender: AnyObject) {
+        let HomeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Ore")
+        self.presentViewController(HomeViewController!, animated: false, completion: nil)
+
     }
     
     @IBAction func pro(sender: AnyObject) {
