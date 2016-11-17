@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if isTutorial == false {
             let storyboard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
-            let viewController:UIViewController = storyboard.instantiateViewControllerWithIdentifier("Tab")
+            let viewController:UIViewController = storyboard.instantiateViewControllerWithIdentifier("Tyu")
             self.window?.rootViewController = viewController
             self.window?.makeKeyWindow()
             
