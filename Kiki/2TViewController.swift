@@ -117,7 +117,7 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
             recButton!.enabled = false
             let image:UIImage! = UIImage(named: photos[0])
             imageView.image = image
-            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(ViewController.nextPage), userInfo: nil, repeats: true )
+            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(_TViewController.nextPage), userInfo: nil, repeats: true )
         }else if count == 5{
             self.timeCountTimer.invalidate()
             self.timer.invalidate()
@@ -158,8 +158,8 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
             imageView.image = image
             play()
             self.timer.invalidate()
-            self.timer = NSTimer.scheduledTimerWithTimeInterval(0.02, target: self, selector: #selector(ViewController.levelTimerCallback), userInfo: nil, repeats: true)
-            self.timeCountTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(ViewController.recordLimits), userInfo: nil, repeats: true)
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(0.02, target: self, selector: #selector(_TViewController.levelTimerCallback), userInfo: nil, repeats: true)
+            self.timeCountTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(_TViewController.recordLimits), userInfo: nil, repeats: true)
             sender.invalidate()
             recButton!.setImage(UIImage(named: "Kiki28"), forState: UIControlState.Normal)
             recButton!.layer.cornerRadius = 37
