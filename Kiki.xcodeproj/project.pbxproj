@@ -26,6 +26,10 @@
 		B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */; };
 		B05E343F1DC8B57F00C271D3 /* PostData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343E1DC8B57F00C271D3 /* PostData2.swift */; };
 		B05F57741DDEBD05006DB9A5 /* SyutyuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F57731DDEBD05006DB9A5 /* SyutyuViewController.swift */; };
+		B05F57761DDF4937006DB9A5 /* Syutyu1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F57751DDF4937006DB9A5 /* Syutyu1ViewController.swift */; };
+		B05F57781DDF4942006DB9A5 /* Syutyu2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F57771DDF4942006DB9A5 /* Syutyu2ViewController.swift */; };
+		B05F577A1DDF4B0E006DB9A5 /* Syutyu3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F57791DDF4B0E006DB9A5 /* Syutyu3ViewController.swift */; };
+		B05F577C1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F577B1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift */; };
 		B06968221DC60D6E00274DB1 /* PostData1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06968211DC60D6E00274DB1 /* PostData1.swift */; };
 		B06968241DC60E1400274DB1 /* Itiran1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06968231DC60E1400274DB1 /* Itiran1ViewController.swift */; };
 		B06968261DC60F7700274DB1 /* Home1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06968251DC60F7700274DB1 /* Home1ViewController.swift */; };
@@ -83,6 +87,10 @@
 		B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProIViewController.swift; sourceTree = "<group>"; };
 		B05E343E1DC8B57F00C271D3 /* PostData2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData2.swift; sourceTree = "<group>"; };
 		B05F57731DDEBD05006DB9A5 /* SyutyuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyutyuViewController.swift; sourceTree = "<group>"; };
+		B05F57751DDF4937006DB9A5 /* Syutyu1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu1ViewController.swift; sourceTree = "<group>"; };
+		B05F57771DDF4942006DB9A5 /* Syutyu2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu2ViewController.swift; sourceTree = "<group>"; };
+		B05F57791DDF4B0E006DB9A5 /* Syutyu3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu3ViewController.swift; sourceTree = "<group>"; };
+		B05F577B1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu4ViewController.swift; sourceTree = "<group>"; };
 		B06968211DC60D6E00274DB1 /* PostData1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData1.swift; sourceTree = "<group>"; };
 		B06968231DC60E1400274DB1 /* Itiran1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Itiran1ViewController.swift; path = ../Itiran1ViewController.swift; sourceTree = "<group>"; };
 		B06968251DC60F7700274DB1 /* Home1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Home1ViewController.swift; path = ../Home1ViewController.swift; sourceTree = "<group>"; };
@@ -223,6 +231,11 @@
 			children = (
 				B0A78FD91DACFF6500AC0513 /* Main.storyboard */,
 				B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */,
+				B05F57731DDEBD05006DB9A5 /* SyutyuViewController.swift */,
+				B05F57751DDF4937006DB9A5 /* Syutyu1ViewController.swift */,
+				B05F57771DDF4942006DB9A5 /* Syutyu2ViewController.swift */,
+				B05F57791DDF4B0E006DB9A5 /* Syutyu3ViewController.swift */,
+				B05F577B1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift */,
 				B06B00441DDD4131000C545D /* OreViewController.swift */,
 				B071D9701DB509FA0017E287 /* TabViewController.swift */,
 				B0BA8AE11DDD7E7500F00E38 /* LoginAka */,
@@ -265,7 +278,6 @@
 				B0BA8ADB1DDD79A800F00E38 /* TyuViewController.swift */,
 				B0BA8ADD1DDD79BC00F00E38 /* Tyu2ViewController.swift */,
 				B0BA8ADF1DDD79D800F00E38 /* Tyu3ViewController.swift */,
-				B05F57731DDEBD05006DB9A5 /* SyutyuViewController.swift */,
 				B071D9721DB50C4E0017E287 /* LoginViewController.swift */,
 			);
 			name = LoginAka;
@@ -425,6 +437,7 @@
 				B05E343B1DC8A53800C271D3 /* ProViewController.swift in Sources */,
 				B06968261DC60F7700274DB1 /* Home1ViewController.swift in Sources */,
 				B071D9681DB4E5040017E287 /* PostData.swift in Sources */,
+				B05F577C1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift in Sources */,
 				B0ABF85C1DB0EE21001987E7 /* SendViewController.swift in Sources */,
 				B00D7CF51DCEB5190042D04F /* MixerMeter.m in Sources */,
 				B0BA8AE01DDD79D800F00E38 /* Tyu3ViewController.swift in Sources */,
@@ -434,14 +447,17 @@
 				B03151761DAE6A06007EE64C /* PlayViewController.swift in Sources */,
 				B0F582AB1DB38E5300654519 /* KindTableViewCell.swift in Sources */,
 				B05E343F1DC8B57F00C271D3 /* PostData2.swift in Sources */,
+				B05F577A1DDF4B0E006DB9A5 /* Syutyu3ViewController.swift in Sources */,
 				B071D96F1DB4EA9B0017E287 /* HomeViewController.swift in Sources */,
 				B071309B1DC22D8800B8EEC1 /* 2TViewController.swift in Sources */,
 				B0B4481F1DD5AD04001DDD89 /* IkuTableViewCell.swift in Sources */,
 				B071D9661DB4D6140017E287 /* File.swift in Sources */,
 				B0A9A1741DB1FDE00021D1CF /* OkViewController.swift in Sources */,
 				B071D9751DB50E670017E287 /* SetViewController.swift in Sources */,
+				B05F57761DDF4937006DB9A5 /* Syutyu1ViewController.swift in Sources */,
 				B071D9731DB50C4E0017E287 /* LoginViewController.swift in Sources */,
 				B0BA8ADE1DDD79BC00F00E38 /* Tyu2ViewController.swift in Sources */,
+				B05F57781DDF4942006DB9A5 /* Syutyu2ViewController.swift in Sources */,
 				B06968241DC60E1400274DB1 /* Itiran1ViewController.swift in Sources */,
 				B042A0171DB983620068D205 /* BasyoViewController.swift in Sources */,
 				B00501C41DB6428500319866 /* ItiranTableViewCell.swift in Sources */,
