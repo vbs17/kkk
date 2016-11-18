@@ -156,9 +156,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     func setupAudioRecorder() {
         let session = AVAudioSession.sharedInstance()
         
-        
-        try! session.setCategory(AVAudioSessionCategoryPlayback)
-        
+    try! session.setCategory(AVAudioSessionCategoryPlayAndRecord)        
         
         try! session.setActive(true)
         let recordSetting : [String : AnyObject] = [
