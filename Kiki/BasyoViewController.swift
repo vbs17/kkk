@@ -32,19 +32,21 @@ class BasyoViewController: UIViewController,UIImagePickerControllerDelegate, UIN
         self.presentViewController(ProViewController!, animated: true, completion: nil)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        back.layer.cornerRadius = 37
-        back.clipsToBounds = true
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         let ud = NSUserDefaults.standardUserDefaults()
         let isTutorial2 = ud.boolForKey(CommonConst.IsTutorial2 )
         if isTutorial2 == false {
             let storyboard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
             let viewController:UIViewController = storyboard.instantiateViewControllerWithIdentifier("Syutyu")
-            self.window?.rootViewController = viewController
-            self.window?.makeKeyWindow()
+            self.presentViewController(viewController, animated: false, completion: nil)
         }
-
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        back.layer.cornerRadius = 37
+        back.clipsToBounds = true
 
     }
 
