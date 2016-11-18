@@ -10,7 +10,7 @@ import AVFoundation
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
+
     
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let ud = NSUserDefaults.standardUserDefaults()
         let isTutorial = ud.boolForKey(CommonConst.IsTutorial )
+       
         
         if isTutorial == false {
             let storyboard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
@@ -34,6 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             return true
         }
+        
+        
         
         return true
     }

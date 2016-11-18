@@ -657,6 +657,34 @@
             </objects>
             <point key="canvasLocation" x="-3961.5" y="1073.5"/>
         </scene>
+        <!--Syutyu View Controller-->
+        <scene sceneID="b38-w9-4hR">
+            <objects>
+                <viewController storyboardIdentifier="Syutyu" id="ETF-LV-RSu" customClass="SyutyuViewController" customModule="Kiki" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OJB-H7-eTX"/>
+                        <viewControllerLayoutGuide type="bottom" id="oXG-Wm-IdW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VfP-Yn-ctl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYy-h7-SBD">
+                                <rect key="frame" x="170" y="582" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="go:" destination="ETF-LV-RSu" eventType="touchUpInside" id="mqh-Zu-kEG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BEG-ah-l6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2298.5" y="-399.5"/>
+        </scene>
         <!--Syuru View Controller-->
         <scene sceneID="7HX-c4-ijc">
             <objects>
@@ -954,7 +982,7 @@
                                 <color key="shadowColor" red="1" green="0.07029228354" blue="0.004821727992" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="-1" height="0.0"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="supersonic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuD-II-dtl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Supersonic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuD-II-dtl">
                                 <rect key="frame" x="105" y="278" width="165" height="37"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <color key="textColor" red="1" green="0.07029228354" blue="0.004821727992" alpha="1" colorSpace="calibratedRGB"/>

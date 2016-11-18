@@ -7,6 +7,7 @@ import FirebaseAuth
 class BasyoViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     
     @IBOutlet weak var back: UIButton!
+    var window: UIWindow?
   
     @IBAction func camera(sender: AnyObject) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
@@ -35,6 +36,15 @@ class BasyoViewController: UIViewController,UIImagePickerControllerDelegate, UIN
         super.viewDidLoad()
         back.layer.cornerRadius = 37
         back.clipsToBounds = true
+        let ud = NSUserDefaults.standardUserDefaults()
+        let isTutorial2 = ud.boolForKey(CommonConst.IsTutorial2 )
+        if isTutorial2 == false {
+            let storyboard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+            let viewController:UIViewController = storyboard.instantiateViewControllerWithIdentifier("Syutyu")
+            self.window?.rootViewController = viewController
+            self.window?.makeKeyWindow()
+        }
+
 
     }
 

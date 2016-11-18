@@ -25,6 +25,7 @@
 		B05E343B1DC8A53800C271D3 /* ProViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343A1DC8A53800C271D3 /* ProViewController.swift */; };
 		B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */; };
 		B05E343F1DC8B57F00C271D3 /* PostData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343E1DC8B57F00C271D3 /* PostData2.swift */; };
+		B05F57741DDEBD05006DB9A5 /* SyutyuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F57731DDEBD05006DB9A5 /* SyutyuViewController.swift */; };
 		B06968221DC60D6E00274DB1 /* PostData1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06968211DC60D6E00274DB1 /* PostData1.swift */; };
 		B06968241DC60E1400274DB1 /* Itiran1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06968231DC60E1400274DB1 /* Itiran1ViewController.swift */; };
 		B06968261DC60F7700274DB1 /* Home1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06968251DC60F7700274DB1 /* Home1ViewController.swift */; };
@@ -81,6 +82,7 @@
 		B05E343A1DC8A53800C271D3 /* ProViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProViewController.swift; sourceTree = "<group>"; };
 		B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProIViewController.swift; sourceTree = "<group>"; };
 		B05E343E1DC8B57F00C271D3 /* PostData2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData2.swift; sourceTree = "<group>"; };
+		B05F57731DDEBD05006DB9A5 /* SyutyuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyutyuViewController.swift; sourceTree = "<group>"; };
 		B06968211DC60D6E00274DB1 /* PostData1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData1.swift; sourceTree = "<group>"; };
 		B06968231DC60E1400274DB1 /* Itiran1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Itiran1ViewController.swift; path = ../Itiran1ViewController.swift; sourceTree = "<group>"; };
 		B06968251DC60F7700274DB1 /* Home1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Home1ViewController.swift; path = ../Home1ViewController.swift; sourceTree = "<group>"; };
@@ -223,12 +225,12 @@
 				B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */,
 				B06B00441DDD4131000C545D /* OreViewController.swift */,
 				B071D9701DB509FA0017E287 /* TabViewController.swift */,
-				B05E34401DC8B6CF00C271D3 /* PostData */,
 				B0BA8AE11DDD7E7500F00E38 /* LoginAka */,
+				B042A0201DB98BBE0068D205 /* 集合場所投稿 */,
 				B06491911DBAD0F000566A4B /* PROFILE */,
+				B05E34401DC8B6CF00C271D3 /* PostData */,
 				B00501BA1DB610D200319866 /* 音源表示 */,
 				B0B263D21DB7467100C0F2A3 /* 音源投稿 */,
-				B042A0201DB98BBE0068D205 /* 集合場所投稿 */,
 				B0BD80DE1DC71B0D0056E1A5 /* 集合場所表示 */,
 				B0A78FDC1DACFF6500AC0513 /* Assets.xcassets */,
 				B0A78FDE1DACFF6500AC0513 /* LaunchScreen.storyboard */,
@@ -263,6 +265,7 @@
 				B0BA8ADB1DDD79A800F00E38 /* TyuViewController.swift */,
 				B0BA8ADD1DDD79BC00F00E38 /* Tyu2ViewController.swift */,
 				B0BA8ADF1DDD79D800F00E38 /* Tyu3ViewController.swift */,
+				B05F57731DDEBD05006DB9A5 /* SyutyuViewController.swift */,
 				B071D9721DB50C4E0017E287 /* LoginViewController.swift */,
 			);
 			name = LoginAka;
@@ -412,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B05F57741DDEBD05006DB9A5 /* SyutyuViewController.swift in Sources */,
 				B071D9711DB509FA0017E287 /* TabViewController.swift in Sources */,
 				B0B4481C1DD5ACE4001DDD89 /* IkuViewController.swift in Sources */,
 				B00501BE1DB6420800319866 /* ItiranViewController.swift in Sources */,
