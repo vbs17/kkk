@@ -196,6 +196,11 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                         let postData = PostData(snapshot: snapshot, myId: uid)
                         self.postArray.insert(postData, atIndex: 0)
                         
+                        if self.playingIndexPath != nil {
+                            let row = self.playingIndexPath.row
+                            self.playingIndexPath = NSIndexPath(forRow: row+1, inSection: 0)
+                        }
+                        
                         self.tableView.reloadData()
                     }
                 })
