@@ -60,14 +60,7 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
                 audioEngine.stop()
                 let deleteSong = try!AVAudioRecorder(URL: iyahon,settings:recordSetting)
                 deleteSong.deleteRecording()
-                let viewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Play") as! PlayViewController
-                //不要かどうか引き渡すの
-                viewcontroller.songData = self.songData
-                self.presentViewController(viewcontroller, animated: true, completion: nil)
-
-                
-
-                
+                self.dismissViewControllerAnimated(true, completion: nil)
                 break
             default:
                 break
@@ -92,9 +85,7 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
         }
         NSNotificationCenter.defaultCenter().removeObserver(self)
         
-        let ProViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Play") as! PlayViewController
-        ProViewController.songData = self.songData
-        self.presentViewController(ProViewController, animated: true, completion: nil)
+       self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -173,8 +164,7 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
     
     func play() {
         //ヘッドセットの抜き差しを検出するようにします
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "audioSessionRouteChanged", name: AVAudioSessionRouteChangeNotification, object: nil)
-        let documentDir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(audioSessionRouteChanged(_:)), name: AVAudioSessionRouteChangeNotification, object: nil);        let documentDir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
         let filePath2 = NSURL(fileURLWithPath: documentDir + "/sample.m4a")
         songFile = filePath2
         if let url = songData {
