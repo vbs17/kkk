@@ -256,9 +256,8 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
         timeCountTimer?.invalidate()
         audioEngine?.mainMixerNode.removeTapOnBus(0)
         audioEngine?.stop()
-        let ProViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Play") as! PlayViewController
-        ProViewController.songData = self.songData
-        self.presentViewController(ProViewController, animated: true, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: nil)
+
     }
     
     
