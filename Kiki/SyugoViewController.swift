@@ -27,6 +27,16 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
         
 
     }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        print("textFieldDidBeginEditing\n")
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        print("textFieldShouldBeginEditing\n")
+        return true
+    }
+
     @IBAction func Ok(sender: AnyObject) {
         let kind2viewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Kind2") as! Kind2ViewController
         kind2viewcontroller.hiniti = hiniti
