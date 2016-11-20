@@ -15,6 +15,7 @@
 		B00501C51DB6428500319866 /* ItiranTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B00501C21DB6428500319866 /* ItiranTableViewCell.xib */; };
 		B00D7CF51DCEB5190042D04F /* MixerMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = B00D7CF41DCEB5190042D04F /* MixerMeter.m */; };
 		B0190A211DB20FE400FA066D /* KindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0190A201DB20FE400FA066D /* KindViewController.swift */; };
+		B029E58A1DE1A17C00C7EDDF /* IyaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029E5891DE1A17C00C7EDDF /* IyaViewController.swift */; };
 		B03151761DAE6A06007EE64C /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03151751DAE6A06007EE64C /* PlayViewController.swift */; };
 		B042A0171DB983620068D205 /* BasyoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B042A0161DB983620068D205 /* BasyoViewController.swift */; };
 		B042A0191DB985180068D205 /* SyugoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B042A0181DB985180068D205 /* SyugoViewController.swift */; };
@@ -76,6 +77,7 @@
 		B00D7CF31DCEB5190042D04F /* MixerMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixerMeter.h; sourceTree = "<group>"; };
 		B00D7CF41DCEB5190042D04F /* MixerMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MixerMeter.m; sourceTree = "<group>"; };
 		B0190A201DB20FE400FA066D /* KindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KindViewController.swift; sourceTree = "<group>"; };
+		B029E5891DE1A17C00C7EDDF /* IyaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IyaViewController.swift; sourceTree = "<group>"; };
 		B03151751DAE6A06007EE64C /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		B042A0161DB983620068D205 /* BasyoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasyoViewController.swift; sourceTree = "<group>"; };
 		B042A0181DB985180068D205 /* SyugoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyugoViewController.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			children = (
 				B0A78FD71DACFF6500AC0513 /* ViewController.swift */,
 				B03151751DAE6A06007EE64C /* PlayViewController.swift */,
+				B029E5891DE1A17C00C7EDDF /* IyaViewController.swift */,
 				B071309A1DC22D8700B8EEC1 /* 2TViewController.swift */,
 				B071309C1DC2352E00B8EEC1 /* Play2ViewController.swift */,
 				B0ABF85B1DB0EE21001987E7 /* SendViewController.swift */,
@@ -443,6 +446,7 @@
 				B0BA8AE01DDD79D800F00E38 /* Tyu3ViewController.swift in Sources */,
 				B071309D1DC2352E00B8EEC1 /* Play2ViewController.swift in Sources */,
 				B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */,
+				B029E58A1DE1A17C00C7EDDF /* IyaViewController.swift in Sources */,
 				B0A78FD81DACFF6500AC0513 /* ViewController.swift in Sources */,
 				B03151761DAE6A06007EE64C /* PlayViewController.swift in Sources */,
 				B0F582AB1DB38E5300654519 /* KindTableViewCell.swift in Sources */,

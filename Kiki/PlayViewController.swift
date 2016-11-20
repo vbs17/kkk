@@ -46,8 +46,9 @@ class PlayViewController: UIViewController {
         timer.invalidate()
         let recviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Top2") as! _TViewController
         recviewcontroller.songData = songData
+         let recviewcontroller1 = self.storyboard?.instantiateViewControllerWithIdentifier("Iya")
 
-        self.presentViewController(recviewcontroller, animated: true, completion: nil)
+        self.presentViewController(recviewcontroller1!, animated: true, completion: nil)
     }
     
     //再生
