@@ -94,6 +94,7 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
                 updateScrollViewSize(offsetY, duration: animationDuration)
             }
         }
+        print("keyboardWillBeShown")
     }
     
     func keyboardWillBeHidden(notification: NSNotification) {
