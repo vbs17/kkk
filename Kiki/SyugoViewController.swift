@@ -56,11 +56,11 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
         super.viewWillAppear(animated)
         
         NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: "keyboardWillBeShown:",
+                                                         selector: #selector(SyugoViewController.keyboardWillBeShown(_:)),
                                                          name: UIKeyboardWillShowNotification,
                                                          object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: "keyboardWillBeHidden:",
+                                                         selector: #selector(SyugoViewController.keyboardWillBeHidden(_:)),
                                                          name: UIKeyboardWillHideNotification,
                                                          object: nil)
     }
