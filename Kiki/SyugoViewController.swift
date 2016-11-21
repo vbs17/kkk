@@ -16,28 +16,46 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
     @IBOutlet weak var lbl: UILabel!
     @IBOutlet weak var ok: UIButton!
     var selectedTextField:UITextField!
+    var isTextView:Bool = false
     
     func textFieldDidBeginEditing(textField: UITextField) {
         print("textFieldDidBeginEditing\n")
          selectedTextField = textField
+        isTextView = true
         
     }
     
     func keyboardWillBeShown(notification: NSNotification) {
         if let userInfo = notification.userInfo {
-            if let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue, animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue {
-                restoreScrollViewSize()
-                print("keyboardWillBeShown")
-                let convertedKeyboardFrame = scrollView.convertRect(keyboardFrame, fromView: nil)
-                let offsetY: CGFloat = CGRectGetMaxY(hiniti.frame) - CGRectGetMinY(convertedKeyboardFrame)
-                if offsetY < 0 {
-                    return
+            // もしUITextViewだったら
+            if isTextView {
+                if let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue, let animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue {
+                    restoreScrollViewSize()
+                    print("keyboardWillBeShown")
+                    let convertedKeyboardFrame = scrollView.convertRect(keyboardFrame, fromView: nil)
+                    // selectedTextFieldには現在のtextFieldが設定されているはずなので、それを起点にスクロール
+                    let offsetY: CGFloat = CGRectGetMaxY(selectedTextField.frame) - CGRectGetMinY(convertedKeyboardFrame)
+                    if offsetY < 0 {
+                        return
+                    }
+                    updateScrollViewSize(offsetY, duration: animationDuration)
                 }
-                updateScrollViewSize(offsetY, duration: animationDuration)
+            } else {
+                // UITextViewじゃなかったら、
+                if let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue, let animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue {
+                    restoreScrollViewSize()
+                    print("keyboardWillBeShown")
+                    // UITextView(path)に合わせてスクロール
+                    let convertedKeyboardFrame = scrollView.convertRect(keyboardFrame, fromView: nil)
+                    let offsetY: CGFloat = CGRectGetMaxY(path.frame) - CGRectGetMinY(convertedKeyboardFrame)
+                    if offsetY < 0 {
+                        return
+                    }
+                    updateScrollViewSize(offsetY, duration: animationDuration)
+                }
             }
         }
     }
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +89,7 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         print("textFieldShouldBeginEditing\n")
+        isTextView = false
         return true
     }
 
