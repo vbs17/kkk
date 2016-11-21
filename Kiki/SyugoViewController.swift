@@ -103,14 +103,37 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
     }
 
     @IBAction func Ok(sender: AnyObject) {
+        if (path.text != nil){
         let kind2viewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Kind2") as! Kind2ViewController
         kind2viewcontroller.hiniti = hiniti
         kind2viewcontroller.image = imageView.image!
         kind2viewcontroller.zikoku = zikoku
         kind2viewcontroller.station = station
         kind2viewcontroller.path = path
-        self.presentViewController(kind2viewcontroller, animated: true, completion: nil)
+            self.presentViewController(kind2viewcontroller, animated: true, completion: nil)}else{
+            let alert = UIAlertController()
+            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellowColor()]
+            let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
+            alert.setValue(attributedTitle, forKey: "attributedTitle")
+            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+            let attributedMessage = NSAttributedString(string: "住所は必須です", attributes: attributedMessageAttr)
+            alert.view.tintColor = UIColor.whiteColor()
+            alert.setValue(attributedMessage, forKey: "attributedMessage")
+            let subview = alert.view.subviews.first! as UIView
+            let alertContentView = subview.subviews.first! as UIView
+            alertContentView.backgroundColor = UIColor.grayColor()
+            
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{
+                (action: UIAlertAction!) -> Void in
+            })
+            alert.addAction(defaultAction)
+            presentViewController(alert, animated: true, completion: nil)
+            alert.view.tintColor = UIColor.whiteColor()
+            
+        }
+    
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
