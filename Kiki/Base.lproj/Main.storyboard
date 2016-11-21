@@ -694,7 +694,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYy-h7-SBD">
-                                <rect key="frame" x="170" y="582" width="46" height="30"/>
+                                <rect key="frame" x="164" y="397" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="go:" destination="ETF-LV-RSu" eventType="touchUpInside" id="mqh-Zu-kEG"/>
@@ -1219,7 +1219,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERb-Uw-ZWo">
-                                <rect key="frame" x="164" y="443" width="46" height="30"/>
+                                <rect key="frame" x="196" y="283" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="go:" destination="FFU-gl-yaL" eventType="touchUpInside" id="Tr7-9Q-oeF"/>
@@ -1351,7 +1351,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1k-de-FfH">
-                                <rect key="frame" x="170" y="439" width="46" height="30"/>
+                                <rect key="frame" x="170" y="394" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="go:" destination="ihi-ID-WON" eventType="touchUpInside" id="b97-rB-syU"/>
