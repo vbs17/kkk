@@ -25,6 +25,10 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
         
     }
     
+    func dismissKeyboard(){
+        view.endEditing(true)
+    }
+    
     func keyboardWillBeShown(notification: NSNotification) {
         if let userInfo = notification.userInfo {
             // もしUITextViewだったら
@@ -34,7 +38,7 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
                     print("keyboardWillBeShown")
                     let convertedKeyboardFrame = scrollView.convertRect(keyboardFrame, fromView: nil)
                     // selectedTextFieldには現在のtextFieldが設定されているはずなので、それを起点にスクロール
-                    let offsetY: CGFloat = CGRectGetMaxY(selectedTextField.frame) - CGRectGetMinY(convertedKeyboardFrame)
+                    let offsetY: CGFloat = CGRectGetMaxY(station.frame) - CGRectGetMinY(convertedKeyboardFrame)
                     if offsetY < 0 {
                         return
                     }
@@ -66,6 +70,8 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
         zikoku.delegate = self
         station.delegate = self
         path.delegate = self
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tapGesture)
         
 
     }
