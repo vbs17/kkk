@@ -6,6 +6,9 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
     
     var image:UIImage!
     
+    @IBAction func tapScreen(sender: AnyObject) {
+        self.view.endEditing(true)
+    }
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var hiniti: UITextField!
@@ -161,6 +164,12 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
         
         UIView.commitAnimations()
     }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        isTextView = false
+        textField.resignFirstResponder()
+    }
+
     
     func restoreScrollViewSize() {
         scrollView.contentInset = UIEdgeInsetsZero
