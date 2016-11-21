@@ -164,7 +164,8 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
     
     func play() {
         //ヘッドセットの抜き差しを検出するようにします
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(audioSessionRouteChanged(_:)), name: AVAudioSessionRouteChangeNotification, object: nil);        let documentDir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(audioSessionRouteChanged(_:)), name: AVAudioSessionRouteChangeNotification, object: nil);
+        let documentDir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
         let filePath2 = NSURL(fileURLWithPath: documentDir + "/sample.m4a")
         songFile = filePath2
         if let url = songData {

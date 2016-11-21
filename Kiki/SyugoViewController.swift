@@ -13,6 +13,7 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
     @IBOutlet weak var station: UITextField!
     @IBOutlet weak var path: UITextView!
     
+    @IBOutlet weak var lbl: UILabel!
     @IBOutlet weak var ok: UIButton!
 
     override func viewDidLoad() {
@@ -27,6 +28,21 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
         
 
     }
+    
+    
+    func textViewShouldBeginEditing(textView: UITextView) -> Bool
+    {
+        lbl.hidden = true
+        return true
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        
+        if(textView.text.isEmpty){
+            lbl.hidden = false
+        }
+    }
+
     
     func textFieldDidBeginEditing(textField: UITextField) {
         print("textFieldDidBeginEditing\n")
