@@ -15,6 +15,29 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
     
     @IBOutlet weak var lbl: UILabel!
     @IBOutlet weak var ok: UIButton!
+    var selectedTextField:UITextField!
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        print("textFieldDidBeginEditing\n")
+         selectedTextField = textField
+        
+    }
+    
+    func keyboardWillBeShown(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            if let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue, animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue {
+                restoreScrollViewSize()
+                print("keyboardWillBeShown")
+                let convertedKeyboardFrame = scrollView.convertRect(keyboardFrame, fromView: nil)
+                let offsetY: CGFloat = CGRectGetMaxY(hiniti.frame) - CGRectGetMinY(convertedKeyboardFrame)
+                if offsetY < 0 {
+                    return
+                }
+                updateScrollViewSize(offsetY, duration: animationDuration)
+            }
+        }
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,9 +67,7 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
     }
 
     
-    func textFieldDidBeginEditing(textField: UITextField) {
-        print("textFieldDidBeginEditing\n")
-    }
+   
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         print("textFieldShouldBeginEditing\n")
@@ -98,19 +119,6 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
-    }
-    func keyboardWillBeShown(notification: NSNotification) {
-        if let userInfo = notification.userInfo {
-            if let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue, animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue {
-                restoreScrollViewSize()
-                
-                let convertedKeyboardFrame = scrollView.convertRect(keyboardFrame, fromView: nil)
-                let offsetY: CGFloat = CGRectGetMaxY(hiniti.frame) - CGRectGetMinY(convertedKeyboardFrame)
-                if offsetY < 0 { return }
-                updateScrollViewSize(offsetY, duration: animationDuration)
-            }
-        }
-        print("keyboardWillBeShown")
     }
     
     func keyboardWillBeHidden(notification: NSNotification) {
