@@ -157,14 +157,16 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
     }
 
     @IBAction func Ok(sender: AnyObject) {
-        if (path.text != nil){
+        if (path.text != nil && path.text != ""){
+            
         let kind2viewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Kind2") as! Kind2ViewController
         kind2viewcontroller.hiniti = hiniti
         kind2viewcontroller.image = imageView.image!
         kind2viewcontroller.zikoku = zikoku
         kind2viewcontroller.station = station
         kind2viewcontroller.path = path
-            self.presentViewController(kind2viewcontroller, animated: true, completion: nil)}else{
+            self.presentViewController(kind2viewcontroller, animated: true, completion: nil)
+        }else{
             let alert = UIAlertController()
             let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellowColor()]
             let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)

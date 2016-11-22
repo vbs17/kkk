@@ -74,9 +74,12 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let point = touch!.locationInView(self.tableView)
         let indexPath = tableView.indexPathForRowAtPoint(point)
         let postData = postArray[indexPath!.row]
+        playSong.pause()
+        timer.invalidate()
         let pro = self.storyboard?.instantiateViewControllerWithIdentifier("Pi") as! ProIdouViewController
         pro.uid = postData.uid
         self.presentViewController(pro, animated: true, completion: nil)
+        
         
     }
 
