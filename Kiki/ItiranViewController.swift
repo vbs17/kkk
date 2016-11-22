@@ -462,6 +462,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var genre:String!
 
+    @IBOutlet weak var hou: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -469,6 +470,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.dataSource = self
         let nib = UINib(nibName: "ItiranTableViewCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "Celll")
+        hou.enabled = false
     }
 
     //Cellが選択された際に呼び出される.
