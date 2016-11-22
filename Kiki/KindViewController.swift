@@ -500,9 +500,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     //どこのジャンル押されたか判明
     func buttonPressed(tableViewCell: KindTableViewCell) {
         let indexPath = tableView.indexPathForCell(tableViewCell)
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath!) as! KindTableViewCell
         genre = AllItems[indexPath!.section][indexPath!.row]
-        cell.button.backgroundColor = UIColor.greenColor()
         
     }
     
