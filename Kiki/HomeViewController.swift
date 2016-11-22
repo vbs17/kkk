@@ -33,7 +33,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CEll", forIndexPath: indexPath) as! HomeTableViewCell
-        cell.hyouka.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        cell.hyouka.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         cell.edittingFlag = false
         cell.star1.userInteractionEnabled = false
         cell.star2.userInteractionEnabled = false
@@ -97,7 +97,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let isSavePlofile = ud.boolForKey(CommonConst.IsSavePlofileData )
         if isSavePlofile == true {
             if cell!.edittingFlag == false{
-                cell!.hyouka.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
+                cell!.hyouka.setTitleColor(UIColor.yellowColor(), forState: UIControlState.Normal)
                 cell!.edittingFlag = true
                 cell!.star1.userInteractionEnabled = true
                 cell!.star2.userInteractionEnabled = true
@@ -110,7 +110,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 cell?.star4.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
                 cell?.star5.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
             } else if cell!.edittingFlag == true{
-                cell!.hyouka.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+                cell!.hyouka.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 cell!.edittingFlag = false
                 cell?.setPostData1(self.postArray[indexPath!.row])
                 cell!.star1.userInteractionEnabled = false

@@ -115,10 +115,11 @@
                             <constraint firstAttribute="width" constant="66" id="Uuf-nM-nYs"/>
                             <constraint firstAttribute="height" constant="59" id="y3U-ru-vhH"/>
                         </constraints>
-                        <size key="titleShadowOffset" width="2" height="1"/>
-                        <state key="normal" title="BACK">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <size key="titleShadowOffset" width="2" height="2.2250738585072014e-308"/>
+                        <state key="normal" title="◀︎◀︎">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.14362053969999999" green="0.17933351710000001" blue="0.3351807919" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8F-E1-oAD">
@@ -161,9 +162,11 @@
                             <constraint firstAttribute="width" constant="56" id="Qxz-0K-dcD"/>
                             <constraint firstAttribute="height" constant="58" id="RG4-Lo-N6l"/>
                         </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
-                        <state key="normal" title="ss">
-                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <state key="normal" title="評価" backgroundImage="IMG_3214">
+                            <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                            <color key="titleShadowColor" red="1" green="0.90693612270000001" blue="0.091846711639999995" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
                 </subviews>
@@ -226,4 +229,7 @@
             <point key="canvasLocation" x="-30.5" y="232.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="IMG_3214" width="5482" height="8085"/>
+    </resources>
 </document>

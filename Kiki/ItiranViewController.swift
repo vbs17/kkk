@@ -481,18 +481,18 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func choo(){
         if countT == 1{
-            cho.textColor = UIColor.greenColor()
+            cho.textColor = UIColor.yellowColor()
             countT += 1
             count2 = true
 
         } else if countT == 2{
-            cho.textColor = UIColor.blueColor()
+            cho.textColor = UIColor.grayColor()
             countT += 1
             count2 = true
 
 
         } else if countT == 3{
-            cho.textColor = UIColor.redColor()
+            cho.textColor = UIColor.blackColor()
             countT = 1
             count2 = true
 
