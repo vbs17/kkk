@@ -185,6 +185,19 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     }
 
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if (postArray.count != 0){
@@ -201,11 +214,16 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                             let row = self.playingIndexPath.row
                             self.playingIndexPath = NSIndexPath(forRow: row+1, inSection: 0)
                         }
+                        print(self.postArray.count)
+                        if (self.postArray.count == 1) {
+                            let HomeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Mada")
+                            self.presentViewController(HomeViewController!, animated: false, completion: nil)  }
                         
+                        print("ここ\(self.postArray)")
                         self.tableView.reloadData()
                     }
                 })
-                //俺だけが変更した 一個だけていう考えで考えてみ　一気に１つ以上の投稿に星はたっぷできんのやし
+ //俺だけが変更した 一個だけていう考えで考えてみ　一気に１つ以上の投稿に星はたっぷできんのやし
                 FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).observeEventType(.ChildChanged, withBlock: { snapshot in
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
                         let postData = PostData(snapshot: snapshot, myId: uid)
@@ -264,10 +282,22 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 observing = false
             }
         }
-        }else{
-            let HomeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Mada")
-            self.presentViewController(HomeViewController!, animated: false, completion: nil)
-        }}
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

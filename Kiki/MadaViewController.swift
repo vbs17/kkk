@@ -13,7 +13,8 @@ class MadaViewController: UIViewController {
     }
     
     @IBAction func back(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Itiran")
+        self.presentViewController(loginViewController!, animated: true, completion: nil)
     }
 
   
