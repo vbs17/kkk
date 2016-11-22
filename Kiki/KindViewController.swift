@@ -497,7 +497,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-    //どこのジャンル押されたか判明
+    //どこのジャンル押されたか判明　ここで色変更したり　再度押したらジャンルが選択されてない状態にする　それで投稿したら注意出る
     func buttonPressed(tableViewCell: KindTableViewCell) {
         let indexPath = tableView.indexPathForCell(tableViewCell)
         genre = AllItems[indexPath!.section][indexPath!.row]
