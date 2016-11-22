@@ -79,6 +79,60 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
 
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(SyugoViewController.keyboardWillBeShown(_:)),
+                                                         name: UIKeyboardWillShowNotification,
+                                                         object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(SyugoViewController.keyboardWillBeHidden(_:)),
+                                                         name: UIKeyboardWillHideNotification,
+                                                         object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self,
+                                                            name: UIKeyboardWillShowNotification,
+                                                            object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self,
+                                                            name: UIKeyboardWillHideNotification,
+                                                            object: nil)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func keyboardWillBeHidden(notification: NSNotification) {
+        restoreScrollViewSize()
+    }
+    
+    func updateScrollViewSize(moveSize: CGFloat, duration: NSTimeInterval) {
+        UIView.beginAnimations("ResizeForKeyboard", context: nil)
+        UIView.setAnimationDuration(duration)
+        
+        let contentInsets = UIEdgeInsetsMake(0, 0, moveSize, 0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+        scrollView.contentOffset = CGPointMake(0, moveSize)
+        
+        UIView.commitAnimations()
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        isTextView = false
+        textField.resignFirstResponder()
+    }
+    
+    func restoreScrollViewSize() {
+        scrollView.contentInset = UIEdgeInsetsZero
+        scrollView.scrollIndicatorInsets = UIEdgeInsetsZero
+    }
     
     func textViewShouldBeginEditing(textView: UITextView) -> Bool
     {
@@ -140,64 +194,5 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
     }
     
 
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(SyugoViewController.keyboardWillBeShown(_:)),
-                                                         name: UIKeyboardWillShowNotification,
-                                                         object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(SyugoViewController.keyboardWillBeHidden(_:)),
-                                                         name: UIKeyboardWillHideNotification,
-                                                         object: nil)
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        NSNotificationCenter.defaultCenter().removeObserver(self,
-                                                            name: UIKeyboardWillShowNotification,
-                                                            object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self,
-                                                            name: UIKeyboardWillHideNotification,
-                                                            object: nil)
-    }
    
-    
-    // MARK: - UITextFieldDelegate
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    func keyboardWillBeHidden(notification: NSNotification) {
-        restoreScrollViewSize()
-    }
-    
-    func updateScrollViewSize(moveSize: CGFloat, duration: NSTimeInterval) {
-        UIView.beginAnimations("ResizeForKeyboard", context: nil)
-        UIView.setAnimationDuration(duration)
-        
-        let contentInsets = UIEdgeInsetsMake(0, 0, moveSize, 0)
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
-        scrollView.contentOffset = CGPointMake(0, moveSize)
-        
-        UIView.commitAnimations()
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        isTextView = false
-        textField.resignFirstResponder()
-    }
-
-    
-    func restoreScrollViewSize() {
-        scrollView.contentInset = UIEdgeInsetsZero
-        scrollView.scrollIndicatorInsets = UIEdgeInsetsZero
-    }
-    
-
 }

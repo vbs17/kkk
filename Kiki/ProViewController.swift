@@ -143,9 +143,6 @@ class ProViewController: UIViewController {
         self.presentViewController(HomeViewController!, animated: true, completion: nil)
     }
     
-    
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

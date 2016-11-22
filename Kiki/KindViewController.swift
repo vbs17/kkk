@@ -467,6 +467,9 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     var songname:UITextField!
     var byou:UILabel!
     var genre = ""
+    var tappedCellPos:NSIndexPath! //タップされたCellのindexPath
+    var buttonOriginalColor:UIColor!//ボタンの元の色
+    var isRowSelected:Bool = false//現在行が選択状態か否か
     
     
     override func viewDidLoad() {
@@ -475,6 +478,70 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         let nib = UINib(nibName: "KindTableViewCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "Cell")
+        tappedCellPos = nil
+        
+    }
+
+    //どこのジャンル押されたか判明　ここで色変更したり　再度押したらジャンルが選択されてない状態にする　それで投稿したら注意出る
+    func buttonPressed(tableViewCell: KindTableViewCell) {
+        let indexPath = tableView.indexPathForCell(tableViewCell)
+        // 初めてのタップ
+        if tappedCellPos == nil {
+            // オリジナルのボタンの色を取得
+            buttonOriginalColor = tableViewCell.button.backgroundColor!
+            // ボタンの色を緑に。
+            tableViewCell.button.backgroundColor = UIColor.greenColor()
+            // ジャンルを決定
+            genre = AllItems[indexPath!.section][indexPath!.row]
+            // 行が選択されている
+            isRowSelected = true
+            // タップされたセルのindexPathを保存
+            tappedCellPos = indexPath
+        } else if tappedCellPos == indexPath {
+            // 同じセルのn度目のタップ
+            // 行が選択された状態なら、元に戻す
+            if isRowSelected {
+                // ボタンの色を元の色に
+                tableViewCell.button.backgroundColor = buttonOriginalColor
+                // ジャンルを未選択（空文字）に
+                genre = ""
+                // 行が非選択状態とする
+                isRowSelected = false
+                // タップされたセルのindexPathを保存
+                tappedCellPos = indexPath
+            } else {
+                // 行が非選択の状態なら、選択状態にする
+                // オリジナルのボタンの色を取得
+                buttonOriginalColor = tableViewCell.button.backgroundColor!
+                // ボタンの色を緑に。
+                tableViewCell.button.backgroundColor = UIColor.greenColor()
+                // ジャンルを決定
+                genre = AllItems[indexPath!.section][indexPath!.row]
+                // 行が選択されている
+                isRowSelected = true
+                // タップされたセルのindexPathを保存
+                tappedCellPos = indexPath
+            }
+        } else {
+            // 他の行がタップされた
+            // 既に選択状態の行がある
+            if isRowSelected {
+                // 既に選択状態の行の選択を解除
+                let oldCell:KindTableViewCell = tableView.cellForRowAtIndexPath(tappedCellPos) as! KindTableViewCell
+                oldCell.button.backgroundColor = buttonOriginalColor;
+            }
+            // 今回選択された行を選択状態とする
+            // オリジナルのボタンの色を取得
+            buttonOriginalColor = tableViewCell.button.backgroundColor!
+            // ボタンの色を緑に。
+            tableViewCell.button.backgroundColor = UIColor.greenColor()
+            // ジャンルを決定
+            genre = AllItems[indexPath!.section][indexPath!.row]
+            // 行が選択されている
+            isRowSelected = true
+            // タップされたセルのindexPathを保存
+            tappedCellPos = indexPath
+        }
         
     }
 
@@ -482,27 +549,45 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     //FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre) に保存
     
     @IBAction func post(sender: AnyObject) {
-        let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre)
-        let imageData = UIImageJPEGRepresentation(image!, 0.5)
-        let songName:NSString = songname.text!
-        let kazu:NSString = byou.text!
-        let ongen:NSString = songData.path!
-        let realSongdata = NSData(contentsOfFile: songData.path!)
-        let realsong = realSongdata!.base64EncodedStringWithOptions([])
-        let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)!
-        let postData = ["byou": kazu, "image": imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength), "songname": songName, "ongen": ongen, "realsong":realsong,"uid":uid]
-         postRef.childByAutoId().setValue(postData)
-        let tabvarviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Tab") as! TabViewController
-        self.presentViewController(tabvarviewcontroller, animated: true, completion: nil)
+        // もし行が選択されている＝ジャンルが選択されている
+        if isRowSelected {
+            // セルが選択されている時の処理を記述
+            let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre)
+            let imageData = UIImageJPEGRepresentation(image!, 0.5)
+            let songName:NSString = songname.text!
+            let kazu:NSString = byou.text!
+            let ongen:NSString = songData.path!
+            let realSongdata = NSData(contentsOfFile: songData.path!)
+            let realsong = realSongdata!.base64EncodedStringWithOptions([])
+            let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)!
+            let postData = ["byou": kazu, "image": imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength), "songname": songName, "ongen": ongen, "realsong":realsong,"uid":uid]
+            postRef.childByAutoId().setValue(postData)
+            let tabvarviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Tab") as! TabViewController
+            self.presentViewController(tabvarviewcontroller, animated: true, completion: nil)
+        } else {
+            // 行が選択されていない＝ジャンルが選択されていない
+            let alert = UIAlertController()
+            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellowColor()]
+            let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
+            alert.setValue(attributedTitle, forKey: "attributedTitle")
+            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+            let attributedMessage = NSAttributedString(string: "ジャンルを選択しよう", attributes: attributedMessageAttr)
+            alert.view.tintColor = UIColor.whiteColor()
+            alert.setValue(attributedMessage, forKey: "attributedMessage")
+            let subview = alert.view.subviews.first! as UIView
+            let alertContentView = subview.subviews.first! as UIView
+            alertContentView.backgroundColor = UIColor.grayColor()
+            
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{
+                (action: UIAlertAction!) -> Void in
+            })
+            alert.addAction(defaultAction)
+            presentViewController(alert, animated: true, completion: nil)
+            alert.view.tintColor = UIColor.whiteColor()
+        }
     }
-    
     
     //どこのジャンル押されたか判明　ここで色変更したり　再度押したらジャンルが選択されてない状態にする　それで投稿したら注意出る
-    func buttonPressed(tableViewCell: KindTableViewCell) {
-        let indexPath = tableView.indexPathForCell(tableViewCell)
-        genre = AllItems[indexPath!.section][indexPath!.row]
-        
-    }
     
     //値を設定
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
