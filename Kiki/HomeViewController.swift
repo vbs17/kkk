@@ -13,9 +13,11 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     var genre: String!
     var playSong:AVAudioPlayer!
     var timer = NSTimer()
+    var timer2 = NSTimer()
     var back: UIButton!
     var tableView: UITableView!
     var playingIndexPath:NSIndexPath!
+    @IBOutlet weak var lbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,8 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         tableView.registerNib(nib, forCellReuseIdentifier: "CEll")
         back.layer.cornerRadius = 37
         back.clipsToBounds = true
+        let tblBackColor: UIColor = UIColor.clearColor()
+        tableView.backgroundColor = tblBackColor
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -193,13 +197,16 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     
     
-    
+    func mada(){
+        lbl.text = "誰もまだ投稿していません"
+    }
     
     
     
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        timer2 = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: #selector(HomeViewController.mada), userInfo: nil, repeats: false)
         if FIRAuth.auth()?.currentUser != nil {
             if observing == false {
                 //俺が新しくできた
@@ -213,7 +220,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                             let row = self.playingIndexPath.row
                             self.playingIndexPath = NSIndexPath(forRow: row+1, inSection: 0)
                         }
-                        
+                        self.timer2.invalidate()
                         self.tableView.reloadData()
                     }
                 })
@@ -354,7 +361,8 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     }
     //全部大丈夫なのか
     @IBAction func backGo(sender: AnyObject) {
-        
+        timer.invalidate()
+        timer2.invalidate()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
