@@ -9,6 +9,8 @@ import FirebaseAuth
 class ProViewController: UIViewController {
     
     var image:UIImage!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var line: UITextField!
@@ -18,6 +20,8 @@ class ProViewController: UIViewController {
     @IBOutlet weak var ta: UITextField!
     @IBOutlet weak var back: UIButton!
     @IBOutlet weak var imageView1: UIImageView!
+    var selectedTextField:UITextField!
+
     
     
     @IBAction func post(sender: AnyObject) {
@@ -86,6 +90,9 @@ class ProViewController: UIViewController {
         imageView1.clipsToBounds = true
         back.layer.cornerRadius = 37
         back.clipsToBounds = true
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tapGesture)
+
         self.imageView.image = image
         FIRDatabase.database().reference().child(CommonConst.Profile).observeEventType(.ChildAdded, withBlock: { snapshot in
             
@@ -147,7 +154,124 @@ class ProViewController: UIViewController {
         let tabviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Tab") as! TabViewController
         self.presentViewController(tabviewcontroller, animated: true, completion: nil)
     }
-}
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func keyboardWillBeHidden(notification: NSNotification) {
+        restoreScrollViewSize()
+    }
+    
+    func updateScrollViewSize(moveSize: CGFloat, duration: NSTimeInterval) {
+        UIView.beginAnimations("ResizeForKeyboard", context: nil)
+        UIView.setAnimationDuration(duration)
+        
+        let contentInsets = UIEdgeInsetsMake(0, 0, moveSize, 0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+        scrollView.contentOffset = CGPointMake(0, moveSize)
+        
+        UIView.commitAnimations()
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        textField.resignFirstResponder()
+    }
+    
+    
+    func restoreScrollViewSize() {
+        scrollView.contentInset = UIEdgeInsetsZero
+        scrollView.scrollIndicatorInsets = UIEdgeInsetsZero
+    }
+    
+
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(SyugoViewController.keyboardWillBeShown(_:)),
+                                                         name: UIKeyboardWillShowNotification,
+                                                         object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(SyugoViewController.keyboardWillBeHidden(_:)),
+                                                         name: UIKeyboardWillHideNotification,
+                                                         object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self,
+                                                            name: UIKeyboardWillShowNotification,
+                                                            object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self,
+                                                            name: UIKeyboardWillHideNotification,
+                                                            object: nil)
+    }
+    
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        print("textFieldShouldBeginEditing\n")
+        return true
+    }
+
+    func textFieldDidBeginEditing(textField: UITextField) {
+        print("textFieldDidBeginEditing\n")
+        selectedTextField = textField
+        
+    }
+    
+    func dismissKeyboard(){
+        view.endEditing(true)
+    }
+
+
+    
+    
+    func keyboardWillBeShown(notification: NSNotification) {
+         let userInfo = notification.userInfo
+                if let keyboardFrame = userInfo![UIKeyboardFrameEndUserInfoKey]?.CGRectValue, let animationDuration = userInfo![UIKeyboardAnimationDurationUserInfoKey]?.doubleValue {
+                    restoreScrollViewSize()
+                    print("keyboardWillBeShown")
+                    let convertedKeyboardFrame = scrollView.convertRect(keyboardFrame, fromView: nil)
+                   
+                    let offsetY: CGFloat = CGRectGetMaxY(ta.frame) - CGRectGetMinY(convertedKeyboardFrame)
+                    if offsetY < 0 {
+                        return
+                    }
+                    updateScrollViewSize(offsetY, duration: animationDuration)
+                }
+            }
+        }
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
 
    
 

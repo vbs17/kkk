@@ -312,9 +312,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="35" translatesAutoresizingMaskIntoConstraints="NO" id="r6x-q5-lLq">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bTg-y0-34E">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
+                            </scrollView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pgs-Q6-eZ0">
                                 <rect key="frame" x="26" y="17" width="151" height="151"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -441,7 +441,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5Q-gJ-uq9">
-                                <rect key="frame" x="217" y="401" width="124" height="30"/>
+                                <rect key="frame" x="125" y="597" width="124" height="30"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="保存">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -462,6 +462,7 @@
                         <outlet property="imageView1" destination="pgs-Q6-eZ0" id="lRp-Tu-F9T"/>
                         <outlet property="line" destination="qFc-LS-rET" id="hVp-T0-dbr"/>
                         <outlet property="name" destination="9KD-HD-Jt5" id="Nee-OK-69m"/>
+                        <outlet property="scrollView" destination="bTg-y0-34E" id="9Bg-c6-cbJ"/>
                         <outlet property="ta" destination="zMX-wb-Wcn" id="0Rg-gT-ttk"/>
                         <outlet property="twitter" destination="LtC-Jk-kwA" id="m8Y-CZ-J4W"/>
                     </connections>
@@ -2355,7 +2356,6 @@
         <image name="3" width="4928" height="3264"/>
         <image name="33" width="6578" height="4699"/>
         <image name="34" width="3264" height="2448"/>
-        <image name="35" width="2848" height="4288"/>
         <image name="36" width="6016" height="4000"/>
         <image name="37" width="2752" height="1835"/>
         <image name="5" width="4807" height="3112"/>
