@@ -459,8 +459,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
    
     private let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","X","Y","Z","number"]
     
-    var buttonImage:UIImage = UIImage(named: "104937")!
-    var buttonImage2:UIImage = UIImage(named: "104937")!
+   
     //写真　曲名　秒数　音源
     //filenameをsongDataに渡す
     var songData:NSURL!
@@ -501,7 +500,10 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     //どこのジャンル押されたか判明
     func buttonPressed(tableViewCell: KindTableViewCell) {
         let indexPath = tableView.indexPathForCell(tableViewCell)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath!) as! KindTableViewCell
         genre = AllItems[indexPath!.section][indexPath!.row]
+        cell.button.backgroundColor = UIColor.greenColor()
+        
     }
     
     //値を設定

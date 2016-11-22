@@ -22,8 +22,9 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLD-Kg-DWt">
                         <rect key="frame" x="293" y="12" width="46" height="30"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
-                        <state key="normal" title="決定" backgroundImage="59774115_220x220">
+                        <state key="normal" title="決定">
                             <color key="titleColor" red="0.75047038610000005" green="0.75047038610000005" blue="0.75047038610000005" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                         <connections>
@@ -36,10 +37,7 @@
                 <outlet property="button" destination="lLD-Kg-DWt" id="QSg-pd-DVN"/>
                 <outlet property="label" destination="jeN-2N-0R0" id="eQc-yu-1Rh"/>
             </connections>
-            <point key="canvasLocation" x="547.5" y="446.5"/>
+            <point key="canvasLocation" x="445.5" y="412.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="59774115_220x220" width="220" height="220"/>
-    </resources>
 </document>
