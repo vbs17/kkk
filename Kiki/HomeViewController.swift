@@ -187,6 +187,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        if (postArray.count != 0){
         if FIRAuth.auth()?.currentUser != nil {
             if observing == false {
                 //俺が新しくできた
@@ -263,7 +264,11 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 observing = false
             }
         }
-    }
+        }else{
+            let HomeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Mada")
+            self.presentViewController(HomeViewController!, animated: false, completion: nil)
+        }}
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postArray.count

@@ -13,7 +13,7 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
     let photos = ["Kiki17", "Kiki18", "Kiki19","Kiki20","Kiki21","08531cedbc172968acd38e7fa2bfd2e0"]
     var count = 1
     var timeCount = 1
-    var songData:NSURL!
+    var songData:NSURL!//結合させる
     var audioEngine: AVAudioEngine!
     var player: AVAudioPlayerNode!
     var averagePower:Float32 = 0

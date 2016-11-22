@@ -619,6 +619,51 @@
             </objects>
             <point key="canvasLocation" x="-6098.5" y="-412.5"/>
         </scene>
+        <!--Mada View Controller-->
+        <scene sceneID="JTo-Kr-qDX">
+            <objects>
+                <viewController storyboardIdentifier="Mada" id="5JG-12-HZq" customClass="MadaViewController" customModule="Kiki" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7bq-y5-YAJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="O5S-oU-1fc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bef-Ab-014">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WQP-mB-l1B">
+                                <rect key="frame" x="0.0" y="574" width="375" height="93"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wo-3z-1uM">
+                                        <rect key="frame" x="26" y="22" width="67" height="49"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="back:" destination="5JG-12-HZq" eventType="touchUpInside" id="ElN-tu-sWf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="17" translatesAutoresizingMaskIntoConstraints="NO" id="6hY-7d-1Lf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="566"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="まだ誰も投稿していません" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jf-BG-4pv">
+                                <rect key="frame" x="72" y="431" width="241" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P9x-cz-JUE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6085.5" y="353.5"/>
+        </scene>
         <!--Set View Controller-->
         <scene sceneID="UbC-xt-Lux">
             <objects>
@@ -792,7 +837,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFq-y6-hcr">
-                                <rect key="frame" x="172" y="357" width="46" height="30"/>
+                                <rect key="frame" x="177" y="268" width="46" height="30"/>
                                 <state key="normal" title="2"/>
                                 <connections>
                                     <action selector="Go:" destination="0tn-Ol-jYb" eventType="touchUpInside" id="E5r-d9-9ZQ"/>
@@ -820,7 +865,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="589-jT-jmU">
-                                <rect key="frame" x="178" y="379" width="46" height="30"/>
+                                <rect key="frame" x="174" y="275" width="46" height="30"/>
                                 <state key="normal" title="3"/>
                                 <connections>
                                     <action selector="Go:" destination="rDI-Ee-4O6" eventType="touchUpInside" id="tR3-OL-snf"/>
@@ -1210,7 +1255,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bM-jo-Mri">
-                                <rect key="frame" x="164" y="394" width="46" height="30"/>
+                                <rect key="frame" x="164" y="288" width="46" height="30"/>
                                 <state key="normal" title="1"/>
                                 <connections>
                                     <action selector="Go:" destination="Xnb-sg-rTY" eventType="touchUpInside" id="0Mc-V7-i3a"/>
@@ -2351,6 +2396,7 @@
         <image name="11" width="3582" height="2811"/>
         <image name="14" width="3818" height="2988"/>
         <image name="15" width="5616" height="3744"/>
+        <image name="17" width="3456" height="5184"/>
         <image name="19" width="2640" height="3960"/>
         <image name="22" width="5248" height="2952"/>
         <image name="3" width="4928" height="3264"/>
