@@ -152,7 +152,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let indexPath = tableView.indexPathForRowAtPoint(point)
         let postData = postArray[indexPath!.row]
         let cell = tableView.cellForRowAtIndexPath(indexPath!) as! HomeTableViewCell?
-        cell!.hyouka.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        cell!.hyouka.setTitleColor(UIColor.yellowColor(), forState: UIControlState.Normal)
 
         if let uid = FIRAuth.auth()?.currentUser?.uid {
             var index = -1 //0からpostData.star.count(postData.star.countは含まない)
