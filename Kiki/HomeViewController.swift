@@ -5,6 +5,8 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 import AVFoundation
+import Spring
+
 
 class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDelegate,AVAudioPlayerDelegate{
     var postArray: [PostData] = []
@@ -74,8 +76,10 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let point = touch!.locationInView(self.tableView)
         let indexPath = tableView.indexPathForRowAtPoint(point)
         let postData = postArray[indexPath!.row]
+        if (playSong.playing){
         playSong.pause()
         timer.invalidate()
+        }
         let pro = self.storyboard?.instantiateViewControllerWithIdentifier("Pi") as! ProIdouViewController
         pro.uid = postData.uid
         self.presentViewController(pro, animated: true, completion: nil)
@@ -338,6 +342,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         
         let cell = tableView.cellForRowAtIndexPath(playingIndexPath) as! HomeTableViewCell?
         cell!.onlabel2.text = "0:00"
+      
         playSong.stop()
         timer.invalidate()
         playSong.prepareToPlay()
