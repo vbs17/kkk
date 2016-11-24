@@ -112,7 +112,7 @@ class HomeTableViewCell: UITableViewCell {
         ImageView.image = postData.image
         label.text = postData.name
         label2.text = postData.byou
-        tap = Data(base64Encoded: postData.realsong!, options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)
+        tap = Data(base64Encoded: postData.realsong!, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
     }
     
     func setPostData1(_ postData: PostData) {

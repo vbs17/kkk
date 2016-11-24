@@ -328,7 +328,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             timer.invalidate()
             playingIndexPath = indexPath
             //ここもポイント
-            let tap = Data(base64Encoded: postData.realsong!, options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)
+            let tap = Data(base64Encoded: postData.realsong!, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
             playSong = try! AVAudioPlayer(data:tap!)
             playSong.delegate = self
             cell!.playSong = playSong
