@@ -76,9 +76,11 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let point = touch!.locationInView(self.tableView)
         let indexPath = tableView.indexPathForRowAtPoint(point)
         let postData = postArray[indexPath!.row]
-        if (playSong.playing){
-        playSong.pause()
-        timer.invalidate()
+        if playSong != nil {
+            if (playSong.playing){
+                playSong.pause()
+                timer.invalidate()
+            }
         }
         let pro = self.storyboard?.instantiateViewControllerWithIdentifier("Pi") as! ProIdouViewController
         pro.uid = postData.uid
@@ -213,7 +215,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        timer2 = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: #selector(HomeViewController.mada), userInfo: nil, repeats: false)
+        timer2 = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(HomeViewController.mada), userInfo: nil, repeats: false)
         if FIRAuth.auth()?.currentUser != nil {
             if observing == false {
                 //俺が新しくできた

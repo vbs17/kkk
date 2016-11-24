@@ -464,10 +464,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var hou: UIButton!
     @IBOutlet weak var cho: UILabel!
-    var timer3 = NSTimer()
-    var countT = 1
-    var count2: Bool = false
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -475,34 +472,10 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let nib = UINib(nibName: "ItiranTableViewCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "Celll")
         hou.enabled = false
-        timer3 = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(ItiranViewController.choo), userInfo: nil, repeats: true)
-        
-    }
-    
-    func choo(){
-        if countT == 1{
-            cho.textColor = UIColor.yellowColor()
-            countT += 1
-            count2 = true
-
-        } else if countT == 2{
-            cho.textColor = UIColor.grayColor()
-            countT += 1
-            count2 = true
-
-
-        } else if countT == 3{
-            cho.textColor = UIColor.blackColor()
-            countT = 1
-            count2 = true
-
-        }
-        
     }
 
     //Cellが選択された際に呼び出される.
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        timer3.invalidate()
         let homeviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Home") as! HomeViewController
         genre =  AllItems[indexPath.section][indexPath.row]
         homeviewcontroller.genre = genre
