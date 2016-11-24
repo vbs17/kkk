@@ -2,7 +2,7 @@
 import UIKit
 
 protocol SyugoTableViewCellDelegate {
-    func buttonPressed(tableViewCell: SyugoTableViewCell)
+    func buttonPressed(_ tableViewCell: SyugoTableViewCell)
 }
 
 class SyugoTableViewCell: UITableViewCell {
@@ -12,7 +12,7 @@ class SyugoTableViewCell: UITableViewCell {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var kete: UIButton!
     
-    @IBAction func kettei(sender: AnyObject) {
+    @IBAction func kettei(_ sender: AnyObject) {
         delegate.buttonPressed(self)
     }
     
@@ -20,7 +20,7 @@ class SyugoTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     

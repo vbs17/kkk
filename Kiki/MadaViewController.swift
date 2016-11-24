@@ -12,9 +12,9 @@ class MadaViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func back(sender: AnyObject) {
-        let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Itiran")
-        self.presentViewController(loginViewController!, animated: true, completion: nil)
+    @IBAction func back(_ sender: AnyObject) {
+        let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Itiran")
+        self.present(loginViewController!, animated: true, completion: nil)
     }
 
   

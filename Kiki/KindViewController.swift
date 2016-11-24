@@ -457,17 +457,17 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
    ["80kidz",
     "9mm Parabellum Bullet"]]
    
-    private let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","X","Y","Z","number"]
+    fileprivate let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","X","Y","Z","number"]
     
    
     //写真　曲名　秒数　音源
     //filenameをsongDataに渡す
-    var songData:NSURL!
+    var songData:URL!
     var image:UIImage!
     var songname:UITextField!
     var byou:UILabel!
     var genre = ""
-    var tappedCellPos:NSIndexPath! //タップされたCellのindexPath
+    var tappedCellPos:IndexPath! //タップされたCellのindexPath
     var buttonOriginalColor:UIColor!//ボタンの元の色
     var isRowSelected:Bool = false//現在行が選択状態か否か
     
@@ -477,20 +477,20 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         let nib = UINib(nibName: "KindTableViewCell", bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: "Cell")
+        tableView.register(nib, forCellReuseIdentifier: "Cell")
         tappedCellPos = nil
         
     }
 
     //どこのジャンル押されたか判明　ここで色変更したり　再度押したらジャンルが選択されてない状態にする　それで投稿したら注意出る
-    func buttonPressed(tableViewCell: KindTableViewCell) {
-        let indexPath = tableView.indexPathForCell(tableViewCell)
+    func buttonPressed(_ tableViewCell: KindTableViewCell) {
+        let indexPath = tableView.indexPath(for: tableViewCell)
         // 初めてのタップ
         if tappedCellPos == nil {
             // オリジナルのボタンの色を取得
             buttonOriginalColor = tableViewCell.button.backgroundColor!
             // ボタンの色を緑に。
-            tableViewCell.button.backgroundColor = UIColor.greenColor()
+            tableViewCell.button.backgroundColor = UIColor.green
             // ジャンルを決定
             genre = AllItems[indexPath!.section][indexPath!.row]
             // 行が選択されている
@@ -514,7 +514,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
                 // オリジナルのボタンの色を取得
                 buttonOriginalColor = tableViewCell.button.backgroundColor!
                 // ボタンの色を緑に。
-                tableViewCell.button.backgroundColor = UIColor.greenColor()
+                tableViewCell.button.backgroundColor = UIColor.green
                 // ジャンルを決定
                 genre = AllItems[indexPath!.section][indexPath!.row]
                 // 行が選択されている
@@ -527,14 +527,14 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
             // 既に選択状態の行がある
             if isRowSelected {
                 // 既に選択状態の行の選択を解除
-                let oldCell:KindTableViewCell = tableView.cellForRowAtIndexPath(tappedCellPos) as! KindTableViewCell
+                let oldCell:KindTableViewCell = tableView.cellForRow(at: tappedCellPos) as! KindTableViewCell
                 oldCell.button.backgroundColor = buttonOriginalColor;
             }
             // 今回選択された行を選択状態とする
             // オリジナルのボタンの色を取得
             buttonOriginalColor = tableViewCell.button.backgroundColor!
             // ボタンの色を緑に。
-            tableViewCell.button.backgroundColor = UIColor.greenColor()
+            tableViewCell.button.backgroundColor = UIColor.green
             // ジャンルを決定
             genre = AllItems[indexPath!.section][indexPath!.row]
             // 行が選択されている
@@ -548,50 +548,50 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre) に保存
     
-    @IBAction func post(sender: AnyObject) {
+    @IBAction func post(_ sender: AnyObject) {
         // もし行が選択されている＝ジャンルが選択されている
         if isRowSelected {
             // セルが選択されている時の処理を記述
             let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre)
             let imageData = UIImageJPEGRepresentation(image!, 0.5)
-            let songName:NSString = songname.text!
-            let kazu:NSString = byou.text!
-            let ongen:NSString = songData.path!
-            let realSongdata = NSData(contentsOfFile: songData.path!)
-            let realsong = realSongdata!.base64EncodedStringWithOptions([])
-            let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)!
-            let postData = ["byou": kazu, "image": imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength), "songname": songName, "ongen": ongen, "realsong":realsong,"uid":uid]
+            let songName:NSString = songname.text! as NSString
+            let kazu:NSString = byou.text! as NSString
+            let ongen:NSString = songData.path as NSString
+            let realSongdata = try? Data(contentsOf: URL(fileURLWithPath: songData.path))
+            let realsong = realSongdata!.base64EncodedString(options: [])
+            let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
+            let postData = ["byou": kazu, "image": imageData!.base64EncodedString(options: .lineLength64Characters), "songname": songName, "ongen": ongen, "realsong":realsong,"uid":uid] as [String : Any]
             postRef.childByAutoId().setValue(postData)
-            let tabvarviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Tab") as! TabViewController
-            self.presentViewController(tabvarviewcontroller, animated: true, completion: nil)
+            let tabvarviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Tab") as! TabViewController
+            self.present(tabvarviewcontroller, animated: true, completion: nil)
         } else {
             // 行が選択されていない＝ジャンルが選択されていない
             let alert = UIAlertController()
-            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellowColor()]
+            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellow]
             let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
             alert.setValue(attributedTitle, forKey: "attributedTitle")
-            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.white]
             let attributedMessage = NSAttributedString(string: "ジャンルを選択しよう", attributes: attributedMessageAttr)
-            alert.view.tintColor = UIColor.whiteColor()
+            alert.view.tintColor = UIColor.white
             alert.setValue(attributedMessage, forKey: "attributedMessage")
             let subview = alert.view.subviews.first! as UIView
             let alertContentView = subview.subviews.first! as UIView
-            alertContentView.backgroundColor = UIColor.grayColor()
+            alertContentView.backgroundColor = UIColor.gray
             
-            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
                 (action: UIAlertAction!) -> Void in
             })
             alert.addAction(defaultAction)
-            presentViewController(alert, animated: true, completion: nil)
-            alert.view.tintColor = UIColor.whiteColor()
+            present(alert, animated: true, completion: nil)
+            alert.view.tintColor = UIColor.white
         }
     }
     
     //どこのジャンル押されたか判明　ここで色変更したり　再度押したらジャンルが選択されてない状態にする　それで投稿したら注意出る
     
     //値を設定
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! KindTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! KindTableViewCell
         cell.delegate = self
         let items = AllItems[indexPath.section][indexPath.row]
         cell.label.text = items
@@ -600,22 +600,22 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     
     //Cellが選択された際に呼び出される.
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
     }
 
     //セクションの数を返す.
-     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+     func numberOfSections(in tableView: UITableView) -> Int {
         return mySections.count
     }
     
     //セクションのタイトルを返す.
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return mySections[section] as? String
     }
     
     //テーブルに表示する配列の総数を返す.
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AllItems[section].count
     }
     

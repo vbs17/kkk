@@ -24,58 +24,58 @@ class ProViewController: UIViewController,UITextFieldDelegate{
     
     
     
-    @IBAction func post(sender: AnyObject) {
+    @IBAction func post(_ sender: AnyObject) {
         if (self.imageView.image != nil && name.text!.characters.count > 0){
-            let ud = NSUserDefaults.standardUserDefaults()
-            ud.setBool(true, forKey: CommonConst.IsSavePlofileData)
+            let ud = UserDefaults.standard
+            ud.set(true, forKey: CommonConst.IsSavePlofileData)
             ud.synchronize()
             let postRef = FIRDatabase.database().reference().child(CommonConst.Profile)
             let imageData = UIImageJPEGRepresentation(image ?? imageView.image!, 0.5)
-            let name1:NSString = name.text ?? name.text!
-            let line1:NSString = line.text ?? line.text!
-            let twitter1:NSString = twitter.text ?? twitter.text!
-            let facebook1: NSString = face.text ?? face.text!
-            let den1: NSString = den.text ?? den.text!
-            let ta1: NSString = ta.text ?? ta.text!
-            let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)!
-            let postData = ["name": name1, "image": imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength), "line": line1, "facebook": facebook1, "twitter":twitter1,"den":den1,"ta":ta1,"uid":uid]
+            let name1:NSString = name.text as NSString? ?? name.text! as NSString
+            let line1:NSString = line.text as NSString? ?? line.text! as NSString
+            let twitter1:NSString = twitter.text as NSString? ?? twitter.text! as NSString
+            let facebook1: NSString = face.text as NSString? ?? face.text! as NSString
+            let den1: NSString = den.text as NSString? ?? den.text! as NSString
+            let ta1: NSString = ta.text as NSString? ?? ta.text! as NSString
+            let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
+            let postData = ["name": name1, "image": imageData!.base64EncodedString(options: .lineLength64Characters), "line": line1, "facebook": facebook1, "twitter":twitter1,"den":den1,"ta":ta1,"uid":uid] as [String : Any]
             postRef.child(uid as String).setValue(postData)
-            let tabvarviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Tab") as! TabViewController
-            self.presentViewController(tabvarviewcontroller, animated: true, completion: nil)
+            let tabvarviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Tab") as! TabViewController
+            self.present(tabvarviewcontroller, animated: true, completion: nil)
         } else{
             if (image != nil && name.text!.characters.count > 0){
                 let postRef = FIRDatabase.database().reference().child(CommonConst.Profile)
                 let imageData = UIImageJPEGRepresentation(image!, 0.5)
-                let name1:NSString = name.text!
-                let line1:NSString = line.text!
-                let twitter1:NSString = twitter.text!
-                let facebook1: NSString = face.text!
-                let den1: NSString = den.text!
-                let ta1: NSString = ta.text!
-                let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)!
-                let postData = ["name": name1, "image": imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength), "line": line1, "facebook": facebook1, "twitter":twitter1,"den":den1,"ta":ta1,"uid":uid]
+                let name1:NSString = name.text! as NSString
+                let line1:NSString = line.text! as NSString
+                let twitter1:NSString = twitter.text! as NSString
+                let facebook1: NSString = face.text! as NSString
+                let den1: NSString = den.text! as NSString
+                let ta1: NSString = ta.text! as NSString
+                let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
+                let postData = ["name": name1, "image": imageData!.base64EncodedString(options: .lineLength64Characters), "line": line1, "facebook": facebook1, "twitter":twitter1,"den":den1,"ta":ta1,"uid":uid] as [String : Any]
                 postRef.child(uid as String).setValue(postData)
-                let tabvarviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Tab") as! TabViewController
-                self.presentViewController(tabvarviewcontroller, animated: true, completion: nil)
+                let tabvarviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Tab") as! TabViewController
+                self.present(tabvarviewcontroller, animated: true, completion: nil)
             }else{
                 let alert = UIAlertController()
-                let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellowColor()]
+                let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellow]
                 let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
                 alert.setValue(attributedTitle, forKey: "attributedTitle")
-                let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+                let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.white]
                 let attributedMessage = NSAttributedString(string: "画像と名前を設定しよう", attributes: attributedMessageAttr)
-                alert.view.tintColor = UIColor.whiteColor()
+                alert.view.tintColor = UIColor.white
                 alert.setValue(attributedMessage, forKey: "attributedMessage")
                 let subview = alert.view.subviews.first! as UIView
                 let alertContentView = subview.subviews.first! as UIView
-                alertContentView.backgroundColor = UIColor.grayColor()
+                alertContentView.backgroundColor = UIColor.gray
                 
-                let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{
+                let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
                     (action: UIAlertAction!) -> Void in
                 })
                 alert.addAction(defaultAction)
-                presentViewController(alert, animated: true, completion: nil)
-                alert.view.tintColor = UIColor.whiteColor()
+                present(alert, animated: true, completion: nil)
+                alert.view.tintColor = UIColor.white
                 
             }
         }
@@ -94,7 +94,7 @@ class ProViewController: UIViewController,UITextFieldDelegate{
         self.view.addGestureRecognizer(tapGesture)
         
         self.imageView.image = image
-        FIRDatabase.database().reference().child(CommonConst.Profile).observeEventType(.ChildAdded, withBlock: { snapshot in
+        FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: { snapshot in
             
             let postData = PostData2(snapshot: snapshot, myId: snapshot.key)
             
@@ -114,7 +114,7 @@ class ProViewController: UIViewController,UITextFieldDelegate{
             }
         })
         
-        FIRDatabase.database().reference().child(CommonConst.Profile).observeEventType(.ChildChanged, withBlock: { snapshot in
+        FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: { snapshot in
             if ( snapshot.key == FIRAuth.auth()?.currentUser?.uid ) {
                 let postData = PostData2(snapshot: snapshot, myId: snapshot.key)
                 if self.image == nil {
@@ -140,36 +140,36 @@ class ProViewController: UIViewController,UITextFieldDelegate{
         
     }
     
-    @IBAction func proI(sender: AnyObject) {
-        let proiviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("ProI") as! ProIViewController
-        self.presentViewController(proiviewcontroller, animated: true, completion: nil)
+    @IBAction func proI(_ sender: AnyObject) {
+        let proiviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "ProI") as! ProIViewController
+        self.present(proiviewcontroller, animated: true, completion: nil)
     }
     
     
-    @IBAction func logout(sender: AnyObject) {
-        let HomeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Set")
-        self.presentViewController(HomeViewController!, animated: true, completion: nil)
+    @IBAction func logout(_ sender: AnyObject) {
+        let HomeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Set")
+        self.present(HomeViewController!, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func back(sender: AnyObject) {
-        let tabviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Tab") as! TabViewController
-        self.presentViewController(tabviewcontroller, animated: true, completion: nil)
+    @IBAction func back(_ sender: AnyObject) {
+        let tabviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Tab") as! TabViewController
+        self.present(tabviewcontroller, animated: true, completion: nil)
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    func keyboardWillBeHidden(notification: NSNotification) {
+    func keyboardWillBeHidden(_ notification: Notification) {
         restoreScrollViewSize()
     }
     
-    func updateScrollViewSize(moveSize: CGFloat, duration: NSTimeInterval) {
+    func updateScrollViewSize(_ moveSize: CGFloat, duration: TimeInterval) {
         scrollView.contentSize = CGSize(width: 0.0,height: scrollView.frame.size.height + moveSize )
         UIView.beginAnimations("ResizeForKeyboard", context: nil)
         UIView.setAnimationDuration(duration)
@@ -181,53 +181,53 @@ class ProViewController: UIViewController,UITextFieldDelegate{
         let contentInsets = UIEdgeInsetsMake(0, 0, abs(move), 0)
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
-        scrollView.contentOffset = CGPointMake(0, abs(move))
+        scrollView.contentOffset = CGPoint(x: 0, y: abs(move))
         UIView.commitAnimations()
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         textField.resignFirstResponder()
         
     }
     
     
     func restoreScrollViewSize() {
-        scrollView.contentInset = UIEdgeInsetsZero
-        scrollView.scrollIndicatorInsets = UIEdgeInsetsZero
-        scrollView.contentOffset = CGPointMake(0, 0)
+        scrollView.contentInset = UIEdgeInsets.zero
+        scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
+        scrollView.contentOffset = CGPoint(x: 0, y: 0)
     }
     
     
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NSNotificationCenter.defaultCenter().addObserver(self,
+        NotificationCenter.default.addObserver(self,
                                                          selector: #selector(SyugoViewController.keyboardWillBeShown(_:)),
-                                                         name: UIKeyboardWillShowNotification,
+                                                         name: NSNotification.Name.UIKeyboardWillShow,
                                                          object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self,
+        NotificationCenter.default.addObserver(self,
                                                          selector: #selector(SyugoViewController.keyboardWillBeHidden(_:)),
-                                                         name: UIKeyboardWillHideNotification,
+                                                         name: NSNotification.Name.UIKeyboardWillHide,
                                                          object: nil)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        NSNotificationCenter.defaultCenter().removeObserver(self,
-                                                            name: UIKeyboardWillShowNotification,
+        NotificationCenter.default.removeObserver(self,
+                                                            name: NSNotification.Name.UIKeyboardWillShow,
                                                             object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self,
-                                                            name: UIKeyboardWillHideNotification,
+        NotificationCenter.default.removeObserver(self,
+                                                            name: NSNotification.Name.UIKeyboardWillHide,
                                                             object: nil)
     }
     
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return true
     }
     
-    func textFieldDidBeginEditing(textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         selectedTextField = textField
         
     }
@@ -239,12 +239,12 @@ class ProViewController: UIViewController,UITextFieldDelegate{
     
     
     
-    func keyboardWillBeShown(notification: NSNotification) {
+    func keyboardWillBeShown(_ notification: Notification) {
         let userInfo = notification.userInfo
-        if let keyboardFrame = userInfo![UIKeyboardFrameEndUserInfoKey]?.CGRectValue, let animationDuration = userInfo![UIKeyboardAnimationDurationUserInfoKey]?.doubleValue {
-            let convertedKeyboardFrame = scrollView.convertRect(keyboardFrame, fromView: nil)
+        if let keyboardFrame = (userInfo![UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue, let animationDuration = (userInfo![UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue {
+            let convertedKeyboardFrame = scrollView.convert(keyboardFrame, from: nil)
             
-            let offsetY: CGFloat = CGRectGetMaxY(ta.frame) - CGRectGetMinY(convertedKeyboardFrame)
+            let offsetY: CGFloat = ta.frame.maxY - convertedKeyboardFrame.minY
             updateScrollViewSize(convertedKeyboardFrame.height, duration: animationDuration)
             if offsetY < 0 {
                 return

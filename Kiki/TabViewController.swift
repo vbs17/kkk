@@ -6,7 +6,6 @@ import FirebaseAuth
 import Spring
 
 
-
 class TabViewController: UIViewController {
     
     @IBOutlet weak var music1: UIButton!
@@ -15,43 +14,43 @@ class TabViewController: UIViewController {
     @IBOutlet weak var pro: UIButton!
     @IBOutlet weak var guitar: UIButton!
     
-    @IBAction func guitargo(sender: AnyObject) {
-        let HomeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Ore")
-        self.presentViewController(HomeViewController!, animated: false, completion: nil)
+    @IBAction func guitargo(_ sender: AnyObject) {
+        let HomeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Ore")
+        self.present(HomeViewController!, animated: false, completion: nil)
 
     }
     
-    @IBAction func pro(sender: AnyObject) {
-        let ProViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Pro")
-        self.presentViewController(ProViewController!, animated: true, completion: nil)
+    @IBAction func pro(_ sender: AnyObject) {
+        let ProViewController = self.storyboard?.instantiateViewController(withIdentifier: "Pro")
+        self.present(ProViewController!, animated: true, completion: nil)
     }
     
-    @IBAction func path(sender: AnyObject) {
+    @IBAction func path(_ sender: AnyObject) {
         let springButton = sender as! SpringButton
         springButton.animation = "pop"
         springButton.duration = 0.5
         springButton.animate()
-        let HomeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Itiran1")
-        self.presentViewController(HomeViewController!, animated: false, completion: nil)
+        let HomeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Itiran1")
+        self.present(HomeViewController!, animated: false, completion: nil)
     }
     
     
-    @IBAction func recpic(sender: AnyObject) {
+    @IBAction func recpic(_ sender: AnyObject) {
         let springButton = sender as! SpringButton
         springButton.animation = "pop"
         springButton.duration = 0.5
         springButton.animate()
-        let TopViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Syuru")
-        self.presentViewController(TopViewController!, animated: true, completion: nil)
+        let TopViewController = self.storyboard?.instantiateViewController(withIdentifier: "Syuru")
+        self.present(TopViewController!, animated: true, completion: nil)
     }
     
-    @IBAction func music(sender: AnyObject) {
+    @IBAction func music(_ sender: AnyObject) {
         let springButton = sender as! SpringButton
         springButton.animation = "pop"
         springButton.duration = 0.5
         springButton.animate()
-        let setViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Itiran")
-        self.presentViewController(setViewController!, animated: false, completion: nil)
+        let setViewController = self.storyboard?.instantiateViewController(withIdentifier: "Itiran")
+        self.present(setViewController!, animated: false, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -69,13 +68,13 @@ class TabViewController: UIViewController {
        
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if FIRAuth.auth()?.currentUser == nil {
-            dispatch_async(dispatch_get_main_queue()) {
-                let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Login")
-                self.presentViewController(loginViewController!, animated: false, completion: nil)
+            DispatchQueue.main.async {
+                let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+                self.present(loginViewController!, animated: false, completion: nil)
             }
             
         }

@@ -21,9 +21,9 @@ class Syutyu2ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func go(sender: AnyObject) {
-        let basyoviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Syutyu3")
-        self.presentViewController(basyoviewcontroller!, animated: true, completion: nil)
+    @IBAction func go(_ sender: AnyObject) {
+        let basyoviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Syutyu3")
+        self.present(basyoviewcontroller!, animated: true, completion: nil)
     }
 
     /*

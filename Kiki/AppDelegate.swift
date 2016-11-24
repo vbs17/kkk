@@ -13,25 +13,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FIRApp.configure()
         FIRDatabase.database().persistenceEnabled = true
-        let postPathRef = FIRDatabase.database().referenceWithPath(CommonConst.PostPATH)
+        let postPathRef = FIRDatabase.database().reference(withPath: CommonConst.PostPATH)
         postPathRef.keepSynced(true)
-        let postPath2Ref = FIRDatabase.database().referenceWithPath(CommonConst.PostPATH2)
+        let postPath2Ref = FIRDatabase.database().reference(withPath: CommonConst.PostPATH2)
         postPath2Ref.keepSynced(true)
-        let ProfileRef = FIRDatabase.database().referenceWithPath(CommonConst.Profile)
+        let ProfileRef = FIRDatabase.database().reference(withPath: CommonConst.Profile)
         ProfileRef.keepSynced(true)
         
-        let ud = NSUserDefaults.standardUserDefaults()
-        let isTutorial = ud.boolForKey(CommonConst.IsTutorial )
+        let ud = UserDefaults.standard
+        let isTutorial = ud.bool(forKey: CommonConst.IsTutorial )
        
         
         if isTutorial == false {
             let storyboard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
-            let viewController:UIViewController = storyboard.instantiateViewControllerWithIdentifier("Tyu")
+            let viewController:UIViewController = storyboard.instantiateViewController(withIdentifier: "Tyu")
             self.window?.rootViewController = viewController
-            self.window?.makeKeyWindow()
+            self.window?.makeKey()
             
             return true
         }
@@ -41,16 +41,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
         
     }
     
     let ApplicationDidEnterBackgroundNotification = "ApplicationDidEnterBackgroundNotification"
     
     
-    func applicationDidEnterBackground(application: UIApplication) {
-        let ns = NSNotificationCenter.defaultCenter()
-        ns.postNotificationName(ApplicationDidEnterBackgroundNotification, object: nil)
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        let ns = NotificationCenter.default
+        ns.post(name: Notification.Name(rawValue: ApplicationDidEnterBackgroundNotification), object: nil)
     }
     
     
@@ -58,14 +58,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
     }
     
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(_ application: UIApplication) {
         
     }
     
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
     }
     
 

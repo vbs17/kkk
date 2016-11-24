@@ -15,9 +15,9 @@ class Tyu2ViewController: UIViewController {
     }
     
 
-    @IBAction func Go(sender: AnyObject) {
-        let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Tyu3")
-        self.presentViewController(loginViewController!, animated: true, completion: nil)
+    @IBAction func Go(_ sender: AnyObject) {
+        let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Tyu3")
+        self.present(loginViewController!, animated: true, completion: nil)
 
     }
     

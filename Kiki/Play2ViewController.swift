@@ -5,14 +5,14 @@ import MediaPlayer
 
 
 class Play2ViewController: UIViewController {
-    var songData2:NSURL!
-    var songData:NSURL!
+    var songData2:URL!
+    var songData:URL!
     var playSong:AVAudioPlayer!
-    var timer = NSTimer()
+    var timer = Timer()
     let recordSetting : [String : AnyObject] = [
-        AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-        AVNumberOfChannelsKey: 1 ,
-        AVSampleRateKey: 44100
+        AVFormatIDKey: Int(kAudioFormatMPEG4AAC) as AnyObject,
+        AVNumberOfChannelsKey: 1 as AnyObject ,
+        AVSampleRateKey: 44100 as AnyObject
     ]
     
     @IBOutlet weak var back: UIButton!
@@ -25,48 +25,48 @@ class Play2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //二つとも再生
-        let sound2:AVAudioPlayer = try! AVAudioPlayer(contentsOfURL: songData2!)
+        let sound2:AVAudioPlayer = try! AVAudioPlayer(contentsOf: songData2!)
         playSong = sound2
         sound2.prepareToPlay()
         
         
     }
     //二つとも再生
-    @IBAction func playGo(sender: AnyObject) {
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(PlayViewController.updatePlayingTime), userInfo: nil, repeats: true)
+    @IBAction func playGo(_ sender: AnyObject) {
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(PlayViewController.updatePlayingTime), userInfo: nil, repeats: true)
         playSong.play()
-        play.enabled = false
-        back.enabled = true
+        play.isEnabled = false
+        back.isEnabled = true
     }
-    @IBAction func backGo(sender: AnyObject) {
+    @IBAction func backGo(_ sender: AnyObject) {
         onbyou.text = "0:00"
-        play.enabled = true
-        back.enabled = false
+        play.isEnabled = true
+        back.isEnabled = false
         playSong.stop()
         playSong.prepareToPlay()
         playSong.currentTime = 0
 
     }
     //保存したのを送る
-    @IBAction func okGo(sender: AnyObject) {
+    @IBAction func okGo(_ sender: AnyObject) {
         playSong.stop()
         timer.invalidate()
-        let sendviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Send") as! SendViewController
+        let sendviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Send") as! SendViewController
         sendviewcontroller.songData = songData2
-        self.presentViewController(sendviewcontroller, animated: true, completion: nil)
+        self.present(sendviewcontroller, animated: true, completion: nil)
         
     }
     
-    @IBAction func retakeGo(sender: AnyObject) {
+    @IBAction func retakeGo(_ sender: AnyObject) {
         playSong.stop()
         timer.invalidate()
-        let deleteSong = try!AVAudioRecorder(URL: songData2,settings:recordSetting)
+        let deleteSong = try!AVAudioRecorder(url: songData2,settings:recordSetting)
         deleteSong.deleteRecording()
-        let viewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Top2") as! _TViewController
+        let viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Top2") as! _TViewController
         viewcontroller.songData = self.songData
-        self.presentViewController(viewcontroller, animated: true, completion: nil)
-        let manager = NSFileManager()
-        if manager.fileExistsAtPath(songData2.absoluteString){
+        self.present(viewcontroller, animated: true, completion: nil)
+        let manager = FileManager()
+        if manager.fileExists(atPath: songData2.absoluteString){
             print("ok")
         }else{
             print("no")
@@ -85,9 +85,9 @@ class Play2ViewController: UIViewController {
         onbyou.text = formatTimeString(playSong.currentTime)
     }
     
-    func formatTimeString(d: Double) -> String {
-        let s: Int = Int(d % 60)
-        let m: Int = Int((d - Double(s)) / 60 % 60)
+    func formatTimeString(_ d: Double) -> String {
+        let s: Int = Int(d.truncatingRemainder(dividingBy: 60))
+        let m: Int = Int(((d - Double(s)) / 60).truncatingRemainder(dividingBy: 60))
         let str = String(format: "%2d:%02d",  m, s)
         return str
     }

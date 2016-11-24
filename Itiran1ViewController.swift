@@ -13,12 +13,12 @@ class Itiran1ViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBAction func back(sender: AnyObject) {
-        let ProViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Tab")
-        self.presentViewController(ProViewController!, animated: true, completion: nil)
+    @IBAction func back(_ sender: AnyObject) {
+        let ProViewController = self.storyboard?.instantiateViewController(withIdentifier: "Tab")
+        self.present(ProViewController!, animated: true, completion: nil)
         
     }
-    private let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","X","Y","Z","number"]
+    fileprivate let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","X","Y","Z","number"]
     
     let AllItems: [[String]]  = [[ "赤犬",
         "あがた森魚",
@@ -474,19 +474,19 @@ class Itiran1ViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.delegate = self
         tableView.dataSource = self
         let nib = UINib(nibName: "ItiranTableViewCell", bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: "Celll")
+        tableView.register(nib, forCellReuseIdentifier: "Celll")
     }
     
     //Cellが選択された際に呼び出される.
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let homeviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Home1") as! HomeViewController1
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Home1") as! HomeViewController1
         genre =  AllItems[indexPath.section][indexPath.row]
         homeviewcontroller.genre = genre
-        self.presentViewController(homeviewcontroller, animated: true, completion: nil)
+        self.present(homeviewcontroller, animated: true, completion: nil)
     }
     
     //テーブルに表示する配列の総数を返す.
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AllItems[section].count
     }
     
@@ -494,21 +494,21 @@ class Itiran1ViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.didReceiveMemoryWarning()
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Celll", forIndexPath: indexPath) as! ItiranTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Celll", for: indexPath) as! ItiranTableViewCell
         let items = AllItems[indexPath.section][indexPath.row]
         cell.label.text = items
         return cell
     }
     
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return mySections.count
     }
     
     
     //セクションのタイトルを返す.
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return mySections[section] as? String
     }
     

@@ -451,7 +451,7 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
                                  ["80kidz",
                                     "9mm Parabellum Bullet"]]
     
-    private let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","X","Y","Z","number"]
+    fileprivate let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","X","Y","Z","number"]
     
     var hiniti:UITextField!
     var zikoku:UITextField!
@@ -468,34 +468,34 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         let nib = UINib(nibName: "SyugoTableViewCell", bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: "Cells")
+        tableView.register(nib, forCellReuseIdentifier: "Cells")
     }
     
-    func buttonPressed(tableViewCell: SyugoTableViewCell) {
-        let indexPath = tableView.indexPathForCell(tableViewCell)
+    func buttonPressed(_ tableViewCell: SyugoTableViewCell) {
+        let indexPath = tableView.indexPath(for: tableViewCell)
         genre = AllItems[indexPath!.section][indexPath!.row]
     }
 
     
     
     //ここ
-    @IBAction func post(sender: AnyObject) {
+    @IBAction func post(_ sender: AnyObject) {
         let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre)
         let imageData = UIImageJPEGRepresentation(image, 0.5)
-        let hiniti1:NSString = hiniti.text!
-        let zikoku1:NSString = zikoku.text!
-        let path1:NSString = path.text!
-        let station1:NSString = station.text!
-         let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)!
-        let postData = ["hiniti": hiniti1, "image": imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength), "zikoku": zikoku1, "station": station1, "path":path1,"uid":uid]
+        let hiniti1:NSString = hiniti.text! as NSString
+        let zikoku1:NSString = zikoku.text! as NSString
+        let path1:NSString = path.text! as NSString
+        let station1:NSString = station.text! as NSString
+         let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
+        let postData = ["hiniti": hiniti1, "image": imageData!.base64EncodedString(options: .lineLength64Characters), "zikoku": zikoku1, "station": station1, "path":path1,"uid":uid] as [String : Any]
         postRef.childByAutoId().setValue(postData)
-        let tabvarviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Tab") as! TabViewController
-        self.presentViewController(tabvarviewcontroller, animated: true, completion: nil)
+        let tabvarviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Tab") as! TabViewController
+        self.present(tabvarviewcontroller, animated: true, completion: nil)
     }
     
     //値を設定
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cells", forIndexPath: indexPath) as! SyugoTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cells", for: indexPath) as! SyugoTableViewCell
         cell.delegate = self
         let items = AllItems[indexPath.section][indexPath.row]
         cell.label.text = items
@@ -504,22 +504,22 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
     
     
     //Cellが選択された際に呼び出される.
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
     
     //セクションの数を返す.
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return mySections.count
     }
     
     //セクションのタイトルを返す.
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return mySections[section] as? String
     }
     
     //テーブルに表示する配列の総数を返す.
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AllItems[section].count
     }
 
@@ -554,9 +554,9 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
     
     
 
-    @IBAction func hou(sender: AnyObject) {
+    @IBAction func hou(_ sender: AnyObject) {
     }
-    @IBAction func you(sender: AnyObject) {
+    @IBAction func you(_ sender: AnyObject) {
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

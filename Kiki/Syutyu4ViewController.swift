@@ -12,8 +12,8 @@ class Syutyu4ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let ud = NSUserDefaults.standardUserDefaults()
-        ud.setBool(true, forKey: CommonConst.IsTutorial2)
+        let ud = UserDefaults.standard
+        ud.set(true, forKey: CommonConst.IsTutorial2)
         ud.synchronize()
 
 
@@ -25,9 +25,9 @@ class Syutyu4ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func go(sender: AnyObject) {
-        let basyoviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Basyo") as! BasyoViewController
-        self.presentViewController(basyoviewcontroller, animated: true, completion: nil)
+    @IBAction func go(_ sender: AnyObject) {
+        let basyoviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Basyo") as! BasyoViewController
+        self.present(basyoviewcontroller, animated: true, completion: nil)
     }
 
     /*

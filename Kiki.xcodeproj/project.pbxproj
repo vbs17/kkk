@@ -339,6 +339,7 @@
 					B0A78FD11DACFF6400AC0513 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = JCVE6J4J9R;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -602,6 +603,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kiki/Kiki-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -620,6 +622,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mycompany.Kiki;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kiki/Kiki-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

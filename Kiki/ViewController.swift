@@ -11,11 +11,11 @@ import AVFoundation
 class ViewController: UIViewController,AVAudioRecorderDelegate {
     
     
-    let fileManager = NSFileManager()//録音もできないしそれを再生もできない
+    let fileManager = FileManager()//録音もできないしそれを再生もできない
     var audioRecorder: AVAudioRecorder!
     let fileName = "sister.m4a"
-    var timer: NSTimer!
-    var timeCountTimer: NSTimer!
+    var timer: Timer!
+    var timeCountTimer: Timer!
     let photos = ["Kiki17", "Kiki18", "Kiki19","Kiki20","Kiki21","08531cedbc172968acd38e7fa2bfd2e0"]
     var count = 1
     var timeCount = 1
@@ -29,7 +29,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     
     func levelTimerCallback() {
         audioRecorder.updateMeters()
-        let dB = audioRecorder.averagePowerForChannel(0)
+        let dB = audioRecorder.averagePower(forChannel: 0)
         let atai = max(0, (dB + 77)) / 77
         nami1.progress = atai
         nami2.progress = atai
@@ -38,9 +38,9 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     
     //filenameをsongDataに渡す
     func nextGamenn(){
-        let playviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Play") as! PlayViewController
+        let playviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Play") as! PlayViewController
         playviewcontroller.songData = self.documentFilePath()
-        self.presentViewController(playviewcontroller, animated: true, completion: nil)
+        self.present(playviewcontroller, animated: true, completion: nil)
         
         
     }
@@ -64,24 +64,24 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
         recordImage!.clipsToBounds = true
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        NSNotificationCenter.defaultCenter().addObserver(
+        NotificationCenter.default.addObserver(
             self,
             selector: #selector(UIApplicationDelegate.applicationWillResignActive(_:)),
-            name:UIApplicationWillResignActiveNotification,
+            name:NSNotification.Name.UIApplicationWillResignActive,
             object: nil
         )
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     //音源消す 最終確認
-    func applicationWillResignActive(notification: NSNotification) {
+    func applicationWillResignActive(_ notification: Notification) {
         print("applicationWillResignActive!")
-        if ( audioRecorder.recording || count1 == true ) {
+        if ( audioRecorder.isRecording || count1 == true ) {
             if ( self.timer != nil) {
                 self.timer.invalidate()
             }
@@ -89,19 +89,19 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
                 self.timeCountTimer.invalidate()
             }
             audioRecorder.stop()
-            NSNotificationCenter.defaultCenter().removeObserver(self)
-            let playviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Syuru")
-            self.presentViewController(playviewcontroller!, animated: true, completion: nil)
+            NotificationCenter.default.removeObserver(self)
+            let playviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Syuru")
+            self.present(playviewcontroller!, animated: true, completion: nil)
         }
     }
     
-    @IBAction func recordStart(sender: UIButton) {
+    @IBAction func recordStart(_ sender: UIButton) {
         if count == 1{
             count1 = true
-        recordImage!.enabled = false
+        recordImage!.isEnabled = false
         let image:UIImage! = UIImage(named: photos[0])
         imageView.image = image
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(ViewController.nextPage), userInfo: nil, repeats: true )
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.nextPage), userInfo: nil, repeats: true )
         }else if count == 5{
             self.timeCountTimer.invalidate()
             self.timer.invalidate()
@@ -111,7 +111,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     }
     
     
-    func nextPage (sender:NSTimer){
+    func nextPage (_ sender:Timer){
         
         var image:UIImage! = UIImage(named: photos[1])
         if count == 1{
@@ -140,13 +140,13 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
             sender.invalidate()
             audioRecorder?.prepareToRecord()
             audioRecorder?.record()
-            self.timer = NSTimer.scheduledTimerWithTimeInterval(0.02, target: self, selector: #selector(ViewController.levelTimerCallback), userInfo: nil, repeats: true)
-            self.timeCountTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(ViewController.recordLimits), userInfo: nil, repeats: true)
-            audioRecorder.meteringEnabled = true
-            recordImage!.setImage(UIImage(named: "Kiki28"), forState: UIControlState.Normal)
+            self.timer = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(ViewController.levelTimerCallback), userInfo: nil, repeats: true)
+            self.timeCountTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.recordLimits), userInfo: nil, repeats: true)
+            audioRecorder.isMeteringEnabled = true
+            recordImage!.setImage(UIImage(named: "Kiki28"), for: UIControlState())
             recordImage!.layer.cornerRadius = 37
             recordImage!.clipsToBounds = true
-            recordImage!.enabled = true
+            recordImage!.isEnabled = true
 
         }
         
@@ -160,13 +160,13 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
         
         try! session.setActive(true)
         let recordSetting : [String : AnyObject] = [
-            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-            AVNumberOfChannelsKey: 1 ,
-            AVSampleRateKey: 44100
+            AVFormatIDKey: Int(kAudioFormatMPEG4AAC) as AnyObject,
+            AVNumberOfChannelsKey: 1 as AnyObject ,
+            AVSampleRateKey: 44100 as AnyObject
         ]
         
         do {
-            try audioRecorder = AVAudioRecorder(URL: self.documentFilePath(), settings: recordSetting)
+            try audioRecorder = AVAudioRecorder(url: self.documentFilePath(), settings: recordSetting)
             
             print(self.documentFilePath())
         } catch {
@@ -175,10 +175,10 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     }
     
     // 録音するファイルのパスを取得(録音時、再生時に参照)//要求されたドメインで指定された一般的なディレクトリの Url の配列を返します
-    func documentFilePath()-> NSURL {
-        let urls = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask) as [NSURL]
+    func documentFilePath()-> URL {
+        let urls = fileManager.urls(for: .documentDirectory, in: .userDomainMask) as [URL]
         let dirURL = urls[0]
-        return dirURL.URLByAppendingPathComponent(fileName)
+        return dirURL.appendingPathComponent(fileName)
     }
       func recordLimits(){
         let minuteCount = timeCount / 60
@@ -198,12 +198,12 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
         }
     }
    
-    @IBAction func back(sender: AnyObject) {
+    @IBAction func back(_ sender: AnyObject) {
         self.timeCountTimer?.invalidate()
         self.timer?.invalidate()
         audioRecorder?.stop()
-        let playviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Syuru") 
-        self.presentViewController(playviewcontroller!, animated: true, completion: nil)
+        let playviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Syuru") 
+        self.present(playviewcontroller!, animated: true, completion: nil)
         
     }
 

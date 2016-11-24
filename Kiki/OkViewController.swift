@@ -7,7 +7,7 @@ class OkViewController: UIViewController {
 
     var image: UIImage!
     //filenameをsongDataに渡す
-    var songData:NSURL!
+    var songData:URL!
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var text: UITextField!
@@ -16,7 +16,7 @@ class OkViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let sound:AVAudioPlayer = try! AVAudioPlayer(contentsOfURL: songData!)
+        let sound:AVAudioPlayer = try! AVAudioPlayer(contentsOf: songData!)
         byou.text = formatTimeString(sound.duration)
         imageView.layer.cornerRadius = 5
         imageView.clipsToBounds = true
@@ -32,24 +32,24 @@ class OkViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func OKGo(sender: AnyObject) {
-        let kindviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Kind") as! KindViewController
+    @IBAction func OKGo(_ sender: AnyObject) {
+        let kindviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind") as! KindViewController
         kindviewcontroller.songData = songData
         kindviewcontroller.image = imageView.image
         kindviewcontroller.byou = byou
         kindviewcontroller.songname = text
-        self.presentViewController(kindviewcontroller, animated: true, completion: nil)
+        self.present(kindviewcontroller, animated: true, completion: nil)
     }
     //消す
-    @IBAction func backGo(sender: AnyObject) {
-        let ProViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Send")
-        self.presentViewController(ProViewController!, animated: true, completion: nil)
+    @IBAction func backGo(_ sender: AnyObject) {
+        let ProViewController = self.storyboard?.instantiateViewController(withIdentifier: "Send")
+        self.present(ProViewController!, animated: true, completion: nil)
     }
     
     
-    func formatTimeString(d: Double) -> String {
-        let s: Int = Int(d % 60)
-        let m: Int = Int((d - Double(s)) / 60 % 60)
+    func formatTimeString(_ d: Double) -> String {
+        let s: Int = Int(d.truncatingRemainder(dividingBy: 60))
+        let m: Int = Int(((d - Double(s)) / 60).truncatingRemainder(dividingBy: 60))
         let str = String(format: "%2d:%02d",  m, s)
         return str
     }

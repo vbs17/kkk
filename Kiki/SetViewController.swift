@@ -10,17 +10,17 @@ class SetViewController: UIViewController {
     
     
     
-    @IBAction func back(sender: AnyObject) {
-         self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func back(_ sender: AnyObject) {
+         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func out(sender: AnyObject) {
-        let ud = NSUserDefaults.standardUserDefaults()
-        ud.setBool(false, forKey: CommonConst.IsSavePlofileData)
+    @IBAction func out(_ sender: AnyObject) {
+        let ud = UserDefaults.standard
+        ud.set(false, forKey: CommonConst.IsSavePlofileData)
         ud.synchronize()
         try! FIRAuth.auth()?.signOut()
-        let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Login")
-        self.presentViewController(loginViewController!, animated: true, completion: nil)
+        let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+        self.present(loginViewController!, animated: true, completion: nil)
         
     }
     

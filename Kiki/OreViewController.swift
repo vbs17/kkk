@@ -8,8 +8,8 @@ class OreViewController: UIViewController {
     
     @IBOutlet weak var text: UILabel!
     @IBOutlet weak var back1: UIButton!
-    @IBAction func back(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func back(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

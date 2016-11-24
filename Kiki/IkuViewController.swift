@@ -15,19 +15,19 @@ class IkuViewController: UIViewController,UITableViewDataSource, UITableViewDele
     var observing = false
 
 
-    @IBAction func back(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func back(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         let nib = UINib(nibName: "IkuTableViewCell", bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: "IkuT")
+        tableView.register(nib, forCellReuseIdentifier: "IkuT")
     }
     
-     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("IkuT", forIndexPath: indexPath) as! IkuTableViewCell
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "IkuT", for: indexPath) as! IkuTableViewCell
         let uid = join[indexPath.row]
         var name:String = ""
         var image:UIImage? = nil
@@ -43,17 +43,17 @@ class IkuViewController: UIViewController,UITableViewDataSource, UITableViewDele
         return cell
     }
     
-    func cropImageToSquare(image:UIImage) -> UIImage? {
+    func cropImageToSquare(_ image:UIImage) -> UIImage? {
         if image.size.width > image.size.height {
             // 横長
-            let cropCGImageRef = CGImageCreateWithImageInRect(image.CGImage, CGRectMake(image.size.width/2 - image.size.height/2, 0, image.size.height, image.size.height))
+            let cropCGImageRef = image.cgImage?.cropping(to: CGRect(x: image.size.width/2 - image.size.height/2, y: 0, width: image.size.height, height: image.size.height))
             
-            return UIImage(CGImage: cropCGImageRef!)
+            return UIImage(cgImage: cropCGImageRef!)
         } else if image.size.width < image.size.height {
             // 縦長
-            let cropCGImageRef = CGImageCreateWithImageInRect(image.CGImage, CGRectMake(0, 0, image.size.width, image.size.width))
+            let cropCGImageRef = image.cgImage?.cropping(to: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.width))
             
-            return UIImage(CGImage: cropCGImageRef!)
+            return UIImage(cgImage: cropCGImageRef!)
         } else {
             return image
         }
@@ -63,42 +63,42 @@ class IkuViewController: UIViewController,UITableViewDataSource, UITableViewDele
         super.didReceiveMemoryWarning()
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return join.count
     }
        
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if FIRAuth.auth()?.currentUser != nil {
             if observing == false {
-                FIRDatabase.database().reference().child(CommonConst.Profile).observeEventType(.ChildAdded, withBlock: { snapshot in
+                FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: { snapshot in
                     
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
                         let postData = PostData2(snapshot: snapshot, myId: uid)
-                        self.postArray2.insert(postData, atIndex: 0)
+                        self.postArray2.insert(postData, at: 0)
                         self.tableView.reloadData()
                     }
                 })
                 
-                FIRDatabase.database().reference().child(CommonConst.Profile).observeEventType(.ChildChanged, withBlock: { snapshot in
+                FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: { snapshot in
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
                         let postData = PostData2(snapshot: snapshot, myId: uid)
                         
                         var index: Int = 0
                         for post in self.postArray2 {
                             if post.id == postData.id {
-                                index = self.postArray2.indexOf(post)!
+                                index = self.postArray2.index(of: post)!
                                 break
                             }
                         }
-                        self.postArray2.removeAtIndex(index)
-                        self.postArray2.insert(postData, atIndex: index)
+                        self.postArray2.remove(at: index)
+                        self.postArray2.insert(postData, at: index)
                         self.tableView.reloadData()
                     }
                 })

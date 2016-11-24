@@ -21,7 +21,7 @@ class HomeTableViewCell1: UITableViewCell {
     
     @IBOutlet weak var iku: UIButton!
     //参考
-    func setPostData(postData: PostData1, myid: String) {
+    func setPostData(_ postData: PostData1, myid: String) {
         ImageView.image = postData.image
         label1.text = postData.hiniti
         label2.text = postData.zikoku
@@ -31,10 +31,10 @@ class HomeTableViewCell1: UITableViewCell {
         
         if postData.isLiked {
             let buttonImage = UIImage(named: "IMG_2727 2")
-            join.setImage(buttonImage, forState: UIControlState.Normal)
+            join.setImage(buttonImage, for: UIControlState())
         } else {
             let buttonImage = UIImage(named: "IMG_2728 2")
-            join.setImage(buttonImage, forState: UIControlState.Normal)
+            join.setImage(buttonImage, for: UIControlState())
         }
     }
     
@@ -57,7 +57,7 @@ class HomeTableViewCell1: UITableViewCell {
     
     
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     

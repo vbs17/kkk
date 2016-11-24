@@ -22,7 +22,7 @@ class ProIdouViewController: UIViewController {
         super.viewDidLoad()
         imageView.layer.cornerRadius = 75
         imageView.clipsToBounds = true
-        FIRDatabase.database().reference().child(CommonConst.Profile).observeEventType(.ChildAdded, withBlock: { snapshot in
+        FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: { snapshot in
             
             let postData = PostData2(snapshot: snapshot, myId: snapshot.key)
             
@@ -40,7 +40,7 @@ class ProIdouViewController: UIViewController {
             }
         })
         
-        FIRDatabase.database().reference().child(CommonConst.Profile).observeEventType(.ChildChanged, withBlock: { snapshot in
+        FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: { snapshot in
             if ( snapshot.key == self.uid ) {
                 let postData = PostData2(snapshot: snapshot, myId: snapshot.key)
                 self.imageView.image = postData.image
@@ -59,8 +59,8 @@ class ProIdouViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func back(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func back(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
 
     }
     

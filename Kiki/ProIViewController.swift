@@ -18,18 +18,18 @@ class ProIViewController: UIViewController,UIImagePickerControllerDelegate, UINa
                  // ユーザーはまだ、このアプリに与える権限を選択をしていない
                  */
                 
-            case .Restricted:
+            case .restricted:
                 // PhotoLibraryへのアクセスが許可されていない
                 // parental controlなどで制限されていて、ユーザーはアプリのアクセスの許可を変更できない
                 // この時は完全に無理です。
                 break;
                 
-            case .Denied:
+            case .denied:
                 // ユーザーが明示的に、アプリが写真のデータへアクセスすることを拒否した
                 // この時は設定アプリに飛ばす方法も考えられますし、Alertを表示するだけという選択肢もあります。
                 break;
                 
-            case .Authorized:
+            case .authorized:
                 // ユーザーが、アプリが写真のデータへアクセスすることを許可している
                 // この時は@IBAction func library(sender: AnyObject)を呼び出せます。
                 // つまり、ここで初めてlibraryボタンをenabled = trueにしてください。
@@ -41,26 +41,26 @@ class ProIViewController: UIViewController,UIImagePickerControllerDelegate, UINa
         
     }
 
-    @IBAction func camera(sender: AnyObject) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+    @IBAction func camera(_ sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
             let pickerController = UIImagePickerController()
             pickerController.delegate = self
-            pickerController.sourceType = UIImagePickerControllerSourceType.Camera
-            presentViewController(pickerController, animated: true, completion: nil)
+            pickerController.sourceType = UIImagePickerControllerSourceType.camera
+            present(pickerController, animated: true, completion: nil)
         }
     }
     
-    @IBAction func library(sender: AnyObject) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+    @IBAction func library(_ sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
             let pickerController = UIImagePickerController()
             pickerController.delegate = self
-            pickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-            presentViewController(pickerController, animated: true, completion: nil)
+            pickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            present(pickerController, animated: true, completion: nil)
             
         }
     }
-    @IBAction func back(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func back(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -68,20 +68,20 @@ class ProIViewController: UIViewController,UIImagePickerControllerDelegate, UINa
         super.didReceiveMemoryWarning()
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if info[UIImagePickerControllerOriginalImage] != nil {
             let image = info[UIImagePickerControllerOriginalImage] as! UIImage
             
             
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 
-                let proviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Pro") as! ProViewController
+                let proviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Pro") as! ProViewController
                 proviewcontroller.image = image
-                self.presentViewController(proviewcontroller, animated: true, completion:  nil)
+                self.present(proviewcontroller, animated: true, completion:  nil)
             }
         }
-        picker.dismissViewControllerAnimated(true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
     }
     
     

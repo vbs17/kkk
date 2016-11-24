@@ -10,7 +10,7 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var mailAddressTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var displayNameTextField: UITextField!
-    var timer: NSTimer!
+    var timer: Timer!
 
     
     
@@ -24,22 +24,22 @@ class LoginViewController: UIViewController{
     }
     
    
-    @IBAction func handleLoginButton(sender: AnyObject) {
+    @IBAction func handleLoginButton(_ sender: AnyObject) {
         if let address = mailAddressTextField.text, let password = passwordTextField.text {
             
             if address.characters.isEmpty || password.characters.isEmpty {
-                SVProgressHUD.showErrorWithStatus("必要項目を入力して下さい")
-                self.timer = NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
+                SVProgressHUD.showError(withStatus: "必要項目を入力して下さい")
+                self.timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
 
                 return
             }
             
             SVProgressHUD.show()
             
-            FIRAuth.auth()?.signInWithEmail(address, password: password) { user, error in
+            FIRAuth.auth()?.signIn(withEmail: address, password: password) { user, error in
                 if error != nil {
-                    SVProgressHUD.showErrorWithStatus("エラー")
-                    self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
+                    SVProgressHUD.showError(withStatus: "エラー")
+                    self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
 
                     
                     print(error)
@@ -50,42 +50,42 @@ class LoginViewController: UIViewController{
                     
                     SVProgressHUD.dismiss()
                     
-                    let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Tab")
-                    self.presentViewController(loginViewController!, animated: true, completion: nil)                }
+                    let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Tab")
+                    self.present(loginViewController!, animated: true, completion: nil)                }
             }
         }
     }
     
-    @IBAction func handleCreateAcountButton(sender: AnyObject) {
+    @IBAction func handleCreateAcountButton(_ sender: AnyObject) {
         if let address = mailAddressTextField.text, let password = passwordTextField.text,
             let displayName = displayNameTextField.text {
             if address.characters.isEmpty || password.characters.isEmpty
                 || displayName.characters.isEmpty {
-                SVProgressHUD.showErrorWithStatus("必要項目を入力して下さい")
-                self.timer = NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
+                SVProgressHUD.showError(withStatus: "必要項目を入力して下さい")
+                self.timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
 
                 return
             }
             
             SVProgressHUD.show()
             
-            FIRAuth.auth()?.createUserWithEmail(address, password: password) { user, error in
+            FIRAuth.auth()?.createUser(withEmail: address, password: password) { user, error in
                 if error != nil {
-                    SVProgressHUD.showErrorWithStatus("エラー")
-                     self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
+                    SVProgressHUD.showError(withStatus: "エラー")
+                     self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
                     print(error)
                 } else {
-                    FIRAuth.auth()?.signInWithEmail(address, password: password) { user, error in
+                    FIRAuth.auth()?.signIn(withEmail: address, password: password) { user, error in
                         if error != nil {
-                            SVProgressHUD.showErrorWithStatus("エラー")
-                            self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
+                            SVProgressHUD.showError(withStatus: "エラー")
+                            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
 
                             print(error)
                         } else {
                             if let user = user {
                                 let request = user.profileChangeRequest()
                                 request.displayName = displayName
-                                request.commitChangesWithCompletion() { error in
+                                request.commitChanges() { error in
                                     if error != nil {
                                         print(error)
                                     } else {
@@ -93,8 +93,8 @@ class LoginViewController: UIViewController{
                                         
                                         SVProgressHUD.dismiss()
                                         
-                                        let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Tab")
-                                        self.presentViewController(loginViewController!, animated: true, completion: nil)                                    }
+                                        let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Tab")
+                                        self.present(loginViewController!, animated: true, completion: nil)                                    }
                                 }
                             }
                         }
@@ -104,8 +104,8 @@ class LoginViewController: UIViewController{
         }
     }
     
-    func setDisplayName(name: String) {
-        let ud = NSUserDefaults.standardUserDefaults()
+    func setDisplayName(_ name: String) {
+        let ud = UserDefaults.standard
         ud.setValue(name, forKey: CommonConst.DisplayNameKey)
         ud.synchronize()
     }

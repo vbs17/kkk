@@ -3,12 +3,12 @@ import UIKit
 
 class IyaViewController: UIViewController {
 
-    @IBAction func go(sender: AnyObject) {
-        let recviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Top2") as! _TViewController
-        self.presentViewController(recviewcontroller, animated: true, completion: nil)
+    @IBAction func go(_ sender: AnyObject) {
+        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Top2") as! _TViewController
+        self.present(recviewcontroller, animated: true, completion: nil)
     }
-    @IBAction func back(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func back(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
 
         
     }

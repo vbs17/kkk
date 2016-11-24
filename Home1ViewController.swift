@@ -14,8 +14,8 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var back: UIButton!
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell22", forIndexPath: indexPath) as! HomeTableViewCell1
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell22", for: indexPath) as! HomeTableViewCell1
         let uid = FIRAuth.auth()?.currentUser?.uid
         cell.setPostData(postArray[indexPath.row], myid: uid!)
         let postData1 = postArray[indexPath.row]
@@ -26,21 +26,21 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
             }
         }
         cell.imageView1.image = image
-        cell.pathGo.addTarget(self, action:#selector(schemebtn(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
-        cell.pro.addTarget(self, action:#selector(pro(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
-        cell.join.addTarget(self, action:#selector(handleButton(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
-        cell.iku.addTarget(self, action:#selector(proiti(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
+        cell.pathGo.addTarget(self, action:#selector(schemebtn(_:event:)), for: UIControlEvents.touchUpInside)
+        cell.pro.addTarget(self, action:#selector(pro(_:event:)), for: UIControlEvents.touchUpInside)
+        cell.join.addTarget(self, action:#selector(handleButton(_:event:)), for: UIControlEvents.touchUpInside)
+        cell.iku.addTarget(self, action:#selector(proiti(_:event:)), for: UIControlEvents.touchUpInside)
         return cell
     }
     
-    func proiti(sender: UIButton, event:UIEvent) {
-        let touch = event.allTouches()?.first
-        let point = touch!.locationInView(self.tableView)
-        let indexPath = tableView.indexPathForRowAtPoint(point)
+    func proiti(_ sender: UIButton, event:UIEvent) {
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
         let postData = postArray[indexPath!.row]
-        let pro = self.storyboard?.instantiateViewControllerWithIdentifier("Iku") as! IkuViewController
+        let pro = self.storyboard?.instantiateViewController(withIdentifier: "Iku") as! IkuViewController
         pro.join = postData.join
-        self.presentViewController(pro, animated: true, completion: nil)
+        self.present(pro, animated: true, completion: nil)
         
     }
 
@@ -52,7 +52,7 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
         tableView.delegate = self
         tableView.dataSource = self
         let nib = UINib(nibName: "HomeTableViewCell1", bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: "Cell22")
+        tableView.register(nib, forCellReuseIdentifier: "Cell22")
         back.layer.cornerRadius = 37
         back.clipsToBounds = true
         
@@ -60,58 +60,58 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
     
 
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if FIRAuth.auth()?.currentUser != nil {
             if observing == false {
-                FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre).observeEventType(.ChildAdded, withBlock: { snapshot in
+                FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre).observe(.childAdded, with: { snapshot in
                     
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
                         let postData = PostData1(snapshot: snapshot, myId: uid)
-                        self.postArray.insert(postData, atIndex: 0)
+                        self.postArray.insert(postData, at: 0)
                         self.tableView.reloadData()
                     }
                 })
                 //ここもfunc hoshiと一緒
-                FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre).observeEventType(.ChildChanged, withBlock: { snapshot in
+                FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre).observe(.childChanged, with: { snapshot in
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
                         let postData = PostData1(snapshot: snapshot, myId: uid)
                         
                         var index: Int = 0
                         for post in self.postArray {
                             if post.id == postData.id {
-                                index = self.postArray.indexOf(post)!
+                                index = self.postArray.index(of: post)!
                                 break
                             }
                         }
-                        self.postArray.removeAtIndex(index)
-                        self.postArray.insert(postData, atIndex: index)
+                        self.postArray.remove(at: index)
+                        self.postArray.insert(postData, at: index)
                         self.tableView.reloadData()
                     }
                 })
                 
-                FIRDatabase.database().reference().child(CommonConst.Profile).observeEventType(.ChildAdded, withBlock: { snapshot in
+                FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: { snapshot in
                     
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
                         let postData = PostData2(snapshot: snapshot, myId: uid)
-                        self.postArray2.insert(postData, atIndex: 0)
+                        self.postArray2.insert(postData, at: 0)
                         self.tableView.reloadData()
                     }
                 })
                 
-                FIRDatabase.database().reference().child(CommonConst.Profile).observeEventType(.ChildChanged, withBlock: { snapshot in
+                FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: { snapshot in
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
                         let postData = PostData2(snapshot: snapshot, myId: uid)
                         
                         var index: Int = 0
                         for post in self.postArray2 {
                             if post.id == postData.id {
-                                index = self.postArray2.indexOf(post)!
+                                index = self.postArray2.index(of: post)!
                                 break
                             }
                         }
-                        self.postArray2.removeAtIndex(index)
-                        self.postArray2.insert(postData, atIndex: index)
+                        self.postArray2.remove(at: index)
+                        self.postArray2.insert(postData, at: index)
                         self.tableView.reloadData()
                     }
                 })
@@ -130,14 +130,14 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
     
 
     //ここ
-    func handleButton(sender: UIButton, event:UIEvent) {
+    func handleButton(_ sender: UIButton, event:UIEvent) {
         
-        let touch = event.allTouches()?.first
-        let point = touch!.locationInView(self.tableView)
-        let indexPath = tableView.indexPathForRowAtPoint(point)
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
         let postData = postArray[indexPath!.row]
-        let ud = NSUserDefaults.standardUserDefaults()
-        let isSavePlofile = ud.boolForKey(CommonConst.IsSavePlofileData )
+        let ud = UserDefaults.standard
+        let isSavePlofile = ud.bool(forKey: CommonConst.IsSavePlofileData )
           if isSavePlofile == true {
         if let uid = FIRAuth.auth()?.currentUser?.uid {
             if postData.isLiked {
@@ -145,7 +145,7 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
                 var index = -1
                 for likeId in postData.join {
                     if likeId == uid {
-                        index = postData.join.indexOf(likeId)!
+                        index = postData.join.index(of: likeId)!
                         break
                     }
                 }
@@ -153,7 +153,7 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
                 springButton.animation = "shake"
                 springButton.duration = 0.5
                 springButton.animate()
-                postData.join.removeAtIndex(index)
+                postData.join.remove(at: index)
                 
             } else {
                 let springButton = sender as! SpringButton
@@ -169,56 +169,56 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
             let station1 = postData.station!
             let join = postData.join
             let uid = postData.uid!
-            let post = ["hiniti": hiniti1, "image": imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength), "zikoku": zikoku1, "station": station1, "path":path1,"uid":uid,"join":join]
+            let post = ["hiniti": hiniti1, "image": imageData!.base64EncodedString(options: .lineLength64Characters), "zikoku": zikoku1, "station": station1, "path":path1,"uid":uid,"join":join] as [String : Any]
             let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre)
             postRef.child(postData.id!).setValue(post)
     }else if isSavePlofile == false {
     let alert = UIAlertController()
-    let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellowColor()]
+    let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellow]
     let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
     alert.setValue(attributedTitle, forKey: "attributedTitle")
-    let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+    let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.white]
     let attributedMessage = NSAttributedString(string: "Home画面に戻って　　　　　　　　　　　　　Profileで画像と名前を設定しよう", attributes: attributedMessageAttr)
-    alert.view.tintColor = UIColor.whiteColor()
+    alert.view.tintColor = UIColor.white
     alert.setValue(attributedMessage, forKey: "attributedMessage")
     let subview = alert.view.subviews.first! as UIView
     let alertContentView = subview.subviews.first! as UIView
-    alertContentView.backgroundColor = UIColor.grayColor()
+    alertContentView.backgroundColor = UIColor.gray
     
-    let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{
+    let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
     (action: UIAlertAction!) -> Void in
     })
     alert.addAction(defaultAction)
-    presentViewController(alert, animated: true, completion: nil)
-    alert.view.tintColor = UIColor.whiteColor()
+    present(alert, animated: true, completion: nil)
+    alert.view.tintColor = UIColor.white
     }
 }
 
 
 
 
-    func schemebtn(sender: UIButton, event:UIEvent) {
-        let touch = event.allTouches()?.first
-        let point = touch!.locationInView(self.tableView)
-        let indexPath = tableView.indexPathForRowAtPoint(point)
+    func schemebtn(_ sender: UIButton, event:UIEvent) {
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
         let postData = postArray[indexPath!.row]
         let adress =  postData.path
-        let encodedString = adress!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
-        let url = NSURL(string: "http://maps.apple.com/?q=\(encodedString)")!
-        if (UIApplication.sharedApplication().canOpenURL(url)) {
-            UIApplication.sharedApplication().openURL(url)
+        let encodedString = adress!.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        let url = URL(string: "http://maps.apple.com/?q=\(encodedString)")!
+        if (UIApplication.shared.canOpenURL(url)) {
+            UIApplication.shared.openURL(url)
         }
     }
     
     
-    func pro(sender: UIButton, event:UIEvent) {
-        let touch = event.allTouches()?.first
-        let point = touch!.locationInView(self.tableView)
-        let indexPath = tableView.indexPathForRowAtPoint(point)
+    func pro(_ sender: UIButton, event:UIEvent) {
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
         let postData = postArray[indexPath!.row]
-        let pro = self.storyboard?.instantiateViewControllerWithIdentifier("Pi") as! ProIdouViewController
+        let pro = self.storyboard?.instantiateViewController(withIdentifier: "Pi") as! ProIdouViewController
         pro.uid = postData.uid
-        self.presentViewController(pro, animated: true, completion: nil)
+        self.present(pro, animated: true, completion: nil)
         
     }
     
@@ -230,23 +230,23 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
     
     
     
-    func getIndexPath(event:UIEvent) -> NSIndexPath? {
-        let touch = event.allTouches()?.first
-        let point = touch!.locationInView(self.tableView)
-        let indexPath = tableView.indexPathForRowAtPoint(point)
+    func getIndexPath(_ event:UIEvent) -> IndexPath? {
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
         return indexPath
     }
     
     
     //無視
     
-    @IBAction func back(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func back(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
         
     }
 
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postArray.count
     }
     
@@ -259,12 +259,12 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
     
     
     // セルをタップされたら何もせずに選択状態を解除する
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    @IBAction func backGo(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func backGo(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     

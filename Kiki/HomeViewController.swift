@@ -7,18 +7,17 @@ import FirebaseDatabase
 import AVFoundation
 import Spring
 
-
 class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDelegate,AVAudioPlayerDelegate{
     var postArray: [PostData] = []
     var postArray2:[PostData2] = []
     var observing = false
     var genre: String!
     var playSong:AVAudioPlayer!
-    var timer = NSTimer()
-    var timer2 = NSTimer()
+    var timer = Timer()
+    var timer2 = Timer()
     var back: UIButton!
     var tableView: UITableView!
-    var playingIndexPath:NSIndexPath!
+    var playingIndexPath:IndexPath!
     @IBOutlet weak var lbl: UILabel!
     
     override func viewDidLoad() {
@@ -26,28 +25,28 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         tableView.delegate = self
         tableView.dataSource = self
         let nib = UINib(nibName: "HomeTableViewCell", bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: "CEll")
+        tableView.register(nib, forCellReuseIdentifier: "CEll")
         back.layer.cornerRadius = 37
         back.clipsToBounds = true
-        let tblBackColor: UIColor = UIColor.clearColor()
+        let tblBackColor: UIColor = UIColor.clear
         tableView.backgroundColor = tblBackColor
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CEll", forIndexPath: indexPath) as! HomeTableViewCell
-        cell.hyouka.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CEll", for: indexPath) as! HomeTableViewCell
+        cell.hyouka.setTitleColor(UIColor.white, for: UIControlState())
         cell.edittingFlag = false
-        cell.star1.userInteractionEnabled = false
-        cell.star2.userInteractionEnabled = false
-        cell.star3.userInteractionEnabled = false
-        cell.star4.userInteractionEnabled = false
-        cell.star5.userInteractionEnabled = false
+        cell.star1.isUserInteractionEnabled = false
+        cell.star2.isUserInteractionEnabled = false
+        cell.star3.isUserInteractionEnabled = false
+        cell.star4.isUserInteractionEnabled = false
+        cell.star5.isUserInteractionEnabled = false
         if (playingIndexPath != nil) && (indexPath == playingIndexPath) {
-            cell.backButton.enabled = true
+            cell.backButton.isEnabled = true
         } else {//それ以外のセル
             cell.nami.progress = 0
             cell.onlabel2.text = "0:00"
-            cell.backButton.enabled = false
+            cell.backButton.isEnabled = false
         }
         cell.setPostData(postArray[indexPath.row])
         let postData1 = postArray[indexPath.row]
@@ -59,102 +58,102 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }
         cell.imageView1.image = image
 
-        cell.go.addTarget(self, action: #selector(pro(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
-        cell.playButton.addTarget(self, action:#selector(handleButton(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
-        cell.backButton.addTarget(self, action:#selector(back(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
-        cell.star1.addTarget(self, action: #selector(hoshi(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
-        cell.star2.addTarget(self, action: #selector(hoshi(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
-        cell.star3.addTarget(self, action: #selector(hoshi(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
-        cell.star4.addTarget(self, action: #selector(hoshi(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
-        cell.star5.addTarget(self, action: #selector(hoshi(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
-        cell.hyouka.addTarget(self, action: #selector(hyoukaGo), forControlEvents: UIControlEvents.TouchUpInside)
+        cell.go.addTarget(self, action: #selector(pro(_:event:)), for: UIControlEvents.touchUpInside)
+        cell.playButton.addTarget(self, action:#selector(handleButton(_:event:)), for: UIControlEvents.touchUpInside)
+        cell.backButton.addTarget(self, action:#selector(back(_:event:)), for: UIControlEvents.touchUpInside)
+        cell.star1.addTarget(self, action: #selector(hoshi(_:event:)), for: UIControlEvents.touchUpInside)
+        cell.star2.addTarget(self, action: #selector(hoshi(_:event:)), for: UIControlEvents.touchUpInside)
+        cell.star3.addTarget(self, action: #selector(hoshi(_:event:)), for: UIControlEvents.touchUpInside)
+        cell.star4.addTarget(self, action: #selector(hoshi(_:event:)), for: UIControlEvents.touchUpInside)
+        cell.star5.addTarget(self, action: #selector(hoshi(_:event:)), for: UIControlEvents.touchUpInside)
+        cell.hyouka.addTarget(self, action: #selector(hyoukaGo), for: UIControlEvents.touchUpInside)
         return cell
     }
     
-    func pro(sender: UIButton, event:UIEvent) {
-        let touch = event.allTouches()?.first
-        let point = touch!.locationInView(self.tableView)
-        let indexPath = tableView.indexPathForRowAtPoint(point)
+    func pro(_ sender: UIButton, event:UIEvent) {
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
         let postData = postArray[indexPath!.row]
         if playSong != nil {
-            if (playSong.playing){
+            if (playSong.isPlaying){
                 playSong.pause()
                 timer.invalidate()
             }
         }
-        let pro = self.storyboard?.instantiateViewControllerWithIdentifier("Pi") as! ProIdouViewController
+        let pro = self.storyboard?.instantiateViewController(withIdentifier: "Pi") as! ProIdouViewController
         pro.uid = postData.uid
-        self.presentViewController(pro, animated: true, completion: nil)
+        self.present(pro, animated: true, completion: nil)
         
         
     }
 
-    func getIndexPath(event:UIEvent) -> NSIndexPath? {
-        let touch = event.allTouches()?.first
-        let point = touch!.locationInView(self.tableView)
-        let indexPath = tableView.indexPathForRowAtPoint(point)
+    func getIndexPath(_ event:UIEvent) -> IndexPath? {
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
         return indexPath
     }
     //ここが怪しい
-    func hyoukaGo(sender:UIButton, event:UIEvent){
+    func hyoukaGo(_ sender:UIButton, event:UIEvent){
         let indexPath = getIndexPath(event)
-        let cell = tableView.cellForRowAtIndexPath(indexPath!) as! HomeTableViewCell?
-        let ud = NSUserDefaults.standardUserDefaults()
-        let isSavePlofile = ud.boolForKey(CommonConst.IsSavePlofileData )
+        let cell = tableView.cellForRow(at: indexPath!) as! HomeTableViewCell?
+        let ud = UserDefaults.standard
+        let isSavePlofile = ud.bool(forKey: CommonConst.IsSavePlofileData )
         if isSavePlofile == true {
             if cell!.edittingFlag == false{
-                cell!.hyouka.setTitleColor(UIColor.yellowColor(), forState: UIControlState.Normal)
+                cell!.hyouka.setTitleColor(UIColor.yellow, for: UIControlState())
                 cell!.edittingFlag = true
-                cell!.star1.userInteractionEnabled = true
-                cell!.star2.userInteractionEnabled = true
-                cell!.star3.userInteractionEnabled = true
-                cell!.star4.userInteractionEnabled = true
-                cell!.star5.userInteractionEnabled = true
-                cell?.star1.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
-                cell?.star2.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
-                cell?.star3.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
-                cell?.star4.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
-                cell?.star5.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
+                cell!.star1.isUserInteractionEnabled = true
+                cell!.star2.isUserInteractionEnabled = true
+                cell!.star3.isUserInteractionEnabled = true
+                cell!.star4.isUserInteractionEnabled = true
+                cell!.star5.isUserInteractionEnabled = true
+                cell?.star1.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
+                cell?.star2.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
+                cell?.star3.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
+                cell?.star4.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
+                cell?.star5.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
             } else if cell!.edittingFlag == true{
-                cell!.hyouka.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+                cell!.hyouka.setTitleColor(UIColor.white, for: UIControlState())
                 cell!.edittingFlag = false
                 cell?.setPostData1(self.postArray[indexPath!.row])
-                cell!.star1.userInteractionEnabled = false
-                cell!.star2.userInteractionEnabled = false
-                cell!.star3.userInteractionEnabled = false
-                cell!.star4.userInteractionEnabled = false
-                cell!.star5.userInteractionEnabled = false
+                cell!.star1.isUserInteractionEnabled = false
+                cell!.star2.isUserInteractionEnabled = false
+                cell!.star3.isUserInteractionEnabled = false
+                cell!.star4.isUserInteractionEnabled = false
+                cell!.star5.isUserInteractionEnabled = false
                 
             }
         }else if isSavePlofile == false {
             let alert = UIAlertController()
-            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellowColor()]
+            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellow]
             let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
             alert.setValue(attributedTitle, forKey: "attributedTitle")
-            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.white]
             let attributedMessage = NSAttributedString(string: "Home画面に戻って　　　　　　　　　　　　　Profileで画像と名前を設定しよう", attributes: attributedMessageAttr)
-            alert.view.tintColor = UIColor.whiteColor()
+            alert.view.tintColor = UIColor.white
             alert.setValue(attributedMessage, forKey: "attributedMessage")
             let subview = alert.view.subviews.first! as UIView
             let alertContentView = subview.subviews.first! as UIView
-            alertContentView.backgroundColor = UIColor.grayColor()
+            alertContentView.backgroundColor = UIColor.gray
             
-            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
                 (action: UIAlertAction!) -> Void in
             })
             alert.addAction(defaultAction)
-            presentViewController(alert, animated: true, completion: nil)
-            alert.view.tintColor = UIColor.whiteColor()
+            present(alert, animated: true, completion: nil)
+            alert.view.tintColor = UIColor.white
         }}
     
     //ここが怪しいhoshiした後に文字が赤なのはおかしい
-    func hoshi(sender: UIButton, event:UIEvent){
-        let touch = event.allTouches()?.first
-        let point = touch!.locationInView(self.tableView)
-        let indexPath = tableView.indexPathForRowAtPoint(point)
+    func hoshi(_ sender: UIButton, event:UIEvent){
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
         let postData = postArray[indexPath!.row]
-        let cell = tableView.cellForRowAtIndexPath(indexPath!) as! HomeTableViewCell?
-        cell!.hyouka.setTitleColor(UIColor.yellowColor(), forState: UIControlState.Normal)
+        let cell = tableView.cellForRow(at: indexPath!) as! HomeTableViewCell?
+        cell!.hyouka.setTitleColor(UIColor.yellow, for: UIControlState())
 
         if let uid = FIRAuth.auth()?.currentUser?.uid {
             var index = -1 //0からpostData.star.count(postData.star.countは含まない)
@@ -169,19 +168,19 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             }
             // -1 の場合は削除対象のデータが無い
             if index != -1 {//例えば3つ星タップしてたとして再度評価したらそれを消して再度保存しな一人で総数100回とか出来てまうから
-                postData.star.removeAtIndex(index)
+                postData.star.remove(at: index)
             }
                                            //何個星タップしたかpostData.starに保存
             postData.star.append([uid:String(sender.tag)])
         }
-        cell!.hyouka.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        cell!.hyouka.setTitleColor(UIColor.black, for: UIControlState())
                         cell!.edittingFlag = false
                         cell?.setPostData1(self.postArray[indexPath!.row])
-                        cell!.star1.userInteractionEnabled = false
-                        cell!.star2.userInteractionEnabled = false
-                        cell!.star3.userInteractionEnabled = false
-                        cell!.star4.userInteractionEnabled = false
-                        cell!.star5.userInteractionEnabled = false
+                        cell!.star1.isUserInteractionEnabled = false
+                        cell!.star2.isUserInteractionEnabled = false
+                        cell!.star3.isUserInteractionEnabled = false
+                        cell!.star4.isUserInteractionEnabled = false
+                        cell!.star5.isUserInteractionEnabled = false
        
         //どこのgenreのどのセルに星がついたか保存しなあかん
        
@@ -191,9 +190,9 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let byou = postData.byou
         let realsong = postData.realsong
         let star = postData.star //97行目
-        let uid:NSString = postData.uid!
+        let uid:NSString = postData.uid! as NSString
         let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre)
-        let postData2 = ["image":imageString!,"songname":name!,"ongen":song!,"byou":byou!,"realsong":realsong!,"star":star,"uid":uid]
+        let postData2 = ["image":imageString!,"songname":name!,"ongen":song!,"byou":byou!,"realsong":realsong!,"star":star,"uid":uid] as [String : Any]
         postRef.child(postData.id!).setValue(postData2)
     }
 
@@ -213,70 +212,70 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        timer2 = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(HomeViewController.mada), userInfo: nil, repeats: false)
+        timer2 = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(HomeViewController.mada), userInfo: nil, repeats: false)
         if FIRAuth.auth()?.currentUser != nil {
             if observing == false {
                 //俺が新しくできた
-                FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).observeEventType(.ChildAdded, withBlock: { snapshot in
+                FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).observe(.childAdded, with: { snapshot in
                     
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
                         let postData = PostData(snapshot: snapshot, myId: uid)
-                        self.postArray.insert(postData, atIndex: 0)
+                        self.postArray.insert(postData, at: 0)
                         
                         if self.playingIndexPath != nil {
                             let row = self.playingIndexPath.row
-                            self.playingIndexPath = NSIndexPath(forRow: row+1, inSection: 0)
+                            self.playingIndexPath = IndexPath(row: row+1, section: 0)
                         }
                         self.timer2.invalidate()
                         self.tableView.reloadData()
                     }
                 })
 //俺だけが変更した 一個だけていう考えで考えてみ　一気に１つ以上の投稿に星はたっぷできんのやし
-                FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).observeEventType(.ChildChanged, withBlock: { snapshot in
+                FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).observe(.childChanged, with: { snapshot in
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
                         let postData = PostData(snapshot: snapshot, myId: uid)
                         
                         var index: Int = 0
                         for post in self.postArray {
                             if post.id == postData.id {
-                                index = self.postArray.indexOf(post)!
+                                index = self.postArray.index(of: post)!
                                 break
                             }
                         }
                         
-                        self.postArray.removeAtIndex(index)
-                        self.postArray.insert(postData, atIndex: index)
+                        self.postArray.remove(at: index)
+                        self.postArray.insert(postData, at: index)
                         self.tableView.reloadData()
 
                     }
                 })
                 //俺が新しくできた　言うたらこれは一回のみでしょ？上は何回もできるけど
-                FIRDatabase.database().reference().child(CommonConst.Profile).observeEventType(.ChildAdded, withBlock: { snapshot in
+                FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: { snapshot in
                     
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
                         let postData = PostData2(snapshot: snapshot, myId: uid)
-                        self.postArray2.insert(postData, atIndex: 0)
+                        self.postArray2.insert(postData, at: 0)
                         
                         self.tableView.reloadData()
                     }
                 })
                 //俺だけが変更した　これがあるから他の人は何も変わらずまま自分だけ変わる　１以上の投稿の場合も大丈夫なのか
-                FIRDatabase.database().reference().child(CommonConst.Profile).observeEventType(.ChildChanged, withBlock: { snapshot in
+                FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: { snapshot in
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
                         let postData = PostData2(snapshot: snapshot, myId: uid)
                         
                         var index: Int = 0
                         for post in self.postArray2 {
                             if post.id == postData.id {
-                                index = self.postArray2.indexOf(post)!
+                                index = self.postArray2.index(of: post)!
                                 break
                             }
                         }
                         //なんでindexは1以上も対応できているのか
-                        self.postArray2.removeAtIndex(index)
-                        self.postArray2.insert(postData, atIndex: index)
+                        self.postArray2.remove(at: index)
+                        self.postArray2.insert(postData, at: index)
                         self.tableView.reloadData()
                     }
                 })
@@ -294,55 +293,55 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postArray.count
     }
     
    
 
     
-    func handleButton(sender: UIButton, event:UIEvent){
-        let touch = event.allTouches()?.first
-        let point = touch!.locationInView(self.tableView)
-        let indexPath = tableView.indexPathForRowAtPoint(point)
+    func handleButton(_ sender: UIButton, event:UIEvent){
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
         let postData = postArray[indexPath!.row]
-        let cell = tableView.cellForRowAtIndexPath(indexPath!) as! HomeTableViewCell?
-        cell?.backButton.enabled = true
+        let cell = tableView.cellForRow(at: indexPath!) as! HomeTableViewCell?
+        cell?.backButton.isEnabled = true
         if indexPath == playingIndexPath{
-            if playSong.playing == true{
+            if playSong.isPlaying == true{
                 playSong.pause()
                 timer.invalidate()
             }else{
                 timer.invalidate()
                 playSong.play()
-                timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(HomeViewController.updatePlayingTime), userInfo: nil, repeats: true)
+                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(HomeViewController.updatePlayingTime), userInfo: nil, repeats: true)
             }
         } else { //他の曲を再生した時再生中の曲がこうなる
             if playingIndexPath != nil {
-                let cell = tableView.cellForRowAtIndexPath(playingIndexPath) as! HomeTableViewCell?
+                let cell = tableView.cellForRow(at: playingIndexPath) as! HomeTableViewCell?
                 if cell != nil {
                     cell!.nami.progress = 0
                     cell!.onlabel2.text = "0:00"
-                    cell?.backButton.enabled = false
+                    cell?.backButton.isEnabled = false
                 }}
             
             timer.invalidate()
             playingIndexPath = indexPath
             //ここもポイント
-            let tap = NSData(base64EncodedString: postData.realsong!, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+            let tap = Data(base64Encoded: postData.realsong!, options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)
             playSong = try! AVAudioPlayer(data:tap!)
             playSong.delegate = self
             cell!.playSong = playSong
             playSong.prepareToPlay()
             playSong.play()
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(HomeViewController.updatePlayingTime), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(HomeViewController.updatePlayingTime), userInfo: nil, repeats: true)
             
         }
     }
     
-    func back(sender: UIButton, event:UIEvent) {
+    func back(_ sender: UIButton, event:UIEvent) {
         
-        let cell = tableView.cellForRowAtIndexPath(playingIndexPath) as! HomeTableViewCell?
+        let cell = tableView.cellForRow(at: playingIndexPath) as! HomeTableViewCell?
         cell!.onlabel2.text = "0:00"
       
         playSong.stop()
@@ -350,12 +349,12 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         playSong.prepareToPlay()
         playSong.currentTime = 0
         playSong.play()
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(HomeViewController.updatePlayingTime), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(HomeViewController.updatePlayingTime), userInfo: nil, repeats: true)
         }
     
-    func formatTimeString(d: Double) -> String {
-        let s: Int = Int(d % 60)
-        let m: Int = Int((d - Double(s)) / 60 % 60)
+    func formatTimeString(_ d: Double) -> String {
+        let s: Int = Int(d.truncatingRemainder(dividingBy: 60))
+        let m: Int = Int(((d - Double(s)) / 60).truncatingRemainder(dividingBy: 60))
         let str = String(format: "%2d:%02d",  m, s)
         return str
     }
@@ -366,26 +365,26 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
   
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     //全部大丈夫なのか
-    @IBAction func backGo(sender: AnyObject) {
+    @IBAction func backGo(_ sender: AnyObject) {
         timer.invalidate()
         timer2.invalidate()
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func updatePlayingTime() {
-        let cell = tableView.cellForRowAtIndexPath(playingIndexPath) as! HomeTableViewCell?
+        let cell = tableView.cellForRow(at: playingIndexPath) as! HomeTableViewCell?
         if (cell != nil) && (playSong.currentTime >= 0.1) {
             cell!.onlabel2.text = formatTimeString(playSong.currentTime)
             cell!.nami.progress = Float(playSong.currentTime / playSong.duration)
         }
     }
     
-    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
-        let cell = tableView.cellForRowAtIndexPath(playingIndexPath) as! HomeTableViewCell?
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        let cell = tableView.cellForRow(at: playingIndexPath) as! HomeTableViewCell?
         timer.invalidate()
         if cell != nil {
             cell!.onlabel2.text = formatTimeString(playSong.duration)
@@ -393,7 +392,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if playSong != nil {
             playSong.stop()

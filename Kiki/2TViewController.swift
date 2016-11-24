@@ -8,22 +8,22 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
     //こいつが音源
     
     var playSong:AVAudioPlayer!
-    var timer: NSTimer!
-    var timeCountTimer: NSTimer!
+    var timer: Timer!
+    var timeCountTimer: Timer!
     let photos = ["Kiki17", "Kiki18", "Kiki19","Kiki20","Kiki21","08531cedbc172968acd38e7fa2bfd2e0"]
     var count = 1
     var timeCount = 1
-    var songData:NSURL!//結合させる
+    var songData:URL!//結合させる
     var audioEngine: AVAudioEngine!
     var player: AVAudioPlayerNode!
     var averagePower:Float32 = 0
-    var songFile:NSURL!
+    var songFile:URL!
     let mixerMeter = MixerMeter()
-    var iyahon:NSURL!
+    var iyahon:URL!
     let recordSetting : [String : AnyObject] = [
-        AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-        AVNumberOfChannelsKey: 1 ,
-        AVSampleRateKey: 44100
+        AVFormatIDKey: Int(kAudioFormatMPEG4AAC) as AnyObject,
+        AVNumberOfChannelsKey: 1 as AnyObject ,
+        AVSampleRateKey: 44100 as AnyObject
     ]
 
     
@@ -43,24 +43,24 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
     }
     
     /// Audio Session Route Change : ルートが変化した(ヘッドセットが抜き差しされた)
-    func audioSessionRouteChanged(notification: NSNotification) {
+    func audioSessionRouteChanged(_ notification: Notification) {
         let reasonObj = notification.userInfo![AVAudioSessionRouteChangeReasonKey] as! NSNumber
-        if let reason = AVAudioSessionRouteChangeReason(rawValue: reasonObj.unsignedLongValue) {
+        if let reason = AVAudioSessionRouteChangeReason(rawValue: reasonObj.uintValue) {
             switch reason {
-            case .NewDeviceAvailable:
+            case .newDeviceAvailable:
                 // 新たなデバイスのルートが使用可能になった
                 // （ヘッドセットが差し込まれた）
                 
                 
                 break
-            case .OldDeviceUnavailable:
+            case .oldDeviceUnavailable:
                 self.timeCountTimer.invalidate()
                 self.timer.invalidate()
-                audioEngine.mainMixerNode.removeTapOnBus(0)
+                audioEngine.mainMixerNode.removeTap(onBus: 0)
                 audioEngine.stop()
-                let deleteSong = try!AVAudioRecorder(URL: iyahon,settings:recordSetting)
+                let deleteSong = try!AVAudioRecorder(url: iyahon,settings:recordSetting)
                 deleteSong.deleteRecording()
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
                 break
             default:
                 break
@@ -69,7 +69,7 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
     }
     
     //音源消す
-    func applicationWillResignActive(notification: NSNotification) {
+    func applicationWillResignActive(_ notification: Notification) {
         print("applicationWillResignActive!")
         if ( self.timer != nil) {
             self.timer.invalidate()
@@ -78,55 +78,55 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
             self.timeCountTimer.invalidate()
         }
         if ( audioEngine != nil ) {
-            if ( audioEngine.running ) {
-                audioEngine.mainMixerNode.removeTapOnBus(0)
+            if ( audioEngine.isRunning ) {
+                audioEngine.mainMixerNode.removeTap(onBus: 0)
                 audioEngine.stop()
             }
         }
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
         
-       self.dismissViewControllerAnimated(true, completion: nil)
+       self.dismiss(animated: true, completion: nil)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        NSNotificationCenter.defaultCenter().addObserver(
+        NotificationCenter.default.addObserver(
             self,
             selector: #selector(UIApplicationDelegate.applicationWillResignActive(_:)),
-            name:UIApplicationWillResignActiveNotification,
+            name:NSNotification.Name.UIApplicationWillResignActive,
             object: nil
         )
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
-    @IBAction func rec(sender: AnyObject) {
+    @IBAction func rec(_ sender: AnyObject) {
         if count == 1{
-            recButton!.enabled = false
+            recButton!.isEnabled = false
             let image:UIImage! = UIImage(named: photos[0])
             imageView.image = image
-            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(_TViewController.nextPage), userInfo: nil, repeats: true )
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(_TViewController.nextPage), userInfo: nil, repeats: true )
         }else if count == 5{
             self.timeCountTimer.invalidate()
             self.timer.invalidate()
-            audioEngine.mainMixerNode.removeTapOnBus(0)
+            audioEngine.mainMixerNode.removeTap(onBus: 0)
             audioEngine.stop()
             nextGamenn()
         }
     }
     
     func nextGamenn(){
-        let playviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Play2") as! Play2ViewController
+        let playviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Play2") as! Play2ViewController
         playviewcontroller.songData2 = songFile
         playviewcontroller.songData = self.songData
-        self.presentViewController(playviewcontroller, animated: true, completion: nil)
+        self.present(playviewcontroller, animated: true, completion: nil)
     }
     
     
-    func nextPage (sender:NSTimer){
+    func nextPage (_ sender:Timer){
         
         var image:UIImage! = UIImage(named: photos[1])
         if count == 1{
@@ -149,13 +149,13 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
             imageView.image = image
             play()
             self.timer.invalidate()
-            self.timer = NSTimer.scheduledTimerWithTimeInterval(0.02, target: self, selector: #selector(_TViewController.levelTimerCallback), userInfo: nil, repeats: true)
-            self.timeCountTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(_TViewController.recordLimits), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(_TViewController.levelTimerCallback), userInfo: nil, repeats: true)
+            self.timeCountTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(_TViewController.recordLimits), userInfo: nil, repeats: true)
             sender.invalidate()
-            recButton!.setImage(UIImage(named: "Kiki28"), forState: UIControlState.Normal)
+            recButton!.setImage(UIImage(named: "Kiki28"), for: UIControlState())
             recButton!.layer.cornerRadius = 37
             recButton!.clipsToBounds = true
-            recButton!.enabled = true
+            recButton!.isEnabled = true
             
         }
         
@@ -164,9 +164,9 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
     
     func play() {
         //ヘッドセットの抜き差しを検出するようにします
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(audioSessionRouteChanged(_:)), name: AVAudioSessionRouteChangeNotification, object: nil);
-        let documentDir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
-        let filePath2 = NSURL(fileURLWithPath: documentDir + "/sample.m4a")
+    NotificationCenter.default.addObserver(self, selector: #selector(audioSessionRouteChanged(_:)), name: NSNotification.Name.AVAudioSessionRouteChange, object: nil);
+        let documentDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        let filePath2 = URL(fileURLWithPath: documentDir + "/sample.m4a")
         songFile = filePath2
         if let url = songData {
             do {
@@ -181,27 +181,27 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
                 mixerMeter.mixer = audioEngine.mainMixerNode
                 mixerMeter.setMeteringEnabled(true)
                 player = AVAudioPlayerNode()
-                audioEngine.attachNode(player)
+                audioEngine.attach(player)
                 let mixer = audioEngine.mainMixerNode
                 
-                audioEngine.connect(player, to: mixer, fromBus: 0, toBus: 0, format: player.outputFormatForBus(0))
+                audioEngine.connect(player, to: mixer, fromBus: 0, toBus: 0, format: player.outputFormat(forBus: 0))
                 let inputNode = audioEngine.inputNode!
-                let format = AVAudioFormat(commonFormat: .PCMFormatFloat32  , sampleRate: 44100, channels: 1 , interleaved: true)
+                let format = AVAudioFormat(commonFormat: .pcmFormatFloat32  , sampleRate: 44100, channels: 1 , interleaved: true)
                 audioEngine.connect(inputNode, to: mixer, fromBus: 0, toBus: 1, format: format)
                 
-                player.scheduleFile(audioFile, atTime: nil) {
+                player.scheduleFile(audioFile, at: nil) {
                     print("complete")
                 }
                 
                 let recordSetting : [String : AnyObject] = [
-                    AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-                    AVNumberOfChannelsKey: 2 ,
-                    AVSampleRateKey: 44100
+                    AVFormatIDKey: Int(kAudioFormatMPEG4AAC) as AnyObject,
+                    AVNumberOfChannelsKey: 2 as AnyObject ,
+                    AVSampleRateKey: 44100 as AnyObject
                 ]
                 let audioFile2 = try AVAudioFile(forWriting: filePath2, settings: recordSetting)
-                mixer.installTapOnBus(0, bufferSize: 4096, format: mixer.outputFormatForBus(0)) { (buffer, when) in
+                mixer.installTap(onBus: 0, bufferSize: 4096, format: mixer.outputFormat(forBus: 0)) { (buffer, when) in
                     do {
-                        try audioFile2.writeFromBuffer(buffer)
+                        try audioFile2.write(from: buffer)
                     } catch let error {
                         print("audioFile2.writeFromBuffer error:", error)
                     }
@@ -229,7 +229,7 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
     
     
     func stop() {
-        audioEngine.mainMixerNode.removeTapOnBus(0)
+        audioEngine.mainMixerNode.removeTap(onBus: 0)
         self.audioEngine.stop()
     }
     
@@ -252,12 +252,12 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
     }
     
     
-    @IBAction func back(sender: AnyObject) {
+    @IBAction func back(_ sender: AnyObject) {
         timer?.invalidate()
         timeCountTimer?.invalidate()
-        audioEngine?.mainMixerNode.removeTapOnBus(0)
+        audioEngine?.mainMixerNode.removeTap(onBus: 0)
         audioEngine?.stop()
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
 
     }
     

@@ -3,7 +3,7 @@
 import UIKit
 
 protocol KindTableViewCellDelegate {
-     func buttonPressed(tableViewCell: KindTableViewCell)
+     func buttonPressed(_ tableViewCell: KindTableViewCell)
 }
 
 class KindTableViewCell: UITableViewCell {
@@ -13,7 +13,7 @@ class KindTableViewCell: UITableViewCell {
     @IBOutlet weak var label: UILabel!
     
     
-    @IBAction func genreButton(sender: AnyObject) {
+    @IBAction func genreButton(_ sender: AnyObject) {
          delegate.buttonPressed(self)
     }
     
@@ -21,7 +21,7 @@ class KindTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     

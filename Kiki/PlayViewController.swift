@@ -7,13 +7,13 @@ import MediaPlayer
 class PlayViewController: UIViewController {
     //曲はここ
     //filenameをsongDataに渡す
-    var songData:NSURL!
+    var songData:URL!
     var playSong:AVAudioPlayer!
-    var timer = NSTimer()
+    var timer = Timer()
     let recordSetting : [String : AnyObject] = [
-        AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-        AVNumberOfChannelsKey: 1 ,
-        AVSampleRateKey: 44100
+        AVFormatIDKey: Int(kAudioFormatMPEG4AAC) as AnyObject,
+        AVNumberOfChannelsKey: 1 as AnyObject ,
+        AVSampleRateKey: 44100 as AnyObject
     ]
     
     @IBOutlet weak var onbyou: UILabel!
@@ -27,7 +27,7 @@ class PlayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //曲はここ
-        let sound:AVAudioPlayer = try! AVAudioPlayer(contentsOfURL: songData!)
+        let sound:AVAudioPlayer = try! AVAudioPlayer(contentsOf: songData!)
         playSong = sound
         sound.prepareToPlay()
         byou.text = formatTimeString(sound.duration)
@@ -41,38 +41,38 @@ class PlayViewController: UIViewController {
         ok.clipsToBounds = true
     }
     //ここら辺
-    @IBAction func kasane(sender: AnyObject) {
+    @IBAction func kasane(_ sender: AnyObject) {
         playSong.stop()
         timer.invalidate()
-        let recviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Top2") as! _TViewController
+        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Top2") as! _TViewController
         recviewcontroller.songData = songData
-         let recviewcontroller1 = self.storyboard?.instantiateViewControllerWithIdentifier("Iya")
+         let recviewcontroller1 = self.storyboard?.instantiateViewController(withIdentifier: "Iya")
 
-        self.presentViewController(recviewcontroller1!, animated: true, completion: nil)
+        self.present(recviewcontroller1!, animated: true, completion: nil)
     }
     
     //再生
-    @IBAction func goPlay(sender: AnyObject) {
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(PlayViewController.updatePlayingTime), userInfo: nil, repeats: true)
+    @IBAction func goPlay(_ sender: AnyObject) {
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(PlayViewController.updatePlayingTime), userInfo: nil, repeats: true)
         playSong.play()
-        play.enabled = false
-        back.enabled = true
+        play.isEnabled = false
+        back.isEnabled = true
     }
     
     //mp3に圧縮させて投稿
-    @IBAction func gok(sender: AnyObject) {
+    @IBAction func gok(_ sender: AnyObject) {
         playSong.stop()
         timer.invalidate()
-        let sendviewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Send") as! SendViewController
+        let sendviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Send") as! SendViewController
         sendviewcontroller.songData = songData
-         self.presentViewController(sendviewcontroller, animated: true, completion: nil)
+         self.present(sendviewcontroller, animated: true, completion: nil)
     }
     
        //巻き戻し
-    @IBAction func goBack(sender: UIButton) {
+    @IBAction func goBack(_ sender: UIButton) {
         onbyou.text = "0:00"
-        play.enabled = true
-        back.enabled = false
+        play.isEnabled = true
+        back.isEnabled = false
         playSong.stop()
         timer.invalidate()
         playSong.prepareToPlay()
@@ -80,15 +80,15 @@ class PlayViewController: UIViewController {
     }
     
     //取り直し
-    @IBAction func retake(sender: AnyObject) {
+    @IBAction func retake(_ sender: AnyObject) {
         playSong.stop()
         timer.invalidate()
-        let deleteSong = try!AVAudioRecorder(URL: songData,settings:recordSetting)
+        let deleteSong = try!AVAudioRecorder(url: songData,settings:recordSetting)
         deleteSong.deleteRecording()
-        let viewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Top") as! ViewController
-        self.presentViewController(viewcontroller, animated: true, completion: nil)
-        let manager = NSFileManager()
-        if manager.fileExistsAtPath(songData.absoluteString){
+        let viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Top") as! ViewController
+        self.present(viewcontroller, animated: true, completion: nil)
+        let manager = FileManager()
+        if manager.fileExists(atPath: songData.absoluteString){
             print("ok")
         }else{
             print("no")
@@ -106,9 +106,9 @@ class PlayViewController: UIViewController {
         onbyou.text = formatTimeString(playSong.currentTime)
     }
     
-    func formatTimeString(d: Double) -> String {
-        let s: Int = Int(d % 60)
-        let m: Int = Int((d - Double(s)) / 60 % 60)
+    func formatTimeString(_ d: Double) -> String {
+        let s: Int = Int(d.truncatingRemainder(dividingBy: 60))
+        let m: Int = Int(((d - Double(s)) / 60).truncatingRemainder(dividingBy: 60))
         let str = String(format: "%2d:%02d",  m, s)
         return str
     }

@@ -12,9 +12,9 @@ class TyuViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func Go(sender: AnyObject) {
-        let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Tyu2")
-        self.presentViewController(loginViewController!, animated: true, completion: nil)
+    @IBAction func Go(_ sender: AnyObject) {
+        let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Tyu2")
+        self.present(loginViewController!, animated: true, completion: nil)
 
     }
 

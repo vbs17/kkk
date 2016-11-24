@@ -9,7 +9,7 @@ import FirebaseDatabase
 
 class HomeTableViewCell: UITableViewCell {
     
-    var tap:NSData?
+    var tap:Data?
     weak var playSong: AVAudioPlayer!
     var edittingFlag : Bool = false
     
@@ -33,48 +33,48 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var go: UIButton!
     
     //星の色　ここはシンプル 黄色
-    func updateStar(ratingStr:Int) {
+    func updateStar(_ ratingStr:Int) {
         switch  ratingStr {
         case 0:
-            star1.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
-            star2.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
-            star3.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
-            star4.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
-            star5.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
+            star1.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
+            star2.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
+            star3.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
+            star4.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
+            star5.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
         case 1:
-            star1.setImage(UIImage(named:"guitar3"), forState: UIControlState.Normal)
-            star2.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
-            star3.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
-            star4.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
-            star5.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
+            star1.setImage(UIImage(named:"guitar3"), for: UIControlState())
+            star2.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
+            star3.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
+            star4.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
+            star5.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
             
         case 2:
-            star1.setImage(UIImage(named:"guitar3"), forState: UIControlState.Normal)
-            star2.setImage(UIImage(named:"guitar3"), forState: UIControlState.Normal)
-            star3.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
-            star4.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
-            star5.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
+            star1.setImage(UIImage(named:"guitar3"), for: UIControlState())
+            star2.setImage(UIImage(named:"guitar3"), for: UIControlState())
+            star3.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
+            star4.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
+            star5.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
 
         case 3:
-            star1.setImage(UIImage(named:"guitar3"), forState: UIControlState.Normal)
-            star2.setImage(UIImage(named:"guitar3"), forState: UIControlState.Normal)
-            star3.setImage(UIImage(named:"guitar3"), forState: UIControlState.Normal)
-            star4.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
-            star5.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
+            star1.setImage(UIImage(named:"guitar3"), for: UIControlState())
+            star2.setImage(UIImage(named:"guitar3"), for: UIControlState())
+            star3.setImage(UIImage(named:"guitar3"), for: UIControlState())
+            star4.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
+            star5.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
             
         case 4:
-            star1.setImage(UIImage(named:"guitar3"), forState: UIControlState.Normal)
-            star2.setImage(UIImage(named:"guitar3"), forState: UIControlState.Normal)
-            star3.setImage(UIImage(named:"guitar3"), forState: UIControlState.Normal)
-            star4.setImage(UIImage(named:"guitar3"), forState: UIControlState.Normal)
-            star5.setImage(UIImage(named:"IMG_2728 2"), forState: UIControlState.Normal)
+            star1.setImage(UIImage(named:"guitar3"), for: UIControlState())
+            star2.setImage(UIImage(named:"guitar3"), for: UIControlState())
+            star3.setImage(UIImage(named:"guitar3"), for: UIControlState())
+            star4.setImage(UIImage(named:"guitar3"), for: UIControlState())
+            star5.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
 
         case 5:
-            star1.setImage(UIImage(named:"guitar3"), forState: UIControlState.Normal)
-            star2.setImage(UIImage(named:"guitar3"), forState: UIControlState.Normal)
-            star3.setImage(UIImage(named:"guitar3"), forState: UIControlState.Normal)
-            star4.setImage(UIImage(named:"guitar3"), forState: UIControlState.Normal)
-            star5.setImage(UIImage(named:"guitar3"), forState: UIControlState.Normal)
+            star1.setImage(UIImage(named:"guitar3"), for: UIControlState())
+            star2.setImage(UIImage(named:"guitar3"), for: UIControlState())
+            star3.setImage(UIImage(named:"guitar3"), for: UIControlState())
+            star4.setImage(UIImage(named:"guitar3"), for: UIControlState())
+            star5.setImage(UIImage(named:"guitar3"), for: UIControlState())
         default: break
         }
     }
@@ -84,7 +84,7 @@ class HomeTableViewCell: UITableViewCell {
     //starDic[0] => "bbb"
     //starDic[1] => “3"ってこと？//はいそうです。
     //平均値を取得して反映させる  あれよ大事なあれこれでみんなにデータが配られるわけよこれが原点よ
-    func setPostData(postData: PostData) {
+    func setPostData(_ postData: PostData) {
         let stars = postData.star
         
         var average: Int = 0
@@ -112,10 +112,10 @@ class HomeTableViewCell: UITableViewCell {
         ImageView.image = postData.image
         label.text = postData.name
         label2.text = postData.byou
-        tap = NSData(base64EncodedString: postData.realsong!, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+        tap = Data(base64Encoded: postData.realsong!, options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)
     }
     
-    func setPostData1(postData: PostData) {
+    func setPostData1(_ postData: PostData) {
         let stars = postData.star
         
         var average: Int = 0
@@ -146,7 +146,7 @@ class HomeTableViewCell: UITableViewCell {
     //見た目しかやってない
     override func awakeFromNib() {
         super.awakeFromNib()
-        nami.transform = CGAffineTransformMakeScale(1.0, 30.0)
+        nami.transform = CGAffineTransform(scaleX: 1.0, y: 30.0)
         nami.progressImage = UIImage(named: "Kiki45" )
         nami.trackImage = UIImage(named: "Kiki41")
         nami.progress = 0
@@ -155,39 +155,39 @@ class HomeTableViewCell: UITableViewCell {
         backButton.clipsToBounds = true
         hyouka.layer.cornerRadius = 20
         hyouka.clipsToBounds = true
-        backButton.enabled = false
+        backButton.isEnabled = false
         imageView1.layer.cornerRadius = 22.2
         imageView1.clipsToBounds = true
 
         
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if ((event?.touchesForView(nami)) != nil) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if ((event?.touches(for: nami)) != nil) {
             print("touchesBegan ---- AudioView")
             let touch = touches.first
-            let tapLocation = touch!.locationInView(self.view)
+            let tapLocation = touch!.location(in: self.view)
             print("touchesBegan ---- " + (tapLocation.x - nami.frame.origin.x).description)
         }
     }
     
     //タッチしたまま指を移動
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if ((event?.touchesForView(nami)) != nil) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if ((event?.touches(for: nami)) != nil) {
             print("touchesMoved ---- AudioView")
             let touch = touches.first
-            let tapLocation = touch!.locationInView(self.view)
+            let tapLocation = touch!.location(in: self.view)
             print("touchesMoved ---- " + (tapLocation.x - nami.frame.origin.x).description)
             
         }
     }
     
     //タッチした指が画面から離れる
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if ((event?.touchesForView(nami)) != nil) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if ((event?.touches(for: nami)) != nil) {
             print("touchesEnded ---- AudioView")
             let touch = touches.first
-            let tapLocation = touch!.locationInView(self.view)
+            let tapLocation = touch!.location(in: self.view)
             let x:Double = Double(tapLocation.x - view.frame.origin.x)
             if playSong != nil {
                 let time = playSong.duration
@@ -199,7 +199,7 @@ class HomeTableViewCell: UITableViewCell {
 
     
        
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     

@@ -6,7 +6,7 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
     
     var image:UIImage!
     
-    @IBAction func tapScreen(sender: AnyObject) {
+    @IBAction func tapScreen(_ sender: AnyObject) {
         self.view.endEditing(true)
     }
     @IBOutlet var scrollView: UIScrollView!
@@ -21,7 +21,7 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
     var selectedTextField:UITextField!
     var isTextView:Bool = false
     
-    func textFieldDidBeginEditing(textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         print("textFieldDidBeginEditing\n")
          selectedTextField = textField
         isTextView = true
@@ -32,16 +32,16 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
         view.endEditing(true)
     }
     
-    func keyboardWillBeShown(notification: NSNotification) {
+    func keyboardWillBeShown(_ notification: Notification) {
         if let userInfo = notification.userInfo {
             // もしUITextViewだったら
             if isTextView {
-                if let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue, let animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue {
+                if let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue, let animationDuration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue {
                     restoreScrollViewSize()
                     print("keyboardWillBeShown")
-                    let convertedKeyboardFrame = scrollView.convertRect(keyboardFrame, fromView: nil)
+                    let convertedKeyboardFrame = scrollView.convert(keyboardFrame, from: nil)
                     // selectedTextFieldには現在のtextFieldが設定されているはずなので、それを起点にスクロール
-                    let offsetY: CGFloat = CGRectGetMaxY(station.frame) - CGRectGetMinY(convertedKeyboardFrame)
+                    let offsetY: CGFloat = station.frame.maxY - convertedKeyboardFrame.minY
                     if offsetY < 0 {
                         return
                     }
@@ -49,12 +49,12 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
                 }
             } else {
                 // UITextViewじゃなかったら、
-                if let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue, let animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue {
+                if let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue, let animationDuration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue {
                     restoreScrollViewSize()
                     print("keyboardWillBeShown")
                     // UITextView(path)に合わせてスクロール
-                    let convertedKeyboardFrame = scrollView.convertRect(keyboardFrame, fromView: nil)
-                    let offsetY: CGFloat = CGRectGetMaxY(path.frame) - CGRectGetMinY(convertedKeyboardFrame)
+                    let convertedKeyboardFrame = scrollView.convert(keyboardFrame, from: nil)
+                    let offsetY: CGFloat = path.frame.maxY - convertedKeyboardFrame.minY
                     if offsetY < 0 {
                         return
                     }
@@ -79,112 +79,112 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
 
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NSNotificationCenter.defaultCenter().addObserver(self,
+        NotificationCenter.default.addObserver(self,
                                                          selector: #selector(SyugoViewController.keyboardWillBeShown(_:)),
-                                                         name: UIKeyboardWillShowNotification,
+                                                         name: NSNotification.Name.UIKeyboardWillShow,
                                                          object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self,
+        NotificationCenter.default.addObserver(self,
                                                          selector: #selector(SyugoViewController.keyboardWillBeHidden(_:)),
-                                                         name: UIKeyboardWillHideNotification,
+                                                         name: NSNotification.Name.UIKeyboardWillHide,
                                                          object: nil)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        NSNotificationCenter.defaultCenter().removeObserver(self,
-                                                            name: UIKeyboardWillShowNotification,
+        NotificationCenter.default.removeObserver(self,
+                                                            name: NSNotification.Name.UIKeyboardWillShow,
                                                             object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self,
-                                                            name: UIKeyboardWillHideNotification,
+        NotificationCenter.default.removeObserver(self,
+                                                            name: NSNotification.Name.UIKeyboardWillHide,
                                                             object: nil)
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    func keyboardWillBeHidden(notification: NSNotification) {
+    func keyboardWillBeHidden(_ notification: Notification) {
         restoreScrollViewSize()
     }
     
-    func updateScrollViewSize(moveSize: CGFloat, duration: NSTimeInterval) {
+    func updateScrollViewSize(_ moveSize: CGFloat, duration: TimeInterval) {
         UIView.beginAnimations("ResizeForKeyboard", context: nil)
         UIView.setAnimationDuration(duration)
         
         let contentInsets = UIEdgeInsetsMake(0, 0, moveSize, 0)
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
-        scrollView.contentOffset = CGPointMake(0, moveSize)
+        scrollView.contentOffset = CGPoint(x: 0, y: moveSize)
         
         UIView.commitAnimations()
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         isTextView = false
         textField.resignFirstResponder()
     }
     
     func restoreScrollViewSize() {
-        scrollView.contentInset = UIEdgeInsetsZero
-        scrollView.scrollIndicatorInsets = UIEdgeInsetsZero
+        scrollView.contentInset = UIEdgeInsets.zero
+        scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
     }
     
-    func textViewShouldBeginEditing(textView: UITextView) -> Bool
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool
     {
-        lbl.hidden = true
+        lbl.isHidden = true
         return true
     }
     
-    func textViewDidEndEditing(textView: UITextView) {
+    func textViewDidEndEditing(_ textView: UITextView) {
         
         if(textView.text.isEmpty){
-            lbl.hidden = false
+            lbl.isHidden = false
         }
     }
 
     
    
     
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         print("textFieldShouldBeginEditing\n")
         isTextView = false
         return true
     }
 
-    @IBAction func Ok(sender: AnyObject) {
+    @IBAction func Ok(_ sender: AnyObject) {
         if (path.text != nil && path.text != ""){
             
-        let kind2viewcontroller = self.storyboard?.instantiateViewControllerWithIdentifier("Kind2") as! Kind2ViewController
+        let kind2viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind2") as! Kind2ViewController
         kind2viewcontroller.hiniti = hiniti
         kind2viewcontroller.image = imageView.image!
         kind2viewcontroller.zikoku = zikoku
         kind2viewcontroller.station = station
         kind2viewcontroller.path = path
-            self.presentViewController(kind2viewcontroller, animated: true, completion: nil)
+            self.present(kind2viewcontroller, animated: true, completion: nil)
         }else{
             let alert = UIAlertController()
-            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellowColor()]
+            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellow]
             let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
             alert.setValue(attributedTitle, forKey: "attributedTitle")
-            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.white]
             let attributedMessage = NSAttributedString(string: "住所は必須です", attributes: attributedMessageAttr)
-            alert.view.tintColor = UIColor.whiteColor()
+            alert.view.tintColor = UIColor.white
             alert.setValue(attributedMessage, forKey: "attributedMessage")
             let subview = alert.view.subviews.first! as UIView
             let alertContentView = subview.subviews.first! as UIView
-            alertContentView.backgroundColor = UIColor.grayColor()
+            alertContentView.backgroundColor = UIColor.gray
             
-            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
                 (action: UIAlertAction!) -> Void in
             })
             alert.addAction(defaultAction)
-            presentViewController(alert, animated: true, completion: nil)
-            alert.view.tintColor = UIColor.whiteColor()
+            present(alert, animated: true, completion: nil)
+            alert.view.tintColor = UIColor.white
             
         }
     
