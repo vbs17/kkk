@@ -3,7 +3,6 @@
 import UIKit
 import Firebase
 import FirebaseAuth
-import Spring
 
 
 class TabViewController: UIViewController {
@@ -26,29 +25,17 @@ class TabViewController: UIViewController {
     }
     
     @IBAction func path(_ sender: AnyObject) {
-        let springButton = sender as! SpringButton
-        springButton.animation = "pop"
-        springButton.duration = 0.5
-        springButton.animate()
         let HomeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Itiran1")
         self.present(HomeViewController!, animated: false, completion: nil)
     }
     
     
     @IBAction func recpic(_ sender: AnyObject) {
-        let springButton = sender as! SpringButton
-        springButton.animation = "pop"
-        springButton.duration = 0.5
-        springButton.animate()
         let TopViewController = self.storyboard?.instantiateViewController(withIdentifier: "Syuru")
         self.present(TopViewController!, animated: true, completion: nil)
     }
     
     @IBAction func music(_ sender: AnyObject) {
-        let springButton = sender as! SpringButton
-        springButton.animation = "pop"
-        springButton.duration = 0.5
-        springButton.animate()
         let setViewController = self.storyboard?.instantiateViewController(withIdentifier: "Itiran")
         self.present(setViewController!, animated: false, completion: nil)
     }
