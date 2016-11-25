@@ -8,9 +8,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func back(_ sender: AnyObject) {
-        let ProViewController = self.storyboard?.instantiateViewController(withIdentifier: "Tab")
-        self.present(ProViewController!, animated: true, completion: nil)
-        
+        self.dismiss(animated: true, completion: nil)
     }
     fileprivate let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","X","Y","Z","number"]
 

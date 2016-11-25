@@ -156,8 +156,7 @@ class ProViewController: UIViewController,UITextFieldDelegate{
     }
     
     @IBAction func back(_ sender: AnyObject) {
-        let tabviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Tab") as! TabViewController
-        self.present(tabviewcontroller, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

@@ -84,8 +84,7 @@ class SyuruViewController: UIViewController {
     }
     
     @IBAction func back(_ sender: AnyObject) {
-        let ProViewController = self.storyboard?.instantiateViewController(withIdentifier: "Tab")
-        self.present(ProViewController!, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
