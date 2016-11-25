@@ -166,6 +166,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         "HY",
         "HYDE"],
     ["いきものがかり",
+     "泉谷しげる",
         "忌野清志郎",
         "井上陽水",
         "石野卓球",
