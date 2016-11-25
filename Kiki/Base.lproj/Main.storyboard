@@ -331,7 +331,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jobs" translatesAutoresizingMaskIntoConstraints="NO" id="y4n-sk-Lye">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y4n-sk-Lye">
                                                 <rect key="frame" x="13" y="8" width="151" height="151"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
@@ -2706,6 +2706,5 @@
         <image name="e" width="2429" height="3238"/>
         <image name="f" width="3264" height="2448"/>
         <image name="g" width="7360" height="4912"/>
-        <image name="jobs" width="1350" height="898"/>
     </resources>
 </document>
