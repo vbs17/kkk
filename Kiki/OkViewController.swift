@@ -42,8 +42,7 @@ class OkViewController: UIViewController {
     }
     //消す
     @IBAction func backGo(_ sender: AnyObject) {
-        let ProViewController = self.storyboard?.instantiateViewController(withIdentifier: "Send")
-        self.present(ProViewController!, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     

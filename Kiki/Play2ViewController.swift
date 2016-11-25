@@ -64,7 +64,7 @@ class Play2ViewController: UIViewController {
         deleteSong.deleteRecording()
         let viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Top2") as! _TViewController
         viewcontroller.songData = self.songData
-        self.present(viewcontroller, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         let manager = FileManager()
         if manager.fileExists(atPath: songData2.absoluteString){
             print("ok")

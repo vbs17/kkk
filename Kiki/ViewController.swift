@@ -202,8 +202,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
         self.timeCountTimer?.invalidate()
         self.timer?.invalidate()
         audioRecorder?.stop()
-        let playviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Syuru") 
-        self.present(playviewcontroller!, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
     }
 

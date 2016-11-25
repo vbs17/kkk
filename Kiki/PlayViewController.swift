@@ -85,8 +85,7 @@ class PlayViewController: UIViewController {
         timer.invalidate()
         let deleteSong = try!AVAudioRecorder(url: songData,settings:recordSetting)
         deleteSong.deleteRecording()
-        let viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Top") as! ViewController
-        self.present(viewcontroller, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         let manager = FileManager()
         if manager.fileExists(atPath: songData.absoluteString){
             print("ok")
