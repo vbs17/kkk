@@ -3,3 +3,4 @@
 //
 
 #include "MixerMeter.h"
+#include "MergeAudioFile.h"

@@ -114,6 +114,7 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
             self.timer.invalidate()
             audioEngine.mainMixerNode.removeTap(onBus: 0)
             audioEngine.stop()
+            MergeAudioFile().merge(songFile, with: songData)
             nextGamenn()
         }
     }
