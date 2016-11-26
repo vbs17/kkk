@@ -1312,7 +1312,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6XJ-uI-LtX">
-                                <rect key="frame" x="94" y="287" width="176" height="62"/>
+                                <rect key="frame" x="95" y="287.5" width="174" height="61.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6XJ-uI-LtX" secondAttribute="height" multiplier="168:59" id="70g-U3-Jj4"/>
                                 </constraints>
@@ -1338,7 +1338,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出演するライブハウスの場所を教えよう" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbY-21-dDj">
-                                <rect key="frame" x="33" y="179.5" width="309" height="21.5"/>
+                                <rect key="frame" x="33" y="180" width="309" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wbY-21-dDj" secondAttribute="height" multiplier="43:3" id="wnW-vE-paJ"/>
                                 </constraints>
@@ -1349,7 +1349,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HnA-My-ueB">
-                                <rect key="frame" x="159" y="148.5" width="46" height="23"/>
+                                <rect key="frame" x="159" y="149" width="46" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HnA-My-ueB" secondAttribute="height" multiplier="2:1" id="WpT-k6-t3c"/>
                                 </constraints>
@@ -1894,7 +1894,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="8" translatesAutoresizingMaskIntoConstraints="NO" id="LXm-j2-Dgc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="8" translatesAutoresizingMaskIntoConstraints="NO" id="LXm-j2-Dgc">
                                 <rect key="frame" x="0.0" y="64" width="375" height="519"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zw0-wf-zgR">
@@ -1930,13 +1930,12 @@
                                         <color key="progressTintColor" red="1" green="0.98722288120000001" blue="0.73309557130000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="trackTintColor" red="1" green="0.67705021570000001" blue="0.63826298540000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </progressView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plf-2g-pap">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plf-2g-pap">
                                         <rect key="frame" x="8" y="4" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="OCD-F1-d1h"/>
                                             <constraint firstAttribute="width" constant="80" id="fXn-Q3-uzw"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <state key="normal" title="REC" backgroundImage="IMG_1718">
                                             <color key="titleColor" red="1" green="0.07029228354" blue="0.004821727992" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="1" green="0.27777903949999999" blue="0.42538812990000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1995,17 +1994,15 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ESp-Fk-kMl" firstAttribute="top" secondItem="pt3-zM-oA3" secondAttribute="bottom" id="0qZ-oS-BMM"/>
+                            <constraint firstAttribute="trailing" secondItem="LXm-j2-Dgc" secondAttribute="trailing" id="6Ec-TA-x4g"/>
                             <constraint firstAttribute="trailing" secondItem="Zw0-wf-zgR" secondAttribute="trailing" id="CQK-aV-Erk"/>
                             <constraint firstItem="Zw0-wf-zgR" firstAttribute="leading" secondItem="vxn-zG-m4R" secondAttribute="leading" id="ECf-FE-FTm"/>
-                            <constraint firstItem="LXm-j2-Dgc" firstAttribute="leading" secondItem="vxn-zG-m4R" secondAttribute="leading" id="HH9-BX-430"/>
-                            <constraint firstItem="Zw0-wf-zgR" firstAttribute="leading" secondItem="LXm-j2-Dgc" secondAttribute="leading" id="HYq-e4-VLQ"/>
                             <constraint firstItem="Zw0-wf-zgR" firstAttribute="leading" secondItem="ESp-Fk-kMl" secondAttribute="leading" id="Hj5-tS-4ai"/>
+                            <constraint firstItem="LXm-j2-Dgc" firstAttribute="top" secondItem="ESp-Fk-kMl" secondAttribute="bottom" id="ag1-7F-Akh"/>
+                            <constraint firstItem="BYm-Em-ZWP" firstAttribute="top" secondItem="LXm-j2-Dgc" secondAttribute="bottom" constant="84" id="csV-fM-Aar"/>
                             <constraint firstItem="Zw0-wf-zgR" firstAttribute="trailing" secondItem="ESp-Fk-kMl" secondAttribute="trailing" id="dAY-KH-wJy"/>
-                            <constraint firstItem="ESp-Fk-kMl" firstAttribute="bottom" secondItem="LXm-j2-Dgc" secondAttribute="top" id="kMs-K2-t1V"/>
-                            <constraint firstItem="LXm-j2-Dgc" firstAttribute="top" secondItem="ESp-Fk-kMl" secondAttribute="bottom" id="m2h-qf-MTw"/>
+                            <constraint firstItem="LXm-j2-Dgc" firstAttribute="leading" secondItem="vxn-zG-m4R" secondAttribute="leading" id="lkM-IE-kFM"/>
                             <constraint firstItem="Zw0-wf-zgR" firstAttribute="bottom" secondItem="BYm-Em-ZWP" secondAttribute="top" id="nQ2-vC-kBu"/>
-                            <constraint firstItem="Zw0-wf-zgR" firstAttribute="trailing" secondItem="LXm-j2-Dgc" secondAttribute="trailing" id="rlL-fo-GZF"/>
-                            <constraint firstAttribute="trailing" secondItem="LXm-j2-Dgc" secondAttribute="trailing" id="yYG-gi-s86"/>
                         </constraints>
                     </view>
                     <connections>
