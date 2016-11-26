@@ -24,6 +24,7 @@
     ExtAudioFileRef outAudioFileRef = NULL;
     AudioStreamBasicDescription inFileFormat, ioClientFormat;
     void *ioData = NULL;
+    void *ioData2 = NULL;
     NSURL *outURL;
     do {
         err = ExtAudioFileOpenURL((__bridge CFURLRef _Nonnull)(inURL), &inAudioFileRef);
@@ -109,12 +110,12 @@
         appendBufferList.mNumberBuffers = 1;
         appendBufferList.mBuffers[0].mNumberChannels = ioClientFormat.mChannelsPerFrame;
         appendBufferList.mBuffers[0].mDataByteSize = allocByteSize;
-        ioData = malloc(allocByteSize);
-        if (!ioData) {
+        ioData2 = malloc(allocByteSize);
+        if (!ioData2) {
             err = 1003;
             break;
         }
-        appendBufferList.mBuffers[0].mData = ioData;
+        appendBufferList.mBuffers[0].mData = ioData2;
         
         BOOL baseFileEnd = NO;
         BOOL appendFileEnd = NO;
@@ -171,21 +172,16 @@
                     outBufferList = baseBufferList;
                 } else {
                     if (baseFrames < appendFrames) {
-                        // 先にベースファイルを書き込む
-                        err = ExtAudioFileWrite(outAudioFileRef, baseFrames, &baseBufferList);
-                        if (err != noErr) {
-                            NSLog(@"ExtAudioFileWrite (base) err = %ld", (long)err);
-                            break;
-                        }
-                        // 残りのappendデータを書き込む
+                        // baseに残りのappendデータを追記してから書き込む
                         UInt32 remainFrames = appendFrames - baseFrames;
                         size_t remainBytes = remainFrames*ioClientFormat.mBytesPerFrame;
                         int startBytes = baseFrames*ioClientFormat.mBytesPerFrame;
-                        memmove(&appendBufferList.mBuffers[0].mData[0],
+                        memmove(&baseBufferList.mBuffers[0].mData[startBytes],
                                 &appendBufferList.mBuffers[0].mData[startBytes],
                                 remainBytes);
-                        outFrames = remainFrames;
-                        outBufferList = appendBufferList;
+                        outFrames = appendFrames;
+                        outBufferList = baseBufferList;
+                        outBufferList.mBuffers[0].mDataByteSize = allocByteSize;
                         
                     } else {
                         // baseファイルを書き込む
@@ -215,16 +211,21 @@
     
     //解放する
     if (ioData) free(ioData);
+    if (ioData2) free(ioData2);
     if (inAudioFileRef) ExtAudioFileDispose(inAudioFileRef);
     if (appendAudioFileRef) ExtAudioFileDispose(appendAudioFileRef);
     if (outAudioFileRef) ExtAudioFileDispose(outAudioFileRef);
     
     // ファイル切り替え
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    [fileManager removeItemAtURL:inURL error:nil];
-    [fileManager moveItemAtURL:outURL toURL: inURL error:&error];
-    if (error) {
-        NSLog(@"moveItemAtURL error:%@",error);
+    if (inURL != nil && outURL != nil) {
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        [fileManager removeItemAtURL:inURL error:nil];
+        [fileManager moveItemAtURL:outURL toURL: inURL error:&error];
+        if (error) {
+            NSLog(@"moveItemAtURL error:%@",error);
+        }
+    } else {
+        NSLog(@"error inURL=%@ outURL=%@",inURL, outURL);
     }
 }
 @end
