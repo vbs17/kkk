@@ -462,6 +462,8 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var hou: UIButton!
     @IBOutlet weak var cho: UILabel!
+    @IBAction func you(_ sender: Any) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
