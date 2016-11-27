@@ -18,7 +18,28 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     var back: UIButton!
     var tableView: UITableView!
     var playingIndexPath:IndexPath!
+    var ko = false
     @IBOutlet weak var lbl: UILabel!
+    
+    func pro(_ sender: UIButton, event:UIEvent) {
+        ko = true
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        let postData = postArray[indexPath!.row]
+        if playSong != nil {
+            if (playSong.isPlaying){
+                playSong.pause()
+                timer.invalidate()
+            }
+        }
+        let pro = self.storyboard?.instantiateViewController(withIdentifier: "Pi") as! ProIdouViewController
+        pro.uid = postData.uid
+        self.present(pro, animated: true, completion: nil)
+        
+        
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,24 +91,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         return cell
     }
     
-    func pro(_ sender: UIButton, event:UIEvent) {
-        let touch = event.allTouches?.first
-        let point = touch!.location(in: self.tableView)
-        let indexPath = tableView.indexPathForRow(at: point)
-        let postData = postArray[indexPath!.row]
-        if playSong != nil {
-            if (playSong.isPlaying){
-                playSong.pause()
-                timer.invalidate()
-            }
-        }
-        let pro = self.storyboard?.instantiateViewController(withIdentifier: "Pi") as! ProIdouViewController
-        pro.uid = postData.uid
-        self.present(pro, animated: true, completion: nil)
-        
-        
-    }
-
+    
     func getIndexPath(_ event:UIEvent) -> IndexPath? {
         let touch = event.allTouches?.first
         let point = touch!.location(in: self.tableView)
@@ -294,7 +298,11 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (ko == true){
+            return 0
+        }else{
         return postArray.count
+        }
     }
     
    
@@ -370,6 +378,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     }
     //全部大丈夫なのか
     @IBAction func backGo(_ sender: AnyObject) {
+        ko = true
         timer.invalidate()
         timer2.invalidate()
         self.dismiss(animated: true, completion: nil)
