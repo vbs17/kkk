@@ -72,6 +72,16 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
             name:NSNotification.Name.UIApplicationWillResignActive,
             object: nil
         )
+        byou.text = "0:00"
+        imageView.image = UIImage(named: "8")
+        recordImage?.setImage(nil, for: .normal)
+        recordImage?.setBackgroundImage(UIImage(named: "IMG_1718"), for: .normal)
+        nami1.progress = 1
+        nami2.progress = 1
+        nami3.progress = 1
+        count = 1
+        timeCount = 1
+        count1 = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {

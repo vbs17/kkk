@@ -40,8 +40,7 @@ class ProViewController: UIViewController,UITextFieldDelegate{
             let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
             let postData = ["name": name1, "image": imageData!.base64EncodedString(options: .lineLength64Characters), "line": line1, "facebook": facebook1, "twitter":twitter1,"den":den1,"ta":ta1,"uid":uid] as [String : Any]
             postRef.child(uid as String).setValue(postData)
-            let tabvarviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Tab") as! TabViewController
-            self.present(tabvarviewcontroller, animated: true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
         } else{
             if (image != nil && name.text!.characters.count > 0){
                 let postRef = FIRDatabase.database().reference().child(CommonConst.Profile)
@@ -55,8 +54,7 @@ class ProViewController: UIViewController,UITextFieldDelegate{
                 let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
                 let postData = ["name": name1, "image": imageData!.base64EncodedString(options: .lineLength64Characters), "line": line1, "facebook": facebook1, "twitter":twitter1,"den":den1,"ta":ta1,"uid":uid] as [String : Any]
                 postRef.child(uid as String).setValue(postData)
-                let tabvarviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Tab") as! TabViewController
-                self.present(tabvarviewcontroller, animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
             }else{
                 let alert = UIAlertController()
                 let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellow]
