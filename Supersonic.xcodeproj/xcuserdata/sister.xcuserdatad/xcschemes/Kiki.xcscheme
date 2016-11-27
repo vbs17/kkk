@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B0A78FD11DACFF6400AC0513"
-               BuildableName = "Kiki.app"
-               BlueprintName = "Kiki"
-               ReferencedContainer = "container:Kiki.xcodeproj">
+               BuildableName = "Supersonic.app"
+               BlueprintName = "Supersonic"
+               ReferencedContainer = "container:Supersonic.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B0A78FD11DACFF6400AC0513"
-            BuildableName = "Kiki.app"
-            BlueprintName = "Kiki"
-            ReferencedContainer = "container:Kiki.xcodeproj">
+            BuildableName = "Supersonic.app"
+            BlueprintName = "Supersonic"
+            ReferencedContainer = "container:Supersonic.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B0A78FD11DACFF6400AC0513"
-            BuildableName = "Kiki.app"
-            BlueprintName = "Kiki"
-            ReferencedContainer = "container:Kiki.xcodeproj">
+            BuildableName = "Supersonic.app"
+            BlueprintName = "Supersonic"
+            ReferencedContainer = "container:Supersonic.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B0A78FD11DACFF6400AC0513"
-            BuildableName = "Kiki.app"
-            BlueprintName = "Kiki"
-            ReferencedContainer = "container:Kiki.xcodeproj">
+            BuildableName = "Supersonic.app"
+            BlueprintName = "Supersonic"
+            ReferencedContainer = "container:Supersonic.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

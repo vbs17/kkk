@@ -115,7 +115,7 @@
 		B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProIdouViewController.swift; sourceTree = "<group>"; };
 		B08690771DB4A311006BB6FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B088CB211DDB34C7007CE03D /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
-		B0A78FD21DACFF6400AC0513 /* Kiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0A78FD21DACFF6400AC0513 /* Supersonic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Supersonic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0A78FD71DACFF6500AC0513 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B0A78FDA1DACFF6500AC0513 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 		B0A78FD31DACFF6400AC0513 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B0A78FD21DACFF6400AC0513 /* Kiki.app */,
+				B0A78FD21DACFF6400AC0513 /* Supersonic.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -311,9 +311,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B0A78FD11DACFF6400AC0513 /* Kiki */ = {
+		B0A78FD11DACFF6400AC0513 /* Supersonic */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B0A78FE41DACFF6500AC0513 /* Build configuration list for PBXNativeTarget "Kiki" */;
+			buildConfigurationList = B0A78FE41DACFF6500AC0513 /* Build configuration list for PBXNativeTarget "Supersonic" */;
 			buildPhases = (
 				D4A949B89A55DEBBAFCED374 /* [CP] Check Pods Manifest.lock */,
 				B0A78FCE1DACFF6400AC0513 /* Sources */,
@@ -326,9 +326,9 @@
 			);
 			dependencies = (
 			);
-			name = Kiki;
+			name = Supersonic;
 			productName = Kiki;
-			productReference = B0A78FD21DACFF6400AC0513 /* Kiki.app */;
+			productReference = B0A78FD21DACFF6400AC0513 /* Supersonic.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -348,7 +348,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B0A78FCD1DACFF6400AC0513 /* Build configuration list for PBXProject "Kiki" */;
+			buildConfigurationList = B0A78FCD1DACFF6400AC0513 /* Build configuration list for PBXProject "Supersonic" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -361,7 +361,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B0A78FD11DACFF6400AC0513 /* Kiki */,
+				B0A78FD11DACFF6400AC0513 /* Supersonic */,
 			);
 		};
 /* End PBXProject section */
@@ -635,7 +635,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B0A78FCD1DACFF6400AC0513 /* Build configuration list for PBXProject "Kiki" */ = {
+		B0A78FCD1DACFF6400AC0513 /* Build configuration list for PBXProject "Supersonic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0A78FE21DACFF6500AC0513 /* Debug */,
@@ -644,7 +644,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B0A78FE41DACFF6500AC0513 /* Build configuration list for PBXNativeTarget "Kiki" */ = {
+		B0A78FE41DACFF6500AC0513 /* Build configuration list for PBXNativeTarget "Supersonic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0A78FE51DACFF6500AC0513 /* Debug */,
