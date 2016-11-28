@@ -459,7 +459,10 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
     var path:UITextView!
     var image:UIImage!
     var genre = ""
-    
+    var tappedCellPos:IndexPath! //タップされたCellのindexPath
+    var buttonOriginalColor:UIColor!//ボタンの元の色
+    var isRowSelected:Bool = false//現在行が選択状態か否か
+
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -469,14 +472,73 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         let nib = UINib(nibName: "SyugoTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "Cells")
+        tappedCellPos = nil
     }
     
     func buttonPressed(_ tableViewCell: SyugoTableViewCell) {
         let indexPath = tableView.indexPath(for: tableViewCell)
-        genre = AllItems[indexPath!.section][indexPath!.row]
+        // 初めてのタップ
+        if tappedCellPos == nil {
+            // オリジナルのボタンの色を取得
+            buttonOriginalColor = tableViewCell.kete.backgroundColor!
+            // ボタンの色を緑に。
+            tableViewCell.kete.backgroundColor = UIColor.green
+            // ジャンルを決定
+            genre = AllItems[indexPath!.section][indexPath!.row]
+            // 行が選択されている
+            isRowSelected = true
+            // タップされたセルのindexPathを保存
+            tappedCellPos = indexPath
+        } else if tappedCellPos == indexPath {
+            // 同じセルのn度目のタップ
+            // 行が選択された状態なら、元に戻す
+            if isRowSelected {
+                // ボタンの色を元の色に
+                tableViewCell.kete.backgroundColor = buttonOriginalColor
+                // ジャンルを未選択（空文字）に
+                genre = ""
+                // 行が非選択状態とする
+                isRowSelected = false
+                // タップされたセルのindexPathを保存
+                tappedCellPos = indexPath
+            } else {
+                // 行が非選択の状態なら、選択状態にする
+                // オリジナルのボタンの色を取得
+                buttonOriginalColor = tableViewCell.kete.backgroundColor!
+                // ボタンの色を緑に。
+                tableViewCell.kete.backgroundColor = UIColor.green
+                // ジャンルを決定
+                genre = AllItems[indexPath!.section][indexPath!.row]
+                // 行が選択されている
+                isRowSelected = true
+                // タップされたセルのindexPathを保存
+                tappedCellPos = indexPath
+            }
+        } else {
+            // 他の行がタップされた
+            // 既に選択状態の行がある
+            if isRowSelected {
+                // 既に選択状態の行の選択を解除
+                let oldCell:SyugoTableViewCell = tableView.cellForRow(at: tappedCellPos) as! SyugoTableViewCell
+                oldCell.kete.backgroundColor = buttonOriginalColor;
+            }
+            // 今回選択された行を選択状態とする
+            // オリジナルのボタンの色を取得
+            buttonOriginalColor = tableViewCell.kete.backgroundColor!
+            // ボタンの色を緑に。
+            tableViewCell.kete.backgroundColor = UIColor.green
+            // ジャンルを決定
+            genre = AllItems[indexPath!.section][indexPath!.row]
+            // 行が選択されている
+            isRowSelected = true
+            // タップされたセルのindexPathを保存
+            tappedCellPos = indexPath
+        }
+        
     }
+   
 
-    
+
     
     //ここ
     @IBAction func post(_ sender: AnyObject) {
@@ -523,37 +585,6 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
         return AllItems[section].count
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
     @IBAction func hou(_ sender: AnyObject) {
     }
     @IBAction func you(_ sender: AnyObject) {
@@ -562,6 +593,6 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
         super.didReceiveMemoryWarning()
     }
     
-
+ }
    
-}
+
