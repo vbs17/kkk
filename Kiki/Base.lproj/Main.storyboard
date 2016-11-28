@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="b" translatesAutoresizingMaskIntoConstraints="NO" id="ag9-GW-vmP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ag9-GW-vmP">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="567"/>
                                 <color key="tintColor" red="0.99647290050000004" green="0.63966908040000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -38,7 +38,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <size key="titleShadowOffset" width="2" height="2"/>
-                                <state key="normal" title="MEET" backgroundImage="3">
+                                <state key="normal" title="MEET">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -54,7 +54,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <size key="titleShadowOffset" width="2" height="1"/>
-                                <state key="normal" title="MUSIC" backgroundImage="3">
+                                <state key="normal" title="MUSIC">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.1074934555" green="0.09623322829" blue="0.042639232169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -70,7 +70,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <size key="titleShadowOffset" width="2" height="1"/>
-                                <state key="normal" title="REC&amp;PIC" backgroundImage="14">
+                                <state key="normal" title="REC&amp;PIC">
                                     <color key="titleColor" red="1" green="0.50207196659999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -87,7 +87,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <size key="titleShadowOffset" width="2" height="1"/>
-                                <state key="normal" title="PROFILE" backgroundImage="a">
+                                <state key="normal" title="PROFILE">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -101,7 +101,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="REQUEST" backgroundImage="e">
+                                <state key="normal" title="REQUEST">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -1312,7 +1312,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6XJ-uI-LtX">
-                                <rect key="frame" x="95" y="287.5" width="174" height="61.5"/>
+                                <rect key="frame" x="95" y="288" width="174" height="61"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6XJ-uI-LtX" secondAttribute="height" multiplier="168:59" id="70g-U3-Jj4"/>
                                 </constraints>
@@ -1338,7 +1338,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出演するライブハウスの場所を教えよう" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbY-21-dDj">
-                                <rect key="frame" x="33" y="180" width="309" height="21.5"/>
+                                <rect key="frame" x="33" y="180" width="309" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wbY-21-dDj" secondAttribute="height" multiplier="43:3" id="wnW-vE-paJ"/>
                                 </constraints>
@@ -2975,7 +2975,6 @@
         <image name="17" width="3456" height="5184"/>
         <image name="19" width="2640" height="3960"/>
         <image name="22" width="5248" height="2952"/>
-        <image name="3" width="4928" height="3264"/>
         <image name="33" width="6578" height="4699"/>
         <image name="34" width="3264" height="2448"/>
         <image name="36" width="6016" height="4000"/>
@@ -2990,9 +2989,6 @@
         <image name="IMG_3354" width="750" height="1334"/>
         <image name="IMG_3355" width="750" height="1334"/>
         <image name="IMG_3356" width="750" height="1334"/>
-        <image name="a" width="3152" height="2101"/>
-        <image name="b" width="5184" height="3456"/>
-        <image name="e" width="2429" height="3238"/>
         <image name="f" width="3264" height="2448"/>
         <image name="g" width="7360" height="4912"/>
     </resources>
