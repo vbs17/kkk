@@ -542,6 +542,7 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
     
     //ここ
     @IBAction func post(_ sender: AnyObject) {
+        if isRowSelected {
         let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre)
         let imageData = UIImageJPEGRepresentation(image, 0.5)
         let hiniti1:NSString = hiniti.text! as NSString
@@ -553,7 +554,29 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
         postRef.childByAutoId().setValue(postData)
         let tabvarviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Tab") as! TabViewController
         self.present(tabvarviewcontroller, animated: true, completion: nil)
+        }  else {
+            // 行が選択されていない＝ジャンルが選択されていない
+            let alert = UIAlertController()
+            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellow]
+            let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
+            alert.setValue(attributedTitle, forKey: "attributedTitle")
+            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.white]
+            let attributedMessage = NSAttributedString(string: "ジャンルを選択しよう", attributes: attributedMessageAttr)
+            alert.view.tintColor = UIColor.white
+            alert.setValue(attributedMessage, forKey: "attributedMessage")
+            let subview = alert.view.subviews.first! as UIView
+            let alertContentView = subview.subviews.first! as UIView
+            alertContentView.backgroundColor = UIColor.gray
+            
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
+                (action: UIAlertAction!) -> Void in
+            })
+            alert.addAction(defaultAction)
+            present(alert, animated: true, completion: nil)
+            alert.view.tintColor = UIColor.white
+        }
     }
+
     
     //値を設定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

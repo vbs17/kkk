@@ -601,10 +601,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     
     //Cellが選択された際に呼び出される.
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-    }
-
+    
     //セクションの数を返す.
      func numberOfSections(in tableView: UITableView) -> Int {
         return mySections.count
