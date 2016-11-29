@@ -462,6 +462,7 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
     var tappedCellPos:IndexPath! //タップされたCellのindexPath
     var buttonOriginalColor:UIColor!//ボタンの元の色
     var isRowSelected:Bool = false//現在行が選択状態か否か
+    
 
     
     @IBOutlet weak var tableView: UITableView!
@@ -536,6 +537,8 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
         }
         
     }
+    
+   
    
 
 
