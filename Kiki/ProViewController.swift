@@ -19,7 +19,6 @@ class ProViewController: UIViewController,UITextFieldDelegate{
     @IBOutlet weak var den: UITextField!
     @IBOutlet weak var ta: UITextField!
     @IBOutlet weak var back: UIButton!
-    @IBOutlet weak var imageView1: UIImageView!
     var selectedTextField = UITextField()
     
     
@@ -84,8 +83,7 @@ class ProViewController: UIViewController,UITextFieldDelegate{
         super.viewDidLoad()
         imageView.layer.cornerRadius = 75
         imageView.clipsToBounds = true
-        imageView1.layer.cornerRadius = 75
-        imageView1.clipsToBounds = true
+       
         back.layer.cornerRadius = 37
         back.clipsToBounds = true
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
