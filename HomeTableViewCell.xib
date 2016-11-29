@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -28,7 +32,7 @@
                             <constraint firstAttribute="height" constant="300" id="vxl-3K-0aB"/>
                         </constraints>
                         <state key="normal">
-                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltf-Uk-188">
@@ -76,7 +80,7 @@
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UNu-8R-nN3">
                                 <rect key="frame" x="-14" y="17" width="379" height="2"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="O3C-VZ-PYe"/>
                                     <constraint firstAttribute="width" constant="379" id="yr4-LJ-CIE"/>
@@ -96,12 +100,12 @@
                             <constraint firstAttribute="width" constant="28" id="eWP-9C-poi"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1K3-t4-Uub">
                         <rect key="frame" x="8" y="231" width="52" height="36"/>
-                        <color key="backgroundColor" red="1" green="0.67705021570000001" blue="0.63826298540000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.67705021570000001" blue="0.63826298540000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="52" id="Uuf-nM-nYs"/>
                             <constraint firstAttribute="height" constant="36" id="y3U-ru-vhH"/>
@@ -109,8 +113,8 @@
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <size key="titleShadowOffset" width="2" height="2.2250738585072014e-308"/>
                         <state key="normal" title="◀︎◀︎">
-                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="titleShadowColor" red="0.14362053969999999" green="0.17933351710000001" blue="0.3351807919" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="titleShadowColor" red="0.14362053969999999" green="0.17933351710000001" blue="0.3351807919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8F-E1-oAD">
@@ -120,7 +124,7 @@
                             <constraint firstAttribute="width" constant="40" id="ag5-Xd-cSG"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <color key="textColor" red="1" green="0.98722288120000001" blue="0.73309557130000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="1" green="0.98722288120000001" blue="0.73309557130000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEn-ah-eNy">
@@ -145,9 +149,9 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
-                        <state key="normal" title="評価" backgroundImage="u">
-                            <color key="titleColor" red="0.93950425390000003" green="0.93950425390000003" blue="0.93950425390000003" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <state key="normal" title="評価">
+                            <color key="titleColor" red="0.93950425390000003" green="0.93950425390000003" blue="0.93950425390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMN-Yt-9yQ">
@@ -157,7 +161,7 @@
                             <constraint firstAttribute="width" constant="363" id="TFR-qs-83N"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -217,7 +221,4 @@
             <point key="canvasLocation" x="-30.5" y="232.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="u" width="4256" height="2832"/>
-    </resources>
 </document>

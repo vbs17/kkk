@@ -554,10 +554,10 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         if isRowSelected {
             // セルが選択されている時の処理を記述
             let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre)
-            let size = CGSize(width: 150, height: 150)
+            let size = CGSize(width: 1242, height: 828)
             UIGraphicsBeginImageContext(size)
             image.draw(in: CGRect(x:0.0, y:0.0, width:size.width, height:size.height))
-            var resizeImage = UIGraphicsGetImageFromCurrentImageContext()
+            let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             let imageData = UIImageJPEGRepresentation(resizeImage!, 0.5)
             let songName:NSString = songname.text! as NSString
