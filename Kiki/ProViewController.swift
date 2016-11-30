@@ -29,7 +29,12 @@ class ProViewController: UIViewController,UITextFieldDelegate{
             ud.set(true, forKey: CommonConst.IsSavePlofileData)
             ud.synchronize()
             let postRef = FIRDatabase.database().reference().child(CommonConst.Profile)
-            let imageData = UIImageJPEGRepresentation(image ?? imageView.image!, 0.5)
+            let size = CGSize(width: 1242, height: 828)
+            UIGraphicsBeginImageContext(size)
+            imageView.image?.draw(in: CGRect(x:0.0, y:0.0, width:size.width, height:size.height))
+            let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            let imageData = UIImageJPEGRepresentation(resizeImage!, 0.5)
             let name1:NSString = name.text as NSString? ?? name.text! as NSString
             let line1:NSString = line.text as NSString? ?? line.text! as NSString
             let twitter1:NSString = twitter.text as NSString? ?? twitter.text! as NSString
@@ -43,7 +48,12 @@ class ProViewController: UIViewController,UITextFieldDelegate{
         } else{
             if (image != nil && name.text!.characters.count > 0){
                 let postRef = FIRDatabase.database().reference().child(CommonConst.Profile)
-                let imageData = UIImageJPEGRepresentation(image!, 0.5)
+                let size = CGSize(width: 1242, height: 828)
+                UIGraphicsBeginImageContext(size)
+                image.draw(in: CGRect(x:0.0, y:0.0, width:size.width, height:size.height))
+                let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
+                UIGraphicsEndImageContext()
+                let imageData = UIImageJPEGRepresentation(resizeImage!, 0.5)
                 let name1:NSString = name.text! as NSString
                 let line1:NSString = line.text! as NSString
                 let twitter1:NSString = twitter.text! as NSString

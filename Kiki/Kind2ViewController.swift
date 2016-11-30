@@ -546,14 +546,19 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
     //ここ
     @IBAction func post(_ sender: AnyObject) {
         if isRowSelected {
-        let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre)
-        let imageData = UIImageJPEGRepresentation(image, 0.5)
-        let hiniti1:NSString = hiniti.text! as NSString
-        let zikoku1:NSString = zikoku.text! as NSString
-        let path1:NSString = path.text! as NSString
-        let station1:NSString = station.text! as NSString
-         let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
-        let postData = ["hiniti": hiniti1, "image": imageData!.base64EncodedString(options: .lineLength64Characters), "zikoku": zikoku1, "station": station1, "path":path1,"uid":uid] as [String : Any]
+            let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre)
+            let size = CGSize(width: 1242, height: 828)
+            UIGraphicsBeginImageContext(size)
+            image.draw(in: CGRect(x:0.0, y:0.0, width:size.width, height:size.height))
+            let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            let imageData = UIImageJPEGRepresentation(resizeImage!, 0.5)
+            let hiniti1:NSString = hiniti.text! as NSString
+            let zikoku1:NSString = zikoku.text! as NSString
+            let path1:NSString = path.text! as NSString
+            let station1:NSString = station.text! as NSString
+            let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
+            let postData = ["hiniti": hiniti1, "image": imageData!.base64EncodedString(options: .lineLength64Characters), "zikoku": zikoku1, "station": station1, "path":path1,"uid":uid] as [String : Any]
         postRef.childByAutoId().setValue(postData)
         let tabvarviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Tab") as! TabViewController
         self.present(tabvarviewcontroller, animated: true, completion: nil)

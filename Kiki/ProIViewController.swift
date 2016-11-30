@@ -77,7 +77,11 @@ class ProIViewController: UIViewController,UIImagePickerControllerDelegate, UINa
             DispatchQueue.main.async {
                 
                 let proviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Pro") as! ProViewController
-                proviewcontroller.image = image
+                let size = CGSize(width: 1242, height: 828)
+                UIGraphicsBeginImageContext(size)
+                image.draw(in: CGRect(x:0.0, y:0.0, width:size.width, height:size.height))
+                let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
+                proviewcontroller.image = resizeImage
                 self.present(proviewcontroller, animated: true, completion:  nil)
             }
         }
