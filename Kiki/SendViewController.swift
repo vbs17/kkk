@@ -54,7 +54,11 @@ class SendViewController: UIViewController,UIImagePickerControllerDelegate, UINa
                 
                 // AdobeImageEditorを起動する
                 let okviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Ok") as! OkViewController
-                okviewcontroller.image = image
+                let size = CGSize(width: 1242, height: 828)
+                UIGraphicsBeginImageContext(size)
+                image.draw(in: CGRect(x:0.0, y:0.0, width:size.width, height:size.height))
+                let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
+                okviewcontroller.image = resizeImage
                 okviewcontroller.songData = self.songData
                 self.present(okviewcontroller, animated: true, completion:  nil)
             }

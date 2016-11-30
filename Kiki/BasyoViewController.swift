@@ -63,7 +63,11 @@ class BasyoViewController: UIViewController,UIImagePickerControllerDelegate, UIN
                 DispatchQueue.main.async {
                     
                     let syugoviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Syugo") as! SyugoViewController
-                    syugoviewcontroller.image = image
+                    let size = CGSize(width: 1242, height: 828)
+                    UIGraphicsBeginImageContext(size)
+                    image.draw(in: CGRect(x:0.0, y:0.0, width:size.width, height:size.height))
+                    let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
+                    syugoviewcontroller.image = resizeImage
                     self.present(syugoviewcontroller, animated: true, completion:  nil)
                 }
             }
