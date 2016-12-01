@@ -200,24 +200,22 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         postRef.child(postData.id!).setValue(postData2)
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
     func mada(){
         lbl.text = "誰もまだ投稿していません"
     }
     
-    
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        FIRDatabase.database()
+            .reference()
+            .child(CommonConst.PostPATH)
+            .child(genre)
+            .queryLimited(toFirst: 10)
+            .observe(.childAdded, with: { snapshot in
+                
+                
+            })
+
         timer2 = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(HomeViewController.mada), userInfo: nil, repeats: false)
         if FIRAuth.auth()?.currentUser != nil {
             if observing == false {
