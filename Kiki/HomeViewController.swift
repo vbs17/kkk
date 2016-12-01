@@ -209,6 +209,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         FIRDatabase.database()
             .reference()
             .child(CommonConst.PostPATH)
+            .child(CommonConst.Profile)
             .child(genre)
             .queryLimited(toFirst: 10)
             .observe(.childAdded, with: { snapshot in
