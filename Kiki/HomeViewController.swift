@@ -206,22 +206,11 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        FIRDatabase.database()
-            .reference()
-            .child(CommonConst.PostPATH)
-            .child(CommonConst.Profile)
-            .child(genre)
-            .queryLimited(toFirst: 10)
-            .observe(.childAdded, with: { snapshot in
-                
-                
-            })
-
         timer2 = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(HomeViewController.mada), userInfo: nil, repeats: false)
         if FIRAuth.auth()?.currentUser != nil {
             if observing == false {
                 //俺が新しくできた
-                FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).observe(.childAdded, with: { snapshot in
+                FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).queryLimited(toFirst: 2).observe(.childAdded, with: { snapshot in
                     
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
                         let postData = PostData(snapshot: snapshot, myId: uid)
@@ -255,7 +244,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                     }
                 })
                 //俺が新しくできた　言うたらこれは一回のみでしょ？上は何回もできるけど
-                FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: { snapshot in
+                FIRDatabase.database().reference().child(CommonConst.Profile).queryLimited(toFirst: 2).observe(.childAdded, with: { snapshot in
                     
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
                         let postData = PostData2(snapshot: snapshot, myId: uid)
