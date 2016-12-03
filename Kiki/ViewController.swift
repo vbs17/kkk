@@ -21,33 +21,6 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     var timeCount = 1
     let ApplicationDidEnterBackgroundNotification = "ApplicationDidEnterBackgroundNotification"
     var count1: Bool = false
-
-
-    
-   
-    
-    
-    func levelTimerCallback() {
-        audioRecorder.updateMeters()
-        let dB = audioRecorder.averagePower(forChannel: 0)
-        let atai = max(0, (dB + 77)) / 77
-        nami1.progress = atai
-        nami2.progress = atai
-        nami3.progress = atai
-    }
-    
-    //filenameをsongDataに渡す
-    func nextGamenn(){
-        let playviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Play") as! PlayViewController
-        playviewcontroller.songData = self.documentFilePath()
-        self.present(playviewcontroller, animated: true, completion: nil)
-        
-        
-    }
-    
-
-
-    
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var viewImage: UIView!
@@ -88,6 +61,25 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
     }
+    
+    func levelTimerCallback() {
+        audioRecorder.updateMeters()
+        let dB = audioRecorder.averagePower(forChannel: 0)
+        let atai = max(0, (dB + 77)) / 77
+        nami1.progress = atai
+        nami2.progress = atai
+        nami3.progress = atai
+    }
+    
+    //filenameをsongDataに渡す
+    func nextGamenn(){
+        let playviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Play") as! PlayViewController
+        playviewcontroller.songData = self.documentFilePath()
+        self.present(playviewcontroller, animated: true, completion: nil)
+        
+        
+    }
+
     //音源消す 最終確認
     func applicationWillResignActive(_ notification: Notification) {
         print("applicationWillResignActive!")
@@ -165,13 +157,16 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     //マイクから取りこんだ音声データを、再生専用とか録音専用の指定もある
     func setupAudioRecorder() {
         let session = AVAudioSession.sharedInstance()
-        
+                                     //録音して再生するのに適してる
     try! session.setCategory(AVAudioSessionCategoryPlayAndRecord)        
-        
+                         //録音を許可
         try! session.setActive(true)
         let recordSetting : [String : AnyObject] = [
+        //.m4a MPEG-4規格の音声ファイルの拡張子。Apple社のiTunesを使って音楽CDをパソコンにインポートした時に作成されるファイルに付くあれ
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC) as AnyObject,
+            //伝送路が1個
             AVNumberOfChannelsKey: 1 as AnyObject ,
+            //毎秒44100回ページをめくるパラパラ漫画
             AVSampleRateKey: 44100 as AnyObject
         ]
         
@@ -186,8 +181,10 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     
     // 録音するファイルのパスを取得(録音時、再生時に参照)//要求されたドメインで指定された一般的なディレクトリの Url の配列を返します
     func documentFilePath()-> URL {
+                               //URLの配列/mmmmm/mmmm/mmmmmみたいな , ファイルを保存するディレクトリの取得  ,  ユーザーの個人用アイテムをインストールする場所
         let urls = fileManager.urls(for: .documentDirectory, in: .userDomainMask) as [URL]
         let dirURL = urls[0]
+        //こいつが/sdsdcw/scwaea/ascqc/みたいなのを構築してる
         return dirURL.appendingPathComponent(fileName)
     }
       func recordLimits(){
@@ -215,40 +212,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
         self.dismiss(animated: true, completion: nil)
         
     }
-
-   
-    
-
-        
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
+}
 
 
 
