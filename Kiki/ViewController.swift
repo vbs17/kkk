@@ -16,7 +16,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     let fileName = "sister.m4a"
     var timer: Timer!
     var timeCountTimer: Timer!
-    let photos = ["Kiki17", "Kiki18", "Kiki19","Kiki20","Kiki21","08531cedbc172968acd38e7fa2bfd2e0"]
+    let photos = ["f-1"]
     var count = 1
     var timeCount = 1
     let ApplicationDidEnterBackgroundNotification = "ApplicationDidEnterBackgroundNotification"
@@ -123,29 +123,29 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     
     func nextPage (_ sender:Timer){
         
-        var image:UIImage! = UIImage(named: photos[1])
+        var image:UIImage! = UIImage(named: photos[0])
         if count == 1{
             count1 = true
             imageView.image = image;
             count += 1
         }else if count == 2{
             count1 = true
-            image = UIImage(named: photos[2])
+            image = UIImage(named: photos[0])
             imageView.image = image
             count += 1
         }else if count == 3{
             count1 = true
-            image = UIImage(named: photos[3])
+            image = UIImage(named: photos[0])
             imageView.image = image
             count += 1
         }else if count == 4{
             count1 = true
-            image = UIImage(named: photos[4])
+            image = UIImage(named: photos[0])
             imageView.image = image
             count += 1
         }else if count == 5{
             count1 = true
-            image = UIImage(named: photos[5])
+            image = UIImage(named: photos[0])
             imageView.image = image
             sender.invalidate()
             audioRecorder?.prepareToRecord()
