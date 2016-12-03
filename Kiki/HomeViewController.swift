@@ -6,6 +6,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import AVFoundation
 import Spring
+import SVProgressHUD
 
 class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDelegate,AVAudioPlayerDelegate{
     var postArray: [PostData] = []
@@ -192,11 +193,10 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let name = postData.name
         let song = postData.song
         let byou = postData.byou
-        let realsong = postData.realsong
         let star = postData.star //97行目
         let uid:NSString = postData.uid! as NSString
         let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre)
-        let postData2 = ["image":imageString!,"songname":name!,"ongen":song!,"byou":byou!,"realsong":realsong!,"star":star,"uid":uid] as [String : Any]
+        let postData2 = ["image":imageString!,"songname":name!,"ongen":song!,"byou":byou!,"star":star,"uid":uid] as [String : Any]
         postRef.child(postData.id!).setValue(postData2)
     }
 
@@ -210,9 +210,10 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         if FIRAuth.auth()?.currentUser != nil {
             if observing == false {
                 //俺が新しくできた
-                FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).queryLimited(toFirst: 2).observe(.childAdded, with: { snapshot in
+                FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).observe(.childAdded, with: {[weak self] snapshot in
                     
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
+                        guard let `self` = self else { return }
                         let postData = PostData(snapshot: snapshot, myId: uid)
                         self.postArray.insert(postData, at: 0)
                         
@@ -225,8 +226,10 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                     }
                 })
 //俺だけが変更した 一個だけていう考えで考えてみ　一気に１つ以上の投稿に星はたっぷできんのやし
-                FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).observe(.childChanged, with: { snapshot in
+                FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).observe(.childChanged, with: {[weak self] snapshot in
+                    
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
+                        guard let `self` = self else { return }
                         let postData = PostData(snapshot: snapshot, myId: uid)
                         
                         var index: Int = 0
@@ -244,9 +247,10 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                     }
                 })
                 //俺が新しくできた　言うたらこれは一回のみでしょ？上は何回もできるけど
-                FIRDatabase.database().reference().child(CommonConst.Profile).queryLimited(toFirst: 2).observe(.childAdded, with: { snapshot in
+                FIRDatabase.database().reference().child(CommonConst.Profile).child(genre).observe(.childAdded, with: {[weak self] snapshot in
                     
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
+                        guard let `self` = self else { return }
                         let postData = PostData2(snapshot: snapshot, myId: uid)
                         self.postArray2.insert(postData, at: 0)
                         
@@ -254,10 +258,11 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                     }
                 })
                 //俺だけが変更した　これがあるから他の人は何も変わらずまま自分だけ変わる　１以上の投稿の場合も大丈夫なのか
-                FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: { snapshot in
+                FIRDatabase.database().reference().child(CommonConst.Profile).child(genre).observe(.childChanged, with: {[weak self] snapshot in
+                    
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
+                        guard let `self` = self else { return }
                         let postData = PostData2(snapshot: snapshot, myId: uid)
-                        
                         var index: Int = 0
                         for post in self.postArray2 {
                             if post.id == postData.id {
@@ -324,14 +329,19 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             timer.invalidate()
             playingIndexPath = indexPath
             //ここもポイント
-            let tap = Data(base64Encoded: postData.realsong!, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
-            playSong = try! AVAudioPlayer(data:tap!)
-            playSong.delegate = self
-            cell!.playSong = playSong
-            playSong.prepareToPlay()
-            playSong.play()
-            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(HomeViewController.updatePlayingTime), userInfo: nil, repeats: true)
-            
+            SVProgressHUD.show()
+            FIRDatabase.database().reference().child(CommonConst.songData).child(postData.song!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
+                guard let `self` = self else { return }
+                SVProgressHUD.dismiss()
+                let realsong = snapshot.value as! String
+                let tap = Data(base64Encoded: realsong, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
+                self.playSong = try! AVAudioPlayer(data:tap!)
+                self.playSong.delegate = self
+                cell!.playSong = self.playSong
+                self.playSong.prepareToPlay()
+                self.playSong.play()
+                self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(HomeViewController.updatePlayingTime), userInfo: nil, repeats: true)
+                  })
         }
     }
     

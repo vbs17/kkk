@@ -562,14 +562,15 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
             let imageData = UIImageJPEGRepresentation(resizeImage!, 0.5)
             let songName:NSString = songname.text! as NSString
             let kazu:NSString = byou.text! as NSString
-            let ongen:NSString = songData.path as NSString
+            let ongen = UUID().uuidString
             let realSongdata = try? Data(contentsOf: URL(fileURLWithPath: songData.path))
             let realsong = realSongdata!.base64EncodedString(options: [])
             let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
-            let postData = ["byou": kazu, "image": imageData!.base64EncodedString(options: .lineLength64Characters), "songname": songName, "ongen": ongen, "realsong":realsong,"uid":uid] as [String : Any]
+            let postData = ["byou": kazu, "image": imageData!.base64EncodedString(options: .lineLength64Characters), "songname": songName, "ongen": ongen, "uid":uid] as [String : Any]
             postRef.childByAutoId().setValue(postData)
-            let tabvarviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Tab") as! TabViewController
-            self.present(tabvarviewcontroller, animated: true, completion: nil)
+            let songDataRef = FIRDatabase.database().reference().child(CommonConst.songData).child(ongen)
+            songDataRef.setValue(realsong)
+            self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
         } else {
             // 行が選択されていない＝ジャンルが選択されていない
             let alert = UIAlertController()

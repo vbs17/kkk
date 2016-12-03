@@ -10,5 +10,6 @@ struct CommonConst {
     static let IsSavePlofileData = "IS_SAVE_PLOFILE_DATA"
     static let IsTutorial = "IsTutorial"
     static let IsTutorial2 = "IsTutorial2"
+    static let songData = "songData"
 
 }
