@@ -68,6 +68,82 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(UIApplicationDelegate.applicationWillResignActive(_:)),
+            name:NSNotification.Name.UIApplicationWillResignActive,
+            object: nil
+        )
+        byou.text = "0:00"
+        imageView.image = UIImage(named: "8")
+        recImage?.setImage(nil, for: .normal)
+        recImage?.setBackgroundImage(UIImage(named: "IMG_1718"), for: .normal)
+        nami1.progress = 1
+        nami2.progress = 1
+        nami3.progress = 1
+        count = 1
+        timeCount = 1
+    }
+    
+    func play() {
+        //ヘッドセットの抜き差しを検出するようにします
+        NotificationCenter.default.addObserver(self, selector: #selector(audioSessionRouteChanged(_:)), name: NSNotification.Name.AVAudioSessionRouteChange, object: nil);
+        let documentDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        let filePath2 = URL(fileURLWithPath: documentDir + "/sample.m4a")
+        songFile = filePath2
+        if let url = songData {
+            do {
+                let audioSession = AVAudioSession.sharedInstance()
+                try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
+                try audioSession.setActive(true)
+                
+                let audioFile = try AVAudioFile(forReading: url)
+                
+                
+                audioEngine = AVAudioEngine()
+                mixerMeter.mixer = audioEngine.mainMixerNode
+                mixerMeter.setMeteringEnabled(true)
+                player = AVAudioPlayerNode()
+                audioEngine.attach(player)
+                let mixer = audioEngine.mainMixerNode
+                
+                audioEngine.connect(player, to: mixer, fromBus: 0, toBus: 0, format: player.outputFormat(forBus: 0))
+                let inputNode = audioEngine.inputNode!
+                let format = AVAudioFormat(commonFormat: .pcmFormatFloat32  , sampleRate: 44100, channels: 1 , interleaved: true)
+                audioEngine.connect(inputNode, to: mixer, fromBus: 0, toBus: 1, format: format)
+                
+                player.scheduleFile(audioFile, at: nil) {
+                    print("complete")
+                }
+                
+                let recordSetting : [String : AnyObject] = [
+                    AVFormatIDKey: Int(kAudioFormatMPEG4AAC) as AnyObject,
+                    AVNumberOfChannelsKey: 2 as AnyObject ,
+                    AVSampleRateKey: 44100 as AnyObject
+                ]
+                let audioFile2 = try AVAudioFile(forWriting: filePath2, settings: recordSetting)
+                mixer.installTap(onBus: 0, bufferSize: 4096, format: mixer.outputFormat(forBus: 0)) { (buffer, when) in
+                    do {
+                        try audioFile2.write(from: buffer)
+                    } catch let error {
+                        print("audioFile2.writeFromBuffer error:", error)
+                    }
+                }
+                try audioEngine.start()
+                player.play()
+            } catch let error {
+                print(error)
+            }
+        } else {
+            print("File not found")
+        }
+        iyahon = songFile
+    }
+
+
+    
     //音源消す
     func applicationWillResignActive(_ notification: Notification) {
         print("applicationWillResignActive!")
@@ -88,24 +164,6 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
        self.dismiss(animated: true, completion: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(UIApplicationDelegate.applicationWillResignActive(_:)),
-            name:NSNotification.Name.UIApplicationWillResignActive,
-            object: nil
-        )
-        byou.text = "0:00"
-        imageView.image = UIImage(named: "8")
-        recImage?.setImage(nil, for: .normal)
-        recImage?.setBackgroundImage(UIImage(named: "IMG_1718"), for: .normal)
-        nami1.progress = 1
-        nami2.progress = 1
-        nami3.progress = 1
-        count = 1
-        timeCount = 1
-    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -171,60 +229,6 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
     }
     
     
-    func play() {
-        //ヘッドセットの抜き差しを検出するようにします
-    NotificationCenter.default.addObserver(self, selector: #selector(audioSessionRouteChanged(_:)), name: NSNotification.Name.AVAudioSessionRouteChange, object: nil);
-        let documentDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        let filePath2 = URL(fileURLWithPath: documentDir + "/sample.m4a")
-        songFile = filePath2
-        if let url = songData {
-            do {
-                let audioSession = AVAudioSession.sharedInstance()
-                try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
-                try audioSession.setActive(true)
-                
-                let audioFile = try AVAudioFile(forReading: url)
-                
-                
-                audioEngine = AVAudioEngine()
-                mixerMeter.mixer = audioEngine.mainMixerNode
-                mixerMeter.setMeteringEnabled(true)
-                player = AVAudioPlayerNode()
-                audioEngine.attach(player)
-                let mixer = audioEngine.mainMixerNode
-                
-                audioEngine.connect(player, to: mixer, fromBus: 0, toBus: 0, format: player.outputFormat(forBus: 0))
-                let inputNode = audioEngine.inputNode!
-                let format = AVAudioFormat(commonFormat: .pcmFormatFloat32  , sampleRate: 44100, channels: 1 , interleaved: true)
-                audioEngine.connect(inputNode, to: mixer, fromBus: 0, toBus: 1, format: format)
-                
-                player.scheduleFile(audioFile, at: nil) {
-                    print("complete")
-                }
-                
-                let recordSetting : [String : AnyObject] = [
-                    AVFormatIDKey: Int(kAudioFormatMPEG4AAC) as AnyObject,
-                    AVNumberOfChannelsKey: 2 as AnyObject ,
-                    AVSampleRateKey: 44100 as AnyObject
-                ]
-                let audioFile2 = try AVAudioFile(forWriting: filePath2, settings: recordSetting)
-                mixer.installTap(onBus: 0, bufferSize: 4096, format: mixer.outputFormat(forBus: 0)) { (buffer, when) in
-                    do {
-                        try audioFile2.write(from: buffer)
-                    } catch let error {
-                        print("audioFile2.writeFromBuffer error:", error)
-                    }
-                }
-                try audioEngine.start()
-                player.play()
-            } catch let error {
-                print(error)
-            }
-        } else {
-            print("File not found")
-        }
-        iyahon = songFile
-    }
     
     func levelTimerCallback() {
         mixerMeter.updateMeters()
