@@ -163,11 +163,11 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
                          //録音を許可
         try! session.setActive(true)
         let recordSetting : [String : AnyObject] = [
-        //.m4a MPEG-4規格の音声ファイルの拡張子。Apple社のiTunesを使って音楽CDをパソコンにインポートした時に作成されるファイルに付くあれ
+        //.m4a 圧縮形式 MPEG-4規格の音声ファイルの拡張子/ e-words.txtならば「txt」が拡張子/拡張子によって、そのファイルを「どのアプリケーションソフトで開くのか」を判断
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC) as AnyObject,
-            //伝送路が1個
+            //1はモノラル 2はステレオ
             AVNumberOfChannelsKey: 1 as AnyObject ,
-            //毎秒44100回ページをめくるパラパラ漫画
+            //毎秒44100回ページをめくるパラパラ漫画/凄いスピードで1枚1枚ページをめくる様に開いていく事で1つの動画として完成させている
             AVSampleRateKey: 44100 as AnyObject
         ]
         
