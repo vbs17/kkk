@@ -156,8 +156,9 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     
     //マイクから取りこんだ音声データを、再生専用とか録音専用の指定もある
     func setupAudioRecorder() {
+        //音を録音したりする一連の操作や通信 //1つ！
         let session = AVAudioSession.sharedInstance()
-                                     //録音して再生するのに適してる
+        //音を録音したりする一連の操作や通信のカテゴリを設定 → 録画して再生するアプリケーションに適したカテゴリ
     try! session.setCategory(AVAudioSessionCategoryPlayAndRecord)        
                          //録音を許可
         try! session.setActive(true)
@@ -181,10 +182,14 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     
     // 録音するファイルのパスを取得(録音時、再生時に参照)//要求されたドメインで指定された一般的なディレクトリの Url の配列を返します
     func documentFilePath()-> URL {
-                               //URLの配列/mmmmm/mmmm/mmmmmみたいな , ファイルを保存するディレクトリの取得  ,  ユーザーの個人用アイテムをインストールする場所
+        // ファイルを保存するディレクトリの取得  ,  ユーザーの個人用アイテムをインストールする場所
+        //コンピュータで作成・記録された文書ファイルをドキュメント
+        //画像の特定の部分をマスクで覆っておくと、例えばその部分を他の色で塗りつぶしたりしても、影響を与えることがない。
+        //マスク機能は、複数の画像を合成する際や、作業範囲を正確に指定する場合に用いられる。
         let urls = fileManager.urls(for: .documentDirectory, in: .userDomainMask) as [URL]
         let dirURL = urls[0]
-        //こいつが/sdsdcw/scwaea/ascqc/みたいなのを構築してる
+        //パスコンポーネントがディレクトリかどうかを判断します。 そうであれば、末尾に/を付加
+        //例ドメイン(pioneer.jp)の後に続く carrozzeria/や support/の部分を ディレクトリー＞pioneer.jp/carrozzeria/・・・
         return dirURL.appendingPathComponent(fileName)
     }
       func recordLimits(){
