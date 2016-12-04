@@ -184,12 +184,13 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     func documentFilePath()-> URL {
         // ファイルを保存するディレクトリの取得  ,  ユーザーの個人用アイテムをインストールする場所
         //コンピュータで作成・記録された文書ファイルをドキュメント
+        //例ドメイン(pioneer.jp)の後に続く carrozzeria/や support/の部分を ディレクトリー＞pioneer.jp/carrozzeria/・・・
         //画像の特定の部分をマスクで覆っておくと、例えばその部分を他の色で塗りつぶしたりしても、影響を与えることがない。
         //マスク機能は、複数の画像を合成する際や、作業範囲を正確に指定する場合に用いられる。
         let urls = fileManager.urls(for: .documentDirectory, in: .userDomainMask) as [URL]
+        //dirURLにはfile:///Users/sister/（略）/Documentsが代入される
         let dirURL = urls[0]
         //パスコンポーネントがディレクトリかどうかを判断します。 そうであれば、末尾に/を付加
-        //例ドメイン(pioneer.jp)の後に続く carrozzeria/や support/の部分を ディレクトリー＞pioneer.jp/carrozzeria/・・・
         return dirURL.appendingPathComponent(fileName)
     }
       func recordLimits(){
