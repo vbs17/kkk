@@ -32,7 +32,6 @@
 		B05F57781DDF4942006DB9A5 /* Syutyu2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F57771DDF4942006DB9A5 /* Syutyu2ViewController.swift */; };
 		B05F577A1DDF4B0E006DB9A5 /* Syutyu3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F57791DDF4B0E006DB9A5 /* Syutyu3ViewController.swift */; };
 		B05F577C1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F577B1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift */; };
-		B0601A001DE4191200EDA5DE /* MadaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06019FF1DE4191200EDA5DE /* MadaViewController.swift */; };
 		B06968221DC60D6E00274DB1 /* PostData1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06968211DC60D6E00274DB1 /* PostData1.swift */; };
 		B06968241DC60E1400274DB1 /* Itiran1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06968231DC60E1400274DB1 /* Itiran1ViewController.swift */; };
 		B06968261DC60F7700274DB1 /* Home1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06968251DC60F7700274DB1 /* Home1ViewController.swift */; };
@@ -97,7 +96,6 @@
 		B05F57771DDF4942006DB9A5 /* Syutyu2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu2ViewController.swift; sourceTree = "<group>"; };
 		B05F57791DDF4B0E006DB9A5 /* Syutyu3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu3ViewController.swift; sourceTree = "<group>"; };
 		B05F577B1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu4ViewController.swift; sourceTree = "<group>"; };
-		B06019FF1DE4191200EDA5DE /* MadaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MadaViewController.swift; sourceTree = "<group>"; };
 		B06968211DC60D6E00274DB1 /* PostData1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData1.swift; sourceTree = "<group>"; };
 		B06968231DC60E1400274DB1 /* Itiran1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Itiran1ViewController.swift; path = ../Itiran1ViewController.swift; sourceTree = "<group>"; };
 		B06968251DC60F7700274DB1 /* Home1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Home1ViewController.swift; path = ../Home1ViewController.swift; sourceTree = "<group>"; };
@@ -238,7 +236,6 @@
 			children = (
 				B0A78FD91DACFF6500AC0513 /* Main.storyboard */,
 				B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */,
-				B06019FF1DE4191200EDA5DE /* MadaViewController.swift */,
 				B05F57731DDEBD05006DB9A5 /* SyutyuViewController.swift */,
 				B05F57751DDF4937006DB9A5 /* Syutyu1ViewController.swift */,
 				B05F57771DDF4942006DB9A5 /* Syutyu2ViewController.swift */,
@@ -454,7 +451,6 @@
 				B0ABF85C1DB0EE21001987E7 /* SendViewController.swift in Sources */,
 				B00D7CF51DCEB5190042D04F /* MixerMeter.m in Sources */,
 				B0BA8AE01DDD79D800F00E38 /* Tyu3ViewController.swift in Sources */,
-				B0601A001DE4191200EDA5DE /* MadaViewController.swift in Sources */,
 				B071309D1DC2352E00B8EEC1 /* Play2ViewController.swift in Sources */,
 				B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */,
 				B029E58A1DE1A17C00C7EDDF /* IyaViewController.swift in Sources */,

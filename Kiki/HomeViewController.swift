@@ -52,6 +52,19 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         back.clipsToBounds = true
         let tblBackColor: UIColor = UIColor.clear
         tableView.backgroundColor = tblBackColor
+        let session = AVAudioSession.sharedInstance()
+        do {
+            try session.setCategory(AVAudioSessionCategorySoloAmbient)
+        } catch  {
+            // エラー処理
+        }
+        
+        // sessionのアクティブ化
+        do {
+            try session.setActive(true)
+        } catch {
+            // audio session有効化失敗時の処理
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
