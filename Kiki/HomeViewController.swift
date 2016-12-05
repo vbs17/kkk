@@ -54,7 +54,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         tableView.backgroundColor = tblBackColor
         let session = AVAudioSession.sharedInstance()
         do {
-            try session.setCategory(AVAudioSessionCategorySoloAmbient)
+            try session.setCategory(AVAudioSessionCategoryPlayback)
         } catch  {
             // エラー処理
         }
@@ -260,7 +260,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                     }
                 })
                 //俺が新しくできた　言うたらこれは一回のみでしょ？上は何回もできるけど
-                FIRDatabase.database().reference().child(CommonConst.Profile).child(genre).observe(.childAdded, with: {[weak self] snapshot in
+                FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: {[weak self] snapshot in
                     
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
                         guard let `self` = self else { return }
@@ -271,7 +271,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                     }
                 })
                 //俺だけが変更した　これがあるから他の人は何も変わらずまま自分だけ変わる　１以上の投稿の場合も大丈夫なのか
-                FIRDatabase.database().reference().child(CommonConst.Profile).child(genre).observe(.childChanged, with: {[weak self] snapshot in
+                FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: {[weak self] snapshot in
                     
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
                         guard let `self` = self else { return }
