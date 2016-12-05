@@ -182,13 +182,17 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     
     // 録音するファイルのパスを取得(録音時、再生時に参照)//要求されたドメインで指定された一般的なディレクトリの Url の配列を返します
     func documentFilePath()-> URL {
-        // ファイルを保存するディレクトリの取得  ,  ユーザーの個人用アイテムをインストールする場所
-        //コンピュータで作成・記録された文書ファイルをドキュメント
-        //例ドメイン(pioneer.jp)の後に続く carrozzeria/や support/の部分を ディレクトリー＞pioneer.jp/carrozzeria/・・・
-        //画像の特定の部分をマスクで覆っておくと、例えばその部分を他の色で塗りつぶしたりしても、影響を与えることがない。
-        //マスク機能は、複数の画像を合成する際や、作業範囲を正確に指定する場合に用いられる。
+        //アプリの領域には初めから以下の3つのフォルダが作成されています。
+        //・Documents
+        //・Library
+        //・tmp
+        //そのうちのDocumentsフォルダのパスを取得しているという事です。
+        //userDomainMaskはそのアプリの使用できるHome directoryのパスを取得
+        //userDomainMaskのパスは以下
+        // file : ///Users/sister/Library/Developer/CoreSimulator/Devices/255042D4-3429-4F66-94F4-691559395152/data/Containers/Data/Application/FF57D127-482D-434C-AC1F-028C49819316
+        //documentDirectoryのパスはそれ以降の以下を指していると思ってよいのではないでしょうか？
+        // /Documents
         let urls = fileManager.urls(for: .documentDirectory, in: .userDomainMask) as [URL]
-        //dirURLにはfile:///Users/sister/（略）/Documentsが代入される
         let dirURL = urls[0]
         //パスコンポーネントがディレクトリかどうかを判断します。 そうであれば、末尾に/を付加
         return dirURL.appendingPathComponent(fileName)
