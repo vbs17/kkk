@@ -70,7 +70,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
         NotificationCenter.default.removeObserver(self)
     }
     
-    //音源消す 最終確認　　　　　　　　　　　　//通知は、NotificationCenterを介してオブザーバにブロードキャストされる情報をカプセル化します。
+    //音源消す 最終確認　　　　　　　　　　　　//通知は、NotificationCenterを介してオブザーバにブロードキャストされる情報をカプセル化(隠蔽)します。
     func applicationWillResignActive(_ notification: Notification) {
         print("applicationWillResignActive!")
         if ( audioRecorder.isRecording || count1 == true ) {
