@@ -197,7 +197,18 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
         //パスコンポーネントがディレクトリかどうかを判断します。 そうであれば、末尾に/を付加
         return dirURL.appendingPathComponent(fileName)
     }
+    
+    //%dはフォーマット指定子と呼ばれ、%dの部分に整数を10進(0から9までの数)で出力する場合に使います。このプログラムでは"%d:0%d"の後ろにminuteCountとsecondCountを渡しているため、1つ目の%dにはminuteCountが、2つ目の%dにはsecondCountが代入されます。
+    //このプログラムは、秒(secondCount)が9以下の時、すなわち1桁の時は前に0をくっつけて2桁に補正するようにしているみたいですね。
+    //12分34秒の場合
+    //String(format: "%d:%d", 12, 34) → 12:34
+    //12分5秒の場合
+    //String(format: "%d:0%d", 12, 5) → 12:05
+    //でも"%02d"ってやればわざわざif文でわけなくてもゼロ補正できたような。。。
       func recordLimits(){
+        //A / B ――AをBで除算（割り算）します。
+        //A % B ――AをBで割った余りを計算します。
+        //330/60=5（除算）、330%60=30（剰余）
         let minuteCount = timeCount / 60
         let secondCount = timeCount % 60
         if secondCount <= 9 {
