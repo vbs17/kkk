@@ -19,7 +19,6 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     let photos = ["f-1"]
     var count = 1
     var timeCount = 1
-    let ApplicationDidEnterBackgroundNotification = "ApplicationDidEnterBackgroundNotification"
     var count1: Bool = false
     
     @IBOutlet weak var imageView: UIImageView!
@@ -38,7 +37,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewDidDisappear(animated)//受信者のディスパッチ表に項目を追加します
+        super.viewDidDisappear(animated)//受信者のディスパッチ(タスク(処理の実行単位)を実際に計算処理させるためにCPU(装置)を割り当てる)表に項目を追加します
         NotificationCenter.default.addObserver(
             self,
             //受信者に送信するメッセージを指定するセレクタ
@@ -48,7 +47,8 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
             //他のオブジェクトにブロードキャストできるように情報をカプセル化
             //通知の名前に使用される型。
             //通知名はネストされたNSNotification.Name型を使用
-            //アプリがアクティブでなくなってフォーカスが失われたときに投稿されます
+            //アプリがアクティブでなくなってフォーカスが失われたときに通知されます。
+            //通知 = selectorで指定した関数が呼ばれる
             name:NSNotification.Name.UIApplicationWillResignActive,
             //オブザーバが受信したい通知を持つオブジェクト。 つまり、この送信者によって送信された通知のみがオブザーバに配信されます。
             object: nil
@@ -191,7 +191,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     
     // 録音するファイルのパスを取得(録音時、再生時に参照)//要求されたドメインで指定された一般的なディレクトリの Url の配列を返します
     func documentFilePath()-> URL {
-        //フォルダの詳細はtechacademyで聞く
+        //フォルダの詳細はググる→普通に出てくる
         //アプリの領域には初めから以下の3つのフォルダが作成されています。
         //・Documents
         //・Library
