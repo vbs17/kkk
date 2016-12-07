@@ -49,14 +49,19 @@ class SendViewController: UIViewController,UIImagePickerControllerDelegate, UINa
             // 撮影/選択された画像を取得する
             let image = info[UIImagePickerControllerOriginalImage] as! UIImage
             
-            // ここでpresentViewControllerを呼び出しても表示されないためメソッドが終了してから呼ばれるようにする
+            //作業項目の実行を管理
+            
             DispatchQueue.main.async {
                 
                 // AdobeImageEditorを起動する
                 let okviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Ok") as! OkViewController
                 let size = CGSize(width: 1242, height: 828)
+                //ビットマップベースのグラフィックスコンテキストを作成し、それを現在のコンテキストにする
                 UIGraphicsBeginImageContext(size)
+                //指定された矩形内にイメージ全体を描画し、必要に応じてサイズを変更してフィットさせる
+                //長方形の位置と大きさを含む構造体
                 image.draw(in: CGRect(x:0.0, y:0.0, width:size.width, height:size.height))
+                //現在のビットマップベースのグラフィックスコンテキストの内容に基づいてイメージを返す
                 let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
                 okviewcontroller.image = resizeImage
                 okviewcontroller.songData = self.songData

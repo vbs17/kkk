@@ -43,13 +43,19 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
     }
     
     /// Audio Session Route Change : ルートが変化した(ヘッドセットが抜き差しされた)
+    ////通知は、NotificationCenterを介してオブザーバにブロードキャストされる情報をカプセル化(隠蔽)します。
     func audioSessionRouteChanged(_ notification: Notification) {
+        //ルートが変更された理由を識別する符号なし整数を含むNSNumberオブジェクト
         let reasonObj = notification.userInfo![AVAudioSessionRouteChangeReasonKey] as! NSNumber
+        //オーディオルートの変更の理由を示す定数
+        //これらの定数は、AVAudioSessionRouteChange通知のuserInfoディクショナリのAVAudioSessionRouteChangeReasonKeyキーの可能な値として表示
         if let reason = AVAudioSessionRouteChangeReason(rawValue: reasonObj.uintValue) {
+            
             switch reason {
             case .newDeviceAvailable:
                 // 新たなデバイスのルートが使用可能になった
                 // （ヘッドセットが差し込まれた）
+                //何もしない
                 
                 
                 break
@@ -94,22 +100,32 @@ class _TViewController: UIViewController,AVAudioRecorderDelegate {
         let filePath2 = URL(fileURLWithPath: documentDir + "/sample.m4a")
         songFile = filePath2
         if let url = songData {
-            do {
+            do {//アプリケーションのオーディオコンテキスト(プログラムの実行に必要な各種情報)を設定し、アプリケーションのオーディオ動作の意図をシステムに表現するために使用する
                 let audioSession = AVAudioSession.sharedInstance()
                 try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
                 try audioSession.setActive(true)
-                
+                //読み込みまたは書き込みのために開くことができるオーディオファイルを表す
                 let audioFile = try AVAudioFile(forReading: url)
                 
-                
+                //オーディオノードを使用して、オーディオ信号を生成し、処理し、オーディオ入出力を実行します。
+                //ノード→ネットワークにおいてデータの交換機能や伝送機能を備えた装置を総称してノードと呼ぶ。
+                //具体的には、ネットワークに接続されたコンピュータやルータ、スイッチといった機器を指す。
                 audioEngine = AVAudioEngine()
+                
                 mixerMeter.mixer = audioEngine.mainMixerNode
                 mixerMeter.setMeteringEnabled(true)
+                //オーディオファイルのバッファ(一時的なデータの保管領域)またはセグメント(全体をいくつかに分割したうちの一つ)を再生します。
                 player = AVAudioPlayerNode()
+                //新しいオーディオノードをオーディオエンジンに接続
                 audioEngine.attach(player)
+                //シングルトンメインミキサーノード
                 let mixer = audioEngine.mainMixerNode
-                
+                //2つのオーディオノード間の接続を確立
+                //バス→コンピューターの内部や外部の装置をつなぎ、データをやり取りするための信号線の総称
+                //入出力バス→バスの中で、外部機器とデータをやりとりするためのもの
+                //指定されたバスの出力形式を返す
                 audioEngine.connect(player, to: mixer, fromBus: 0, toBus: 0, format: player.outputFormat(forBus: 0))
+                // 入力を受信するには、入力オーディオノードの出力から別のオーディオノードを接続するか、その上に録音タップを作成します
                 let inputNode = audioEngine.inputNode!
                 let format = AVAudioFormat(commonFormat: .pcmFormatFloat32  , sampleRate: 44100, channels: 1 , interleaved: true)
                 audioEngine.connect(inputNode, to: mixer, fromBus: 0, toBus: 1, format: format)

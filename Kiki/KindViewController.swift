@@ -594,7 +594,6 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    //どこのジャンル押されたか判明　ここで色変更したり　再度押したらジャンルが選択されてない状態にする　それで投稿したら注意出る
     
     //値を設定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -606,7 +605,6 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     
-    //Cellが選択された際に呼び出される.
     
     //セクションの数を返す.
      func numberOfSections(in tableView: UITableView) -> Int {

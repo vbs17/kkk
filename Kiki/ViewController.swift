@@ -100,6 +100,9 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     //dB=-1 atai=0.987012987012987
     //dB=0 atai=1.0
     
+    //・騒がしい場所で使うときは閾値を上げる。
+    //・大きな声を出せない場所では閾値を下げる。
+    
     func levelTimerCallback() {
         audioRecorder.updateMeters()
         let dB = audioRecorder.averagePower(forChannel: 0)
