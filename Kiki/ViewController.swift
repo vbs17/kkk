@@ -87,6 +87,19 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
         }
     }
     
+    //dB=-160 atai=0.0
+    //dB=-159 atai=0.0
+    //dB=-158 atai=0.0
+    //:
+    //dB=-78 atai=0.0
+    //dB=-77 atai=0.0
+    //dB=-76 atai=0.012987012987013
+    //dB=-75 atai=0.025974025974026
+    //:
+    //dB=-2 atai=0.974025974025974
+    //dB=-1 atai=0.987012987012987
+    //dB=0 atai=1.0
+    
     func levelTimerCallback() {
         audioRecorder.updateMeters()
         let dB = audioRecorder.averagePower(forChannel: 0)

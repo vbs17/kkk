@@ -104,8 +104,13 @@ class PlayViewController: UIViewController {
     }
     
     func formatTimeString(_ d: Double) -> String {
+        //d.truncatingRemainder(dividingBy: 60)はd % 60と同じ意味
+        //1を2でわったら0あまり2
+        //50➗60の余りは50→50個のものを60人に平等に分けられないから1人0個余り50
         let s: Int = Int(d.truncatingRemainder(dividingBy: 60))
         let m: Int = Int(((d - Double(s)) / 60).truncatingRemainder(dividingBy: 60))
+        //%2dと記述すると、整数の 2 桁を文字列に変換する
+        //%02dと記述すると、桁数が少ない場合に、前に 0 を付ける
         let str = String(format: "%2d:%02d",  m, s)
         return str
     }
