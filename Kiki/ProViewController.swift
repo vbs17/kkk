@@ -70,7 +70,7 @@ class ProViewController: UIViewController,UITextFieldDelegate{
                 let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
                 alert.setValue(attributedTitle, forKey: "attributedTitle")
                 let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.white]
-                let attributedMessage = NSAttributedString(string: "画像と名前を設定しよう", attributes: attributedMessageAttr)
+                let attributedMessage = NSAttributedString(string: "画像と名前を設定しよう😎", attributes: attributedMessageAttr)
                 alert.view.tintColor = UIColor.white
                 alert.setValue(attributedMessage, forKey: "attributedMessage")
                 let subview = alert.view.subviews.first! as UIView

@@ -342,7 +342,8 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             timer.invalidate()
             playingIndexPath = indexPath
             //ここもポイント
-            SVProgressHUD.show()
+            SVProgressHUD.show(withStatus: "重ね録りのsongは読み込みが遅いけどよ😌songはかなりクールになるぜ😎まあ楽しみにしてろよマジでいけてるからよ😏")
+            
             FIRDatabase.database().reference().child(CommonConst.songData).child(postData.song!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                 guard let `self` = self else { return }
                 SVProgressHUD.dismiss()
