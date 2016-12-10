@@ -560,18 +560,17 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
             let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             let imageData = UIImageJPEGRepresentation(resizeImage!, 0.5)
-            let image1 = UUID().uuidString
             let songName:NSString = songname.text! as NSString
             let kazu:NSString = byou.text! as NSString
             let ongen = UUID().uuidString
             let realSongdata = try? Data(contentsOf: URL(fileURLWithPath: songData.path))
             let realsong = realSongdata!.base64EncodedString(options: [])
             let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
-            let postData = ["byou": kazu, "image": imageData!.base64EncodedString(options: .lineLength64Characters), "songname": songName, "ongen": ongen, "uid":uid] as [String : Any]
-            postRef.childByAutoId().setValue(postData)
+            let postData = ["byou": kazu, "songname": songName, "ongen": ongen, "uid":uid] as [String : Any]
+            postRef.child(ongen).setValue(postData)
             let songDataRef = FIRDatabase.database().reference().child(CommonConst.songData).child(ongen)
             songDataRef.setValue(realsong)
-            let imageDataRef = FIRDatabase.database().reference().child(CommonConst.image).child(image1)
+            let imageDataRef = FIRDatabase.database().reference().child(CommonConst.image).child(ongen)
             imageDataRef.setValue(imageData)
             self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
         } else {
