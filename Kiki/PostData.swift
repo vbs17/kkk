@@ -8,8 +8,6 @@ import FirebaseDatabase
 
 class PostData: NSObject {
     var id: String?
-    var image: UIImage?
-    var imageString: String?
     var name: String?
     var song: String?
     var byou: String?
@@ -22,8 +20,7 @@ class PostData: NSObject {
         id = snapshot.key
         let valueDictionary = snapshot.value as! [String: AnyObject]
         
-        imageString = valueDictionary["image"] as? String
-        image = UIImage(data: Data(base64Encoded: imageString!, options: .ignoreUnknownCharacters)!)
+       
         byou = valueDictionary["byou"] as? String
         name = valueDictionary["songname"] as? String
         song = valueDictionary["ongen"] as? String

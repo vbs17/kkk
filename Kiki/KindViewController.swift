@@ -560,6 +560,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
             let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             let imageData = UIImageJPEGRepresentation(resizeImage!, 0.5)
+            let image1 = UUID().uuidString
             let songName:NSString = songname.text! as NSString
             let kazu:NSString = byou.text! as NSString
             let ongen = UUID().uuidString
@@ -570,16 +571,18 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
             postRef.childByAutoId().setValue(postData)
             let songDataRef = FIRDatabase.database().reference().child(CommonConst.songData).child(ongen)
             songDataRef.setValue(realsong)
+            let imageDataRef = FIRDatabase.database().reference().child(CommonConst.songData).child(image1)
+            imageDataRef.setValue(imageData)
             self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
         } else {
             // 行が選択されていない＝ジャンルが選択されていない
             let alert = UIAlertController()
-            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellow]
+            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
             let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
             alert.setValue(attributedTitle, forKey: "attributedTitle")
-            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.white]
+            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.black]
             let attributedMessage = NSAttributedString(string: "ジャンルを選択しよう", attributes: attributedMessageAttr)
-            alert.view.tintColor = UIColor.white
+            alert.view.tintColor = UIColor.black
             alert.setValue(attributedMessage, forKey: "attributedMessage")
             let subview = alert.view.subviews.first! as UIView
             let alertContentView = subview.subviews.first! as UIView

@@ -201,15 +201,15 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                         cell!.star5.isUserInteractionEnabled = false
        
         //どこのgenreのどのセルに星がついたか保存しなあかん
+        //どこでgenreの場所決めてるのか
        
-        let imageString = postData.imageString
         let name = postData.name
         let song = postData.song
         let byou = postData.byou
         let star = postData.star //97行目
         let uid:NSString = postData.uid! as NSString
         let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre)
-        let postData2 = ["image":imageString!,"songname":name!,"ongen":song!,"byou":byou!,"star":star,"uid":uid] as [String : Any]
+        let postData2 = ["songname":name!,"ongen":song!,"byou":byou!,"star":star,"uid":uid] as [String : Any]
         postRef.child(postData.id!).setValue(postData2)
     }
 
@@ -342,7 +342,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             timer.invalidate()
             playingIndexPath = indexPath
             //ここもポイント
-            SVProgressHUD.show(withStatus: "重ね録りのsongは読み込みが遅いけどよ😌songはかなりクールになるぜ😎まあ楽しみにしてろよマジでいけてるからよ😏最大で5秒ってのは検証済みだから、それ以上は接続環境が悪すぎるってことだぜ😩")
+            SVProgressHUD.show(withStatus: "   最高にクールな音質に仕上げています😉(最大5秒)                 こいつのオリジナルソングがお前のセンスにあえば左上のProfileボタンをタップして連絡とれ😎")
             
             FIRDatabase.database().reference().child(CommonConst.songData).child(postData.song!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                 guard let `self` = self else { return }

@@ -66,23 +66,23 @@ class ProViewController: UIViewController,UITextFieldDelegate{
                 self.dismiss(animated: true, completion: nil)
             }else{
                 let alert = UIAlertController()
-                let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellow]
+                let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
                 let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
                 alert.setValue(attributedTitle, forKey: "attributedTitle")
-                let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.white]
+                let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.black]
                 let attributedMessage = NSAttributedString(string: "画像と名前を設定しよう😎", attributes: attributedMessageAttr)
-                alert.view.tintColor = UIColor.white
+                alert.view.tintColor = UIColor.black
                 alert.setValue(attributedMessage, forKey: "attributedMessage")
                 let subview = alert.view.subviews.first! as UIView
                 let alertContentView = subview.subviews.first! as UIView
-                alertContentView.backgroundColor = UIColor.gray
+                alertContentView.backgroundColor = UIColor.white
                 
                 let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
                     (action: UIAlertAction!) -> Void in
                 })
                 alert.addAction(defaultAction)
                 present(alert, animated: true, completion: nil)
-                alert.view.tintColor = UIColor.white
+                alert.view.tintColor = UIColor.black
                 
             }
         }
@@ -91,7 +91,8 @@ class ProViewController: UIViewController,UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.layer.cornerRadius = 75
+        imageView.layer.cornerRadius = imageView.frame.size.width / 2
+
         imageView.clipsToBounds = true
        
         back.layer.cornerRadius = 37
