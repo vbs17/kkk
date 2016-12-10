@@ -109,7 +109,6 @@ class HomeTableViewCell: UITableViewCell {
         
         updateStar(average)
         
-        ImageView.image = postData.image
         label.text = postData.name
         label2.text = postData.byou
     }

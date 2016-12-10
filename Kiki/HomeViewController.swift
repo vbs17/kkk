@@ -301,16 +301,45 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 observing = false
             }
         }
+    
+    FIRDatabase.database().reference().child(CommonConst.image).observe(.childAdded, with: {[weak self] snapshot in
+    
+    if let uid = FIRAuth.auth()?.currentUser?.uid {
+    guard let `self` = self else { return }
+    let postData = PostData3(snapshot: snapshot, myId: uid)
+    self.postArray3.insert(postData, at: 0)
+    
+    self.tableView.reloadData()
     }
-
+    })
+    FIRDatabase.database().reference().child(CommonConst.image).observe(.childChanged, with: {[weak self] snapshot in
+    
+    if let uid = FIRAuth.auth()?.currentUser?.uid {
+    guard let `self` = self else { return }
+    let postData = PostData3(snapshot: snapshot, myId: uid)
+    var index: Int = 0
+    for post in self.postArray3 {
+    if post.id == postData.id {
+    index = self.postArray3.index(of: post)!
+    break
+    }
+    }
+    self.postArray3.remove(at: index)
+    self.postArray3.insert(postData, at: index)
+    self.tableView.reloadData()
+    }
+    })
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (ko == true){
             return 0
         }else{
-        return postArray.count
+            return postArray.count
         }
     }
-    
+    }
+}
+
    
 
     
