@@ -19,8 +19,6 @@ class PostData: NSObject {
     init(snapshot: FIRDataSnapshot, myId: String) {
         id = snapshot.key
         let valueDictionary = snapshot.value as! [String: AnyObject]
-        
-       
         byou = valueDictionary["byou"] as? String
         name = valueDictionary["songname"] as? String
         song = valueDictionary["ongen"] as? String

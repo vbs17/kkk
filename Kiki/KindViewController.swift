@@ -571,7 +571,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
             postRef.childByAutoId().setValue(postData)
             let songDataRef = FIRDatabase.database().reference().child(CommonConst.songData).child(ongen)
             songDataRef.setValue(realsong)
-            let imageDataRef = FIRDatabase.database().reference().child(CommonConst.songData).child(image1)
+            let imageDataRef = FIRDatabase.database().reference().child(CommonConst.image).child(image1)
             imageDataRef.setValue(imageData)
             self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
         } else {
