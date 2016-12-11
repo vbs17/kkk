@@ -290,6 +290,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                         self.tableView.reloadData()
                     }
                 })
+                //ここから変えたから原因やろな
 
                 
         FIRDatabase.database().reference().child(CommonConst.image).observe(.childAdded, with: {[weak self] snapshot in
@@ -321,13 +322,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             }
         })
         
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            if (ko == true){
-                return 0
-            }else{
-                return postArray.count
-            }
-        }
                 
                 observing = true
             }
@@ -341,6 +335,14 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             }
         }
         
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (ko == true){
+            return 0
+        }else{
+            return postArray.count
+        }
     }
 
     
