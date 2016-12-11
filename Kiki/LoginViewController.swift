@@ -42,7 +42,6 @@ class LoginViewController: UIViewController{
                     self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
 
                     
-                    print(error)
                 } else {
                     if let displayName = user?.displayName {
                         self.setDisplayName(displayName)
@@ -73,21 +72,18 @@ class LoginViewController: UIViewController{
                 if error != nil {
                     SVProgressHUD.showError(withStatus: "エラー")
                      self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
-                    print(error)
                 } else {
                     FIRAuth.auth()?.signIn(withEmail: address, password: password) { user, error in
                         if error != nil {
                             SVProgressHUD.showError(withStatus: "エラー")
                             self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
 
-                            print(error)
                         } else {
                             if let user = user {
                                 let request = user.profileChangeRequest()
                                 request.displayName = displayName
                                 request.commitChanges() { error in
                                     if error != nil {
-                                        print(error)
                                     } else {
                                         self.setDisplayName(displayName)
                                         
