@@ -101,6 +101,25 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             }
         }
         cell.ImageView.image = image
+        if (image == nil) {
+            // Firebaseからイメージ読み込み
+            FIRDatabase.database().reference().child(CommonConst.image).child(genre).child(postData1.id!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
+                guard let `self` = self else { return }
+                let postData3 = PostData3(snapshot: snapshot, myId: postData1.uid!)
+                // すでに登録済みでなければ登録
+                var index: Int = NSNotFound
+                for post in self.postArray3 {
+                    if post.id == postData3.id {
+                        index = self.postArray3.index(of: post)!
+                        break
+                    }
+                }
+                if index == NSNotFound {
+                    self.postArray3.append(postData3)
+                    self.tableView.reloadData()
+                }
+            })
+        }
 
         cell.go.addTarget(self, action: #selector(pro(_:event:)), for: UIControlEvents.touchUpInside)
         cell.playButton.addTarget(self, action:#selector(handleButton(_:event:)), for: UIControlEvents.touchUpInside)
@@ -301,33 +320,33 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 //ここから変えたから原因やろな
 
                 
-        FIRDatabase.database().reference().child(CommonConst.image).child(genre).observe(.childAdded, with: {[weak self] snapshot in
-            if let uid = FIRAuth.auth()?.currentUser?.uid {
-                guard let `self` = self else { return }
-                let postData = PostData3(snapshot: snapshot, myId: uid)
-                self.postArray3.insert(postData, at: 0)
+        //FIRDatabase.database().reference().child(CommonConst.image).child(genre).observe(.childAdded, with: {[weak self] //snapshot in
+            //if let uid = FIRAuth.auth()?.currentUser?.uid {
+                //guard let `self` = self else { return }
+               // let postData = PostData3(snapshot: snapshot, myId: uid)
+              //  self.postArray3.insert(postData, at: 0)
                 
-                self.tableView.reloadData()
-            }
-        })
+            //    self.tableView.reloadData()
+          //  }
+        //})
 
-        FIRDatabase.database().reference().child(CommonConst.image).child(genre).observe(.childChanged, with: {[weak self] snapshot in
+       // FIRDatabase.database().reference().child(CommonConst.image).child(genre).observe(.childChanged, with: {[weak self] snapshot in
             
-            if let uid = FIRAuth.auth()?.currentUser?.uid {
-                guard let `self` = self else { return }
-                let postData = PostData3(snapshot: snapshot, myId: uid)
-                var index: Int = 0
-                for post in self.postArray3 {
-                    if post.id == postData.id {
-                        index = self.postArray3.index(of: post)!
-                        break
-                    }
-                }
-                self.postArray3.remove(at: index)
-                self.postArray3.insert(postData, at: index)
-                self.tableView.reloadData()
-            }
-        })
+            //if let uid = FIRAuth.auth()?.currentUser?.uid {
+                //guard let `self` = self else { return }
+                //let postData = PostData3(snapshot: snapshot, myId: uid)
+               // var index: Int = 0
+                //for post in self.postArray3 {
+                   // if post.id == postData.id {
+                      //  index = self.postArray3.index(of: post)!
+                    //    break
+                  //  }
+                //}
+                //self.postArray3.remove(at: index)
+              //  self.postArray3.insert(postData, at: index)
+            //    self.tableView.reloadData()
+          //  }
+        //})
         
                 
                 observing = true
