@@ -570,8 +570,9 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
             postRef.child(ongen).setValue(postData)
             let songDataRef = FIRDatabase.database().reference().child(CommonConst.songData).child(ongen)
             songDataRef.setValue(realsong)
-            let imageDataRef = FIRDatabase.database().reference().child(CommonConst.image).child(ongen)
-            imageDataRef.setValue(imageData)
+            let postData3 = ["image": imageData!.base64EncodedString(options: .lineLength64Characters)];
+            let postRef3 = FIRDatabase.database().reference().child(CommonConst.image).child(genre)
+            postRef3.child(ongen).setValue(postData3)
             self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
         } else {
             // 行が選択されていない＝ジャンルが選択されていない

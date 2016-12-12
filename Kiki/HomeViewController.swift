@@ -293,8 +293,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 //ここから変えたから原因やろな
 
                 
-        FIRDatabase.database().reference().child(CommonConst.image).observe(.childAdded, with: {[weak self] snapshot in
-            
+        FIRDatabase.database().reference().child(CommonConst.image).child(genre).observe(.childAdded, with: {[weak self] snapshot in
             if let uid = FIRAuth.auth()?.currentUser?.uid {
                 guard let `self` = self else { return }
                 let postData = PostData3(snapshot: snapshot, myId: uid)
@@ -304,7 +303,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             }
         })
 
-        FIRDatabase.database().reference().child(CommonConst.image).observe(.childChanged, with: {[weak self] snapshot in
+        FIRDatabase.database().reference().child(CommonConst.image).child(genre).observe(.childChanged, with: {[weak self] snapshot in
             
             if let uid = FIRAuth.auth()?.currentUser?.uid {
                 guard let `self` = self else { return }
