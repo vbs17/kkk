@@ -335,6 +335,8 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         } else {
             if observing == true {
                 postArray = []
+                postArray2 = []
+                postArray3 = []
                 
                 tableView.reloadData()
                 FIRDatabase.database().reference().removeAllObservers()
