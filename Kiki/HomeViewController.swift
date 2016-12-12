@@ -87,12 +87,20 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         cell.setPostData(postArray[indexPath.row])
         let postData1 = postArray[indexPath.row]
         var image:UIImage? = nil
-        for postDate3 in postArray3{
-            if postData1.id == postDate3.id{
-                image = postDate3.image
+        for id in postArray2{
+            if postData1.uid == id.uid{
+                image = id.image
             }
         }
         cell.imageView1.image = image
+        // postData3(image)
+        image = nil
+        for postData3 in postArray3{
+            if postData1.id == postData3.id {
+                image = postData3.image
+            }
+        }
+        cell.ImageView.image = image
 
         cell.go.addTarget(self, action: #selector(pro(_:event:)), for: UIControlEvents.touchUpInside)
         cell.playButton.addTarget(self, action:#selector(handleButton(_:event:)), for: UIControlEvents.touchUpInside)
