@@ -43,6 +43,19 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     }
 
     
+    var data_count = 5;
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if(self.tableView.contentOffset.y == (self.tableView.contentSize.height - self.tableView.bounds.size.height))
+        {
+            //まだ表示するコンテンツが存在するか判定し存在するなら○件分を取得して表示更新する
+            print("scrolling to bottom")
+            data_count = data_count + 5
+            tableView.reloadData()
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -369,11 +382,15 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         if (ko == true){
             return 0
         }else{
-            return postArray.count
+            //            return postArray.count
+            if ( postArray.count < data_count ) {
+                return postArray.count
+            }
+            else {
+                return data_count
+            }
         }
     }
-
-    
 
 
    
