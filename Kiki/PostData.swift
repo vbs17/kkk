@@ -12,6 +12,7 @@ class PostData: NSObject {
     var song: String?
     var byou: String?
     var star: Array<[String:String]> = []
+    var time: String?
     var uid: String?
    
    
@@ -22,6 +23,7 @@ class PostData: NSObject {
         byou = valueDictionary["byou"] as? String
         name = valueDictionary["songname"] as? String
         song = valueDictionary["ongen"] as? String
+        time = valueDictionary["time"] as? String
         if let stars = valueDictionary["star"] as? Array<[String:String]> {
             self.star = stars
         }
