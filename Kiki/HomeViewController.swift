@@ -271,7 +271,8 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             print("getFirebaseData \(start) \(limit)")
             //            FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).queryOrdered(byChild: "uid").queryStarting(atValue: start).queryLimited(toFirst: limit).observe(.value, with: { (snapshot) in
             //
-            FIRDatabase.database().reference().child(CommonConst.PostPATH).child(self.genre).queryOrdered(byChild: "uid").queryStarting(atValue: self.dataLastVal).queryLimited(toFirst: UInt(DisplayDataNumber)).observe(.value, with: { (snapshot) in
+            //2回目
+           FIRDatabase.database().reference().child(CommonConst.PostPATH).child(self.genre).queryOrdered(byChild: "投稿日時のカラム").queryStarting(atValue: 最初の5件で取得したうちの一番最後のデータの投稿日時の値).queryLimited(toFirst: UInt(DisplayDataNumber)).observe(.value, with: { (snapshot) in
                 
                 
                 print(snapshot.childrenCount)
@@ -300,8 +301,9 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         super.viewWillAppear(animated)
         
         let uid = FIRAuth.auth()?.currentUser?.uid
+        //1回目
         
-        FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).queryOrdered(byChild: "uid").queryLimited(toFirst: UInt(DisplayDataNumber)).observe(.value, with: { (snapshot) in
+        FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).queryOrdered(byChild: "投稿日時のカラム").queryLimited(toFirst: UInt(DisplayDataNumber)).observe(.value, with: { (snapshot) in
             
             for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
                 let postData = PostData(snapshot: child, myId: uid!)

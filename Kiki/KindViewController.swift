@@ -566,7 +566,8 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
             let realSongdata = try? Data(contentsOf: URL(fileURLWithPath: songData.path))
             let realsong = realSongdata!.base64EncodedString(options: [])
             let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
-            let postData = ["byou": kazu, "songname": songName, "ongen": ongen, "uid":uid] as [String : Any]
+            let time = NSDate.timeIntervalSinceReferenceDate
+            let postData = ["time":time,"byou": kazu, "songname": songName, "ongen": ongen, "uid":uid] as [String : Any]
             postRef.child(ongen).setValue(postData)
             let songDataRef = FIRDatabase.database().reference().child(CommonConst.songData).child(ongen)
             songDataRef.setValue(realsong)
