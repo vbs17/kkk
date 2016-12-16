@@ -265,6 +265,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         lbl.text = "誰もまだ投稿していません"
     }
     
+    //ここ
     func getFirebaseData(start: String, limit: UInt ) {
         if ( !start.contains("") ) {
             let uid = FIRAuth.auth()?.currentUser?.uid
