@@ -21,7 +21,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     var playingIndexPath:IndexPath!
     var ko = false
     
-    let DisplayDataNumber = 5;
+    let DisplayDataNumber = 2;
     
     var dataLastVal:Double!
     
@@ -384,125 +384,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     
     
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        super.viewWillAppear(animated)
-    //        timer2 = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(HomeViewController.mada), userInfo: nil, repeats: false)
-    //        if FIRAuth.auth()?.currentUser != nil {
-    //            if observing == false {
-    //                //俺が新しくできた
-    //                FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).observe(.childAdded, with: {[weak self] snapshot in
-    //
-    //                    if let uid = FIRAuth.auth()?.currentUser?.uid {
-    //                        guard let `self` = self else { return }
-    //                        let postData = PostData(snapshot: snapshot, myId: uid)
-    //                        self.postArray.insert(postData, at: 0)
-    //
-    //                        if self.playingIndexPath != nil {
-    //                            let row = self.playingIndexPath.row
-    //                            self.playingIndexPath = IndexPath(row: row+1, section: 0)
-    //                        }
-    //                        self.timer2.invalidate()
-    //                        self.tableView.reloadData()
-    //                    }
-    //                })
-    //                //俺だけが変更した 一個だけていう考えで考えてみ　一気に１つ以上の投稿に星はたっぷできんのやし
-    //                FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).observe(.childChanged, with: {[weak self] snapshot in
-    //
-    //                    if let uid = FIRAuth.auth()?.currentUser?.uid {
-    //                        guard let `self` = self else { return }
-    //                        let postData = PostData(snapshot: snapshot, myId: uid)
-    //
-    //                        var index: Int = 0
-    //                        for post in self.postArray {
-    //                            if post.id == postData.id {
-    //                                index = self.postArray.index(of: post)!
-    //                                break
-    //                            }
-    //                        }
-    //
-    //                        self.postArray.remove(at: index)
-    //                        self.postArray.insert(postData, at: index)
-    //                        self.tableView.reloadData()
-    //
-    //                    }
-    //                })
-    //                //俺が新しくできた　言うたらこれは一回のみでしょ？上は何回もできるけど
-    //                FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: {[weak self] snapshot in
-    //
-    //                    if let uid = FIRAuth.auth()?.currentUser?.uid {
-    //                        guard let `self` = self else { return }
-    //                        let postData = PostData2(snapshot: snapshot, myId: uid)
-    //                        self.postArray2.insert(postData, at: 0)
-    //
-    //                        self.tableView.reloadData()
-    //                    }
-    //                })
-    //                //俺だけが変更した　これがあるから他の人は何も変わらずまま自分だけ変わる　１以上の投稿の場合も大丈夫なのか
-    //                FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: {[weak self] snapshot in
-    //
-    //                    if let uid = FIRAuth.auth()?.currentUser?.uid {
-    //                        guard let `self` = self else { return }
-    //                        let postData = PostData2(snapshot: snapshot, myId: uid)
-    //                        var index: Int = 0
-    //                        for post in self.postArray2 {
-    //                            if post.id == postData.id {
-    //                                index = self.postArray2.index(of: post)!
-    //                                break
-    //                            }
-    //                        }
-    //                        //なんでindexは1以上も対応できているのか
-    //                        self.postArray2.remove(at: index)
-    //                        self.postArray2.insert(postData, at: index)
-    //                        self.tableView.reloadData()
-    //                    }
-    //                })
-    //                //ここから変えたから原因やろな
-    //
-    //
-    //                //FIRDatabase.database().reference().child(CommonConst.image).child(genre).observe(.childAdded, with: {[weak self] //snapshot in
-    //                //if let uid = FIRAuth.auth()?.currentUser?.uid {
-    //                //guard let `self` = self else { return }
-    //                // let postData = PostData3(snapshot: snapshot, myId: uid)
-    //                //  self.postArray3.insert(postData, at: 0)
-    //
-    //                //    self.tableView.reloadData()
-    //                //  }
-    //                //})
-    //
-    //                // FIRDatabase.database().reference().child(CommonConst.image).child(genre).observe(.childChanged, with: {[weak self] snapshot in
-    //
-    //                //if let uid = FIRAuth.auth()?.currentUser?.uid {
-    //                //guard let `self` = self else { return }
-    //                //let postData = PostData3(snapshot: snapshot, myId: uid)
-    //                // var index: Int = 0
-    //                //for post in self.postArray3 {
-    //                // if post.id == postData.id {
-    //                //  index = self.postArray3.index(of: post)!
-    //                //    break
-    //                //  }
-    //                //}
-    //                //self.postArray3.remove(at: index)
-    //                //  self.postArray3.insert(postData, at: index)
-    //                //    self.tableView.reloadData()
-    //                //  }
-    //                //})
-    //
-    //
-    //                observing = true
-    //            }
-    //        } else {
-    //            if observing == true {
-    //                postArray = []
-    //                postArray2 = []
-    //                postArray3 = []
-    //
-    //                tableView.reloadData()
-    //                FIRDatabase.database().reference().removeAllObservers()
-    //                observing = false
-    //            }
-    //        }
-    //
-    //    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (ko == true){
