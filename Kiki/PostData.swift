@@ -12,10 +12,10 @@ class PostData: NSObject {
     var song: String?
     var byou: String?
     var star: Array<[String:String]> = []
-    var time: String?
+    var time: Double?
     var uid: String?
-   
-   
+    
+    
     
     init(snapshot: FIRDataSnapshot, myId: String) {
         id = snapshot.key
@@ -23,13 +23,13 @@ class PostData: NSObject {
         byou = valueDictionary["byou"] as? String
         name = valueDictionary["songname"] as? String
         song = valueDictionary["ongen"] as? String
-        time = valueDictionary["time"] as? String
+        time = valueDictionary["time"] as? Double
         if let stars = valueDictionary["star"] as? Array<[String:String]> {
             self.star = stars
         }
         uid = valueDictionary["uid"] as? String
-
-
-    
-  }
+        
+        
+        
+    }
 }
