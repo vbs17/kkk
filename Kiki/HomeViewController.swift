@@ -24,7 +24,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     let DisplayDataNumber = 5;
     var dataCount = 5
     
-    var dataLastVal = ""
+    var dataLastVal:Double!
     
     @IBOutlet weak var lbl: UILabel!
     
@@ -265,7 +265,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         lbl.text = "誰もまだ投稿していません"
     }
     
-    //ここ
     func getFirebaseData(start: String, limit: UInt ) {
         if ( !start.contains("") ) {
             let uid = FIRAuth.auth()?.currentUser?.uid
@@ -273,19 +272,21 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             //            FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).queryOrdered(byChild: "uid").queryStarting(atValue: start).queryLimited(toFirst: limit).observe(.value, with: { (snapshot) in
             //
             //2回目
-           FIRDatabase.database().reference().child(CommonConst.PostPATH).child(self.genre).queryOrdered(byChild: "time").queryStarting(atValue: "最初の5件で取得したうちの一番最後のデータの投稿日時の値").queryLimited(toFirst: UInt(DisplayDataNumber)).observe(.value, with: { (snapshot) in
+            FIRDatabase.database().reference().child(CommonConst.PostPATH).child(self.genre).queryOrdered(byChild: "time").queryStarting(atValue: self.dataLastVal).queryLimited(toFirst: UInt(DisplayDataNumber)).observe(.value, with: { (snapshot) in
                 
                 
                 print(snapshot.childrenCount)
                 
                 for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
+                    print(child)
                     let postData = PostData(snapshot: child, myId: uid!)
-                    self.postArray.insert(postData, at: 0)
+                    //                    self.postArray.insert(postData, at: 0)
+                    self.postArray.append(postData)
                 }
                 self.tableView.reloadData()
                 
                 for p in self.postArray {
-                    print(p.id ?? "no - id", p.name ?? "no - name")
+                    print(p.id ?? "no - id", p.uid ?? "no - uid", p.time ?? "no - time")
                 }
                 
                 FIRDatabase.database().reference().removeAllObservers()
@@ -306,18 +307,23 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         
         
         FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).queryOrdered(byChild: "time").queryLimited(toFirst: UInt(DisplayDataNumber)).observe(.value, with: { (snapshot) in
+            //        FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).queryOrdered(byChild: "time").observe(.value, with: { (snapshot) in
+            
             
             for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
+                print(child )
                 let postData = PostData(snapshot: child, myId: uid!)
-                self.postArray.insert(postData, at: 0)
+                print(postData.time ?? "")
+                //                self.postArray.insert(postData, at: 0)
+                self.postArray.append(postData)
             }
             self.tableView.reloadData()
             
             for p in self.postArray {
-                print(p.id ?? "no - id", p.uid ?? "no - uid")
+                print(p.id ?? "no - id", p.uid ?? "no - uid", p.time ?? "no - time")
             }
             
-            self.dataLastVal = (self.postArray.last?.uid)!
+            self.dataLastVal = (self.postArray.last?.time)!
             print(self.dataLastVal)
             FIRDatabase.database().reference().removeAllObservers()
             
