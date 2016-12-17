@@ -15,8 +15,26 @@ class LoginViewController: UIViewController{
     
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let logInButton = TWTRLogInButton(logInCompletion: { session, error in
+            if (session != nil) {
+                let authToken = session.authToken
+                let authTokenSecret = session.authTokenSecret
+                // ...
+            } else {
+                // ...
+            }
+        })
+        
+        let credential = FIRTwitterAuthProvider.credentialWithToken(session.authToken, secret: session.authTokenSecret)
+        
+        FIRAuth.auth()?.signInWithCredential(credential) { (user, error) in
+            // ...
+        }
+
     }
     
     override func didReceiveMemoryWarning() {
