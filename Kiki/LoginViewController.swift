@@ -23,8 +23,8 @@ class LoginViewController: UIViewController{
         
         let logInButton = TWTRLogInButton(logInCompletion: { session, error in
             if (session != nil) {
-                let authToken = session.authToken
-                let authTokenSecret = session.authTokenSecret
+                let authToken = session?.authToken
+                let authTokenSecret = session?.authTokenSecret
                 // ...
             } else {
                 // ...
