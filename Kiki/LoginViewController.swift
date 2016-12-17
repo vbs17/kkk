@@ -20,24 +20,38 @@ class LoginViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
         
+    }
+    
+    func setup() {
         let logInButton = TWTRLogInButton(logInCompletion: { session, error in
-            if (session != nil) {
-                let authToken = session?.authToken
-                let authTokenSecret = session?.authTokenSecret
-                // ...
+            
+            if let session = session {
+                
+                let credential = FIRTwitterAuthProvider.credential(withToken: session.authToken,
+                                                                   secret: session.authTokenSecret)
+                
+                FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+                    
+                    if let error = error {
+                        //TOOD: エラーハンドリング
+                        print(error)
+                        return
+                    }
+                    
+                    print("ようこそ! \(user?.displayName)")
+                }
+                
             } else {
-                // ...
+                //TOOD: エラーハンドリング
             }
         })
         
-        let credential = FIRTwitterAuthProvider.credentialWithToken(session.authToken, secret: session.authTokenSecret)
-        
-        FIRAuth.auth()?.signInWithCredential(credential) { (user, error) in
-            // ...
-        }
-
+        logInButton.center = view.center
+        self.view.addSubview(logInButton)
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

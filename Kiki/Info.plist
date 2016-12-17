@@ -5,9 +5,8 @@
     <key>Fabric</key>
     <dict>
         <key>APIKey</key>
-        <string><p4KswmlL2lv2rA8D6f4TZ2ljp></string>
-            <key>Kits</key>
-            <array>
+        <string>p4KswmlL2lv2rA8D6f4TZ2ljp</string>
+        <array>
                 <dict>
                     <key>KitInfo</key>
                     <dict>
