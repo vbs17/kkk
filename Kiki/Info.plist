@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-    <key>Fabric</key>
     <dict>
-        <key>APIKey</key>
-        <string>p4KswmlL2lv2rA8D6f4TZ2ljp</string>
-        <array>
+        <key>Fabric</key>
+        <dict>
+            <key>APIKey</key>
+            <string>p4KswmlL2lv2rA8D6f4TZ2ljp</string>
+            <key>Kits</key>
+            <array>
                 <dict>
                     <key>KitInfo</key>
                     <dict>
@@ -20,73 +21,73 @@
                 </dict>
             </array>
         </dict>
-	<key></key>
-	<string></string>
-	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
-	<key>FirebaseAppDelegateProxyEnabled</key>
-	<false/>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>https://maps.apple.com/?q</string>
-	</array>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
-	<key>CFBundleVersion</key>
-	<string>1</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>マイクへのアクセス </string>
-	<key>Facebook DisplayName</key>
-	<string>Kiki</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundleExecutable</key>
-	<string>$(EXECUTABLE_NAME)</string>
-	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>armv7</string>
-	</array>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string></string>
-			</array>
-		</dict>
-	</array>
-	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>CFBundleDisplayName</key>
-	<string>Kiki</string>
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
-	<key>NSCameraUsageDescription</key>
-	<string></string>
-	<key>Facebook AppID</key>
-	<string>657201184440498
-657201184440498
-657201184440498
-657201184440498</string>
-</dict>
+        <key></key>
+        <string></string>
+        <key>CFBundleName</key>
+        <string>$(PRODUCT_NAME)</string>
+        <key>FirebaseAppDelegateProxyEnabled</key>
+        <false/>
+        <key>UILaunchStoryboardName</key>
+        <string>LaunchScreen</string>
+        <key>LSApplicationQueriesSchemes</key>
+        <array>
+            <string>https://maps.apple.com/?q</string>
+        </array>
+        <key>CFBundleDevelopmentRegion</key>
+        <string>en</string>
+        <key>CFBundleVersion</key>
+        <string>1</string>
+        <key>CFBundlePackageType</key>
+        <string>APPL</string>
+        <key>NSMicrophoneUsageDescription</key>
+        <string>マイクへのアクセス </string>
+        <key>Facebook DisplayName</key>
+        <string>Kiki</string>
+        <key>CFBundleShortVersionString</key>
+        <string>1.0</string>
+        <key>UIMainStoryboardFile</key>
+        <string>Main</string>
+        <key>CFBundleInfoDictionaryVersion</key>
+        <string>6.0</string>
+        <key>CFBundleExecutable</key>
+        <string>$(EXECUTABLE_NAME)</string>
+        <key>UIRequiredDeviceCapabilities</key>
+        <array>
+            <string>armv7</string>
+        </array>
+        <key>CFBundleURLTypes</key>
+        <array>
+            <dict>
+                <key>CFBundleURLSchemes</key>
+                <array>
+                    <string></string>
+                </array>
+            </dict>
+        </array>
+        <key>CFBundleIdentifier</key>
+        <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+        <key>LSApplicationCategoryType</key>
+        <string></string>
+        <key>CFBundleSignature</key>
+        <string>????</string>
+        <key>LSRequiresIPhoneOS</key>
+        <true/>
+        <key>CFBundleDisplayName</key>
+        <string>Kiki</string>
+        <key>UISupportedInterfaceOrientations</key>
+        <array>
+            <string>UIInterfaceOrientationPortrait</string>
+            <string>UIInterfaceOrientationLandscapeLeft</string>
+            <string>UIInterfaceOrientationLandscapeRight</string>
+        </array>
+        <key>NSPhotoLibraryUsageDescription</key>
+        <string></string>
+        <key>NSCameraUsageDescription</key>
+        <string></string>
+        <key>Facebook AppID</key>
+        <string>657201184440498
+            657201184440498
+            657201184440498
+            657201184440498</string>
+    </dict>
 </plist>
