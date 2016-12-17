@@ -20,7 +20,7 @@ class ProIdouViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.layer.cornerRadius = 75
+        imageView.layer.cornerRadius = imageView.frame.size.width / 2
         imageView.clipsToBounds = true
         FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: { snapshot in
             
