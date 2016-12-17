@@ -62,7 +62,7 @@ class LoginViewController: UIViewController{
         if let address = mailAddressTextField.text, let password = passwordTextField.text {
             
             if address.characters.isEmpty || password.characters.isEmpty {
-                SVProgressHUD.showError(withStatus: "必要項目を入力して下さい")
+                SVProgressHUD.showError(withStatus: "アカウント作成を済ませてください")
                 self.timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
 
                 return
