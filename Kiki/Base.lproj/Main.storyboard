@@ -296,6 +296,14 @@
                                     <action selector="handleCreateAcountButton:" destination="iYl-qb-ojX" eventType="touchUpInside" id="Gk0-M0-bCD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Xz-P5-HJz">
+                                <rect key="frame" x="155" y="300" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onTwitterLogin:" destination="iYl-qb-ojX" eventType="touchUpInside" id="P4S-nE-f1k"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1165,7 +1173,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6XJ-uI-LtX">
-                                <rect key="frame" x="94" y="287" width="176" height="62"/>
+                                <rect key="frame" x="95" y="287.5" width="174" height="61.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6XJ-uI-LtX" secondAttribute="height" multiplier="168:59" id="70g-U3-Jj4"/>
                                 </constraints>
@@ -1191,7 +1199,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出演するライブハウスの場所を教えよう" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbY-21-dDj">
-                                <rect key="frame" x="33" y="179.5" width="309" height="21.5"/>
+                                <rect key="frame" x="33" y="180" width="309" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wbY-21-dDj" secondAttribute="height" multiplier="43:3" id="wnW-vE-paJ"/>
                                 </constraints>
@@ -1202,7 +1210,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HnA-My-ueB">
-                                <rect key="frame" x="159" y="148.5" width="46" height="23"/>
+                                <rect key="frame" x="159" y="149" width="46" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HnA-My-ueB" secondAttribute="height" multiplier="2:1" id="WpT-k6-t3c"/>
                                 </constraints>

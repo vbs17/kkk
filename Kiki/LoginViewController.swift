@@ -22,36 +22,87 @@ class LoginViewController: UIViewController{
         super.viewDidLoad()
         setup()
         
+        
     }
     
+    func signIn(credential:FIRAuthCredential) {
+        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+            
+            if let error = error {
+                // TOOD: エラーハンドリング
+                print(error)
+                return
+            }
+            // ログインしていたらログイン画面を閉じる
+            let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Tab")
+            self.present(loginViewController!, animated: true, completion: nil)
+        }
+    }
+    
+    // 設定 > Twitter画面へ遷移
+    func showTwitterSettings() {
+        if let url = URL(string: "App-Prefs:root=TWITTER") {
+            if #available(iOS 10.0, *) {
+                // iOS10以上
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+            
+        }
+    }
+    
+    // 自作ボタンでTwitterログイン
+    @IBAction func onTwitterLogin(_ sender: AnyObject) {
+        
+        Twitter.sharedInstance().logIn(withMethods: [.systemAccounts], completion: { (session, error) in
+            if let session = session {
+                let credential = FIRTwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
+                self.signIn(credential: credential)
+            } else {
+                print(error)
+                // エラー時はまず、アラートを出すのが良いでしょう。
+                
+                // [アラート] 例↓
+                // 「設定 > Twitterより」アカウントを追加してください。
+                
+                // その後 設定Twitterへ遷移する
+                //                self.showTwitterSettings()
+                return;
+                
+            }
+            
+        })
+    }
+    
+    
+    // TwitterKitで用意されているログインボタンのセットアップ&配置
     func setup() {
         let logInButton = TWTRLogInButton(logInCompletion: { session, error in
             
             if let session = session {
                 
-                let credential = FIRTwitterAuthProvider.credential(withToken: session.authToken,
-                                                                   secret: session.authTokenSecret)
-                
-                FIRAuth.auth()?.signIn(with: credential) { (user, error) in
-                    
-                    if let error = error {
-                        //TOOD: エラーハンドリング
-                        print(error)
-                        return
-                    }
-                    
-                    print("ようこそ! \(user?.displayName)")
-                }
+                let credential = FIRTwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
+                self.signIn(credential: credential)
                 
             } else {
-                //TOOD: エラーハンドリング
+                print(error)
+                // エラー時はまず、アラートを出すのが良いでしょう。
+                
+                // [アラート] 例↓
+                // 「設定 > Twitterより」アカウントを追加してください。
+                
+                // その後 設定Twitterへ遷移する
+                //                self.showTwitterSettings()
             }
         })
+        
+        // 設定 > Twitterのアカウントを利用する
+        logInButton.loginMethods = .systemAccounts
         
         logInButton.center = view.center
         self.view.addSubview(logInButton)
     }
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
