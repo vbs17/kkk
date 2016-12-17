@@ -1411,7 +1411,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3846" y="-2238"/>
+            <point key="canvasLocation" x="3846" y="-2197"/>
         </scene>
         <!--Syutyu4 View Controller-->
         <scene sceneID="lhF-CW-V4r">
@@ -2255,7 +2255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zZa-Ml-mSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3846" y="-2916"/>
+            <point key="canvasLocation" x="3846" y="-2882"/>
         </scene>
         <!--Ok View Controller-->
         <scene sceneID="L9R-lE-x6J">
@@ -2354,7 +2354,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D0U-i1-0Cp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3846" y="-1565"/>
+            <point key="canvasLocation" x="3846" y="-1516"/>
         </scene>
         <!--Iya View Controller-->
         <scene sceneID="34M-wH-oSi">
