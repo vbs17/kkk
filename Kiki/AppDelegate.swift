@@ -14,7 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func login(){
-        let viewController: TabViewController = TabViewController()
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController: TabViewController = storyboard.instantiateViewController(withIdentifier: "Tab") as! TabViewController
         UIView.transition(with: self.window!, duration: 0.5, options: [.transitionFlipFromBottom, .showHideTransitionViews], animations: {() -> Void in
             self.window!.rootViewController = viewController
         }, completion: { _ in })
