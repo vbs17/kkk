@@ -17,7 +17,6 @@ class LoginViewController: UIViewController{
     
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -36,6 +35,9 @@ class LoginViewController: UIViewController{
             // ログインしていたらログイン画面を閉じる
             let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Tab")
             self.present(loginViewController!, animated: true, completion: nil)
+            let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.login()
+
         }
     }
     
@@ -53,27 +55,6 @@ class LoginViewController: UIViewController{
     }
     
     // 自作ボタンでTwitterログイン
-    @IBAction func onTwitterLogin(_ sender: AnyObject) {
-        
-        Twitter.sharedInstance().logIn(withMethods: [.systemAccounts], completion: { (session, error) in
-            if let session = session {
-                let credential = FIRTwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
-                self.signIn(credential: credential)
-            } else {
-                print(error)
-                // エラー時はまず、アラートを出すのが良いでしょう。
-                
-                // [アラート] 例↓
-                // 「設定 > Twitterより」アカウントを追加してください。
-                
-                // その後 設定Twitterへ遷移する
-                //                self.showTwitterSettings()
-                return;
-                
-            }
-            
-        })
-    }
     
     
     // TwitterKitで用意されているログインボタンのセットアップ&配置
@@ -135,7 +116,11 @@ class LoginViewController: UIViewController{
                     SVProgressHUD.dismiss()
                     
                     let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Tab")
-                    self.present(loginViewController!, animated: true, completion: nil)                }
+                    self.present(loginViewController!, animated: true, completion: nil)
+                    
+                    let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.login()
+               }
             }
         }
     }
@@ -175,7 +160,11 @@ class LoginViewController: UIViewController{
                                         SVProgressHUD.dismiss()
                                         
                                         let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Tab")
-                                        self.present(loginViewController!, animated: true, completion: nil)                                    }
+                                        self.present(loginViewController!, animated: true, completion: nil)
+                                        
+                                        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                                        appDelegate.login()
+                                    }
                                 }
                             }
                         }
@@ -201,7 +190,6 @@ class LoginViewController: UIViewController{
     
    
         
-    }
     
     
     
@@ -214,23 +202,45 @@ class LoginViewController: UIViewController{
     
     
     
+@IBAction func onTwitterLogin(_ sender: AnyObject) {
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    Twitter.sharedInstance().logIn(withMethods: [.systemAccounts], completion: { (session, error) in
+        if let session = session {
+            let credential = FIRTwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
+            self.signIn(credential: credential)
+        } else {
+            print(error)
+            // エラー時はまず、アラートを出すのが良いでしょう。
+            
+            // [アラート] 例↓
+            // 「設定 > Twitterより」アカウントを追加してください。
+            
+            // その後 設定Twitterへ遷移する
+            //                self.showTwitterSettings()
+            return;
+            
+        }
+        
+    })
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     
     

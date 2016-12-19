@@ -13,6 +13,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
 
+    func login(){
+        let viewController: TabViewController = TabViewController()
+        UIView.transition(with: self.window!, duration: 0.5, options: [.transitionFlipFromBottom, .showHideTransitionViews], animations: {() -> Void in
+            self.window!.rootViewController = viewController
+        }, completion: { _ in })
+        
+    }
+
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
