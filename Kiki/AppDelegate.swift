@@ -11,6 +11,7 @@ import TwitterKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    let uid = FIRAuth.auth()?.currentUser?.uid
     var window: UIWindow?
 
     func login(){
@@ -27,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FIRApp.configure()
         Fabric.with([Twitter.self])
+        let ProfileRef = FIRDatabase.database().reference(withPath: CommonConst.Profile).child(uid!)
+        ProfileRef.keepSynced(true)
         let ud = UserDefaults.standard
         let isTutorial = ud.bool(forKey: CommonConst.IsTutorial )
        
