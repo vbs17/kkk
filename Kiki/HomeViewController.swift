@@ -19,7 +19,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     var back: UIButton!
     var tableView: UITableView!
     var playingIndexPath:IndexPath!
-    var ko = false
+    //    var ko = false
     
     let DisplayDataNumber = 2;
     
@@ -28,7 +28,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     @IBOutlet weak var lbl: UILabel!
     
     func pro(_ sender: UIButton, event:UIEvent) {
-        ko = true
+        //        ko = true
         let touch = event.allTouches?.first
         let point = touch!.location(in: self.tableView)
         let indexPath = tableView.indexPathForRow(at: point)
@@ -301,80 +301,83 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let uid = FIRAuth.auth()?.currentUser?.uid
         //1回目
         
-        FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).queryOrdered(byChild: "time").queryLimited(toLast: UInt(DisplayDataNumber)).observeSingleEvent(of: .value, with: { (snapshot) in
-            //        FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).queryOrdered(byChild: "time").observe(.value, with: { (snapshot) in
-            
-            
-            var workArray:[PostData] = []
-            for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
-                print(child )
-                let postData = PostData(snapshot: child, myId: uid!)
-                print(postData.time ?? "")
-                workArray.insert(postData, at: 0)
-            }
-            if workArray.count > 0 {
-                self.postArray += workArray
-                self.tableView.reloadData()
+        if observing == false {
+            FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).queryOrdered(byChild: "time").queryLimited(toLast: UInt(DisplayDataNumber)).observeSingleEvent(of: .value, with: { (snapshot) in
+                //        FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).queryOrdered(byChild: "time").observe(.value, with: { (snapshot) in
                 
-                self.dataLastVal = workArray.last!.time!
-                print("dataLastVal=\(self.dataLastVal)")
-                self.timer2.invalidate()
-            }
-            
-        }, withCancel: {(err) in
-            print("getFirstData error")
-        })
-        
-        FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).observe(.childChanged, with: {[weak self] snapshot in
-            
-            if let uid = FIRAuth.auth()?.currentUser?.uid {
-                guard let `self` = self else { return }
-                let postData = PostData(snapshot: snapshot, myId: uid)
                 
-                var index: Int = 0
-                for post in self.postArray {
-                    if post.id == postData.id {
-                        index = self.postArray.index(of: post)!
-                        break
-                    }
+                var workArray:[PostData] = []
+                for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
+                    print(child )
+                    let postData = PostData(snapshot: child, myId: uid!)
+                    print(postData.time ?? "")
+                    workArray.insert(postData, at: 0)
+                }
+                if workArray.count > 0 {
+                    self.postArray += workArray
+                    self.tableView.reloadData()
+                    
+                    self.dataLastVal = workArray.last!.time!
+                    print("dataLastVal=\(self.dataLastVal)")
+                    self.timer2.invalidate()
                 }
                 
-                self.postArray.remove(at: index)
-                self.postArray.insert(postData, at: index)
-                self.tableView.reloadData()
-                
-            }
-        })
-        //俺が新しくできた　言うたらこれは一回のみでしょ？上は何回もできるけど
-        FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: {[weak self] snapshot in
+            }, withCancel: {(err) in
+                print("getFirstData error")
+            })
             
-            if let uid = FIRAuth.auth()?.currentUser?.uid {
-                guard let `self` = self else { return }
-                let postData = PostData2(snapshot: snapshot, myId: uid)
-                self.postArray2.insert(postData, at: 0)
+            FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).observe(.childChanged, with: {[weak self] snapshot in
                 
-                self.tableView.reloadData()
-            }
-        })
-        //俺だけが変更した　これがあるから他の人は何も変わらずまま自分だけ変わる　１以上の投稿の場合も大丈夫なのか
-        FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: {[weak self] snapshot in
-            
-            if let uid = FIRAuth.auth()?.currentUser?.uid {
-                guard let `self` = self else { return }
-                let postData = PostData2(snapshot: snapshot, myId: uid)
-                var index: Int = 0
-                for post in self.postArray2 {
-                    if post.id == postData.id {
-                        index = self.postArray2.index(of: post)!
-                        break
+                if let uid = FIRAuth.auth()?.currentUser?.uid {
+                    guard let `self` = self else { return }
+                    let postData = PostData(snapshot: snapshot, myId: uid)
+                    
+                    var index: Int = 0
+                    for post in self.postArray {
+                        if post.id == postData.id {
+                            index = self.postArray.index(of: post)!
+                            break
+                        }
                     }
+                    
+                    self.postArray.remove(at: index)
+                    self.postArray.insert(postData, at: index)
+                    self.tableView.reloadData()
+                    
                 }
-                //なんでindexは1以上も対応できているのか
-                self.postArray2.remove(at: index)
-                self.postArray2.insert(postData, at: index)
-                self.tableView.reloadData()
-            }
-        })
+            })
+            //俺が新しくできた　言うたらこれは一回のみでしょ？上は何回もできるけど
+            FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: {[weak self] snapshot in
+                
+                if let uid = FIRAuth.auth()?.currentUser?.uid {
+                    guard let `self` = self else { return }
+                    let postData = PostData2(snapshot: snapshot, myId: uid)
+                    self.postArray2.insert(postData, at: 0)
+                    
+                    self.tableView.reloadData()
+                }
+            })
+            //俺だけが変更した　これがあるから他の人は何も変わらずまま自分だけ変わる　１以上の投稿の場合も大丈夫なのか
+            FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: {[weak self] snapshot in
+                
+                if let uid = FIRAuth.auth()?.currentUser?.uid {
+                    guard let `self` = self else { return }
+                    let postData = PostData2(snapshot: snapshot, myId: uid)
+                    var index: Int = 0
+                    for post in self.postArray2 {
+                        if post.id == postData.id {
+                            index = self.postArray2.index(of: post)!
+                            break
+                        }
+                    }
+                    //なんでindexは1以上も対応できているのか
+                    self.postArray2.remove(at: index)
+                    self.postArray2.insert(postData, at: index)
+                    self.tableView.reloadData()
+                }
+            })
+            observing = true
+        }
         
     }
     
@@ -386,11 +389,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (ko == true){
-            return 0
-        }else{
-            return postArray.count
-        }
+        return postArray.count
     }
     
     
@@ -473,7 +472,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     }
     //全部大丈夫なのか
     @IBAction func backGo(_ sender: AnyObject) {
-        ko = true
         timer.invalidate()
         timer2.invalidate()
         self.dismiss(animated: true, completion: nil)
