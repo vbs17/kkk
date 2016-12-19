@@ -32,6 +32,8 @@ class LoginViewController: UIViewController{
                 print(error)
                 return
             }
+            let ProfileRef = FIRDatabase.database().reference(withPath: CommonConst.Profile).child(user!.uid)
+            ProfileRef.keepSynced(true)
             // ログインしていたらログイン画面を閉じる
             let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Tab")
             self.present(loginViewController!, animated: true, completion: nil)
