@@ -209,7 +209,7 @@ class ProViewController: UIViewController,UITextFieldDelegate{
     }
     
     
-    //ここいじった
+    //ここいじった syugoやった
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
