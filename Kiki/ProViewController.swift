@@ -20,6 +20,7 @@ class ProViewController: UIViewController,UITextFieldDelegate{
     @IBOutlet weak var ta: UITextField!
     @IBOutlet weak var back: UIButton!
     var selectedTextField = UITextField()
+    var rect:CGRect!
     
     
     
@@ -182,10 +183,11 @@ class ProViewController: UIViewController,UITextFieldDelegate{
     
     func updateScrollViewSize(_ moveSize: CGFloat, duration: TimeInterval) {
         scrollView.contentSize = CGSize(width: 0.0,height: scrollView.frame.size.height + moveSize )
+        scrollView.isScrollEnabled = false
         UIView.beginAnimations("ResizeForKeyboard", context: nil)
         UIView.setAnimationDuration(duration)
         
-        var move = moveSize - selectedTextField.frame.origin.y
+        var move = moveSize - rect.origin.y
         if ( move > 0  ) { move = 0 }
         if ( -move > moveSize ) { move = moveSize }
         
@@ -240,13 +242,16 @@ class ProViewController: UIViewController,UITextFieldDelegate{
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         selectedTextField = textField
-        
+        scrollView.layoutIfNeeded()
+        textField.layoutIfNeeded()
+        let displayRect = textField.convert(textField.bounds, to: scrollView)
+        rect = displayRect
     }
     
     func dismissKeyboard(){
         view.endEditing(true)
+        scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height)
     }
-    
     
     
     
