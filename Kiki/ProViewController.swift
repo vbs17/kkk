@@ -187,7 +187,7 @@ class ProViewController: UIViewController,UITextFieldDelegate{
         UIView.beginAnimations("ResizeForKeyboard", context: nil)
         UIView.setAnimationDuration(duration)
         
-        var move = moveSize - rect.origin.y
+        var move = moveSize - rect.origin.y - rect.size.height - 30
         if ( move > 0  ) { move = 0 }
         if ( -move > moveSize ) { move = moveSize }
         
