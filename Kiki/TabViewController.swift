@@ -40,14 +40,24 @@ class TabViewController: UIViewController {
         super.viewDidLoad()
         music1.layer.cornerRadius = 2
         music1.clipsToBounds = true
+        music1.layer.borderWidth = 1
+        music1.layer.borderColor = UIColor.white.cgColor
         recpic1.layer.cornerRadius = 2
         recpic1.clipsToBounds = true
+        recpic1.layer.borderWidth = 1
+        recpic1.layer.borderColor = UIColor.white.cgColor
         set1.layer.cornerRadius = 2
         set1.clipsToBounds = true
+        set1.layer.borderWidth = 1
+        set1.layer.borderColor = UIColor.white.cgColor
         guitar.layer.cornerRadius = guitar.frame.size.width / 2
         guitar.clipsToBounds = true
+        guitar.layer.borderWidth = 1
+        guitar.layer.borderColor = UIColor.white.cgColor
         pro.layer.cornerRadius = pro.frame.size.width / 2
         pro.clipsToBounds = true
+        pro.layer.borderWidth = 1
+        pro.layer.borderColor = UIColor.white.cgColor
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
