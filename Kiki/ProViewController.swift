@@ -88,12 +88,17 @@ class ProViewController: UIViewController,UITextFieldDelegate{
         }
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        imageView.layer.cornerRadius = imageView.frame.size.width / 2
+        
+        imageView.clipsToBounds = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.layer.cornerRadius = imageView.frame.size.width / 2
-
-        imageView.clipsToBounds = true
+        
        
         back.layer.cornerRadius = 37
         back.clipsToBounds = true
