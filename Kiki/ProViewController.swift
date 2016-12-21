@@ -209,16 +209,16 @@ class ProViewController: UIViewController,UITextFieldDelegate{
     }
     
     
-    
+    //ここいじった
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         NotificationCenter.default.addObserver(self,
-                                                         selector: #selector(SyugoViewController.keyboardWillBeShown(_:)),
+                                                         selector: #selector(ProViewController.keyboardWillBeShown(_:)),
                                                          name: NSNotification.Name.UIKeyboardWillShow,
                                                          object: nil)
         NotificationCenter.default.addObserver(self,
-                                                         selector: #selector(SyugoViewController.keyboardWillBeHidden(_:)),
+                                                         selector: #selector(ProViewController.keyboardWillBeHidden(_:)),
                                                          name: NSNotification.Name.UIKeyboardWillHide,
                                                          object: nil)
     }
