@@ -1373,13 +1373,13 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LeL-tf-Q7b">
-                                        <rect key="frame" x="81" y="332" width="211" height="264"/>
+                                        <rect key="frame" x="35" y="332" width="305" height="264"/>
                                         <color key="backgroundColor" red="0.93950425392670156" green="0.93950425392670156" blue="0.93950425392670156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtB-QM-tGh">
-                                        <rect key="frame" x="164" y="604" width="46" height="43"/>
+                                        <rect key="frame" x="163.5" y="604" width="46" height="43"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="NXy-4k-I3P"/>
@@ -1392,9 +1392,9 @@
                                             <action selector="Ok:" destination="PVm-is-tOa" eventType="touchUpInside" id="SGD-y9-ua9"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="撮った場所をマップで　　　　調べて書こう　　　　　　　　　　(例)東京都八王子市横川町711-7" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctH-X7-gzY">
-                                        <rect key="frame" x="81" y="332" width="211" height="264"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="撮った場所をマップで調べて書こう　　　　　　　　　　　　　　　　(例)東京都八王子市横川町711-7" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctH-X7-gzY">
+                                        <rect key="frame" x="35" y="332" width="305" height="264"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1403,25 +1403,25 @@
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="LeL-tf-Q7b" firstAttribute="top" secondItem="2lz-H5-osz" secondAttribute="bottom" constant="27" id="03f-yP-r6l"/>
-                                    <constraint firstItem="gtB-QM-tGh" firstAttribute="centerX" secondItem="LeL-tf-Q7b" secondAttribute="centerX" id="5So-hx-1wR"/>
+                                    <constraint firstItem="gtB-QM-tGh" firstAttribute="centerX" secondItem="LeL-tf-Q7b" secondAttribute="centerX" constant="-1" id="5So-hx-1wR"/>
                                     <constraint firstItem="EaN-UD-tSA" firstAttribute="leading" secondItem="9Hg-tD-J7y" secondAttribute="leading" constant="67" id="7sd-1y-u4T"/>
                                     <constraint firstAttribute="bottom" secondItem="O9O-qy-qVx" secondAttribute="bottom" id="9gK-no-eqa"/>
                                     <constraint firstAttribute="trailing" secondItem="O9O-qy-qVx" secondAttribute="trailing" id="HDw-nw-soT"/>
                                     <constraint firstItem="80V-dG-t7Q" firstAttribute="top" secondItem="EaN-UD-tSA" secondAttribute="bottom" constant="8" id="ICr-7v-982"/>
                                     <constraint firstItem="gtB-QM-tGh" firstAttribute="top" secondItem="LeL-tf-Q7b" secondAttribute="bottom" constant="8" id="IGz-zE-c0Q"/>
-                                    <constraint firstItem="ctH-X7-gzY" firstAttribute="leading" secondItem="9Hg-tD-J7y" secondAttribute="leading" constant="81" id="LSq-xs-D9k"/>
+                                    <constraint firstItem="ctH-X7-gzY" firstAttribute="leading" secondItem="9Hg-tD-J7y" secondAttribute="leading" constant="35" id="LSq-xs-D9k"/>
                                     <constraint firstAttribute="trailing" secondItem="80V-dG-t7Q" secondAttribute="trailing" constant="84" id="MCq-ae-sTJ"/>
-                                    <constraint firstItem="LeL-tf-Q7b" firstAttribute="leading" secondItem="9Hg-tD-J7y" secondAttribute="leading" constant="81" id="PDj-3B-lle"/>
+                                    <constraint firstItem="LeL-tf-Q7b" firstAttribute="leading" secondItem="9Hg-tD-J7y" secondAttribute="leading" constant="35" id="PDj-3B-lle"/>
                                     <constraint firstItem="EaN-UD-tSA" firstAttribute="top" secondItem="9Hg-tD-J7y" secondAttribute="top" constant="25" id="V2u-Lp-UnI"/>
                                     <constraint firstItem="O9O-qy-qVx" firstAttribute="top" secondItem="9Hg-tD-J7y" secondAttribute="top" id="Vk9-PM-gE5"/>
                                     <constraint firstItem="O9O-qy-qVx" firstAttribute="leading" secondItem="9Hg-tD-J7y" secondAttribute="leading" id="Ye9-ic-Mle"/>
                                     <constraint firstItem="2lz-H5-osz" firstAttribute="top" secondItem="9MD-wS-bkP" secondAttribute="bottom" constant="8" id="aeL-Pk-rW0"/>
                                     <constraint firstAttribute="trailing" secondItem="9MD-wS-bkP" secondAttribute="trailing" constant="84" id="b51-09-Cb4"/>
                                     <constraint firstItem="2lz-H5-osz" firstAttribute="leading" secondItem="9Hg-tD-J7y" secondAttribute="leading" constant="82" id="evg-3t-lGt"/>
-                                    <constraint firstAttribute="trailing" secondItem="ctH-X7-gzY" secondAttribute="trailing" constant="83" id="g7e-ne-y2S"/>
+                                    <constraint firstAttribute="trailing" secondItem="ctH-X7-gzY" secondAttribute="trailing" constant="35" id="g7e-ne-y2S"/>
                                     <constraint firstAttribute="bottom" secondItem="gtB-QM-tGh" secondAttribute="bottom" constant="20" id="mDY-Z2-Ajv"/>
                                     <constraint firstItem="9MD-wS-bkP" firstAttribute="top" secondItem="80V-dG-t7Q" secondAttribute="bottom" constant="8" id="mYs-SN-vG1"/>
-                                    <constraint firstAttribute="trailing" secondItem="LeL-tf-Q7b" secondAttribute="trailing" constant="83" id="mhQ-4W-WKi"/>
+                                    <constraint firstAttribute="trailing" secondItem="LeL-tf-Q7b" secondAttribute="trailing" constant="35" id="mhQ-4W-WKi"/>
                                     <constraint firstAttribute="trailing" secondItem="2lz-H5-osz" secondAttribute="trailing" constant="83" id="oce-pp-pqD"/>
                                     <constraint firstItem="ctH-X7-gzY" firstAttribute="top" secondItem="2lz-H5-osz" secondAttribute="bottom" constant="27" id="q2R-HU-1KA"/>
                                     <constraint firstItem="gtB-QM-tGh" firstAttribute="top" secondItem="ctH-X7-gzY" secondAttribute="bottom" constant="8" id="qH5-mN-FNi"/>
@@ -1460,7 +1460,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3846" y="-2197"/>
+            <point key="canvasLocation" x="3845.5999999999999" y="-2197.1514242878561"/>
         </scene>
         <!--Syutyu4 View Controller-->
         <scene sceneID="lhF-CW-V4r">
