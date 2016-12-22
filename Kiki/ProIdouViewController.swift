@@ -9,19 +9,37 @@ class ProIdouViewController: UIViewController {
     var uid:String!
     @IBOutlet weak var imageView: UIImageView!
     
-    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var name: UITextField!
     
-    @IBOutlet weak var line: UILabel!
-    @IBOutlet weak var face: UILabel!
-    @IBOutlet weak var insta: UILabel!
-    @IBOutlet weak var p: UILabel!
+    @IBOutlet weak var line: UITextField!
+    @IBOutlet weak var twitter: UITextField!
+    
+    @IBOutlet weak var face: UITextField!
+    @IBOutlet weak var insta: UITextField!
+    @IBOutlet weak var p: UITextField!
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        imageView.layer.cornerRadius = imageView.frame.size.width / 2
+        
+        imageView.clipsToBounds = true
+    }
 
-    @IBOutlet weak var twitter: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.layer.cornerRadius = imageView.frame.size.width / 2
-        imageView.clipsToBounds = true
+        
+        name.isUserInteractionEnabled = false
+        line.isUserInteractionEnabled = false
+        twitter.isUserInteractionEnabled = false
+        face.isUserInteractionEnabled = false
+        insta.isUserInteractionEnabled = false
+        p.isUserInteractionEnabled = false
+        
+        
+        
         FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: { snapshot in
             
             let postData = PostData2(snapshot: snapshot, myId: snapshot.key)
@@ -61,7 +79,7 @@ class ProIdouViewController: UIViewController {
     
     @IBAction func back(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
-
+        
     }
     
     
