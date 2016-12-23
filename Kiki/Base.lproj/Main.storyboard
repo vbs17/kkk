@@ -13,134 +13,147 @@
     </dependencies>
     <scenes>
         <!--Tab View Controller-->
-        <scene sceneID="oay-y2-Rqy">
-            <objects>
-                <viewController storyboardIdentifier="Tab" id="xtg-j0-lo1" customClass="TabViewController" customModule="Kiki" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JpE-vq-bxS"/>
-                        <viewControllerLayoutGuide type="bottom" id="7LG-om-QHz"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleAspectFill" id="sx5-dV-ikd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="778" translatesAutoresizingMaskIntoConstraints="NO" id="ag9-GW-vmP">
-                                <rect key="frame" x="0.0" y="-100" width="375" height="667"/>
-                                <color key="tintColor" red="0.99647290050000004" green="0.63966908040000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxZ-E7-MVy" customClass="SpringButton" customModule="Spring">
-                                <rect key="frame" x="250" y="567" width="125" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="mt4-yj-Etj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <size key="titleShadowOffset" width="2" height="2"/>
-                                <state key="normal" title="MEET" backgroundImage="33-1">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="path:" destination="xtg-j0-lo1" eventType="touchUpInside" id="yx5-vq-Qon"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDJ-wC-UCP" customClass="SpringButton" customModule="Spring">
-                                <rect key="frame" x="0.0" y="567" width="125" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="448-IL-TdL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <size key="titleShadowOffset" width="2" height="1"/>
-                                <state key="normal" title="MUSIC" backgroundImage="33-1">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.1074934555" green="0.09623322829" blue="0.042639232169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="music:" destination="xtg-j0-lo1" eventType="touchUpInside" id="YJ3-yh-2Uv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IcT-JV-gPt" customClass="SpringButton" customModule="Spring">
-                                <rect key="frame" x="125" y="567" width="125" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="vkI-Z5-3bY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <size key="titleShadowOffset" width="2" height="1"/>
-                                <state key="normal" title="REC&amp;PIC" backgroundImage="14-4">
-                                    <color key="titleColor" red="1" green="0.50207196659999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="recpic:" destination="xtg-j0-lo1" eventType="touchUpInside" id="PBN-0B-eVE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAG-Ih-VpW">
-                                <rect key="frame" x="279" y="467" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="ONE-Xk-ePd"/>
-                                    <constraint firstAttribute="height" constant="80" id="hPX-xV-Ij2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <size key="titleShadowOffset" width="2" height="1"/>
-                                <state key="normal" title="PROFILE" backgroundImage="2222">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="pro:" destination="xtg-j0-lo1" eventType="touchUpInside" id="luH-DQ-t5r"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWO-hD-pUu">
-                                <rect key="frame" x="20" y="467" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="OZu-LM-wHI"/>
-                                    <constraint firstAttribute="width" constant="80" id="fJP-YA-nHb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="REQUEST" backgroundImage="1111">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="guitargo:" destination="xtg-j0-lo1" eventType="touchUpInside" id="jWd-x2-tX9"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supersonic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvF-sl-eQ7">
-                                <rect key="frame" x="135" y="50" width="105.5" height="25.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" red="0.79590788639999999" green="1" blue="0.50505725369999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="LDJ-wC-UCP" secondAttribute="bottom" id="3vE-95-2jD"/>
-                            <constraint firstItem="7LG-om-QHz" firstAttribute="top" secondItem="uxZ-E7-MVy" secondAttribute="bottom" id="7o8-Tj-QeY"/>
-                            <constraint firstItem="7LG-om-QHz" firstAttribute="top" secondItem="IcT-JV-gPt" secondAttribute="bottom" id="9IB-rF-xot"/>
-                            <constraint firstItem="IcT-JV-gPt" firstAttribute="top" secondItem="ag9-GW-vmP" secondAttribute="bottom" id="BIr-vU-SW0"/>
-                            <constraint firstItem="LDJ-wC-UCP" firstAttribute="top" secondItem="tWO-hD-pUu" secondAttribute="bottom" constant="20" id="Cee-6f-VVR"/>
-                            <constraint firstItem="uxZ-E7-MVy" firstAttribute="top" secondItem="mAG-Ih-VpW" secondAttribute="bottom" constant="20" id="Ez2-no-RMN"/>
-                            <constraint firstItem="IcT-JV-gPt" firstAttribute="leading" secondItem="LDJ-wC-UCP" secondAttribute="trailing" id="FSl-fd-RhI"/>
-                            <constraint firstItem="tWO-hD-pUu" firstAttribute="leading" secondItem="sx5-dV-ikd" secondAttribute="leading" constant="20" id="H2g-Vo-7Cg"/>
-                            <constraint firstAttribute="trailing" secondItem="uxZ-E7-MVy" secondAttribute="trailing" id="Hbh-FQ-IXb"/>
-                            <constraint firstAttribute="trailing" secondItem="ag9-GW-vmP" secondAttribute="trailing" id="NMs-yX-weA"/>
-                            <constraint firstAttribute="bottom" secondItem="uxZ-E7-MVy" secondAttribute="bottom" id="Rcq-ok-uCM"/>
-                            <constraint firstItem="uxZ-E7-MVy" firstAttribute="leading" secondItem="IcT-JV-gPt" secondAttribute="trailing" id="Rka-wb-8jb"/>
-                            <constraint firstItem="ag9-GW-vmP" firstAttribute="leading" secondItem="sx5-dV-ikd" secondAttribute="leading" id="Vtm-1t-nPw"/>
-                            <constraint firstItem="IcT-JV-gPt" firstAttribute="width" secondItem="LDJ-wC-UCP" secondAttribute="width" id="Yme-0o-0hr"/>
-                            <constraint firstItem="7LG-om-QHz" firstAttribute="top" secondItem="LDJ-wC-UCP" secondAttribute="bottom" id="bUr-BQ-O0a"/>
-                            <constraint firstItem="ag9-GW-vmP" firstAttribute="height" secondItem="sx5-dV-ikd" secondAttribute="height" id="gdB-WP-kOn"/>
-                            <constraint firstAttribute="bottom" secondItem="IcT-JV-gPt" secondAttribute="bottom" id="hZk-YX-no7"/>
-                            <constraint firstItem="mAG-Ih-VpW" firstAttribute="trailing" secondItem="sx5-dV-ikd" secondAttribute="trailingMargin" id="hfh-GL-Qka"/>
-                            <constraint firstItem="LDJ-wC-UCP" firstAttribute="top" secondItem="tWO-hD-pUu" secondAttribute="bottom" constant="20" id="kyE-5K-9uP"/>
-                            <constraint firstItem="nvF-sl-eQ7" firstAttribute="top" secondItem="JpE-vq-bxS" secondAttribute="bottom" constant="30" id="ldB-Cs-EWC"/>
-                            <constraint firstItem="nvF-sl-eQ7" firstAttribute="centerX" secondItem="sx5-dV-ikd" secondAttribute="centerX" id="mgD-91-GSv"/>
-                            <constraint firstItem="tWO-hD-pUu" firstAttribute="leading" secondItem="sx5-dV-ikd" secondAttribute="leading" constant="20" id="vc0-s1-lYG"/>
-                            <constraint firstItem="LDJ-wC-UCP" firstAttribute="leading" secondItem="sx5-dV-ikd" secondAttribute="leading" id="woU-uC-PjN"/>
-                            <constraint firstItem="uxZ-E7-MVy" firstAttribute="width" secondItem="LDJ-wC-UCP" secondAttribute="width" id="yUB-dH-Ul0"/>
-                            <constraint firstItem="ag9-GW-vmP" firstAttribute="width" secondItem="sx5-dV-ikd" secondAttribute="width" id="z0O-0e-l5M"/>
-                        </constraints>
-                        
+<scene sceneID="oay-y2-Rqy">
+<objects>
+<viewController storyboardIdentifier="Tab" id="xtg-j0-lo1" customClass="TabViewController" customModule="Kiki" customModuleProvider="target" sceneMemberID="viewController">
+<layoutGuides>
+<viewControllerLayoutGuide type="top" id="JpE-vq-bxS"/>
+<viewControllerLayoutGuide type="bottom" id="7LG-om-QHz"/>
+</layoutGuides>
+<view key="view" contentMode="scaleAspectFill" id="sx5-dV-ikd">
+<rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<subviews>
+<imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="778" translatesAutoresizingMaskIntoConstraints="NO" id="ag9-GW-vmP">
+<rect key="frame" x="0.0" y="-100" width="375" height="667"/>
+<color key="tintColor" red="0.99647290050000004" green="0.63966908040000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</imageView>
+<button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxZ-E7-MVy" customClass="SpringButton" customModule="Spring">
+<rect key="frame" x="250" y="567" width="125" height="100"/>
+<constraints>
+<constraint firstAttribute="height" constant="100" id="mt4-yj-Etj"/>
+</constraints>
+<fontDescription key="fontDescription" type="system" pointSize="20"/>
+<size key="titleShadowOffset" width="2" height="2"/>
+<state key="normal" title="MEET" backgroundImage="33-1">
+<color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</state>
+<connections>
+<action selector="path:" destination="xtg-j0-lo1" eventType="touchUpInside" id="yx5-vq-Qon"/>
+</connections>
+</button>
+<button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDJ-wC-UCP" customClass="SpringButton" customModule="Spring">
+<rect key="frame" x="0.0" y="567" width="125" height="100"/>
+<constraints>
+<constraint firstAttribute="height" constant="100" id="448-IL-TdL"/>
+</constraints>
+<fontDescription key="fontDescription" type="system" pointSize="20"/>
+<size key="titleShadowOffset" width="2" height="1"/>
+<state key="normal" title="MUSIC" backgroundImage="33-1">
+<color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<color key="titleShadowColor" red="0.1074934555" green="0.09623322829" blue="0.042639232169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</state>
+<connections>
+<action selector="music:" destination="xtg-j0-lo1" eventType="touchUpInside" id="YJ3-yh-2Uv"/>
+</connections>
+</button>
+<button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IcT-JV-gPt" customClass="SpringButton" customModule="Spring">
+<rect key="frame" x="125" y="567" width="125" height="100"/>
+<constraints>
+<constraint firstAttribute="height" constant="100" id="vkI-Z5-3bY"/>
+</constraints>
+<fontDescription key="fontDescription" type="system" pointSize="20"/>
+<size key="titleShadowOffset" width="2" height="1"/>
+<state key="normal" title="REC&amp;PIC" backgroundImage="14-4">
+<color key="titleColor" red="1" green="0.50207196659999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</state>
+<connections>
+<action selector="recpic:" destination="xtg-j0-lo1" eventType="touchUpInside" id="PBN-0B-eVE"/>
+</connections>
+</button>
+<button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAG-Ih-VpW">
+<rect key="frame" x="279" y="467" width="80" height="80"/>
+<constraints>
+<constraint firstAttribute="width" constant="80" id="ONE-Xk-ePd"/>
+<constraint firstAttribute="height" constant="80" id="hPX-xV-Ij2"/>
+</constraints>
+<fontDescription key="fontDescription" type="system" pointSize="15"/>
+<size key="titleShadowOffset" width="2" height="1"/>
+<state key="normal" title="PROFILE" backgroundImage="2222">
+<color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</state>
+<connections>
+<action selector="pro:" destination="xtg-j0-lo1" eventType="touchUpInside" id="luH-DQ-t5r"/>
+</connections>
+</button>
+<button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWO-hD-pUu">
+<rect key="frame" x="20" y="467" width="80" height="80"/>
+<constraints>
+<constraint firstAttribute="height" constant="80" id="OZu-LM-wHI"/>
+<constraint firstAttribute="width" constant="80" id="fJP-YA-nHb"/>
+</constraints>
+<fontDescription key="fontDescription" type="system" pointSize="15"/>
+<size key="titleShadowOffset" width="1" height="1"/>
+<state key="normal" title="REQUEST" backgroundImage="1111">
+<color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</state>
+<connections>
+<action selector="guitargo:" destination="xtg-j0-lo1" eventType="touchUpInside" id="jWd-x2-tX9"/>
+</connections>
+</button>
+<label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supersonic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvF-sl-eQ7">
+<rect key="frame" x="135" y="50" width="105.5" height="25.5"/>
+<fontDescription key="fontDescription" type="system" pointSize="21"/>
+<color key="textColor" red="0.79590788639999999" green="1" blue="0.50505725369999999" alpha="1" colorSpace="calibratedRGB"/>
+<nil key="highlightedColor"/>
+</label>
+</subviews>
+<color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<constraints>
+<constraint firstAttribute="bottom" secondItem="LDJ-wC-UCP" secondAttribute="bottom" id="3vE-95-2jD"/>
+<constraint firstItem="7LG-om-QHz" firstAttribute="top" secondItem="uxZ-E7-MVy" secondAttribute="bottom" id="7o8-Tj-QeY"/>
+<constraint firstItem="7LG-om-QHz" firstAttribute="top" secondItem="IcT-JV-gPt" secondAttribute="bottom" id="9IB-rF-xot"/>
+<constraint firstItem="IcT-JV-gPt" firstAttribute="top" secondItem="ag9-GW-vmP" secondAttribute="bottom" id="BIr-vU-SW0"/>
+<constraint firstItem="LDJ-wC-UCP" firstAttribute="top" secondItem="tWO-hD-pUu" secondAttribute="bottom" constant="20" id="Cee-6f-VVR"/>
+<constraint firstItem="uxZ-E7-MVy" firstAttribute="top" secondItem="mAG-Ih-VpW" secondAttribute="bottom" constant="20" id="Ez2-no-RMN"/>
+<constraint firstItem="IcT-JV-gPt" firstAttribute="leading" secondItem="LDJ-wC-UCP" secondAttribute="trailing" id="FSl-fd-RhI"/>
+<constraint firstItem="tWO-hD-pUu" firstAttribute="leading" secondItem="sx5-dV-ikd" secondAttribute="leading" constant="20" id="H2g-Vo-7Cg"/>
+<constraint firstAttribute="trailing" secondItem="uxZ-E7-MVy" secondAttribute="trailing" id="Hbh-FQ-IXb"/>
+<constraint firstAttribute="trailing" secondItem="ag9-GW-vmP" secondAttribute="trailing" id="NMs-yX-weA"/>
+<constraint firstAttribute="bottom" secondItem="uxZ-E7-MVy" secondAttribute="bottom" id="Rcq-ok-uCM"/>
+<constraint firstItem="uxZ-E7-MVy" firstAttribute="leading" secondItem="IcT-JV-gPt" secondAttribute="trailing" id="Rka-wb-8jb"/>
+<constraint firstItem="ag9-GW-vmP" firstAttribute="leading" secondItem="sx5-dV-ikd" secondAttribute="leading" id="Vtm-1t-nPw"/>
+<constraint firstItem="IcT-JV-gPt" firstAttribute="width" secondItem="LDJ-wC-UCP" secondAttribute="width" id="Yme-0o-0hr"/>
+<constraint firstItem="7LG-om-QHz" firstAttribute="top" secondItem="LDJ-wC-UCP" secondAttribute="bottom" id="bUr-BQ-O0a"/>
+<constraint firstItem="ag9-GW-vmP" firstAttribute="height" secondItem="sx5-dV-ikd" secondAttribute="height" id="gdB-WP-kOn"/>
+<constraint firstAttribute="bottom" secondItem="IcT-JV-gPt" secondAttribute="bottom" id="hZk-YX-no7"/>
+<constraint firstItem="mAG-Ih-VpW" firstAttribute="trailing" secondItem="sx5-dV-ikd" secondAttribute="trailingMargin" id="hfh-GL-Qka"/>
+<constraint firstItem="LDJ-wC-UCP" firstAttribute="top" secondItem="tWO-hD-pUu" secondAttribute="bottom" constant="20" id="kyE-5K-9uP"/>
+<constraint firstItem="nvF-sl-eQ7" firstAttribute="top" secondItem="JpE-vq-bxS" secondAttribute="bottom" constant="30" id="ldB-Cs-EWC"/>
+<constraint firstItem="nvF-sl-eQ7" firstAttribute="centerX" secondItem="sx5-dV-ikd" secondAttribute="centerX" id="mgD-91-GSv"/>
+<constraint firstItem="tWO-hD-pUu" firstAttribute="leading" secondItem="sx5-dV-ikd" secondAttribute="leading" constant="20" id="vc0-s1-lYG"/>
+<constraint firstItem="LDJ-wC-UCP" firstAttribute="leading" secondItem="sx5-dV-ikd" secondAttribute="leading" id="woU-uC-PjN"/>
+<constraint firstItem="uxZ-E7-MVy" firstAttribute="width" secondItem="LDJ-wC-UCP" secondAttribute="width" id="yUB-dH-Ul0"/>
+<constraint firstItem="ag9-GW-vmP" firstAttribute="width" secondItem="sx5-dV-ikd" secondAttribute="width" id="z0O-0e-l5M"/>
+</constraints>
+</view>
+<connections>
+<outlet property="guitar" destination="tWO-hD-pUu" id="Wnh-vZ-s8g"/>
+<outlet property="music1" destination="LDJ-wC-UCP" id="lwN-vC-2r8"/>
+<outlet property="pro" destination="mAG-Ih-VpW" id="p10-Vy-i2W"/>
+<outlet property="recpic1" destination="IcT-JV-gPt" id="QUs-UT-dJ4"/>
+<outlet property="set1" destination="uxZ-E7-MVy" id="Rwi-nB-Apk"/>
+</connections>
+</viewController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="iqD-rh-6D3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="2396" y="-5009.1454272863575"/>
+</scene>
+
         <!--Home View Controller1-->
         <scene sceneID="Kr5-Qj-Pfq">
             <objects>
