@@ -151,8 +151,6 @@ class HomeTableViewCell: UITableViewCell {
         onlabel2.text = "0:00"
         backButton.layer.cornerRadius = 5
         backButton.clipsToBounds = true
-        hyouka.layer.cornerRadius = 20
-        hyouka.clipsToBounds = true
         backButton.isEnabled = false
         imageView1.layer.cornerRadius = 22.2
         imageView1.clipsToBounds = true
