@@ -428,6 +428,9 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             
             FIRDatabase.database().reference().child(CommonConst.songData).child(postData.song!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                 guard let `self` = self else { return }
+                if self.observing == false {
+                    return
+                }
                 SVProgressHUD.dismiss()
                 let realsong = snapshot.value as! String
                 let tap = Data(base64Encoded: realsong, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
@@ -496,6 +499,9 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        SVProgressHUD.dismiss()
+        observing = false
+        FIRDatabase.database().reference().removeAllObservers()
         if playSong != nil {
             playSong.stop()
             timer.invalidate()
