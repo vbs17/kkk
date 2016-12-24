@@ -16,6 +16,7 @@
 		B007C1BA1DE95D92006F1883 /* MergeAudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = B007C1B91DE95D92006F1883 /* MergeAudioFile.m */; };
 		B00D7CF51DCEB5190042D04F /* MixerMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = B00D7CF41DCEB5190042D04F /* MixerMeter.m */; };
 		B0190A211DB20FE400FA066D /* KindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0190A201DB20FE400FA066D /* KindViewController.swift */; };
+		B020D0AB1E0F405A005A1363 /* PostData4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B020D0AA1E0F405A005A1363 /* PostData4.swift */; };
 		B029E58A1DE1A17C00C7EDDF /* IyaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029E5891DE1A17C00C7EDDF /* IyaViewController.swift */; };
 		B03151761DAE6A06007EE64C /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03151751DAE6A06007EE64C /* PlayViewController.swift */; };
 		B042A0171DB983620068D205 /* BasyoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B042A0161DB983620068D205 /* BasyoViewController.swift */; };
@@ -81,6 +82,7 @@
 		B00D7CF31DCEB5190042D04F /* MixerMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixerMeter.h; sourceTree = "<group>"; };
 		B00D7CF41DCEB5190042D04F /* MixerMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MixerMeter.m; sourceTree = "<group>"; };
 		B0190A201DB20FE400FA066D /* KindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KindViewController.swift; sourceTree = "<group>"; };
+		B020D0AA1E0F405A005A1363 /* PostData4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData4.swift; sourceTree = "<group>"; };
 		B029E5891DE1A17C00C7EDDF /* IyaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IyaViewController.swift; sourceTree = "<group>"; };
 		B03151751DAE6A06007EE64C /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		B042A0161DB983620068D205 /* BasyoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasyoViewController.swift; sourceTree = "<group>"; };
@@ -197,9 +199,10 @@
 			isa = PBXGroup;
 			children = (
 				B071D9671DB4E5040017E287 /* PostData.swift */,
-				B06968211DC60D6E00274DB1 /* PostData1.swift */,
 				B05E343E1DC8B57F00C271D3 /* PostData2.swift */,
 				B06606551DFC4B3100FD3E4C /* PostData3.swift */,
+				B06968211DC60D6E00274DB1 /* PostData1.swift */,
+				B020D0AA1E0F405A005A1363 /* PostData4.swift */,
 				B071D9651DB4D6140017E287 /* File.swift */,
 			);
 			name = PostData;
@@ -246,13 +249,13 @@
 				B05F577B1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift */,
 				B06B00441DDD4131000C545D /* OreViewController.swift */,
 				B071D9701DB509FA0017E287 /* TabViewController.swift */,
+				B05E34401DC8B6CF00C271D3 /* PostData */,
+				B0BD80DE1DC71B0D0056E1A5 /* 集合場所表示 */,
+				B042A0201DB98BBE0068D205 /* 集合場所投稿 */,
 				B0B263D21DB7467100C0F2A3 /* 音源投稿 */,
 				B00501BA1DB610D200319866 /* 音源表示 */,
-				B05E34401DC8B6CF00C271D3 /* PostData */,
 				B0BA8AE11DDD7E7500F00E38 /* LoginAka */,
-				B042A0201DB98BBE0068D205 /* 集合場所投稿 */,
 				B06491911DBAD0F000566A4B /* PROFILE */,
-				B0BD80DE1DC71B0D0056E1A5 /* 集合場所表示 */,
 				B0A78FDC1DACFF6500AC0513 /* Assets.xcassets */,
 				B0A78FDE1DACFF6500AC0513 /* LaunchScreen.storyboard */,
 				B08690771DB4A311006BB6FD /* GoogleService-Info.plist */,
@@ -485,6 +488,7 @@
 				B071309B1DC22D8800B8EEC1 /* 2TViewController.swift in Sources */,
 				B0B4481F1DD5AD04001DDD89 /* IkuTableViewCell.swift in Sources */,
 				B071D9661DB4D6140017E287 /* File.swift in Sources */,
+				B020D0AB1E0F405A005A1363 /* PostData4.swift in Sources */,
 				B0A9A1741DB1FDE00021D1CF /* OkViewController.swift in Sources */,
 				B071D9751DB50E670017E287 /* SetViewController.swift in Sources */,
 				B05F57761DDF4937006DB9A5 /* Syutyu1ViewController.swift in Sources */,

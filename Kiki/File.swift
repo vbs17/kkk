@@ -12,5 +12,6 @@ struct CommonConst {
     static let IsTutorial2 = "IsTutorial2"
     static let songData = "songData"
     static let image = "image"
+    static let image2 = "image2"
 
 }
