@@ -89,73 +89,15 @@ class ProViewController: UIViewController,UITextFieldDelegate{
         }
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        imageView.layer.cornerRadius = imageView.frame.size.width / 2
-        
-        imageView.clipsToBounds = true
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-       
-        back.layer.cornerRadius = 37
-        back.clipsToBounds = true
-        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
-        self.view.addGestureRecognizer(tapGesture)
-        
-        self.imageView.image = image
-        FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: { snapshot in
-            
-            let postData = PostData2(snapshot: snapshot, myId: snapshot.key)
-            
-            if ( postData.uid == FIRAuth.auth()?.currentUser?.uid ) {
-                
-                if self.image == nil {
-                    self.imageView.image = postData.image
-                }
-                self.name.text = postData.name
-                self.line.text = postData.line
-                self.twitter.text = postData.twitter
-                self.face.text = postData.facebook
-                self.den.text = postData.den
-                self.ta.text = postData.ta
-            }
-            else {
-            }
-        })
-        
-        FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: { snapshot in
-            if ( snapshot.key == FIRAuth.auth()?.currentUser?.uid ) {
-                let postData = PostData2(snapshot: snapshot, myId: snapshot.key)
-                if self.image == nil {
-                    self.imageView.image = postData.image
-                }
-                self.name.text = postData.name
-                self.line.text = postData.line
-                self.twitter.text = postData.twitter
-                self.face.text = postData.facebook
-                self.den.text = postData.den
-                self.ta.text = postData.ta
-            }
-            else {
-            }
-        })
-        
-        self.name.delegate = self
-        self.line.delegate = self
-        self.twitter.delegate = self
-        self.face.delegate = self
-        self.den.delegate = self
-        self.ta.delegate = self
-        
-    }
+   
     
     @IBAction func proI(_ sender: AnyObject) {
         let proiviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "ProI") as! ProIViewController
         self.present(proiviewcontroller, animated: true, completion: nil)
+    }
+    
+    @IBAction func back(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -168,9 +110,7 @@ class ProViewController: UIViewController,UITextFieldDelegate{
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func back(_ sender: AnyObject) {
-        self.dismiss(animated: true, completion: nil)
-    }
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -267,31 +207,93 @@ class ProViewController: UIViewController,UITextFieldDelegate{
             }
         }
     }
+
+
+    
+override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    
+    imageView.layer.cornerRadius = imageView.frame.size.width / 2
+    
+    imageView.clipsToBounds = true
 }
 
+override func viewDidLoad() {
+    super.viewDidLoad()
     
     
+    back.layer.cornerRadius = 37
+    back.clipsToBounds = true
+    let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
+    self.view.addGestureRecognizer(tapGesture)
     
+    self.imageView.image = image
+    FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: { snapshot in
+        
+        let postData = PostData2(snapshot: snapshot, myId: snapshot.key)
+        
+        if ( postData.uid == FIRAuth.auth()?.currentUser?.uid ) {
+            
+            if self.image == nil {
+                self.imageView.image = postData.image
+            }
+            self.name.text = postData.name
+            self.line.text = postData.line
+            self.twitter.text = postData.twitter
+            self.face.text = postData.facebook
+            self.den.text = postData.den
+            self.ta.text = postData.ta
+        }
+        else {
+        }
+    })
     
+    FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: { snapshot in
+        if ( snapshot.key == FIRAuth.auth()?.currentUser?.uid ) {
+            let postData = PostData2(snapshot: snapshot, myId: snapshot.key)
+            if self.image == nil {
+                self.imageView.image = postData.image
+            }
+            self.name.text = postData.name
+            self.line.text = postData.line
+            self.twitter.text = postData.twitter
+            self.face.text = postData.facebook
+            self.den.text = postData.den
+            self.ta.text = postData.ta
+        }
+        else {
+        }
+    })
     
+    self.name.delegate = self
+    self.line.delegate = self
+    self.twitter.delegate = self
+    self.face.delegate = self
+    self.den.delegate = self
+    self.ta.delegate = self
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+}
+
+}
 
 
 
 
 
-   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
