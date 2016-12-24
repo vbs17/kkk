@@ -169,11 +169,11 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 cell!.star3.isUserInteractionEnabled = true
                 cell!.star4.isUserInteractionEnabled = true
                 cell!.star5.isUserInteractionEnabled = true
-                cell?.star1.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
-                cell?.star2.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
-                cell?.star3.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
-                cell?.star4.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
-                cell?.star5.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
+                cell?.star1.setImage(UIImage(named:"sister7"), for: UIControlState())
+                cell?.star2.setImage(UIImage(named:"sister7"), for: UIControlState())
+                cell?.star3.setImage(UIImage(named:"sister7"), for: UIControlState())
+                cell?.star4.setImage(UIImage(named:"sister7"), for: UIControlState())
+                cell?.star5.setImage(UIImage(named:"sister7"), for: UIControlState())
             } else if cell!.edittingFlag == true{
                 cell!.hyouka.setTitleColor(UIColor.white, for: UIControlState())
                 cell!.edittingFlag = false

@@ -36,45 +36,45 @@ class HomeTableViewCell: UITableViewCell {
     func updateStar(_ ratingStr:Int) {
         switch  ratingStr {
         case 0:
-            star1.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
-            star2.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
-            star3.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
-            star4.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
-            star5.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
+            star1.setImage(UIImage(named:"sister7"), for: UIControlState())
+            star2.setImage(UIImage(named:"sister7"), for: UIControlState())
+            star3.setImage(UIImage(named:"sister7"), for: UIControlState())
+            star4.setImage(UIImage(named:"sister7"), for: UIControlState())
+            star5.setImage(UIImage(named:"sister7"), for: UIControlState())
         case 1:
-            star1.setImage(UIImage(named:"guitar3"), for: UIControlState())
-            star2.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
-            star3.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
-            star4.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
-            star5.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
+            star1.setImage(UIImage(named:"sister13"), for: UIControlState())
+            star2.setImage(UIImage(named:"sister7"), for: UIControlState())
+            star3.setImage(UIImage(named:"sister7"), for: UIControlState())
+            star4.setImage(UIImage(named:"sister7"), for: UIControlState())
+            star5.setImage(UIImage(named:"sister7"), for: UIControlState())
             
         case 2:
-            star1.setImage(UIImage(named:"guitar3"), for: UIControlState())
-            star2.setImage(UIImage(named:"guitar3"), for: UIControlState())
-            star3.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
-            star4.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
-            star5.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
+            star1.setImage(UIImage(named:"sister13"), for: UIControlState())
+            star2.setImage(UIImage(named:"sister13"), for: UIControlState())
+            star3.setImage(UIImage(named:"sister7"), for: UIControlState())
+            star4.setImage(UIImage(named:"sister7"), for: UIControlState())
+            star5.setImage(UIImage(named:"sister7"), for: UIControlState())
 
         case 3:
-            star1.setImage(UIImage(named:"guitar3"), for: UIControlState())
-            star2.setImage(UIImage(named:"guitar3"), for: UIControlState())
-            star3.setImage(UIImage(named:"guitar3"), for: UIControlState())
-            star4.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
-            star5.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
+            star1.setImage(UIImage(named:"sister13"), for: UIControlState())
+            star2.setImage(UIImage(named:"sister13"), for: UIControlState())
+            star3.setImage(UIImage(named:"sister13"), for: UIControlState())
+            star4.setImage(UIImage(named:"sister7"), for: UIControlState())
+            star5.setImage(UIImage(named:"sister7"), for: UIControlState())
             
         case 4:
-            star1.setImage(UIImage(named:"guitar3"), for: UIControlState())
-            star2.setImage(UIImage(named:"guitar3"), for: UIControlState())
-            star3.setImage(UIImage(named:"guitar3"), for: UIControlState())
-            star4.setImage(UIImage(named:"guitar3"), for: UIControlState())
-            star5.setImage(UIImage(named:"IMG_2728 2"), for: UIControlState())
+            star1.setImage(UIImage(named:"sister13"), for: UIControlState())
+            star2.setImage(UIImage(named:"sister13"), for: UIControlState())
+            star3.setImage(UIImage(named:"sister13"), for: UIControlState())
+            star4.setImage(UIImage(named:"sister13"), for: UIControlState())
+            star5.setImage(UIImage(named:"sister7"), for: UIControlState())
 
         case 5:
-            star1.setImage(UIImage(named:"guitar3"), for: UIControlState())
-            star2.setImage(UIImage(named:"guitar3"), for: UIControlState())
-            star3.setImage(UIImage(named:"guitar3"), for: UIControlState())
-            star4.setImage(UIImage(named:"guitar3"), for: UIControlState())
-            star5.setImage(UIImage(named:"guitar3"), for: UIControlState())
+            star1.setImage(UIImage(named:"sister13"), for: UIControlState())
+            star2.setImage(UIImage(named:"sister13"), for: UIControlState())
+            star3.setImage(UIImage(named:"sister13"), for: UIControlState())
+            star4.setImage(UIImage(named:"sister13"), for: UIControlState())
+            star5.setImage(UIImage(named:"sister13"), for: UIControlState())
         default: break
         }
     }
@@ -146,7 +146,7 @@ class HomeTableViewCell: UITableViewCell {
         super.awakeFromNib()
         nami.transform = CGAffineTransform(scaleX: 1.0, y: 30.0)
         nami.progressImage = UIImage(named: "Kiki45" )
-        nami.trackImage = UIImage(named: "Kiki41")
+        nami.trackImage = UIImage(named: "sister12")
         nami.progress = 0
         onlabel2.text = "0:00"
         backButton.layer.cornerRadius = 5
