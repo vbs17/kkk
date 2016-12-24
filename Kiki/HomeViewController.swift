@@ -72,6 +72,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             try session.setCategory(AVAudioSessionCategoryPlayback)
         } catch  {
             // エラー処理
+            fatalError("カテゴリ設定失敗")
         }
         
         // sessionのアクティブ化
@@ -79,6 +80,8 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             try session.setActive(true)
         } catch {
             // audio session有効化失敗時の処理
+            // (ここではエラーとして停止している）
+            fatalError("session有効化失敗")
         }
     }
     
