@@ -3,6 +3,8 @@ import Photos
 
 class ProIViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     @IBOutlet weak var back: UIButton!
+    var proViewController:ProViewController!
+
     
     
     @IBAction func camera(_ sender: AnyObject) {
@@ -35,13 +37,12 @@ class ProIViewController: UIViewController,UIImagePickerControllerDelegate, UINa
             
             DispatchQueue.main.async {
                 
-                let proviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Pro") as! ProViewController
                 let size = CGSize(width: 1242, height: 828)
                 UIGraphicsBeginImageContext(size)
                 image.draw(in: CGRect(x:0.0, y:0.0, width:size.width, height:size.height))
                 let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
-                proviewcontroller.image = resizeImage
-                self.present(proviewcontroller, animated: true, completion:  nil)
+                self.proViewController.imageView.image = resizeImage
+                self.dismiss(animated: true, completion: nil)
             }
         }
         picker.dismiss(animated: true, completion: nil)

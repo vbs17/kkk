@@ -23,7 +23,6 @@ class ProViewController: UIViewController,UITextFieldDelegate{
     var rect:CGRect!
     
     
-    
     @IBAction func post(_ sender: AnyObject) {
         if (self.imageView.image != nil && name.text!.characters.count > 0){
             let ud = UserDefaults.standard
@@ -93,6 +92,7 @@ class ProViewController: UIViewController,UITextFieldDelegate{
     
     @IBAction func proI(_ sender: AnyObject) {
         let proiviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "ProI") as! ProIViewController
+        proiviewcontroller.proViewController = self
         self.present(proiviewcontroller, animated: true, completion: nil)
     }
     
