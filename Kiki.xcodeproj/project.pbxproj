@@ -209,9 +209,9 @@
 			isa = PBXGroup;
 			children = (
 				B05E343A1DC8A53800C271D3 /* ProViewController.swift */,
-				B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */,
 				B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */,
 				B071D9741DB50E670017E287 /* SetViewController.swift */,
+				B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */,
 			);
 			name = PROFILE;
 			sourceTree = "<group>";

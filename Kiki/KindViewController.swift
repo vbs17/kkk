@@ -553,29 +553,32 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         // もし行が選択されている＝ジャンルが選択されている
         if isRowSelected {
             // セルが選択されている時の処理を記述
-            let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre)
+            let ongen = UUID().uuidString
+            let realSongdata = try? Data(contentsOf: URL(fileURLWithPath: songData.path))
+            let realsong = realSongdata!.base64EncodedString(options: [])
+            let songDataRef = FIRDatabase.database().reference().child(CommonConst.songData).child(ongen)
+            songDataRef.setValue(realsong)
+            // 画像保存
             let size = CGSize(width: 1242, height: 828)
             UIGraphicsBeginImageContext(size)
             image.draw(in: CGRect(x:0.0, y:0.0, width:size.width, height:size.height))
             let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             let imageData = UIImageJPEGRepresentation(resizeImage!, 0.5)
+            let postData3 = ["image": imageData!.base64EncodedString(options: .lineLength64Characters)];
+            let postRef3 = FIRDatabase.database().reference().child(CommonConst.image).child(genre)
+            postRef3.child(ongen).setValue(postData3)
+            // 投稿
+            let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre)
             let songName:NSString = songname.text! as NSString
             let kazu:NSString = byou.text! as NSString
-            let ongen = UUID().uuidString
-            let realSongdata = try? Data(contentsOf: URL(fileURLWithPath: songData.path))
-            let realsong = realSongdata!.base64EncodedString(options: [])
             let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
             let time = NSDate.timeIntervalSinceReferenceDate
             let postData = ["time":time,"byou": kazu, "songname": songName, "ongen": ongen, "uid":uid] as [String : Any]
             postRef.child(ongen).setValue(postData)
-            let songDataRef = FIRDatabase.database().reference().child(CommonConst.songData).child(ongen)
-            songDataRef.setValue(realsong)
-            let postData3 = ["image": imageData!.base64EncodedString(options: .lineLength64Characters)];
-            let postRef3 = FIRDatabase.database().reference().child(CommonConst.image).child(genre)
-            postRef3.child(ongen).setValue(postData3)
+            // 先頭に戻る
             self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
-        } else {
+            } else {
             // 行が選択されていない＝ジャンルが選択されていない
             let alert = UIAlertController()
             let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
