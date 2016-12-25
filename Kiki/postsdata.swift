@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 class postsdata: NSObject {
-    
+    dynamic var id: String?
     dynamic var name: String?
     dynamic var song: String?
     dynamic var byou: String?

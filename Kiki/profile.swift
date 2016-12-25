@@ -12,6 +12,7 @@ import RealmSwift
 class sprofileData: NSObject {
 
     dynamic var id: String?
+    dynamic var genre: String?
     dynamic var image: UIImage?
     dynamic var imageString: String?
     dynamic var name: String?
