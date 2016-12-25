@@ -17,6 +17,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     var timer = Timer()
     var timer2 = Timer()
     var back: UIButton!
+    //一回これで試してダメなら接続する
     var tableView: UITableView!
     var playingIndexPath:IndexPath!
     //    var ko = false
