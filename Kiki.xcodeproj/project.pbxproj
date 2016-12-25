@@ -27,7 +27,7 @@
 		B042A0221DB991150068D205 /* SyuruViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B042A0211DB991150068D205 /* SyuruViewController.swift */; };
 		B0479DB71E0FF77400B5B9B3 /* postsdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0479DB61E0FF77400B5B9B3 /* postsdata.swift */; };
 		B0479DB91E0FF77D00B5B9B3 /* imageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0479DB81E0FF77D00B5B9B3 /* imageData.swift */; };
-		B0479DBB1E0FF78E00B5B9B3 /* songData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0479DBA1E0FF78E00B5B9B3 /* songData.swift */; };
+		B0479DBB1E0FF78E00B5B9B3 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0479DBA1E0FF78E00B5B9B3 /* profile.swift */; };
 		B05E343B1DC8A53800C271D3 /* ProViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343A1DC8A53800C271D3 /* ProViewController.swift */; };
 		B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */; };
 		B05E343F1DC8B57F00C271D3 /* PostData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343E1DC8B57F00C271D3 /* PostData2.swift */; };
@@ -97,7 +97,7 @@
 		B042A0211DB991150068D205 /* SyuruViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyuruViewController.swift; sourceTree = "<group>"; };
 		B0479DB61E0FF77400B5B9B3 /* postsdata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = postsdata.swift; sourceTree = "<group>"; };
 		B0479DB81E0FF77D00B5B9B3 /* imageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageData.swift; sourceTree = "<group>"; };
-		B0479DBA1E0FF78E00B5B9B3 /* songData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = songData.swift; sourceTree = "<group>"; };
+		B0479DBA1E0FF78E00B5B9B3 /* profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
 		B05E343A1DC8A53800C271D3 /* ProViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProViewController.swift; sourceTree = "<group>"; };
 		B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProIViewController.swift; sourceTree = "<group>"; };
 		B05E343E1DC8B57F00C271D3 /* PostData2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData2.swift; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 			children = (
 				B0479DB61E0FF77400B5B9B3 /* postsdata.swift */,
 				B0479DB81E0FF77D00B5B9B3 /* imageData.swift */,
-				B0479DBA1E0FF78E00B5B9B3 /* songData.swift */,
+				B0479DBA1E0FF78E00B5B9B3 /* profile.swift */,
 			);
 			name = realm;
 			sourceTree = "<group>";
@@ -510,7 +510,7 @@
 				B071D9681DB4E5040017E287 /* PostData.swift in Sources */,
 				B05F577C1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift in Sources */,
 				B007C1BA1DE95D92006F1883 /* MergeAudioFile.m in Sources */,
-				B0479DBB1E0FF78E00B5B9B3 /* songData.swift in Sources */,
+				B0479DBB1E0FF78E00B5B9B3 /* profile.swift in Sources */,
 				B0ABF85C1DB0EE21001987E7 /* SendViewController.swift in Sources */,
 				B00D7CF51DCEB5190042D04F /* MixerMeter.m in Sources */,
 				B0BA8AE01DDD79D800F00E38 /* Tyu3ViewController.swift in Sources */,

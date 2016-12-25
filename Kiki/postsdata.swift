@@ -15,7 +15,7 @@ class postsdata: NSObject {
     dynamic var song: String?
     dynamic var byou: String?
     dynamic var star: Array<[String:String]> = []
-    dynamic var time: Double?
+    var time: RealmOptional<Double>?
     dynamic var uid: String?
 
     
