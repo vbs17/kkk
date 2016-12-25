@@ -213,15 +213,23 @@
 			name = postData2;
 			sourceTree = "<group>";
 		};
+		B0479DBC1E0FF8ED00B5B9B3 /* realm */ = {
+			isa = PBXGroup;
+			children = (
+				B0479DB61E0FF77400B5B9B3 /* postsdata.swift */,
+				B0479DB81E0FF77D00B5B9B3 /* imageData.swift */,
+				B0479DBA1E0FF78E00B5B9B3 /* songData.swift */,
+			);
+			name = realm;
+			sourceTree = "<group>";
+		};
 		B05E34401DC8B6CF00C271D3 /* PostData */ = {
 			isa = PBXGroup;
 			children = (
 				B071D9671DB4E5040017E287 /* PostData.swift */,
-				B05E343E1DC8B57F00C271D3 /* PostData2.swift */,
 				B06606551DFC4B3100FD3E4C /* PostData3.swift */,
-				B0479DB61E0FF77400B5B9B3 /* postsdata.swift */,
-				B0479DB81E0FF77D00B5B9B3 /* imageData.swift */,
-				B0479DBA1E0FF78E00B5B9B3 /* songData.swift */,
+				B05E343E1DC8B57F00C271D3 /* PostData2.swift */,
+				B0479DBC1E0FF8ED00B5B9B3 /* realm */,
 				B0479DB51E0FF69000B5B9B3 /* postData2 */,
 				B071D9651DB4D6140017E287 /* File.swift */,
 			);
