@@ -10,5 +10,7 @@ import UIKit
 import RealmSwift
 
 class imageData: NSObject {
+    dynamic var id: String?
+    dynamic var image: UIImage?
 
 }
