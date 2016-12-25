@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class songData: NSObject {
+class sprofileData: NSObject {
 
     dynamic var id: String?
     dynamic var image: UIImage?
