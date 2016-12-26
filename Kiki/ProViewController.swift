@@ -228,12 +228,12 @@ override func viewDidLoad() {
     self.view.addGestureRecognizer(tapGesture)
     
     self.imageView.image = image
-    FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: { snapshot in
-        
+    FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: {[weak self] snapshot in
         let postData = PostData2(snapshot: snapshot, myId: snapshot.key)
         
         if ( postData.uid == FIRAuth.auth()?.currentUser?.uid ) {
             
+            guard let `self` = self else { return }
             if self.image == nil {
                 self.imageView.image = postData.image
             }
@@ -248,8 +248,9 @@ override func viewDidLoad() {
         }
     })
     
-    FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: { snapshot in
+    FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: {[weak self] snapshot in
         if ( snapshot.key == FIRAuth.auth()?.currentUser?.uid ) {
+            guard let `self` = self else { return }
             let postData = PostData2(snapshot: snapshot, myId: snapshot.key)
             if self.image == nil {
                 self.imageView.image = postData.image
@@ -264,7 +265,6 @@ override func viewDidLoad() {
         else {
         }
     })
-    
     self.name.delegate = self
     self.line.delegate = self
     self.twitter.delegate = self
