@@ -426,9 +426,8 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 }}
             
             timer.invalidate()
-            playingIndexPath = indexPath
             //ここもポイント
-            SVProgressHUD.show(withStatus: "   最高にクールな音質に仕上げています😉(最大5秒)                 こいつのオリジナルソングがお前のセンスにあえば左上のProfileボタンをタップして連絡とれ😎")
+            SVProgressHUD.show(withStatus: "   最高にクールな音質に仕上げています😉(最大5秒)                 このオリジナルソングが君のセンスにあえば左上のProfileボタンをタップして連絡とれ😎")
             
             FIRDatabase.database().reference().child(CommonConst.songData).child(postData.song!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                 guard let `self` = self else { return }
@@ -437,6 +436,10 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 }
                 SVProgressHUD.dismiss()
                 let realsong = snapshot.value as! String
+                if self.presentedViewController != nil {
+                    return
+                }
+                self.playingIndexPath = indexPath
                 let tap = Data(base64Encoded: realsong, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
                 self.playSong = try! AVAudioPlayer(data:tap!)
                 self.playSong.delegate = self
@@ -503,14 +506,19 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        SVProgressHUD.dismiss()
-        observing = false
-        FIRDatabase.database().reference().removeAllObservers()
-        if playSong != nil {
-            playSong.stop()
-            timer.invalidate()
-        }else{
-            
+        if presentedViewController == nil {
+            SVProgressHUD.dismiss()
+            observing = false
+            FIRDatabase.database().reference().removeAllObservers()
+            if playSong != nil {
+                playSong.stop()
+                timer.invalidate()
+            }
         }
-    }
+}
+
+
+
+
+
 }
