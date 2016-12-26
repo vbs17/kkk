@@ -435,11 +435,11 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                     return
                 }
                 SVProgressHUD.dismiss()
-                let realsong = snapshot.value as! String
                 if self.presentedViewController != nil {
                     return
                 }
                 self.playingIndexPath = indexPath
+                let realsong = snapshot.value as! String
                 let tap = Data(base64Encoded: realsong, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
                 self.playSong = try! AVAudioPlayer(data:tap!)
                 self.playSong.delegate = self
