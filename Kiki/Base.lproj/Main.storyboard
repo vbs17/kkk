@@ -628,7 +628,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="f-1" translatesAutoresizingMaskIntoConstraints="NO" id="9UY-qb-VzS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0005" translatesAutoresizingMaskIntoConstraints="NO" id="9UY-qb-VzS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgN-MS-TB0">
@@ -653,12 +653,13 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQN-8n-vak">
                                 <rect key="frame" x="21" y="548" width="70" height="70"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="8eM-Vy-XGn"/>
                                     <constraint firstAttribute="width" constant="70" id="Q6y-Ys-Szb"/>
                                 </constraints>
-                                <state key="normal" title="back" backgroundImage="4444">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="back">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="back:" destination="yK8-ZF-6tx" eventType="touchUpInside" id="Bp1-h3-heZ"/>
@@ -773,7 +774,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="f-1" translatesAutoresizingMaskIntoConstraints="NO" id="B5J-oz-sas">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0011" translatesAutoresizingMaskIntoConstraints="NO" id="B5J-oz-sas">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alm-4N-oJ8">
@@ -783,7 +784,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <size key="titleShadowOffset" width="2" height="1"/>
-                                <state key="normal" title="REC" backgroundImage="f-1">
+                                <state key="normal" title="REC" backgroundImage="0012">
                                     <color key="titleColor" red="1" green="0.27777903949999999" blue="0.42538812990000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -798,7 +799,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <size key="titleShadowOffset" width="1" height="2"/>
-                                <state key="normal" title="集合場所の写真" backgroundImage="f-1">
+                                <state key="normal" title="集合場所の写真" backgroundImage="0006">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -808,12 +809,13 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLU-gx-D3A">
                                 <rect key="frame" x="24" y="538" width="71" height="71"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="71" id="EDt-VW-P64"/>
                                     <constraint firstAttribute="height" constant="71" id="kJX-sU-oyr"/>
                                 </constraints>
-                                <state key="normal" title="BACK" backgroundImage="4444">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="BACK">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="back:" destination="KJh-XF-xtE" eventType="touchUpInside" id="sjI-kG-sDD"/>
@@ -1222,7 +1224,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Hg-tD-J7y">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="f-1" translatesAutoresizingMaskIntoConstraints="NO" id="O9O-qy-qVx">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0008" translatesAutoresizingMaskIntoConstraints="NO" id="O9O-qy-qVx">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EaN-UD-tSA">
@@ -1507,14 +1509,16 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5H-rz-lF5">
                                         <rect key="frame" x="8" y="4" width="80" height="80"/>
+                                        <color key="backgroundColor" red="1" green="0.07029228354" blue="0.004821727992" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="sev-6P-IV5"/>
                                             <constraint firstAttribute="width" constant="80" id="xyo-k9-EM1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="REC" backgroundImage="f-1">
-                                            <color key="titleColor" red="1" green="0.14454209879999999" blue="0.30022567849999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="titleShadowColor" red="1" green="0.27777903949999999" blue="0.42538812990000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="titleShadowOffset" width="2" height="1"/>
+                                        <state key="normal" title="REC">
+                                            <color key="titleColor" red="0.99707542540000005" green="0.02128435892" blue="0.42451708300000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="recordStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VtQ-eH-abY"/>
@@ -1553,7 +1557,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="f-1" translatesAutoresizingMaskIntoConstraints="NO" id="4FA-kF-0cf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0012" translatesAutoresizingMaskIntoConstraints="NO" id="4FA-kF-0cf">
                                 <rect key="frame" x="0.0" y="60" width="375" height="519"/>
                             </imageView>
                         </subviews>
@@ -2000,7 +2004,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="f-1" translatesAutoresizingMaskIntoConstraints="NO" id="WSd-h2-WGP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0007" translatesAutoresizingMaskIntoConstraints="NO" id="WSd-h2-WGP">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="581"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hj2-VD-ta4">
@@ -2056,13 +2060,14 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ku3-qH-Cuu">
                                         <rect key="frame" x="37" y="5" width="90" height="75"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="9JO-sB-xdI"/>
                                             <constraint firstAttribute="width" constant="90" id="wwV-XC-6vb"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <size key="titleShadowOffset" width="2" height="1"/>
-                                        <state key="normal" title="RETAKE" backgroundImage="f-1">
+                                        <state key="normal" title="RETAKE">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -2072,13 +2077,14 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHg-Lp-WH1">
                                         <rect key="frame" x="247" y="5" width="90" height="75"/>
+                                        <color key="backgroundColor" red="0.48721868730000001" green="0.99707542540000005" blue="0.39195992070000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="VE4-9N-10J"/>
                                             <constraint firstAttribute="width" constant="90" id="nQS-dF-hJY"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <size key="titleShadowOffset" width="2" height="1"/>
-                                        <state key="normal" title="OK" backgroundImage="f-1">
+                                        <state key="normal" title="OK">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -2126,7 +2132,6 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isn-xc-4on">
                                 <rect key="frame" x="174" y="165" width="26" height="72"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="mKz-fy-f7j"/>
                                     <constraint firstAttribute="width" constant="26" id="rVG-k6-n3Q"/>
@@ -2184,34 +2189,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="f-1" translatesAutoresizingMaskIntoConstraints="NO" id="htG-PC-cXM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0003" translatesAutoresizingMaskIntoConstraints="NO" id="htG-PC-cXM">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAJ-gL-CUg">
-                                <rect key="frame" x="115" y="367" width="172" height="76"/>
+                                <rect key="frame" x="93" y="233" width="172" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="CAMERA">
-                                    <color key="titleColor" red="0.1074934555" green="0.09623322829" blue="0.042639232169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="camGo:" destination="Wv3-pr-LgI" eventType="touchUpInside" id="F6A-nU-amv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="アルバムのジャケット選択" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efZ-Eb-80p">
-                                <rect key="frame" x="56" y="293" width="261" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" red="0.99647290050000004" green="0.63966908040000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GcG-RX-Xgp">
-                                <rect key="frame" x="115" y="481" width="172" height="76"/>
+                                <rect key="frame" x="93" y="356" width="172" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="LIBRARY">
-                                    <color key="titleColor" red="0.10749345549738221" green="0.096233228288226419" blue="0.042639232166160286" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -2248,18 +2246,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="f-1" translatesAutoresizingMaskIntoConstraints="NO" id="pAn-dF-Wmc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0013" translatesAutoresizingMaskIntoConstraints="NO" id="pAn-dF-Wmc">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PrO-id-UbE">
                                 <rect key="frame" x="30" y="540" width="72" height="72"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="Mdq-Kq-Lgo"/>
                                     <constraint firstAttribute="height" constant="72" id="Z1e-Zt-PPx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="BACK" backgroundImage="4444">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="BACK">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="backGo:" destination="8fA-9I-P2z" eventType="touchUpInside" id="1KW-DL-bLx"/>
@@ -3047,11 +3046,18 @@
         </scene>
     </scenes>
     <resources>
+        <image name="0003" width="1242" height="1863"/>
+        <image name="0005" width="1242" height="1863"/>
+        <image name="0006" width="1242" height="1766"/>
+        <image name="0007" width="1242" height="829"/>
+        <image name="0008" width="1242" height="1656"/>
+        <image name="0011" width="1242" height="1656"/>
+        <image name="0012" width="1242" height="1863"/>
+        <image name="0013" width="1242" height="883"/>
         <image name="1111" width="1242" height="828"/>
         <image name="14-4" width="1242" height="972"/>
         <image name="2222" width="1242" height="975"/>
         <image name="33-1" width="1242" height="823"/>
-        <image name="4444" width="1242" height="828"/>
         <image name="5555" width="1242" height="804"/>
         <image name="778" width="1242" height="1861"/>
         <image name="IMG_3522" width="1932" height="2576"/>
