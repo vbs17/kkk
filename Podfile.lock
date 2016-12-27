@@ -32,6 +32,7 @@ PODS:
   - GoogleSymbolUtilities (1.1.1)
   - GoogleUtilities (1.3.1):
     - GoogleSymbolUtilities (~> 1.0)
+  - Reachability (3.2)
   - Realm (2.1.2):
     - Realm/Headers (= 2.1.2)
   - Realm/Headers (2.1.2)
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - Firebase
   - Firebase/Auth
   - Firebase/Database
+  - Reachability
   - Realm (from `https://github.com/realm/realm-cocoa.git`, branch `master`)
   - RealmSwift (from `https://github.com/realm/realm-cocoa.git`, branch `master`)
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
@@ -94,6 +96,7 @@ SPEC CHECKSUMS:
   GoogleNetworkingUtilities: 3e83269048cfb498dc7ec83ab36813360965c74f
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   Realm: efe855f4d977c8ce5a82d3116d9f1ff155a6550c
   RealmSwift: 1ecd6f956dada3d1f9a0e577dd52518099b935bc
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
@@ -101,6 +104,6 @@ SPEC CHECKSUMS:
   TwitterCore: 95c46af93112768a7983bd370d66023553601d01
   TwitterKit: dd8042698b0ff5bd3066fa919b3b2b50d8eed829
 
-PODFILE CHECKSUM: faa1bc3420770d7c192ea5fe509bd95cd05013c4
+PODFILE CHECKSUM: 00f7e5deccd2b589f6d617dc752eb79b613d3bb0
 
 COCOAPODS: 1.0.1

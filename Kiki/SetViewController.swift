@@ -1,7 +1,6 @@
 
 
 import UIKit
-import ESTabBarController
 import Firebase
 import FirebaseAuth
 import SVProgressHUD

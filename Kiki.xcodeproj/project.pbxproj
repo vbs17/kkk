@@ -25,9 +25,6 @@
 		B042A01E1DB98BB30068D205 /* SyugoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B042A01C1DB98BB30068D205 /* SyugoTableViewCell.swift */; };
 		B042A01F1DB98BB30068D205 /* SyugoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B042A01D1DB98BB30068D205 /* SyugoTableViewCell.xib */; };
 		B042A0221DB991150068D205 /* SyuruViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B042A0211DB991150068D205 /* SyuruViewController.swift */; };
-		B0479DB71E0FF77400B5B9B3 /* postsdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0479DB61E0FF77400B5B9B3 /* postsdata.swift */; };
-		B0479DB91E0FF77D00B5B9B3 /* imageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0479DB81E0FF77D00B5B9B3 /* imageData.swift */; };
-		B0479DBB1E0FF78E00B5B9B3 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0479DBA1E0FF78E00B5B9B3 /* profile.swift */; };
 		B05E343B1DC8A53800C271D3 /* ProViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343A1DC8A53800C271D3 /* ProViewController.swift */; };
 		B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */; };
 		B05E343F1DC8B57F00C271D3 /* PostData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343E1DC8B57F00C271D3 /* PostData2.swift */; };
@@ -51,7 +48,6 @@
 		B071D9711DB509FA0017E287 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071D9701DB509FA0017E287 /* TabViewController.swift */; };
 		B071D9731DB50C4E0017E287 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071D9721DB50C4E0017E287 /* LoginViewController.swift */; };
 		B071D9751DB50E670017E287 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071D9741DB50E670017E287 /* SetViewController.swift */; };
-		B0741EFD1E0FE37D0091ACC5 /* realmdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0741EFC1E0FE37D0091ACC5 /* realmdata.swift */; };
 		B07E94E71DCDC766009537A7 /* ProIdouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */; };
 		B08690781DB4A311006BB6FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B08690771DB4A311006BB6FD /* GoogleService-Info.plist */; };
 		B088CB221DDB34C7007CE03D /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088CB211DDB34C7007CE03D /* Photos.framework */; };
@@ -95,9 +91,6 @@
 		B042A01C1DB98BB30068D205 /* SyugoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyugoTableViewCell.swift; sourceTree = "<group>"; };
 		B042A01D1DB98BB30068D205 /* SyugoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SyugoTableViewCell.xib; sourceTree = "<group>"; };
 		B042A0211DB991150068D205 /* SyuruViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyuruViewController.swift; sourceTree = "<group>"; };
-		B0479DB61E0FF77400B5B9B3 /* postsdata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = postsdata.swift; sourceTree = "<group>"; };
-		B0479DB81E0FF77D00B5B9B3 /* imageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageData.swift; sourceTree = "<group>"; };
-		B0479DBA1E0FF78E00B5B9B3 /* profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
 		B05E343A1DC8A53800C271D3 /* ProViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProViewController.swift; sourceTree = "<group>"; };
 		B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProIViewController.swift; sourceTree = "<group>"; };
 		B05E343E1DC8B57F00C271D3 /* PostData2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData2.swift; sourceTree = "<group>"; };
@@ -121,7 +114,6 @@
 		B071D9701DB509FA0017E287 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		B071D9721DB50C4E0017E287 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B071D9741DB50E670017E287 /* SetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
-		B0741EFC1E0FE37D0091ACC5 /* realmdata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = realmdata.swift; sourceTree = "<group>"; };
 		B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProIdouViewController.swift; sourceTree = "<group>"; };
 		B08690771DB4A311006BB6FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B088CB211DDB34C7007CE03D /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
@@ -179,7 +171,6 @@
 		B00501BA1DB610D200319866 /* 音源表示 */ = {
 			isa = PBXGroup;
 			children = (
-				B0741EFC1E0FE37D0091ACC5 /* realmdata.swift */,
 				B071D96E1DB4EA9B0017E287 /* HomeViewController.swift */,
 				B00501B81DB610D200319866 /* HomeTableViewCell.swift */,
 				B00501B91DB610D200319866 /* HomeTableViewCell.xib */,
@@ -213,23 +204,12 @@
 			name = postData2;
 			sourceTree = "<group>";
 		};
-		B0479DBC1E0FF8ED00B5B9B3 /* realm */ = {
-			isa = PBXGroup;
-			children = (
-				B0479DB61E0FF77400B5B9B3 /* postsdata.swift */,
-				B0479DB81E0FF77D00B5B9B3 /* imageData.swift */,
-				B0479DBA1E0FF78E00B5B9B3 /* profile.swift */,
-			);
-			name = realm;
-			sourceTree = "<group>";
-		};
 		B05E34401DC8B6CF00C271D3 /* PostData */ = {
 			isa = PBXGroup;
 			children = (
 				B071D9671DB4E5040017E287 /* PostData.swift */,
 				B06606551DFC4B3100FD3E4C /* PostData3.swift */,
 				B05E343E1DC8B57F00C271D3 /* PostData2.swift */,
-				B0479DBC1E0FF8ED00B5B9B3 /* realm */,
 				B0479DB51E0FF69000B5B9B3 /* postData2 */,
 				B071D9651DB4D6140017E287 /* File.swift */,
 			);
@@ -502,7 +482,6 @@
 				B0B4481C1DD5ACE4001DDD89 /* IkuViewController.swift in Sources */,
 				B00501BE1DB6420800319866 /* ItiranViewController.swift in Sources */,
 				B0190A211DB20FE400FA066D /* KindViewController.swift in Sources */,
-				B0741EFD1E0FE37D0091ACC5 /* realmdata.swift in Sources */,
 				B06968221DC60D6E00274DB1 /* PostData1.swift in Sources */,
 				B00501BB1DB610D200319866 /* HomeTableViewCell.swift in Sources */,
 				B05E343B1DC8A53800C271D3 /* ProViewController.swift in Sources */,
@@ -510,7 +489,6 @@
 				B071D9681DB4E5040017E287 /* PostData.swift in Sources */,
 				B05F577C1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift in Sources */,
 				B007C1BA1DE95D92006F1883 /* MergeAudioFile.m in Sources */,
-				B0479DBB1E0FF78E00B5B9B3 /* profile.swift in Sources */,
 				B0ABF85C1DB0EE21001987E7 /* SendViewController.swift in Sources */,
 				B00D7CF51DCEB5190042D04F /* MixerMeter.m in Sources */,
 				B0BA8AE01DDD79D800F00E38 /* Tyu3ViewController.swift in Sources */,
@@ -534,8 +512,6 @@
 				B0BA8ADE1DDD79BC00F00E38 /* Tyu2ViewController.swift in Sources */,
 				B05F57781DDF4942006DB9A5 /* Syutyu2ViewController.swift in Sources */,
 				B06968241DC60E1400274DB1 /* Itiran1ViewController.swift in Sources */,
-				B0479DB71E0FF77400B5B9B3 /* postsdata.swift in Sources */,
-				B0479DB91E0FF77D00B5B9B3 /* imageData.swift in Sources */,
 				B042A0171DB983620068D205 /* BasyoViewController.swift in Sources */,
 				B00501C41DB6428500319866 /* ItiranTableViewCell.swift in Sources */,
 				B0BA8ADC1DDD79A800F00E38 /* TyuViewController.swift in Sources */,
