@@ -12,7 +12,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     let fileName = "sister.m4a"
     var timer: Timer!
     var timeCountTimer: Timer!
-    let photos = ["f-1"]
+    let photos = ["11114","11113","0014","11112","0004"]
     var count = 1
     var timeCount = 1
     var count1: Bool = false
@@ -144,22 +144,22 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
             count += 1
         }else if count == 2{
             count1 = true
-            image = UIImage(named: photos[0])
+            image = UIImage(named: photos[1])
             imageView.image = image
             count += 1
         }else if count == 3{
             count1 = true
-            image = UIImage(named: photos[0])
+            image = UIImage(named: photos[2])
             imageView.image = image
             count += 1
         }else if count == 4{
             count1 = true
-            image = UIImage(named: photos[0])
+            image = UIImage(named: photos[3])
             imageView.image = image
             count += 1
         }else if count == 5{
             count1 = true
-            image = UIImage(named: photos[0])
+            image = UIImage(named: photos[4])
             imageView.image = image
             sender.invalidate()
             audioRecorder?.prepareToRecord()
