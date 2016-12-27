@@ -653,13 +653,12 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQN-8n-vak">
                                 <rect key="frame" x="21" y="548" width="70" height="70"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="8eM-Vy-XGn"/>
                                     <constraint firstAttribute="width" constant="70" id="Q6y-Ys-Szb"/>
                                 </constraints>
                                 <state key="normal" title="back">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="back:" destination="yK8-ZF-6tx" eventType="touchUpInside" id="Bp1-h3-heZ"/>
@@ -703,7 +702,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3h1-7w-2ZI">
                                 <rect key="frame" x="156" y="266" width="72" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="logout"/>
+                                <state key="normal" title="logout">
+                                    <color key="titleColor" red="0.13855000200000001" green="0.64952392739999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="out:" destination="zwZ-af-wBJ" eventType="touchUpInside" id="CWX-1s-Rqk"/>
                                 </connections>
@@ -799,7 +800,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <size key="titleShadowOffset" width="1" height="2"/>
-                                <state key="normal" title="集合場所の写真" backgroundImage="0006">
+                                <state key="normal" title="集合場所の写真" backgroundImage="37">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -1509,7 +1510,6 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5H-rz-lF5">
                                         <rect key="frame" x="8" y="4" width="80" height="80"/>
-                                        <color key="backgroundColor" red="1" green="0.07029228354" blue="0.004821727992" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="sev-6P-IV5"/>
                                             <constraint firstAttribute="width" constant="80" id="xyo-k9-EM1"/>
@@ -1557,7 +1557,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0012" translatesAutoresizingMaskIntoConstraints="NO" id="4FA-kF-0cf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="11114" translatesAutoresizingMaskIntoConstraints="NO" id="4FA-kF-0cf">
                                 <rect key="frame" x="0.0" y="60" width="375" height="519"/>
                             </imageView>
                         </subviews>
@@ -1602,28 +1602,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgN-UY-FHm">
-                                <rect key="frame" x="143" y="228" width="46" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="223" translatesAutoresizingMaskIntoConstraints="NO" id="zfe-i3-F0r">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgN-UY-FHm">
+                                <rect key="frame" x="157" y="219" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="camera">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="camera:" destination="d6f-QV-nRc" eventType="touchUpInside" id="YzK-Gy-hzP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJC-76-WGX">
-                                <rect key="frame" x="143" y="339" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="library:" destination="d6f-QV-nRc" eventType="touchUpInside" id="x25-n0-Duv"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSE-88-tpU">
-                                <rect key="frame" x="143" y="477" width="46" height="30"/>
+                                <rect key="frame" x="36" y="536" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="back">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="back:" destination="d6f-QV-nRc" eventType="touchUpInside" id="9AJ-cF-JM9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJC-76-WGX">
+                                <rect key="frame" x="157" y="355" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="libraray">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="library:" destination="d6f-QV-nRc" eventType="touchUpInside" id="x25-n0-Duv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1635,7 +1649,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ef8-h5-IUs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3855" y="-3562"/>
+            <point key="canvasLocation" x="3853.5999999999999" y="-3562.6686656671668"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="eUK-ID-pDO">
@@ -1772,7 +1786,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gyn-iV-cPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2966" y="-2172"/>
+            <point key="canvasLocation" x="-7292" y="104"/>
         </scene>
         <!--Itiran1 View Controller-->
         <scene sceneID="CuS-43-C4p">
@@ -1990,7 +2004,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hoD-Al-3f3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2966" y="-1516"/>
+            <point key="canvasLocation" x="-7292" y="761"/>
         </scene>
         <!--Play View Controller-->
         <scene sceneID="rJ7-YK-V8d">
@@ -3048,16 +3062,18 @@
     <resources>
         <image name="0003" width="1242" height="1863"/>
         <image name="0005" width="1242" height="1863"/>
-        <image name="0006" width="1242" height="1766"/>
         <image name="0007" width="1242" height="829"/>
         <image name="0008" width="1242" height="1656"/>
         <image name="0011" width="1242" height="1656"/>
         <image name="0012" width="1242" height="1863"/>
         <image name="0013" width="1242" height="883"/>
         <image name="1111" width="1242" height="828"/>
+        <image name="11114" width="1242" height="828"/>
         <image name="14-4" width="1242" height="972"/>
         <image name="2222" width="1242" height="975"/>
+        <image name="223" width="1242" height="1863"/>
         <image name="33-1" width="1242" height="823"/>
+        <image name="37" width="2752" height="1835"/>
         <image name="5555" width="1242" height="804"/>
         <image name="778" width="1242" height="1861"/>
         <image name="IMG_3522" width="1932" height="2576"/>
