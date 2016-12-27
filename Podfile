@@ -11,13 +11,9 @@ target 'Kiki' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'SVProgressHUD'
-  pod 'ESTabBarController'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
   pod 'TwitterKit'
   pod 'Fabric'
-  pod 'Realm', git: 'https://github.com/realm/realm-cocoa.git', branch: 'master', submodules: true
-  pod 'RealmSwift', git: 'https://github.com/realm/realm-cocoa.git', branch: 'master', submodules: true
-
-pod 'Reachability'
+  pod 'Reachability'
   
 end
