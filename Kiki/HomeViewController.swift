@@ -267,9 +267,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     func getFirebaseData() {
         let uid = FIRAuth.auth()?.currentUser?.uid
         print("getFirebaseData")
-        //            FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).queryOrdered(byChild: "uid").queryStarting(atValue: start).queryLimited(toFirst: limit).observe(.value, with: { (snapshot) in
-        //
-        //2回目
+       
         FIRDatabase.database().reference().child(CommonConst.PostPATH).child(self.genre).queryOrdered(byChild: "time").queryEnding(atValue: self.dataLastVal).queryLimited(toLast: UInt(DisplayDataNumber)+1).observeSingleEvent(of: .value, with: { (snapshot) in
             
             
@@ -307,7 +305,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         
         if observing == false {
             FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).queryOrdered(byChild: "time").queryLimited(toLast: UInt(DisplayDataNumber)).observeSingleEvent(of: .value, with: { (snapshot) in
-                //        FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).queryOrdered(byChild: "time").observe(.value, with: { (snapshot) in
+               
                 
                 
                 var workArray:[PostData] = []
