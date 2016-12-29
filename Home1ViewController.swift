@@ -17,14 +17,17 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell22", for: indexPath) as! HomeTableViewCell1
         let uid = FIRAuth.auth()?.currentUser?.uid
+        //postData1
         cell.setPostData(postArray[indexPath.row], myid: uid!)
         let postData1 = postArray[indexPath.row]
         var image:UIImage? = nil
+        //postData2
         for id in postArray2{
             if postData1.uid == id.uid{
                 image = id.image
             }
         }
+        //ここは結構わかりやすくしてくれる
         cell.imageView1.image = image
         cell.pathGo.addTarget(self, action:#selector(schemebtn(_:event:)), for: UIControlEvents.touchUpInside)
         cell.pro.addTarget(self, action:#selector(pro(_:event:)), for: UIControlEvents.touchUpInside)
@@ -38,6 +41,7 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
         let point = touch!.location(in: self.tableView)
         let indexPath = tableView.indexPathForRow(at: point)
         let postData = postArray[indexPath!.row]
+        //IkuViewcontrollerがどこの画面かわかれば余裕
         let pro = self.storyboard?.instantiateViewController(withIdentifier: "Iku") as! IkuViewController
         pro.join = postData.join
         self.present(pro, animated: true, completion: nil)
@@ -63,8 +67,8 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if FIRAuth.auth()?.currentUser != nil {
-            if observing == false {
-                FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre).observe(.childAdded, with: { snapshot in
+            if observing == false {                              //posts2
+                 FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre).observe(.childAdded, with: { snapshot in
                     
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
                         let postData = PostData1(snapshot: snapshot, myId: uid)
@@ -72,12 +76,13 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
                         self.tableView.reloadData()
                     }
                 })
-                //ここもfunc hoshiと一緒
-                FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre).observe(.childChanged, with: { snapshot in
+                //更新ですねここは                        //posts2
+                 FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre).observe(.childChanged, with: { snapshot in
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
                         let postData = PostData1(snapshot: snapshot, myId: uid)
                         
                         var index: Int = 0
+                        //ここは同じデータ
                         for post in self.postArray {
                             if post.id == postData.id {
                                 index = self.postArray.index(of: post)!
@@ -98,7 +103,7 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
                         self.tableView.reloadData()
                     }
                 })
-                
+                //更新ですねここも
                 FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: { snapshot in
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
                         let postData = PostData2(snapshot: snapshot, myId: uid)
@@ -143,6 +148,7 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
             if postData.isLiked {
                 
                 var index = -1
+                //行くことを決めたのは自分の時の処理
                 for likeId in postData.join {
                     if likeId == uid {
                         index = postData.join.index(of: likeId)!
@@ -196,7 +202,7 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
 
 
 
-
+     //ここで入力したパスをそのままマップで推移してくれる
     func schemebtn(_ sender: UIButton, event:UIEvent) {
         let touch = event.allTouches?.first
         let point = touch!.location(in: self.tableView)
@@ -238,7 +244,6 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
     }
     
     
-    //無視
     
     @IBAction func back(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
