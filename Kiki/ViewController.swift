@@ -50,9 +50,9 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
             object: nil
         )
         byou.text = "0:00"
-        imageView.image = UIImage(named: "8")
-        recordImage?.setImage(nil, for: .normal)
-        recordImage?.setBackgroundImage(UIImage(named: "IMG_1718"), for: .normal)
+        imageView.image = UIImage(named: "11114")
+        //recordImage?.setImage(nil, for: .normal)
+        //recordImage?.setBackgroundImage(UIImage(named: "IMG_1718"), for: .normal)
         
         nami1.progress = 1
         nami2.progress = 1

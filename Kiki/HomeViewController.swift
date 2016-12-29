@@ -28,8 +28,8 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     @IBOutlet weak var lbl: UILabel!
     
+    //ここで行く人の画像profileが表示できるようになる
     func pro(_ sender: UIButton, event:UIEvent) {
-        //        ko = true
         let touch = event.allTouches?.first
         let point = touch!.location(in: self.tableView)
         let indexPath = tableView.indexPathForRow(at: point)
@@ -47,7 +47,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         
     }
     
-    
+    //スクロールしてデータ取得
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if(self.tableView.contentOffset.y == (self.tableView.contentSize.height - self.tableView.bounds.size.height))
         {
@@ -57,6 +57,37 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             
         }
     }
+    //postdataやfile.swiftを照らし合わせたらいける
+    func getFirebaseData() {
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        print("getFirebaseData")
+        
+        FIRDatabase.database().reference().child(CommonConst.PostPATH).child(self.genre).queryOrdered(byChild: "time").queryEnding(atValue: self.dataLastVal).queryLimited(toLast: UInt(DisplayDataNumber)+1).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            
+            print(snapshot.childrenCount)
+            
+            var workArray:[PostData] = []
+            for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
+                print(child)
+                let postData = PostData(snapshot: child, myId: uid!)
+                if postData.time != self.dataLastVal {
+                    workArray.insert(postData, at: 0)
+                }
+            }
+            if workArray.count > 0 {
+                self.postArray += workArray
+                self.tableView.reloadData()
+                
+                self.dataLastVal = workArray.last!.time!
+                print("dataLastVal=\(self.dataLastVal)")
+            }
+            
+        }, withCancel: {(err) in
+            print("getFirebaseData error")
+        })
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,16 +133,18 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             cell.onlabel2.text = "0:00"
             cell.backButton.isEnabled = false
         }
+        //100個あるなら100個分のデータを表示させる
         cell.setPostData(postArray[indexPath.row])
         let postData1 = postArray[indexPath.row]
         var image:UIImage? = nil
+        //profileのimage設置
         for id in postArray2{
             if postData1.uid == id.uid{
                 image = id.image
             }
         }
         cell.imageView1.image = image
-        // postData3(image)
+        // ジャケットのimage設置
         image = nil
         for postData3 in postArray3{
             if postData1.id == postData3.id {
@@ -120,11 +153,14 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }
         cell.ImageView.image = image
         if (image == nil) {
-            // Firebaseからイメージ読み込み
+            // Firebaseからイメージ読み込み                                                    //post
             FIRDatabase.database().reference().child(CommonConst.image).child(genre).child(postData1.id!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                 guard let `self` = self else { return }
+                //ジャケットのimage
                 let postData3 = PostData3(snapshot: snapshot, myId: postData1.uid!)
                 // すでに登録済みでなければ登録
+                //ここわからん
+                //このおかげでデータの取得するかどうか判別できるようになるとかかも
                 var index: Int = NSNotFound
                 for post in self.postArray3 {
                     if post.id == postData3.id {
@@ -264,35 +300,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         lbl.text = "誰もまだ投稿していません"
     }
     
-    func getFirebaseData() {
-        let uid = FIRAuth.auth()?.currentUser?.uid
-        print("getFirebaseData")
-       
-        FIRDatabase.database().reference().child(CommonConst.PostPATH).child(self.genre).queryOrdered(byChild: "time").queryEnding(atValue: self.dataLastVal).queryLimited(toLast: UInt(DisplayDataNumber)+1).observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            
-            print(snapshot.childrenCount)
-            
-            var workArray:[PostData] = []
-            for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
-                print(child)
-                let postData = PostData(snapshot: child, myId: uid!)
-                if postData.time != self.dataLastVal {
-                    workArray.insert(postData, at: 0)
-                }
-            }
-            if workArray.count > 0 {
-                self.postArray += workArray
-                self.tableView.reloadData()
-                
-                self.dataLastVal = workArray.last!.time!
-                print("dataLastVal=\(self.dataLastVal)")
-            }
-            
-        }, withCancel: {(err) in
-            print("getFirebaseData error")
-        })
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

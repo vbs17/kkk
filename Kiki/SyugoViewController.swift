@@ -67,8 +67,6 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = image
-        ok.layer.cornerRadius = 30
-        ok.clipsToBounds = true
         hiniti.delegate = self
         zikoku.delegate = self
         station.delegate = self
