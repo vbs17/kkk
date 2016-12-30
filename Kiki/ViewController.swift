@@ -12,7 +12,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     let fileName = "sister.m4a"
     var timer: Timer!
     var timeCountTimer: Timer!
-    let photos = ["11114","11113","0014","11112","0004"]
+    let photos = ["55","56","57","58","59","0004"]
     var count = 1
     var timeCount = 1
     var count1: Bool = false
@@ -51,8 +51,8 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
         )
         byou.text = "0:00"
         imageView.image = UIImage(named: "11114")
-        //recordImage?.setImage(nil, for: .normal)
-        //recordImage?.setBackgroundImage(UIImage(named: "IMG_1718"), for: .normal)
+        recordImage?.setImage(nil, for: .normal)
+        recordImage?.setBackgroundImage(UIImage(named: "kesiki"), for: .normal)
         
         nami1.progress = 1
         nami2.progress = 1
@@ -84,21 +84,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
         }
     }
     
-    //dB=-160 atai=0.0
-    //dB=-159 atai=0.0
-    //dB=-158 atai=0.0
-    //:
-    //dB=-78 atai=0.0
-    //dB=-77 atai=0.0
-    //dB=-76 atai=0.012987012987013
-    //dB=-75 atai=0.025974025974026
-    //:
-    //dB=-2 atai=0.974025974025974
-    //dB=-1 atai=0.987012987012987
-    //dB=0 atai=1.0
     
-    //・騒がしい場所で使うときは閾値を上げる。
-    //・大きな声を出せない場所では閾値を下げる。
     
     func levelTimerCallback() {
         audioRecorder.updateMeters()
@@ -137,29 +123,29 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     
     func nextPage (_ sender:Timer){
         
-        var image:UIImage! = UIImage(named: photos[0])
+        var image:UIImage! = UIImage(named: photos[1])
         if count == 1{
             count1 = true
             imageView.image = image;
             count += 1
         }else if count == 2{
             count1 = true
-            image = UIImage(named: photos[1])
+            image = UIImage(named: photos[2])
             imageView.image = image
             count += 1
         }else if count == 3{
             count1 = true
-            image = UIImage(named: photos[2])
+            image = UIImage(named: photos[3])
             imageView.image = image
             count += 1
         }else if count == 4{
             count1 = true
-            image = UIImage(named: photos[3])
+            image = UIImage(named: photos[4])
             imageView.image = image
             count += 1
         }else if count == 5{
             count1 = true
-            image = UIImage(named: photos[4])
+            image = UIImage(named: photos[5])
             imageView.image = image
             sender.invalidate()
             audioRecorder?.prepareToRecord()
