@@ -28,8 +28,7 @@ class BasyoViewController: UIViewController,UIImagePickerControllerDelegate, UIN
       }
     }
     @IBAction func back(_ sender: AnyObject) {
-        let ProViewController = self.storyboard?.instantiateViewController(withIdentifier: "Syuru")
-        self.present(ProViewController!, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {

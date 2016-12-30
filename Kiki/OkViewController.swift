@@ -3,7 +3,7 @@
 import UIKit
 import AVFoundation
 
-class OkViewController: UIViewController {
+class OkViewController: UIViewController,UITextFieldDelegate {
 
     var image: UIImage!
     //filenameをsongDataに渡す
@@ -23,10 +23,23 @@ class OkViewController: UIViewController {
         back.layer.cornerRadius = 25
         back.clipsToBounds = true
         imageView.image = image
-        
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tapGesture)
+
+
     
 
     }
+    
+    func dismissKeyboard(){
+        view.endEditing(true)
+    }
+    //?
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
