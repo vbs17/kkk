@@ -13,6 +13,8 @@ class Syutyu4ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let ud = UserDefaults.standard
+        //これで完了させてる
+        //basyoを見ればわかるそれ使えよ
         ud.set(true, forKey: CommonConst.IsTutorial2)
         ud.synchronize()
 

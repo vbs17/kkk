@@ -28,95 +28,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     @IBOutlet weak var lbl: UILabel!
     
-    //ここで行く人の画像profileが表示できるようになる
-    func pro(_ sender: UIButton, event:UIEvent) {
-        let touch = event.allTouches?.first
-        let point = touch!.location(in: self.tableView)
-        let indexPath = tableView.indexPathForRow(at: point)
-        let postData = postArray[indexPath!.row]
-        if playSong != nil {
-            if (playSong.isPlaying){
-                playSong.pause()
-                timer.invalidate()
-            }
-        }
-        let pro = self.storyboard?.instantiateViewController(withIdentifier: "Pi") as! ProIdouViewController
-        pro.uid = postData.uid
-        self.present(pro, animated: true, completion: nil)
-        
-        
-    }
-    
-    //スクロールしてデータ取得
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if(self.tableView.contentOffset.y == (self.tableView.contentSize.height - self.tableView.bounds.size.height))
-        {
-            //まだ表示するコンテンツが存在するか判定し存在するなら○件分を取得して表示更新する
-            print("scrolling to bottom")
-            getFirebaseData()
-            
-        }
-    }
-    //postdataやfile.swiftを照らし合わせたらいける
-    func getFirebaseData() {
-        let uid = FIRAuth.auth()?.currentUser?.uid
-        print("getFirebaseData")
-        
-        FIRDatabase.database().reference().child(CommonConst.PostPATH).child(self.genre).queryOrdered(byChild: "time").queryEnding(atValue: self.dataLastVal).queryLimited(toLast: UInt(DisplayDataNumber)+1).observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            
-            print(snapshot.childrenCount)
-            
-            var workArray:[PostData] = []
-            for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
-                print(child)
-                let postData = PostData(snapshot: child, myId: uid!)
-                if postData.time != self.dataLastVal {
-                    workArray.insert(postData, at: 0)
-                }
-            }
-            if workArray.count > 0 {
-                self.postArray += workArray
-                self.tableView.reloadData()
-                
-                self.dataLastVal = workArray.last!.time!
-                print("dataLastVal=\(self.dataLastVal)")
-            }
-            
-        }, withCancel: {(err) in
-            print("getFirebaseData error")
-        })
-    }
-
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        let nib = UINib(nibName: "HomeTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "CEll")
-        back.layer.cornerRadius = 37
-        back.clipsToBounds = true
-        let tblBackColor: UIColor = UIColor.clear
-        tableView.backgroundColor = tblBackColor
-        let session = AVAudioSession.sharedInstance()
-        do {
-            try session.setCategory(AVAudioSessionCategoryPlayback)
-        } catch  {
-            // エラー処理
-            fatalError("カテゴリ設定失敗")
-        }
-        
-        // sessionのアクティブ化
-        do {
-            try session.setActive(true)
-        } catch {
-            // audio session有効化失敗時の処理
-            // (ここではエラーとして停止している）
-            fatalError("session有効化失敗")
-        }
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CEll", for: indexPath) as! HomeTableViewCell
         cell.hyouka.setTitleColor(UIColor.white, for: UIControlState())
@@ -186,6 +97,97 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         cell.hyouka.addTarget(self, action: #selector(hyoukaGo), for: UIControlEvents.touchUpInside)
         return cell
     }
+
+    
+    //ここで行く人の画像profileが表示できるようになる
+    func pro(_ sender: UIButton, event:UIEvent) {
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        let postData = postArray[indexPath!.row]
+        if playSong != nil {
+            if (playSong.isPlaying){
+                playSong.pause()
+                timer.invalidate()
+            }
+        }
+        let pro = self.storyboard?.instantiateViewController(withIdentifier: "Pi") as! ProIdouViewController
+        pro.uid = postData.uid
+        self.present(pro, animated: true, completion: nil)
+        
+        
+    }
+    
+    //スクロールしてデータ取得
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if(self.tableView.contentOffset.y == (self.tableView.contentSize.height - self.tableView.bounds.size.height))
+        {
+            //まだ表示するコンテンツが存在するか判定し存在するなら○件分を取得して表示更新する
+            print("scrolling to bottom")
+            getFirebaseData()
+            
+        }
+    }
+    //postdataやfile.swiftを照らし合わせたらいける
+    func getFirebaseData() {
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        print("getFirebaseData")
+        
+        FIRDatabase.database().reference().child(CommonConst.PostPATH).child(self.genre).queryOrdered(byChild: "time").queryEnding(atValue: self.dataLastVal).queryLimited(toLast: UInt(DisplayDataNumber)+1).observeSingleEvent(of: .value, with: {[weak self] snapshot in
+            
+            
+            print(snapshot.childrenCount)
+            
+            var workArray:[PostData] = []
+            for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
+                print(child)
+                let postData = PostData(snapshot: child, myId: uid!)
+                if postData.time != self?.dataLastVal {
+                    workArray.insert(postData, at: 0)
+                }
+            }
+            if workArray.count > 0 {
+                self?.postArray += workArray
+                self?.tableView.reloadData()
+                
+                self?.dataLastVal = workArray.last!.time!
+                print("dataLastVal=\(self?.dataLastVal)")
+            }
+            
+        }, withCancel: {(err) in
+            print("getFirebaseData error")
+        })
+    }
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        let nib = UINib(nibName: "HomeTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "CEll")
+        back.layer.cornerRadius = 37
+        back.clipsToBounds = true
+        let tblBackColor: UIColor = UIColor.clear
+        tableView.backgroundColor = tblBackColor
+        let session = AVAudioSession.sharedInstance()
+        do {
+            try session.setCategory(AVAudioSessionCategoryPlayback)
+        } catch  {
+            // エラー処理
+            fatalError("カテゴリ設定失敗")
+        }
+        
+        // sessionのアクティブ化
+        do {
+            try session.setActive(true)
+        } catch {
+            // audio session有効化失敗時の処理
+            // (ここではエラーとして停止している）
+            fatalError("session有効化失敗")
+        }
+    }
+    
     
     
     func getIndexPath(_ event:UIEvent) -> IndexPath? {
@@ -194,6 +196,96 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let indexPath = tableView.indexPathForRow(at: point)
         return indexPath
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        timer2 = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(HomeViewController.mada), userInfo: nil, repeats: false)
+        
+        
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        //1回目
+        
+        if observing == false {
+            FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).queryOrdered(byChild: "time").queryLimited(toLast: UInt(DisplayDataNumber)).observeSingleEvent(of: .value, with: {[weak self] snapshot in
+                
+                
+                
+                var workArray:[PostData] = []
+                for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
+                    print(child )
+                    let postData = PostData(snapshot: child, myId: uid!)
+                    print(postData.time ?? "")
+                    workArray.insert(postData, at: 0)
+                }
+                if workArray.count > 0 {
+                    self?.postArray += workArray
+                    self?.tableView.reloadData()
+                    
+                    self?.dataLastVal = workArray.last!.time!
+                    print("dataLastVal=\(self?.dataLastVal)")
+                    self?.timer2.invalidate()
+                }
+                
+                }, withCancel: {(err) in
+                    print("getFirstData error")
+            })
+            
+            FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).observe(.childChanged, with: {[weak self] snapshot in
+                
+                if let uid = FIRAuth.auth()?.currentUser?.uid {
+                    guard let `self` = self else { return }
+                    let postData = PostData(snapshot: snapshot, myId: uid)
+                    
+                    var index: Int = 0
+                    for post in self.postArray {
+                        if post.id == postData.id {
+                            index = self.postArray.index(of: post)!
+                            break
+                        }
+                    }
+                    
+                    self.postArray.remove(at: index)
+                    self.postArray.insert(postData, at: index)
+                    self.tableView.reloadData()
+                    
+                }
+            })
+            //俺が新しくできた　言うたらこれは一回のみでしょ？上は何回もできるけど
+            FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: {[weak self] snapshot in
+                
+                if let uid = FIRAuth.auth()?.currentUser?.uid {
+                    guard let `self` = self else { return }
+                    let postData = PostData2(snapshot: snapshot, myId: uid)
+                    self.postArray2.insert(postData, at: 0)
+                    
+                    self.tableView.reloadData()
+                }
+            })
+            //俺だけが変更した　これがあるから他の人は何も変わらずまま自分だけ変わる　１以上の投稿の場合も大丈夫なのか
+            FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: {[weak self] snapshot in
+                
+                if let uid = FIRAuth.auth()?.currentUser?.uid {
+                    guard let `self` = self else { return }
+                    let postData = PostData2(snapshot: snapshot, myId: uid)
+                    var index: Int = 0
+                    for post in self.postArray2 {
+                        if post.id == postData.id {
+                            index = self.postArray2.index(of: post)!
+                            break
+                        }
+                    }
+                    //なんでindexは1以上も対応できているのか
+                    self.postArray2.remove(at: index)
+                    self.postArray2.insert(postData, at: index)
+                    self.tableView.reloadData()
+                }
+            })
+            observing = true
+        }
+        
+    }
+
     //ここが怪しい
     func hyoukaGo(_ sender:UIButton, event:UIEvent){
         let indexPath = getIndexPath(event)
@@ -301,94 +393,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     }
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        timer2 = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(HomeViewController.mada), userInfo: nil, repeats: false)
-        
-        
-        let uid = FIRAuth.auth()?.currentUser?.uid
-        //1回目
-        
-        if observing == false {
-            FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).queryOrdered(byChild: "time").queryLimited(toLast: UInt(DisplayDataNumber)).observeSingleEvent(of: .value, with: { (snapshot) in
-               
-                
-                
-                var workArray:[PostData] = []
-                for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
-                    print(child )
-                    let postData = PostData(snapshot: child, myId: uid!)
-                    print(postData.time ?? "")
-                    workArray.insert(postData, at: 0)
-                }
-                if workArray.count > 0 {
-                    self.postArray += workArray
-                    self.tableView.reloadData()
-                    
-                    self.dataLastVal = workArray.last!.time!
-                    print("dataLastVal=\(self.dataLastVal)")
-                    self.timer2.invalidate()
-                }
-                
-            }, withCancel: {(err) in
-                print("getFirstData error")
-            })
-            
-            FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).observe(.childChanged, with: {[weak self] snapshot in
-                
-                if let uid = FIRAuth.auth()?.currentUser?.uid {
-                    guard let `self` = self else { return }
-                    let postData = PostData(snapshot: snapshot, myId: uid)
-                    
-                    var index: Int = 0
-                    for post in self.postArray {
-                        if post.id == postData.id {
-                            index = self.postArray.index(of: post)!
-                            break
-                        }
-                    }
-                    
-                    self.postArray.remove(at: index)
-                    self.postArray.insert(postData, at: index)
-                    self.tableView.reloadData()
-                    
-                }
-            })
-            //俺が新しくできた　言うたらこれは一回のみでしょ？上は何回もできるけど
-            FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: {[weak self] snapshot in
-                
-                if let uid = FIRAuth.auth()?.currentUser?.uid {
-                    guard let `self` = self else { return }
-                    let postData = PostData2(snapshot: snapshot, myId: uid)
-                    self.postArray2.insert(postData, at: 0)
-                    
-                    self.tableView.reloadData()
-                }
-            })
-            //俺だけが変更した　これがあるから他の人は何も変わらずまま自分だけ変わる　１以上の投稿の場合も大丈夫なのか
-            FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: {[weak self] snapshot in
-                
-                if let uid = FIRAuth.auth()?.currentUser?.uid {
-                    guard let `self` = self else { return }
-                    let postData = PostData2(snapshot: snapshot, myId: uid)
-                    var index: Int = 0
-                    for post in self.postArray2 {
-                        if post.id == postData.id {
-                            index = self.postArray2.index(of: post)!
-                            break
-                        }
-                    }
-                    //なんでindexは1以上も対応できているのか
-                    self.postArray2.remove(at: index)
-                    self.postArray2.insert(postData, at: index)
-                    self.tableView.reloadData()
-                }
-            })
-            observing = true
-        }
-        
-    }
     
     func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
         print(scrollView.contentOffset.y)

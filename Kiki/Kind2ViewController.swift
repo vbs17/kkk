@@ -4,6 +4,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseAuth
+import SVProgressHUD
 
 
 class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, SyugoTableViewCellDelegate  {
@@ -538,7 +539,68 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
         
     }
     
-   
+    func saveImage(uuid: String) {
+        // 画像保存
+        let size = CGSize(width: 1242, height: 828)
+        UIGraphicsBeginImageContext(size)
+        image.draw(in: CGRect(x:0.0, y:0.0, width:size.width, height:size.height))
+        let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        let imageData = UIImageJPEGRepresentation(resizeImage!, 0.5)
+        let postData4 = ["image": imageData!.base64EncodedString(options: .lineLength64Characters)];
+        let postRef = FIRDatabase.database().reference().child(CommonConst.image2).child(genre).child(uuid)
+        postRef.setValue(postData4) { (error, ref) in
+            if (error == nil) {
+                // 画像保存完了
+                // 次に投稿保存
+                self.savePost(uuid: uuid)
+            } else {
+                // 保存エラー
+                self.showErrorAlert()
+            }
+        }
+    }
+
+    
+    func savePost(uuid: String) {
+        // 投稿
+        let hiniti1:NSString = hiniti.text! as NSString
+        let zikoku1:NSString = zikoku.text! as NSString
+        let path1:NSString = path.text! as NSString
+        let station1:NSString = station.text! as NSString
+        let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
+        let time = NSDate.timeIntervalSinceReferenceDate
+        let postData1 = ["time":time,"hiniti": hiniti1,"zikoku": zikoku1, "station": station1, "path":path1,"uid":uid] as [String : Any]
+
+        let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre).child(uuid)
+        
+        postRef.setValue(postData1) { (error, ref) in
+            if (error == nil) {
+                // 画像保存完了
+                SVProgressHUD.dismiss()
+                // 先頭に戻る
+                self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
+            } else {
+                // 保存エラー
+                self.showErrorAlert()
+            }
+        }
+    }
+
+    func showErrorAlert() {
+        SVProgressHUD.dismiss()
+        let alert = UIAlertController()
+        alert.title = "保存エラー"
+        alert.message = "保存エラーが発生しました。ネットワークの状態を確認して再度保存ボタンを押してください"
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
+            (action: UIAlertAction!) -> Void in
+        })
+        alert.addAction(defaultAction)
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+
    
 
 
@@ -546,22 +608,11 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
     //ここ
     @IBAction func post(_ sender: AnyObject) {
         if isRowSelected {
-            let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre)
-            let size = CGSize(width: 1242, height: 828)
-            UIGraphicsBeginImageContext(size)
-            image.draw(in: CGRect(x:0.0, y:0.0, width:size.width, height:size.height))
-            let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            let imageData = UIImageJPEGRepresentation(resizeImage!, 0.5)
-            let hiniti1:NSString = hiniti.text! as NSString
-            let zikoku1:NSString = zikoku.text! as NSString
-            let path1:NSString = path.text! as NSString
-            let station1:NSString = station.text! as NSString
-            let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
-            let postData = ["hiniti": hiniti1, "image": imageData!.base64EncodedString(options: .lineLength64Characters), "zikoku": zikoku1, "station": station1, "path":path1,"uid":uid] as [String : Any]
-        postRef.childByAutoId().setValue(postData)
-        let tabvarviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Tab") as! TabViewController
-        self.present(tabvarviewcontroller, animated: true, completion: nil)
+            SVProgressHUD.show()
+            // セルが選択されている時の処理を記述
+            let image = UUID().uuidString
+            saveImage(uuid: image)
+
         }  else {
             // 行が選択されていない＝ジャンルが選択されていない
             let alert = UIAlertController()

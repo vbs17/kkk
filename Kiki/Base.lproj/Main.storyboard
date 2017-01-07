@@ -775,7 +775,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0011" translatesAutoresizingMaskIntoConstraints="NO" id="B5J-oz-sas">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fi9qq0fwyvq-jon-tyson" translatesAutoresizingMaskIntoConstraints="NO" id="B5J-oz-sas">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alm-4N-oJ8">
@@ -800,7 +800,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <size key="titleShadowOffset" width="1" height="2"/>
-                                <state key="normal" title="集合場所の写真" backgroundImage="37">
+                                <state key="normal" title="集合場所の写真" backgroundImage="1234567">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -3023,19 +3023,19 @@
         <image name="0005" width="1242" height="1863"/>
         <image name="0007" width="1242" height="829"/>
         <image name="0009" width="1242" height="828"/>
-        <image name="0011" width="1242" height="1656"/>
         <image name="0013" width="1242" height="883"/>
         <image name="0017" width="1242" height="1320"/>
         <image name="1111" width="1242" height="828"/>
+        <image name="1234567" width="600" height="400"/>
         <image name="14-4" width="1242" height="972"/>
         <image name="2222" width="1242" height="975"/>
         <image name="223" width="1242" height="1863"/>
         <image name="33-1" width="1242" height="823"/>
-        <image name="37" width="2752" height="1835"/>
         <image name="5555" width="1242" height="804"/>
         <image name="778" width="1242" height="1861"/>
         <image name="8888" width="1242" height="933"/>
         <image name="fex" width="1242" height="932"/>
+        <image name="fi9qq0fwyvq-jon-tyson" width="600" height="800"/>
         <image name="haha1" width="1242" height="828"/>
         <image name="kesiki" width="500" height="500"/>
         <image name="nana1" width="1242" height="699"/>

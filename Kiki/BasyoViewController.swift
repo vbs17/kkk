@@ -35,6 +35,8 @@ class BasyoViewController: UIViewController,UIImagePickerControllerDelegate, UIN
         super.viewDidAppear(animated)
         let ud = UserDefaults.standard
         let isTutorial2 = ud.bool(forKey: CommonConst.IsTutorial2 )
+        //ud.set(true, forKey: CommonConst.IsTutorial2)
+        //ud.synchronize()によってtrueになってる
         if isTutorial2 == false {
             let storyboard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
             let viewController:UIViewController = storyboard.instantiateViewController(withIdentifier: "Syutyu")

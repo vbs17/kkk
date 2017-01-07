@@ -22,7 +22,6 @@ class HomeTableViewCell1: UITableViewCell {
     @IBOutlet weak var iku: UIButton!
     //参考
     func setPostData(_ postData: PostData1, myid: String) {
-        ImageView.image = postData.image
         label1.text = postData.hiniti
         label2.text = postData.zikoku
         label3.text = postData.station
@@ -38,6 +37,10 @@ class HomeTableViewCell1: UITableViewCell {
         }
     }
     
+    func setPostData1(_ postData: PostData4, myid: String) {
+    ImageView.image = postData.image
+    }
+
     
        
     

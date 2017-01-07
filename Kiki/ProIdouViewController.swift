@@ -40,34 +40,34 @@ class ProIdouViewController: UIViewController {
         
         
         
-        FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: { snapshot in
+        FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: {[weak self] snapshot in
             
             let postData = PostData2(snapshot: snapshot, myId: snapshot.key)
             
-            if ( postData.uid == self.uid ) {
+            if ( postData.uid == self?.uid ) {
                 
-                self.imageView.image = postData.image
-                self.name.text = postData.name
-                self.line.text = postData.line
-                self.twitter.text = postData.twitter
-                self.face.text = postData.facebook
-                self.insta.text = postData.den
-                self.p.text = postData.ta
+                self?.imageView.image = postData.image
+                self?.name.text = postData.name
+                self?.line.text = postData.line
+                self?.twitter.text = postData.twitter
+                self?.face.text = postData.facebook
+                self?.insta.text = postData.den
+                self?.p.text = postData.ta
             }
             else {
             }
         })
         
-        FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: { snapshot in
-            if ( snapshot.key == self.uid ) {
+        FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: {[weak self] snapshot in
+            if ( snapshot.key == self?.uid ) {
                 let postData = PostData2(snapshot: snapshot, myId: snapshot.key)
-                self.imageView.image = postData.image
-                self.name.text = postData.name
-                self.line.text = postData.line
-                self.twitter.text = postData.twitter
-                self.face.text = postData.facebook
-                self.insta.text = postData.den
-                self.p.text = postData.ta
+                self?.imageView.image = postData.image
+                self?.name.text = postData.name
+                self?.line.text = postData.line
+                self?.twitter.text = postData.twitter
+                self?.face.text = postData.facebook
+                self?.insta.text = postData.den
+                self?.p.text = postData.ta
             }
             else {
             }
