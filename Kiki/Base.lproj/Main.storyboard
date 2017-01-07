@@ -186,7 +186,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <size key="titleShadowOffset" width="1" height="2.2250738585072014e-308"/>
-                                        <state key="normal" title="＜BACK">
+                                        <state key="normal" title="BACK">
                                             <color key="titleColor" red="0.14362053969999999" green="0.17933351710000001" blue="0.3351807919" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="0.14362053969999999" green="0.17933351710000001" blue="0.3351807919" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -515,14 +515,14 @@
                                                         <rect key="frame" x="0.0" y="436.5" width="355" height="72.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9r8-xe-JKR">
-                                                                <rect key="frame" x="0.0" y="19.5" width="88" height="33"/>
+                                                                <rect key="frame" x="0.0" y="17" width="88" height="38"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="67" id="Irn-As-zcB"/>
                                                                     <constraint firstAttribute="width" constant="88" id="aI7-Sm-JsV"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                                 <size key="titleShadowOffset" width="1" height="0.0"/>
-                                                                <state key="normal" title="＜Back">
+                                                                <state key="normal" title="Back">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
@@ -532,7 +532,7 @@
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5Q-gJ-uq9">
                                                                 <rect key="frame" x="139" y="21" width="77" height="30"/>
-                                                                <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" red="0.79590788639999999" green="1" blue="0.50505725369999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="77" id="N1n-tw-8Ju"/>
                                                                 </constraints>
@@ -810,13 +810,15 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLU-gx-D3A">
                                 <rect key="frame" x="24" y="538" width="71" height="71"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="71" id="EDt-VW-P64"/>
                                     <constraint firstAttribute="height" constant="71" id="kJX-sU-oyr"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <size key="titleShadowOffset" width="1" height="0.0"/>
                                 <state key="normal" title="BACK">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="back:" destination="KJh-XF-xtE" eventType="touchUpInside" id="sjI-kG-sDD"/>
@@ -980,7 +982,7 @@
                                         <rect key="frame" x="17" y="81" width="72" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.99647290050000004" green="0.63966908040000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.79590788639999999" green="1" blue="0.50505725369999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1062,7 +1064,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <size key="titleShadowOffset" width="1" height="0.0"/>
-                                <state key="normal" title="＜Back">
+                                <state key="normal" title="Back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1183,7 +1185,7 @@
                                             <constraint firstAttribute="height" constant="166" id="CW2-OE-cnV"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="80V-dG-t7Q">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="日にち/曜日" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="80V-dG-t7Q">
                                         <rect key="frame" x="81" y="199" width="210" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="FxL-0D-uwF"/>
@@ -1191,7 +1193,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9MD-wS-bkP">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="集合時刻" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9MD-wS-bkP">
                                         <rect key="frame" x="81" y="237" width="210" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="zxz-nP-bNC"/>
@@ -1199,7 +1201,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2lz-H5-osz">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="最寄駅" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2lz-H5-osz">
                                         <rect key="frame" x="82" y="275" width="210" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="XTO-3o-K27"/>
@@ -1213,7 +1215,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="撮った場所をマップで調べて書こう　　　　　　　　　　　　　　　　(例)東京都八王子市横川町711-7" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctH-X7-gzY">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="マップで撮った場所の住所をコピーして貼り付けよう　　　　　　　　　　　　　　　　(例)東京都八王子市横川町711-7" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctH-X7-gzY">
                                         <rect key="frame" x="82" y="332" width="210" height="264"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1784,7 +1786,7 @@
                                         <rect key="frame" x="8" y="81" width="75" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.99647290050000004" green="0.63966908040000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.79590788639999999" green="1" blue="0.50505725369999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -2413,7 +2415,7 @@
                                         <rect key="frame" x="17" y="85" width="78" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.99647290050000004" green="0.63966908040000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.79590788639999999" green="1" blue="0.50505725369999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🔻　 アーティスト検索　  🔻" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Wk-nV-Rzj">
@@ -2735,7 +2737,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <size key="titleShadowOffset" width="1" height="0.0"/>
-                                        <state key="normal" title="＜BACK">
+                                        <state key="normal" title="BACK">
                                             <color key="titleColor" red="0.14362053969999999" green="0.17933351710000001" blue="0.3351807919" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="0.14362053969999999" green="0.17933351710000001" blue="0.3351807919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -2937,14 +2939,14 @@
                                                         <rect key="frame" x="0.0" y="436.5" width="355" height="72.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-pO-Tpy">
-                                                                <rect key="frame" x="0.0" y="19.5" width="88" height="33"/>
+                                                                <rect key="frame" x="0.0" y="17" width="88" height="38"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="88" id="CyF-ts-tyH"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="67" id="EyJ-Ba-MvM"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                                 <size key="titleShadowOffset" width="1" height="0.0"/>
-                                                                <state key="normal" title="＜Back">
+                                                                <state key="normal" title="Back">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
