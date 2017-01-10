@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="379" height="529"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0pr-1P-A65" id="glj-NS-fkI">
-                <rect key="frame" x="0.0" y="0.0" width="379" height="528"/>
+                <rect key="frame" x="0.0" y="0.0" width="379" height="529"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndr-Th-Uqu">
@@ -83,7 +83,7 @@
                         <size key="shadowOffset" width="1" height="0.0"/>
                     </label>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NRl-AS-ESj">
-                        <rect key="frame" x="14" y="361" width="350" height="35"/>
+                        <rect key="frame" x="14" y="361" width="350" height="45"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Wfo-vH-IMK">
@@ -96,9 +96,9 @@
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aix-yK-0JU">
                         <rect key="frame" x="14" y="415" width="56" height="61"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="33"/>
                         <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
-                        <state key="normal" title="評価" backgroundImage="223">
+                        <state key="normal" title="🎧">
                             <color key="titleColor" red="0.93950425390000003" green="0.93950425390000003" blue="0.93950425390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
@@ -161,7 +161,4 @@
             <point key="canvasLocation" x="-30.5" y="249.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="223" width="1242" height="1863"/>
-    </resources>
 </document>
