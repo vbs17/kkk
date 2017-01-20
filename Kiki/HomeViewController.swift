@@ -436,7 +436,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             
             timer.invalidate()
             //ここもポイント
-            SVProgressHUD.show(withStatus:       "クールな音質に仕上げています😎(最大5秒)                 　このオリジナルソングが君のセンスにあえば左上のProfileボタンをタップして連絡をとれ😎")
+            SVProgressHUD.show(withStatus:"クールな音質に仕上げています😎(最大5秒) 　　　　　　　　　　　　　　　　                　　　　　　このオリジナルソングが君のセンスにあえば左上のProfileボタンをタップして連絡をとれ😎")
             
             FIRDatabase.database().reference().child(CommonConst.songData).child(postData.song!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                 guard let `self` = self else { return }

@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>ESTabBarController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Kiki.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -19,12 +14,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Realm.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>RealmSwift.xcscheme</key>
+		<key>ReachabilitySwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,37 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0184AF616F9D252E9CAEC56FB7381973</key>
+		<key>711AFA47454FDD67D559D3F3FF511222</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0AF796AF94D373AEEF823996A7B597A8</key>
+		<key>82002FD65DC8EB07F233130B8E6058B6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2589A4563C619D2496B4500E2C6788A4</key>
+		<key>8EC599A558C79B1665D810EA97808F9B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>63C96E8A73B7CAFAE081D92D0D1D5F7B</key>
+		<key>AA90696885219A8BCE3380C68EE52CB1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>735A487759882DDC93C221DBDE10F859</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>75F3CDD17F8893D1090466F4DCD36964</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>98CC43BA90B67A65698F64A933BC4566</key>
+		<key>C0DF66BD63FB26B52FC0091B09FF1D76</key>
 		<dict>
 			<key>primary</key>
 			<true/>

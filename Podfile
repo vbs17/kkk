@@ -15,5 +15,6 @@ target 'Kiki' do
   pod 'TwitterKit'
   pod 'Fabric'
   pod 'Reachability'
+  pod 'ReachabilitySwift', '~> 3'
   
 end
