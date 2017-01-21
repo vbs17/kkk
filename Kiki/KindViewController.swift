@@ -550,8 +550,8 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     //FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre) に保存
     
     @IBAction func post(_ sender: AnyObject) {
-        // もし行が選択されている＝ジャンルが選択されている
         if isRowSelected {
+            //ここでオフラインの処理
             SVProgressHUD.show()
             // セルが選択されている時の処理を記述
             let ongen = UUID().uuidString
