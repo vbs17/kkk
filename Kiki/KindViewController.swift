@@ -5,12 +5,11 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 import SVProgressHUD
-
+import ReachabilitySwift
 
 class KindViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, KindTableViewCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    
     
     
     let AllItems: [[String]]  = [[ "赤犬",
@@ -551,11 +550,33 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func post(_ sender: AnyObject) {
         if isRowSelected {
-            //ここでオフラインの処理
+            let reachability = Reachability.reachabilityForInternetConnection()
+            if reachability.isReachable() {
+                let ongen = UUID().uuidString
+                saveSong(uuid: ongen)
+            } else {
+                let alert = UIAlertController()
+                let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
+                let attributedTitle = NSAttributedString(string: "😬", attributes: attributedTitleAttr)
+                alert.setValue(attributedTitle, forKey: "attributedTitle")
+                let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.black]
+                let attributedMessage = NSAttributedString(string: "接続状態が不安定です", attributes: attributedMessageAttr)
+                alert.view.tintColor = UIColor.black
+                alert.setValue(attributedMessage, forKey: "attributedMessage")
+                let subview = alert.view.subviews.first! as UIView
+                let alertContentView = subview.subviews.first! as UIView
+                alertContentView.backgroundColor = UIColor.gray
+                
+                let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
+                    (action: UIAlertAction!) -> Void in
+                })
+                alert.addAction(defaultAction)
+                present(alert, animated: true, completion: nil)
+                alert.view.tintColor = UIColor.white
+
+            }
             SVProgressHUD.show()
             // セルが選択されている時の処理を記述
-            let ongen = UUID().uuidString
-            saveSong(uuid: ongen)
             
         } else {
             // 行が選択されていない＝ジャンルが選択されていない
