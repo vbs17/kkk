@@ -134,7 +134,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         print("getFirebaseData")
         
         FIRDatabase.database().reference().child(CommonConst.PostPATH).child(self.genre).queryOrdered(byChild: "time").queryEnding(atValue: self.dataLastVal).queryLimited(toLast: UInt(DisplayDataNumber)+1).observeSingleEvent(of: .value, with: {[weak self] snapshot in
-            
+            guard let `self` = self else { return }
             
             print(snapshot.childrenCount)
             
@@ -142,16 +142,16 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
                 print(child)
                 let postData = PostData(snapshot: child, myId: uid!)
-                if postData.time != self?.dataLastVal {
+                if postData.time != self.dataLastVal {
                     workArray.insert(postData, at: 0)
                 }
             }
             if workArray.count > 0 {
-                self?.postArray += workArray
-                self?.tableView.reloadData()
+                self.postArray += workArray
+                self.tableView.reloadData()
                 
-                self?.dataLastVal = workArray.last!.time!
-                print("dataLastVal=\(self?.dataLastVal)")
+                self.dataLastVal = workArray.last!.time!
+                print("dataLastVal=\(self.dataLastVal)")
             }
             
         }, withCancel: {(err) in
@@ -208,7 +208,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         
         if observing == false {
             FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).queryOrdered(byChild: "time").queryLimited(toLast: UInt(DisplayDataNumber)).observeSingleEvent(of: .value, with: {[weak self] snapshot in
-                
+                guard let `self` = self else { return }
                 
                 
                 var workArray:[PostData] = []
@@ -219,12 +219,12 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                     workArray.insert(postData, at: 0)
                 }
                 if workArray.count > 0 {
-                    self?.postArray += workArray
-                    self?.tableView.reloadData()
+                    self.postArray += workArray
+                    self.tableView.reloadData()
                     
-                    self?.dataLastVal = workArray.last!.time!
-                    print("dataLastVal=\(self?.dataLastVal)")
-                    self?.timer2.invalidate()
+                    self.dataLastVal = workArray.last!.time!
+                    print("dataLastVal=\(self.dataLastVal)")
+                    self.timer2.invalidate()
                 }
                 
                 }, withCancel: {(err) in

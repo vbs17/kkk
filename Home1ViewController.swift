@@ -103,7 +103,7 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
         print("getFirebaseData")
         
         FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(self.genre).queryOrdered(byChild: "time").queryEnding(atValue: self.dataLastVal).queryLimited(toLast: UInt(DisplayDataNumber)+1).observeSingleEvent(of: .value, with: {[weak self] snapshot in
-            
+            guard let `self` = self else { return }
             
             print(snapshot.childrenCount)
             
@@ -111,16 +111,16 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
             for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
                 print(child)
                 let postData = PostData1(snapshot: child, myId: uid!)
-                if postData.time != self?.dataLastVal {
+                if postData.time != self.dataLastVal {
                     workArray.insert(postData, at: 0)
                 }
             }
             if workArray.count > 0 {
-                self?.postArray += workArray
-                self?.tableView.reloadData()
+                self.postArray += workArray
+                self.tableView.reloadData()
                 
-                self?.dataLastVal = workArray.last!.time!
-                print("dataLastVal=\(self?.dataLastVal)")
+                self.dataLastVal = workArray.last!.time!
+                print("dataLastVal=\(self.dataLastVal)")
             }
             
             }, withCancel: {(err) in
@@ -153,7 +153,7 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
         if observing == false {
             
             FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre).queryOrdered(byChild: "time").queryLimited(toLast: UInt(DisplayDataNumber)).observeSingleEvent(of: .value, with: {[weak self] snapshot in
-                
+                guard let `self` = self else { return }
                 var workArray:[PostData1] = []
                 for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
                     print(child )
@@ -162,11 +162,11 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
                     workArray.insert(postData, at: 0)
                 }
                 if workArray.count > 0 {
-                    self?.postArray += workArray
-                    self?.tableView.reloadData()
+                    self.postArray += workArray
+                    self.tableView.reloadData()
                     
-                    self?.dataLastVal = workArray.last!.time!
-                    print("dataLastVal=\(self?.dataLastVal)")
+                    self.dataLastVal = workArray.last!.time!
+                    print("dataLastVal=\(self.dataLastVal)")
                 }
                 
                 }, withCancel: {(err) in
