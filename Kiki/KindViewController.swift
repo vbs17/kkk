@@ -667,7 +667,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         SVProgressHUD.dismiss()
         let alert = UIAlertController()
         alert.title = "保存エラー"
-        alert.message = "保存エラーが発生しました。ネットワークの状態を確認して再度保存ボタンを押してください"
+        alert.message = "保存エラーが発生しました。ネットワークの状態を確認して再度投稿ボタンを押してください"
         let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
             (action: UIAlertAction!) -> Void in
         })
