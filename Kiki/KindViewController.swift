@@ -550,10 +550,11 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func post(_ sender: AnyObject) {
         if isRowSelected {
-            let reachability = Reachability.reachabilityForInternetConnection()
-            if reachability.isReachable() {
+            let reachability = Reachability()!
+            if reachability.isReachable {
                 let ongen = UUID().uuidString
                 saveSong(uuid: ongen)
+                SVProgressHUD.show()
             } else {
                 let alert = UIAlertController()
                 let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
@@ -575,7 +576,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
                 alert.view.tintColor = UIColor.white
 
             }
-            SVProgressHUD.show()
+            
             // セルが選択されている時の処理を記述
             
         } else {
