@@ -6,6 +6,7 @@ import FirebaseDatabase
 import AVFoundation
 import Spring
 import SVProgressHUD
+import ReachabilitySwift
 
 class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDelegate,AVAudioPlayerDelegate {
     var postArray: [PostData] = []
@@ -120,16 +121,20 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     //スクロールしてデータ取得
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if(self.tableView.contentOffset.y == (self.tableView.contentSize.height - self.tableView.bounds.size.height))
-        {
-            //まだ表示するコンテンツが存在するか判定し存在するなら○件分を取得して表示更新する
-            print("scrolling to bottom")
-            getFirebaseData()
-            
-        }
+       
+            if(self.tableView.contentOffset.y == (self.tableView.contentSize.height - self.tableView.bounds.size.height))
+            {
+                //まだ表示するコンテンツが存在するか判定し存在するなら○件分を取得して表示更新する
+                print("scrolling to bottom")
+                getFirebaseData()
+                
+            }
+    
     }
     //postdataやfile.swiftを照らし合わせたらいける
     func getFirebaseData() {
+        let reachability = Reachability()!
+        if reachability.isReachable {
         let uid = FIRAuth.auth()?.currentUser?.uid
         print("getFirebaseData")
         
@@ -156,7 +161,28 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             
         }, withCancel: {(err) in
             print("getFirebaseData error")
-        })
+        })} else {
+            let alert = UIAlertController()
+            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
+            let attributedTitle = NSAttributedString(string: "😬", attributes: attributedTitleAttr)
+            alert.setValue(attributedTitle, forKey: "attributedTitle")
+            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.black]
+            let attributedMessage = NSAttributedString(string: "接続状態が不安定です", attributes: attributedMessageAttr)
+            alert.view.tintColor = UIColor.black
+            alert.setValue(attributedMessage, forKey: "attributedMessage")
+            let subview = alert.view.subviews.first! as UIView
+            let alertContentView = subview.subviews.first! as UIView
+            alertContentView.backgroundColor = UIColor.gray
+            
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
+                (action: UIAlertAction!) -> Void in
+            })
+            alert.addAction(defaultAction)
+            present(alert, animated: true, completion: nil)
+            alert.view.tintColor = UIColor.white
+            
+        }
+
     }
 
     
@@ -410,6 +436,8 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     
     func handleButton(_ sender: UIButton, event:UIEvent){
+        let reachability = Reachability()!
+        if reachability.isReachable {
         let touch = event.allTouches?.first
         let point = touch!.location(in: self.tableView)
         let indexPath = tableView.indexPathForRow(at: point)
@@ -429,6 +457,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             if playingIndexPath != nil {
                 let cell = tableView.cellForRow(at: playingIndexPath) as! HomeTableViewCell?
                 if cell != nil {
+                    playSong.pause()
                     cell!.nami.progress = 0
                     cell!.onlabel2.text = "0:00"
                     cell?.backButton.isEnabled = false
@@ -457,6 +486,26 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 self.playSong.play()
                 self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(HomeViewController.updatePlayingTime), userInfo: nil, repeats: true)
             })
+            } } else {
+            let alert = UIAlertController()
+            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
+            let attributedTitle = NSAttributedString(string: "😬", attributes: attributedTitleAttr)
+            alert.setValue(attributedTitle, forKey: "attributedTitle")
+            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.black]
+            let attributedMessage = NSAttributedString(string: "接続状態が不安定です", attributes: attributedMessageAttr)
+            alert.view.tintColor = UIColor.black
+            alert.setValue(attributedMessage, forKey: "attributedMessage")
+            let subview = alert.view.subviews.first! as UIView
+            let alertContentView = subview.subviews.first! as UIView
+            alertContentView.backgroundColor = UIColor.gray
+            
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
+                (action: UIAlertAction!) -> Void in
+            })
+            alert.addAction(defaultAction)
+            present(alert, animated: true, completion: nil)
+            alert.view.tintColor = UIColor.white
+            
         }
     }
     
