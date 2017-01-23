@@ -553,7 +553,10 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
             let reachability = Reachability()!
             if reachability.isReachable {
                 let ongen = UUID().uuidString
+                print("Post")
                 saveSong(uuid: ongen)
+                print("saveSong")
+
                 SVProgressHUD.show()
             } else {
                 let alert = UIAlertController()
@@ -611,6 +614,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
                 // 音源保存完了
                 // 次に画像保存
                 self.saveImage(uuid: uuid)
+                print("saveImage")
             } else {
                 // 保存エラー
                 self.showErrorAlert()
@@ -633,6 +637,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
                 // 画像保存完了
                 // 次に投稿保存
                 self.savePost(uuid: uuid)
+                print("savePost")
             } else {
                 // 保存エラー
                 self.showErrorAlert()
