@@ -4,28 +4,65 @@
 <dict>
 	<key></key>
 	<string></string>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
-	<key>CFBundleDisplayName</key>
-	<string>Supersonic</string>
-	<key>CFBundleExecutable</key>
-	<string>$(EXECUTABLE_NAME)</string>
-	<key>CFBundleIcons</key>
-	<dict/>
-	<key>CFBundleIcons~ipad</key>
-	<dict/>
-	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<true/>
+	<key>CFBundleIcons~ipad</key>
+	<dict/>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>https://maps.apple.com/?q</string>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>NSCameraUsageDescription</key>
+	<string></string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>p4KswmlL2lv2rA8D6f4TZ2ljp</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitName</key>
+				<string>Twitter</string>
+				<key>KitInfo</key>
+				<dict>
+					<key>consumerKey</key>
+					<string>p4KswmlL2lv2rA8D6f4TZ2ljp</string>
+					<key>consumerSecret</key>
+					<string>uExFj3J3UOr0q7id8mwjb9BQUOsdlrsBRpOdBN6NKL5H5jBTDS</string>
+				</dict>
+			</dict>
+		</array>
+	</dict>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+	<key>Facebook DisplayName</key>
+	<string>Kiki</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>マイクへのアクセス </string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -35,67 +72,30 @@
 			</array>
 		</dict>
 	</array>
-	<key>CFBundleVersion</key>
-	<string>1</string>
-	<key>Fabric</key>
-	<dict>
-		<key>APIKey</key>
-		<string>p4KswmlL2lv2rA8D6f4TZ2ljp</string>
-		<key>Kits</key>
-		<array>
-			<dict>
-				<key>KitInfo</key>
-				<dict>
-					<key>consumerKey</key>
-					<string>p4KswmlL2lv2rA8D6f4TZ2ljp</string>
-					<key>consumerSecret</key>
-					<string>uExFj3J3UOr0q7id8mwjb9BQUOsdlrsBRpOdBN6NKL5H5jBTDS</string>
-				</dict>
-				<key>KitName</key>
-				<string>Twitter</string>
-			</dict>
-		</array>
-	</dict>
-	<key>Facebook AppID</key>
-	<string>657201184440498
-            657201184440498
-            657201184440498
-            657201184440498</string>
-	<key>Facebook DisplayName</key>
-	<string>Kiki</string>
-	<key>FirebaseAppDelegateProxyEnabled</key>
-	<false/>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>https://maps.apple.com/?q</string>
-	</array>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleIcons</key>
+	<dict/>
+	<key>CFBundleDisplayName</key>
+	<string>Supersonic</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSCameraUsageDescription</key>
-	<string></string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>マイクへのアクセス </string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>audio</string>
-	</array>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
-	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>armv7</string>
-	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string></string>
+	<key>Facebook AppID</key>
+	<string>657201184440498
+            657201184440498
+            657201184440498
+            657201184440498</string>
 </dict>
 </plist>
