@@ -19,9 +19,14 @@ class SyuruViewController: UIViewController {
         
         let isSavePlofile = ud.bool(forKey: CommonConst.IsSavePlofileData )
         if isSavePlofile == true {
-            
-            let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Top") as! ViewController
-            self.present(recviewcontroller, animated: true, completion: nil)
+            AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeAudio, completionHandler: {(granted: Bool) in
+                if granted {
+                    let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Top") as! ViewController
+                    self.present(recviewcontroller, animated: true, completion: nil)
+                }
+                else {
+                    print("no permission")
+                }})
             
         } else if isSavePlofile == false {
             let alert = UIAlertController()
