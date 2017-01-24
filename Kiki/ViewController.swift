@@ -27,13 +27,14 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupAudioRecorder()
         recordImage!.layer.cornerRadius = recordImage!.frame.size.width / 2
         recordImage!.clipsToBounds = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)//受信者のディスパッチ(タスク(処理の実行単位)を実際に計算処理させるためにCPU(装置)を割り当てる)表に項目を追加します
+        self.setupAudioRecorder()
+
         NotificationCenter.default.addObserver(
             self,
             //受信者に送信するメッセージを指定するセレクタ
