@@ -106,12 +106,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let point = touch!.location(in: self.tableView)
         let indexPath = tableView.indexPathForRow(at: point)
         let postData = postArray[indexPath!.row]
-        if playSong != nil {
-            if (playSong.isPlaying){
-                playSong.pause()
-                timer.invalidate()
-            }
-        }
         let pro = self.storyboard?.instantiateViewController(withIdentifier: "Pi") as! ProIdouViewController
         pro.uid = postData.uid
         self.present(pro, animated: true, completion: nil)
