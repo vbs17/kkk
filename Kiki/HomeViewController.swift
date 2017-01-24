@@ -460,6 +460,15 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             timer.invalidate()
             //ここもポイント
             SVProgressHUD.show(withStatus:"クールな音質に仕上げています😎(最大5秒) 　　　　　　　　　　　　　　　　                　　　　　　このオリジナルソングが君のセンスにあえば左上のProfileボタンをタップして連絡をとれ😎")
+            cell?.playButton.isEnabled = false
+            cell?.go.isEnabled = false
+            cell?.backButton.isEnabled = false
+            cell?.hyouka.isEnabled = false
+            cell?.star1.isEnabled = false
+            cell?.star2.isEnabled = false
+            cell?.star3.isEnabled = false
+            cell?.star4.isEnabled = false
+            cell?.star5.isEnabled = false
             
             FIRDatabase.database().reference().child(CommonConst.songData).child(postData.song!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                 guard let `self` = self else { return }
@@ -467,6 +476,16 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                     return
                 }
                 SVProgressHUD.dismiss()
+                cell?.playButton.isEnabled = true
+                cell?.go.isEnabled = true
+                cell?.backButton.isEnabled = true
+                cell?.hyouka.isEnabled = true
+                cell?.star1.isEnabled = true
+                cell?.star2.isEnabled = true
+                cell?.star3.isEnabled = true
+                cell?.star4.isEnabled = true
+                cell?.star5.isEnabled = true
+
                 if self.presentedViewController != nil {
                     return
                 }
