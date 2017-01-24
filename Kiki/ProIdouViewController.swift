@@ -51,8 +51,8 @@ class ProIdouViewController: UIViewController {
                 self.line.text = postData.line
                 self.twitter.text = postData.twitter
                 self.face.text = postData.facebook
-                self.insta.text = postData.den
-                self.p.text = postData.ta
+                self.insta.text = postData.ta
+                self.p.text = postData.den
             }
             else {
             }
@@ -67,8 +67,8 @@ class ProIdouViewController: UIViewController {
                 self.line.text = postData.line
                 self.twitter.text = postData.twitter
                 self.face.text = postData.facebook
-                self.insta.text = postData.den
-                self.p.text = postData.ta
+                self.insta.text = postData.ta
+                self.p.text = postData.den
             }
             else {
             }
