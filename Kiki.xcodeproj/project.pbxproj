@@ -364,6 +364,7 @@
 				EC6A283E547678DB25658196 /* [CP] Embed Pods Frameworks */,
 				703215552CDD41286C60DE24 /* [CP] Copy Pods Resources */,
 				B01B82E81E0526CA00036A27 /* ShellScript */,
+				B00467F41E38DCDB0033859A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -449,6 +450,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kiki/Pods-Kiki-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		B00467F41E38DCDB0033859A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
 		};
 		B01B82E81E0526CA00036A27 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
