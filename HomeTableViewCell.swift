@@ -85,6 +85,13 @@ class HomeTableViewCell: UITableViewCell {
     //starDic[1] => “3"ってこと？//はいそうです。
     //平均値を取得して反映させる  あれよ大事なあれこれでみんなにデータが配られるわけよこれが原点よ
     func setPostData(_ postData: PostData) {
+        if ( postData.cover == "C" && postData.original == "" ) {
+            label.backgroundColor = UIColor.red
+        }
+        else if ( postData.cover == "" && postData.original == "O" ) {
+            label.backgroundColor = UIColor.yellow
+
+        }
         let stars = postData.star
         
         var average: Int = 0
