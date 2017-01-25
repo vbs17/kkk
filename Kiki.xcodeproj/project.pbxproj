@@ -67,6 +67,7 @@
 		B0CB1E0A1E13939A0083C8A4 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0CB1E091E13939A0083C8A4 /* Reachability.framework */; };
 		B0CB1E0C1E13939E0083C8A4 /* Spring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0CB1E0B1E13939E0083C8A4 /* Spring.framework */; };
 		B0CB1E0E1E1393A20083C8A4 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0CB1E0D1E1393A20083C8A4 /* SVProgressHUD.framework */; };
+		B0E6CE341E384D4200DCDB9C /* ApiruViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E6CE331E384D4200DCDB9C /* ApiruViewController.swift */; };
 		B0F582AB1DB38E5300654519 /* KindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F582A91DB38E5300654519 /* KindTableViewCell.swift */; };
 		B0F582AC1DB38E5300654519 /* KindTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F582AA1DB38E5300654519 /* KindTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -138,6 +139,7 @@
 		B0CB1E091E13939A0083C8A4 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = "../../Library/Developer/Xcode/DerivedData/Kiki-emylnmdojkctwwgdpvdjadsaiqvm/Build/Products/Debug-iphonesimulator/Reachability/Reachability.framework"; sourceTree = "<group>"; };
 		B0CB1E0B1E13939E0083C8A4 /* Spring.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spring.framework; path = "../../Library/Developer/Xcode/DerivedData/Kiki-emylnmdojkctwwgdpvdjadsaiqvm/Build/Products/Debug-iphonesimulator/Spring/Spring.framework"; sourceTree = "<group>"; };
 		B0CB1E0D1E1393A20083C8A4 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = "../../Library/Developer/Xcode/DerivedData/Kiki-emylnmdojkctwwgdpvdjadsaiqvm/Build/Products/Debug-iphonesimulator/SVProgressHUD/SVProgressHUD.framework"; sourceTree = "<group>"; };
+		B0E6CE331E384D4200DCDB9C /* ApiruViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiruViewController.swift; sourceTree = "<group>"; };
 		B0F582A91DB38E5300654519 /* KindTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KindTableViewCell.swift; sourceTree = "<group>"; };
 		B0F582AA1DB38E5300654519 /* KindTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KindTableViewCell.xib; sourceTree = "<group>"; };
 		B8D29CE5422BA1688C21C169 /* Pods-Kiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiki.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kiki/Pods-Kiki.debug.xcconfig"; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 		B0B263D21DB7467100C0F2A3 /* 音源投稿 */ = {
 			isa = PBXGroup;
 			children = (
+				B0E6CE331E384D4200DCDB9C /* ApiruViewController.swift */,
 				B0A78FD71DACFF6500AC0513 /* ViewController.swift */,
 				B03151751DAE6A06007EE64C /* PlayViewController.swift */,
 				B029E5891DE1A17C00C7EDDF /* IyaViewController.swift */,
@@ -493,6 +496,7 @@
 				B071D9711DB509FA0017E287 /* TabViewController.swift in Sources */,
 				B0B4481C1DD5ACE4001DDD89 /* IkuViewController.swift in Sources */,
 				B00501BE1DB6420800319866 /* ItiranViewController.swift in Sources */,
+				B0E6CE341E384D4200DCDB9C /* ApiruViewController.swift in Sources */,
 				B0190A211DB20FE400FA066D /* KindViewController.swift in Sources */,
 				B06968221DC60D6E00274DB1 /* PostData1.swift in Sources */,
 				B00501BB1DB610D200319866 /* HomeTableViewCell.swift in Sources */,
