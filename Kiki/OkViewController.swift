@@ -13,8 +13,8 @@ class OkViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var text: UITextField!
     @IBOutlet weak var byou: UILabel!
     @IBOutlet weak var back: UIButton!
-    var original: String?
-    var cover:String?
+    var original: NSString?
+    var cover:NSString?
     
     override func viewDidLoad() {
         super.viewDidLoad()

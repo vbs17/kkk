@@ -5,8 +5,8 @@ import UIKit
 class SendViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //filenameをsongDataに渡す
     var songData:URL!
-    var original: String?
-    var cover:String?
+    var original: NSString?
+    var cover:NSString?
     @IBOutlet weak var library: UIButton!
     @IBOutlet weak var camera: UIButton!
 

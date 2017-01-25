@@ -3,8 +3,8 @@ import UIKit
 
 class ApiruViewController: UIViewController {
 
-    var original:String?
-    var cover:String?
+    var original:NSString?
+    var cover:NSString?
     
     
     @IBOutlet weak var lbl: UILabel!

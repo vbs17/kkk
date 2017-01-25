@@ -15,8 +15,8 @@ class PlayViewController: UIViewController {
         AVNumberOfChannelsKey: 1 as AnyObject ,
         AVSampleRateKey: 44100 as AnyObject
     ]
-    var original: String?
-    var cover:String?
+    var original: NSString?
+    var cover:NSString?
     
     @IBAction func gok(_ sender: AnyObject) {
         playSong.stop()

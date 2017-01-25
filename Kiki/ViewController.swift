@@ -16,8 +16,8 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     var count = 1
     var timeCount = 1
     var count1: Bool = false
-    var original: String?
-    var cover:String?
+    var original: NSString?
+    var cover:NSString?
     
     func nextGamenn(){
         let playviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Play") as! PlayViewController

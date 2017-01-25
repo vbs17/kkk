@@ -470,8 +470,8 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     var tappedCellPos:IndexPath! //タップされたCellのindexPath
     var buttonOriginalColor:UIColor!//ボタンの元の色
     var isRowSelected:Bool = false//現在行が選択状態か否か
-    var original: String?
-    var cover:String?
+    var original:  NSString?
+    var cover: NSString?
     
     
     override func viewDidLoad() {
@@ -657,10 +657,8 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         let kazu:NSString = byou.text! as NSString
         let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
         let time = NSDate.timeIntervalSinceReferenceDate
-        let original:NSString = self.original.text! as NSString
-        let cover:NSString = self.cover.text! as NSString
-
-        
+        let original:NSString = (self.original as NSString?)!
+        let cover:NSString = (self.cover as NSString?)!
         let postData = ["time":time,"byou": kazu, "songname": songName, "ongen": uuid,"original":original,"cover":cover, "uid":uid] as [String : Any]
         let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).child(uuid)
         
