@@ -13,6 +13,8 @@ class OkViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var text: UITextField!
     @IBOutlet weak var byou: UILabel!
     @IBOutlet weak var back: UIButton!
+    var original: String?
+    var cover:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +53,8 @@ class OkViewController: UIViewController,UITextFieldDelegate {
         kindviewcontroller.image = imageView.image
         kindviewcontroller.byou = byou
         kindviewcontroller.songname = text
+        kindviewcontroller.original = self.original
+        kindviewcontroller.cover = senf.cover
         self.present(kindviewcontroller, animated: true, completion: nil)
     }
     //消す

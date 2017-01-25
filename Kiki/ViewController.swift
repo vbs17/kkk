@@ -16,6 +16,19 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     var count = 1
     var timeCount = 1
     var count1: Bool = false
+    var original: String?
+    var cover:String?
+    
+    func nextGamenn(){
+        let playviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Play") as! PlayViewController
+        playviewcontroller.songData = self.documentFilePath()
+        playviewcontroller.original = self.original
+        playviewcontroller.cover = self.cover
+        self.present(playviewcontroller, animated: true, completion: nil)
+        
+        
+    }
+
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var viewImage: UIView!
@@ -97,13 +110,6 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     }
     
     //filenameをsongDataに渡す
-    func nextGamenn(){
-        let playviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Play") as! PlayViewController
-        playviewcontroller.songData = self.documentFilePath()
-        self.present(playviewcontroller, animated: true, completion: nil)
-        
-        
-    }
     
     
     @IBAction func recordStart(_ sender: UIButton) {

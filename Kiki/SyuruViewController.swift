@@ -16,7 +16,7 @@ class SyuruViewController: UIViewController {
         if isSavePlofile == true {
             AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeAudio, completionHandler: {(granted: Bool) in
                 if granted {
-                    let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Top") as! ViewController
+                    let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Apiru") as! ApiruViewController
                     self.present(recviewcontroller, animated: true, completion: nil)
                 }
                 else {
@@ -84,9 +84,8 @@ class SyuruViewController: UIViewController {
     }
     
     @IBAction func back(_ sender: AnyObject) {
-        //self.dismiss(animated: true, completion: nil)
-        let basyoviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Apiru") as! ApiruViewController
-        self.present(basyoviewcontroller, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
+       
 
     }
     override func viewDidLoad() {

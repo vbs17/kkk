@@ -182,6 +182,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B00467F31E38A93C0033859A /* m */ = {
+			isa = PBXGroup;
+			children = (
+				B029E5891DE1A17C00C7EDDF /* IyaViewController.swift */,
+				B071309A1DC22D8700B8EEC1 /* 2TViewController.swift */,
+				B071309C1DC2352E00B8EEC1 /* Play2ViewController.swift */,
+			);
+			name = m;
+			sourceTree = "<group>";
+		};
 		B00501BA1DB610D200319866 /* 音源表示 */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +297,7 @@
 				B05F577B1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift */,
 				B06B00441DDD4131000C545D /* OreViewController.swift */,
 				B071D9701DB509FA0017E287 /* TabViewController.swift */,
+				B00467F31E38A93C0033859A /* m */,
 				B05E34401DC8B6CF00C271D3 /* PostData */,
 				B0BD80DE1DC71B0D0056E1A5 /* 集合場所表示 */,
 				B042A0201DB98BBE0068D205 /* 集合場所投稿 */,
@@ -305,9 +316,6 @@
 				B0E6CE331E384D4200DCDB9C /* ApiruViewController.swift */,
 				B0A78FD71DACFF6500AC0513 /* ViewController.swift */,
 				B03151751DAE6A06007EE64C /* PlayViewController.swift */,
-				B029E5891DE1A17C00C7EDDF /* IyaViewController.swift */,
-				B071309A1DC22D8700B8EEC1 /* 2TViewController.swift */,
-				B071309C1DC2352E00B8EEC1 /* Play2ViewController.swift */,
 				B0ABF85B1DB0EE21001987E7 /* SendViewController.swift */,
 				B0A9A1731DB1FDE00021D1CF /* OkViewController.swift */,
 				B0190A201DB20FE400FA066D /* KindViewController.swift */,

@@ -15,6 +15,19 @@ class PlayViewController: UIViewController {
         AVNumberOfChannelsKey: 1 as AnyObject ,
         AVSampleRateKey: 44100 as AnyObject
     ]
+    var original: String?
+    var cover:String?
+    
+    @IBAction func gok(_ sender: AnyObject) {
+        playSong.stop()
+        timer.invalidate()
+        let sendviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Send") as! SendViewController
+        sendviewcontroller.songData = songData
+        sendviewcontroller.original = self.original
+        sendviewcontroller.cover = self.cover
+        self.present(sendviewcontroller, animated: true, completion: nil)
+    }
+
     
     @IBOutlet weak var onbyou: UILabel!
     @IBOutlet weak var play: UIButton!
@@ -61,13 +74,6 @@ class PlayViewController: UIViewController {
     }
     
     //mp3に圧縮させて投稿
-    @IBAction func gok(_ sender: AnyObject) {
-        playSong.stop()
-        timer.invalidate()
-        let sendviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Send") as! SendViewController
-        sendviewcontroller.songData = songData
-         self.present(sendviewcontroller, animated: true, completion: nil)
-    }
     
        //巻き戻し
     @IBAction func goBack(_ sender: UIButton) {

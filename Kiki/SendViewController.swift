@@ -5,7 +5,8 @@ import UIKit
 class SendViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //filenameをsongDataに渡す
     var songData:URL!
-    
+    var original: String?
+    var cover:String?
     @IBOutlet weak var library: UIButton!
     @IBOutlet weak var camera: UIButton!
 
@@ -65,6 +66,8 @@ class SendViewController: UIViewController,UIImagePickerControllerDelegate, UINa
                 let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
                 okviewcontroller.image = resizeImage
                 okviewcontroller.songData = self.songData
+                okviewcontroller.original = self.original
+                okviewcontroller.cover = self.cover
                 self.present(okviewcontroller, animated: true, completion:  nil)
             }
         }
