@@ -90,7 +90,10 @@ class SyuruViewController: UIViewController {
     }
     
     @IBAction func back(_ sender: AnyObject) {
-        self.dismiss(animated: true, completion: nil)
+        //self.dismiss(animated: true, completion: nil)
+        let basyoviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Apiru") as! ApiruViewController
+        self.present(basyoviewcontroller, animated: true, completion: nil)
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
