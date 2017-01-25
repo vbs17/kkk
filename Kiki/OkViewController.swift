@@ -54,7 +54,7 @@ class OkViewController: UIViewController,UITextFieldDelegate {
         kindviewcontroller.byou = byou
         kindviewcontroller.songname = text
         kindviewcontroller.original = self.original
-        kindviewcontroller.cover = senf.cover
+        kindviewcontroller.cover = self.cover
         self.present(kindviewcontroller, animated: true, completion: nil)
     }
     //消す
