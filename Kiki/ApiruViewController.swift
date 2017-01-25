@@ -19,54 +19,69 @@ class ApiruViewController: UIViewController {
     @IBOutlet weak var covdru1: UIButton!
     @IBAction func ori(_ sender: Any) {
         original = "O"
+        cover = ""
         let viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Top") as! ViewController
         self.present(viewcontroller, animated: true, completion: nil)
         viewcontroller.original = self.original
+        viewcontroller.cover = self.cover
     }
     @IBAction func cover(_ sender: Any) {
+        original = ""
         cover = "C"
         let viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Top") as! ViewController
         self.present(viewcontroller, animated: true, completion: nil)
+        viewcontroller.original = self.original
         viewcontroller.cover = self.cover
     }
     @IBAction func origui(_ sender: Any) {
         original = "O"
+        cover = ""
         let viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Top") as! ViewController
         self.present(viewcontroller, animated: true, completion: nil)
         viewcontroller.original = self.original
+        viewcontroller.cover = self.cover
     }
     @IBAction func covgui(_ sender: Any) {
+        original = ""
         cover = "C"
         let viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Top") as! ViewController
         self.present(viewcontroller, animated: true, completion: nil)
+        viewcontroller.original = self.original
         viewcontroller.cover = self.cover
-
     }
     @IBAction func oribas(_ sender: Any) {
         original = "O"
+        cover = ""
         let viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Top") as! ViewController
         self.present(viewcontroller, animated: true, completion: nil)
         viewcontroller.original = self.original
+        viewcontroller.cover = self.cover
+
     }
     @IBAction func covbas(_ sender: Any) {
+        original = ""
         cover = "C"
         let viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Top") as! ViewController
         self.present(viewcontroller, animated: true, completion: nil)
+        viewcontroller.original = self.original
         viewcontroller.cover = self.cover
 
     }
     @IBAction func oridru(_ sender: Any) {
         original = "O"
+        cover = ""
         let viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Top") as! ViewController
         self.present(viewcontroller, animated: true, completion: nil)
         viewcontroller.original = self.original
+        viewcontroller.cover = self.cover
     }
     @IBAction func covdru(_ sender: Any) {
+        original = ""
         cover = "C"
         let viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Top") as! ViewController
         self.present(viewcontroller, animated: true, completion: nil)
+        viewcontroller.original = self.original
         viewcontroller.cover = self.cover
-
     }
     
     override func viewDidLoad() {
