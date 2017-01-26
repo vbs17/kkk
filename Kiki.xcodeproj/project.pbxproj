@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		354A3F113F48C667976D4459 /* Pods_Kiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6FEAA645A78AA6AC4A2E2B /* Pods_Kiki.framework */; };
+		B00467F61E3995380033859A /* Apiru2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00467F51E3995380033859A /* Apiru2ViewController.swift */; };
 		B00501BB1DB610D200319866 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00501B81DB610D200319866 /* HomeTableViewCell.swift */; };
 		B00501BC1DB610D200319866 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B00501B91DB610D200319866 /* HomeTableViewCell.xib */; };
 		B00501BE1DB6420800319866 /* ItiranViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00501BD1DB6420800319866 /* ItiranViewController.swift */; };
@@ -75,6 +76,7 @@
 /* Begin PBXFileReference section */
 		1B6FEAA645A78AA6AC4A2E2B /* Pods_Kiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E6B0D253A1C1620CEF05707 /* Pods-Kiki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiki.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kiki/Pods-Kiki.release.xcconfig"; sourceTree = "<group>"; };
+		B00467F51E3995380033859A /* Apiru2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apiru2ViewController.swift; sourceTree = "<group>"; };
 		B00501B81DB610D200319866 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		B00501B91DB610D200319866 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		B00501BD1DB6420800319866 /* ItiranViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItiranViewController.swift; path = Kiki/ItiranViewController.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				B0E6CE331E384D4200DCDB9C /* ApiruViewController.swift */,
+				B00467F51E3995380033859A /* Apiru2ViewController.swift */,
 				B0A78FD71DACFF6500AC0513 /* ViewController.swift */,
 				B03151751DAE6A06007EE64C /* PlayViewController.swift */,
 				B0ABF85B1DB0EE21001987E7 /* SendViewController.swift */,
@@ -531,6 +534,7 @@
 				B00D7CF51DCEB5190042D04F /* MixerMeter.m in Sources */,
 				B0BA8AE01DDD79D800F00E38 /* Tyu3ViewController.swift in Sources */,
 				B071309D1DC2352E00B8EEC1 /* Play2ViewController.swift in Sources */,
+				B00467F61E3995380033859A /* Apiru2ViewController.swift in Sources */,
 				B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */,
 				B029E58A1DE1A17C00C7EDDF /* IyaViewController.swift in Sources */,
 				B0A78FD81DACFF6500AC0513 /* ViewController.swift in Sources */,
