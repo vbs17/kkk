@@ -72,9 +72,9 @@
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2Z-q8-Ju7">
-                        <rect key="frame" x="0.0" y="0.0" width="67" height="64"/>
+                        <rect key="frame" x="0.0" y="0.0" width="67" height="47"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="64" id="1ub-yf-miP"/>
+                            <constraint firstAttribute="height" constant="47" id="1ub-yf-miP"/>
                             <constraint firstAttribute="width" constant="67" id="ecN-1Z-tZl"/>
                         </constraints>
                     </button>
@@ -195,7 +195,7 @@
                     <constraint firstAttribute="trailing" secondItem="AIe-na-zoW" secondAttribute="trailing" id="iZa-Bt-17H"/>
                     <constraint firstItem="rCP-Lj-Tr8" firstAttribute="top" secondItem="8M8-gA-MVL" secondAttribute="bottom" constant="9" id="lBH-Ox-gQM"/>
                     <constraint firstAttribute="trailing" secondItem="MFn-JZ-Yvb" secondAttribute="trailing" id="mPv-To-MfB"/>
-                    <constraint firstItem="E4g-N5-7h0" firstAttribute="top" secondItem="v2Z-q8-Ju7" secondAttribute="bottom" constant="99" id="oA2-oP-xge"/>
+                    <constraint firstItem="E4g-N5-7h0" firstAttribute="top" secondItem="v2Z-q8-Ju7" secondAttribute="bottom" constant="116" id="oA2-oP-xge"/>
                     <constraint firstItem="VaL-Xe-lim" firstAttribute="top" secondItem="s93-Vu-Lzl" secondAttribute="top" id="p1M-cD-QiN"/>
                     <constraint firstItem="HEe-Jb-muO" firstAttribute="leading" secondItem="rCP-Lj-Tr8" secondAttribute="trailing" constant="11" id="scy-og-8hp"/>
                     <constraint firstItem="MFn-JZ-Yvb" firstAttribute="leading" secondItem="s93-Vu-Lzl" secondAttribute="leading" id="tqj-yy-AHo"/>

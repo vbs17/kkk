@@ -52,9 +52,7 @@ class HomeTableViewCell1: UITableViewCell {
         pathGo.clipsToBounds = true
         imageView1.layer.cornerRadius = 22.2
         imageView1.clipsToBounds = true
-        join.layer.cornerRadius = join.frame.size.width / 2
-        join.clipsToBounds = true
-
+        
     }
     
     
