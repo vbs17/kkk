@@ -466,6 +466,13 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func you(_ sender: Any) {
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if presentedViewController == nil {
+            self.view.removeFromSuperview()
+            self.genre = nil
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
