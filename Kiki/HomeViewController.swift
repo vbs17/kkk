@@ -29,6 +29,35 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     @IBOutlet weak var lbl: UILabel!
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if presentedViewController == nil {
+            SVProgressHUD.dismiss()
+            observing = false
+            self.view.removeFromSuperview()
+            self.postArray = []
+            self.postArray2 = []
+            self.postArray3 = []
+            self.observing = nil
+            self.genre = nil
+            self.playSong = nil
+            self.timer = nil
+            self.timer2 = nil
+            self.back = nil
+            self.tableView = nil
+            self.playingIndexPath = nil
+            self.DisplayDataNumber = nil
+            self.dataLastVal = nil
+            FIRDatabase.database().reference().removeAllObservers()
+            if playSong != nil {
+                playSong.stop()
+                timer.invalidate()
+            }
+        }
+    }
+    
+
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CEll", for: indexPath) as! HomeTableViewCell
         cell.hyouka.setTitleColor(UIColor.white, for: UIControlState())
@@ -575,20 +604,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if presentedViewController == nil {
-            SVProgressHUD.dismiss()
-            observing = false
-            FIRDatabase.database().reference().removeAllObservers()
-            if playSong != nil {
-                playSong.stop()
-                timer.invalidate()
-            }
-        }
-}
-
-
+    
 
 
 
