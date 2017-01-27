@@ -34,15 +34,15 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             self.postArray = []
             self.postArray2 = []
             self.postArray3 = []
-            self.observing = nil
+            //self.observing = nil
             self.genre = nil
             self.playSong = nil
-            self.timer = nil
-            self.timer2 = nil
+            //self.timer = nil
+            //self.timer2 = nil
             self.back = nil
             self.tableView = nil
             self.playingIndexPath = nil
-            self.DisplayDataNumber = nil
+            //self.DisplayDataNumber = nil
             self.dataLastVal = nil
             FIRDatabase.database().reference().removeAllObservers()
             if playSong != nil {

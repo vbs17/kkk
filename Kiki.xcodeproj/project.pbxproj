@@ -236,7 +236,6 @@
 				B071D9671DB4E5040017E287 /* PostData.swift */,
 				B06606551DFC4B3100FD3E4C /* PostData3.swift */,
 				B05E343E1DC8B57F00C271D3 /* PostData2.swift */,
-				B0479DB51E0FF69000B5B9B3 /* postData2 */,
 				B071D9651DB4D6140017E287 /* File.swift */,
 			);
 			name = PostData;
@@ -300,6 +299,7 @@
 				B06B00441DDD4131000C545D /* OreViewController.swift */,
 				B071D9701DB509FA0017E287 /* TabViewController.swift */,
 				B00467F31E38A93C0033859A /* m */,
+				B0479DB51E0FF69000B5B9B3 /* postData2 */,
 				B05E34401DC8B6CF00C271D3 /* PostData */,
 				B0BD80DE1DC71B0D0056E1A5 /* 集合場所表示 */,
 				B042A0201DB98BBE0068D205 /* 集合場所投稿 */,
