@@ -562,7 +562,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
                 print("Post")
                 saveSong(uuid: ongen)
                 print("saveSong")
-
+                SVProgressHUD.setDefaultMaskType(.clear)
                 SVProgressHUD.show()
             } else {
                 let alert = UIAlertController()

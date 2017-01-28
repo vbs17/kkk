@@ -421,7 +421,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     }
     
     func mada(){
-        lbl.text = "誰もまだ投稿していません"
+        lbl.text = "誰もまだ投稿していません.君の音楽を投稿して一番乗りになろう！"
     }
     
     
