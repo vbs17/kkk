@@ -130,7 +130,7 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
             let displayRect = path.convert(path.bounds, to: scrollView)
             rect = displayRect
         }
-        var move = moveSize - rect.origin.y - rect.size.height - 10
+        var move = moveSize - rect.origin.y - rect.size.height - 30
         if ( move > 0  ) { move = 0 }
         if ( -move > moveSize ) { move = moveSize }
         
