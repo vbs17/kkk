@@ -150,9 +150,7 @@ class ProViewController: UIViewController,UITextFieldDelegate{
         scrollView.contentOffset = CGPoint(x: 0, y: 0)
     }
     
-    
-    //ここいじった syugoやった
-    override func viewWillAppear(_ animated: Bool) {
+        override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         NotificationCenter.default.addObserver(self,
