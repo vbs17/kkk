@@ -20,13 +20,21 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
     @IBOutlet weak var ok: UIButton!
     var selectedTextField:UITextField!
     var isTextView:Bool = false
-
+    var rect:CGRect!
+    
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         print("textFieldDidBeginEditing\n")
-         selectedTextField = textField
+        selectedTextField = textField
+        let displayRect = textField.convert(textField.bounds, to: scrollView)
+        rect = displayRect
         isTextView = true
         
+    }
+    
+    func CGPointMake(_ x: CGFloat, _ y: CGFloat)-> CGPoint{
+        
+        return CGPoint(x: 0,y :0)
     }
     
     func dismissKeyboard(){
@@ -46,6 +54,7 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
                     if offsetY < 0 {
                         return
                     }
+                    
                     updateScrollViewSize(offsetY, duration: animationDuration)
                 }
             } else {
@@ -64,7 +73,7 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
             }
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = image
@@ -75,31 +84,31 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
         self.view.addGestureRecognizer(tapGesture)
         
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         NotificationCenter.default.addObserver(self,
-                                                         selector: #selector(SyugoViewController.keyboardWillBeShown(_:)),
-                                                         name: NSNotification.Name.UIKeyboardWillShow,
-                                                         object: nil)
+                                               selector: #selector(SyugoViewController.keyboardWillBeShown(_:)),
+                                               name: NSNotification.Name.UIKeyboardWillShow,
+                                               object: nil)
         NotificationCenter.default.addObserver(self,
-                                                         selector: #selector(SyugoViewController.keyboardWillBeHidden(_:)),
-                                                         name: NSNotification.Name.UIKeyboardWillHide,
-                                                         object: nil)
+                                               selector: #selector(SyugoViewController.keyboardWillBeHidden(_:)),
+                                               name: NSNotification.Name.UIKeyboardWillHide,
+                                               object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         NotificationCenter.default.removeObserver(self,
-                                                            name: NSNotification.Name.UIKeyboardWillShow,
-                                                            object: nil)
+                                                  name: NSNotification.Name.UIKeyboardWillShow,
+                                                  object: nil)
         NotificationCenter.default.removeObserver(self,
-                                                            name: NSNotification.Name.UIKeyboardWillHide,
-                                                            object: nil)
+                                                  name: NSNotification.Name.UIKeyboardWillHide,
+                                                  object: nil)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -117,7 +126,13 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
         UIView.beginAnimations("ResizeForKeyboard", context: nil)
         UIView.setAnimationDuration(duration)
         
-       
+        if (rect == nil){
+            let displayRect = path.convert(path.bounds, to: scrollView)
+            rect = displayRect
+        }
+        var move = moveSize - rect.origin.y - rect.size.height - 10
+        if ( move > 0  ) { move = 0 }
+        if ( -move > moveSize ) { move = moveSize }
         
         let contentInsets = UIEdgeInsetsMake(0, 0, moveSize, 0)
         scrollView.contentInset = contentInsets
@@ -148,25 +163,26 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
             lbl.isHidden = false
         }
     }
-
     
-   
+    
+    
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        scrollView.contentOffset = CGPoint(x: 0,y :-path.contentInset.top)
         print("textFieldShouldBeginEditing\n")
         isTextView = false
         return true
     }
-
+    
     @IBAction func Ok(_ sender: AnyObject) {
         if (path.text != nil && path.text != ""){
             
-        let kind2viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind2") as! Kind2ViewController
-        kind2viewcontroller.hiniti = hiniti
-        kind2viewcontroller.image = imageView.image!
-        kind2viewcontroller.zikoku = zikoku
-        kind2viewcontroller.station = station
-        kind2viewcontroller.path = path
+            let kind2viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind2") as! Kind2ViewController
+            kind2viewcontroller.hiniti = hiniti
+            kind2viewcontroller.image = imageView.image!
+            kind2viewcontroller.zikoku = zikoku
+            kind2viewcontroller.station = station
+            kind2viewcontroller.path = path
             self.present(kind2viewcontroller, animated: true, completion: nil)
         }else{
             let alert = UIAlertController()
@@ -189,14 +205,14 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
             alert.view.tintColor = UIColor.white
             
         }
-    
+        
     }
-
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-
-   
+    
+    
 }
