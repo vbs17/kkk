@@ -11,6 +11,7 @@ class ApiruViewController: UIViewController {
     
     @IBOutlet weak var ori1: UIButton!
     @IBOutlet weak var cover1: UIButton!
+    //ここ
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -52,6 +53,18 @@ class ApiruViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let ud = UserDefaults.standard
+        let isTutorial3 = ud.bool(forKey: CommonConst.IsTutorial3 )
+        if isTutorial3 == false {
+            let storyboard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+            let viewController:UIViewController = storyboard.instantiateViewController(withIdentifier: "Rock")
+            self.present(viewController, animated: false, completion: nil)
+        }
+    }
+    
+
 
   
 }

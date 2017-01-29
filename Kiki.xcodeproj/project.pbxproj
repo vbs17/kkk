@@ -15,6 +15,9 @@
 		B00501C41DB6428500319866 /* ItiranTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00501C11DB6428500319866 /* ItiranTableViewCell.swift */; };
 		B00501C51DB6428500319866 /* ItiranTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B00501C21DB6428500319866 /* ItiranTableViewCell.xib */; };
 		B007C1BA1DE95D92006F1883 /* MergeAudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = B007C1B91DE95D92006F1883 /* MergeAudioFile.m */; };
+		B00C67AC1E3D6FD10026E775 /* RockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C67AB1E3D6FD10026E775 /* RockViewController.swift */; };
+		B00C67AE1E3D6FDD0026E775 /* Rock2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C67AD1E3D6FDD0026E775 /* Rock2ViewController.swift */; };
+		B00C67B01E3D6FE90026E775 /* Rock3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C67AF1E3D6FE90026E775 /* Rock3ViewController.swift */; };
 		B00D7CF51DCEB5190042D04F /* MixerMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = B00D7CF41DCEB5190042D04F /* MixerMeter.m */; };
 		B0190A211DB20FE400FA066D /* KindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0190A201DB20FE400FA066D /* KindViewController.swift */; };
 		B020D0AB1E0F405A005A1363 /* PostData4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B020D0AA1E0F405A005A1363 /* PostData4.swift */; };
@@ -84,6 +87,9 @@
 		B00501C21DB6428500319866 /* ItiranTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItiranTableViewCell.xib; sourceTree = "<group>"; };
 		B007C1B81DE95D92006F1883 /* MergeAudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MergeAudioFile.h; sourceTree = "<group>"; };
 		B007C1B91DE95D92006F1883 /* MergeAudioFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MergeAudioFile.m; sourceTree = "<group>"; };
+		B00C67AB1E3D6FD10026E775 /* RockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RockViewController.swift; sourceTree = "<group>"; };
+		B00C67AD1E3D6FDD0026E775 /* Rock2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rock2ViewController.swift; sourceTree = "<group>"; };
+		B00C67AF1E3D6FE90026E775 /* Rock3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rock3ViewController.swift; sourceTree = "<group>"; };
 		B00D7CF21DCEB5180042D04F /* Kiki-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kiki-Bridging-Header.h"; sourceTree = "<group>"; };
 		B00D7CF31DCEB5190042D04F /* MixerMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixerMeter.h; sourceTree = "<group>"; };
 		B00D7CF41DCEB5190042D04F /* MixerMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MixerMeter.m; sourceTree = "<group>"; };
@@ -290,6 +296,9 @@
 			isa = PBXGroup;
 			children = (
 				B0A78FD91DACFF6500AC0513 /* Main.storyboard */,
+				B00C67AB1E3D6FD10026E775 /* RockViewController.swift */,
+				B00C67AD1E3D6FDD0026E775 /* Rock2ViewController.swift */,
+				B00C67AF1E3D6FE90026E775 /* Rock3ViewController.swift */,
 				B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */,
 				B05F57731DDEBD05006DB9A5 /* SyutyuViewController.swift */,
 				B05F57751DDF4937006DB9A5 /* Syutyu1ViewController.swift */,
@@ -518,6 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B05F57741DDEBD05006DB9A5 /* SyutyuViewController.swift in Sources */,
+				B00C67B01E3D6FE90026E775 /* Rock3ViewController.swift in Sources */,
 				B071D9711DB509FA0017E287 /* TabViewController.swift in Sources */,
 				B0B4481C1DD5ACE4001DDD89 /* IkuViewController.swift in Sources */,
 				B00501BE1DB6420800319866 /* ItiranViewController.swift in Sources */,
@@ -528,6 +538,7 @@
 				B05E343B1DC8A53800C271D3 /* ProViewController.swift in Sources */,
 				B06968261DC60F7700274DB1 /* Home1ViewController.swift in Sources */,
 				B071D9681DB4E5040017E287 /* PostData.swift in Sources */,
+				B00C67AC1E3D6FD10026E775 /* RockViewController.swift in Sources */,
 				B05F577C1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift in Sources */,
 				B007C1BA1DE95D92006F1883 /* MergeAudioFile.m in Sources */,
 				B0ABF85C1DB0EE21001987E7 /* SendViewController.swift in Sources */,
@@ -561,6 +572,7 @@
 				B042A01E1DB98BB30068D205 /* SyugoTableViewCell.swift in Sources */,
 				B06606561DFC4B3100FD3E4C /* PostData3.swift in Sources */,
 				B0A78FD61DACFF6500AC0513 /* AppDelegate.swift in Sources */,
+				B00C67AE1E3D6FDD0026E775 /* Rock2ViewController.swift in Sources */,
 				B042A0221DB991150068D205 /* SyuruViewController.swift in Sources */,
 				B06968291DC610C200274DB1 /* HomeTableViewCell1.swift in Sources */,
 				B07E94E71DCDC766009537A7 /* ProIdouViewController.swift in Sources */,
