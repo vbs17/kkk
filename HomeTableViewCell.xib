@@ -120,16 +120,17 @@
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCP-Lj-Tr8">
-                        <rect key="frame" x="4" y="401" width="40" height="61"/>
+                        <rect key="frame" x="4" y="411" width="40" height="40"/>
+                        <color key="backgroundColor" red="1" green="0.87323347737663815" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="MEt-pO-Aq6"/>
-                            <constraint firstAttribute="height" constant="61" id="a0R-d7-LR4"/>
+                            <constraint firstAttribute="height" constant="40" id="a0R-d7-LR4"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
-                        <state key="normal" title="🎧">
-                            <color key="titleColor" red="0.93950425390000003" green="0.93950425390000003" blue="0.93950425390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" title="評価">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                     </button>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HEe-Jb-muO">
@@ -193,7 +194,7 @@
                     <constraint firstItem="MFn-JZ-Yvb" firstAttribute="top" secondItem="g8K-0J-D9A" secondAttribute="bottom" constant="1" id="fKj-Ba-Zcu"/>
                     <constraint firstItem="v2Z-q8-Ju7" firstAttribute="top" secondItem="s93-Vu-Lzl" secondAttribute="top" id="flH-3l-689"/>
                     <constraint firstAttribute="trailing" secondItem="AIe-na-zoW" secondAttribute="trailing" id="iZa-Bt-17H"/>
-                    <constraint firstItem="rCP-Lj-Tr8" firstAttribute="top" secondItem="8M8-gA-MVL" secondAttribute="bottom" constant="9" id="lBH-Ox-gQM"/>
+                    <constraint firstItem="rCP-Lj-Tr8" firstAttribute="top" secondItem="8M8-gA-MVL" secondAttribute="bottom" constant="19" id="lBH-Ox-gQM"/>
                     <constraint firstAttribute="trailing" secondItem="MFn-JZ-Yvb" secondAttribute="trailing" id="mPv-To-MfB"/>
                     <constraint firstItem="E4g-N5-7h0" firstAttribute="top" secondItem="v2Z-q8-Ju7" secondAttribute="bottom" constant="116" id="oA2-oP-xge"/>
                     <constraint firstItem="VaL-Xe-lim" firstAttribute="top" secondItem="s93-Vu-Lzl" secondAttribute="top" id="p1M-cD-QiN"/>

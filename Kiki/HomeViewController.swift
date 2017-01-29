@@ -43,7 +43,8 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CEll", for: indexPath) as! HomeTableViewCell
-        cell.hyouka.setTitleColor(UIColor.white, for: UIControlState())
+        //cell.hyouka.setTitleColor(UIColor.white, for: UIControlState())
+        cell.hyouka.setTitleColor(UIColor.black, for: UIControlState())
         cell.edittingFlag = false
         cell.star1.isUserInteractionEnabled = false
         cell.star2.isUserInteractionEnabled = false
@@ -326,6 +327,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let isSavePlofile = ud.bool(forKey: CommonConst.IsSavePlofileData )
         if isSavePlofile == true {
             if cell!.edittingFlag == false{
+                //cell!.hyouka.setTitleColor(UIColor.yellow, for: UIControlState())
                 cell!.hyouka.setTitleColor(UIColor.yellow, for: UIControlState())
                 cell!.edittingFlag = true
                 cell!.star1.isUserInteractionEnabled = true
@@ -339,7 +341,8 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 cell?.star4.setImage(UIImage(named:"sister7"), for: UIControlState())
                 cell?.star5.setImage(UIImage(named:"sister7"), for: UIControlState())
             } else if cell!.edittingFlag == true{
-                cell!.hyouka.setTitleColor(UIColor.white, for: UIControlState())
+                //cell!.hyouka.setTitleColor(UIColor.white, for: UIControlState())
+                cell!.hyouka.setTitleColor(UIColor.black, for: UIControlState())
                 cell!.edittingFlag = false
                 cell?.setPostData1(self.postArray[indexPath!.row])
                 cell!.star1.isUserInteractionEnabled = false
@@ -377,8 +380,8 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let indexPath = tableView.indexPathForRow(at: point)
         let postData = postArray[indexPath!.row]
         let cell = tableView.cellForRow(at: indexPath!) as! HomeTableViewCell?
-        cell!.hyouka.setTitleColor(UIColor.yellow, for: UIControlState())
-        
+        //cell!.hyouka.setTitleColor(UIColor.yellow, for: UIControlState())
+        cell!.hyouka.setTitleColor(UIColor.black, for: UIControlState())
         if let uid = FIRAuth.auth()?.currentUser?.uid {
             var index = -1 //0からpostData.star.count(postData.star.countは含まない)
             for var i in (0 ..< postData.star.count) {
@@ -397,7 +400,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             //何個星タップしたかpostData.starに保存
             postData.star.append([uid:String(sender.tag)])
         }
-        cell!.hyouka.setTitleColor(UIColor.black, for: UIControlState())
+        //cell!.hyouka.setTitleColor(UIColor.black, for: UIControlState())
         cell!.edittingFlag = false
         cell?.setPostData1(self.postArray[indexPath!.row])
         cell!.star1.isUserInteractionEnabled = false
@@ -471,16 +474,10 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             
             timer.invalidate()
             //ここもポイント
+            SVProgressHUD.setDefaultMaskType(.clear)
+            //backだけはokにしたいな
             SVProgressHUD.show(withStatus:"クールな音質に仕上げています😎(最大5秒) 　　　　　　　　　　　　　　　　                　　　　　　このオリジナルソングが君のセンスにあえば左上のProfileボタンをタップして連絡をとれ😎")
-            cell?.playButton.isEnabled = false
-            cell?.go.isEnabled = false
-            cell?.backButton.isEnabled = false
-            cell?.hyouka.isEnabled = false
-            cell?.star1.isEnabled = false
-            cell?.star2.isEnabled = false
-            cell?.star3.isEnabled = false
-            cell?.star4.isEnabled = false
-            cell?.star5.isEnabled = false
+            
             
             FIRDatabase.database().reference().child(CommonConst.songData).child(postData.song!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                 guard let `self` = self else { return }
@@ -488,16 +485,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                     return
                 }
                 SVProgressHUD.dismiss()
-                cell?.playButton.isEnabled = true
-                cell?.go.isEnabled = true
-                cell?.backButton.isEnabled = true
-                cell?.hyouka.isEnabled = true
-                cell?.star1.isEnabled = true
-                cell?.star2.isEnabled = true
-                cell?.star3.isEnabled = true
-                cell?.star4.isEnabled = true
-                cell?.star5.isEnabled = true
-
                 if self.presentedViewController != nil {
                     return
                 }

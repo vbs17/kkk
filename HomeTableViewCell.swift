@@ -160,8 +160,16 @@ class HomeTableViewCell: UITableViewCell {
         backButton.layer.cornerRadius = 5
         backButton.clipsToBounds = true
         backButton.isEnabled = false
+        backButton.layer.borderWidth = 1
+        backButton.layer.borderColor = UIColor.black.cgColor
         imageView1.layer.cornerRadius = 22.2
         imageView1.clipsToBounds = true
+        imageView1.layer.borderWidth = 1
+        imageView1.layer.borderColor = UIColor.black.cgColor
+        hyouka.layer.cornerRadius = 7
+        hyouka.clipsToBounds = true
+        hyouka.layer.borderWidth = 1
+        hyouka.layer.borderColor = UIColor.black.cgColor
 
         
     }

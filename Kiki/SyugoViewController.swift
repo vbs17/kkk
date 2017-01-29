@@ -20,7 +20,6 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
     @IBOutlet weak var ok: UIButton!
     var selectedTextField:UITextField!
     var isTextView:Bool = false
-    var rect:CGRect!
 
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -118,9 +117,7 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
         UIView.beginAnimations("ResizeForKeyboard", context: nil)
         UIView.setAnimationDuration(duration)
         
-        var move = moveSize - rect.origin.y - rect.size.height - 30
-        if ( move > 0  ) { move = 0 }
-        if ( -move > moveSize ) { move = moveSize }
+       
         
         let contentInsets = UIEdgeInsetsMake(0, 0, moveSize, 0)
         scrollView.contentInset = contentInsets

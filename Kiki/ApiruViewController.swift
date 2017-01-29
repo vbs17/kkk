@@ -47,6 +47,8 @@ class ApiruViewController: UIViewController {
         ori1.clipsToBounds = true
         cover1.layer.cornerRadius = 7
         cover1.clipsToBounds = true
+        ensou1.layer.cornerRadius = 7
+        ensou1.clipsToBounds = true
     }
 
     override func didReceiveMemoryWarning() {
