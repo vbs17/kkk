@@ -331,8 +331,8 @@
 				B0ABF85B1DB0EE21001987E7 /* SendViewController.swift */,
 				B0A9A1731DB1FDE00021D1CF /* OkViewController.swift */,
 				B0190A201DB20FE400FA066D /* KindViewController.swift */,
-				B0F582A91DB38E5300654519 /* KindTableViewCell.swift */,
 				B0F582AA1DB38E5300654519 /* KindTableViewCell.xib */,
+				B0F582A91DB38E5300654519 /* KindTableViewCell.swift */,
 			);
 			name = "音源投稿";
 			sourceTree = "<group>";

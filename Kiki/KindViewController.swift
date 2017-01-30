@@ -528,11 +528,13 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
             // 他の行がタップされた
             // 既に選択状態の行がある
             if isRowSelected {
-                // 既に選択状態の行の選択を解除
-                let oldCell:KindTableViewCell = tableView.cellForRow(at: tappedCellPos) as! KindTableViewCell
-                oldCell.button.backgroundColor = buttonOriginalColor;
-            }
-            // 今回選択された行を選択状態とする
+                if ((tableView.cellForRow(at: tappedCellPos)) != nil){
+                    // 既に選択状態の行の選択を解除
+                    let oldCell:KindTableViewCell = tableView.cellForRow(at: tappedCellPos) as! KindTableViewCell
+                    oldCell.button.backgroundColor = buttonOriginalColor;
+                    
+                }
+            }            // 今回選択された行を選択状態とする
             // オリジナルのボタンの色を取得
             buttonOriginalColor = tableViewCell.button.backgroundColor!
             // ボタンの色を緑に。
@@ -697,7 +699,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! KindTableViewCell
         cell.delegate = self
         //ここ
-        cell.button.backgroundColor = UIColor.white
+        cell.button.backgroundColor = UIColor.lightGray
         if (tappedCellPos != nil){
             if (tappedCellPos == indexPath){
                 cell.button.backgroundColor = UIColor.green
