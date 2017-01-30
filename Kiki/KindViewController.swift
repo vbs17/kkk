@@ -696,6 +696,13 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! KindTableViewCell
         cell.delegate = self
+        //ここ
+        cell.button.backgroundColor = UIColor.white
+        if (tappedCellPos != nil){
+            if (tappedCellPos == indexPath){
+                cell.button.backgroundColor = UIColor.green
+            }
+        }
         let items = AllItems[indexPath.section][indexPath.row]
         cell.label.text = items
         return cell
