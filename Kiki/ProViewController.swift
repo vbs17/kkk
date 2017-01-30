@@ -197,7 +197,6 @@ class ProViewController: UIViewController,UITextFieldDelegate{
         let userInfo = notification.userInfo
         if let keyboardFrame = (userInfo![UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue, let animationDuration = (userInfo![UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue {
             let convertedKeyboardFrame = scrollView.convert(keyboardFrame, from: nil)
-            
             let offsetY: CGFloat = ta.frame.maxY - convertedKeyboardFrame.minY
             updateScrollViewSize(convertedKeyboardFrame.height, duration: animationDuration)
             if offsetY < 0 {

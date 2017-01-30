@@ -8,6 +8,7 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
     
     @IBAction func tapScreen(_ sender: AnyObject) {
         self.view.endEditing(true)
+         scrollView.contentOffset = CGPoint(x: 0,y :-path.contentInset.top)
     }
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
@@ -43,13 +44,11 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
     
     func keyboardWillBeShown(_ notification: Notification) {
         if let userInfo = notification.userInfo {
-            // もしUITextViewだったら
             if isTextView {
                 if let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue, let animationDuration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue {
                     restoreScrollViewSize()
                     print("keyboardWillBeShown")
                     let convertedKeyboardFrame = scrollView.convert(keyboardFrame, from: nil)
-                    // selectedTextFieldには現在のtextFieldが設定されているはずなので、それを起点にスクロール
                     let offsetY: CGFloat = station.frame.maxY - convertedKeyboardFrame.minY
                     if offsetY < 0 {
                         return
@@ -64,7 +63,7 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
                     print("keyboardWillBeShown")
                     // UITextView(path)に合わせてスクロール
                     let convertedKeyboardFrame = scrollView.convert(keyboardFrame, from: nil)
-                    let offsetY: CGFloat = path.frame.maxY - convertedKeyboardFrame.minY
+                    let offsetY: CGFloat = ok.frame.maxY - convertedKeyboardFrame.minY
                     if offsetY < 0 {
                         return
                     }
@@ -127,7 +126,7 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
         UIView.setAnimationDuration(duration)
         
         if (rect == nil){
-            let displayRect = path.convert(path.bounds, to: scrollView)
+            let displayRect = ok.convert(path.bounds, to: scrollView)
             rect = displayRect
         }
         var move = moveSize - rect.origin.y - rect.size.height - 30
