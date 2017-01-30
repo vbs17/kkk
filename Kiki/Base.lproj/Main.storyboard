@@ -1645,6 +1645,10 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0009" translatesAutoresizingMaskIntoConstraints="NO" id="O9O-qy-qVx">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="ANl-69-nW9" appends="YES" id="HLM-eY-EBE"/>
+                                                </connections>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EaN-UD-tSA">
                                                 <rect key="frame" x="67" y="25" width="185" height="166"/>
@@ -1763,6 +1767,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="coA-LK-j2H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ANl-69-nW9"/>
             </objects>
             <point key="canvasLocation" x="2883.75" y="-3708.8028169014083"/>
         </scene>
