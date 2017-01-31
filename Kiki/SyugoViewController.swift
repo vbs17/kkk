@@ -19,59 +19,9 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
     
     @IBOutlet weak var lbl: UILabel!
     @IBOutlet weak var ok: UIButton!
-    var selectedTextField:UITextField!
-    var isTextView:Bool = false
-    var rect:CGRect!
+    var needScrollUp = false
+    var animationDuration:TimeInterval = 0
     
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("textFieldDidBeginEditing\n")
-        selectedTextField = textField
-        let displayRect = textField.convert(textField.bounds, to: scrollView)
-        rect = displayRect
-        isTextView = true
-        
-    }
-    
-    func CGPointMake(_ x: CGFloat, _ y: CGFloat)-> CGPoint{
-        
-        return CGPoint(x: 0,y :0)
-    }
-    
-    func dismissKeyboard(){
-        view.endEditing(true)
-    }
-    
-    func keyboardWillBeShown(_ notification: Notification) {
-        if let userInfo = notification.userInfo {
-            if isTextView {
-                if let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue, let animationDuration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue {
-                    restoreScrollViewSize()
-                    print("keyboardWillBeShown")
-                    let convertedKeyboardFrame = scrollView.convert(keyboardFrame, from: nil)
-                    let offsetY: CGFloat = station.frame.maxY - convertedKeyboardFrame.minY
-                    if offsetY < 0 {
-                        return
-                    }
-                    
-                    updateScrollViewSize(offsetY, duration: animationDuration)
-                }
-            } else {
-                // UITextViewじゃなかったら、
-                if let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue, let animationDuration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue {
-                    restoreScrollViewSize()
-                    print("keyboardWillBeShown")
-                    // UITextView(path)に合わせてスクロール
-                    let convertedKeyboardFrame = scrollView.convert(keyboardFrame, from: nil)
-                    let offsetY: CGFloat = ok.frame.maxY - convertedKeyboardFrame.minY
-                    if offsetY < 0 {
-                        return
-                    }
-                    updateScrollViewSize(offsetY, duration: animationDuration)
-                }
-            }
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,10 +30,6 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
         zikoku.delegate = self
         station.delegate = self
         path.delegate = self
-        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
-        self.view.addGestureRecognizer(tapGesture)
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -110,48 +56,66 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
                                                   object: nil)
     }
     
+    func keyboardWillBeShown(_ notification: Notification) {
+        if (needScrollUp) {
+            if let userInfo = notification.userInfo {
+                if let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue,
+                    let animationDuration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue {
+                    self.animationDuration = animationDuration
+                    let keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+                    if ok.frame.maxY < keyboardFrame.minY {
+                        // スクロール不要
+                        return
+                    }
+                    let moveSize = self.view.frame.size.height - keyboardFrame.minY
+                    scrollView.isScrollEnabled = false
+                    UIView.animate(withDuration: animationDuration) {
+                        let contentInsets = UIEdgeInsetsMake(0, 0, moveSize, 0)
+                        self.scrollView.contentInset = contentInsets
+                        self.scrollView.scrollIndicatorInsets = contentInsets
+                        self.scrollView.contentOffset = CGPoint(x: 0, y: moveSize)
+                    }
+                }
+            }
+        }
+    }
+    
+    func keyboardWillBeHidden(_ notification: Notification) {
+        needScrollUp = false
+        UIView.animate(withDuration: self.animationDuration) {
+            self.scrollView.contentInset = UIEdgeInsets.zero
+            self.scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
+        }
+    }
+    
+    // UITextFieldデリゲート
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    func keyboardWillBeHidden(_ notification: Notification) {
-        restoreScrollViewSize()
-    }
-    
-    func updateScrollViewSize(_ moveSize: CGFloat, duration: TimeInterval) {
-        scrollView.contentSize = CGSize(width: 0.0,height: scrollView.frame.size.height + moveSize )
-        scrollView.isScrollEnabled = false
-        UIView.beginAnimations("ResizeForKeyboard", context: nil)
-        UIView.setAnimationDuration(duration)
-        
-        if (rect == nil){
-            let displayRect = ok.convert(path.bounds, to: scrollView)
-            rect = displayRect
-        }
-        var move = moveSize - rect.origin.y - rect.size.height - 30
-        if ( move > 0  ) { move = 0 }
-        if ( -move > moveSize ) { move = moveSize }
-        
-        let contentInsets = UIEdgeInsetsMake(0, 0, moveSize, 0)
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
-        scrollView.contentOffset = CGPoint(x: 0, y: moveSize)
-        UIView.commitAnimations()
-    }
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
-        isTextView = false
         textField.resignFirstResponder()
     }
     
-    func restoreScrollViewSize() {
-        scrollView.contentInset = UIEdgeInsets.zero
-        scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        scrollView.contentOffset = CGPoint(x: 0,y :-path.contentInset.top)
+        print("textFieldShouldBeginEditing\n")
+        return true
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if (textField == station) {
+            needScrollUp = true
+        } else {
+            needScrollUp = false
+        }
+    }
+    
+    // UITextViewデリゲート
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool
     {
+        needScrollUp = true
         lbl.isHidden = true
         return true
     }
@@ -161,16 +125,6 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
         if(textView.text.isEmpty){
             lbl.isHidden = false
         }
-    }
-    
-    
-    
-    
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        scrollView.contentOffset = CGPoint(x: 0,y :-path.contentInset.top)
-        print("textFieldShouldBeginEditing\n")
-        isTextView = false
-        return true
     }
     
     @IBAction func Ok(_ sender: AnyObject) {
