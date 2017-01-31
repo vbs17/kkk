@@ -39,7 +39,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }
     }
     
-
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CEll", for: indexPath) as! HomeTableViewCell
@@ -111,7 +111,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         cell.hyouka.addTarget(self, action: #selector(hyoukaGo), for: UIControlEvents.touchUpInside)
         return cell
     }
-
+    
     
     //ここで行く人の画像profileが表示できるようになる
     func pro(_ sender: UIButton, event:UIEvent) {
@@ -128,47 +128,47 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     //スクロールしてデータ取得
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-       
-            if(self.tableView.contentOffset.y == (self.tableView.contentSize.height - self.tableView.bounds.size.height))
-            {
-                //まだ表示するコンテンツが存在するか判定し存在するなら○件分を取得して表示更新する
-                print("scrolling to bottom")
-                getFirebaseData()
-                
-            }
-    
+        
+        if(self.tableView.contentOffset.y == (self.tableView.contentSize.height - self.tableView.bounds.size.height))
+        {
+            //まだ表示するコンテンツが存在するか判定し存在するなら○件分を取得して表示更新する
+            print("scrolling to bottom")
+            getFirebaseData()
+            
+        }
+        
     }
     //postdataやfile.swiftを照らし合わせたらいける
     func getFirebaseData() {
         let reachability = Reachability()!
         if reachability.isReachable {
-        let uid = FIRAuth.auth()?.currentUser?.uid
-        print("getFirebaseData")
-        
-        FIRDatabase.database().reference().child(CommonConst.PostPATH).child(self.genre).queryOrdered(byChild: "time").queryEnding(atValue: self.dataLastVal).queryLimited(toLast: UInt(DisplayDataNumber)+1).observeSingleEvent(of: .value, with: {[weak self] snapshot in
-            guard let `self` = self else { return }
+            let uid = FIRAuth.auth()?.currentUser?.uid
+            print("getFirebaseData")
             
-            print(snapshot.childrenCount)
-            
-            var workArray:[PostData] = []
-            for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
-                print(child)
-                let postData = PostData(snapshot: child, myId: uid!)
-                if postData.time != self.dataLastVal {
-                    workArray.insert(postData, at: 0)
-                }
-            }
-            if workArray.count > 0 {
-                self.postArray += workArray
-                self.tableView.reloadData()
+            FIRDatabase.database().reference().child(CommonConst.PostPATH).child(self.genre).queryOrdered(byChild: "time").queryEnding(atValue: self.dataLastVal).queryLimited(toLast: UInt(DisplayDataNumber)+1).observeSingleEvent(of: .value, with: {[weak self] snapshot in
+                guard let `self` = self else { return }
                 
-                self.dataLastVal = workArray.last!.time!
-                print("dataLastVal=\(self.dataLastVal)")
-            }
-            
-        }, withCancel: {(err) in
-            print("getFirebaseData error")
-        })} else {
+                print(snapshot.childrenCount)
+                
+                var workArray:[PostData] = []
+                for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
+                    print(child)
+                    let postData = PostData(snapshot: child, myId: uid!)
+                    if postData.time != self.dataLastVal {
+                        workArray.insert(postData, at: 0)
+                    }
+                }
+                if workArray.count > 0 {
+                    self.postArray += workArray
+                    self.tableView.reloadData()
+                    
+                    self.dataLastVal = workArray.last!.time!
+                    print("dataLastVal=\(self.dataLastVal)")
+                }
+                
+                }, withCancel: {(err) in
+                    print("getFirebaseData error")
+            })} else {
             let alert = UIAlertController()
             let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
             let attributedTitle = NSAttributedString(string: "😬", attributes: attributedTitleAttr)
@@ -189,9 +189,9 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             alert.view.tintColor = UIColor.white
             
         }
-
+        
     }
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -318,7 +318,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }
         
     }
-
+    
     //ここが怪しい
     func hyoukaGo(_ sender:UIButton, event:UIEvent){
         let indexPath = getIndexPath(event)
@@ -440,64 +440,75 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         return postArray.count
     }
     
-    
-    
+    //suzuki
+    var disableView:UIView!
     
     
     func handleButton(_ sender: UIButton, event:UIEvent){
         let reachability = Reachability()!
         if reachability.isReachable {
-        let touch = event.allTouches?.first
-        let point = touch!.location(in: self.tableView)
-        let indexPath = tableView.indexPathForRow(at: point)
-        let postData = postArray[indexPath!.row]
-        let cell = tableView.cellForRow(at: indexPath!) as! HomeTableViewCell?
-        cell?.backButton.isEnabled = true
-        if indexPath == playingIndexPath{
-            if playSong.isPlaying == true{
-                playSong.pause()
-                timer.invalidate()
-            }else{
-                timer.invalidate()
-                playSong.play()
-                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(HomeViewController.updatePlayingTime), userInfo: nil, repeats: true)
-            }
-        } else { //他の曲を再生した時再生中の曲がこうなる
-            if playingIndexPath != nil {
-                let cell = tableView.cellForRow(at: playingIndexPath) as! HomeTableViewCell?
-                if cell != nil {
+            let touch = event.allTouches?.first
+            let point = touch!.location(in: self.tableView)
+            let indexPath = tableView.indexPathForRow(at: point)
+            let postData = postArray[indexPath!.row]
+            let cell = tableView.cellForRow(at: indexPath!) as! HomeTableViewCell?
+            cell?.backButton.isEnabled = true
+            if indexPath == playingIndexPath{
+                if playSong.isPlaying == true{
                     playSong.pause()
-                    cell!.nami.progress = 0
-                    cell!.onlabel2.text = "0:00"
-                    cell?.backButton.isEnabled = false
-                }}
-            
-            timer.invalidate()
-            //ここもポイント
-            SVProgressHUD.setDefaultMaskType(.clear)
-            //backだけはokにしたいな
-            SVProgressHUD.show(withStatus:"クールな音質に仕上げています😎(最大5秒) 　　　　　　　　　　　　　　　　                　　　　　　このオリジナルソングが君のセンスにあえば左上のProfileボタンをタップして連絡をとれ😎")
-            
-            
-            FIRDatabase.database().reference().child(CommonConst.songData).child(postData.song!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
-                guard let `self` = self else { return }
-                if self.observing == false {
-                    return
+                    timer.invalidate()
+                }else{
+                    timer.invalidate()
+                    playSong.play()
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(HomeViewController.updatePlayingTime), userInfo: nil, repeats: true)
                 }
-                SVProgressHUD.dismiss()
-                if self.presentedViewController != nil {
-                    return
+            } else { //他の曲を再生した時再生中の曲がこうなる
+                if playingIndexPath != nil {
+                    let cell = tableView.cellForRow(at: playingIndexPath) as! HomeTableViewCell?
+                    if cell != nil {
+                        playSong.pause()
+                        cell!.nami.progress = 0
+                        cell!.onlabel2.text = "0:00"
+                        cell?.backButton.isEnabled = false
+                    }}
+                
+                timer.invalidate()
+                //ここもポイント
+                //            SVProgressHUD.setDefaultMaskType(.clear)
+                //suzuki
+                if ( disableView == nil ) {
+                    disableView = UIView(frame: tableView.bounds)
+                    disableView.isUserInteractionEnabled = false
+                    disableView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.1)
+                    tableView.addSubview(disableView)
                 }
-                self.playingIndexPath = indexPath
-                let realsong = snapshot.value as! String
-                let tap = Data(base64Encoded: realsong, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
-                self.playSong = try! AVAudioPlayer(data:tap!)
-                self.playSong.delegate = self
-                cell!.playSong = self.playSong
-                self.playSong.prepareToPlay()
-                self.playSong.play()
-                self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(HomeViewController.updatePlayingTime), userInfo: nil, repeats: true)
-            })
+                
+                //backだけはokにしたいな
+                SVProgressHUD.show(withStatus:"クールな音質に仕上げています😎(最大5秒) 　　　　　　　　　　　　　　　　                　　　　　　このオリジナルソングが君のセンスにあえば左上のProfileボタンをタップして連絡をとれ😎")
+                
+                FIRDatabase.database().reference().child(CommonConst.songData).child(postData.song!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
+                    guard let `self` = self else { return }
+                    if self.observing == false {
+                        return
+                    }
+                    SVProgressHUD.dismiss()
+                    //suzuki
+                    if ( self.disableView != nil ) {
+                        self.disableView.removeFromSuperview()
+                    }
+                    if self.presentedViewController != nil {
+                        return
+                    }
+                    self.playingIndexPath = indexPath
+                    let realsong = snapshot.value as! String
+                    let tap = Data(base64Encoded: realsong, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
+                    self.playSong = try! AVAudioPlayer(data:tap!)
+                    self.playSong.delegate = self
+                    cell!.playSong = self.playSong
+                    self.playSong.prepareToPlay()
+                    self.playSong.play()
+                    self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(HomeViewController.updatePlayingTime), userInfo: nil, repeats: true)
+                })
             } } else {
             let alert = UIAlertController()
             let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
@@ -573,9 +584,4 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             cell!.nami.progress = 0
         }
     }
-    
-    
-
-
-
 }
