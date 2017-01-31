@@ -440,8 +440,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         return postArray.count
     }
     
-    //suzuki
-    var disableView:UIView!
+   
     
     
     func handleButton(_ sender: UIButton, event:UIEvent){
@@ -474,14 +473,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 
                 timer.invalidate()
                 //ここもポイント
-                //            SVProgressHUD.setDefaultMaskType(.clear)
-                //suzuki
-                if ( disableView == nil ) {
-                    disableView = UIView(frame: tableView.bounds)
-                    disableView.isUserInteractionEnabled = false
-                    disableView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.1)
-                    tableView.addSubview(disableView)
-                }
+                SVProgressHUD.setDefaultMaskType(.clear)
                 
                 //backだけはokにしたいな
                 SVProgressHUD.show(withStatus:"クールな音質に仕上げています😎(最大5秒) 　　　　　　　　　　　　　　　　                　　　　　　このオリジナルソングが君のセンスにあえば左上のProfileボタンをタップして連絡をとれ😎")
@@ -492,10 +484,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                         return
                     }
                     SVProgressHUD.dismiss()
-                    //suzuki
-                    if ( self.disableView != nil ) {
-                        self.disableView.removeFromSuperview()
-                    }
                     if self.presentedViewController != nil {
                         return
                     }
