@@ -22,14 +22,10 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     var playingIndexPath:IndexPath!
     var dataLastVal:Double!
     let DisplayDataNumber = 2;
-    var refreshCtl: UIRefreshControl!
     
     @IBOutlet weak var lbl: UILabel!
     
-    func refresh() {
-        // ここで更新処理をしてください
-        self.refreshCtl.endRefreshing()
-    }
+   
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -102,7 +98,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 if index == NSNotFound {
                     self.postArray3.append(postData3)
                     self.tableView.reloadData()
-                    self.refreshCtl.endRefreshing()
                 }
             })
         }
@@ -169,7 +164,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 if workArray.count > 0 {
                     self.postArray += workArray
                     self.tableView.reloadData()
-                    self.refreshCtl.endRefreshing()
                     
                     self.dataLastVal = workArray.last!.time!
                     print("dataLastVal=\(self.dataLastVal)")
@@ -266,7 +260,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 if workArray.count > 0 {
                     self.postArray += workArray
                     self.tableView.reloadData()
-                    self.refreshCtl.endRefreshing()
                     
                     self.dataLastVal = workArray.last!.time!
                     print("dataLastVal=\(self.dataLastVal)")
@@ -294,7 +287,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                     self.postArray.remove(at: index)
                     self.postArray.insert(postData, at: index)
                     self.tableView.reloadData()
-                    self.refreshCtl.endRefreshing()
                     
                 }
             })
@@ -307,7 +299,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                     self.postArray2.insert(postData, at: 0)
                     
                     self.tableView.reloadData()
-                    self.refreshCtl.endRefreshing()
                 }
             })
             //俺だけが変更した　これがあるから他の人は何も変わらずまま自分だけ変わる　１以上の投稿の場合も大丈夫なのか
@@ -327,7 +318,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                     self.postArray2.remove(at: index)
                     self.postArray2.insert(postData, at: index)
                     self.tableView.reloadData()
-                    self.refreshCtl.endRefreshing()
                 }
             })
             observing = true
