@@ -132,6 +132,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         if(self.tableView.contentOffset.y == (self.tableView.contentSize.height - self.tableView.bounds.size.height))
         {
             //まだ表示するコンテンツが存在するか判定し存在するなら○件分を取得して表示更新する
+            
             print("scrolling to bottom")
             getFirebaseData()
             
