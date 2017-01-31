@@ -206,9 +206,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         back.clipsToBounds = true
         let tblBackColor: UIColor = UIColor.clear
         tableView.backgroundColor = tblBackColor
-        self.refreshCtl = UIRefreshControl()
-        self.refreshCtl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
-        tableView.addSubview(refreshCtl)
+       
         let session = AVAudioSession.sharedInstance()
         do {
             try session.setCategory(AVAudioSessionCategoryPlayback)
