@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>365101071086-m0t2es3q28ilor8c0p1bhgnre4ua3lua.apps.googleusercontent.com</string>
+	<string>636036092924-c0kh3h55n8gg646siu8qqjm3ebrr75d7.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.365101071086-m0t2es3q28ilor8c0p1bhgnre4ua3lua</string>
+	<string>com.googleusercontent.apps.636036092924-c0kh3h55n8gg646siu8qqjm3ebrr75d7</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDFYhnvU5uVG6Q3samEuDMmj9nz8kDtCcY</string>
+	<string>AIzaSyCX9tlNF2bogYYoD-DP4QoJmJd9W25CEAU</string>
 	<key>GCM_SENDER_ID</key>
-	<string>365101071086</string>
+	<string>636036092924</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.mycompany.Kiki</string>
+	<string>com.mycompany.Supersonic</string>
 	<key>PROJECT_ID</key>
-	<string>supersonic-kei</string>
+	<string>supersonic-oasis</string>
 	<key>STORAGE_BUCKET</key>
-	<string>supersonic-kei.appspot.com</string>
+	<string>supersonic-oasis.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:365101071086:ios:00884b64cd923c87</string>
+	<string>1:636036092924:ios:b0f5fc5d2dbc6524</string>
 	<key>DATABASE_URL</key>
-	<string>https://supersonic-kei.firebaseio.com</string>
+	<string>https://supersonic-oasis.firebaseio.com</string>
 </dict>
 </plist>
