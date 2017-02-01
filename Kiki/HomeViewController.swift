@@ -455,7 +455,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             let indexPath = tableView.indexPathForRow(at: point)
             let postData = postArray[indexPath!.row]
             let cell = tableView.cellForRow(at: indexPath!) as! HomeTableViewCell?
-            cell?.backButton.isEnabled = true
+            //cell?.backButton.isEnabled = true
             if indexPath == playingIndexPath{
                 if playSong.isPlaying == true{
                     playSong.pause()
@@ -500,6 +500,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                     self.playSong.prepareToPlay()
                     self.playSong.play()
                     self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(HomeViewController.updatePlayingTime), userInfo: nil, repeats: true)
+                    cell?.backButton.isEnabled = true
                 })
             } } else {
             let alert = UIAlertController()
