@@ -32,18 +32,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let ProfileRef = FIRDatabase.database().reference(withPath: CommonConst.Profile).child(uid!)
             ProfileRef.keepSynced(true)
         }
-        let ud = UserDefaults.standard
-        let isTutorial = ud.bool(forKey: CommonConst.IsTutorial )
+        //let ud = UserDefaults.standard
+        //let isTutorial = ud.bool(forKey: CommonConst.IsTutorial )
        
-        
-        if isTutorial == false {
-            let storyboard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
-            let viewController:UIViewController = storyboard.instantiateViewController(withIdentifier: "Tyu")
-            self.window?.rootViewController = viewController
-            self.window?.makeKey()
+        //こいつ
+        //if isTutorial == false {
+         //   let storyboard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+           // let viewController:UIViewController = storyboard.instantiateViewController(withIdentifier: "Tyu")
+           // self.window?.rootViewController = viewController
+            //self.window?.makeKey()
             
-            return true
-        }
+           // return true
+        //}
         
         
         

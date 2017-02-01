@@ -306,7 +306,7 @@
 				B05F57791DDF4B0E006DB9A5 /* Syutyu3ViewController.swift */,
 				B05F577B1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift */,
 				B06B00441DDD4131000C545D /* OreViewController.swift */,
-				B071D9701DB509FA0017E287 /* TabViewController.swift */,
+				B0BA8AE11DDD7E7500F00E38 /* LoginAka */,
 				B00467F31E38A93C0033859A /* m */,
 				B0479DB51E0FF69000B5B9B3 /* postData2 */,
 				B05E34401DC8B6CF00C271D3 /* PostData */,
@@ -314,7 +314,6 @@
 				B042A0201DB98BBE0068D205 /* 集合場所投稿 */,
 				B0B263D21DB7467100C0F2A3 /* 音源投稿 */,
 				B00501BA1DB610D200319866 /* 音源表示 */,
-				B0BA8AE11DDD7E7500F00E38 /* LoginAka */,
 				B06491911DBAD0F000566A4B /* PROFILE */,
 				B0A6CF611E0F979000E76751 /* iroiro */,
 			);
@@ -340,6 +339,7 @@
 		B0BA8AE11DDD7E7500F00E38 /* LoginAka */ = {
 			isa = PBXGroup;
 			children = (
+				B071D9701DB509FA0017E287 /* TabViewController.swift */,
 				B0BA8ADB1DDD79A800F00E38 /* TyuViewController.swift */,
 				B0BA8ADD1DDD79BC00F00E38 /* Tyu2ViewController.swift */,
 				B0BA8ADF1DDD79D800F00E38 /* Tyu3ViewController.swift */,

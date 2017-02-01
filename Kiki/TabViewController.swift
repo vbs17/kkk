@@ -64,6 +64,14 @@ class TabViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        let ud = UserDefaults.standard
+        let isTutorial = ud.bool(forKey: CommonConst.IsTutorial )
+        if isTutorial == false {
+            let storyboard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+            let viewController:UIViewController = storyboard.instantiateViewController(withIdentifier: "Tyu")
+            self.present(viewController, animated: false, completion: nil)
+        }
+
         
         if FIRAuth.auth()?.currentUser == nil {
             DispatchQueue.main.async {
