@@ -21,7 +21,7 @@
 		B00D7CF51DCEB5190042D04F /* MixerMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = B00D7CF41DCEB5190042D04F /* MixerMeter.m */; };
 		B0190A211DB20FE400FA066D /* KindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0190A201DB20FE400FA066D /* KindViewController.swift */; };
 		B020D0AB1E0F405A005A1363 /* PostData4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B020D0AA1E0F405A005A1363 /* PostData4.swift */; };
-		B02336D81E41C76700EA1F6E /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = B02336D71E41C76700EA1F6E /* GoogleService-Info (1).plist */; };
+		B02336D81E41C76700EA1F6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B02336D71E41C76700EA1F6E /* GoogleService-Info.plist */; };
 		B029E58A1DE1A17C00C7EDDF /* IyaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029E5891DE1A17C00C7EDDF /* IyaViewController.swift */; };
 		B03151761DAE6A06007EE64C /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03151751DAE6A06007EE64C /* PlayViewController.swift */; };
 		B042A0171DB983620068D205 /* BasyoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B042A0161DB983620068D205 /* BasyoViewController.swift */; };
@@ -95,7 +95,7 @@
 		B00D7CF41DCEB5190042D04F /* MixerMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MixerMeter.m; sourceTree = "<group>"; };
 		B0190A201DB20FE400FA066D /* KindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KindViewController.swift; sourceTree = "<group>"; };
 		B020D0AA1E0F405A005A1363 /* PostData4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData4.swift; sourceTree = "<group>"; };
-		B02336D71E41C76700EA1F6E /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
+		B02336D71E41C76700EA1F6E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B029E5891DE1A17C00C7EDDF /* IyaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IyaViewController.swift; sourceTree = "<group>"; };
 		B03151751DAE6A06007EE64C /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		B042A0161DB983620068D205 /* BasyoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasyoViewController.swift; sourceTree = "<group>"; };
@@ -264,7 +264,7 @@
 				B0A78FDC1DACFF6500AC0513 /* Assets.xcassets */,
 				B0A78FDE1DACFF6500AC0513 /* LaunchScreen.storyboard */,
 				B0A78FE11DACFF6500AC0513 /* Info.plist */,
-				B02336D71E41C76700EA1F6E /* GoogleService-Info (1).plist */,
+				B02336D71E41C76700EA1F6E /* GoogleService-Info.plist */,
 				B007C1B81DE95D92006F1883 /* MergeAudioFile.h */,
 				B007C1B91DE95D92006F1883 /* MergeAudioFile.m */,
 				B00D7CF31DCEB5190042D04F /* MixerMeter.h */,
@@ -439,7 +439,7 @@
 				B00501BC1DB610D200319866 /* HomeTableViewCell.xib in Resources */,
 				B069682A1DC610C200274DB1 /* HomeTableViewCell1.xib in Resources */,
 				B0A78FDB1DACFF6500AC0513 /* Main.storyboard in Resources */,
-				B02336D81E41C76700EA1F6E /* GoogleService-Info (1).plist in Resources */,
+				B02336D81E41C76700EA1F6E /* GoogleService-Info.plist in Resources */,
 				B00501C51DB6428500319866 /* ItiranTableViewCell.xib in Resources */,
 				B0B448201DD5AD04001DDD89 /* IkuTableViewCell.xib in Resources */,
 			);
