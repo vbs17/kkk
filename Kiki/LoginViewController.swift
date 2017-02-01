@@ -37,8 +37,7 @@ class LoginViewController: UIViewController{
             let ProfileRef = FIRDatabase.database().reference(withPath: CommonConst.Profile).child(user!.uid)
             ProfileRef.keepSynced(true)
             // ログインしていたらログイン画面を閉じる
-            let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Tab")
-            self.present(loginViewController!, animated: true, completion: nil)
+           self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
             let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.login()
 
@@ -119,8 +118,7 @@ class LoginViewController: UIViewController{
                     
                     SVProgressHUD.dismiss()
                     
-                    let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Tab")
-                    self.present(loginViewController!, animated: true, completion: nil)
+                    self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
                     
                     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
                     appDelegate.login()
@@ -163,8 +161,7 @@ class LoginViewController: UIViewController{
                                         
                                         SVProgressHUD.dismiss()
                                         
-                                        let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Tab")
-                                        self.present(loginViewController!, animated: true, completion: nil)
+                                        self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
                                         
                                         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
                                         appDelegate.login()
