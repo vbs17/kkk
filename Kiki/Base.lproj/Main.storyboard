@@ -399,7 +399,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="apiru" translatesAutoresizingMaskIntoConstraints="NO" id="ocJ-Ed-eKL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="08-c5-gxa7m-andrew-spencer" translatesAutoresizingMaskIntoConstraints="NO" id="ocJ-Ed-eKL">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -490,7 +490,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="11112" translatesAutoresizingMaskIntoConstraints="NO" id="Yos-tA-Fyb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="08-c5-gxa7m-andrew-spencer" translatesAutoresizingMaskIntoConstraints="NO" id="Yos-tA-Fyb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -508,23 +508,23 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eg6-nF-o2q">
-                                <rect key="frame" x="60" y="60" width="201" height="43"/>
+                                <rect key="frame" x="88" y="58" width="201" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36941672120000002" green="0.002593182066" blue="0.11050119930000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                 <size key="titleShadowOffset" width="1" height="0.0"/>
                                 <state key="normal" title="オリジナルソング(ギター)を投稿">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="origui:" destination="M1U-6Y-Lun" eventType="touchUpInside" id="npd-vu-uJi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osZ-6A-u6f">
-                                <rect key="frame" x="60" y="115" width="201" height="42"/>
+                                <rect key="frame" x="88" y="113" width="201" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.93138582469999998" blue="0.52729343939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <size key="titleShadowOffset" width="1" height="0.0"/>
                                 <state key="normal" title="カバー曲(ギター)を投稿">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -535,10 +535,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JD2-bM-RSh">
-                                <rect key="frame" x="60" y="169" width="201" height="43"/>
+                                <rect key="frame" x="88" y="167" width="201" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36941672120000002" green="0.002593182066" blue="0.11050119930000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <size key="titleShadowOffset" width="1" height="0.0"/>
                                 <state key="normal" title="オリジナルソング(ベース)を投稿">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -549,9 +549,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iah-SB-CwK">
-                                <rect key="frame" x="60" y="225" width="201" height="43"/>
+                                <rect key="frame" x="88" y="223" width="201" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.93138582469999998" blue="0.52729343939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <size key="titleShadowOffset" width="1" height="0.0"/>
                                 <state key="normal" title="カバー曲(ベース)を投稿">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -562,10 +563,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTV-5U-WTK">
-                                <rect key="frame" x="60" y="281" width="201" height="43"/>
+                                <rect key="frame" x="88" y="279" width="201" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36941672120000002" green="0.002593182066" blue="0.11050119930000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <size key="titleShadowOffset" width="1" height="0.0"/>
                                 <state key="normal" title="オリジナルソング(ドラム)を投稿">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -576,9 +577,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avY-qF-8e4">
-                                <rect key="frame" x="60" y="336" width="201" height="43"/>
+                                <rect key="frame" x="88" y="334" width="201" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.93138582469999998" blue="0.52729343939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <size key="titleShadowOffset" width="1" height="0.0"/>
                                 <state key="normal" title="カバー曲(ドラム)を投稿">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -589,10 +591,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xB-iv-PxU">
-                                <rect key="frame" x="60" y="390" width="201" height="43"/>
+                                <rect key="frame" x="88" y="388" width="201" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36941672120000002" green="0.002593182066" blue="0.11050119930000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <size key="titleShadowOffset" width="1" height="0.0"/>
                                 <state key="normal" title="オリジナルソング(ピアノ)を投稿">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -604,9 +606,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0g-C7-I8W">
-                                <rect key="frame" x="60" y="445" width="201" height="43"/>
+                                <rect key="frame" x="88" y="443" width="201" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.93138582469999998" blue="0.52729343939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <size key="titleShadowOffset" width="1" height="0.0"/>
                                 <state key="normal" title="カバー曲(ピアノ)を投稿">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -617,23 +620,43 @@
                                     <action selector="covpia:" destination="M1U-6Y-Lun" eventType="touchUpInside" id="ASt-Dx-lTx"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tvgcpjm7jxc-matija-sundalic" translatesAutoresizingMaskIntoConstraints="NO" id="CmL-pa-Wua">
+                                <rect key="frame" x="29" y="85" width="40" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ulitvttkc7o-derek-truninger" translatesAutoresizingMaskIntoConstraints="NO" id="ESi-KP-1uC">
+                                <rect key="frame" x="29" y="193" width="40" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="11112" translatesAutoresizingMaskIntoConstraints="NO" id="kUi-bl-HlF">
+                                <rect key="frame" x="29" y="304" width="40" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0014" translatesAutoresizingMaskIntoConstraints="NO" id="qfH-LX-Lc6">
+                                <rect key="frame" x="29" y="412" width="40" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="c" destination="kUi-bl-HlF" id="oWy-dV-kr4"/>
                         <outlet property="covbas1" destination="iah-SB-CwK" id="MhF-Ix-yxd"/>
                         <outlet property="covdru1" destination="avY-qF-8e4" id="FG9-n9-45e"/>
                         <outlet property="covgui1" destination="osZ-6A-u6f" id="l16-G3-snU"/>
                         <outlet property="covpia1" destination="j0g-C7-I8W" id="hEh-lh-e0I"/>
+                        <outlet property="o" destination="qfH-LX-Lc6" id="iMb-7d-niu"/>
                         <outlet property="oribas1" destination="JD2-bM-RSh" id="cmq-Er-Fbt"/>
                         <outlet property="oridru1" destination="YTV-5U-WTK" id="QkB-ZM-09l"/>
                         <outlet property="origui1" destination="eg6-nF-o2q" id="Bk8-9H-AC0"/>
                         <outlet property="oripia1" destination="6xB-iv-PxU" id="N39-Yn-F32"/>
+                        <outlet property="t" destination="CmL-pa-Wua" id="7pU-Za-00g"/>
+                        <outlet property="v" destination="ESi-KP-1uC" id="DFP-Hc-kRs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bIu-AG-RV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4391" y="-6020"/>
+            <point key="canvasLocation" x="4389.375" y="-6020.070422535211"/>
         </scene>
         <!--Pro View Controller-->
         <scene sceneID="m20-Nw-aa4">
@@ -1464,7 +1487,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0017" translatesAutoresizingMaskIntoConstraints="NO" id="B0D-bG-bCR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0017" translatesAutoresizingMaskIntoConstraints="NO" id="B0D-bG-bCR">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1481,7 +1504,7 @@
                                     <action selector="back:" destination="2rN-LC-sA6" eventType="touchUpInside" id="aha-rw-NC0"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wYw-bq-GTM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0017" translatesAutoresizingMaskIntoConstraints="NO" id="wYw-bq-GTM">
                                 <rect key="frame" x="41" y="54" width="239" height="223"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -3750,7 +3773,9 @@
         <image name="0007" width="1242" height="829"/>
         <image name="0009" width="1242" height="828"/>
         <image name="0013" width="1242" height="883"/>
+        <image name="0014" width="1242" height="828"/>
         <image name="0017" width="1242" height="1320"/>
+        <image name="08-c5-gxa7m-andrew-spencer" width="2803" height="4204"/>
         <image name="1111" width="1242" height="828"/>
         <image name="11112" width="1242" height="1863"/>
         <image name="1234567" width="600" height="400"/>
@@ -3760,11 +3785,12 @@
         <image name="33-1" width="1242" height="823"/>
         <image name="5555" width="1242" height="804"/>
         <image name="8888" width="1242" height="933"/>
-        <image name="apiru" width="800" height="1200"/>
         <image name="apirul" width="1242" height="1868"/>
         <image name="fi9qq0fwyvq-jon-tyson" width="600" height="800"/>
         <image name="haha1" width="1242" height="828"/>
         <image name="kesiki" width="500" height="500"/>
         <image name="nana1" width="1242" height="699"/>
+        <image name="tvgcpjm7jxc-matija-sundalic" width="4896" height="3264"/>
+        <image name="ulitvttkc7o-derek-truninger" width="5184" height="3456"/>
     </resources>
 </document>
