@@ -24,7 +24,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_3761" translatesAutoresizingMaskIntoConstraints="NO" id="ag9-GW-vmP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mxvew_caxji-jesse-vermeulen" translatesAutoresizingMaskIntoConstraints="NO" id="ag9-GW-vmP">
                                 <rect key="frame" x="0.0" y="-100" width="320" height="568"/>
                                 <color key="tintColor" red="0.99647290050000004" green="0.63966908040000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
@@ -3754,11 +3754,11 @@
         <image name="33-1" width="1242" height="823"/>
         <image name="5555" width="1242" height="804"/>
         <image name="8888" width="1242" height="933"/>
-        <image name="IMG_3761" width="1440" height="1920"/>
         <image name="fex" width="1242" height="932"/>
         <image name="fi9qq0fwyvq-jon-tyson" width="600" height="800"/>
         <image name="haha1" width="1242" height="828"/>
         <image name="kesiki" width="500" height="500"/>
+        <image name="mxvew_caxji-jesse-vermeulen" width="5444" height="3629"/>
         <image name="nana1" width="1242" height="699"/>
     </resources>
 </document>
