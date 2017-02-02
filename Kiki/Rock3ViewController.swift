@@ -15,9 +15,8 @@ class Rock3ViewController: UIViewController {
     }
     
     @IBAction func back(_ sender: Any) {
-        let basyoviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Apiru") as! ApiruViewController
-        self.present(basyoviewcontroller, animated: true, completion: nil)
-}
+                self.navigationController?.dismiss(animated: true, completion: {})
+    }
 }
    
 
