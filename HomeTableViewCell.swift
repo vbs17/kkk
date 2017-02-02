@@ -22,14 +22,17 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var onlabel2: UILabel!
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var nami: UIProgressView!
+    //再生　巻き戻し
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
+    //評価ボタン
     @IBOutlet weak var hyouka: UIButton!
     @IBOutlet weak var star1: UIButton!
     @IBOutlet weak var star2: UIButton!
     @IBOutlet weak var star3: UIButton!
     @IBOutlet weak var star4: UIButton!
     @IBOutlet weak var star5: UIButton!
+    //profilego
     @IBOutlet weak var go: UIButton!
     
     //星の色　ここはシンプル 黄色
@@ -93,6 +96,24 @@ class HomeTableViewCell: UITableViewCell {
 
 
         }
+        if(postData.song == nil){
+            
+            backButton.isEnabled = false
+            playButton.isEnabled = false
+            
+        }
+        if(postData.star.isEmpty){
+            
+            hyouka.isEnabled = false
+            
+        }
+        if(postData.uid == nil){
+            
+            go.isEnabled = false
+            
+        }
+        
+        
         let stars = postData.star
         
         var average: Int = 0
