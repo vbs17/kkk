@@ -12,7 +12,7 @@ class RockViewController: UIViewController {
     }
     @IBAction func go(_ sender: Any) {
         let basyoviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Rock2")
-        self.present(basyoviewcontroller!, animated: true, completion: nil)
+        self.navigationController?.pushViewController(basyoviewcontroller!, animated: true)
     }
    
 }

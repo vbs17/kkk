@@ -16,8 +16,7 @@ class Syutyu4ViewController: UIViewController {
     }
     
     @IBAction func go(_ sender: AnyObject) {
-        let basyoviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Basyo") as! BasyoViewController
-        self.present(basyoviewcontroller, animated: true, completion: nil)
+         self.navigationController?.dismiss(animated: true, completion: {})
     }
 
 

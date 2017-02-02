@@ -14,7 +14,7 @@ class Syutyu3ViewController: UIViewController {
     
     @IBAction func go(_ sender: AnyObject) {
         let basyoviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Syutyu4")
-        self.present(basyoviewcontroller!, animated: true, completion: nil)
+        self.navigationController?.pushViewController(basyoviewcontroller!, animated: true)
     }
 
   }

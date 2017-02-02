@@ -39,7 +39,7 @@ class BasyoViewController: UIViewController,UIImagePickerControllerDelegate, UIN
         //ud.synchronize()によってtrueになってる
         if isTutorial2 == false {
             let storyboard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
-            let viewController:UIViewController = storyboard.instantiateViewController(withIdentifier: "Syutyu")
+            let viewController:UIViewController = storyboard.instantiateViewController(withIdentifier: "SyuViewControllerNavi")
             self.present(viewController, animated: false, completion: nil)
         }
     }
