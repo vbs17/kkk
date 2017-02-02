@@ -421,9 +421,11 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let byou = postData.byou
         let star = postData.star //97行目
         let time = postData.time
+        let original = postData.original
+        let cover = postData.cover
         let uid:NSString = postData.uid! as NSString
         let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre)
-        let postData2 = ["time":time!,"songname":name!,"ongen":song!,"byou":byou!,"star":star,"uid":uid] as [String : Any]
+        let postData2 = ["time":time!,"songname":name!,"ongen":song!,"byou":byou!,"star":star,"original":original!,"cover":cover!,"uid":uid] as [String : Any]
         postRef.child(postData.id!).setValue(postData2)
     }
     

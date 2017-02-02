@@ -45,10 +45,16 @@ class ApiruViewController: UIViewController {
         super.viewDidLoad()
         ori1.layer.cornerRadius = 7
         ori1.clipsToBounds = true
+        ori1.layer.borderWidth = 1
+        ori1.layer.borderColor = UIColor.white.cgColor
         cover1.layer.cornerRadius = 7
         cover1.clipsToBounds = true
+        cover1.layer.borderWidth = 1
+        cover1.layer.borderColor = UIColor.white.cgColor
         ensou1.layer.cornerRadius = 7
         ensou1.clipsToBounds = true
+        ensou1.layer.borderWidth = 1
+        ensou1.layer.borderColor = UIColor.white.cgColor
     }
 
     override func didReceiveMemoryWarning() {

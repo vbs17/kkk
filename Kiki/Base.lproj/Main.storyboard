@@ -24,7 +24,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mxvew_caxji-jesse-vermeulen" translatesAutoresizingMaskIntoConstraints="NO" id="ag9-GW-vmP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apirul" translatesAutoresizingMaskIntoConstraints="NO" id="ag9-GW-vmP">
                                 <rect key="frame" x="0.0" y="-100" width="320" height="568"/>
                                 <color key="tintColor" red="0.99647290050000004" green="0.63966908040000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
@@ -105,10 +105,17 @@
                                     <action selector="guitargo:" destination="xtg-j0-lo1" eventType="touchUpInside" id="jWd-x2-tX9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supersonic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvF-sl-eQ7">
-                                <rect key="frame" x="107.5" y="50" width="105.5" height="26"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" red="0.79590788639999999" green="1" blue="0.50505725369999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvF-sl-eQ7">
+                                <rect key="frame" x="112.5" y="50" width="96.5" height="22.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Supersonic">
+                                        <attributes>
+                                            <color key="NSColor" red="0.79590788639999999" green="1" blue="0.50505725369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="19" name="HiraKakuStdN-W8"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -392,7 +399,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0012" translatesAutoresizingMaskIntoConstraints="NO" id="ocJ-Ed-eKL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="apiru" translatesAutoresizingMaskIntoConstraints="NO" id="ocJ-Ed-eKL">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -438,7 +445,7 @@
                                 <size key="titleShadowOffset" width="1" height="0.0"/>
                                 <state key="normal" title="オリジナルソングを投稿">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="ori:" destination="cTb-YH-70M" eventType="touchUpInside" id="4RA-e8-vrc"/>
@@ -1457,7 +1464,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fex" translatesAutoresizingMaskIntoConstraints="NO" id="B0D-bG-bCR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0017" translatesAutoresizingMaskIntoConstraints="NO" id="B0D-bG-bCR">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1474,7 +1481,7 @@
                                     <action selector="back:" destination="2rN-LC-sA6" eventType="touchUpInside" id="aha-rw-NC0"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0017" translatesAutoresizingMaskIntoConstraints="NO" id="wYw-bq-GTM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wYw-bq-GTM">
                                 <rect key="frame" x="41" y="54" width="239" height="223"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -3742,7 +3749,6 @@
         <image name="0005" width="1242" height="1863"/>
         <image name="0007" width="1242" height="829"/>
         <image name="0009" width="1242" height="828"/>
-        <image name="0012" width="1242" height="1863"/>
         <image name="0013" width="1242" height="883"/>
         <image name="0017" width="1242" height="1320"/>
         <image name="1111" width="1242" height="828"/>
@@ -3754,11 +3760,11 @@
         <image name="33-1" width="1242" height="823"/>
         <image name="5555" width="1242" height="804"/>
         <image name="8888" width="1242" height="933"/>
-        <image name="fex" width="1242" height="932"/>
+        <image name="apiru" width="800" height="1200"/>
+        <image name="apirul" width="1242" height="1868"/>
         <image name="fi9qq0fwyvq-jon-tyson" width="600" height="800"/>
         <image name="haha1" width="1242" height="828"/>
         <image name="kesiki" width="500" height="500"/>
-        <image name="mxvew_caxji-jesse-vermeulen" width="5444" height="3629"/>
         <image name="nana1" width="1242" height="699"/>
     </resources>
 </document>

@@ -92,8 +92,12 @@ class SyuruViewController: UIViewController {
         super.viewDidLoad()
         rec.layer.cornerRadius = 8
         rec.clipsToBounds = true
+        rec.layer.borderWidth = 1
+        rec.layer.borderColor = UIColor.white.cgColor
         syu.layer.cornerRadius = 8
         syu.clipsToBounds = true
+        syu.layer.borderWidth = 1
+        syu.layer.borderColor = UIColor.white.cgColor
         back.layer.cornerRadius = 37
         back.clipsToBounds = true
     }

@@ -23,7 +23,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sister2 のコピー 2-2" translatesAutoresizingMaskIntoConstraints="NO" id="zm7-Tv-nrl">
                                 <rect key="frame" x="147" y="293" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.057570761800000002" blue="0.24798478960000001" alpha="1" colorSpace="calibratedRGB"/>
