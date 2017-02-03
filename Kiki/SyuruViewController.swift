@@ -16,8 +16,10 @@ class SyuruViewController: UIViewController {
         if isSavePlofile == true {
             AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeAudio, completionHandler: {(granted: Bool) in
                 if granted {
-                    let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Apiru") as! ApiruViewController
-                    self.present(recviewcontroller, animated: true, completion: nil)
+                    DispatchQueue.main.async {
+                        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Apiru") as! ApiruViewController
+                        self.present(recviewcontroller, animated: true, completion: nil)
+                    }
                 }
                 else {
                     print("no permission")

@@ -21,12 +21,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sister2 のコピー 2-2" translatesAutoresizingMaskIntoConstraints="NO" id="zm7-Tv-nrl">
-                                <rect key="frame" x="147" y="293" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Supersonic......." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXp-RT-mat">
+                                <rect key="frame" x="124" y="285" width="126" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="1" green="0.93138582469999998" blue="0.52729343939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.057570761800000002" blue="0.24798478960000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.022249056543004908" green="0.10908867801047117" blue="0.086935467312021883" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hfd-W5-hmB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -34,7 +37,4 @@
             <point key="canvasLocation" x="-132" y="99.400299850074973"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="sister2 のコピー 2-2" width="180" height="180"/>
-    </resources>
 </document>
