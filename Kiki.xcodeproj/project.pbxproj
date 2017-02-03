@@ -198,6 +198,7 @@
 				B071309C1DC2352E00B8EEC1 /* Play2ViewController.swift */,
 			);
 			name = m;
+			path = Kiki;
 			sourceTree = "<group>";
 		};
 		B00501BA1DB610D200319866 /* 音源表示 */ = {
@@ -212,6 +213,28 @@
 			);
 			name = "音源表示";
 			path = ..;
+			sourceTree = "<group>";
+		};
+		B03032E21E44508500D2059E /* syutyu */ = {
+			isa = PBXGroup;
+			children = (
+				B05F57731DDEBD05006DB9A5 /* SyutyuViewController.swift */,
+				B05F57751DDF4937006DB9A5 /* Syutyu1ViewController.swift */,
+				B05F57771DDF4942006DB9A5 /* Syutyu2ViewController.swift */,
+				B05F57791DDF4B0E006DB9A5 /* Syutyu3ViewController.swift */,
+				B05F577B1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift */,
+			);
+			name = syutyu;
+			sourceTree = "<group>";
+		};
+		B03032E31E44508F00D2059E /* rocktyu */ = {
+			isa = PBXGroup;
+			children = (
+				B00C67AB1E3D6FD10026E775 /* RockViewController.swift */,
+				B00C67AD1E3D6FDD0026E775 /* Rock2ViewController.swift */,
+				B00C67AF1E3D6FE90026E775 /* Rock3ViewController.swift */,
+			);
+			name = rocktyu;
 			sourceTree = "<group>";
 		};
 		B042A0201DB98BBE0068D205 /* 集合場所投稿 */ = {
@@ -278,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				B0A78FD41DACFF6500AC0513 /* Kiki */,
+				B00467F31E38A93C0033859A /* m */,
 				B0A78FD31DACFF6400AC0513 /* Products */,
 				4F50CD36192A9453F20C1EFD /* Pods */,
 				561F2EC0FDDD07A1BF6D0786 /* Frameworks */,
@@ -296,18 +320,11 @@
 			isa = PBXGroup;
 			children = (
 				B0A78FD91DACFF6500AC0513 /* Main.storyboard */,
-				B00C67AB1E3D6FD10026E775 /* RockViewController.swift */,
-				B00C67AD1E3D6FDD0026E775 /* Rock2ViewController.swift */,
-				B00C67AF1E3D6FE90026E775 /* Rock3ViewController.swift */,
 				B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */,
-				B05F57731DDEBD05006DB9A5 /* SyutyuViewController.swift */,
-				B05F57751DDF4937006DB9A5 /* Syutyu1ViewController.swift */,
-				B05F57771DDF4942006DB9A5 /* Syutyu2ViewController.swift */,
-				B05F57791DDF4B0E006DB9A5 /* Syutyu3ViewController.swift */,
-				B05F577B1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift */,
 				B06B00441DDD4131000C545D /* OreViewController.swift */,
+				B03032E21E44508500D2059E /* syutyu */,
+				B03032E31E44508F00D2059E /* rocktyu */,
 				B0BA8AE11DDD7E7500F00E38 /* LoginAka */,
-				B00467F31E38A93C0033859A /* m */,
 				B0479DB51E0FF69000B5B9B3 /* postData2 */,
 				B05E34401DC8B6CF00C271D3 /* PostData */,
 				B0BD80DE1DC71B0D0056E1A5 /* 集合場所表示 */,

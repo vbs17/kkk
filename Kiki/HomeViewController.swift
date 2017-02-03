@@ -348,7 +348,8 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 //cell!.hyouka.setTitleColor(UIColor.white, for: UIControlState())
                 cell!.hyouka.setTitleColor(UIColor.black, for: UIControlState())
                 cell!.edittingFlag = false
-                cell?.setPostData1(self.postArray[indexPath!.row])
+                //cell?.setPostData1(self.postArray[indexPath!.row])
+                cell?.setPostData(self.postArray[indexPath!.row])
                 cell!.star1.isUserInteractionEnabled = false
                 cell!.star2.isUserInteractionEnabled = false
                 cell!.star3.isUserInteractionEnabled = false
@@ -406,7 +407,8 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }
         //cell!.hyouka.setTitleColor(UIColor.black, for: UIControlState())
         cell!.edittingFlag = false
-        cell?.setPostData1(self.postArray[indexPath!.row])
+        //cell?.setPostData1(self.postArray[indexPath!.row])
+        cell?.setPostData(self.postArray[indexPath!.row])
         cell!.star1.isUserInteractionEnabled = false
         cell!.star2.isUserInteractionEnabled = false
         cell!.star3.isUserInteractionEnabled = false

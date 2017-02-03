@@ -142,32 +142,32 @@ class HomeTableViewCell: UITableViewCell {
         label2.text = postData.byou
     }
     
-    func setPostData1(_ postData: PostData) {
-        let stars = postData.star
+    //func setPostData1(_ postData: PostData) {
+        //let stars = postData.star
         
-        var average: Int = 0
+        //var average: Int = 0
         
-        if stars.count > 0 {
+        //if stars.count > 0 {
             // 評価の合計
-            var sum = 0              //["UID" : "星の数"]
-            for data in stars as Array<[String: String]> {
-                let starDic = Array(data.keys)
+            //var sum = 0              //["UID" : "星の数"]
+            //for data in stars as Array<[String: String]> {
+               // let starDic = Array(data.keys)
                 //starDic[0]はuidで[1]は星の数
-                let uid = starDic[0]
-                let ratingStr = data[uid]! as String
-                if let rating = Int(ratingStr) {
-                    sum += rating
-                }
+                //let uid = starDic[0]
+                //let ratingStr = data[uid]! as String
+                //if let rating = Int(ratingStr) {
+                //    sum += rating
+                //}
                 
                 
-            }
-            average = Int(ceil(Double(sum) / Double(stars.count)))
-            print("合計:\(sum), 投票数:\(stars.count), 平均値:\(average)")
-        }
+           // }
+           // average = Int(ceil(Double(sum) / Double(stars.count)))
+           // print("合計:\(sum), 投票数:\(stars.count), 平均値:\(average)")
+       // }
         
-        updateStar(average)
+       // updateStar(average)
         
-    }
+    //}
 
     
     //見た目しかやってない
