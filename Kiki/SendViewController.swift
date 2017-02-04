@@ -10,6 +10,10 @@ class SendViewController: UIViewController,UIImagePickerControllerDelegate, UINa
     @IBOutlet weak var library: UIButton!
     @IBOutlet weak var camera: UIButton!
 
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         library.layer.cornerRadius = 10

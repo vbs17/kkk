@@ -122,13 +122,7 @@ class LoginViewController: UIViewController{
                     self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
                     
                     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-                    let pro = self.storyboard?.instantiateViewController(withIdentifier: "Pro") as! ProViewController
-                    if (pro.imageView.image != nil && pro.name.text!.characters.count > 0){
-                        let ud = UserDefaults.standard
-                        ud.set(true, forKey: CommonConst.IsSavePlofileData)
-                        ud.synchronize()
-                    }
-
+                   
                     appDelegate.login()
                }
             }
