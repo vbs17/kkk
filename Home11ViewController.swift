@@ -33,10 +33,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
         timer2.invalidate()
         self.dismiss(animated: true, completion: nil)
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -443,7 +440,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
     }
     
     func mada(){
-        lbl.text = "誰もまだ投稿していません.君の音楽を投稿して一番乗りになろう！"
+        label.text = "誰もまだ投稿していません.君の音楽を投稿して一番乗りになろう！"
     }
     
     
@@ -558,10 +555,6 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
         let m: Int = Int(((d - Double(s)) / 60).truncatingRemainder(dividingBy: 60))
         let str = String(format: "%2d:%02d",  m, s)
         return str
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     
