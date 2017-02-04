@@ -142,8 +142,11 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
     
     //スクロールしてデータ取得
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        if(self.tableView.contentOffset.y == (self.tableView.contentSize.height - self.tableView.bounds.size.height))
+        let contentsOffsetYFloat:Float = Float(self.tableView.contentOffset.y)
+        let diffFloat:Float = Float(self.tableView.contentSize.height - self.tableView.bounds.size.height)
+        let contentsOffsetY:NSDecimalNumber = NSDecimalNumber(value: contentsOffsetYFloat)
+        let diff:NSDecimalNumber = NSDecimalNumber(value: diffFloat)
+        if(contentsOffsetY.subtracting(diff)==0)
         {
             //まだ表示するコンテンツが存在するか判定し存在するなら○件分を取得して表示更新する
             
@@ -152,8 +155,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
             
         }
         
-    }
-    //postdataやfile.swiftを照らし合わせたらいける
+    }    //postdataやfile.swiftを照らし合わせたらいける
     func getFirebaseData() {
         let reachability = Reachability()!
         if reachability.isReachable {
