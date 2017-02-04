@@ -48,7 +48,7 @@ class OkViewController: UIViewController,UITextFieldDelegate {
     }
     //ここ実験
     @IBAction func OKGo(_ sender: AnyObject) {
-        let kindviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1") as! Kind1ViewcontrollerViewController
+        let kindviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind") as! KindViewcontroller
         kindviewcontroller.songData = songData
         kindviewcontroller.image = imageView.image
         kindviewcontroller.byou = byou
