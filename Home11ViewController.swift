@@ -11,9 +11,9 @@ import ReachabilitySwift
 
 
 class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewDelegate,AVAudioPlayerDelegate {
-    var postArray: [PostData] = []
-    var postArray2:[PostData2] = []
-    var postArray3:[PostData3] = []
+    var postArray: [Post1Data] = []
+    var postArray2:[Post2Data2] = []
+    var postArray3:[Post3Data3] = []
     var observing = false
     var genre: String!
     var playSong:AVAudioPlayer!
@@ -54,7 +54,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CEll", for: indexPath) as! HomeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CElll", for: indexPath) as! Home11TableViewCell
         //cell.hyouka.setTitleColor(UIColor.white, for: UIControlState())
         cell.hyouka.setTitleColor(UIColor.black, for: UIControlState())
         cell.edittingFlag = false
@@ -88,13 +88,13 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
                 image = postData3.image
             }
         }
-        cell.ImageView.image = image
+        cell.iimageView.image = image
         if (image == nil) {
             // Firebaseからイメージ読み込み                                                    //post
             FIRDatabase.database().reference().child(CommonConst.image).child(genre).child(postData1.id!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                 guard let `self` = self else { return }
                 //ジャケットのimage
-                let postData3 = PostData3(snapshot: snapshot, myId: postData1.uid!)
+                let postData3 = Post3Data3(snapshot: snapshot, myId: postData1.uid!)
                 // すでに登録済みでなければ登録
                 //ここわからん
                 //このおかげでデータの取得するかどうか判別できるようになるとかかも
@@ -163,10 +163,10 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
                 
                 print(snapshot.childrenCount)
                 
-                var workArray:[PostData] = []
+                var workArray:[Post1Data] = []
                 for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
                     print(child)
-                    let postData = PostData(snapshot: child, myId: uid!)
+                    let postData = Post1Data(snapshot: child, myId: uid!)
                     if postData.time != self.dataLastVal {
                         workArray.insert(postData, at: 0)
                     }
@@ -258,10 +258,10 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
                 guard let `self` = self else { return }
                 
                 
-                var workArray:[PostData] = []
+                var workArray:[Post1Data] = []
                 for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
                     print(child )
-                    let postData = PostData(snapshot: child, myId: uid!)
+                    let postData = Post1Data(snapshot: child, myId: uid!)
                     print(postData.time ?? "")
                     workArray.insert(postData, at: 0)
                 }
@@ -282,7 +282,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
                 
                 if let uid = FIRAuth.auth()?.currentUser?.uid {
                     guard let `self` = self else { return }
-                    let postData = PostData(snapshot: snapshot, myId: uid)
+                    let postData = Post1Data(snapshot: snapshot, myId: uid)
                     
                     var index: Int = 0
                     for post in self.postArray {
@@ -303,7 +303,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
                 
                 if let uid = FIRAuth.auth()?.currentUser?.uid {
                     guard let `self` = self else { return }
-                    let postData = PostData2(snapshot: snapshot, myId: uid)
+                    let postData = Post2Data2(snapshot: snapshot, myId: uid)
                     self.postArray2.insert(postData, at: 0)
                     
                     self.tableView.reloadData()
@@ -314,7 +314,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
                 
                 if let uid = FIRAuth.auth()?.currentUser?.uid {
                     guard let `self` = self else { return }
-                    let postData = PostData2(snapshot: snapshot, myId: uid)
+                    let postData = Post2Data2(snapshot: snapshot, myId: uid)
                     var index: Int = 0
                     for post in self.postArray2 {
                         if post.id == postData.id {
@@ -336,7 +336,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
     //ここが怪しい
     func hyoukaGo(_ sender:UIButton, event:UIEvent){
         let indexPath = getIndexPath(event)
-        let cell = tableView.cellForRow(at: indexPath!) as! HomeTableViewCell?
+        let cell = tableView.cellForRow(at: indexPath!) as! Home11TableViewCell?
         let ud = UserDefaults.standard
         let isSavePlofile = ud.bool(forKey: CommonConst.IsSavePlofileData )
         if isSavePlofile == true {
@@ -393,7 +393,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
         let point = touch!.location(in: self.tableView)
         let indexPath = tableView.indexPathForRow(at: point)
         let postData = postArray[indexPath!.row]
-        let cell = tableView.cellForRow(at: indexPath!) as! HomeTableViewCell?
+        let cell = tableView.cellForRow(at: indexPath!) as! Home11TableViewCell?
         //cell!.hyouka.setTitleColor(UIColor.yellow, for: UIControlState())
         cell!.hyouka.setTitleColor(UIColor.black, for: UIControlState())
         if let uid = FIRAuth.auth()?.currentUser?.uid {
