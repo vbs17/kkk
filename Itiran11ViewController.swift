@@ -8,8 +8,7 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func bacl(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-
+     self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
     }
         fileprivate let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","X","Y","Z","number"]
     let AllItems: [[String]]  = [[ "ABBA",
@@ -463,6 +462,7 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var you: UIButton!
     @IBOutlet weak var hou: UIButton!
         @IBAction func hougo(_ sender: Any) {
+            self.dismiss(animated: false, completion: nil)
     }
     
 
@@ -473,6 +473,8 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.dataSource = self
         let nib = UINib(nibName: "Itiran1TableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "Cellll")
+        you.isEnabled = false
+
 
     }
     

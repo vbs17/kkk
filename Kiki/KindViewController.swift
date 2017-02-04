@@ -492,7 +492,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         recviewcontroller.songname = self.songname
         recviewcontroller.original = self.original
         recviewcontroller.cover = self.cover
-        self.present(recviewcontroller, animated: true, completion: nil)
+        self.present(recviewcontroller, animated: false, completion: nil)
     }
     
     
