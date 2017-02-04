@@ -93,11 +93,7 @@ class Home11TableViewCell: UITableViewCell {
             
         }
         //こいつのせいで評価ボタンむちゃくちゃ
-        if(postData.star.isEmpty){
-            
-            hyouka.isEnabled = false
-            
-        }
+        
         if(postData.uid == nil){
             
             go.isEnabled = false

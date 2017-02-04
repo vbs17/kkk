@@ -133,8 +133,11 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     //スクロールしてデータ取得
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        if(self.tableView.contentOffset.y == (self.tableView.contentSize.height - self.tableView.bounds.size.height))
+        let contentsOffsetYFloat:Float = Float(self.tableView.contentOffset.y)
+        let diffFloat:Float = Float(self.tableView.contentSize.height - self.tableView.bounds.size.height)
+        let contentsOffsetY:NSDecimalNumber = NSDecimalNumber(value: contentsOffsetYFloat)
+        let diff:NSDecimalNumber = NSDecimalNumber(value: diffFloat)
+        if(contentsOffsetY.subtracting(diff)==0)
         {
             //まだ表示するコンテンツが存在するか判定し存在するなら○件分を取得して表示更新する
             
@@ -485,7 +488,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 SVProgressHUD.setDefaultMaskType(.clear)
                 
                 //backだけはokにしたいな
-                SVProgressHUD.show(withStatus:"クールな音質に仕上げています😎(最大5秒) 　　　　　　　　　　　　　　　　                　　　　　　このオリジナルソングが君のセンスにあえば左上のProfileボタンをタップして連絡をとれ😎")
+                SVProgressHUD.show(withStatus:"クールな音質に仕上げています😎(最大5秒) 　　　　　　　　　　　　　　　　                　　　　　　このオリジナルソングが君のセンスにあえば左上のProfileボタンをタップして俺に連絡をとってくれ😎あ、あと最高のヘッドホンで聞いてくれよな😜")
                 
                 FIRDatabase.database().reference().child(CommonConst.songData).child(postData.song!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                     guard let `self` = self else { return }
@@ -530,7 +533,13 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }
     }
     
+    //変化あったよ
+    
     func back(_ sender: UIButton, event:UIEvent) {
+        
+        if playingIndexPath == nil {
+            return
+        }
         
         let cell = tableView.cellForRow(at: playingIndexPath) as! HomeTableViewCell?
         cell!.onlabel2.text = "0:00"

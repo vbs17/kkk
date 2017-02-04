@@ -494,7 +494,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
                 SVProgressHUD.setDefaultMaskType(.clear)
                 
                 //backだけはokにしたいな
-                SVProgressHUD.show(withStatus:"クールな音質に仕上げています😎(最大5秒) 　　　　　　　　　　　　　　　　                　　　　　　このオリジナルソングが君のセンスにあえば左上のProfileボタンをタップして連絡をとれ😎")
+                SVProgressHUD.show(withStatus:"クールな音質に仕上げています😎(最大5秒) 　　　　　　　　　　　　　　　　                　　　　　　このオリジナルソングが君のセンスにあえば左上のProfileボタンをタップして俺に連絡をとってくれ😎あ、あと最高のヘッドホンで聞いてくれよな😜")
                 
                 FIRDatabase.database().reference().child(CommonConst.songData1).child(postData.song!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                     guard let `self` = self else { return }
