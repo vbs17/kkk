@@ -2180,13 +2180,13 @@
                                     <action selector="camera:" destination="d6f-QV-nRc" eventType="touchUpInside" id="YzK-Gy-hzP"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYL-tQ-NG8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="集合場所の写真を撮ろう" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYL-tQ-NG8">
                                 <rect key="frame" x="72" y="134" width="176" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="A55-AC-sBx"/>
                                     <constraint firstAttribute="width" constant="176" id="VqA-VZ-hAf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2876,7 +2876,7 @@
                                     <action selector="libGo:" destination="Wv3-pr-LgI" eventType="touchUpInside" id="DCP-og-5SE"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Jo-XQ-lEj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ジャケットを選ぼう" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Jo-XQ-lEj">
                                 <rect key="frame" x="68.5" y="133" width="182" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="182" id="4vU-ih-xXH"/>
