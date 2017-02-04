@@ -1,41 +1,31 @@
 
-
 import UIKit
-import AVFoundation
-import Firebase
-import FirebaseAuth
-import FirebaseDatabase
 
+class Home11TableViewCell: UITableViewCell {
 
-class HomeTableViewCell: UITableViewCell {
     
     var tap:Data?
     weak var playSong: AVAudioPlayer!
     var edittingFlag : Bool = false
+
     
-
-
     @IBOutlet weak var imageView1: UIImageView!
-    @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var label2: UILabel!
-    @IBOutlet weak var onlabel2: UILabel!
-    @IBOutlet weak var view: UIView!
-    @IBOutlet weak var nami: UIProgressView!
-    //再生　巻き戻し
+    @IBOutlet weak var iimageView: UIImageView!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var backButton: UIButton!
-    //評価ボタン
     @IBOutlet weak var hyouka: UIButton!
+    @IBOutlet weak var view: UIView!
+    @IBOutlet weak var onlabel2: UILabel!
+    @IBOutlet weak var go: UIButton!
+    @IBOutlet weak var nami: UIProgressView!
     @IBOutlet weak var star1: UIButton!
     @IBOutlet weak var star2: UIButton!
     @IBOutlet weak var star3: UIButton!
     @IBOutlet weak var star4: UIButton!
     @IBOutlet weak var star5: UIButton!
-    //profilego
-    @IBOutlet weak var go: UIButton!
     
-    //星の色　ここはシンプル 黄色
     func updateStar(_ ratingStr:Int) {
         switch  ratingStr {
         case 0:
@@ -57,7 +47,7 @@ class HomeTableViewCell: UITableViewCell {
             star3.setImage(UIImage(named:"sister7"), for: UIControlState())
             star4.setImage(UIImage(named:"sister7"), for: UIControlState())
             star5.setImage(UIImage(named:"sister7"), for: UIControlState())
-
+            
         case 3:
             star1.setImage(UIImage(named:"sister13"), for: UIControlState())
             star2.setImage(UIImage(named:"sister13"), for: UIControlState())
@@ -71,7 +61,7 @@ class HomeTableViewCell: UITableViewCell {
             star3.setImage(UIImage(named:"sister13"), for: UIControlState())
             star4.setImage(UIImage(named:"sister13"), for: UIControlState())
             star5.setImage(UIImage(named:"sister7"), for: UIControlState())
-
+            
         case 5:
             star1.setImage(UIImage(named:"sister13"), for: UIControlState())
             star2.setImage(UIImage(named:"sister13"), for: UIControlState())
@@ -93,8 +83,8 @@ class HomeTableViewCell: UITableViewCell {
         }
         else if ( postData.cover == "" && postData.original == "O" ) {
             label.backgroundColor = UIColor(red:0.4, green:0.0, blue:0.1, alpha:1.0)
-
-
+            
+            
         }
         if(postData.song == nil){
             
@@ -164,12 +154,12 @@ class HomeTableViewCell: UITableViewCell {
             }
             average = Int(ceil(Double(sum) / Double(stars.count)))
             print("合計:\(sum), 投票数:\(stars.count), 平均値:\(average)")
-       }
+        }
         
         updateStar(average)
         
     }
-
+    
     
     //見た目しかやってない
     override func awakeFromNib() {
@@ -192,7 +182,7 @@ class HomeTableViewCell: UITableViewCell {
         hyouka.clipsToBounds = true
         hyouka.layer.borderWidth = 1
         hyouka.layer.borderColor = UIColor.black.cgColor
-
+        
         
     }
     
@@ -230,9 +220,9 @@ class HomeTableViewCell: UITableViewCell {
             }
         }
     }
-
     
-       
+    
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

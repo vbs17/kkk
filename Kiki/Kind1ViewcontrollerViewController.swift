@@ -1,5 +1,4 @@
 
-
 import UIKit
 import Firebase
 import FirebaseDatabase
@@ -7,12 +6,15 @@ import FirebaseAuth
 import SVProgressHUD
 import ReachabilitySwift
 
-class KindViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, KindTableViewCellDelegate {
+
+class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, Kind1TableViewCellDelegate {
+    
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var you: UIButton!
     
-    
-    let AllItems: [[String]]  = [[ "赤犬",
+    let AllItems: [[String]]  = [[ "ABBA",
+                                   "Arctic Monkeys",
                                    "あがた森魚",
                                    "浅井健一",
                                    "安室奈美恵",
@@ -458,10 +460,8 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
                                   "9mm Parabellum Bullet"]]
     
     fileprivate let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","X","Y","Z","number"]
+
     
-    
-    //写真　曲名　秒数　音源
-    //filenameをsongDataに渡す
     var songData:URL!
     var image:UIImage!
     var songname:UITextField!
@@ -473,27 +473,17 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     var original:  NSString?
     var cover: NSString?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        let nib = UINib(nibName: "KindTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "Cell")
+        let nib = UINib(nibName: "Kind1TableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "CCell")
         tappedCellPos = nil
         
     }
-    //ここ
-    @IBAction func yougo(_ sender: Any) {
-        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1") as! Kind1ViewcontrollerViewController
-        self.present(recviewcontroller, animated: true, completion: nil)
-
-        
-    }
     
-    
-    //どこのジャンル押されたか判明　ここで色変更したり　再度押したらジャンルが選択されてない状態にする　それで投稿したら注意出る
-    func buttonPressed(_ tableViewCell: KindTableViewCell) {
+    func buttonPressed(_ tableViewCell: Kind1TableViewCell) {
         let indexPath = tableView.indexPath(for: tableViewCell)
         // 初めてのタップ
         if tappedCellPos == nil {
@@ -556,18 +546,19 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
     }
+
     
     
-    //FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre) に保存
     
-    @IBAction func post(_ sender: AnyObject) {
+    
+    @IBAction func post(_ sender: Any) {
         if isRowSelected {
             let reachability = Reachability()!
             if reachability.isReachable {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! KindTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "CCell") as! Kind1TableViewCell
                 cell.button.isEnabled = false
                 
-
+                
                 let ongen = UUID().uuidString
                 print("Post")
                 saveSong(uuid: ongen)
@@ -593,7 +584,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
                 alert.addAction(defaultAction)
                 present(alert, animated: true, completion: nil)
                 alert.view.tintColor = UIColor.white
-
+                
             }
             
             // セルが選択されている時の処理を記述
@@ -621,10 +612,28 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+
+        
+    
+    @IBAction func hougo(_ sender: Any) {
+        let kindviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind") as! KindViewController
+        self.present(kindviewcontroller, animated: true, completion: nil)
+
+    }
+
+    
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+
+  
+
     func saveSong(uuid: String) {
         let realSongdata = try? Data(contentsOf: URL(fileURLWithPath: songData.path))
         let realsong = realSongdata!.base64EncodedString(options: [])
-        let songDataRef = FIRDatabase.database().reference().child(CommonConst.songData).child(uuid)
+        let songDataRef = FIRDatabase.database().reference().child(CommonConst.songData1).child(uuid)
         songDataRef.setValue(realsong) { (error, ref) in
             if (error == nil) {
                 // 音源保存完了
@@ -647,7 +656,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         UIGraphicsEndImageContext()
         let imageData = UIImageJPEGRepresentation(resizeImage!, 0.5)
         let postData3 = ["image": imageData!.base64EncodedString(options: .lineLength64Characters)];
-        let postRef3 = FIRDatabase.database().reference().child(CommonConst.image).child(genre).child(uuid)
+        let postRef3 = FIRDatabase.database().reference().child(CommonConst.image1).child(genre).child(uuid)
         postRef3.setValue(postData3) { (error, ref) in
             if (error == nil) {
                 // 画像保存完了
@@ -670,7 +679,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         let original:NSString = (self.original as NSString?)!
         let cover:NSString = (self.cover as NSString?)!
         let postData = ["time":time,"byou": kazu, "songname": songName, "ongen": uuid,"original":original,"cover":cover, "uid":uid] as [String : Any]
-        let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).child(uuid)
+        let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH1).child(genre).child(uuid)
         
         postRef.setValue(postData) { (error, ref) in
             if (error == nil) {
@@ -704,7 +713,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //値を設定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! KindTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CCell", for: indexPath) as! Kind1TableViewCell
         cell.delegate = self
         //ここ
         cell.button.backgroundColor = UIColor.lightGray
@@ -735,25 +744,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         return AllItems[section].count
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
+   
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

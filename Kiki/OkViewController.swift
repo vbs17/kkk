@@ -46,9 +46,9 @@ class OkViewController: UIViewController,UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+    //ここ実験
     @IBAction func OKGo(_ sender: AnyObject) {
-        let kindviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind") as! KindViewController
+        let kindviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1") as! Kind1ViewcontrollerViewController
         kindviewcontroller.songData = songData
         kindviewcontroller.image = imageView.image
         kindviewcontroller.byou = byou

@@ -4,8 +4,11 @@ import Foundation
 
 struct CommonConst {
     static let PostPATH = "posts"
+    static let PostPATH1 = "posts1"
     static let songData = "songData"
+    static let songData1 = "songData1"
     static let image = "image"
+    static let image1 = "image1"
     static let PostPATH2 = "posts2"
     static let image2 = "image2"
     static let Profile = "Profile"

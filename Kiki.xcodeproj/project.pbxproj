@@ -53,6 +53,17 @@
 		B071D9711DB509FA0017E287 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071D9701DB509FA0017E287 /* TabViewController.swift */; };
 		B071D9731DB50C4E0017E287 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071D9721DB50C4E0017E287 /* LoginViewController.swift */; };
 		B071D9751DB50E670017E287 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071D9741DB50E670017E287 /* SetViewController.swift */; };
+		B07B5ACE1E456E0A00AE5B0D /* Post1Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B5ACD1E456E0A00AE5B0D /* Post1Data.swift */; };
+		B07B5AD01E456E2200AE5B0D /* Post2Data2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B5ACF1E456E2200AE5B0D /* Post2Data2.swift */; };
+		B07B5AD21E456E2F00AE5B0D /* Post3Data3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B5AD11E456E2F00AE5B0D /* Post3Data3.swift */; };
+		B07B5AD41E456FC000AE5B0D /* Kind1ViewcontrollerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B5AD31E456FC000AE5B0D /* Kind1ViewcontrollerViewController.swift */; };
+		B07B5AD71E45718700AE5B0D /* Kind1TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B5AD51E45718700AE5B0D /* Kind1TableViewCell.swift */; };
+		B07B5AD81E45718700AE5B0D /* Kind1TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07B5AD61E45718700AE5B0D /* Kind1TableViewCell.xib */; };
+		B07B5ADC1E457F0000AE5B0D /* Itiran1TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B5ADA1E457F0000AE5B0D /* Itiran1TableViewCell.swift */; };
+		B07B5ADD1E457F0000AE5B0D /* Itiran1TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07B5ADB1E457F0000AE5B0D /* Itiran1TableViewCell.xib */; };
+		B07B5ADF1E45806F00AE5B0D /* Itiran11ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B5ADE1E45806F00AE5B0D /* Itiran11ViewController.swift */; };
+		B07B5AE31E45831B00AE5B0D /* Home11TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B5AE11E45831B00AE5B0D /* Home11TableViewCell.swift */; };
+		B07B5AE41E45831B00AE5B0D /* Home11TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07B5AE21E45831B00AE5B0D /* Home11TableViewCell.xib */; };
 		B07E94E71DCDC766009537A7 /* ProIdouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */; };
 		B088CB221DDB34C7007CE03D /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088CB211DDB34C7007CE03D /* Photos.framework */; };
 		B0A78FD61DACFF6500AC0513 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */; };
@@ -127,6 +138,17 @@
 		B071D9701DB509FA0017E287 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		B071D9721DB50C4E0017E287 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B071D9741DB50E670017E287 /* SetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
+		B07B5ACD1E456E0A00AE5B0D /* Post1Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post1Data.swift; sourceTree = "<group>"; };
+		B07B5ACF1E456E2200AE5B0D /* Post2Data2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post2Data2.swift; sourceTree = "<group>"; };
+		B07B5AD11E456E2F00AE5B0D /* Post3Data3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post3Data3.swift; sourceTree = "<group>"; };
+		B07B5AD31E456FC000AE5B0D /* Kind1ViewcontrollerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kind1ViewcontrollerViewController.swift; sourceTree = "<group>"; };
+		B07B5AD51E45718700AE5B0D /* Kind1TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kind1TableViewCell.swift; sourceTree = "<group>"; };
+		B07B5AD61E45718700AE5B0D /* Kind1TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Kind1TableViewCell.xib; sourceTree = "<group>"; };
+		B07B5ADA1E457F0000AE5B0D /* Itiran1TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Itiran1TableViewCell.swift; sourceTree = "<group>"; };
+		B07B5ADB1E457F0000AE5B0D /* Itiran1TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Itiran1TableViewCell.xib; sourceTree = "<group>"; };
+		B07B5ADE1E45806F00AE5B0D /* Itiran11ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Itiran11ViewController.swift; sourceTree = "<group>"; };
+		B07B5AE11E45831B00AE5B0D /* Home11TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home11TableViewCell.swift; sourceTree = "<group>"; };
+		B07B5AE21E45831B00AE5B0D /* Home11TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Home11TableViewCell.xib; sourceTree = "<group>"; };
 		B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProIdouViewController.swift; sourceTree = "<group>"; };
 		B088CB211DDB34C7007CE03D /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		B0A78FD21DACFF6400AC0513 /* Kiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,9 +229,11 @@
 				B071D96E1DB4EA9B0017E287 /* HomeViewController.swift */,
 				B00501B81DB610D200319866 /* HomeTableViewCell.swift */,
 				B00501B91DB610D200319866 /* HomeTableViewCell.xib */,
+				B07B5AE11E45831B00AE5B0D /* Home11TableViewCell.swift */,
+				B07B5AE21E45831B00AE5B0D /* Home11TableViewCell.xib */,
 				B00501BD1DB6420800319866 /* ItiranViewController.swift */,
-				B00501C11DB6428500319866 /* ItiranTableViewCell.swift */,
-				B00501C21DB6428500319866 /* ItiranTableViewCell.xib */,
+				B07B5ADE1E45806F00AE5B0D /* Itiran11ViewController.swift */,
+				B07B5AE01E45821F00AE5B0D /* itirancell */,
 			);
 			name = "音源表示";
 			path = ..;
@@ -265,6 +289,9 @@
 				B071D9671DB4E5040017E287 /* PostData.swift */,
 				B06606551DFC4B3100FD3E4C /* PostData3.swift */,
 				B05E343E1DC8B57F00C271D3 /* PostData2.swift */,
+				B07B5ACD1E456E0A00AE5B0D /* Post1Data.swift */,
+				B07B5ACF1E456E2200AE5B0D /* Post2Data2.swift */,
+				B07B5AD11E456E2F00AE5B0D /* Post3Data3.swift */,
 				B071D9651DB4D6140017E287 /* File.swift */,
 			);
 			name = PostData;
@@ -279,6 +306,28 @@
 				B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */,
 			);
 			name = PROFILE;
+			sourceTree = "<group>";
+		};
+		B07B5AD91E45755B00AE5B0D /* KindCell */ = {
+			isa = PBXGroup;
+			children = (
+				B0F582AA1DB38E5300654519 /* KindTableViewCell.xib */,
+				B0F582A91DB38E5300654519 /* KindTableViewCell.swift */,
+				B07B5AD51E45718700AE5B0D /* Kind1TableViewCell.swift */,
+				B07B5AD61E45718700AE5B0D /* Kind1TableViewCell.xib */,
+			);
+			name = KindCell;
+			sourceTree = "<group>";
+		};
+		B07B5AE01E45821F00AE5B0D /* itirancell */ = {
+			isa = PBXGroup;
+			children = (
+				B07B5ADA1E457F0000AE5B0D /* Itiran1TableViewCell.swift */,
+				B07B5ADB1E457F0000AE5B0D /* Itiran1TableViewCell.xib */,
+				B00501C11DB6428500319866 /* ItiranTableViewCell.swift */,
+				B00501C21DB6428500319866 /* ItiranTableViewCell.xib */,
+			);
+			name = itirancell;
 			sourceTree = "<group>";
 		};
 		B0A6CF611E0F979000E76751 /* iroiro */ = {
@@ -347,8 +396,8 @@
 				B0ABF85B1DB0EE21001987E7 /* SendViewController.swift */,
 				B0A9A1731DB1FDE00021D1CF /* OkViewController.swift */,
 				B0190A201DB20FE400FA066D /* KindViewController.swift */,
-				B0F582AA1DB38E5300654519 /* KindTableViewCell.xib */,
-				B0F582A91DB38E5300654519 /* KindTableViewCell.swift */,
+				B07B5AD31E456FC000AE5B0D /* Kind1ViewcontrollerViewController.swift */,
+				B07B5AD91E45755B00AE5B0D /* KindCell */,
 			);
 			name = "音源投稿";
 			sourceTree = "<group>";
@@ -456,8 +505,11 @@
 				B0A78FDD1DACFF6500AC0513 /* Assets.xcassets in Resources */,
 				B00501BC1DB610D200319866 /* HomeTableViewCell.xib in Resources */,
 				B069682A1DC610C200274DB1 /* HomeTableViewCell1.xib in Resources */,
+				B07B5AE41E45831B00AE5B0D /* Home11TableViewCell.xib in Resources */,
 				B0A78FDB1DACFF6500AC0513 /* Main.storyboard in Resources */,
 				B00501C51DB6428500319866 /* ItiranTableViewCell.xib in Resources */,
+				B07B5ADD1E457F0000AE5B0D /* Itiran1TableViewCell.xib in Resources */,
+				B07B5AD81E45718700AE5B0D /* Kind1TableViewCell.xib in Resources */,
 				B02336DA1E41E5AF00EA1F6E /* GoogleService-Info.plist in Resources */,
 				B0B448201DD5AD04001DDD89 /* IkuTableViewCell.xib in Resources */,
 			);
@@ -553,6 +605,7 @@
 				B0190A211DB20FE400FA066D /* KindViewController.swift in Sources */,
 				B06968221DC60D6E00274DB1 /* PostData1.swift in Sources */,
 				B00501BB1DB610D200319866 /* HomeTableViewCell.swift in Sources */,
+				B07B5AD71E45718700AE5B0D /* Kind1TableViewCell.swift in Sources */,
 				B05E343B1DC8A53800C271D3 /* ProViewController.swift in Sources */,
 				B06968261DC60F7700274DB1 /* Home1ViewController.swift in Sources */,
 				B071D9681DB4E5040017E287 /* PostData.swift in Sources */,
@@ -567,11 +620,13 @@
 				B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */,
 				B029E58A1DE1A17C00C7EDDF /* IyaViewController.swift in Sources */,
 				B0A78FD81DACFF6500AC0513 /* ViewController.swift in Sources */,
+				B07B5ADF1E45806F00AE5B0D /* Itiran11ViewController.swift in Sources */,
 				B03151761DAE6A06007EE64C /* PlayViewController.swift in Sources */,
 				B0F582AB1DB38E5300654519 /* KindTableViewCell.swift in Sources */,
 				B05E343F1DC8B57F00C271D3 /* PostData2.swift in Sources */,
 				B05F577A1DDF4B0E006DB9A5 /* Syutyu3ViewController.swift in Sources */,
 				B071D96F1DB4EA9B0017E287 /* HomeViewController.swift in Sources */,
+				B07B5AE31E45831B00AE5B0D /* Home11TableViewCell.swift in Sources */,
 				B071309B1DC22D8800B8EEC1 /* 2TViewController.swift in Sources */,
 				B0B4481F1DD5AD04001DDD89 /* IkuTableViewCell.swift in Sources */,
 				B071D9661DB4D6140017E287 /* File.swift in Sources */,
@@ -581,10 +636,13 @@
 				B05F57761DDF4937006DB9A5 /* Syutyu1ViewController.swift in Sources */,
 				B071D9731DB50C4E0017E287 /* LoginViewController.swift in Sources */,
 				B0BA8ADE1DDD79BC00F00E38 /* Tyu2ViewController.swift in Sources */,
+				B07B5AD21E456E2F00AE5B0D /* Post3Data3.swift in Sources */,
 				B05F57781DDF4942006DB9A5 /* Syutyu2ViewController.swift in Sources */,
+				B07B5AD41E456FC000AE5B0D /* Kind1ViewcontrollerViewController.swift in Sources */,
 				B06968241DC60E1400274DB1 /* Itiran1ViewController.swift in Sources */,
 				B042A0171DB983620068D205 /* BasyoViewController.swift in Sources */,
 				B00501C41DB6428500319866 /* ItiranTableViewCell.swift in Sources */,
+				B07B5AD01E456E2200AE5B0D /* Post2Data2.swift in Sources */,
 				B0BA8ADC1DDD79A800F00E38 /* TyuViewController.swift in Sources */,
 				B042A0191DB985180068D205 /* SyugoViewController.swift in Sources */,
 				B042A01E1DB98BB30068D205 /* SyugoTableViewCell.swift in Sources */,
@@ -592,9 +650,11 @@
 				B0A78FD61DACFF6500AC0513 /* AppDelegate.swift in Sources */,
 				B00C67AE1E3D6FDD0026E775 /* Rock2ViewController.swift in Sources */,
 				B042A0221DB991150068D205 /* SyuruViewController.swift in Sources */,
+				B07B5ACE1E456E0A00AE5B0D /* Post1Data.swift in Sources */,
 				B06968291DC610C200274DB1 /* HomeTableViewCell1.swift in Sources */,
 				B07E94E71DCDC766009537A7 /* ProIdouViewController.swift in Sources */,
 				B042A01B1DB98A840068D205 /* Kind2ViewController.swift in Sources */,
+				B07B5ADC1E457F0000AE5B0D /* Itiran1TableViewCell.swift in Sources */,
 				B06B00451DDD4131000C545D /* OreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

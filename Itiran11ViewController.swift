@@ -1,17 +1,16 @@
 
 
 import UIKit
-import Firebase
-import FirebaseDatabase
-import FirebaseAuth
-import SVProgressHUD
 import ReachabilitySwift
 
-class KindViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, KindTableViewCellDelegate {
-    
+class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
     @IBOutlet weak var tableView: UITableView!
     
-    
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    fileprivate let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","X","Y","Z","number"]
     let AllItems: [[String]]  = [[ "赤犬",
                                    "あがた森魚",
                                    "浅井健一",
@@ -165,7 +164,6 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
                                   "HY",
                                   "HYDE"],
                                  ["いきものがかり",
-                                  "泉谷しげる",
                                   "忌野清志郎",
                                   "井上陽水",
                                   "石野卓球",
@@ -361,6 +359,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
                                   "Shing02",
                                   "SKA SKA CLUB",
                                   "SNAIL RAMP",
+                                  
                                   "SION",
                                   "The Sketchbook",
                                   "SOIL& PIMP SESSIONS",
@@ -457,155 +456,40 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
                                  ["80kidz",
                                   "9mm Parabellum Bullet"]]
     
-    fileprivate let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","X","Y","Z","number"]
+    var genre:String!
     
+    @IBOutlet weak var you: UIButton!
+    @IBOutlet weak var hou: UIButton!
+    @IBAction func hougo(_ sender: Any) {
+    }
     
-    //写真　曲名　秒数　音源
-    //filenameをsongDataに渡す
-    var songData:URL!
-    var image:UIImage!
-    var songname:UITextField!
-    var byou:UILabel!
-    var genre = ""
-    var tappedCellPos:IndexPath! //タップされたCellのindexPath
-    var buttonOriginalColor:UIColor!//ボタンの元の色
-    var isRowSelected:Bool = false//現在行が選択状態か否か
-    var original:  NSString?
-    var cover: NSString?
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        let nib = UINib(nibName: "KindTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "Cell")
-        tappedCellPos = nil
-        
-    }
-    //ここ
-    @IBAction func yougo(_ sender: Any) {
-        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1") as! Kind1ViewcontrollerViewController
-        self.present(recviewcontroller, animated: true, completion: nil)
+        let nib = UINib(nibName: "Itiran1TableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "Cellll")
 
-        
     }
     
-    
-    //どこのジャンル押されたか判明　ここで色変更したり　再度押したらジャンルが選択されてない状態にする　それで投稿したら注意出る
-    func buttonPressed(_ tableViewCell: KindTableViewCell) {
-        let indexPath = tableView.indexPath(for: tableViewCell)
-        // 初めてのタップ
-        if tappedCellPos == nil {
-            // オリジナルのボタンの色を取得
-            buttonOriginalColor = tableViewCell.button.backgroundColor!
-            // ボタンの色を緑に。
-            tableViewCell.button.backgroundColor = UIColor.green
-            // ジャンルを決定
-            genre = AllItems[indexPath!.section][indexPath!.row]
-            // 行が選択されている
-            isRowSelected = true
-            // タップされたセルのindexPathを保存
-            tappedCellPos = indexPath
-        } else if tappedCellPos == indexPath {
-            // 同じセルのn度目のタップ
-            // 行が選択された状態なら、元に戻す
-            if isRowSelected {
-                // ボタンの色を元の色に
-                tableViewCell.button.backgroundColor = buttonOriginalColor
-                // ジャンルを未選択（空文字）に
-                genre = ""
-                // 行が非選択状態とする
-                isRowSelected = false
-                // タップされたセルのindexPathを保存
-                tappedCellPos = indexPath
-            } else {
-                // 行が非選択の状態なら、選択状態にする
-                // オリジナルのボタンの色を取得
-                buttonOriginalColor = tableViewCell.button.backgroundColor!
-                // ボタンの色を緑に。
-                tableViewCell.button.backgroundColor = UIColor.green
-                // ジャンルを決定
-                genre = AllItems[indexPath!.section][indexPath!.row]
-                // 行が選択されている
-                isRowSelected = true
-                // タップされたセルのindexPathを保存
-                tappedCellPos = indexPath
-            }
-        } else {
-            // 他の行がタップされた
-            // 既に選択状態の行がある
-            if isRowSelected {
-                if ((tableView.cellForRow(at: tappedCellPos)) != nil){
-                    // 既に選択状態の行の選択を解除
-                    let oldCell:KindTableViewCell = tableView.cellForRow(at: tappedCellPos) as! KindTableViewCell
-                    oldCell.button.backgroundColor = buttonOriginalColor;
-                    
-                }
-            }            // 今回選択された行を選択状態とする
-            // オリジナルのボタンの色を取得
-            buttonOriginalColor = tableViewCell.button.backgroundColor!
-            // ボタンの色を緑に。
-            tableViewCell.button.backgroundColor = UIColor.green
-            // ジャンルを決定
-            genre = AllItems[indexPath!.section][indexPath!.row]
-            // 行が選択されている
-            isRowSelected = true
-            // タップされたセルのindexPathを保存
-            tappedCellPos = indexPath
-        }
-        
-    }
-    
-    
-    //FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre) に保存
-    
-    @IBAction func post(_ sender: AnyObject) {
-        if isRowSelected {
-            let reachability = Reachability()!
-            if reachability.isReachable {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! KindTableViewCell
-                cell.button.isEnabled = false
-                
-
-                let ongen = UUID().uuidString
-                print("Post")
-                saveSong(uuid: ongen)
-                print("saveSong")
-                SVProgressHUD.setDefaultMaskType(.clear)
-                SVProgressHUD.show()
-            } else {
-                let alert = UIAlertController()
-                let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
-                let attributedTitle = NSAttributedString(string: "😬", attributes: attributedTitleAttr)
-                alert.setValue(attributedTitle, forKey: "attributedTitle")
-                let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.black]
-                let attributedMessage = NSAttributedString(string: "接続状態が不安定です", attributes: attributedMessageAttr)
-                alert.view.tintColor = UIColor.black
-                alert.setValue(attributedMessage, forKey: "attributedMessage")
-                let subview = alert.view.subviews.first! as UIView
-                let alertContentView = subview.subviews.first! as UIView
-                alertContentView.backgroundColor = UIColor.gray
-                
-                let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
-                    (action: UIAlertAction!) -> Void in
-                })
-                alert.addAction(defaultAction)
-                present(alert, animated: true, completion: nil)
-                alert.view.tintColor = UIColor.white
-
-            }
-            
-            // セルが選択されている時の処理を記述
+    //Cellが選択された際に呼び出される.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let reachability = Reachability()!
+        if reachability.isReachable {
+            let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Home") as! HomeViewController
+            genre =  AllItems[indexPath.section][indexPath.row]
+            homeviewcontroller.genre = genre
+            self.present(homeviewcontroller, animated: true, completion: nil)
             
         } else {
-            // 行が選択されていない＝ジャンルが選択されていない
             let alert = UIAlertController()
             let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
-            let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
+            let attributedTitle = NSAttributedString(string: "😬", attributes: attributedTitleAttr)
             alert.setValue(attributedTitle, forKey: "attributedTitle")
             let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.black]
-            let attributedMessage = NSAttributedString(string: "ジャンルを選択しよう", attributes: attributedMessageAttr)
+            let attributedMessage = NSAttributedString(string: "接続状態が不安定です", attributes: attributedMessageAttr)
             alert.view.tintColor = UIColor.black
             alert.setValue(attributedMessage, forKey: "attributedMessage")
             let subview = alert.view.subviews.first! as UIView
@@ -618,116 +502,10 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
             alert.addAction(defaultAction)
             present(alert, animated: true, completion: nil)
             alert.view.tintColor = UIColor.white
+            
         }
-    }
-    
-    func saveSong(uuid: String) {
-        let realSongdata = try? Data(contentsOf: URL(fileURLWithPath: songData.path))
-        let realsong = realSongdata!.base64EncodedString(options: [])
-        let songDataRef = FIRDatabase.database().reference().child(CommonConst.songData).child(uuid)
-        songDataRef.setValue(realsong) { (error, ref) in
-            if (error == nil) {
-                // 音源保存完了
-                // 次に画像保存
-                self.saveImage(uuid: uuid)
-                print("saveImage")
-            } else {
-                // 保存エラー
-                self.showErrorAlert()
-            }
-        }
-    }
-    
-    func saveImage(uuid: String) {
-        // 画像保存
-        let size = CGSize(width: 1242, height: 828)
-        UIGraphicsBeginImageContext(size)
-        image.draw(in: CGRect(x:0.0, y:0.0, width:size.width, height:size.height))
-        let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        let imageData = UIImageJPEGRepresentation(resizeImage!, 0.5)
-        let postData3 = ["image": imageData!.base64EncodedString(options: .lineLength64Characters)];
-        let postRef3 = FIRDatabase.database().reference().child(CommonConst.image).child(genre).child(uuid)
-        postRef3.setValue(postData3) { (error, ref) in
-            if (error == nil) {
-                // 画像保存完了
-                // 次に投稿保存
-                self.savePost(uuid: uuid)
-                print("savePost")
-            } else {
-                // 保存エラー
-                self.showErrorAlert()
-            }
-        }
-    }
-    
-    func savePost(uuid: String) {
-        // 投稿
-        let songName:NSString = songname.text! as NSString
-        let kazu:NSString = byou.text! as NSString
-        let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
-        let time = NSDate.timeIntervalSinceReferenceDate
-        let original:NSString = (self.original as NSString?)!
-        let cover:NSString = (self.cover as NSString?)!
-        let postData = ["time":time,"byou": kazu, "songname": songName, "ongen": uuid,"original":original,"cover":cover, "uid":uid] as [String : Any]
-        let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).child(uuid)
         
-        postRef.setValue(postData) { (error, ref) in
-            if (error == nil) {
-                // 画像保存完了
-                SVProgressHUD.dismiss()
-                // 先頭に戻る
-                self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
-            } else {
-                // 保存エラー
-                self.showErrorAlert()
-            }
-        }
-    }
-    
-    
-    func showErrorAlert() {
-        SVProgressHUD.dismiss()
-        let alert = UIAlertController()
-        alert.title = "保存エラー"
-        alert.message = "保存エラーが発生しました。ネットワークの状態を確認して再度投稿ボタンを押してください"
-        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
-            (action: UIAlertAction!) -> Void in
-        })
-        alert.addAction(defaultAction)
-        present(alert, animated: true, completion: nil)
         
-    }
-    
-    
-    
-    
-    //値を設定
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! KindTableViewCell
-        cell.delegate = self
-        //ここ
-        cell.button.backgroundColor = UIColor.lightGray
-        if (tappedCellPos != nil){
-            if (tappedCellPos == indexPath){
-                cell.button.backgroundColor = UIColor.green
-            }
-        }
-        let items = AllItems[indexPath.section][indexPath.row]
-        cell.label.text = items
-        return cell
-    }
-    
-    
-    
-    //セクションの数を返す.
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return mySections.count
-    }
-    
-    //セクションのタイトルを返す.
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return mySections[section] as? String
     }
     
     //テーブルに表示する配列の総数を返す.
@@ -739,21 +517,24 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.didReceiveMemoryWarning()
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cellll", for: indexPath) as! Itiran1TableViewCell
+        let items = AllItems[indexPath.section][indexPath.row]
+        cell.label.text = items
+        return cell
+    }
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return mySections.count
+    }
+    
+    
+    //セクションのタイトルを返す.
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return mySections[section] as? String
+    }
+    
+    
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

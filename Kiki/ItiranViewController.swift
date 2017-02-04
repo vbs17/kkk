@@ -12,7 +12,6 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.dismiss(animated: true, completion: nil)
     }
     fileprivate let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","X","Y","Z","number"]
-
     let AllItems: [[String]]  = [[ "赤犬",
         "あがた森魚",
         "浅井健一",
@@ -464,6 +463,10 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var hou: UIButton!
     @IBOutlet weak var cho: UILabel!
     @IBAction func you(_ sender: Any) {
+        let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Itiran11") as! Itiran11ViewController
+        self.present(homeviewcontroller, animated: true, completion: nil)
+
+        
     }
     
        override func viewDidLoad() {
