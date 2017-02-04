@@ -23,6 +23,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     var dataLastVal:Double!
     let DisplayDataNumber = 2;
     
+    
     @IBOutlet weak var lbl: UILabel!
     
    
