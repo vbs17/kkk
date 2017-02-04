@@ -616,8 +616,14 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
         
     
     @IBAction func hougo(_ sender: Any) {
-        let kindviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind") as! KindViewController
-        self.present(kindviewcontroller, animated: true, completion: nil)
+        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind") as! KindViewController
+        recviewcontroller.songData = self.songData
+        recviewcontroller.image = self.image
+        recviewcontroller.byou = self.byou
+        recviewcontroller.songname = self.songname
+        recviewcontroller.original = self.original
+        recviewcontroller.cover = self.cover
+        self.present(recviewcontroller, animated: true, completion: nil)
 
     }
 
