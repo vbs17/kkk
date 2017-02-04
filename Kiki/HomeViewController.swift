@@ -203,8 +203,8 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        let nib = UINib(nibName: "Home11TableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "CElll")
+        let nib = UINib(nibName: "HomeTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "CEll")
         back.layer.cornerRadius = 37
         back.clipsToBounds = true
         let tblBackColor: UIColor = UIColor.clear
