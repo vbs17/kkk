@@ -102,7 +102,6 @@ class HomeTableViewCell: UITableViewCell {
             playButton.isEnabled = false
             
         }
-        //こいつのせいで評価ボタンむちゃくちゃ
         
         if(postData.uid == nil){
             
