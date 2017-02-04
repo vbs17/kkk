@@ -3476,19 +3476,17 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="back" destination="oFt-Mh-0eK" id="vCR-3l-IRm"/>
                         <outlet property="lbl" destination="tsw-6a-RoW" id="CrF-O8-52c"/>
-                        <outlet property="tableView" destination="2IL-4d-oMP" id="3ve-nC-9vX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhD-W6-aGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8310" y="-6742.6056338028166"/>
         </scene>
-        <!--View Controller-->
+        <!--Home11 View Controller-->
         <scene sceneID="QjJ-eY-4VM">
             <objects>
-                <viewController id="Rsg-rV-dnC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home11" id="Rsg-rV-dnC" customClass="Home11ViewController" customModule="Kiki" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cd5-wV-sja"/>
                         <viewControllerLayoutGuide type="bottom" id="R0g-Xq-VHi"/>
@@ -3517,6 +3515,9 @@
                                             <color key="titleColor" red="0.14362053969999999" green="0.17933351710000001" blue="0.3351807919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="0.14362053969999999" green="0.17933351710000001" blue="0.3351807919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="back:" destination="Rsg-rV-dnC" eventType="touchUpInside" id="x6t-Jr-89Y"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -3529,6 +3530,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="FCq-oN-9V4" id="b8E-9q-5hC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVs-Ig-4En" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

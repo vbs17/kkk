@@ -64,6 +64,7 @@
 		B07B5ADF1E45806F00AE5B0D /* Itiran11ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B5ADE1E45806F00AE5B0D /* Itiran11ViewController.swift */; };
 		B07B5AE31E45831B00AE5B0D /* Home11TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B5AE11E45831B00AE5B0D /* Home11TableViewCell.swift */; };
 		B07B5AE41E45831B00AE5B0D /* Home11TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07B5AE21E45831B00AE5B0D /* Home11TableViewCell.xib */; };
+		B07B5AE71E45872700AE5B0D /* Home11ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B5AE61E45872700AE5B0D /* Home11ViewController.swift */; };
 		B07E94E71DCDC766009537A7 /* ProIdouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */; };
 		B088CB221DDB34C7007CE03D /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088CB211DDB34C7007CE03D /* Photos.framework */; };
 		B0A78FD61DACFF6500AC0513 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */; };
@@ -149,6 +150,7 @@
 		B07B5ADE1E45806F00AE5B0D /* Itiran11ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Itiran11ViewController.swift; sourceTree = "<group>"; };
 		B07B5AE11E45831B00AE5B0D /* Home11TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home11TableViewCell.swift; sourceTree = "<group>"; };
 		B07B5AE21E45831B00AE5B0D /* Home11TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Home11TableViewCell.xib; sourceTree = "<group>"; };
+		B07B5AE61E45872700AE5B0D /* Home11ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home11ViewController.swift; sourceTree = "<group>"; };
 		B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProIdouViewController.swift; sourceTree = "<group>"; };
 		B088CB211DDB34C7007CE03D /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		B0A78FD21DACFF6400AC0513 /* Kiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,12 +229,10 @@
 			isa = PBXGroup;
 			children = (
 				B071D96E1DB4EA9B0017E287 /* HomeViewController.swift */,
-				B00501B81DB610D200319866 /* HomeTableViewCell.swift */,
-				B00501B91DB610D200319866 /* HomeTableViewCell.xib */,
-				B07B5AE11E45831B00AE5B0D /* Home11TableViewCell.swift */,
-				B07B5AE21E45831B00AE5B0D /* Home11TableViewCell.xib */,
+				B07B5AE61E45872700AE5B0D /* Home11ViewController.swift */,
 				B00501BD1DB6420800319866 /* ItiranViewController.swift */,
 				B07B5ADE1E45806F00AE5B0D /* Itiran11ViewController.swift */,
+				B07B5AE51E45870E00AE5B0D /* Homecell */,
 				B07B5AE01E45821F00AE5B0D /* itirancell */,
 			);
 			name = "音源表示";
@@ -328,6 +328,17 @@
 				B00501C21DB6428500319866 /* ItiranTableViewCell.xib */,
 			);
 			name = itirancell;
+			sourceTree = "<group>";
+		};
+		B07B5AE51E45870E00AE5B0D /* Homecell */ = {
+			isa = PBXGroup;
+			children = (
+				B00501B81DB610D200319866 /* HomeTableViewCell.swift */,
+				B00501B91DB610D200319866 /* HomeTableViewCell.xib */,
+				B07B5AE11E45831B00AE5B0D /* Home11TableViewCell.swift */,
+				B07B5AE21E45831B00AE5B0D /* Home11TableViewCell.xib */,
+			);
+			name = Homecell;
 			sourceTree = "<group>";
 		};
 		B0A6CF611E0F979000E76751 /* iroiro */ = {
@@ -612,6 +623,7 @@
 				B00C67AC1E3D6FD10026E775 /* RockViewController.swift in Sources */,
 				B05F577C1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift in Sources */,
 				B007C1BA1DE95D92006F1883 /* MergeAudioFile.m in Sources */,
+				B07B5AE71E45872700AE5B0D /* Home11ViewController.swift in Sources */,
 				B0ABF85C1DB0EE21001987E7 /* SendViewController.swift in Sources */,
 				B00D7CF51DCEB5190042D04F /* MixerMeter.m in Sources */,
 				B0BA8AE01DDD79D800F00E38 /* Tyu3ViewController.swift in Sources */,
