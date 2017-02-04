@@ -311,8 +311,8 @@
 		B07B5AD91E45755B00AE5B0D /* KindCell */ = {
 			isa = PBXGroup;
 			children = (
-				B0F582AA1DB38E5300654519 /* KindTableViewCell.xib */,
 				B0F582A91DB38E5300654519 /* KindTableViewCell.swift */,
+				B0F582AA1DB38E5300654519 /* KindTableViewCell.xib */,
 				B07B5AD51E45718700AE5B0D /* Kind1TableViewCell.swift */,
 				B07B5AD61E45718700AE5B0D /* Kind1TableViewCell.xib */,
 			);
