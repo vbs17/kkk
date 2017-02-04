@@ -17,12 +17,14 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     var playSong:AVAudioPlayer!
     var timer = Timer()
     var timer2 = Timer()
-    var back: UIButton!
-    var tableView: UITableView!
+    //var back: UIButton!
+    //var tableView: UITableView!
     var playingIndexPath:IndexPath!
     var dataLastVal:Double!
     let DisplayDataNumber = 2;
     
+    @IBOutlet weak var back: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var lbl: UILabel!
     

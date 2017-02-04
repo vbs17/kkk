@@ -3487,7 +3487,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="back" destination="oFt-Mh-0eK" id="8LN-qL-zRP"/>
                         <outlet property="lbl" destination="tsw-6a-RoW" id="CrF-O8-52c"/>
+                        <outlet property="tableView" destination="2IL-4d-oMP" id="g5N-Oe-FVi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhD-W6-aGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3542,7 +3544,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="back" destination="cba-1o-0Tn" id="JAo-XZ-SlP"/>
                         <outlet property="label" destination="FCq-oN-9V4" id="b8E-9q-5hC"/>
+                        <outlet property="tableView" destination="QQJ-W5-qlu" id="VxF-JZ-wnC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVs-Ig-4En" userLabel="First Responder" sceneMemberID="firstResponder"/>
