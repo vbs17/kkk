@@ -91,7 +91,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
         cell.iimageView.image = image
         if (image == nil) {
             // Firebaseからイメージ読み込み                                                    //post
-            FIRDatabase.database().reference().child(CommonConst.image).child(genre).child(postData1.id!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
+            FIRDatabase.database().reference().child(CommonConst.image1).child(genre).child(postData1.id!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                 guard let `self` = self else { return }
                 //ジャケットのimage
                 let postData3 = Post3Data3(snapshot: snapshot, myId: postData1.uid!)
@@ -158,7 +158,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
             let uid = FIRAuth.auth()?.currentUser?.uid
             print("getFirebaseData")
             
-            FIRDatabase.database().reference().child(CommonConst.PostPATH).child(self.genre).queryOrdered(byChild: "time").queryEnding(atValue: self.dataLastVal).queryLimited(toLast: UInt(DisplayDataNumber)+1).observeSingleEvent(of: .value, with: {[weak self] snapshot in
+            FIRDatabase.database().reference().child(CommonConst.PostPATH1).child(self.genre).queryOrdered(byChild: "time").queryEnding(atValue: self.dataLastVal).queryLimited(toLast: UInt(DisplayDataNumber)+1).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                 guard let `self` = self else { return }
                 
                 print(snapshot.childrenCount)
@@ -210,8 +210,8 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        let nib = UINib(nibName: "HomeTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "CEll")
+        let nib = UINib(nibName: "Home11TableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "CElll")
         back.layer.cornerRadius = 37
         back.clipsToBounds = true
         let tblBackColor: UIColor = UIColor.clear
@@ -247,14 +247,14 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        timer2 = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(HomeViewController.mada), userInfo: nil, repeats: false)
+        timer2 = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(Home11ViewController.mada), userInfo: nil, repeats: false)
         
         
         let uid = FIRAuth.auth()?.currentUser?.uid
         //1回目
         
         if observing == false {
-            FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).queryOrdered(byChild: "time").queryLimited(toLast: UInt(DisplayDataNumber)).observeSingleEvent(of: .value, with: {[weak self] snapshot in
+            FIRDatabase.database().reference().child(CommonConst.PostPATH1).child(genre).queryOrdered(byChild: "time").queryLimited(toLast: UInt(DisplayDataNumber)).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                 guard let `self` = self else { return }
                 
                 
@@ -278,7 +278,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
                     print("getFirstData error")
             })
             
-            FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).observe(.childChanged, with: {[weak self] snapshot in
+            FIRDatabase.database().reference().child(CommonConst.PostPATH1).child(genre).observe(.childChanged, with: {[weak self] snapshot in
                 
                 if let uid = FIRAuth.auth()?.currentUser?.uid {
                     guard let `self` = self else { return }
@@ -434,7 +434,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
         let original = postData.original
         let cover = postData.cover
         let uid:NSString = postData.uid! as NSString
-        let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre)
+        let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH1).child(genre)
         let postData2 = ["time":time!,"songname":name!,"ongen":song!,"byou":byou!,"star":star,"original":original!,"cover":cover!,"uid":uid] as [String : Any]
         postRef.child(postData.id!).setValue(postData2)
     }
@@ -466,7 +466,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
             let point = touch!.location(in: self.tableView)
             let indexPath = tableView.indexPathForRow(at: point)
             let postData = postArray[indexPath!.row]
-            let cell = tableView.cellForRow(at: indexPath!) as! HomeTableViewCell?
+            let cell = tableView.cellForRow(at: indexPath!) as! Home11TableViewCell?
             //cell?.backButton.isEnabled = true
             if indexPath == playingIndexPath{
                 if playSong.isPlaying == true{
@@ -475,11 +475,11 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
                 }else{
                     timer.invalidate()
                     playSong.play()
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(HomeViewController.updatePlayingTime), userInfo: nil, repeats: true)
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(Home11ViewController.updatePlayingTime), userInfo: nil, repeats: true)
                 }
             } else { //他の曲を再生した時再生中の曲がこうなる
                 if playingIndexPath != nil {
-                    let cell = tableView.cellForRow(at: playingIndexPath) as! HomeTableViewCell?
+                    let cell = tableView.cellForRow(at: playingIndexPath) as! Home11TableViewCell?
                     if cell != nil {
                         playSong.pause()
                         cell!.nami.progress = 0
@@ -494,7 +494,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
                 //backだけはokにしたいな
                 SVProgressHUD.show(withStatus:"クールな音質に仕上げています😎(最大5秒) 　　　　　　　　　　　　　　　　                　　　　　　このオリジナルソングが君のセンスにあえば左上のProfileボタンをタップして連絡をとれ😎")
                 
-                FIRDatabase.database().reference().child(CommonConst.songData).child(postData.song!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
+                FIRDatabase.database().reference().child(CommonConst.songData1).child(postData.song!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                     guard let `self` = self else { return }
                     if self.observing == false {
                         return
@@ -511,7 +511,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
                     cell!.playSong = self.playSong
                     self.playSong.prepareToPlay()
                     self.playSong.play()
-                    self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(HomeViewController.updatePlayingTime), userInfo: nil, repeats: true)
+                    self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(Home11ViewController.updatePlayingTime), userInfo: nil, repeats: true)
                     cell?.backButton.isEnabled = true
                 })
             } } else {
@@ -539,7 +539,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
     
     func back(_ sender: UIButton, event:UIEvent) {
         
-        let cell = tableView.cellForRow(at: playingIndexPath) as! HomeTableViewCell?
+        let cell = tableView.cellForRow(at: playingIndexPath) as! Home11TableViewCell?
         cell!.onlabel2.text = "0:00"
         
         playSong.stop()
@@ -547,7 +547,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
         playSong.prepareToPlay()
         playSong.currentTime = 0
         playSong.play()
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(HomeViewController.updatePlayingTime), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(Home11ViewController.updatePlayingTime), userInfo: nil, repeats: true)
     }
     
     func formatTimeString(_ d: Double) -> String {
@@ -564,7 +564,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
     }
     
     func updatePlayingTime() {
-        let cell = tableView.cellForRow(at: playingIndexPath) as! HomeTableViewCell?
+        let cell = tableView.cellForRow(at: playingIndexPath) as! Home11TableViewCell?
         if (cell != nil) && (playSong.currentTime >= 0.1) {
             cell!.onlabel2.text = formatTimeString(playSong.currentTime)
             cell!.nami.progress = Float(playSong.currentTime / playSong.duration)
@@ -572,7 +572,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        let cell = tableView.cellForRow(at: playingIndexPath) as! HomeTableViewCell?
+        let cell = tableView.cellForRow(at: playingIndexPath) as! Home11TableViewCell?
         timer.invalidate()
         if cell != nil {
             cell!.onlabel2.text = formatTimeString(playSong.duration)

@@ -11,7 +11,8 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
         self.dismiss(animated: true, completion: nil)
     }
     fileprivate let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","X","Y","Z","number"]
-    let AllItems: [[String]]  = [[ "赤犬",
+    let AllItems: [[String]]  = [[ "ABBA",
+                                   "Arctic Monkeys",
                                    "あがた森魚",
                                    "浅井健一",
                                    "安室奈美恵",
@@ -478,7 +479,7 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let reachability = Reachability()!
         if reachability.isReachable {
-            let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Home") as! HomeViewController
+            let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Home11") as! Home11ViewController
             genre =  AllItems[indexPath.section][indexPath.row]
             homeviewcontroller.genre = genre
             self.present(homeviewcontroller, animated: true, completion: nil)
