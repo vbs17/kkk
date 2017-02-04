@@ -486,9 +486,13 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     //ここ
     @IBAction func yougo(_ sender: Any) {
         let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1") as! Kind1ViewcontrollerViewController
+        recviewcontroller.songData = self.songData
+        recviewcontroller.image = self.image
+        recviewcontroller.byou = self.byou
+        recviewcontroller.songname = self.songname
+        recviewcontroller.original = self.original
+        recviewcontroller.cover = self.cover
         self.present(recviewcontroller, animated: true, completion: nil)
-
-        
     }
     
     
