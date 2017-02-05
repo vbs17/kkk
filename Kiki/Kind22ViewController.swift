@@ -8,7 +8,7 @@ import SVProgressHUD
 
 class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, Syugo11TableViewCellDelegate  {
     
-    let AllItems: [[String]]  = [[ "赤犬",
+    let AllItems: [[String]]  = [[ "alt-j",
                                    "あがた森魚",
                                    "浅井健一",
                                    "安室奈美恵",
@@ -523,11 +523,13 @@ class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDat
             // 他の行がタップされた
             // 既に選択状態の行がある
             if isRowSelected {
-                // 既に選択状態の行の選択を解除
-                let oldCell:SyugoTableViewCell = tableView.cellForRow(at: tappedCellPos) as! SyugoTableViewCell
-                oldCell.kete.backgroundColor = buttonOriginalColor;
-            }
-            // 今回選択された行を選択状態とする
+                if ((tableView.cellForRow(at: tappedCellPos)) != nil){
+                    // 既に選択状態の行の選択を解除
+                    let oldCell:Syugo11TableViewCell = tableView.cellForRow(at: tappedCellPos) as! Syugo11TableViewCell
+                    oldCell.kete.backgroundColor = buttonOriginalColor;
+                    
+                }
+            }            // 今回選択された行を選択状態とする
             // オリジナルのボタンの色を取得
             buttonOriginalColor = tableViewCell.kete.backgroundColor!
             // ボタンの色を緑に。
@@ -541,7 +543,6 @@ class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDat
         }
         
     }
-    
     func saveImage(uuid: String) {
         // 画像保存
         let size = CGSize(width: 1242, height: 828)

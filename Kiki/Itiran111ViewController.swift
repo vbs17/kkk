@@ -7,15 +7,18 @@ class Itiran111ViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func back(_ sender: Any) {
+        self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
+
     }
     @IBAction func you(_ sender: Any) {
     }
     @IBAction func hou(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
     }
 
     fileprivate let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","X","Y","Z","number"]
     
-    let AllItems: [[String]]  = [[ "赤犬",
+    let AllItems: [[String]]  = [[ "alt-j",
                                    "あがた森魚",
                                    "浅井健一",
                                    "安室奈美恵",

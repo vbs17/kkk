@@ -520,11 +520,13 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
             // 他の行がタップされた
             // 既に選択状態の行がある
             if isRowSelected {
-                // 既に選択状態の行の選択を解除
-                let oldCell:SyugoTableViewCell = tableView.cellForRow(at: tappedCellPos) as! SyugoTableViewCell
-                oldCell.kete.backgroundColor = buttonOriginalColor;
-            }
-            // 今回選択された行を選択状態とする
+                if ((tableView.cellForRow(at: tappedCellPos)) != nil){
+                    // 既に選択状態の行の選択を解除
+                    let oldCell:SyugoTableViewCell = tableView.cellForRow(at: tappedCellPos) as! SyugoTableViewCell
+                    oldCell.kete.backgroundColor = buttonOriginalColor;
+                    
+                }
+            }            // 今回選択された行を選択状態とする
             // オリジナルのボタンの色を取得
             buttonOriginalColor = tableViewCell.kete.backgroundColor!
             // ボタンの色を緑に。

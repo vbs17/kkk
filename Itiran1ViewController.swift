@@ -11,6 +11,14 @@ import UIKit
 class Itiran1ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     
+    @IBAction func yougo(_ sender: Any) {
+        let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Itiran111") as! Itiran111ViewController
+        self.present(homeviewcontroller, animated: false, completion: nil)
+
+    }
+    @IBAction func hougo(_ sender: Any) {
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func back(_ sender: AnyObject) {

@@ -10,13 +10,13 @@ class Home22TableViewCell: UITableViewCell {
 
     @IBOutlet weak var pro: UIButton!
     @IBOutlet weak var pathGo: UIButton!
+    @IBOutlet weak var join: UIButton!
     @IBOutlet weak var iku: UIButton!
-    @IBOutlet weak var join: SpringButton!
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label3: UILabel!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var ikuhito: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet weak var imageView1: UIImageView!
     
     func setPostData(_ postData: PostData1, myid: String) {

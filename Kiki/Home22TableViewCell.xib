@@ -172,11 +172,11 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="ImageView" destination="7f1-cC-4OH" id="bzN-Ew-rEs"/>
                 <outlet property="iku" destination="Jx2-5G-15N" id="r8R-I7-nGU"/>
                 <outlet property="ikuhito" destination="zvu-qW-iBj" id="AUF-nz-O8S"/>
-                <outlet property="imageView" destination="7f1-cC-4OH" id="LLk-Qh-ATF"/>
                 <outlet property="imageView1" destination="NUX-80-1Pg" id="VBy-Ua-tJF"/>
-                <outlet property="join" destination="2P1-b2-pAI" id="hJO-P4-lhl"/>
+                <outlet property="join" destination="2P1-b2-pAI" id="F1d-i5-HgK"/>
                 <outlet property="label1" destination="ddl-BN-vjh" id="ic7-hV-Glg"/>
                 <outlet property="label2" destination="Jbo-80-gNY" id="Y9a-DJ-f1i"/>
                 <outlet property="label3" destination="DtJ-xp-uXM" id="0zE-bB-ZN8"/>
