@@ -32,6 +32,8 @@
 		B042A0221DB991150068D205 /* SyuruViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B042A0211DB991150068D205 /* SyuruViewController.swift */; };
 		B054F5D41E46B6BE007AFC5D /* Itiran111ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054F5D31E46B6BE007AFC5D /* Itiran111ViewController.swift */; };
 		B054F5D61E46B7CE007AFC5D /* Home111ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054F5D51E46B7CE007AFC5D /* Home111ViewController.swift */; };
+		B054F5D91E46BC9A007AFC5D /* Home22TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054F5D71E46BC9A007AFC5D /* Home22TableViewCell.swift */; };
+		B054F5DA1E46BC9A007AFC5D /* Home22TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B054F5D81E46BC9A007AFC5D /* Home22TableViewCell.xib */; };
 		B05E343B1DC8A53800C271D3 /* ProViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343A1DC8A53800C271D3 /* ProViewController.swift */; };
 		B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */; };
 		B05E343F1DC8B57F00C271D3 /* PostData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343E1DC8B57F00C271D3 /* PostData2.swift */; };
@@ -91,8 +93,6 @@
 		B0F132CD1E46AC880040115D /* Syugo11TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F132CB1E46AC880040115D /* Syugo11TableViewCell.swift */; };
 		B0F132CE1E46AC880040115D /* Syugo11TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F132CC1E46AC880040115D /* Syugo11TableViewCell.xib */; };
 		B0F132D01E46ADDF0040115D /* Kind22ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F132CF1E46ADDF0040115D /* Kind22ViewController.swift */; };
-		B0F132D61E46B1810040115D /* Home22TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F132D41E46B1810040115D /* Home22TableViewCell.swift */; };
-		B0F132D71E46B1810040115D /* Home22TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F132D51E46B1810040115D /* Home22TableViewCell.xib */; };
 		B0F582AB1DB38E5300654519 /* KindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F582A91DB38E5300654519 /* KindTableViewCell.swift */; };
 		B0F582AC1DB38E5300654519 /* KindTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F582AA1DB38E5300654519 /* KindTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -127,6 +127,8 @@
 		B042A0211DB991150068D205 /* SyuruViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyuruViewController.swift; sourceTree = "<group>"; };
 		B054F5D31E46B6BE007AFC5D /* Itiran111ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Itiran111ViewController.swift; sourceTree = "<group>"; };
 		B054F5D51E46B7CE007AFC5D /* Home111ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home111ViewController.swift; sourceTree = "<group>"; };
+		B054F5D71E46BC9A007AFC5D /* Home22TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home22TableViewCell.swift; sourceTree = "<group>"; };
+		B054F5D81E46BC9A007AFC5D /* Home22TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Home22TableViewCell.xib; sourceTree = "<group>"; };
 		B05E343A1DC8A53800C271D3 /* ProViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProViewController.swift; sourceTree = "<group>"; };
 		B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProIViewController.swift; sourceTree = "<group>"; };
 		B05E343E1DC8B57F00C271D3 /* PostData2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData2.swift; sourceTree = "<group>"; };
@@ -188,8 +190,6 @@
 		B0F132CB1E46AC880040115D /* Syugo11TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syugo11TableViewCell.swift; sourceTree = "<group>"; };
 		B0F132CC1E46AC880040115D /* Syugo11TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Syugo11TableViewCell.xib; sourceTree = "<group>"; };
 		B0F132CF1E46ADDF0040115D /* Kind22ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kind22ViewController.swift; sourceTree = "<group>"; };
-		B0F132D41E46B1810040115D /* Home22TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home22TableViewCell.swift; sourceTree = "<group>"; };
-		B0F132D51E46B1810040115D /* Home22TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Home22TableViewCell.xib; sourceTree = "<group>"; };
 		B0F582A91DB38E5300654519 /* KindTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KindTableViewCell.swift; sourceTree = "<group>"; };
 		B0F582AA1DB38E5300654519 /* KindTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KindTableViewCell.xib; sourceTree = "<group>"; };
 		B8D29CE5422BA1688C21C169 /* Pods-Kiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiki.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kiki/Pods-Kiki.debug.xcconfig"; sourceTree = "<group>"; };
@@ -308,8 +308,8 @@
 			children = (
 				B06968271DC610C200274DB1 /* HomeTableViewCell1.swift */,
 				B06968281DC610C200274DB1 /* HomeTableViewCell1.xib */,
-				B0F132D41E46B1810040115D /* Home22TableViewCell.swift */,
-				B0F132D51E46B1810040115D /* Home22TableViewCell.xib */,
+				B054F5D71E46BC9A007AFC5D /* Home22TableViewCell.swift */,
+				B054F5D81E46BC9A007AFC5D /* Home22TableViewCell.xib */,
 			);
 			name = Homecell;
 			sourceTree = "<group>";
@@ -568,7 +568,7 @@
 				B00501BC1DB610D200319866 /* HomeTableViewCell.xib in Resources */,
 				B069682A1DC610C200274DB1 /* HomeTableViewCell1.xib in Resources */,
 				B07B5AE41E45831B00AE5B0D /* Home11TableViewCell.xib in Resources */,
-				B0F132D71E46B1810040115D /* Home22TableViewCell.xib in Resources */,
+				B054F5DA1E46BC9A007AFC5D /* Home22TableViewCell.xib in Resources */,
 				B0A78FDB1DACFF6500AC0513 /* Main.storyboard in Resources */,
 				B00501C51DB6428500319866 /* ItiranTableViewCell.xib in Resources */,
 				B07B5ADD1E457F0000AE5B0D /* Itiran1TableViewCell.xib in Resources */,
@@ -668,11 +668,11 @@
 				B0E6CE341E384D4200DCDB9C /* ApiruViewController.swift in Sources */,
 				B0190A211DB20FE400FA066D /* KindViewController.swift in Sources */,
 				B06968221DC60D6E00274DB1 /* PostData1.swift in Sources */,
+				B054F5D91E46BC9A007AFC5D /* Home22TableViewCell.swift in Sources */,
 				B00501BB1DB610D200319866 /* HomeTableViewCell.swift in Sources */,
 				B07B5AD71E45718700AE5B0D /* Kind1TableViewCell.swift in Sources */,
 				B05E343B1DC8A53800C271D3 /* ProViewController.swift in Sources */,
 				B06968261DC60F7700274DB1 /* Home1ViewController.swift in Sources */,
-				B0F132D61E46B1810040115D /* Home22TableViewCell.swift in Sources */,
 				B071D9681DB4E5040017E287 /* PostData.swift in Sources */,
 				B00C67AC1E3D6FD10026E775 /* RockViewController.swift in Sources */,
 				B05F577C1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift in Sources */,
