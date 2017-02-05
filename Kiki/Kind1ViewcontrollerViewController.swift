@@ -483,6 +483,23 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
         
     }
     
+    //値を設定
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CCell", for: indexPath) as! Kind1TableViewCell
+        cell.delegate = self
+        //ここ
+        cell.button.backgroundColor = UIColor.lightGray
+        if (tappedCellPos != nil){
+            if (tappedCellPos == indexPath){
+                cell.button.backgroundColor = UIColor.green
+            }
+        }
+        let items = AllItems[indexPath.section][indexPath.row]
+        cell.label.text = items
+        return cell
+    }
+
+    
     func buttonPressed(_ tableViewCell: Kind1TableViewCell) {
         let indexPath = tableView.indexPath(for: tableViewCell)
         // 初めてのタップ
@@ -528,7 +545,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
             if isRowSelected {
                 if ((tableView.cellForRow(at: tappedCellPos)) != nil){
                     // 既に選択状態の行の選択を解除
-                    let oldCell:KindTableViewCell = tableView.cellForRow(at: tappedCellPos) as! KindTableViewCell
+                    let oldCell:Kind1TableViewCell = tableView.cellForRow(at: tappedCellPos) as! Kind1TableViewCell
                     oldCell.button.backgroundColor = buttonOriginalColor;
                     
                 }
@@ -710,21 +727,6 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
     
     
     
-    //値を設定
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CCell", for: indexPath) as! Kind1TableViewCell
-        cell.delegate = self
-        //ここ
-        cell.button.backgroundColor = UIColor.lightGray
-        if (tappedCellPos != nil){
-            if (tappedCellPos == indexPath){
-                cell.button.backgroundColor = UIColor.green
-            }
-        }
-        let items = AllItems[indexPath.section][indexPath.row]
-        cell.label.text = items
-        return cell
-    }
     
     
     
