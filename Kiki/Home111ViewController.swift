@@ -10,9 +10,9 @@ import Spring
 class Home111ViewController: UIViewController,UITableViewDataSource, UITableViewDelegate,AVAudioPlayerDelegate{
 
     
-    var postArray: [PostData1] = []
+    var postArray: [PostData11] = []
     var postArray2:[PostData2] = []
-    var postArray4:[PostData4] = []
+    var postArray4:[PostData44] = []
     var observing = false
     var genre: String!
     
@@ -51,7 +51,7 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
         FIRDatabase.database().reference().child(CommonConst.image22).child(genre).child(postData1.id!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
             guard let `self` = self else { return }
             //ジャケットのimage
-            let postData4 = PostData4(snapshot: snapshot, myId: postData1.uid!)
+            let postData4 = PostData44(snapshot: snapshot, myId: postData1.uid!)
             // すでに登録済みでなければ登録
             //ここわからん
             //このおかげでデータの取得するかどうか判別できるようになるとかかも
@@ -116,10 +116,10 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
             
             print(snapshot.childrenCount)
             
-            var workArray:[PostData1] = []
+            var workArray:[PostData11] = []
             for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
                 print(child)
-                let postData = PostData1(snapshot: child, myId: uid!)
+                let postData = PostData11(snapshot: child, myId: uid!)
                 if postData.time != self.dataLastVal {
                     workArray.insert(postData, at: 0)
                 }
@@ -163,10 +163,10 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
             
             FIRDatabase.database().reference().child(CommonConst.PostPATH22).child(genre).queryOrdered(byChild: "time").queryLimited(toLast: UInt(DisplayDataNumber)).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                 guard let `self` = self else { return }
-                var workArray:[PostData1] = []
+                var workArray:[PostData11] = []
                 for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
                     print(child )
-                    let postData = PostData1(snapshot: child, myId: uid!)
+                    let postData = PostData11(snapshot: child, myId: uid!)
                     print(postData.time ?? "")
                     workArray.insert(postData, at: 0)
                 }
@@ -186,7 +186,7 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
                 
                 if let uid = FIRAuth.auth()?.currentUser?.uid {
                     guard let `self` = self else { return }
-                    let postData = PostData1(snapshot: snapshot, myId: uid)
+                    let postData = PostData11(snapshot: snapshot, myId: uid)
                     
                     var index: Int = 0
                     for post in self.postArray {
@@ -349,6 +349,8 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
 
     
     @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postArray.count

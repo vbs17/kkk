@@ -638,10 +638,18 @@ class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cellss", for: indexPath) as! Syugo11TableViewCell
         cell.delegate = self
+        //ここ
+        cell.kete.backgroundColor = UIColor.lightGray
+        if (tappedCellPos != nil){
+            if (tappedCellPos == indexPath){
+                cell.kete.backgroundColor = UIColor.green
+            }
+        }
         let items = AllItems[indexPath.section][indexPath.row]
         cell.label.text = items
         return cell
     }
+
     
     
     //Cellが選択された際に呼び出される.

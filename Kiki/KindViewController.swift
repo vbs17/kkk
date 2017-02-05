@@ -495,7 +495,21 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.present(recviewcontroller, animated: false, completion: nil)
     }
     
-    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! KindTableViewCell
+        cell.delegate = self
+        //ここ
+        cell.button.backgroundColor = UIColor.lightGray
+        if (tappedCellPos != nil){
+            if (tappedCellPos == indexPath){
+                cell.button.backgroundColor = UIColor.green
+            }
+        }
+        let items = AllItems[indexPath.section][indexPath.row]
+        cell.label.text = items
+        return cell
+    }
+
     //どこのジャンル押されたか判明　ここで色変更したり　再度押したらジャンルが選択されてない状態にする　それで投稿したら注意出る
     func buttonPressed(_ tableViewCell: KindTableViewCell) {
         let indexPath = tableView.indexPath(for: tableViewCell)
@@ -707,20 +721,6 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     //値を設定
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! KindTableViewCell
-        cell.delegate = self
-        //ここ
-        cell.button.backgroundColor = UIColor.lightGray
-        if (tappedCellPos != nil){
-            if (tappedCellPos == indexPath){
-                cell.button.backgroundColor = UIColor.green
-            }
-        }
-        let items = AllItems[indexPath.section][indexPath.row]
-        cell.label.text = items
-        return cell
-    }
     
     
     

@@ -643,6 +643,13 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cells", for: indexPath) as! SyugoTableViewCell
         cell.delegate = self
+        //ここ
+        cell.kete.backgroundColor = UIColor.lightGray
+        if (tappedCellPos != nil){
+            if (tappedCellPos == indexPath){
+                cell.kete.backgroundColor = UIColor.green
+            }
+        }
         let items = AllItems[indexPath.section][indexPath.row]
         cell.label.text = items
         return cell

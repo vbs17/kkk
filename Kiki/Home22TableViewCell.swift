@@ -19,7 +19,7 @@ class Home22TableViewCell: UITableViewCell {
     @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet weak var imageView1: UIImageView!
     
-    func setPostData(_ postData: PostData1, myid: String) {
+    func setPostData(_ postData: PostData11, myid: String) {
         label1.text = postData.hiniti
         label2.text = postData.zikoku
         label3.text = postData.station
@@ -35,7 +35,7 @@ class Home22TableViewCell: UITableViewCell {
         }
     }
     
-    func setPostData1(_ postData: PostData4, myid: String) {
+    func setPostData1(_ postData: PostData44, myid: String) {
         ImageView.image = postData.image
     }
     

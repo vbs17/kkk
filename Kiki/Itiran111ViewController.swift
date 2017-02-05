@@ -477,7 +477,7 @@ class Itiran111ViewController: UIViewController, UITableViewDelegate, UITableVie
     
     //Cellが選択された際に呼び出される.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Home1") as! HomeViewController1
+        let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Home111") as! Home111ViewController
         genre =  AllItems[indexPath.section][indexPath.row]
         homeviewcontroller.genre = genre
         self.present(homeviewcontroller, animated: true, completion: nil)
