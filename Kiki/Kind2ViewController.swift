@@ -670,6 +670,15 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
     @IBAction func hou(_ sender: AnyObject) {
     }
     @IBAction func you(_ sender: AnyObject) {
+        let kind2viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind22") as! Kind22ViewController
+        kind2viewcontroller.hiniti = self.hiniti
+        //ここimageview.imageを直した
+        kind2viewcontroller.image = self.image
+        kind2viewcontroller.zikoku = self.zikoku
+        kind2viewcontroller.station = self.station
+        kind2viewcontroller.path = self.path
+        self.present(kind2viewcontroller, animated: false, completion: nil)
+       
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

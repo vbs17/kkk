@@ -9,8 +9,12 @@ struct CommonConst {
     static let songData1 = "songData1"
     static let image = "image"
     static let image1 = "image1"
+    
+    
     static let PostPATH2 = "posts2"
+    static let PostPATH22 = "posts22"
     static let image2 = "image2"
+    static let image22 = "image22"
     static let Profile = "Profile"
     static let DisplayNameKey = "DisplayNameKey"
     static let IsSavePlofileData = "IS_SAVE_PLOFILE_DATA"
