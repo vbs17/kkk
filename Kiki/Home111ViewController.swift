@@ -24,7 +24,7 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
     @IBOutlet weak var back: UIButton!
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell22", for: indexPath) as! HomeTableViewCell1
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell2222", for: indexPath) as! Home22TableViewCell
         let uid = FIRAuth.auth()?.currentUser?.uid
         //postData1
         cell.setPostData(postArray[indexPath.row], myid: uid!)
@@ -48,7 +48,7 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
         cell.ImageView.image = image
         
         // Firebaseからイメージ読み込み                                                    //post
-        FIRDatabase.database().reference().child(CommonConst.image2).child(genre).child(postData1.id!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
+        FIRDatabase.database().reference().child(CommonConst.image22).child(genre).child(postData1.id!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
             guard let `self` = self else { return }
             //ジャケットのimage
             let postData4 = PostData4(snapshot: snapshot, myId: postData1.uid!)
@@ -111,7 +111,7 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
         let uid = FIRAuth.auth()?.currentUser?.uid
         print("getFirebaseData")
         
-        FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(self.genre).queryOrdered(byChild: "time").queryEnding(atValue: self.dataLastVal).queryLimited(toLast: UInt(DisplayDataNumber)+1).observeSingleEvent(of: .value, with: {[weak self] snapshot in
+        FIRDatabase.database().reference().child(CommonConst.PostPATH22).child(self.genre).queryOrdered(byChild: "time").queryEnding(atValue: self.dataLastVal).queryLimited(toLast: UInt(DisplayDataNumber)+1).observeSingleEvent(of: .value, with: {[weak self] snapshot in
             guard let `self` = self else { return }
             
             print(snapshot.childrenCount)
@@ -141,8 +141,8 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        let nib = UINib(nibName: "HomeTableViewCell1", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "Cell22")
+        let nib = UINib(nibName: "Home22TableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "Cell2222")
         back.layer.cornerRadius = 37
         back.clipsToBounds = true
         
@@ -161,7 +161,7 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
         let uid = FIRAuth.auth()?.currentUser?.uid
         if observing == false {
             
-            FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre).queryOrdered(byChild: "time").queryLimited(toLast: UInt(DisplayDataNumber)).observeSingleEvent(of: .value, with: {[weak self] snapshot in
+            FIRDatabase.database().reference().child(CommonConst.PostPATH22).child(genre).queryOrdered(byChild: "time").queryLimited(toLast: UInt(DisplayDataNumber)).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                 guard let `self` = self else { return }
                 var workArray:[PostData1] = []
                 for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
@@ -182,7 +182,7 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
                     print("getFirstData error")
             })
             //更新ですねここは                        //posts2
-            FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre).observe(.childChanged, with: {[weak self] snapshot in
+            FIRDatabase.database().reference().child(CommonConst.PostPATH22).child(genre).observe(.childChanged, with: {[weak self] snapshot in
                 
                 if let uid = FIRAuth.auth()?.currentUser?.uid {
                     guard let `self` = self else { return }
@@ -299,11 +299,11 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
             let uid = postData.uid!
             let time = postData.time!
             let post4 = ["image": imageData!.base64EncodedString(options: .lineLength64Characters)];
-            let postRef2 = FIRDatabase.database().reference().child(CommonConst.image2).child(genre)
+            let postRef2 = FIRDatabase.database().reference().child(CommonConst.image22).child(genre)
             postRef2.child(postData4.id!).setValue(post4)
             
             let post = ["time":time,"hiniti": hiniti1, "zikoku": zikoku1, "station": station1, "path":path1,"uid":uid,"join":join] as [String : Any]
-            let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre)
+            let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH22).child(genre)
             postRef.child(postData.id!).setValue(post)
         }else if isSavePlofile == false {
             let alert = UIAlertController()
