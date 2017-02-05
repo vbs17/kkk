@@ -473,6 +473,13 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
     var original:  NSString?
     var cover: NSString?
     
+    override func viewWillAppear(_ animated: Bool) {
+        tappedCellPos = nil
+        genre = ""
+        isRowSelected = false
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self

@@ -8,7 +8,8 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     
     
     let fileManager = FileManager()//録音もできないしそれを再生もできない
-    var audioRecorder: AVAudioRecorder!
+    //ここ変えただけ
+    var audioRecorder: AVAudioRecorder?
     let fileName = "sister.m4a"
     var timer: Timer!
     var timeCountTimer: Timer!
@@ -25,7 +26,6 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
         playviewcontroller.original = self.original
         playviewcontroller.cover = self.cover
         self.present(playviewcontroller, animated: true, completion: nil)
-        
         
     }
 
@@ -84,14 +84,14 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     //音源消す 最終確認　　　　　　　　　　　　//通知は、NotificationCenterを介してオブザーバにブロードキャストされる情報をカプセル化(隠蔽)します。
     func applicationWillResignActive(_ notification: Notification) {
         print("applicationWillResignActive!")
-        if ( audioRecorder.isRecording || count1 == true ) {
+        if ( (audioRecorder?.isRecording)! || count1 == true ) {
             if ( self.timer != nil) {
                 self.timer.invalidate()
             }
             if ( self.timeCountTimer != nil) {
                 self.timeCountTimer.invalidate()
             }
-            audioRecorder.stop()
+            audioRecorder?.stop()
             NotificationCenter.default.removeObserver(self)
             let playviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Syuru")
             self.present(playviewcontroller!, animated: true, completion: nil)
@@ -101,9 +101,9 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     
     
     func levelTimerCallback() {
-        audioRecorder.updateMeters()
-        let dB = audioRecorder.averagePower(forChannel: 0)
-        let atai = max(0, (dB + 77)) / 77
+        audioRecorder?.updateMeters()
+        let dB = audioRecorder?.averagePower(forChannel: 0)
+        let atai = max(0, (dB! + 77)) / 77
         nami1.progress = atai
         nami2.progress = atai
         nami3.progress = atai
@@ -122,7 +122,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
         }else if count == 5{
             self.timeCountTimer.invalidate()
             self.timer.invalidate()
-            audioRecorder.stop()
+            audioRecorder?.stop()
             nextGamenn()
         }
     }
@@ -159,7 +159,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
             audioRecorder?.record()
             self.timer = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(ViewController.levelTimerCallback), userInfo: nil, repeats: true)
             self.timeCountTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.recordLimits), userInfo: nil, repeats: true)
-            audioRecorder.isMeteringEnabled = true
+            audioRecorder?.isMeteringEnabled = true
             recordImage!.setImage(UIImage(named: "Kiki28"), for: UIControlState())
             recordImage!.layer.cornerRadius = 37
             recordImage!.clipsToBounds = true
@@ -235,7 +235,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
         if timeCount == 360{
             self.timeCountTimer.invalidate()
             self.timer.invalidate()
-            audioRecorder.stop()
+            audioRecorder?.stop()
             nextGamenn()
         }else{
             timeCount += 1

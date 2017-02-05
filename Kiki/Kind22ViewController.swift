@@ -470,6 +470,15 @@ class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDat
         self.dismiss(animated: false, completion: nil)
     }
     @IBOutlet weak var tableView: UITableView!
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tappedCellPos = nil
+        genre = ""
+        isRowSelected = false
+        tableView.reloadData()
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()

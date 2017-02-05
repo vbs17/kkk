@@ -464,6 +464,15 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
     var buttonOriginalColor:UIColor!//ボタンの元の色
     var isRowSelected:Bool = false//現在行が選択状態か否か
     
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tappedCellPos = nil
+        genre = ""
+        isRowSelected = false
+        tableView.reloadData()
+    }
+
 
     
     @IBOutlet weak var tableView: UITableView!
