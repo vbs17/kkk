@@ -5,7 +5,6 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 import AVFoundation
-import Spring
 
 class IkuViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     

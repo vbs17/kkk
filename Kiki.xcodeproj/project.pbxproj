@@ -30,6 +30,8 @@
 		B042A01E1DB98BB30068D205 /* SyugoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B042A01C1DB98BB30068D205 /* SyugoTableViewCell.swift */; };
 		B042A01F1DB98BB30068D205 /* SyugoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B042A01D1DB98BB30068D205 /* SyugoTableViewCell.xib */; };
 		B042A0221DB991150068D205 /* SyuruViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B042A0211DB991150068D205 /* SyuruViewController.swift */; };
+		B054F5D41E46B6BE007AFC5D /* Itiran111ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054F5D31E46B6BE007AFC5D /* Itiran111ViewController.swift */; };
+		B054F5D61E46B7CE007AFC5D /* Home111ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054F5D51E46B7CE007AFC5D /* Home111ViewController.swift */; };
 		B05E343B1DC8A53800C271D3 /* ProViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343A1DC8A53800C271D3 /* ProViewController.swift */; };
 		B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */; };
 		B05E343F1DC8B57F00C271D3 /* PostData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343E1DC8B57F00C271D3 /* PostData2.swift */; };
@@ -123,6 +125,8 @@
 		B042A01C1DB98BB30068D205 /* SyugoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyugoTableViewCell.swift; sourceTree = "<group>"; };
 		B042A01D1DB98BB30068D205 /* SyugoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SyugoTableViewCell.xib; sourceTree = "<group>"; };
 		B042A0211DB991150068D205 /* SyuruViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyuruViewController.swift; sourceTree = "<group>"; };
+		B054F5D31E46B6BE007AFC5D /* Itiran111ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Itiran111ViewController.swift; sourceTree = "<group>"; };
+		B054F5D51E46B7CE007AFC5D /* Home111ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home111ViewController.swift; sourceTree = "<group>"; };
 		B05E343A1DC8A53800C271D3 /* ProViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProViewController.swift; sourceTree = "<group>"; };
 		B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProIViewController.swift; sourceTree = "<group>"; };
 		B05E343E1DC8B57F00C271D3 /* PostData2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData2.swift; sourceTree = "<group>"; };
@@ -299,6 +303,27 @@
 			name = postData2;
 			sourceTree = "<group>";
 		};
+		B054F5D11E46B618007AFC5D /* Homecell */ = {
+			isa = PBXGroup;
+			children = (
+				B06968271DC610C200274DB1 /* HomeTableViewCell1.swift */,
+				B06968281DC610C200274DB1 /* HomeTableViewCell1.xib */,
+				B0F132D41E46B1810040115D /* Home22TableViewCell.swift */,
+				B0F132D51E46B1810040115D /* Home22TableViewCell.xib */,
+			);
+			name = Homecell;
+			sourceTree = "<group>";
+		};
+		B054F5D21E46B62A007AFC5D /* iku */ = {
+			isa = PBXGroup;
+			children = (
+				B0B4481B1DD5ACE4001DDD89 /* IkuViewController.swift */,
+				B0B4481D1DD5AD04001DDD89 /* IkuTableViewCell.swift */,
+				B0B4481E1DD5AD04001DDD89 /* IkuTableViewCell.xib */,
+			);
+			name = iku;
+			sourceTree = "<group>";
+		};
 		B05E34401DC8B6CF00C271D3 /* PostData */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,14 +470,11 @@
 			isa = PBXGroup;
 			children = (
 				B06968231DC60E1400274DB1 /* Itiran1ViewController.swift */,
+				B054F5D31E46B6BE007AFC5D /* Itiran111ViewController.swift */,
 				B06968251DC60F7700274DB1 /* Home1ViewController.swift */,
-				B0B4481B1DD5ACE4001DDD89 /* IkuViewController.swift */,
-				B0B4481D1DD5AD04001DDD89 /* IkuTableViewCell.swift */,
-				B0B4481E1DD5AD04001DDD89 /* IkuTableViewCell.xib */,
-				B06968271DC610C200274DB1 /* HomeTableViewCell1.swift */,
-				B06968281DC610C200274DB1 /* HomeTableViewCell1.xib */,
-				B0F132D41E46B1810040115D /* Home22TableViewCell.swift */,
-				B0F132D51E46B1810040115D /* Home22TableViewCell.xib */,
+				B054F5D51E46B7CE007AFC5D /* Home111ViewController.swift */,
+				B054F5D21E46B62A007AFC5D /* iku */,
+				B054F5D11E46B618007AFC5D /* Homecell */,
 			);
 			name = "集合場所表示";
 			sourceTree = "<group>";
@@ -679,6 +701,7 @@
 				B071D9751DB50E670017E287 /* SetViewController.swift in Sources */,
 				B05F57761DDF4937006DB9A5 /* Syutyu1ViewController.swift in Sources */,
 				B071D9731DB50C4E0017E287 /* LoginViewController.swift in Sources */,
+				B054F5D61E46B7CE007AFC5D /* Home111ViewController.swift in Sources */,
 				B0BA8ADE1DDD79BC00F00E38 /* Tyu2ViewController.swift in Sources */,
 				B0F132CA1E46AC140040115D /* PostData44.swift in Sources */,
 				B07B5AD21E456E2F00AE5B0D /* Post3Data3.swift in Sources */,
@@ -693,6 +716,7 @@
 				B0BA8ADC1DDD79A800F00E38 /* TyuViewController.swift in Sources */,
 				B042A0191DB985180068D205 /* SyugoViewController.swift in Sources */,
 				B042A01E1DB98BB30068D205 /* SyugoTableViewCell.swift in Sources */,
+				B054F5D41E46B6BE007AFC5D /* Itiran111ViewController.swift in Sources */,
 				B06606561DFC4B3100FD3E4C /* PostData3.swift in Sources */,
 				B0A78FD61DACFF6500AC0513 /* AppDelegate.swift in Sources */,
 				B00C67AE1E3D6FDD0026E775 /* Rock2ViewController.swift in Sources */,
