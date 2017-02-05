@@ -8,7 +8,14 @@ import FirebaseDatabase
 
 
 class Home22TableViewCell: UITableViewCell {
-
+    
+    
+    
+    
+    
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
