@@ -264,15 +264,15 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
                         }
                     }
                     let springButton = sender as! SpringButton
-                    springButton.animation = "shake"
-                    springButton.duration = 0.5
+                    springButton.animation = "pop"
+                    springButton.duration = 0.4
                     springButton.animate()
                     postData.join.remove(at: index)
                     
                 } else {
                     let springButton = sender as! SpringButton
-                    springButton.animation = "shake"
-                    springButton.duration = 0.5
+                    springButton.animation = "pop"
+                    springButton.duration = 0.4
                     springButton.animate()
                     postData.join.append(uid)
                 }}

@@ -50,10 +50,23 @@ class HomeTableViewCell1: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        pathGo.layer.cornerRadius = 35
+        pathGo.layer.cornerRadius = pathGo.frame.size.width / 2
         pathGo.clipsToBounds = true
-        imageView1.layer.cornerRadius = 22.2
+        pathGo.layer.borderWidth = 2
+        pathGo.layer.borderColor = UIColor.white.cgColor
+        imageView1.layer.cornerRadius = imageView1.frame.size.width / 2
         imageView1.clipsToBounds = true
+        imageView1.layer.borderWidth = 1
+        imageView1.layer.borderColor = UIColor.black.cgColor
+        join.layer.cornerRadius = 22.2
+        join.clipsToBounds = true
+        join.layer.borderWidth = 3
+        join.layer.borderColor = UIColor.white.cgColor
+        iku.layer.cornerRadius = 22.2
+        iku.clipsToBounds = true
+        iku.layer.borderWidth = 3
+        iku.layer.borderColor = UIColor.white.cgColor
+
         
     }
     
