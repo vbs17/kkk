@@ -466,8 +466,8 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
     var image:UIImage!
     //var songname:UITextField!
     //var byou:UILabel!
-    var songname:String
-    var byou:String
+    var songname:String!
+    var byou:String!
     var genre = ""
     var tappedCellPos:IndexPath! //タップされたCellのindexPath
     var buttonOriginalColor:UIColor!//ボタンの元の色
