@@ -13,7 +13,7 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var displayNameTextField: UITextField!
     var timer: Timer!
-    let uid = FIRAuth.auth()?.currentUser?.uid
+    //let uid = FIRAuth.auth()?.currentUser?.uid
 
 
     override func viewDidLoad() {
@@ -21,20 +21,20 @@ class LoginViewController: UIViewController{
         setup()
     }
     
-    
     func loginDone() {
         let ud = UserDefaults.standard
         FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: {[weak self] snapshot in
-            guard let `self` = self else { return }
+            guard self != nil else { return }
             let postData = PostData2(snapshot: snapshot, myId: snapshot.key)
-            
-            if ( postData.uid == self.uid ) {
-                if((postData.image != nil) && (postData.name != nil)) {
-                    ud.set(true, forKey: CommonConst.IsSavePlofileData)
-                    ud.synchronize()
-                } else {
-                    ud.set(false, forKey: CommonConst.IsSavePlofileData)
-                    ud.synchronize()
+            if let user = FIRAuth.auth()?.currentUser {
+                if ( postData.uid == user.uid ) {
+                    if((postData.image != nil) && (postData.name != nil)) {
+                        ud.set(true, forKey: CommonConst.IsSavePlofileData)
+                        ud.synchronize()
+                    } else {
+                        ud.set(false, forKey: CommonConst.IsSavePlofileData)
+                        ud.synchronize()
+                    }
                 }
             }
         })

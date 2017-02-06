@@ -250,7 +250,7 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
         let point = touch!.location(in: self.tableView)
         let indexPath = tableView.indexPathForRow(at: point)
         let postData = postArray[indexPath!.row]
-        let postData4 = postArray4[indexPath!.row]
+        //let postData4 = postArray4[indexPath!.row]
         let ud = UserDefaults.standard
         let isSavePlofile = ud.bool(forKey: CommonConst.IsSavePlofileData )
         if isSavePlofile == true {
@@ -278,7 +278,7 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
                     springButton.animate()
                     postData.join.append(uid)
                 }}
-            let imageData = UIImageJPEGRepresentation(postData4.image!, 0.5)
+            //let imageData = UIImageJPEGRepresentation(postData4.image!, 0.5)
             let hiniti1 = postData.hiniti!
             let zikoku1 = postData.zikoku!
             let path1 = postData.path!
@@ -286,9 +286,9 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
             let join = postData.join
             let uid = postData.uid!
             let time = postData.time!
-            let post4 = ["image": imageData!.base64EncodedString(options: .lineLength64Characters)];
-            let postRef2 = FIRDatabase.database().reference().child(CommonConst.image22).child(genre)
-            postRef2.child(postData4.id!).setValue(post4)
+            //let post4 = ["image": imageData!.base64EncodedString(options: .lineLength64Characters)];
+            //let postRef2 = FIRDatabase.database().reference().child(CommonConst.image22).child(genre)
+            //postRef2.child(postData4.id!).setValue(post4)
             
             let post = ["time":time,"hiniti": hiniti1, "zikoku": zikoku1, "station": station1, "path":path1,"uid":uid,"join":join] as [String : Any]
             let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH22).child(genre)
