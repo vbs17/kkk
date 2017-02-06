@@ -39,9 +39,9 @@ class LoginViewController: UIViewController{
             ProfileRef.keepSynced(true)
             // ログインしていたらログイン画面を閉じる
            self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
-            let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-            
-            appDelegate.login()
+            //let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+            //appDelegate.login()
+            self.loginDone()
 
         }
     }
@@ -124,10 +124,9 @@ class LoginViewController: UIViewController{
                     
                     self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
                     
-                    let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-                   
-                    
-                    appDelegate.login()
+                    //let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                    //appDelegate.login()
+                    self.loginDone()
                }
             }
         }
@@ -238,6 +237,8 @@ class LoginViewController: UIViewController{
                 }
             }
             })
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.login()
 
  }
 
