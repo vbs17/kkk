@@ -199,24 +199,7 @@ class LoginViewController: UIViewController{
         timer.invalidate()
     }
    
-    
-    
-    
-   
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-@IBAction func onTwitterLogin(_ sender: AnyObject) {
+    @IBAction func onTwitterLogin(_ sender: AnyObject) {
     
     Twitter.sharedInstance().logIn(withMethods: [.systemAccounts], completion: { (session, error) in
         if let session = session {
@@ -243,6 +226,7 @@ class LoginViewController: UIViewController{
         FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: {[weak self] snapshot in
             guard let `self` = self else { return }
             let postData = PostData2(snapshot: snapshot, myId: snapshot.key)
+            let uid = FIRAuth.auth()?.currentUser?.uid
             
             if ( postData.uid == self.uid ) {
                 if(postData.image && postData.name) {
@@ -252,57 +236,12 @@ class LoginViewController: UIViewController{
                     ud.set(false, forKey: CommonConst.IsSavePlofileData)
                     ud.synchronize()
                 }
+            }
             })
+
+ }
+
+
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
