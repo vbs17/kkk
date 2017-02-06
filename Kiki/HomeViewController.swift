@@ -89,8 +89,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 //ジャケットのimage
                 let postData3 = PostData3(snapshot: snapshot, myId: postData1.uid!)
                 // すでに登録済みでなければ登録
-                //ここわからん
-                //このおかげでデータの取得するかどうか判別できるようになるとかかも
+               
                 var index: Int = NSNotFound
                 for post in self.postArray3 {
                     if post.id == postData3.id {
@@ -118,7 +117,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     }
     
     
-    //ここで行く人の画像profileが表示できるようになる
     func pro(_ sender: UIButton, event:UIEvent) {
         let touch = event.allTouches?.first
         let point = touch!.location(in: self.tableView)
@@ -294,7 +292,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                     
                 }
             })
-            //俺が新しくできた　言うたらこれは一回のみでしょ？上は何回もできるけど
             FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: {[weak self] snapshot in
                 
                 if let uid = FIRAuth.auth()?.currentUser?.uid {
@@ -305,7 +302,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                     self.tableView.reloadData()
                 }
             })
-            //俺だけが変更した　これがあるから他の人は何も変わらずまま自分だけ変わる　１以上の投稿の場合も大丈夫なのか
             FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: {[weak self] snapshot in
                 
                 if let uid = FIRAuth.auth()?.currentUser?.uid {
@@ -318,7 +314,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                             break
                         }
                     }
-                    //なんでindexは1以上も対応できているのか
                     self.postArray2.remove(at: index)
                     self.postArray2.insert(postData, at: index)
                     self.tableView.reloadData()
@@ -329,7 +324,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         
     }
     
-    //ここが怪しい
     func hyoukaGo(_ sender:UIButton, event:UIEvent){
         let indexPath = getIndexPath(event)
         let cell = tableView.cellForRow(at: indexPath!) as! HomeTableViewCell?
@@ -383,7 +377,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             alert.view.tintColor = UIColor.black
         }}
     
-    //ここが怪しいhoshiした後に文字が赤なのはおかしい
     func hoshi(_ sender: UIButton, event:UIEvent){
         let touch = event.allTouches?.first
         let point = touch!.location(in: self.tableView)
@@ -419,13 +412,12 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         cell!.star4.isUserInteractionEnabled = false
         cell!.star5.isUserInteractionEnabled = false
         
-        //どこのgenreのどのセルに星がついたか保存しなあかん
-        //どこでgenreの場所決めてるのか
+        
         
         let name = postData.name
         let song = postData.song
         let byou = postData.byou
-        let star = postData.star //97行目
+        let star = postData.star
         let time = postData.time
         let original = postData.original
         let cover = postData.cover
@@ -533,8 +525,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }
     }
     
-    //変化あったよ
-    
     func back(_ sender: UIButton, event:UIEvent) {
         
         if playingIndexPath == nil {
@@ -568,7 +558,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    //全部大丈夫なのか
+    
     @IBAction func backGo(_ sender: AnyObject) {
         timer.invalidate()
         timer2.invalidate()

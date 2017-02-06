@@ -73,10 +73,7 @@ class Home11TableViewCell: UITableViewCell {
     }
     
     
-    //二人目も
-    //starDic[0] => "bbb"
-    //starDic[1] => “3"ってこと？//はいそうです。
-    //平均値を取得して反映させる  あれよ大事なあれこれでみんなにデータが配られるわけよこれが原点よ
+   
     func setPostData(_ postData: Post1Data) {
         if ( postData.cover == "C" && postData.original == "" ) {
             label.backgroundColor = UIColor(red:1.0, green:1.0, blue:0.8, alpha:1.0)
@@ -92,7 +89,6 @@ class Home11TableViewCell: UITableViewCell {
             playButton.isEnabled = false
             
         }
-        //こいつのせいで評価ボタンむちゃくちゃ
         
         if(postData.uid == nil){
             

@@ -127,7 +127,6 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
     }
     
     
-    //ここで行く人の画像profileが表示できるようになる
     func pro(_ sender: UIButton, event:UIEvent) {
         let touch = event.allTouches?.first
         let point = touch!.location(in: self.tableView)
@@ -148,14 +147,13 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
         let diff:NSDecimalNumber = NSDecimalNumber(value: diffFloat)
         if(contentsOffsetY.subtracting(diff)==0)
         {
-            //まだ表示するコンテンツが存在するか判定し存在するなら○件分を取得して表示更新する
             
             print("scrolling to bottom")
             getFirebaseData()
             
         }
         
-    }    //postdataやfile.swiftを照らし合わせたらいける
+    }
     func getFirebaseData() {
         let reachability = Reachability()!
         if reachability.isReachable {
@@ -255,7 +253,6 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
         
         
         let uid = FIRAuth.auth()?.currentUser?.uid
-        //1回目
         
         if observing == false {
             FIRDatabase.database().reference().child(CommonConst.PostPATH1).child(genre).queryOrdered(byChild: "time").queryLimited(toLast: UInt(DisplayDataNumber)).observeSingleEvent(of: .value, with: {[weak self] snapshot in
@@ -302,7 +299,6 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
                     
                 }
             })
-            //俺が新しくできた　言うたらこれは一回のみでしょ？上は何回もできるけど
             FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: {[weak self] snapshot in
                 
                 if let uid = FIRAuth.auth()?.currentUser?.uid {
@@ -313,7 +309,6 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
                     self.tableView.reloadData()
                 }
             })
-            //俺だけが変更した　これがあるから他の人は何も変わらずまま自分だけ変わる　１以上の投稿の場合も大丈夫なのか
             FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: {[weak self] snapshot in
                 
                 if let uid = FIRAuth.auth()?.currentUser?.uid {
@@ -326,7 +321,6 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
                             break
                         }
                     }
-                    //なんでindexは1以上も対応できているのか
                     self.postArray2.remove(at: index)
                     self.postArray2.insert(postData, at: index)
                     self.tableView.reloadData()
@@ -337,7 +331,6 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
         
     }
     
-    //ここが怪しい
     func hyoukaGo(_ sender:UIButton, event:UIEvent){
         let indexPath = getIndexPath(event)
         let cell = tableView.cellForRow(at: indexPath!) as! Home11TableViewCell?
@@ -391,7 +384,6 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
             alert.view.tintColor = UIColor.black
         }}
     
-    //ここが怪しいhoshiした後に文字が赤なのはおかしい
     func hoshi(_ sender: UIButton, event:UIEvent){
         let touch = event.allTouches?.first
         let point = touch!.location(in: self.tableView)
@@ -427,8 +419,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
         cell!.star4.isUserInteractionEnabled = false
         cell!.star5.isUserInteractionEnabled = false
         
-        //どこのgenreのどのセルに星がついたか保存しなあかん
-        //どこでgenreの場所決めてるのか
+        
         
         let name = postData.name
         let song = postData.song

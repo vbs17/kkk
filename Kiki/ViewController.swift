@@ -155,6 +155,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
             image = UIImage(named: photos[5])
             imageView.image = image
             sender.invalidate()
+                       print("デバッグ\(audioRecorder)")
             audioRecorder?.prepareToRecord()
             audioRecorder?.record()
             self.timer = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(ViewController.levelTimerCallback), userInfo: nil, repeats: true)
