@@ -10,8 +10,8 @@ class OkViewController: UIViewController,UITextFieldDelegate {
     var songData:URL!
 
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var text: String!
-    @IBOutlet weak var byou: String!
+    @IBOutlet weak var text: UITextField!
+    @IBOutlet weak var byou: UILabel!
     @IBOutlet weak var back: UIButton!
     var original: NSString?
     var cover:NSString?
@@ -48,7 +48,7 @@ class OkViewController: UIViewController,UITextFieldDelegate {
     }
     //ここ実験
     @IBAction func OKGo(_ sender: AnyObject) {
-         if (text != nil){
+         if (text.text != nil && text.text != ""){
         let kindviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind") as! KindViewController
         kindviewcontroller.songData = songData
         kindviewcontroller.image = imageView.image

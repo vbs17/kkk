@@ -464,8 +464,10 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     //filenameをsongDataに渡す
     var songData:URL!
     var image:UIImage!
-    var songname:UITextField!
-    var byou:UILabel!
+    //var songname:UITextField!
+    //var byou:UILabel!
+    var songname:String
+    var byou:String
     var genre = ""
     var tappedCellPos:IndexPath! //タップされたCellのindexPath
     var buttonOriginalColor:UIColor!//ボタンの元の色
@@ -687,8 +689,8 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func savePost(uuid: String) {
         // 投稿
-        let songName:NSString = songname.text! as NSString
-        let kazu:NSString = byou.text! as NSString
+        let songName = songname
+        let kazu = byou
         let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
         let time = NSDate.timeIntervalSinceReferenceDate
         let original:NSString = (self.original as NSString?)!
