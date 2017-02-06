@@ -14,24 +14,39 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var displayNameTextField: UITextField!
     var timer: Timer!
 
-    
-   
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        
-        
     }
     
+    
+    func loginDone() {
+        let ud = UserDefaults.standard
+        FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: {[weak self] snapshot in
+            guard let `self` = self else { return }
+            let postData = PostData2(snapshot: snapshot, myId: snapshot.key)
+            let uid = FIRAuth.auth()?.currentUser?.uid
+            
+            if ( postData.uid == self.uid ) {
+                if(postData.image && postData.name) {
+                    ud.set(true, forKey: CommonConst.IsSavePlofileData)
+                    ud.synchronize()
+                } else {
+                    ud.set(false, forKey: CommonConst.IsSavePlofileData)
+                    ud.synchronize()
+                }
+            }
+        })
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.login()
+        
+    }
+
     
     func signIn(credential:FIRAuthCredential) {
         FIRAuth.auth()?.signIn(with: credential) { (user, error) in
             
             if let error = error {
-                // TOOD: エラーハンドリング
                 print(error)
                 return
             }
@@ -46,57 +61,6 @@ class LoginViewController: UIViewController{
         }
     }
     
-    // 設定 > Twitter画面へ遷移
-    func showTwitterSettings() {
-        if let url = URL(string: "App-Prefs:root=TWITTER") {
-            if #available(iOS 10.0, *) {
-                // iOS10以上
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            } else {
-                UIApplication.shared.openURL(url)
-            }
-            
-        }
-    }
-    
-    // 自作ボタンでTwitterログイン
-    
-    
-    // TwitterKitで用意されているログインボタンのセットアップ&配置
-    func setup() {
-        let logInButton = TWTRLogInButton(logInCompletion: { session, error in
-            
-            if let session = session {
-                
-                let credential = FIRTwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
-                self.signIn(credential: credential)
-                
-            } else {
-                print(error)
-                // エラー時はまず、アラートを出すのが良いでしょう。
-                
-                // [アラート] 例↓
-                // 「設定 > Twitterより」アカウントを追加してください。
-                
-                // その後 設定Twitterへ遷移する
-                //                self.showTwitterSettings()
-            }
-        })
-        
-        // 設定 > Twitterのアカウントを利用する
-        logInButton.loginMethods = .systemAccounts
-        
-        logInButton.center = view.center
-        self.view.addSubview(logInButton)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    
-    
-   
     @IBAction func handleLoginButton(_ sender: AnyObject) {
         if let address = mailAddressTextField.text, let password = passwordTextField.text {
             
@@ -219,29 +183,52 @@ class LoginViewController: UIViewController{
         
     })
 }
-
-    func loginDone() {
-        let ud = UserDefaults.standard
-        FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: {[weak self] snapshot in
-            guard let `self` = self else { return }
-            let postData = PostData2(snapshot: snapshot, myId: snapshot.key)
-            let uid = FIRAuth.auth()?.currentUser?.uid
-            
-            if ( postData.uid == self.uid ) {
-                if(postData.image && postData.name) {
-                    ud.set(true, forKey: CommonConst.IsSavePlofileData)
-                    ud.synchronize()
-                } else {
-                    ud.set(false, forKey: CommonConst.IsSavePlofileData)
-                    ud.synchronize()
-                }
+    func showTwitterSettings() {
+        if let url = URL(string: "App-Prefs:root=TWITTER") {
+            if #available(iOS 10.0, *) {
+                // iOS10以上
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
             }
-            })
-        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.login()
+            
+        }
+    }
+    
+    
+    
+    func setup() {
+        let logInButton = TWTRLogInButton(logInCompletion: { session, error in
+            
+            if let session = session {
+                
+                let credential = FIRTwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
+                self.signIn(credential: credential)
+                
+            } else {
+                print(error)
+                // エラー時はまず、アラートを出すのが良いでしょう。
+                
+                // [アラート] 例↓
+                // 「設定 > Twitterより」アカウントを追加してください。
+                
+                // その後 設定Twitterへ遷移する
+                //                self.showTwitterSettings()
+            }
+        })
+        
+        // 設定 > Twitterのアカウントを利用する
+        logInButton.loginMethods = .systemAccounts
+        
+        logInButton.center = view.center
+        self.view.addSubview(logInButton)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 
- }
-
+   
 
 
 }
