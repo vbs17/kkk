@@ -10,8 +10,8 @@ class OkViewController: UIViewController,UITextFieldDelegate {
     var songData:URL!
 
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var text: UITextField!
-    @IBOutlet weak var byou: UILabel!
+    @IBOutlet weak var text: String!
+    @IBOutlet weak var byou: String!
     @IBOutlet weak var back: UIButton!
     var original: NSString?
     var cover:NSString?
@@ -48,15 +48,39 @@ class OkViewController: UIViewController,UITextFieldDelegate {
     }
     //ここ実験
     @IBAction func OKGo(_ sender: AnyObject) {
+         if (text != nil){
         let kindviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind") as! KindViewController
         kindviewcontroller.songData = songData
         kindviewcontroller.image = imageView.image
-        kindviewcontroller.byou = byou
-        kindviewcontroller.songname = text
+        kindviewcontroller.byou = byou.text!
+        kindviewcontroller.songname = text.text!
         kindviewcontroller.original = self.original
         kindviewcontroller.cover = self.cover
         self.present(kindviewcontroller, animated: true, completion: nil)
+         }else{
+            let alert = UIAlertController()
+            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellow]
+            let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
+            alert.setValue(attributedTitle, forKey: "attributedTitle")
+            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.white]
+            let attributedMessage = NSAttributedString(string: "駅以外は必須項目です", attributes: attributedMessageAttr)
+            alert.view.tintColor = UIColor.white
+            alert.setValue(attributedMessage, forKey: "attributedMessage")
+            let subview = alert.view.subviews.first! as UIView
+            let alertContentView = subview.subviews.first! as UIView
+            alertContentView.backgroundColor = UIColor.gray
+            
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
+                (action: UIAlertAction!) -> Void in
+            })
+            alert.addAction(defaultAction)
+            present(alert, animated: true, completion: nil)
+            alert.view.tintColor = UIColor.white
+            
+        }
+        
     }
+
     //消す
     @IBAction func backGo(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)

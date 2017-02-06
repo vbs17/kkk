@@ -105,19 +105,6 @@
                                     <action selector="guitargo:" destination="xtg-j0-lo1" eventType="touchUpInside" id="jWd-x2-tX9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvF-sl-eQ7">
-                                <rect key="frame" x="112.5" y="50" width="96.5" height="22.5"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Supersonic">
-                                        <attributes>
-                                            <color key="NSColor" red="0.79590788639999999" green="1" blue="0.50505725369999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="19" name="HiraKakuStdN-W8"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -140,8 +127,6 @@
                             <constraint firstAttribute="bottom" secondItem="IcT-JV-gPt" secondAttribute="bottom" id="hZk-YX-no7"/>
                             <constraint firstItem="mAG-Ih-VpW" firstAttribute="trailing" secondItem="sx5-dV-ikd" secondAttribute="trailingMargin" id="hfh-GL-Qka"/>
                             <constraint firstItem="LDJ-wC-UCP" firstAttribute="top" secondItem="tWO-hD-pUu" secondAttribute="bottom" constant="20" id="kyE-5K-9uP"/>
-                            <constraint firstItem="nvF-sl-eQ7" firstAttribute="top" secondItem="JpE-vq-bxS" secondAttribute="bottom" constant="30" id="ldB-Cs-EWC"/>
-                            <constraint firstItem="nvF-sl-eQ7" firstAttribute="centerX" secondItem="sx5-dV-ikd" secondAttribute="centerX" id="mgD-91-GSv"/>
                             <constraint firstItem="tWO-hD-pUu" firstAttribute="leading" secondItem="sx5-dV-ikd" secondAttribute="leading" constant="20" id="vc0-s1-lYG"/>
                             <constraint firstItem="LDJ-wC-UCP" firstAttribute="leading" secondItem="sx5-dV-ikd" secondAttribute="leading" id="woU-uC-PjN"/>
                             <constraint firstItem="uxZ-E7-MVy" firstAttribute="width" secondItem="LDJ-wC-UCP" secondAttribute="width" id="yUB-dH-Ul0"/>
