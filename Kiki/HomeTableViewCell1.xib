@@ -123,9 +123,9 @@
                         </constraints>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WtR-7P-l0Y">
-                        <rect key="frame" x="0.0" y="58" width="379" height="266"/>
+                        <rect key="frame" x="0.0" y="3" width="379" height="321"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="266" id="ROC-o8-YDp"/>
+                            <constraint firstAttribute="height" constant="321" id="ROC-o8-YDp"/>
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mO-Wf-tsj">
@@ -155,14 +155,6 @@
                             <constraint firstAttribute="width" constant="56" id="rDZ-tf-C7m"/>
                         </constraints>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A Take Away Show" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1N-Ko-1De">
-                        <rect key="frame" x="67" y="21" width="288" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </label>
                 </subviews>
                 <color key="backgroundColor" red="1" green="0.91943548836681643" blue="0.6587956177094948" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
@@ -172,7 +164,7 @@
                     <constraint firstAttribute="bottomMargin" secondItem="uOw-FL-tCu" secondAttribute="bottom" constant="-9" id="H4G-6B-Ww9"/>
                     <constraint firstItem="jkb-UD-Jnj" firstAttribute="leading" secondItem="kNS-wK-RJ9" secondAttribute="leading" constant="8" id="MaM-X0-vCl"/>
                     <constraint firstItem="V7U-wB-TVc" firstAttribute="leading" secondItem="kNS-wK-RJ9" secondAttribute="leading" constant="3" id="Sgo-Yu-zuv"/>
-                    <constraint firstItem="WtR-7P-l0Y" firstAttribute="top" secondItem="jkb-UD-Jnj" secondAttribute="bottom" constant="3" id="XCy-TP-9RJ"/>
+                    <constraint firstItem="WtR-7P-l0Y" firstAttribute="top" secondItem="jkb-UD-Jnj" secondAttribute="bottom" constant="-52" id="XCy-TP-9RJ"/>
                     <constraint firstItem="uOw-FL-tCu" firstAttribute="leading" secondItem="WtR-7P-l0Y" secondAttribute="leading" id="Yco-0o-mZ0"/>
                     <constraint firstItem="2mO-Wf-tsj" firstAttribute="top" secondItem="kNS-wK-RJ9" secondAttribute="top" constant="233" id="Z4q-p2-kbK"/>
                     <constraint firstItem="V7U-wB-TVc" firstAttribute="top" secondItem="kNS-wK-RJ9" secondAttribute="top" constant="3" id="dHE-w9-AnR"/>

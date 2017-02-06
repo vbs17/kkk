@@ -123,9 +123,9 @@
                         </constraints>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7f1-cC-4OH">
-                        <rect key="frame" x="0.0" y="58" width="379" height="266"/>
+                        <rect key="frame" x="0.0" y="3" width="379" height="324"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="266" id="1qK-Ub-rBv"/>
+                            <constraint firstAttribute="height" constant="324" id="1qK-Ub-rBv"/>
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ehg-d2-AW6">
@@ -155,14 +155,6 @@
                             <constraint firstAttribute="height" constant="56" id="f0N-Uq-txB"/>
                         </constraints>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A Take Away Show" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bi-gf-khg">
-                        <rect key="frame" x="67" y="21" width="304" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </label>
                 </subviews>
                 <color key="backgroundColor" red="1" green="0.9194354884" blue="0.65879561769999995" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
@@ -177,7 +169,7 @@
                     <constraint firstItem="Ehg-d2-AW6" firstAttribute="top" secondItem="GSl-4s-DPJ" secondAttribute="top" constant="233" id="fyt-Em-MPc"/>
                     <constraint firstItem="OU1-cC-80l" firstAttribute="top" secondItem="Ehg-d2-AW6" secondAttribute="bottom" constant="11" id="hD6-Ht-cZk"/>
                     <constraint firstAttribute="trailing" secondItem="Ehg-d2-AW6" secondAttribute="trailing" constant="24" id="t6C-rb-3ru"/>
-                    <constraint firstItem="7f1-cC-4OH" firstAttribute="top" secondItem="NUX-80-1Pg" secondAttribute="bottom" constant="3" id="vhz-au-5B8"/>
+                    <constraint firstItem="7f1-cC-4OH" firstAttribute="top" secondItem="NUX-80-1Pg" secondAttribute="bottom" constant="-52" id="vhz-au-5B8"/>
                     <constraint firstItem="OU1-cC-80l" firstAttribute="leading" secondItem="7f1-cC-4OH" secondAttribute="leading" id="ze9-Xd-eaF"/>
                 </constraints>
             </tableViewCellContentView>
