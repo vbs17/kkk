@@ -26,6 +26,7 @@ class LoginViewController: UIViewController{
         
     }
     
+    
     func signIn(credential:FIRAuthCredential) {
         FIRAuth.auth()?.signIn(with: credential) { (user, error) in
             
@@ -93,6 +94,8 @@ class LoginViewController: UIViewController{
         super.didReceiveMemoryWarning()
     }
     
+    
+    
    
     @IBAction func handleLoginButton(_ sender: AnyObject) {
         if let address = mailAddressTextField.text, let password = passwordTextField.text {
@@ -123,6 +126,7 @@ class LoginViewController: UIViewController{
                     
                     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
                    
+                    
                     appDelegate.login()
                }
             }
@@ -234,7 +238,21 @@ class LoginViewController: UIViewController{
     })
 }
 
-
+    func loginDone() {
+        let ud = UserDefaults.standard
+        FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: {[weak self] snapshot in
+            guard let `self` = self else { return }
+            let postData = PostData2(snapshot: snapshot, myId: snapshot.key)
+            
+            if ( postData.uid == self.uid ) {
+                if(postData.image && postData.name) {
+                    ud.set(true, forKey: CommonConst.IsSavePlofileData)
+                    ud.synchronize()
+                } else {
+                    ud.set(false, forKey: CommonConst.IsSavePlofileData)
+                    ud.synchronize()
+                }
+            })
 
 }
 
