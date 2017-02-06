@@ -35,6 +35,7 @@ class Home22TableViewCell: UITableViewCell {
         }
     }
     
+    //これいる？
     func setPostData1(_ postData: PostData44, myid: String) {
         ImageView.image = postData.image
     }

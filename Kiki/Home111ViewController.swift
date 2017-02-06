@@ -36,7 +36,6 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
                 image = id.image
             }
         }
-        //ここは結構わかりやすくしてくれる
         cell.imageView1.image = image
         
         image = nil
@@ -47,14 +46,11 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
         }
         cell.ImageView.image = image
         
-        // Firebaseからイメージ読み込み                                                    //post
         FIRDatabase.database().reference().child(CommonConst.image22).child(genre).child(postData1.id!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
             guard let `self` = self else { return }
             //ジャケットのimage
             let postData4 = PostData44(snapshot: snapshot, myId: postData1.uid!)
-            // すでに登録済みでなければ登録
-            //ここわからん
-            //このおかげでデータの取得するかどうか判別できるようになるとかかも
+           
             var index: Int = NSNotFound
             for post in self.postArray4 {
                 if post.id == postData4.id {
@@ -89,7 +85,6 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
     }
     
     
-    //スクロールしてデータ取得
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentsOffsetYFloat:Float = Float(self.tableView.contentOffset.y)
         let diffFloat:Float = Float(self.tableView.contentSize.height - self.tableView.bounds.size.height)
@@ -97,7 +92,6 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
         let diff:NSDecimalNumber = NSDecimalNumber(value: diffFloat)
         if(contentsOffsetY.subtracting(diff)==0)
         {
-            //まだ表示するコンテンツが存在するか判定し存在するなら○件分を取得して表示更新する
             
             print("scrolling to bottom")
             getFirebaseData()
@@ -106,7 +100,6 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
         
     }
     
-    //postdataやfile.swiftを照らし合わせたらいける
     func getFirebaseData() {
         let uid = FIRAuth.auth()?.currentUser?.uid
         print("getFirebaseData")
@@ -181,7 +174,6 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
                 }, withCancel: {(err) in
                     print("getFirstData error")
             })
-            //更新ですねここは                        //posts2
             FIRDatabase.database().reference().child(CommonConst.PostPATH22).child(genre).observe(.childChanged, with: {[weak self] snapshot in
                 
                 if let uid = FIRAuth.auth()?.currentUser?.uid {
@@ -213,7 +205,6 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
                     self.tableView.reloadData()
                 }
             })
-            //更新ですねここも
             FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childChanged, with: {[weak self] snapshot in
                 
                 if let uid = FIRAuth.auth()?.currentUser?.uid {
@@ -226,7 +217,6 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
                             break
                         }
                     }
-                    //なんでindexは1以上も対応できているのか
                     self.postArray2.remove(at: index)
                     self.postArray2.insert(postData, at: index)
                     self.tableView.reloadData()
@@ -247,7 +237,6 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
         let point = touch!.location(in: self.tableView)
         let indexPath = tableView.indexPathForRow(at: point)
         let postData = postArray[indexPath!.row]
-        //IkuViewcontrollerがどこの画面かわかれば余裕
         let pro = self.storyboard?.instantiateViewController(withIdentifier: "Iku") as! IkuViewController
         pro.join = postData.join
         self.present(pro, animated: true, completion: nil)
@@ -255,7 +244,6 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
     }
     
     
-    //ここ
     func handleButton(_ sender: UIButton, event:UIEvent) {
         
         let touch = event.allTouches?.first
@@ -270,7 +258,7 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
                 if postData.isLiked {
                     
                     var index = -1
-                    //行くことを決めたのは自分の時の処理
+
                     for likeId in postData.join {
                         if likeId == uid {
                             index = postData.join.index(of: likeId)!
@@ -364,7 +352,6 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
     
     
     
-    // セルをタップされたら何もせずに選択状態を解除する
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
