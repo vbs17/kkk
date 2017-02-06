@@ -623,7 +623,7 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
             // セルが選択されている時の処理を記述
             let image = UUID().uuidString
             saveImage(uuid: image)
-
+            
         }  else {
             // 行が選択されていない＝ジャンルが選択されていない
             let alert = UIAlertController()

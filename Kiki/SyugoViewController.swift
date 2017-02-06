@@ -128,7 +128,7 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
     }
     
     @IBAction func Ok(_ sender: AnyObject) {
-        if (path.text != nil && path.text != ""){
+        if (path.text != nil && path.text != "" && hiniti.text != nil && hiniti.text != "" && zikoku.text != nil && zikoku.text != ""){
             
             let kind2viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind2") as! Kind2ViewController
             kind2viewcontroller.hiniti = hiniti
@@ -143,7 +143,7 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
             let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
             alert.setValue(attributedTitle, forKey: "attributedTitle")
             let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.white]
-            let attributedMessage = NSAttributedString(string: "住所は必須です", attributes: attributedMessageAttr)
+            let attributedMessage = NSAttributedString(string: "駅以外は必須項目です", attributes: attributedMessageAttr)
             alert.view.tintColor = UIColor.white
             alert.setValue(attributedMessage, forKey: "attributedMessage")
             let subview = alert.view.subviews.first! as UIView

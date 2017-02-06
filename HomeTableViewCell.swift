@@ -134,7 +134,7 @@ class HomeTableViewCell: UITableViewCell {
         label.text = postData.name
         label2.text = postData.byou
     }
-    
+    //これいる？
     func setPostData1(_ postData: PostData) {
         let stars = postData.star
         
