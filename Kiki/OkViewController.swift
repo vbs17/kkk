@@ -81,7 +81,7 @@ class OkViewController: UIViewController,UITextFieldDelegate {
         
     }
 
-    //消す
+    //画像は消さなくても更新するから問題ないのか
     @IBAction func backGo(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }

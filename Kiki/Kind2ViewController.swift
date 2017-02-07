@@ -653,12 +653,12 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
         }  else {
             // 行が選択されていない＝ジャンルが選択されていない
             let alert = UIAlertController()
-            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellow]
+            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
             let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
             alert.setValue(attributedTitle, forKey: "attributedTitle")
-            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.white]
+            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.black]
             let attributedMessage = NSAttributedString(string: "ジャンルを選択しよう", attributes: attributedMessageAttr)
-            alert.view.tintColor = UIColor.white
+            alert.view.tintColor = UIColor.black
             alert.setValue(attributedMessage, forKey: "attributedMessage")
             let subview = alert.view.subviews.first! as UIView
             let alertContentView = subview.subviews.first! as UIView

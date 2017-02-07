@@ -86,7 +86,7 @@ class PlayViewController: UIViewController {
         playSong.currentTime = 0
     }
     
-    //取り直し
+    //取り直しここはこれで大丈夫か
     @IBAction func retake(_ sender: AnyObject) {
         playSong.stop()
         timer.invalidate()
