@@ -85,19 +85,22 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
 
     
     func signIn(credential:FIRAuthCredential) {
+        SVProgressHUD.setDefaultMaskType(.clear)
+        SVProgressHUD.show()
         FIRAuth.auth()?.signIn(with: credential) { (user, error) in
             
             if let error = error {
                 print(error)
+                SVProgressHUD.dismiss()
                 return
             }
             let ProfileRef = FIRDatabase.database().reference(withPath: CommonConst.Profile).child(user!.uid)
             ProfileRef.keepSynced(true)
-           self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
+            self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
             //let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
             //appDelegate.login()
             self.loginDone()
-
+            SVProgressHUD.dismiss()
         }
     }
     
