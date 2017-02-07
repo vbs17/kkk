@@ -4,6 +4,8 @@ import FirebaseAuth
 import FirebaseDatabase
 import AVFoundation
 import Spring
+import ReachabilitySwift
+
 
 class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDelegate,AVAudioPlayerDelegate{
     var postArray: [PostData1] = []
@@ -99,6 +101,8 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
     }
     
     func getFirebaseData() {
+        let reachability = Reachability()!
+        if reachability.isReachable {
         let uid = FIRAuth.auth()?.currentUser?.uid
         print("getFirebaseData")
         
@@ -125,8 +129,31 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
             
             }, withCancel: {(err) in
                 print("getFirebaseData error")
-        })
+        })} else {
+            let alert = UIAlertController()
+            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
+            let attributedTitle = NSAttributedString(string: "😬", attributes: attributedTitleAttr)
+            alert.setValue(attributedTitle, forKey: "attributedTitle")
+            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.black]
+            let attributedMessage = NSAttributedString(string: "接続状態が不安定です", attributes: attributedMessageAttr)
+            alert.view.tintColor = UIColor.black
+            alert.setValue(attributedMessage, forKey: "attributedMessage")
+            let subview = alert.view.subviews.first! as UIView
+            let alertContentView = subview.subviews.first! as UIView
+            alertContentView.backgroundColor = UIColor.gray
+            
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
+                (action: UIAlertAction!) -> Void in
+            })
+            alert.addAction(defaultAction)
+            present(alert, animated: true, completion: nil)
+            alert.view.tintColor = UIColor.white
+            
+        }
+        
     }
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -244,7 +271,6 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
     
     //ここ
     func handleButton(_ sender: UIButton, event:UIEvent) {
-        
         let touch = event.allTouches?.first
         let point = touch!.location(in: self.tableView)
         let indexPath = tableView.indexPathForRow(at: point)
@@ -253,6 +279,8 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
         let ud = UserDefaults.standard
         let isSavePlofile = ud.bool(forKey: CommonConst.IsSavePlofileData )
         if isSavePlofile == true {
+            let reachability = Reachability()!
+            if reachability.isReachable {
             if let uid = FIRAuth.auth()?.currentUser?.uid {
                 if postData.isLiked {
                     
@@ -291,6 +319,26 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
             let post = ["time":time,"hiniti": hiniti1, "zikoku": zikoku1, "station": station1, "path":path1,"uid":uid,"join":join] as [String : Any]
             let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH2).child(genre)
             postRef.child(postData.id!).setValue(post)
+            } else {
+            let alert = UIAlertController()
+            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
+            let attributedTitle = NSAttributedString(string: "😬", attributes: attributedTitleAttr)
+            alert.setValue(attributedTitle, forKey: "attributedTitle")
+            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.black]
+            let attributedMessage = NSAttributedString(string: "接続状態が不安定です", attributes: attributedMessageAttr)
+            alert.view.tintColor = UIColor.black
+            alert.setValue(attributedMessage, forKey: "attributedMessage")
+            let subview = alert.view.subviews.first! as UIView
+            let alertContentView = subview.subviews.first! as UIView
+            alertContentView.backgroundColor = UIColor.gray
+            
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
+                (action: UIAlertAction!) -> Void in
+            })
+            alert.addAction(defaultAction)
+            present(alert, animated: true, completion: nil)
+            alert.view.tintColor = UIColor.white
+            }
         }else if isSavePlofile == false {
             let alert = UIAlertController()
             let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellow]
