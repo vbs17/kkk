@@ -32,6 +32,33 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
         return true
     }
     
+    //@IBAction func onTwitterLogin(_ sender: AnyObject) {
+    
+    //Twitter.sharedInstance().logIn(withMethods: [.systemAccounts], completion: { (session, error) in
+    //  if let session = session {
+    //    let credential = FIRTwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
+    //  self.signIn(credential: credential)
+    //} else {
+    //  print(error)
+    // エラー時はまず、アラートを出すのが良いでしょう。
+    
+    // [アラート] 例↓
+    // 「設定 > Twitterより」アカウントを追加してください。
+    
+    // その後 設定Twitterへ遷移する
+    //                self.showTwitterSettings()
+    //return;
+    
+    //}
+    
+    //})
+    //}
+    func twTap() {
+        SVProgressHUD.setDefaultMaskType(.clear)
+        SVProgressHUD.show()
+    }
+
+    
     func setup() {
         let logInButton = TWTRLogInButton(logInCompletion: { session, error in
             
@@ -48,7 +75,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
                 // 「設定 > Twitterより」アカウントを追加してください。
                 
                 // その後 設定Twitterへ遷移する
-                //                self.showTwitterSettings()
+                self.showTwitterSettings()
             }
         })
         
@@ -56,12 +83,14 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
         logInButton.loginMethods = .systemAccounts
         
         logInButton.center = view.center
+        logInButton.addTarget(self, action: #selector(twTap), for: .touchUpInside)
         self.view.addSubview(logInButton)
     }
 
 
     
     func loginDone() {
+        
         let ud = UserDefaults.standard
         FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: {[weak self] snapshot in
             guard self != nil else { return }
@@ -83,10 +112,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
         
     }
 
-    
     func signIn(credential:FIRAuthCredential) {
-        SVProgressHUD.setDefaultMaskType(.clear)
-        SVProgressHUD.show()
         FIRAuth.auth()?.signIn(with: credential) { (user, error) in
             
             if let error = error {
@@ -206,28 +232,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
         timer.invalidate()
     }
    
-    //@IBAction func onTwitterLogin(_ sender: AnyObject) {
-    
-    //Twitter.sharedInstance().logIn(withMethods: [.systemAccounts], completion: { (session, error) in
-      //  if let session = session {
-        //    let credential = FIRTwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
-          //  self.signIn(credential: credential)
-        //} else {
-          //  print(error)
-            // エラー時はまず、アラートを出すのが良いでしょう。
-            
-            // [アラート] 例↓
-            // 「設定 > Twitterより」アカウントを追加してください。
-            
-            // その後 設定Twitterへ遷移する
-            //                self.showTwitterSettings()
-            //return;
-            
-        //}
-        
-    //})
-//}
-    //これ何や？
+      //これ何や？
     func showTwitterSettings() {
         if let url = URL(string: "App-Prefs:root=TWITTER") {
             if #available(iOS 10.0, *) {

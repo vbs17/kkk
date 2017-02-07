@@ -471,8 +471,8 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        let nib = UINib(nibName: "Itiran1TableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "Cellll")
+        let nib = UINib(nibName: "ItiranTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "Celll")
         you.isEnabled = false
 
 
