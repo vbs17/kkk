@@ -14,7 +14,6 @@ class Post1Data: NSObject {
     var time: Double?
     var uid: String?
     
-    //idはクソ大事
     
     init(snapshot: FIRDataSnapshot, myId: String) {
         id = snapshot.key

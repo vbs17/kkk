@@ -1,10 +1,3 @@
-//
-//  PostData3.swift
-//  Kiki
-//
-//  Created by kei ikeuchi on 2016/12/10.
-//  Copyright © 2016年 mycompany. All rights reserved.
-//
 
 import UIKit
 import Firebase
