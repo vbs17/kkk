@@ -88,7 +88,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
     }
 
 
-    
+    //こいつ
     func loginDone() {
         
         let ud = UserDefaults.standard
