@@ -5,6 +5,8 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 import SVProgressHUD
+import ReachabilitySwift
+
 
 class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, Syugo11TableViewCellDelegate  {
     
@@ -453,10 +455,10 @@ class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDat
     
     fileprivate let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","X","Y","Z","number"]
     
-    var hiniti:UITextField!
-    var zikoku:UITextField!
-    var station:UITextField!
-    var path:UITextView!
+    var hiniti:String!
+    var zikoku:String!
+    var station:String!
+    var path:String!
     var image:UIImage!
     var genre = ""
     var tappedCellPos:IndexPath! //タップされたCellのindexPath
@@ -577,10 +579,10 @@ class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDat
     
     func savePost(uuid: String) {
         // 投稿
-        let hiniti1:NSString = hiniti.text! as NSString
-        let zikoku1:NSString = zikoku.text! as NSString
-        let path1:NSString = path.text! as NSString
-        let station1:NSString = station.text! as NSString
+        let hiniti1 = hiniti
+        let zikoku1 = zikoku
+        let path1 = path
+        let station1 = station
         let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
         let time = NSDate.timeIntervalSinceReferenceDate
         let postData1 = ["time":time,"hiniti": hiniti1,"zikoku": zikoku1, "station": station1, "path":path1,"uid":uid] as [String : Any]
@@ -614,10 +616,33 @@ class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDat
     }
     
     @IBAction func post(_ sender: Any) { if isRowSelected {
-        SVProgressHUD.show()
-        // セルが選択されている時の処理を記述
+        let reachability = Reachability()!
+        if reachability.isReachable {
         let image = UUID().uuidString
         saveImage(uuid: image)
+        SVProgressHUD.setDefaultMaskType(.clear)
+        SVProgressHUD.show()
+        } else {
+            let alert = UIAlertController()
+            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
+            let attributedTitle = NSAttributedString(string: "😬", attributes: attributedTitleAttr)
+            alert.setValue(attributedTitle, forKey: "attributedTitle")
+            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.black]
+            let attributedMessage = NSAttributedString(string: "接続状態が不安定です", attributes: attributedMessageAttr)
+            alert.view.tintColor = UIColor.black
+            alert.setValue(attributedMessage, forKey: "attributedMessage")
+            let subview = alert.view.subviews.first! as UIView
+            let alertContentView = subview.subviews.first! as UIView
+            alertContentView.backgroundColor = UIColor.gray
+            
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
+                (action: UIAlertAction!) -> Void in
+            })
+            alert.addAction(defaultAction)
+            present(alert, animated: true, completion: nil)
+            alert.view.tintColor = UIColor.white
+            
+        }
         
     }  else {
         // 行が選択されていない＝ジャンルが選択されていない

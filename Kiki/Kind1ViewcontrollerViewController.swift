@@ -581,10 +581,6 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
         if isRowSelected {
             let reachability = Reachability()!
             if reachability.isReachable {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "CCell") as! Kind1TableViewCell
-                cell.button.isEnabled = false
-                
-                
                 let ongen = UUID().uuidString
                 print("Post")
                 saveSong(uuid: ongen)

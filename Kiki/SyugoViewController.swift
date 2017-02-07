@@ -131,11 +131,11 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
         if (path.text != nil && path.text != "" && hiniti.text != nil && hiniti.text != "" && zikoku.text != nil && zikoku.text != ""){
             
             let kind2viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind2") as! Kind2ViewController
-            kind2viewcontroller.hiniti = hiniti
+            kind2viewcontroller.hiniti = hiniti.text!
             kind2viewcontroller.image = imageView.image!
-            kind2viewcontroller.zikoku = zikoku
-            kind2viewcontroller.station = station
-            kind2viewcontroller.path = path
+            kind2viewcontroller.zikoku = zikoku.text!
+            kind2viewcontroller.station = station.text!
+            kind2viewcontroller.path = path.text!
             self.present(kind2viewcontroller, animated: true, completion: nil)
         }else{
             let alert = UIAlertController()
