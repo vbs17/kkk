@@ -18,77 +18,14 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
+        //setup()
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
         self.view.addGestureRecognizer(tapGesture)
     }
     
-    func dismissKeyboard(){
-        view.endEditing(true)
-    }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
     
-    //@IBAction func onTwitterLogin(_ sender: AnyObject) {
-    
-    //Twitter.sharedInstance().logIn(withMethods: [.systemAccounts], completion: { (session, error) in
-    //  if let session = session {
-    //    let credential = FIRTwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
-    //  self.signIn(credential: credential)
-    //} else {
-    //  print(error)
-    // エラー時はまず、アラートを出すのが良いでしょう。
-    
-    // [アラート] 例↓
-    // 「設定 > Twitterより」アカウントを追加してください。
-    
-    // その後 設定Twitterへ遷移する
-    //                self.showTwitterSettings()
-    //return;
-    
-    //}
-    
-    //})
-    //}
-    func twTap() {
-        SVProgressHUD.setDefaultMaskType(.clear)
-        SVProgressHUD.show()
-    }
 
-    
-    func setup() {
-        let logInButton = TWTRLogInButton(logInCompletion: { session, error in
-            
-            if let session = session {
-                
-                let credential = FIRTwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
-                self.signIn(credential: credential)
-                
-            } else {
-                print(error)
-                // エラー時はまず、アラートを出すのが良いでしょう。
-                
-                // [アラート] 例↓
-                // 「設定 > Twitterより」アカウントを追加してください。
-                
-                // その後 設定Twitterへ遷移する
-                self.showTwitterSettings()
-            }
-        })
-        
-        // 設定 > Twitterのアカウントを利用する
-        logInButton.loginMethods = .systemAccounts
-        
-        logInButton.center = view.center
-        logInButton.addTarget(self, action: #selector(twTap), for: .touchUpInside)
-        self.view.addSubview(logInButton)
-    }
-
-
-    //こいつ
     func loginDone() {
         let ud = UserDefaults.standard
         FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: {[weak self] snapshot in
@@ -112,23 +49,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
         })
     }
     
-    func signIn(credential:FIRAuthCredential) {
-        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
-            
-            if let error = error {
-                print(error)
-                SVProgressHUD.dismiss()
-                return
-            }
-            let ProfileRef = FIRDatabase.database().reference(withPath: CommonConst.Profile).child(user!.uid)
-            ProfileRef.keepSynced(true)
-            //self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
-            //let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-            //appDelegate.login()
-            self.loginDone()
-            SVProgressHUD.dismiss()
-        }
-    }
     
     //メールアドレス
     @IBAction func handleLoginButton(_ sender: AnyObject) {
@@ -157,7 +77,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
                     SVProgressHUD.dismiss()
                     
                     //self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
-                    
                     //let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
                     //appDelegate.login()
                     self.loginDone()
@@ -231,26 +150,118 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
         SVProgressHUD.dismiss()
         timer.invalidate()
     }
-   
-      //これ何や？
-    func showTwitterSettings() {
-        if let url = URL(string: "App-Prefs:root=TWITTER") {
-            if #available(iOS 10.0, *) {
-                // iOS10以上
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            } else {
-                UIApplication.shared.openURL(url)
-            }
-            
-        }
+    
+    func dismissKeyboard(){
+        view.endEditing(true)
     }
     
-    
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    
+    //これ以下はツイッターでのログインだったがエラークラッシュで面倒いので却下
+
+    
+    
+    // func twTap() {
+    // SVProgressHUD.setDefaultMaskType(.clear)
+    //SVProgressHUD.show()
+    //}
+
+   
+      //これ何や？
+    //func showTwitterSettings() {
+     //   if let url = URL(string: "App-Prefs:root=TWITTER") {
+      //      if #available(iOS 10.0, *) {
+                // iOS10以上
+       //         UIApplication.shared.open(url, options: [:], completionHandler: nil)
+       //     } else {
+         //       UIApplication.shared.openURL(url)
+           // }
+            
+        //}
+    //}
+    
+    
+    
+    //func setup() {
+    //  let logInButton = TWTRLogInButton(logInCompletion: { session, error in
+    
+    //   if let session = session {
+    
+    //     let credential = FIRTwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
+    //   self.signIn(credential: credential)
+    
+    // } else {
+    //    print(error)
+    // エラー時はまず、アラートを出すのが良いでしょう。
+    
+    // [アラート] 例↓
+    // 「設定 > Twitterより」アカウントを追加してください。
+    
+    // その後 設定Twitterへ遷移する
+    //    self.showTwitterSettings()
+    //   }
+    // })
+    
+    // 設定 > Twitterのアカウントを利用する
+    // logInButton.loginMethods = .systemAccounts
+    //
+    // logInButton.center = view.center
+    // logInButton.addTarget(self, action: #selector(twTap), for: .touchUpInside)
+    // self.view.addSubview(logInButton)
+    // }
+    
+    
+    //こいつ
+    
+    //@IBAction func onTwitterLogin(_ sender: AnyObject) {
+    
+    //Twitter.sharedInstance().logIn(withMethods: [.systemAccounts], completion: { (session, error) in
+    //  if let session = session {
+    //    let credential = FIRTwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
+    //  self.signIn(credential: credential)
+    //} else {
+    //  print(error)
+    // エラー時はまず、アラートを出すのが良いでしょう。
+    
+    // [アラート] 例↓
+    // 「設定 > Twitterより」アカウントを追加してください。
+    
+    // その後 設定Twitterへ遷移する
+    //                self.showTwitterSettings()
+    //return;
+    
+    //}
+    
+    //})
+    //}]]
+    
+    //func signIn(credential:FIRAuthCredential) {
+    //  FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+    
+    // if let error = error {
+    //    print(error)
+    //   SVProgressHUD.dismiss()
+    // return
+    //}
+    //let ProfileRef = FIRDatabase.database().reference(withPath: CommonConst.Profile).child(user!.uid)
+    //ProfileRef.keepSynced(true)
+    //self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
+    //let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    //appDelegate.login()
+    //self.loginDone()
+    //SVProgressHUD.dismiss()
+    //}
+    //}
+
+
 
    
 

@@ -185,7 +185,6 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-         timer2 = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(HomeViewController.mada), userInfo: nil, repeats: false)
         
         let uid = FIRAuth.auth()?.currentUser?.uid
         if observing == false {
