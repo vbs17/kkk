@@ -325,7 +325,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kesiki" translatesAutoresizingMaskIntoConstraints="NO" id="OaT-Yb-Yds">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ppp" translatesAutoresizingMaskIntoConstraints="NO" id="OaT-Yb-Yds">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -3883,6 +3883,7 @@
         <image name="haha1" width="1242" height="828"/>
         <image name="kesiki" width="500" height="500"/>
         <image name="nana1" width="1242" height="699"/>
+        <image name="ppp" width="1246" height="966"/>
         <image name="tabtab" width="1242" height="973"/>
     </resources>
 </document>

@@ -71,7 +71,7 @@ class LoginViewController: UIViewController{
 
                 return
             }
-            
+            SVProgressHUD.setDefaultMaskType(.clear)
             SVProgressHUD.show()
             
             FIRAuth.auth()?.signIn(withEmail: address, password: password) { user, error in
@@ -128,7 +128,7 @@ class LoginViewController: UIViewController{
                                     if error != nil {
                                     } else {
                                         self.setDisplayName(displayName)
-                                        
+                                        SVProgressHUD.setDefaultMaskType(.clear)
                                         SVProgressHUD.dismiss()
                                         
                                         self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)

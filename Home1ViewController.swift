@@ -13,6 +13,8 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
     var postArray4:[PostData4] = []
     var observing = false
     var genre: String!
+    var timer2 = Timer()
+
     
     let DisplayDataNumber = 2;
     var dataLastVal:Double!
@@ -176,6 +178,9 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+         timer2 = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(HomeViewController.mada), userInfo: nil, repeats: false)
+        
         let uid = FIRAuth.auth()?.currentUser?.uid
         if observing == false {
             
@@ -194,6 +199,8 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
                     
                     self.dataLastVal = workArray.last!.time!
                     print("dataLastVal=\(self.dataLastVal)")
+                    self.timer2.invalidate()
+
                 }
                 
                 }, withCancel: {(err) in
