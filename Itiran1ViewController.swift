@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ReachabilitySwift
+
 
 class Itiran1ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
@@ -485,11 +487,35 @@ class Itiran1ViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     //Cellが選択された際に呼び出される.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let reachability = Reachability()!
+        if reachability.isReachable {
         let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Home1") as! HomeViewController1
         genre =  AllItems[indexPath.section][indexPath.row]
         homeviewcontroller.genre = genre
         self.present(homeviewcontroller, animated: true, completion: nil)
-    }
+    } else {
+            let alert = UIAlertController()
+            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
+            let attributedTitle = NSAttributedString(string: "😬", attributes: attributedTitleAttr)
+            alert.setValue(attributedTitle, forKey: "attributedTitle")
+            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.black]
+            let attributedMessage = NSAttributedString(string: "接続状態が不安定です", attributes: attributedMessageAttr)
+            alert.view.tintColor = UIColor.black
+            alert.setValue(attributedMessage, forKey: "attributedMessage")
+            let subview = alert.view.subviews.first! as UIView
+            let alertContentView = subview.subviews.first! as UIView
+            alertContentView.backgroundColor = UIColor.gray
+            
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
+                (action: UIAlertAction!) -> Void in
+            })
+            alert.addAction(defaultAction)
+            present(alert, animated: true, completion: nil)
+            alert.view.tintColor = UIColor.white
+            
+        }}
+        
+
     
     //テーブルに表示する配列の総数を返す.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
