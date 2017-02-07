@@ -25,6 +25,22 @@ class IkuViewController: UIViewController,UITableViewDataSource, UITableViewDele
         tableView.register(nib, forCellReuseIdentifier: "IkuT")
     }
     
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentsOffsetYFloat:Float = Float(self.tableView.contentOffset.y)
+        let diffFloat:Float = Float(self.tableView.contentSize.height - self.tableView.bounds.size.height)
+        let contentsOffsetY:NSDecimalNumber = NSDecimalNumber(value: contentsOffsetYFloat)
+        let diff:NSDecimalNumber = NSDecimalNumber(value: diffFloat)
+        if(contentsOffsetY.subtracting(diff)==0)
+        {
+            //まだ表示するコンテンツが存在するか判定し存在するなら○件分を取得して表示更新する
+            
+            print("scrolling to bottom")
+            
+        }
+        
+    }
+    
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IkuT", for: indexPath) as! IkuTableViewCell
         let uid = join[indexPath.row]

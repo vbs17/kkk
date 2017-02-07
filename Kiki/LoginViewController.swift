@@ -90,10 +90,10 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
 
     //こいつ
     func loginDone() {
-        
         let ud = UserDefaults.standard
         FIRDatabase.database().reference().child(CommonConst.Profile).observe(.childAdded, with: {[weak self] snapshot in
-            guard self != nil else { return }
+            guard self != nil else { print("FIRDatabase.database return")
+                return }
             let postData = PostData2(snapshot: snapshot, myId: snapshot.key)
             if let user = FIRAuth.auth()?.currentUser {
                 if ( postData.uid == user.uid ) {
@@ -105,13 +105,13 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
                         ud.synchronize()
                     }
                 }
+                self?.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
+                let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.login()
             }
         })
-        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.login()
-        
     }
-
+    
     func signIn(credential:FIRAuthCredential) {
         FIRAuth.auth()?.signIn(with: credential) { (user, error) in
             
@@ -122,7 +122,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
             }
             let ProfileRef = FIRDatabase.database().reference(withPath: CommonConst.Profile).child(user!.uid)
             ProfileRef.keepSynced(true)
-            self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
+            //self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
             //let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
             //appDelegate.login()
             self.loginDone()
@@ -156,7 +156,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
                     
                     SVProgressHUD.dismiss()
                     
-                    self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
+                    //self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
                     
                     //let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
                     //appDelegate.login()

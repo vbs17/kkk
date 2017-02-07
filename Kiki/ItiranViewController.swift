@@ -539,6 +539,20 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return mySections[section] as? String
     }
 
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentsOffsetYFloat:Float = Float(self.tableView.contentOffset.y)
+        let diffFloat:Float = Float(self.tableView.contentSize.height - self.tableView.bounds.size.height)
+        let contentsOffsetY:NSDecimalNumber = NSDecimalNumber(value: contentsOffsetYFloat)
+        let diff:NSDecimalNumber = NSDecimalNumber(value: diffFloat)
+        if(contentsOffsetY.subtracting(diff)==0)
+        {
+            
+            print("scrolling to bottom")
+            
+        }
+        
+    }
+    
     
     
 }

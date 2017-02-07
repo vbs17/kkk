@@ -6,7 +6,7 @@ import AVFoundation
 import Spring
 import ReachabilitySwift
 
-
+//名前が違う
 class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDelegate,AVAudioPlayerDelegate{
     var postArray: [PostData1] = []
     var postArray2:[PostData2] = []
@@ -15,6 +15,7 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
     var genre: String!
     var timer2 = Timer()
 
+    @IBOutlet weak var label: UILabel!
     
     let DisplayDataNumber = 2;
     var dataLastVal:Double!
@@ -22,6 +23,11 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var back: UIButton!
+    
+    
+    func mada(){
+        label.text = "誰もまだ投稿していません.君の音楽を投稿して一番乗りになろう！"
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell22", for: indexPath) as! HomeTableViewCell1

@@ -23,9 +23,14 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
     let DisplayDataNumber = 2;
     var dataLastVal:Double!
 
+    @IBOutlet weak var label: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var back: UIButton!
+    
+    func mada(){
+        label.text = "誰もまだ投稿していません.君の音楽を投稿して一番乗りになろう！"
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell2222", for: indexPath) as! Home22TableViewCell
@@ -180,7 +185,8 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        timer2 = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(HomeViewController.mada), userInfo: nil, repeats: false)
+        timer2 = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(Home111ViewController.mada), userInfo: nil, repeats: false)
+        
         let uid = FIRAuth.auth()?.currentUser?.uid
         if observing == false {
             
