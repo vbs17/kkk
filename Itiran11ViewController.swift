@@ -522,7 +522,7 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cellll", for: indexPath) as! Itiran1TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Celll", for: indexPath) as! ItiranTableViewCell
         let items = AllItems[indexPath.section][indexPath.row]
         cell.label.text = items
         return cell
