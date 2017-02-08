@@ -56,7 +56,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
             
             if address.characters.isEmpty || password.characters.isEmpty {
                 SVProgressHUD.showError(withStatus: "アカウント作成を済ませてください")
-                self.timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
+                self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
 
                 return
             }
@@ -66,7 +66,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
             FIRAuth.auth()?.signIn(withEmail: address, password: password) { user, error in
                 if error != nil {
                     SVProgressHUD.showError(withStatus: "エラー")
-                    self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
+                    self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
 
                     
                 } else {
@@ -91,7 +91,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
             if address.characters.isEmpty || password.characters.isEmpty
                 || displayName.characters.isEmpty {
                 SVProgressHUD.showError(withStatus: "必要項目を入力して下さい")
-                self.timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
+                self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
 
                 return
             }
@@ -101,12 +101,12 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
             FIRAuth.auth()?.createUser(withEmail: address, password: password) { user, error in
                 if error != nil {
                     SVProgressHUD.showError(withStatus: "エラー")
-                     self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
+                     self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
                 } else {
                     FIRAuth.auth()?.signIn(withEmail: address, password: password) { user, error in
                         if error != nil {
                             SVProgressHUD.showError(withStatus: "エラー")
-                            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
+                            self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(LoginViewController.kesu), userInfo: nil, repeats: false )
 
                         } else {
                             if let user = user {
@@ -122,12 +122,12 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
                                         self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
                                         
                                         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-                                        let pro = self.storyboard?.instantiateViewController(withIdentifier: "Pro") as! ProViewController
-                                        if (pro.imageView.image != nil && pro.name.text!.characters.count > 0){
-                                            let ud = UserDefaults.standard
-                                            ud.set(true, forKey: CommonConst.IsSavePlofileData)
-                                            ud.synchronize()
-                                        }
+                                        //let pro = self.storyboard?.instantiateViewController(withIdentifier: "Pro") as! ProViewController
+                                        //if (pro.imageView.image != nil && pro.name.text!.characters.count > 0){
+                                         //   let ud = UserDefaults.standard
+                                          //  ud.set(true, forKey: CommonConst.IsSavePlofileData)
+                                          //  ud.synchronize()
+                                       // }
 
                                         appDelegate.login()
                                     }

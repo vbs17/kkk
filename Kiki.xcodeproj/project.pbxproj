@@ -84,6 +84,10 @@
 		B0BA8ADC1DDD79A800F00E38 /* TyuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BA8ADB1DDD79A800F00E38 /* TyuViewController.swift */; };
 		B0BA8ADE1DDD79BC00F00E38 /* Tyu2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BA8ADD1DDD79BC00F00E38 /* Tyu2ViewController.swift */; };
 		B0BA8AE01DDD79D800F00E38 /* Tyu3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BA8ADF1DDD79D800F00E38 /* Tyu3ViewController.swift */; };
+		B0C4AA591E4ABE2500CD6B43 /* Itiran222TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C4AA571E4ABE2500CD6B43 /* Itiran222TableViewCell.swift */; };
+		B0C4AA5A1E4ABE2500CD6B43 /* Itiran222TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0C4AA581E4ABE2500CD6B43 /* Itiran222TableViewCell.xib */; };
+		B0C4AA5D1E4ABE3B00CD6B43 /* Itiran333TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C4AA5B1E4ABE3B00CD6B43 /* Itiran333TableViewCell.swift */; };
+		B0C4AA5E1E4ABE3B00CD6B43 /* Itiran333TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0C4AA5C1E4ABE3B00CD6B43 /* Itiran333TableViewCell.xib */; };
 		B0CB1E0A1E13939A0083C8A4 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0CB1E091E13939A0083C8A4 /* Reachability.framework */; };
 		B0CB1E0C1E13939E0083C8A4 /* Spring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0CB1E0B1E13939E0083C8A4 /* Spring.framework */; };
 		B0CB1E0E1E1393A20083C8A4 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0CB1E0D1E1393A20083C8A4 /* SVProgressHUD.framework */; };
@@ -181,6 +185,10 @@
 		B0BA8ADB1DDD79A800F00E38 /* TyuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TyuViewController.swift; sourceTree = "<group>"; };
 		B0BA8ADD1DDD79BC00F00E38 /* Tyu2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tyu2ViewController.swift; sourceTree = "<group>"; };
 		B0BA8ADF1DDD79D800F00E38 /* Tyu3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tyu3ViewController.swift; sourceTree = "<group>"; };
+		B0C4AA571E4ABE2500CD6B43 /* Itiran222TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Itiran222TableViewCell.swift; sourceTree = "<group>"; };
+		B0C4AA581E4ABE2500CD6B43 /* Itiran222TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Itiran222TableViewCell.xib; sourceTree = "<group>"; };
+		B0C4AA5B1E4ABE3B00CD6B43 /* Itiran333TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Itiran333TableViewCell.swift; sourceTree = "<group>"; };
+		B0C4AA5C1E4ABE3B00CD6B43 /* Itiran333TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Itiran333TableViewCell.xib; sourceTree = "<group>"; };
 		B0CB1E091E13939A0083C8A4 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = "../../Library/Developer/Xcode/DerivedData/Kiki-emylnmdojkctwwgdpvdjadsaiqvm/Build/Products/Debug-iphonesimulator/Reachability/Reachability.framework"; sourceTree = "<group>"; };
 		B0CB1E0B1E13939E0083C8A4 /* Spring.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spring.framework; path = "../../Library/Developer/Xcode/DerivedData/Kiki-emylnmdojkctwwgdpvdjadsaiqvm/Build/Products/Debug-iphonesimulator/Spring/Spring.framework"; sourceTree = "<group>"; };
 		B0CB1E0D1E1393A20083C8A4 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = "../../Library/Developer/Xcode/DerivedData/Kiki-emylnmdojkctwwgdpvdjadsaiqvm/Build/Products/Debug-iphonesimulator/SVProgressHUD/SVProgressHUD.framework"; sourceTree = "<group>"; };
@@ -473,10 +481,22 @@
 				B054F5D31E46B6BE007AFC5D /* Itiran111ViewController.swift */,
 				B06968251DC60F7700274DB1 /* Home1ViewController.swift */,
 				B054F5D51E46B7CE007AFC5D /* Home111ViewController.swift */,
+				B0C4AA5F1E4ABF5000CD6B43 /* itiran222333cell */,
 				B054F5D21E46B62A007AFC5D /* iku */,
 				B054F5D11E46B618007AFC5D /* Homecell */,
 			);
 			name = "集合場所表示";
+			sourceTree = "<group>";
+		};
+		B0C4AA5F1E4ABF5000CD6B43 /* itiran222333cell */ = {
+			isa = PBXGroup;
+			children = (
+				B0C4AA571E4ABE2500CD6B43 /* Itiran222TableViewCell.swift */,
+				B0C4AA581E4ABE2500CD6B43 /* Itiran222TableViewCell.xib */,
+				B0C4AA5B1E4ABE3B00CD6B43 /* Itiran333TableViewCell.swift */,
+				B0C4AA5C1E4ABE3B00CD6B43 /* Itiran333TableViewCell.xib */,
+			);
+			name = itiran222333cell;
 			sourceTree = "<group>";
 		};
 		B0F132D11E46B1270040115D /* Syugocell */ = {
@@ -571,7 +591,9 @@
 				B054F5DA1E46BC9A007AFC5D /* Home22TableViewCell.xib in Resources */,
 				B0A78FDB1DACFF6500AC0513 /* Main.storyboard in Resources */,
 				B00501C51DB6428500319866 /* ItiranTableViewCell.xib in Resources */,
+				B0C4AA5E1E4ABE3B00CD6B43 /* Itiran333TableViewCell.xib in Resources */,
 				B07B5ADD1E457F0000AE5B0D /* Itiran1TableViewCell.xib in Resources */,
+				B0C4AA5A1E4ABE2500CD6B43 /* Itiran222TableViewCell.xib in Resources */,
 				B07B5AD81E45718700AE5B0D /* Kind1TableViewCell.xib in Resources */,
 				B02336DA1E41E5AF00EA1F6E /* GoogleService-Info.plist in Resources */,
 				B0B448201DD5AD04001DDD89 /* IkuTableViewCell.xib in Resources */,
@@ -703,6 +725,7 @@
 				B071D9731DB50C4E0017E287 /* LoginViewController.swift in Sources */,
 				B054F5D61E46B7CE007AFC5D /* Home111ViewController.swift in Sources */,
 				B0BA8ADE1DDD79BC00F00E38 /* Tyu2ViewController.swift in Sources */,
+				B0C4AA591E4ABE2500CD6B43 /* Itiran222TableViewCell.swift in Sources */,
 				B0F132CA1E46AC140040115D /* PostData44.swift in Sources */,
 				B07B5AD21E456E2F00AE5B0D /* Post3Data3.swift in Sources */,
 				B05F57781DDF4942006DB9A5 /* Syutyu2ViewController.swift in Sources */,
@@ -719,6 +742,7 @@
 				B054F5D41E46B6BE007AFC5D /* Itiran111ViewController.swift in Sources */,
 				B06606561DFC4B3100FD3E4C /* PostData3.swift in Sources */,
 				B0A78FD61DACFF6500AC0513 /* AppDelegate.swift in Sources */,
+				B0C4AA5D1E4ABE3B00CD6B43 /* Itiran333TableViewCell.swift in Sources */,
 				B00C67AE1E3D6FDD0026E775 /* Rock2ViewController.swift in Sources */,
 				B042A0221DB991150068D205 /* SyuruViewController.swift in Sources */,
 				B07B5ACE1E456E0A00AE5B0D /* Post1Data.swift in Sources */,
