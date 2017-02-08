@@ -24,7 +24,7 @@ class Oth4ViewController: UIViewController {
 
     @IBAction func go(_ sender: Any) {
         let basyoviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "oth5")
-        self.navigationController?.pushViewController(basyoviewcontroller!, animated: true)
+        self.present(basyoviewcontroller!, animated: true, completion: nil)
 
     }
     @IBAction func back(_ sender: Any) {

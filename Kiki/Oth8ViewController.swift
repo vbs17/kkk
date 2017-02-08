@@ -24,7 +24,7 @@ class Oth8ViewController: UIViewController {
 
     @IBAction func go(_ sender: Any) {
         let basyoviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Set")
-        self.navigationController?.pushViewController(basyoviewcontroller!, animated: true)
+        self.present(basyoviewcontroller!, animated: true, completion: nil)
 
         
     }

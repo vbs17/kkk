@@ -10,12 +10,12 @@ class SetViewController: UIViewController {
     
     @IBAction func how(_ sender: Any) {
         let basyoviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "oth")
-        self.navigationController?.pushViewController(basyoviewcontroller!, animated: true)
+        self.present(basyoviewcontroller!, animated: true, completion: nil)
         
     }
     
     @IBAction func back(_ sender: AnyObject) {
-         self.dismiss(animated: true, completion: nil)
+        self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
     }
     
     @IBAction func out(_ sender: AnyObject) {
