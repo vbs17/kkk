@@ -2783,22 +2783,6 @@
                                 <color key="textColor" red="0.79590788639999999" green="1" blue="0.50505725369999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyq-zY-bCR">
-                                <rect key="frame" x="139" y="299" width="97" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="NRu-R0-2ca"/>
-                                    <constraint firstAttribute="width" constant="97" id="smO-PI-dwd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <size key="titleShadowOffset" width="2" height="1"/>
-                                <state key="normal">
-                                    <color key="titleColor" red="1" green="0.07029228354" blue="0.004821727992" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="kasane:" destination="ybh-Ee-9Y7" eventType="touchUpInside" id="pzB-VB-bTq"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isn-xc-4on">
                                 <rect key="frame" x="147" y="165" width="26" height="72"/>
                                 <constraints>
@@ -2823,10 +2807,8 @@
                             <constraint firstItem="Ndb-uz-4Dr" firstAttribute="top" secondItem="WSd-h2-WGP" secondAttribute="bottom" id="S9b-mj-z5f"/>
                             <constraint firstAttribute="trailing" secondItem="Ndb-uz-4Dr" secondAttribute="trailing" id="Wfh-YK-pnX"/>
                             <constraint firstItem="WSd-h2-WGP" firstAttribute="top" secondItem="Gaf-G7-Q9a" secondAttribute="top" id="Y63-ni-jbs"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lyq-zY-bCR" secondAttribute="trailing" constant="68" id="Zad-dB-tiu"/>
                             <constraint firstItem="isn-xc-4on" firstAttribute="top" secondItem="791-cf-Bbb" secondAttribute="bottom" constant="1" id="bcR-oH-GQR"/>
                             <constraint firstItem="hj2-VD-ta4" firstAttribute="top" secondItem="78x-p9-gkU" secondAttribute="bottom" constant="62" id="g71-PQ-mzP"/>
-                            <constraint firstItem="lyq-zY-bCR" firstAttribute="top" secondItem="isn-xc-4on" secondAttribute="bottom" constant="62" id="pu4-6Q-ViC"/>
                             <constraint firstItem="791-cf-Bbb" firstAttribute="top" secondItem="hj2-VD-ta4" secondAttribute="bottom" constant="8" id="q9B-Cj-ewU"/>
                             <constraint firstItem="99X-WN-WhX" firstAttribute="leading" secondItem="isn-xc-4on" secondAttribute="trailing" constant="21" id="rMQ-c6-HVt"/>
                             <constraint firstItem="Ndb-uz-4Dr" firstAttribute="leading" secondItem="Gaf-G7-Q9a" secondAttribute="leading" id="sKp-8i-MeR"/>

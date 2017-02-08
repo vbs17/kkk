@@ -42,6 +42,9 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
         super.viewDidLoad()
         recordImage!.layer.cornerRadius = recordImage!.frame.size.width / 2
         recordImage!.clipsToBounds = true
+        recordImage?.layer.borderWidth = 3
+        recordImage?.layer.borderColor = UIColor.black.cgColor
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
