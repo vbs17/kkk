@@ -8,6 +8,11 @@ import SVProgressHUD
 class SetViewController: UIViewController {
     
     
+    @IBAction func how(_ sender: Any) {
+        let basyoviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "oth")
+        self.navigationController?.pushViewController(basyoviewcontroller!, animated: true)
+        
+    }
     
     @IBAction func back(_ sender: AnyObject) {
          self.dismiss(animated: true, completion: nil)
