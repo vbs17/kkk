@@ -60,6 +60,9 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
 
                 return
             }
+            mailAddressTextField.resignFirstResponder()
+            passwordTextField.resignFirstResponder()
+            displayNameTextField.resignFirstResponder()
             SVProgressHUD.setDefaultMaskType(.clear)
             SVProgressHUD.show()
             
@@ -95,7 +98,10 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
 
                 return
             }
-            
+            mailAddressTextField.resignFirstResponder()
+            passwordTextField.resignFirstResponder()
+            displayNameTextField.resignFirstResponder()
+            SVProgressHUD.setDefaultMaskType(.clear)
             SVProgressHUD.show()
             
             FIRAuth.auth()?.createUser(withEmail: address, password: password) { user, error in
@@ -116,7 +122,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
                                     if error != nil {
                                     } else {
                                         self.setDisplayName(displayName)
-                                        SVProgressHUD.setDefaultMaskType(.clear)
                                         SVProgressHUD.dismiss()
                                         
                                         self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)

@@ -96,6 +96,8 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
             }
             audioRecorder?.stop()
             NotificationCenter.default.removeObserver(self)
+            
+            //ここってdismissでもよくね？
             let playviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Syuru")
             self.present(playviewcontroller!, animated: true, completion: nil)
         }
@@ -245,6 +247,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
             timeCount += 1
 }
 }
+    //ここで曲の削除はいらないのか
     @IBAction func back(_sender: AnyObject){
         self.timeCountTimer?.invalidate()
         self.timer?.invalidate()
