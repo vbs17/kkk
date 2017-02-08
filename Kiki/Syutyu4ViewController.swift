@@ -5,10 +5,7 @@ class Syutyu4ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let ud = UserDefaults.standard
-        ud.set(true, forKey: CommonConst.IsTutorial2)
-        ud.synchronize()
-
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -16,8 +13,8 @@ class Syutyu4ViewController: UIViewController {
     }
     
     @IBAction func go(_ sender: AnyObject) {
-         self.navigationController?.dismiss(animated: true, completion: {})
-    }
+        let basyoviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Syutyu5")
+        self.navigationController?.pushViewController(basyoviewcontroller!, animated: true)    }
 
 
 }
