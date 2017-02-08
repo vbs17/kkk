@@ -9,8 +9,6 @@ struct CommonConst {
     static let songData1 = "songData1"
     static let image = "image"
     static let image1 = "image1"
-    
-    
     static let PostPATH2 = "posts2"
     static let PostPATH22 = "posts22"
     static let image2 = "image2"
