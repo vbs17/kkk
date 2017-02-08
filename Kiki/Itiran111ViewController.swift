@@ -473,8 +473,8 @@ class Itiran111ViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        let nib = UINib(nibName: "ItiranTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "Celll")
+        let nib = UINib(nibName: "Itiran333TableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "Itiran333")
     }
     
     //Cellが選択された際に呼び出される.
@@ -524,7 +524,7 @@ class Itiran111ViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Celll", for: indexPath) as! ItiranTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Itiran333", for: indexPath) as! Itiran333TableViewCell
         let items = AllItems[indexPath.section][indexPath.row]
         cell.label.text = items
         return cell
