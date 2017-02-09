@@ -464,15 +464,7 @@
 			children = (
 				B0A78FD91DACFF6500AC0513 /* Main.storyboard */,
 				B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */,
-				B06B00441DDD4131000C545D /* OreViewController.swift */,
-				B06633271E4B9F0200AA8635 /* OthViewController.swift */,
-				B06633291E4B9F0B00AA8635 /* Oth2ViewController.swift */,
-				B066332B1E4B9F1200AA8635 /* Oth3ViewController.swift */,
-				B066332D1E4B9F1900AA8635 /* Oth4ViewController.swift */,
-				B066332F1E4B9F2000AA8635 /* Oth5ViewController.swift */,
-				B06633311E4B9F2700AA8635 /* Oth6ViewController.swift */,
-				B06633331E4B9F2F00AA8635 /* Oth7ViewController.swift */,
-				B06633351E4B9F3600AA8635 /* Oth8ViewController.swift */,
+				B0D594FA1E4C27AF00689507 /* oth */,
 				B03032E21E44508500D2059E /* syutyu */,
 				B03032E31E44508F00D2059E /* rocktyu */,
 				B0BA8AE11DDD7E7500F00E38 /* LoginAka */,
@@ -539,6 +531,22 @@
 				B0C4AA5C1E4ABE3B00CD6B43 /* Itiran333TableViewCell.xib */,
 			);
 			name = itiran222333cell;
+			sourceTree = "<group>";
+		};
+		B0D594FA1E4C27AF00689507 /* oth */ = {
+			isa = PBXGroup;
+			children = (
+				B06B00441DDD4131000C545D /* OreViewController.swift */,
+				B06633271E4B9F0200AA8635 /* OthViewController.swift */,
+				B06633291E4B9F0B00AA8635 /* Oth2ViewController.swift */,
+				B066332B1E4B9F1200AA8635 /* Oth3ViewController.swift */,
+				B066332D1E4B9F1900AA8635 /* Oth4ViewController.swift */,
+				B066332F1E4B9F2000AA8635 /* Oth5ViewController.swift */,
+				B06633311E4B9F2700AA8635 /* Oth6ViewController.swift */,
+				B06633331E4B9F2F00AA8635 /* Oth7ViewController.swift */,
+				B06633351E4B9F3600AA8635 /* Oth8ViewController.swift */,
+			);
+			name = oth;
 			sourceTree = "<group>";
 		};
 		B0F132D11E46B1270040115D /* Syugocell */ = {

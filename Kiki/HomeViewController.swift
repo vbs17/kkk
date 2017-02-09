@@ -477,7 +477,10 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 
                 timer.invalidate()
                 //ここもポイント
-                SVProgressHUD.setDefaultMaskType(.clear)
+                cell?.playButton.isEnabled = false
+                cell?.hyouka.isEnabled = false
+                cell?.go.isEnabled = false
+                //SVProgressHUD.setDefaultMaskType(.clear)
                 
                 //backだけはokにしたいな
                 SVProgressHUD.show(withStatus:"クールな音質に仕上げています😎(最大5秒) 　　　　　　　　　　　　　　　　                　　　　　　このオリジナルソングが君のセンスにあえば左上のProfileボタンをタップして俺に連絡をとってくれ😎あ、あと最高のヘッドホンで聞いてくれよな😜")
@@ -488,6 +491,9 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                         return
                     }
                     SVProgressHUD.dismiss()
+                    cell?.playButton.isEnabled = true
+                    cell?.hyouka.isEnabled = true
+                    cell?.go.isEnabled = true
                     if self.presentedViewController != nil {
                         return
                     }
