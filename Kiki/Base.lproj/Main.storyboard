@@ -4418,13 +4418,13 @@
                                                                     <action selector="back:" destination="biK-NH-0me" eventType="touchUpInside" id="Gnn-54-gmS"/>
                                                                 </connections>
                                                             </button>
-                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F3A-Hn-0j4">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F3A-Hn-0j4">
                                                                 <rect key="frame" x="250" y="0.0" width="50" height="61"/>
                                                             </view>
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="F3A-Hn-0j4" firstAttribute="top" secondItem="moA-uN-kfZ" secondAttribute="top" id="LRY-lW-lh8"/>
-                                                            <constraint firstItem="F3A-Hn-0j4" firstAttribute="leading" secondItem="moA-uN-kfZ" secondAttribute="leading" constant="305" id="a8q-3W-k7i"/>
+                                                            <constraint firstItem="F3A-Hn-0j4" firstAttribute="leading" secondItem="moA-uN-kfZ" secondAttribute="leading" constant="250" id="ghM-KJ-Ggg"/>
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>

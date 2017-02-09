@@ -111,7 +111,7 @@
                         <rect key="frame" x="0.0" y="347" width="379" height="45"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WeI-jh-zcI">
-                                <rect key="frame" x="0.0" y="17" width="377" height="2"/>
+                                <rect key="frame" x="0.0" y="17" width="379" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
