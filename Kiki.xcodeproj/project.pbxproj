@@ -472,8 +472,8 @@
 				B05E34401DC8B6CF00C271D3 /* PostData */,
 				B0BD80DE1DC71B0D0056E1A5 /* 集合場所表示 */,
 				B042A0201DB98BBE0068D205 /* 集合場所投稿 */,
-				B0B263D21DB7467100C0F2A3 /* 音源投稿 */,
 				B00501BA1DB610D200319866 /* 音源表示 */,
+				B0B263D21DB7467100C0F2A3 /* 音源投稿 */,
 				B06491911DBAD0F000566A4B /* PROFILE */,
 				B0A6CF611E0F979000E76751 /* iroiro */,
 			);
@@ -515,9 +515,9 @@
 				B054F5D31E46B6BE007AFC5D /* Itiran111ViewController.swift */,
 				B06968251DC60F7700274DB1 /* HomeViewController1.swift */,
 				B054F5D51E46B7CE007AFC5D /* Home111ViewController.swift */,
-				B0C4AA5F1E4ABF5000CD6B43 /* itiran222333cell */,
 				B054F5D21E46B62A007AFC5D /* iku */,
 				B054F5D11E46B618007AFC5D /* Homecell */,
+				B0C4AA5F1E4ABF5000CD6B43 /* itiran222333cell */,
 			);
 			name = "集合場所表示";
 			sourceTree = "<group>";

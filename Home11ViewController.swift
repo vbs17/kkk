@@ -487,6 +487,8 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
                 cell?.playButton.isEnabled = false
                 cell?.hyouka.isEnabled = false
                 cell?.go.isEnabled = false
+                tableView.isUserInteractionEnabled = false
+
 
                 
                 //SVProgressHUD.setDefaultMaskType(.clear)
@@ -504,6 +506,8 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
                     cell?.playButton.isEnabled = true
                     cell?.hyouka.isEnabled = true
                     cell?.go.isEnabled = true
+                    self.tableView.isUserInteractionEnabled = true
+
                     
                     if self.presentedViewController != nil {
                         return
