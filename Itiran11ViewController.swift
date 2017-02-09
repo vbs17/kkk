@@ -10,7 +10,7 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func bacl(_ sender: Any) {
      self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
     }
-        fileprivate let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","X","Y","Z","number"]
+        fileprivate let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     let AllItems: [[String]]  = [[ "ABBA",
                                    "Aaron Neville",
        "ABBA",
@@ -881,48 +881,54 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
                                     "22 20s"
 
         ],
-                                 ["VOLA & THE ORIENTAL MACHINE"
+                                 ["U2",
+                                    "US5",
+                                    "Usher"
         ],
-                                 ["忘れらんねぇよ",
-                                  "ワタナベイビー",
-                                  "和田アキ子",
-                                  "WANDS",
-                                  "WAGDUG FUTURISTIC UNITY",
-                                  "WEAVER",
-                                  "WHITE ASH",
-                                  "The Winking Owl"],
-                                 ["Xmas Eileen"
+                                 ["Valensia",
+                                    "Vampire Weekend",
+                                    "Vanessa Carlton",
+                                    "Vanessa Williams",
+                                    "Van Halen",
+                                    "Van Morrison",
+                                    "Velvet Crush",
+                                    "Velvet Teen",
+                                    "The Velvet Underground",
+                                    "The Ventures",
+                                    "Veruca Salt",
+                                    "The Verve",
+                                    "The View",
+                                    "Vincent Gallo",
+                                    "The Vines",
+                                    "VOODOO GLOW SKULLS"],
+                                 ["The Wannadies",
+                                    "Weezer",
+                                    "Westlife",
+                                    "Wet Wet Wet",
+                                    "Wham！",
+                                    "The White Stripes",
+                                    "Whitney Houston",
+                                    "The Who",
+                                    "The Wildhearts",
+                                    "Wings",
+                                    "The Wonder Stuff"  ],
+                                 ["The XX",
+                                    "XTC"
         ],
-                                 ["矢沢永吉",
-                                  "山崎まさよし",
-                                  "山下洋輔",
-                                  "山内恵介",
-                                  "山下智久",
-                                  "柳ジョージ&レイニーウッド",
-                                  "矢野顕子",
-                                  "やけのはら",
-                                  "ゆらゆら帝国",
-                                  "湯川潮音",
-                                  "ゆず",
-                                  "ユニコーン",
-                                  "四人囃子",
-                                  "吉井和哉",
-                                  "吉田拓郎",
-                                  "米津玄師",
-                                  "ヨーコ・オノ・プラスチック・オノ・バンド",
-                                  "yanokami",
-                                  "Yellow Magic Orchestra",
-                                  "THE YELLOW MONKEY",
-                                  "YOUR SONG IS GOOD",
-                                  "YUKI",
-                                  "YUI "
-        ],
-                                 ["在日ファンク",
-                                  "頭脳警察",
-                                  "ZAZEN BOYS",
-                                  "ZONE"],
-                                 ["80kidz",
-                                  "9mm Parabellum Bullet"]]
+                                 ["The Yardbirds",
+                                    "Yell",
+                                    "Yellowcard",
+                                    "Yes",
+                                    "Yoko Ono",
+                                    "Yo La Tengo",
+                                    "Yves Montand"],
+                                 [
+                                    "Zach Ashton",
+                                    "ZEBRAHEAD",
+                                    "The Zombies",
+                                    "Zwan",
+                                    "ZZ TOP"
+]]
     
     var genre:String!
     
