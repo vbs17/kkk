@@ -8,6 +8,10 @@ class Syutyu9ViewController: UIViewController {
         let ud = UserDefaults.standard
         ud.set(true, forKey: CommonConst.IsTutorial2)
         ud.synchronize()
+        gog.layer.cornerRadius = 7
+        gog.clipsToBounds = true
+        gog.layer.borderWidth = 3
+        gog.layer.borderColor = UIColor.black.cgColor
 
 
     }
@@ -20,5 +24,7 @@ class Syutyu9ViewController: UIViewController {
         self.navigationController?.dismiss(animated: true, completion: {})
     }
 
+    @IBOutlet weak var gog: UIButton!
+    @IBOutlet weak var label: UILabel!
   
 }
