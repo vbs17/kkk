@@ -171,6 +171,9 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
         tableView.register(nib, forCellReuseIdentifier: "Cell22")
         back.layer.cornerRadius = 37
         back.clipsToBounds = true
+        let tblBackColor: UIColor = UIColor.clear
+        tableView.backgroundColor = tblBackColor
+
         
     }
 
