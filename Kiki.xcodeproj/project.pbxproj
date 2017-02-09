@@ -48,7 +48,6 @@
 		B06633201E4B9AB900AA8635 /* Syutyu7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066331F1E4B9AB900AA8635 /* Syutyu7ViewController.swift */; };
 		B06633221E4B9AC100AA8635 /* Syutyu8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06633211E4B9AC100AA8635 /* Syutyu8ViewController.swift */; };
 		B06633241E4B9ACA00AA8635 /* Syutyu9ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06633231E4B9ACA00AA8635 /* Syutyu9ViewController.swift */; };
-		B06633261E4B9AD200AA8635 /* Syutyu10ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06633251E4B9AD200AA8635 /* Syutyu10ViewController.swift */; };
 		B06633281E4B9F0200AA8635 /* OthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06633271E4B9F0200AA8635 /* OthViewController.swift */; };
 		B066332A1E4B9F0B00AA8635 /* Oth2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06633291E4B9F0B00AA8635 /* Oth2ViewController.swift */; };
 		B066332C1E4B9F1200AA8635 /* Oth3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066332B1E4B9F1200AA8635 /* Oth3ViewController.swift */; };
@@ -161,7 +160,6 @@
 		B066331F1E4B9AB900AA8635 /* Syutyu7ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu7ViewController.swift; sourceTree = "<group>"; };
 		B06633211E4B9AC100AA8635 /* Syutyu8ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu8ViewController.swift; sourceTree = "<group>"; };
 		B06633231E4B9ACA00AA8635 /* Syutyu9ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu9ViewController.swift; sourceTree = "<group>"; };
-		B06633251E4B9AD200AA8635 /* Syutyu10ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu10ViewController.swift; sourceTree = "<group>"; };
 		B06633271E4B9F0200AA8635 /* OthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OthViewController.swift; sourceTree = "<group>"; };
 		B06633291E4B9F0B00AA8635 /* Oth2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oth2ViewController.swift; sourceTree = "<group>"; };
 		B066332B1E4B9F1200AA8635 /* Oth3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oth3ViewController.swift; sourceTree = "<group>"; };
@@ -306,7 +304,6 @@
 				B066331F1E4B9AB900AA8635 /* Syutyu7ViewController.swift */,
 				B06633211E4B9AC100AA8635 /* Syutyu8ViewController.swift */,
 				B06633231E4B9ACA00AA8635 /* Syutyu9ViewController.swift */,
-				B06633251E4B9AD200AA8635 /* Syutyu10ViewController.swift */,
 			);
 			name = syutyu;
 			sourceTree = "<group>";
@@ -734,7 +731,6 @@
 			files = (
 				B05F57741DDEBD05006DB9A5 /* SyutyuViewController.swift in Sources */,
 				B00C67B01E3D6FE90026E775 /* Rock3ViewController.swift in Sources */,
-				B06633261E4B9AD200AA8635 /* Syutyu10ViewController.swift in Sources */,
 				B071D9711DB509FA0017E287 /* TabViewController.swift in Sources */,
 				B0B4481C1DD5ACE4001DDD89 /* IkuViewController.swift in Sources */,
 				B066332C1E4B9F1200AA8635 /* Oth3ViewController.swift in Sources */,

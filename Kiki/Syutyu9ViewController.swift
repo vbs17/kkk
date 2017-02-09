@@ -5,6 +5,10 @@ class Syutyu9ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let ud = UserDefaults.standard
+        ud.set(true, forKey: CommonConst.IsTutorial2)
+        ud.synchronize()
+
 
     }
 
@@ -13,8 +17,7 @@ class Syutyu9ViewController: UIViewController {
     }
     
     @IBAction func go(_ sender: Any) {
-        let basyoviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Syutyu10")
-        self.navigationController?.pushViewController(basyoviewcontroller!, animated: true)
+        self.navigationController?.dismiss(animated: true, completion: {})
     }
 
   
