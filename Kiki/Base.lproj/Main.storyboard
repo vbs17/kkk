@@ -1060,7 +1060,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3h1-7w-2ZI">
-                                <rect key="frame" x="124" y="411" width="72" height="30"/>
+                                <rect key="frame" x="124" y="360" width="72" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="logout">
                                     <color key="titleColor" red="0.13855000200000001" green="0.64952392739999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1070,9 +1070,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oqp-Ut-0zg">
-                                <rect key="frame" x="137" y="256" width="46" height="30"/>
+                                <rect key="frame" x="100" y="258" width="121" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" red="0.35241165149999998" green="1" blue="0.47198829990000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="マップの使い方">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="how:" destination="zwZ-af-wBJ" eventType="touchUpInside" id="nuw-81-OOM"/>
                                 </connections>
@@ -1083,7 +1086,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wgd-Vr-hGd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6668" y="-6020"/>
+            <point key="canvasLocation" x="6667.5" y="-6020.070422535211"/>
         </scene>
         <!--Syutyu View Controller-->
         <scene sceneID="b38-w9-4hR">
@@ -1934,7 +1937,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FYb-bh-AVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9169" y="590"/>
+            <point key="canvasLocation" x="-14108" y="1498"/>
         </scene>
         <!--Oth View Controller-->
         <scene sceneID="CSf-NX-Oa4">
@@ -3191,7 +3194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gyn-iV-cPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7292" y="104"/>
+            <point key="canvasLocation" x="-12231" y="1012"/>
         </scene>
         <!--Itiran1 View Controller-->
         <scene sceneID="CuS-43-C4p">
@@ -3489,7 +3492,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hoD-Al-3f3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7292" y="761"/>
+            <point key="canvasLocation" x="-12231" y="1669"/>
         </scene>
         <!--Play View Controller-->
         <scene sceneID="rJ7-YK-V8d">
@@ -3890,7 +3893,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pCj-jQ-bPw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7292" y="1432"/>
+            <point key="canvasLocation" x="-12231" y="2340"/>
         </scene>
         <!--Kind View Controller-->
         <scene sceneID="0dy-ij-zbz">
