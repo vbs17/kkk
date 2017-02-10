@@ -483,6 +483,8 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
                     }}
                 
                 timer.invalidate()
+                timer2.invalidate()
+
                 //ここもポイント
                 cell?.playButton.isEnabled = false
                 cell?.hyouka.isEnabled = false

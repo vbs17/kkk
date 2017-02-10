@@ -86,6 +86,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
             if ( self.timeCountTimer != nil) {
                 self.timeCountTimer.invalidate()
             }
+            //この時曲って消さなくてもいいのか
             audioRecorder?.stop()
             NotificationCenter.default.removeObserver(self)
             
