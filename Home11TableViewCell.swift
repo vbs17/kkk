@@ -157,8 +157,8 @@ class Home11TableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         nami.transform = CGAffineTransform(scaleX: 1.0, y: 30.0)
-        nami.progressImage = UIImage(named: "mmm" )
-        nami.trackImage = UIImage(named: "475")
+        nami.progressImage = UIImage(named: "surf" )
+        nami.trackImage = UIImage(named: "surff")
         nami.progress = 0
         onlabel2.text = "0:00"
         backButton.layer.cornerRadius = 5
