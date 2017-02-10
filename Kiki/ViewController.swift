@@ -20,15 +20,6 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     var original: NSString?
     var cover:NSString?
     
-    func nextGamenn(){
-        let playviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Play") as! PlayViewController
-        playviewcontroller.songData = self.documentFilePath()
-        playviewcontroller.original = self.original
-        playviewcontroller.cover = self.cover
-        self.present(playviewcontroller, animated: true, completion: nil)
-        
-    }
-
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var viewImage: UIView!
@@ -47,23 +38,24 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
 
     }
     
+    func nextGamenn(){
+        let playviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Play") as! PlayViewController
+        playviewcontroller.songData = self.documentFilePath()
+        playviewcontroller.original = self.original
+        playviewcontroller.cover = self.cover
+        self.present(playviewcontroller, animated: true, completion: nil)
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)//受信者のディスパッチ(タスク(処理の実行単位)を実際に計算処理させるためにCPU(装置)を割り当てる)表に項目を追加します
+        super.viewWillAppear(animated)
         self.setupAudioRecorder()
 
         NotificationCenter.default.addObserver(
             self,
-            //受信者に送信するメッセージを指定するセレクタ
             //アプリケーションがフォアグラウンドからバックグラウンドに実行されたときや着信通知に応答するときなど、状態遷移に応答します
             selector: #selector(UIApplicationDelegate.applicationWillResignActive(_:)),
-            //この名前の通知のみがオブザーバに配信されます。
-            //他のオブジェクトにブロードキャストできるように情報をカプセル化
-            //通知の名前に使用される型。
-            //通知名はネストされたNSNotification.Name型を使用
-            //アプリがアクティブでなくなってフォーカスが失われたときに通知されます。
-            //通知 = selectorで指定した関数が呼ばれる
             name:NSNotification.Name.UIApplicationWillResignActive,
-            //オブザーバが受信したい通知を持つオブジェクト。 つまり、この送信者によって送信された通知のみがオブザーバに配信されます。
             object: nil
         )
         byou.text = "0:00"
@@ -84,7 +76,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
         NotificationCenter.default.removeObserver(self)
     }
     
-    //音源消す 最終確認　　　　　　　　　　　　//通知は、NotificationCenterを介してオブザーバにブロードキャストされる情報をカプセル化(隠蔽)します。
+    //音源消す 最終確認
     func applicationWillResignActive(_ notification: Notification) {
         print("applicationWillResignActive!")
         if ( (audioRecorder?.isRecording)! || count1 == true ) {
@@ -103,6 +95,15 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
         }
     }
     
+    
+ 
+    //ここで曲の削除はいらないのか
+    @IBAction func back(_sender: AnyObject){
+        self.timeCountTimer?.invalidate()
+        self.timer?.invalidate()
+        audioRecorder?.stop()
+        self.dismiss(animated: true, completion: nil)
+}
     
     
     func levelTimerCallback() {
@@ -160,7 +161,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
             image = UIImage(named: photos[5])
             imageView.image = image
             sender.invalidate()
-                       print("デバッグ\(audioRecorder)")
+            print("デバッグ\(audioRecorder)")
             audioRecorder?.prepareToRecord()
             audioRecorder?.record()
             self.timer = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(ViewController.levelTimerCallback), userInfo: nil, repeats: true)
@@ -237,7 +238,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
             byou.text = String(format: "%d:0%d", minuteCount, secondCount)
         } else if secondCount >= 10 {
             byou.text = String(format: "%d:%d" , minuteCount, secondCount)
-}
+        }
         if timeCount == 360{
             self.timeCountTimer.invalidate()
             self.timer.invalidate()
@@ -245,15 +246,8 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
             nextGamenn()
         }else{
             timeCount += 1
-}
-}
-    //ここで曲の削除はいらないのか
-    @IBAction func back(_sender: AnyObject){
-        self.timeCountTimer?.invalidate()
-        self.timer?.invalidate()
-        audioRecorder?.stop()
-        self.dismiss(animated: true, completion: nil)
-}
+        }
+    }
 }
 
 
