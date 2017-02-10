@@ -483,6 +483,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.reloadData()
     }
     
+    @IBOutlet weak var houho: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -490,6 +491,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         let nib = UINib(nibName: "KindTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "Cell")
         tappedCellPos = nil
+        houho.isEnabled = false
         
     }
     //ここ

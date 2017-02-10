@@ -87,7 +87,7 @@ class Itiran111ViewController: UIViewController, UITableViewDelegate, UITableVie
                                   "Basia",
                                   "Battles",
                                   "Bay City Rollers",
-                                  "B.B. King",
+                                  "B B King",
                                   "Beach Boys",
                                   "Beady Eye",
                                   "Beastie Boys",
@@ -96,7 +96,7 @@ class Itiran111ViewController: UIViewController, UITableViewDelegate, UITableVie
                                   "Bee Gees",
                                   "Belinda Carlisle",
                                   "BELLE AND SEBASTIAN",
-                                  "Ben E.King",
+                                  "Ben E King",
                                   "Ben Folds Five",
                                   "Ben Harper",
                                   "Ben Lee",
@@ -276,8 +276,8 @@ class Itiran111ViewController: UIViewController, UITableViewDelegate, UITableVie
                                     "The Doobie Brothers",
                                     "The Doors",
                                     "Drake",
-                                    "Dr. Feelgood",
-                                    "Dr. John",
+                                    "Dr Feelgood",
+                                    "Dr John",
                                     "Dropkick Murphys",
                                     "Duane Allman",
                                     "Duran Duran"
@@ -302,7 +302,7 @@ class Itiran111ViewController: UIViewController, UITableViewDelegate, UITableVie
                                   "Elton John",
                                   "Elvis Costello",
                                   "Elvis Presley",
-                                  "Emerson, Lake & Palmer",
+                                  "Emerson Lake & Palmer",
                                   "Eminem",
                                   "Emperor",
                                   "Enrique Iglesias",
@@ -644,7 +644,7 @@ class Itiran111ViewController: UIViewController, UITableViewDelegate, UITableVie
                                   "Morrissey",
                                   "Mott the Hoople",
                                   "Mover",
-                                  "Mr.BIG",
+                                  "Mr BIG",
                                   "Muddy Waters",
                                   "Mudhoney",
                                   "Mum",
@@ -1011,9 +1011,9 @@ class Itiran111ViewController: UIViewController, UITableViewDelegate, UITableVie
                                     "Zwan",
                                     "ZZ TOP"
         ]]
-    
     var genre:String!
     
+    @IBOutlet weak var you1: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -1021,6 +1021,8 @@ class Itiran111ViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.dataSource = self
         let nib = UINib(nibName: "Itiran333TableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "Itiran333")
+        you1.isEnabled = false
+
     }
     
     //Cellが選択された際に呼び出される.

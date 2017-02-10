@@ -480,6 +480,7 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
     }
 
 
+    @IBOutlet weak var houho: UIButton!
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -490,6 +491,8 @@ class Kind2ViewController: UIViewController,UITableViewDelegate, UITableViewData
         let nib = UINib(nibName: "SyugoTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "Cells")
         tappedCellPos = nil
+        houho.isEnabled = false
+
     }
     
     func buttonPressed(_ tableViewCell: SyugoTableViewCell) {

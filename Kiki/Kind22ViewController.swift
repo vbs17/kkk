@@ -79,7 +79,7 @@ class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDat
                                   "Basia",
                                   "Battles",
                                   "Bay City Rollers",
-                                  "B.B. King",
+                                  "B B King",
                                   "Beach Boys",
                                   "Beady Eye",
                                   "Beastie Boys",
@@ -88,7 +88,7 @@ class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDat
                                   "Bee Gees",
                                   "Belinda Carlisle",
                                   "BELLE AND SEBASTIAN",
-                                  "Ben E.King",
+                                  "Ben E King",
                                   "Ben Folds Five",
                                   "Ben Harper",
                                   "Ben Lee",
@@ -268,8 +268,8 @@ class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDat
                                     "The Doobie Brothers",
                                     "The Doors",
                                     "Drake",
-                                    "Dr. Feelgood",
-                                    "Dr. John",
+                                    "Dr Feelgood",
+                                    "Dr John",
                                     "Dropkick Murphys",
                                     "Duane Allman",
                                     "Duran Duran"
@@ -294,7 +294,7 @@ class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDat
                                   "Elton John",
                                   "Elvis Costello",
                                   "Elvis Presley",
-                                  "Emerson, Lake & Palmer",
+                                  "Emerson Lake & Palmer",
                                   "Eminem",
                                   "Emperor",
                                   "Enrique Iglesias",
@@ -636,7 +636,7 @@ class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDat
                                   "Morrissey",
                                   "Mott the Hoople",
                                   "Mover",
-                                  "Mr.BIG",
+                                  "Mr BIG",
                                   "Muddy Waters",
                                   "Mudhoney",
                                   "Mum",
@@ -1029,6 +1029,7 @@ class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDat
         tableView.reloadData()
     }
 
+    @IBOutlet weak var youyo: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -1037,6 +1038,8 @@ class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDat
         let nib = UINib(nibName: "Syugo11TableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "Cellss")
         tappedCellPos = nil
+        youyo.isEnabled = false
+
     }
     
     func buttonPressed(_ tableViewCell: Syugo11TableViewCell) {

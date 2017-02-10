@@ -1470,6 +1470,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="houho" destination="foK-2r-9w8" id="ziY-Lo-oHf"/>
                         <outlet property="tableView" destination="HZs-WE-vXh" id="zXS-Uo-mlG"/>
                     </connections>
                 </viewController>
@@ -1565,6 +1566,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="dlc-1I-YMr" id="Vdq-Bk-QIg"/>
+                        <outlet property="youyo" destination="cqg-Zu-Cbi" id="t1L-gB-EKn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFG-qd-8U1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2604,7 +2606,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　　　　　　　　　　　　　　　東京都〇〇市〇〇町555-5" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctH-X7-gzY">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(例)東京都〇〇市〇〇町555-5" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctH-X7-gzY">
                                                 <rect key="frame" x="76" y="313" width="167" height="184"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3410,6 +3412,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="hougo1" destination="BhS-pz-sYY" id="PMX-4v-WJL"/>
                         <outlet property="tableView" destination="9X8-Na-1Cc" id="kn7-5x-FKN"/>
                     </connections>
                 </viewController>
@@ -3505,6 +3508,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="nXj-lb-8hx" id="nBu-yV-szP"/>
+                        <outlet property="you1" destination="Tbw-he-HEM" id="PMb-UQ-RtM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ynI-ja-rbC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4107,6 +4111,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="houho" destination="OX4-Mw-aFR" id="WkA-mC-eVH"/>
                         <outlet property="tableView" destination="l2n-bp-Erw" id="YlB-vP-nSM"/>
                     </connections>
                 </viewController>

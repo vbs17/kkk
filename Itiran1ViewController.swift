@@ -477,12 +477,16 @@ class Itiran1ViewController: UIViewController, UITableViewDelegate, UITableViewD
     var genre:String!
     
     
+    @IBOutlet weak var hougo1: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         let nib = UINib(nibName: "Itiran222TableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "Itiran222")
+        hougo1.isEnabled = false
+
     }
     
     //Cellが選択された際に呼び出される.
