@@ -491,7 +491,6 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
 
 
                 
-                //SVProgressHUD.setDefaultMaskType(.clear)
                 
                 
                 //backだけはokにしたいな
