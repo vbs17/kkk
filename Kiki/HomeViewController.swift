@@ -124,6 +124,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let postData = postArray[indexPath!.row]
         let pro = self.storyboard?.instantiateViewController(withIdentifier: "Pi") as! ProIdouViewController
         pro.uid = postData.uid
+        timer2.invalidate()
         self.present(pro, animated: true, completion: nil)
         
         
@@ -344,6 +345,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 cell?.star3.setImage(UIImage(named:"sister7"), for: UIControlState())
                 cell?.star4.setImage(UIImage(named:"sister7"), for: UIControlState())
                 cell?.star5.setImage(UIImage(named:"sister7"), for: UIControlState())
+                timer2.invalidate()
             } else if cell!.edittingFlag == true{
                 //cell!.hyouka.setTitleColor(UIColor.white, for: UIControlState())
                 cell!.hyouka.setTitleColor(UIColor.black, for: UIControlState())
