@@ -89,6 +89,7 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
         let postData = postArray[indexPath!.row]
         let pro = self.storyboard?.instantiateViewController(withIdentifier: "Pi") as! ProIdouViewController
         pro.uid = postData.uid
+        timer2.invalidate()
         self.present(pro, animated: true, completion: nil)
         
     }
@@ -278,13 +279,13 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
         let postData = postArray[indexPath!.row]
         let pro = self.storyboard?.instantiateViewController(withIdentifier: "Iku") as! IkuViewController
         pro.join = postData.join
+        timer2.invalidate()
         self.present(pro, animated: true, completion: nil)
         
     }
     
     
     func handleButton(_ sender: UIButton, event:UIEvent) {
-        
         let touch = event.allTouches?.first
         let point = touch!.location(in: self.tableView)
         let indexPath = tableView.indexPathForRow(at: point)
@@ -318,6 +319,7 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
                     springButton.duration = 0.4
                     springButton.animate()
                     postData.join.append(uid)
+                    timer2.invalidate()
                 }}
             //let imageData = UIImageJPEGRepresentation(postData4.image!, 0.5)
             let hiniti1 = postData.hiniti!
@@ -390,6 +392,8 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
         if (UIApplication.shared.canOpenURL(url)) {
             UIApplication.shared.openURL(url)
         }
+        timer2.invalidate()
+
     }
     
     func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
@@ -398,6 +402,7 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
 
     
     @IBAction func back(_ sender: Any) {
+        timer2.invalidate()
         self.dismiss(animated: true, completion: nil)
 
     }
