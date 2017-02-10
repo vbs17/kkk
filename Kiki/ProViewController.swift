@@ -213,6 +213,9 @@ override func viewWillLayoutSubviews() {
     imageView.layer.cornerRadius = imageView.frame.size.width / 2
     
     imageView.clipsToBounds = true
+    imageView.layer.borderWidth = 3
+    imageView.layer.borderColor = UIColor.black.cgColor
+
 }
 
 override func viewDidLoad() {

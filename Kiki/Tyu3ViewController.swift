@@ -9,6 +9,11 @@ class Tyu3ViewController: UIViewController {
         let ud = UserDefaults.standard
         ud.set(true, forKey: CommonConst.IsTutorial)
         ud.synchronize()
+        gog.layer.cornerRadius = 7
+        gog.clipsToBounds = true
+        gog.layer.borderWidth = 3
+        gog.layer.borderColor = UIColor.black.cgColor
+
 
     }
 
@@ -22,5 +27,6 @@ class Tyu3ViewController: UIViewController {
 
     }
 
+    @IBOutlet weak var gog: UIButton!
    
 }

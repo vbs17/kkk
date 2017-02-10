@@ -8,6 +8,11 @@ class Rock3ViewController: UIViewController {
         let ud = UserDefaults.standard
         ud.set(true, forKey: CommonConst.IsTutorial3)
         ud.synchronize()
+        gog.layer.cornerRadius = 7
+        gog.clipsToBounds = true
+        gog.layer.borderWidth = 3
+        gog.layer.borderColor = UIColor.black.cgColor
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -17,6 +22,7 @@ class Rock3ViewController: UIViewController {
     @IBAction func back(_ sender: Any) {
                 self.navigationController?.dismiss(animated: true, completion: {})
     }
+    @IBOutlet weak var gog: UIButton!
 }
    
 

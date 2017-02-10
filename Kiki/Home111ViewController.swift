@@ -29,7 +29,7 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
     @IBOutlet weak var back: UIButton!
     
     func mada(){
-        label.text = "誰もまだ投稿していません.君の音楽を投稿して一番乗りになろう！"
+        label.text = "誰もまだ投稿していません.君が集合場所を投稿して集まろう！"
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
