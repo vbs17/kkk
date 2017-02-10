@@ -79,7 +79,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                  ["怒髪天",
                                   "電気グルーヴ",
                                   "電撃ネットワーク",
-                                  "でんぱ組.inc",
+                                  "でんぱ組inc",
                                   "Def Tech",
                                   "DEEN",
                                   "DE DE MOUSE",
@@ -166,12 +166,13 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                   "HY",
                                   "HYDE"],
                                  ["いきものがかり",
+                                  "泉谷しげる",
                                   "忌野清志郎",
                                   "井上陽水",
                                   "石野卓球",
                                   "伊藤ふみお",
                                   "稲葉浩志",
-                                  "iLL ",
+                                  "iLL",
                                   "illion",
                                   "indigo la end"],
                                  ["JUDY AND MARY",
@@ -297,6 +298,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         ],
                                  ["プリンセス・プリンセス",
                                   "ポルノグラフィティ",
+                                  "ポルカドットスティングレイ",
                                   "プレイモ",
                                   "Pay money To my Pain",
                                   "PE'Z",
@@ -361,7 +363,6 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                   "Shing02",
                                   "SKA SKA CLUB",
                                   "SNAIL RAMP",
-                                  
                                   "SION",
                                   "The Sketchbook",
                                   "SOIL& PIMP SESSIONS",
@@ -400,8 +401,8 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                   "the telephones",
                                   "thee michelle gun elephant",
                                   "TMG",
-                                  "T.M.Revolution",
-                                  "TOKYO No.1 SOUL SET",
+                                  "T M Revolution",
+                                  "TOKYO No1 SOUL SET",
                                   "Tommy heavenly6",
                                   "toe",
                                   "TOTALFAT",
@@ -458,7 +459,6 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                  ["80kidz",
                                   "9mm Parabellum Bullet"]]
     
-
     var genre:String!
 
     @IBOutlet weak var hou: UIButton!
