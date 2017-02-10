@@ -107,7 +107,7 @@
                             <constraint firstAttribute="height" constant="45" id="yd7-sH-oYg"/>
                         </constraints>
                     </imageView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8M8-gA-MVL">
+                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="8M8-gA-MVL">
                         <rect key="frame" x="0.0" y="347" width="379" height="45"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WeI-jh-zcI">
