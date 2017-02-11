@@ -2904,7 +2904,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_3879" translatesAutoresizingMaskIntoConstraints="NO" id="lBQ-Yo-qef">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_3889" translatesAutoresizingMaskIntoConstraints="NO" id="lBQ-Yo-qef">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -2979,7 +2979,7 @@
                                                 </constraints>
                                             </progressView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.14156763950000001" green="0.25016361259999997" blue="0.056587610849999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.10460961539999999" green="0.20523494640000001" blue="0.273456686" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="PKO-uR-7ti" firstAttribute="top" secondItem="ieW-3C-xPd" secondAttribute="bottom" constant="7" id="5MI-Jf-gQM"/>
                                             <constraint firstItem="4rw-Wh-ykg" firstAttribute="top" secondItem="PKO-uR-7ti" secondAttribute="bottom" constant="7" id="6Jd-Ba-KO9"/>
@@ -3020,7 +3020,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.14156763950000001" green="0.25016361259999997" blue="0.056587610849999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.10460961539999999" green="0.20523494640000001" blue="0.273456686" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="FD4-F7-Tkq" secondAttribute="trailing" constant="8" id="3X4-Hc-frI"/>
                                     <constraint firstAttribute="height" constant="88" id="91L-LP-RWk"/>
@@ -3037,7 +3037,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="ziW-6Z-HNj"/>
                                 </constraints>
-                                <color key="barTintColor" red="0.14156763950000001" green="0.25016361259999997" blue="0.056587610849999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.1046096153576199" green="0.20523494643395099" blue="0.27345668598619433" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem id="xtj-8s-vBf">
                                         <barButtonItem key="leftBarButtonItem" title="BACK" id="3NS-XP-k2t">
@@ -4839,10 +4839,10 @@
         <image name="IMG_3875" width="750" height="1334"/>
         <image name="IMG_3876" width="750" height="1334"/>
         <image name="IMG_3878" width="750" height="1334"/>
-        <image name="IMG_3879" width="500" height="889"/>
         <image name="IMG_3880" width="750" height="1334"/>
         <image name="IMG_3882" width="750" height="1334"/>
         <image name="IMG_3883" width="750" height="1334"/>
+        <image name="IMG_3889" width="750" height="1334"/>
         <image name="aa" width="500" height="750"/>
         <image name="apiru" width="800" height="1200"/>
         <image name="apiru2-1" width="1242" height="1863"/>
