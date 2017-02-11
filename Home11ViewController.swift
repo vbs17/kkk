@@ -134,7 +134,6 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
         let postData = postArray[indexPath!.row]
         let pro = self.storyboard?.instantiateViewController(withIdentifier: "Pi") as! ProIdouViewController
         pro.uid = postData.uid
-        timer2.invalidate()
         self.present(pro, animated: true, completion: nil)
         
         
@@ -352,7 +351,6 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
                 cell?.star3.setImage(UIImage(named:"sister7"), for: UIControlState())
                 cell?.star4.setImage(UIImage(named:"sister7"), for: UIControlState())
                 cell?.star5.setImage(UIImage(named:"sister7"), for: UIControlState())
-                timer2.invalidate()
 
             } else if cell!.edittingFlag == true{
                 //cell!.hyouka.setTitleColor(UIColor.white, for: UIControlState())
@@ -468,7 +466,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
             //cell?.backButton.isEnabled = true
             if indexPath == playingIndexPath{
                 if playSong.isPlaying == true{
-                    playSong.pause()
+                    playSong.stop()
                     timer.invalidate()
                 }else{
                     timer.invalidate()
@@ -486,7 +484,6 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
                     }}
                 
                 timer.invalidate()
-                timer2.invalidate()
 
                 //ここもポイント
                 cell?.playButton.isEnabled = false

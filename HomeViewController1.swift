@@ -87,7 +87,6 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
         let postData = postArray[indexPath!.row]
         let pro = self.storyboard?.instantiateViewController(withIdentifier: "Pi") as! ProIdouViewController
         pro.uid = postData.uid
-        timer2.invalidate()
         self.present(pro, animated: true, completion: nil)
         
     }
@@ -280,7 +279,6 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
         let postData = postArray[indexPath!.row]
         let pro = self.storyboard?.instantiateViewController(withIdentifier: "Iku") as! IkuViewController
         pro.join = postData.join
-        timer2.invalidate()
         self.present(pro, animated: true, completion: nil)
         
     }
@@ -320,7 +318,6 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
                     springButton.duration = 0.4
                     springButton.animate()
                     postData.join.append(uid)
-                    timer2.invalidate()
                 }}
             //let imageData = UIImageJPEGRepresentation(postData4.image!, 0.5)
             let hiniti1 = postData.hiniti!
@@ -393,7 +390,6 @@ class HomeViewController1: UIViewController,UITableViewDataSource, UITableViewDe
         if (UIApplication.shared.canOpenURL(url)) {
             UIApplication.shared.openURL(url)
         }
-        timer2.invalidate()
 
     }
     
