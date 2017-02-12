@@ -9,8 +9,9 @@ class TyuViewController: UIViewController {
         gog.clipsToBounds = true
         gog.layer.borderWidth = 3
         gog.layer.borderColor = UIColor.black.cgColor
-
+        
     }
+    @IBOutlet weak var ban: UILabel!
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

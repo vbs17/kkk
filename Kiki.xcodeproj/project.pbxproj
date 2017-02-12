@@ -112,6 +112,8 @@
 		B0F132D01E46ADDF0040115D /* Kind22ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F132CF1E46ADDF0040115D /* Kind22ViewController.swift */; };
 		B0F582AB1DB38E5300654519 /* KindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F582A91DB38E5300654519 /* KindTableViewCell.swift */; };
 		B0F582AC1DB38E5300654519 /* KindTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F582AA1DB38E5300654519 /* KindTableViewCell.xib */; };
+		B0FA382E1E5063FC00CB8D53 /* Tyu4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA382D1E5063FC00CB8D53 /* Tyu4ViewController.swift */; };
+		B0FA38301E50640200CB8D53 /* Tyu5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA382F1E50640200CB8D53 /* Tyu5ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -226,6 +228,8 @@
 		B0F132CF1E46ADDF0040115D /* Kind22ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kind22ViewController.swift; sourceTree = "<group>"; };
 		B0F582A91DB38E5300654519 /* KindTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KindTableViewCell.swift; sourceTree = "<group>"; };
 		B0F582AA1DB38E5300654519 /* KindTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KindTableViewCell.xib; sourceTree = "<group>"; };
+		B0FA382D1E5063FC00CB8D53 /* Tyu4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tyu4ViewController.swift; sourceTree = "<group>"; };
+		B0FA382F1E50640200CB8D53 /* Tyu5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tyu5ViewController.swift; sourceTree = "<group>"; };
 		B8D29CE5422BA1688C21C169 /* Pods-Kiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiki.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kiki/Pods-Kiki.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -500,6 +504,8 @@
 				B0BA8ADB1DDD79A800F00E38 /* TyuViewController.swift */,
 				B0BA8ADD1DDD79BC00F00E38 /* Tyu2ViewController.swift */,
 				B0BA8ADF1DDD79D800F00E38 /* Tyu3ViewController.swift */,
+				B0FA382D1E5063FC00CB8D53 /* Tyu4ViewController.swift */,
+				B0FA382F1E50640200CB8D53 /* Tyu5ViewController.swift */,
 				B071D9721DB50C4E0017E287 /* LoginViewController.swift */,
 			);
 			name = LoginAka;
@@ -758,6 +764,7 @@
 				B00467F61E3995380033859A /* Apiru2ViewController.swift in Sources */,
 				B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */,
 				B029E58A1DE1A17C00C7EDDF /* IyaViewController.swift in Sources */,
+				B0FA38301E50640200CB8D53 /* Tyu5ViewController.swift in Sources */,
 				B0A78FD81DACFF6500AC0513 /* ViewController.swift in Sources */,
 				B06633201E4B9AB900AA8635 /* Syutyu7ViewController.swift in Sources */,
 				B07B5ADF1E45806F00AE5B0D /* Itiran11ViewController.swift in Sources */,
@@ -773,6 +780,7 @@
 				B071D9661DB4D6140017E287 /* File.swift in Sources */,
 				B020D0AB1E0F405A005A1363 /* PostData4.swift in Sources */,
 				B0A9A1741DB1FDE00021D1CF /* OkViewController.swift in Sources */,
+				B0FA382E1E5063FC00CB8D53 /* Tyu4ViewController.swift in Sources */,
 				B071D9751DB50E670017E287 /* SetViewController.swift in Sources */,
 				B05F57761DDF4937006DB9A5 /* Syutyu1ViewController.swift in Sources */,
 				B071D9731DB50C4E0017E287 /* LoginViewController.swift in Sources */,

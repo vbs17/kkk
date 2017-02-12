@@ -10,9 +10,34 @@ class Tyu2ViewController: UIViewController {
         gog.clipsToBounds = true
         gog.layer.borderWidth = 3
         gog.layer.borderColor = UIColor.black.cgColor
+        ban.layer.cornerRadius = 7
+        ban.clipsToBounds = true
+        ban.layer.borderWidth = 3
+        ban.layer.borderColor = UIColor.black.cgColor
+        ban1.layer.cornerRadius = 7
+        ban1.clipsToBounds = true
+        ban1.layer.borderWidth = 3
+        ban1.layer.borderColor = UIColor.black.cgColor
+        ban2.layer.cornerRadius = 7
+        ban2.clipsToBounds = true
+        ban2.layer.borderWidth = 3
+        ban2.layer.borderColor = UIColor.black.cgColor
+        ban3.layer.cornerRadius = 7
+        ban3.clipsToBounds = true
+        ban3.layer.borderWidth = 3
+        ban3.layer.borderColor = UIColor.black.cgColor
+
+
+
+
+        
 
 
     }
+    @IBOutlet weak var ban: UILabel!
+    @IBOutlet weak var ban1: UILabel!
+    @IBOutlet weak var ban2: UILabel!
+    @IBOutlet weak var ban3: UILabel!
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

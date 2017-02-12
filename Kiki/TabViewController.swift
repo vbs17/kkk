@@ -61,6 +61,7 @@ class TabViewController: UIViewController {
         pro.clipsToBounds = true
         pro.layer.borderWidth = 1
         pro.layer.borderColor = UIColor.white.cgColor
+        print("\(#file) : \(#function)")
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
