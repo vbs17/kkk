@@ -17,6 +17,8 @@ class PlayViewController: UIViewController {
     ]
     var original: NSString?
     var cover:NSString?
+    var isIdleTimerDisabled: Bool?
+
     
     @IBAction func gok(_ sender: AnyObject) {
         playSong.stop()
@@ -40,6 +42,7 @@ class PlayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //曲はここ
+        UIApplication.shared.isIdleTimerDisabled = false
         let session = AVAudioSession.sharedInstance()
         try! session.setCategory(AVAudioSessionCategoryPlayback)
         try! session.setActive(true)

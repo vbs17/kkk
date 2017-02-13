@@ -387,8 +387,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         cell!.hyouka.setTitleColor(UIColor.black, for: UIControlState())
         if let uid = FIRAuth.auth()?.currentUser?.uid {
             var index = -1 //0からpostData.star.count(postData.star.countは含まない)
-            for var i in (0 ..< postData.star.count) {
-                
+        for i in (0 ..< postData.star.count) {                
                 let starDic = Array(postData.star[i].keys)
                 // star配列の中から 自分が投票したデータを探す
                 if starDic[0] == uid{

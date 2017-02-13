@@ -1136,7 +1136,7 @@ class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDat
         let station1 = station
         let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
         let time = NSDate.timeIntervalSinceReferenceDate
-        let postData1 = ["time":time,"hiniti": hiniti1,"zikoku": zikoku1, "station": station1, "path":path1,"uid":uid] as [String : Any]
+        let postData1 = ["time":time,"hiniti": hiniti1!,"zikoku": zikoku1!, "station": station1!, "path":path1!,"uid":uid] as [String : Any]
         
         let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH22).child(genre).child(uuid)
         

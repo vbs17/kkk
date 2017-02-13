@@ -2131,38 +2131,6 @@
             </objects>
             <point key="canvasLocation" x="-6039.375" y="2326.0563380281692"/>
         </scene>
-        <!--Syutyu10 View Controller-->
-        <scene sceneID="6lf-BD-bSR">
-            <objects>
-                <viewController storyboardIdentifier="Syutyu10" id="rkT-hb-zUn" customClass="Syutyu10ViewController" customModule="Kiki" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="L68-6u-V7O"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ndm-4f-ViZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8nB-NH-szt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PIB-a8-jUw">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eoc-EU-u9s">
-                                <rect key="frame" x="137" y="365" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="go:" destination="rkT-hb-zUn" eventType="touchUpInside" id="xZy-l3-Sj7"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FYb-bh-AVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-14108" y="1498"/>
-        </scene>
         <!--Oth View Controller-->
         <scene sceneID="CSf-NX-Oa4">
             <objects>
@@ -4015,30 +3983,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zZa-Ml-mSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5966" y="-6020"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="82d-pI-qfl">
-            <objects>
-                <viewController id="F5R-mC-TeP" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2yo-G5-ntm"/>
-                        <viewControllerLayoutGuide type="bottom" id="1bB-z3-SQk"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pvd-Bb-KtK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lru-3l-et2">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hcz-g0-XXu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-13498" y="600"/>
         </scene>
         <!--Ok View Controller-->
         <scene sceneID="L9R-lE-x6J">

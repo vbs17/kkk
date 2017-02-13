@@ -694,7 +694,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         let time = NSDate.timeIntervalSinceReferenceDate
         let original:NSString = (self.original as NSString?)!
         let cover:NSString = (self.cover as NSString?)!
-        let postData = ["time":time,"byou": kazu, "songname": songName, "ongen": uuid,"original":original,"cover":cover, "uid":uid] as [String : Any]
+        let postData = ["time":time,"byou": kazu!, "songname": songName!, "ongen": uuid,"original":original,"cover":cover, "uid":uid] as [String : Any]
         let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).child(uuid)
         
         postRef.setValue(postData) { (error, ref) in

@@ -12,9 +12,9 @@ class Tyu5ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let ud = UserDefaults.standard
-        //ud.set(true, forKey: CommonConst.IsTutorial)
-        //ud.synchronize()
+        let ud = UserDefaults.standard
+        ud.set(true, forKey: CommonConst.IsTutorial)
+        ud.synchronize()
         gog.layer.cornerRadius = 7
         gog.clipsToBounds = true
         gog.layer.borderWidth = 3

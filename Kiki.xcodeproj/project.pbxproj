@@ -600,7 +600,7 @@
 				TargetAttributes = {
 					B0A78FD11DACFF6400AC0513 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 4569LENZV3;
+						DevelopmentTeam = 9G469ZT4Z2;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -942,7 +942,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4569LENZV3;
+				DEVELOPMENT_TEAM = 9G469ZT4Z2;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -968,7 +968,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4569LENZV3;
+				DEVELOPMENT_TEAM = 9G469ZT4Z2;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
