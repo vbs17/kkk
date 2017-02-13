@@ -19,6 +19,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     var count1: Bool = false
     var original: NSString?
     var cover:NSString?
+    var isIdleTimerDisabled: Bool?
     
     
     @IBOutlet weak var imageView: UIImageView!
@@ -119,6 +120,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     
     @IBAction func recordStart(_ sender: UIButton) {
         if count == 1{
+            UIApplication.shared.isIdleTimerDisabled = true
             count1 = true
             recordImage!.isEnabled = false
             let image:UIImage! = UIImage(named: photos[0])
