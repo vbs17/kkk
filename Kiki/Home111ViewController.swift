@@ -141,7 +141,7 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
         })} else {
             let alert = UIAlertController()
             let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
-            let attributedTitle = NSAttributedString(string: "😬", attributes: attributedTitleAttr)
+            let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
             alert.setValue(attributedTitle, forKey: "attributedTitle")
             let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.black]
             let attributedMessage = NSAttributedString(string: "接続状態が不安定です", attributes: attributedMessageAttr)
@@ -149,15 +149,15 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
             alert.setValue(attributedMessage, forKey: "attributedMessage")
             let subview = alert.view.subviews.first! as UIView
             let alertContentView = subview.subviews.first! as UIView
-            alertContentView.backgroundColor = UIColor.gray
+            alertContentView.backgroundColor = UIColor.white
             
             let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
                 (action: UIAlertAction!) -> Void in
             })
             alert.addAction(defaultAction)
             present(alert, animated: true, completion: nil)
-            alert.view.tintColor = UIColor.white
-            
+            alert.view.tintColor = UIColor.black
+
         }
         
     }
@@ -336,7 +336,7 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
             } else {
                 let alert = UIAlertController()
                 let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
-                let attributedTitle = NSAttributedString(string: "😬", attributes: attributedTitleAttr)
+                let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
                 alert.setValue(attributedTitle, forKey: "attributedTitle")
                 let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.black]
                 let attributedMessage = NSAttributedString(string: "接続状態が不安定です", attributes: attributedMessageAttr)
@@ -344,14 +344,14 @@ class Home111ViewController: UIViewController,UITableViewDataSource, UITableView
                 alert.setValue(attributedMessage, forKey: "attributedMessage")
                 let subview = alert.view.subviews.first! as UIView
                 let alertContentView = subview.subviews.first! as UIView
-                alertContentView.backgroundColor = UIColor.gray
+                alertContentView.backgroundColor = UIColor.white
                 
                 let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
                     (action: UIAlertAction!) -> Void in
                 })
                 alert.addAction(defaultAction)
                 present(alert, animated: true, completion: nil)
-                alert.view.tintColor = UIColor.white
+                alert.view.tintColor = UIColor.black
             }
         }else if isSavePlofile == false {
             let alert = UIAlertController()
