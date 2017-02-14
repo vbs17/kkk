@@ -19,13 +19,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hu4-FH-AWa">
-                        <rect key="frame" x="8" y="293" width="364" height="16"/>
+                        <rect key="frame" x="8" y="295.5" width="364" height="13.5"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="jbf-5k-sbb"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
+                        <size key="shadowOffset" width="0.0" height="0.0"/>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="jbf-5k-sbb"/>
@@ -33,7 +34,7 @@
                         </variation>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dTa-68-VWM">
-                        <rect key="frame" x="70" y="26" width="240" height="240"/>
+                        <rect key="frame" x="70" y="28.5" width="240" height="240"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="240" id="96C-QI-gRX"/>
                             <constraint firstAttribute="height" constant="240" id="tIV-2g-ppc"/>
