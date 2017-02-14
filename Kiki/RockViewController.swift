@@ -11,22 +11,28 @@ class RockViewController: UIViewController {
         gog.layer.borderColor = UIColor.black.cgColor
         ori1.layer.cornerRadius = 7
         ori1.clipsToBounds = true
-        ori1.layer.borderWidth = 1
-        ori1.layer.borderColor = UIColor.white.cgColor
+        ori1.layer.borderWidth = 2
+        ori1.layer.borderColor = UIColor.black.cgColor
         cov1.layer.cornerRadius = 7
         cov1.clipsToBounds = true
-        cov1.layer.borderWidth = 1
-        cov1.layer.borderColor = UIColor.white.cgColor
+        cov1.layer.borderWidth = 2
+        cov1.layer.borderColor = UIColor.black.cgColor
         ensou1.layer.cornerRadius = 7
         ensou1.clipsToBounds = true
-        ensou1.layer.borderWidth = 1
-        ensou1.layer.borderColor = UIColor.white.cgColor
+        ensou1.layer.borderWidth = 2
+        ensou1.layer.borderColor = UIColor.black.cgColor
+        ro.layer.cornerRadius = 7
+        ro.clipsToBounds = true
+        ro.layer.borderWidth = 2
+        ro.layer.borderColor = UIColor.black.cgColor
+
         
     }
     @IBOutlet weak var lbl: UILabel!
     @IBOutlet weak var ori1: UILabel!
     @IBOutlet weak var cov1: UILabel!
     @IBOutlet weak var ensou1: UILabel!
+    @IBOutlet weak var ro: UILabel!
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

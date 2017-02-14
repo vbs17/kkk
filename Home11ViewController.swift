@@ -477,7 +477,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
                 if playingIndexPath != nil {
                     let cell = tableView.cellForRow(at: playingIndexPath) as! Home11TableViewCell?
                     if cell != nil {
-                        playSong.pause()
+                        playSong.stop()
                         cell!.nami.progress = 0
                         cell!.onlabel2.text = "0:00"
                         cell?.backButton.isEnabled = false

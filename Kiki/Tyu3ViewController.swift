@@ -13,11 +13,11 @@ class Tyu3ViewController: UIViewController {
         gog.layer.borderColor = UIColor.black.cgColor
         ban.layer.cornerRadius = 7
         ban.clipsToBounds = true
-        ban.layer.borderWidth = 3
+        ban.layer.borderWidth = 2
         ban.layer.borderColor = UIColor.black.cgColor
         ban2.layer.cornerRadius = 7
         ban2.clipsToBounds = true
-        ban2.layer.borderWidth = 3
+        ban2.layer.borderWidth = 2
         ban2.layer.borderColor = UIColor.black.cgColor
 
 
