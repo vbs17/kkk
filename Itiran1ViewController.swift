@@ -203,7 +203,6 @@ class Itiran1ViewController: UIViewController, UITableViewDelegate, UITableViewD
                                   "キセル",
                                   "きゃりーぱみゅぱみゅ",
                                   "キュウソネコカミ",
-                                  "キートーク",
                                   "清木場俊介",
                                   "筋肉少女帯",
                                   "木村カエラ",
