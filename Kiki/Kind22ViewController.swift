@@ -1014,8 +1014,7 @@ class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDat
     var isRowSelected:Bool = false//現在行が選択状態か否か
     
     
-    @IBAction func yougo(_ sender: Any) {
-    }
+   
     @IBAction func hougo(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
     }
@@ -1202,20 +1201,21 @@ class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDat
         let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
         alert.setValue(attributedTitle, forKey: "attributedTitle")
         let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.black]
-        let attributedMessage = NSAttributedString(string: "ジャンルを選択しよう", attributes: attributedMessageAttr)
+        let attributedMessage = NSAttributedString(string:"ジャンルを選択しよう", attributes: attributedMessageAttr)
         alert.view.tintColor = UIColor.black
         alert.setValue(attributedMessage, forKey: "attributedMessage")
         let subview = alert.view.subviews.first! as UIView
         let alertContentView = subview.subviews.first! as UIView
-        alertContentView.backgroundColor = UIColor.gray
+        alertContentView.backgroundColor = UIColor.white
         
         let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
             (action: UIAlertAction!) -> Void in
         })
         alert.addAction(defaultAction)
         present(alert, animated: true, completion: nil)
-        alert.view.tintColor = UIColor.white
+        alert.view.tintColor = UIColor.black
         }
+        
     }
     
     

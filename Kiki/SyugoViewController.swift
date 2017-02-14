@@ -148,20 +148,17 @@ class SyugoViewController: UIViewController,UITextFieldDelegate,UITextViewDelega
             alert.setValue(attributedMessage, forKey: "attributedMessage")
             let subview = alert.view.subviews.first! as UIView
             let alertContentView = subview.subviews.first! as UIView
-            alertContentView.backgroundColor = UIColor.gray
+            alertContentView.backgroundColor = UIColor.white
             
             let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
                 (action: UIAlertAction!) -> Void in
             })
             alert.addAction(defaultAction)
             present(alert, animated: true, completion: nil)
-            alert.view.tintColor = UIColor.white
-            
+            alert.view.tintColor = UIColor.black
         }
         
     }
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

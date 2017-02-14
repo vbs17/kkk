@@ -12,8 +12,7 @@ class Itiran111ViewController: UIViewController, UITableViewDelegate, UITableVie
         self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
 
     }
-    @IBAction func you(_ sender: Any) {
-    }
+   
     @IBAction func hou(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
     }

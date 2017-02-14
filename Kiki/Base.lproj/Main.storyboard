@@ -1484,9 +1484,6 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="0.14362053969999999" green="0.17933351710000001" blue="0.3351807919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="hou:" destination="SbC-Gz-DpJ" eventType="touchUpInside" id="zV3-bV-9z7"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISr-4y-Pg1">
                                         <rect key="frame" x="160" y="24" width="160" height="90"/>
@@ -1592,9 +1589,6 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="yougo:" destination="S02-cI-xX1" eventType="touchUpInside" id="dfw-xL-Mz2"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🔻　 アーティスト検索　  🔻" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAH-HK-Yw7">
                                         <rect key="frame" x="48" y="0.0" width="225" height="24"/>
@@ -3036,7 +3030,7 @@
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38r-p6-Il8">
-                                <rect key="frame" x="199" y="419" width="89" height="54"/>
+                                <rect key="frame" x="199" y="440" width="89" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.35241165149999998" green="1" blue="0.47198829990000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="次へ">
@@ -3460,9 +3454,6 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="0.14362053969999999" green="0.17933351710000001" blue="0.3351807919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="hougo:" destination="6mc-hK-kBo" eventType="touchUpInside" id="RzM-0A-rYs"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcI-q0-fd1">
                                         <rect key="frame" x="160" y="24" width="160" height="90"/>
@@ -3586,9 +3577,6 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <action selector="you:" destination="XGO-iE-Wgs" eventType="touchUpInside" id="IhH-iR-9Z2"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🔻　 アーティスト検索　  🔻" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onZ-N4-AMz">
                                         <rect key="frame" x="40" y="2" width="240" height="21"/>
@@ -4203,7 +4191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FgX-Ge-8kh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10305" y="-4013.0281690140846"/>
+            <point key="canvasLocation" x="8291" y="-4014"/>
         </scene>
         <!--Kind1 Viewcontroller View Controller-->
         <scene sceneID="Y5v-xg-dyC">
@@ -4295,7 +4283,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIw-0U-Lrk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10991.25" y="-4014.0845070422538"/>
+            <point key="canvasLocation" x="8978" y="-4015"/>
         </scene>
         <!--Itiran11 View Controller-->
         <scene sceneID="Nq8-AP-5Nk">
@@ -4391,7 +4379,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5Y-Ld-qxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10991.25" y="-4675.3521126760561"/>
+            <point key="canvasLocation" x="8978" y="-4676"/>
         </scene>
         <!--Itiran View Controller-->
         <scene sceneID="16W-pi-OaL">
@@ -4486,7 +4474,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MHq-a8-5G3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10306.875" y="-4675.3521126760561"/>
+            <point key="canvasLocation" x="8293" y="-4676"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="sbq-h0-lje">

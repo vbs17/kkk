@@ -1164,22 +1164,22 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
             let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
             alert.setValue(attributedTitle, forKey: "attributedTitle")
             let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.black]
-            let attributedMessage = NSAttributedString(string: "ジャンルを選択しよう", attributes: attributedMessageAttr)
+            let attributedMessage = NSAttributedString(string:"ジャンルを選択しよう", attributes: attributedMessageAttr)
             alert.view.tintColor = UIColor.black
             alert.setValue(attributedMessage, forKey: "attributedMessage")
             let subview = alert.view.subviews.first! as UIView
             let alertContentView = subview.subviews.first! as UIView
-            alertContentView.backgroundColor = UIColor.gray
+            alertContentView.backgroundColor = UIColor.white
             
             let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
                 (action: UIAlertAction!) -> Void in
             })
             alert.addAction(defaultAction)
             present(alert, animated: true, completion: nil)
-            alert.view.tintColor = UIColor.white
+            alert.view.tintColor = UIColor.black
         }
+        
     }
-    
 
         
     

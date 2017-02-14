@@ -59,24 +59,23 @@ class OkViewController: UIViewController,UITextFieldDelegate {
         self.present(kindviewcontroller, animated: true, completion: nil)
          }else{
             let alert = UIAlertController()
-            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.yellow]
+            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
             let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
             alert.setValue(attributedTitle, forKey: "attributedTitle")
-            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.white]
-            let attributedMessage = NSAttributedString(string: "駅以外は必須項目です", attributes: attributedMessageAttr)
-            alert.view.tintColor = UIColor.white
+            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.black]
+            let attributedMessage = NSAttributedString(string:"曲名を考えよう", attributes: attributedMessageAttr)
+            alert.view.tintColor = UIColor.black
             alert.setValue(attributedMessage, forKey: "attributedMessage")
             let subview = alert.view.subviews.first! as UIView
             let alertContentView = subview.subviews.first! as UIView
-            alertContentView.backgroundColor = UIColor.gray
+            alertContentView.backgroundColor = UIColor.white
             
             let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
                 (action: UIAlertAction!) -> Void in
             })
             alert.addAction(defaultAction)
             present(alert, animated: true, completion: nil)
-            alert.view.tintColor = UIColor.white
-            
+            alert.view.tintColor = UIColor.black
         }
         
     }

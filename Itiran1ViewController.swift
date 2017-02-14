@@ -18,9 +18,7 @@ class Itiran1ViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.present(homeviewcontroller, animated: false, completion: nil)
 
     }
-    @IBAction func hougo(_ sender: Any) {
-    }
-    
+   
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func back(_ sender: AnyObject) {
