@@ -3182,7 +3182,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4FA-kF-0cf">
                                 <rect key="frame" x="0.0" y="60" width="320" height="420"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="u" translatesAutoresizingMaskIntoConstraints="NO" id="yTz-M9-2v2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yTz-M9-2v2">
                                 <rect key="frame" x="16" y="73" width="96" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -4968,7 +4968,6 @@
         <image name="sexyse" width="1242" height="828"/>
         <image name="syusyu" width="400" height="267"/>
         <image name="tabtab-1" width="500" height="392"/>
-        <image name="u" width="16" height="16"/>
         <image name="xxxxx1" width="750" height="1334"/>
         <image name="zsb0lk7jaxg-annie-spratt-1" width="500" height="751"/>
         <image name="zyyke-1" width="500" height="749"/>
