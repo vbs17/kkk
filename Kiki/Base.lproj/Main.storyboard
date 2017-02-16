@@ -3034,7 +3034,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_3889" translatesAutoresizingMaskIntoConstraints="NO" id="lBQ-Yo-qef">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_3945" translatesAutoresizingMaskIntoConstraints="NO" id="lBQ-Yo-qef">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -4940,8 +4940,8 @@
         <image name="IMG_3876" width="750" height="1334"/>
         <image name="IMG_3878" width="750" height="1334"/>
         <image name="IMG_3882" width="750" height="1334"/>
-        <image name="IMG_3889" width="750" height="1334"/>
         <image name="IMG_3894" width="750" height="1334"/>
+        <image name="IMG_3945" width="750" height="1334"/>
         <image name="aa" width="500" height="750"/>
         <image name="apiru" width="800" height="1200"/>
         <image name="apiru2-1" width="1242" height="1863"/>
