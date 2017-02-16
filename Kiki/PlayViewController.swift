@@ -91,8 +91,6 @@ class PlayViewController: UIViewController {
     
     //取り直しここはこれで大丈夫か
     @IBAction func retake(_ sender: AnyObject) {
-        let rec = self.storyboard?.instantiateViewController(withIdentifier: "Top") as! ViewController
-        rec.imageView2.isHidden = true
         playSong.stop()
         timer.invalidate()
         let deleteSong = try!AVAudioRecorder(url: songData,settings:recordSetting)

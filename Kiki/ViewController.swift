@@ -13,7 +13,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     let fileName = "sister.m4a"
     var timer: Timer!
     var timeCountTimer: Timer!
-    let photos = ["fu10","fu9","fu8","fu6","fu7","koi","red4"]
+    let photos = ["fu10","fu9","fu8","fu6","fu7","koi-4"]
     var count = 1
     var timeCount = 1
     var count1: Bool = false
@@ -24,7 +24,6 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var viewImage: UIView!
-    @IBOutlet weak var imageView2: UIImageView!
     @IBOutlet weak var recordImage: UIButton?
     @IBOutlet weak var nami1: UIProgressView!
     @IBOutlet weak var nami2: UIProgressView!
@@ -37,9 +36,6 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
         recordImage!.clipsToBounds = true
         recordImage?.layer.borderWidth = 3
         recordImage?.layer.borderColor = UIColor.black.cgColor
-        imageView2.layer.cornerRadius = 7
-        imageView2.clipsToBounds = true
-    
     }
     
     func nextGamenn(){
@@ -141,7 +137,6 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     func nextPage (_ sender:Timer){
         
         var image:UIImage! = UIImage(named: photos[1])
-        let image1:UIImage! = UIImage(named: photos[6])
         if count == 1{
             count1 = true
             imageView.image = image;
@@ -162,13 +157,9 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
             imageView.image = image
             count += 1
         }else if count == 5{
-            imageView2.isHidden = false
             count1 = true
             image = UIImage(named: photos[5])
             imageView.image = image
-            imageView2.image = image1
-            imageView2.layer.borderWidth = 3
-            imageView2.layer.borderColor = UIColor.red.cgColor
             sender.invalidate()
             print("デバッグ\(audioRecorder)")
             audioRecorder?.prepareToRecord()
