@@ -13,7 +13,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     let fileName = "sister.m4a"
     var timer: Timer!
     var timeCountTimer: Timer!
-    let photos = ["rec7","rec8","rec9","rec10","rec11","rec-2"]
+    let photos = ["5-1","4","3-3","2-1","1-1","mike"]
     var count = 1
     var timeCount = 1
     var count1: Bool = false
@@ -60,7 +60,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
             object: nil
         )
         byou.text = "0:00"
-        imageView.image = UIImage(named: "rec-2")
+        imageView.image = UIImage(named: "cool")
         recordImage?.setImage(nil, for: .normal)
         recordImage?.setBackgroundImage(UIImage(named: "kesiki"), for: .normal)
         
