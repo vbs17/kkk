@@ -13,7 +13,7 @@ class ViewController: UIViewController,AVAudioRecorderDelegate {
     let fileName = "sister.m4a"
     var timer: Timer!
     var timeCountTimer: Timer!
-    let photos = ["5-1","4","3-3","2-1","1-1","mike"]
+    let photos = ["5-1","4","3-3","2-1","1-1","koi-1"]
     var count = 1
     var timeCount = 1
     var count1: Bool = false
