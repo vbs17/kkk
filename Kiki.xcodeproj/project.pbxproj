@@ -15,6 +15,7 @@
 		B00501C41DB6428500319866 /* ItiranTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00501C11DB6428500319866 /* ItiranTableViewCell.swift */; };
 		B00501C51DB6428500319866 /* ItiranTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B00501C21DB6428500319866 /* ItiranTableViewCell.xib */; };
 		B007C1BA1DE95D92006F1883 /* MergeAudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = B007C1B91DE95D92006F1883 /* MergeAudioFile.m */; };
+		B00AA2E51E6710C300190CEB /* FuckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00AA2E41E6710C300190CEB /* FuckViewController.swift */; };
 		B00C67AC1E3D6FD10026E775 /* RockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C67AB1E3D6FD10026E775 /* RockViewController.swift */; };
 		B00C67AE1E3D6FDD0026E775 /* Rock2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C67AD1E3D6FDD0026E775 /* Rock2ViewController.swift */; };
 		B00C67B01E3D6FE90026E775 /* Rock3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C67AF1E3D6FE90026E775 /* Rock3ViewController.swift */; };
@@ -127,6 +128,7 @@
 		B00501C21DB6428500319866 /* ItiranTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItiranTableViewCell.xib; sourceTree = "<group>"; };
 		B007C1B81DE95D92006F1883 /* MergeAudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MergeAudioFile.h; sourceTree = "<group>"; };
 		B007C1B91DE95D92006F1883 /* MergeAudioFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MergeAudioFile.m; sourceTree = "<group>"; };
+		B00AA2E41E6710C300190CEB /* FuckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuckViewController.swift; sourceTree = "<group>"; };
 		B00C67AB1E3D6FD10026E775 /* RockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RockViewController.swift; sourceTree = "<group>"; };
 		B00C67AD1E3D6FDD0026E775 /* Rock2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rock2ViewController.swift; sourceTree = "<group>"; };
 		B00C67AF1E3D6FE90026E775 /* Rock3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rock3ViewController.swift; sourceTree = "<group>"; };
@@ -464,6 +466,7 @@
 			isa = PBXGroup;
 			children = (
 				B0A78FD91DACFF6500AC0513 /* Main.storyboard */,
+				B00AA2E41E6710C300190CEB /* FuckViewController.swift */,
 				B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */,
 				B0D594FA1E4C27AF00689507 /* oth */,
 				B03032E21E44508500D2059E /* syutyu */,
@@ -784,6 +787,7 @@
 				B071D9751DB50E670017E287 /* SetViewController.swift in Sources */,
 				B05F57761DDF4937006DB9A5 /* Syutyu1ViewController.swift in Sources */,
 				B071D9731DB50C4E0017E287 /* LoginViewController.swift in Sources */,
+				B00AA2E51E6710C300190CEB /* FuckViewController.swift in Sources */,
 				B054F5D61E46B7CE007AFC5D /* Home111ViewController.swift in Sources */,
 				B06633221E4B9AC100AA8635 /* Syutyu8ViewController.swift in Sources */,
 				B0BA8ADE1DDD79BC00F00E38 /* Tyu2ViewController.swift in Sources */,

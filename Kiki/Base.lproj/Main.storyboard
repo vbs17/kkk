@@ -143,7 +143,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iqD-rh-6D3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2720.625" y="-4013.0281690140846"/>
+            <point key="canvasLocation" x="1832" y="-4013"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="W1b-Wq-2pT">
+            <objects>
+                <viewController id="tDp-hg-neE" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VhA-Mw-ayX"/>
+                        <viewControllerLayoutGuide type="bottom" id="ULs-CX-ckx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MhR-Pp-TRV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nh3-2y-Kzz">
+                                <rect key="frame" x="16" y="68" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZPY-gR-Ljq">
+                                <rect key="frame" x="174" y="68" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3VC-tO-iIi">
+                                <rect key="frame" x="16" y="251" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4KW-84-mtf">
+                                <rect key="frame" x="174" y="251" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cAc-7j-hvN">
+                                <rect key="frame" x="16" y="431" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9FA-NP-N18">
+                                <rect key="frame" x="174" y="430" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nrf-Vx-TWG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8289.375" y="-7482.0422535211264"/>
         </scene>
         <!--Home View Controller1-->
         <scene sceneID="Kr5-Qj-Pfq">
@@ -1295,7 +1339,73 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Di-dZ-7om" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1759" y="-3246"/>
+            <point key="canvasLocation" x="2078" y="-2586"/>
+        </scene>
+        <!--Fuck View Controller-->
+        <scene sceneID="Hua-h1-29P">
+            <objects>
+                <viewController storyboardIdentifier="Fuck" id="dtg-y0-wdD" customClass="FuckViewController" customModule="Kiki" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gn8-0I-j2b"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nsa-gE-LjQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NYA-fO-nht">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rob-bye-141863" translatesAutoresizingMaskIntoConstraints="NO" id="kmo-6o-LFX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xul-y8-elU">
+                                <rect key="frame" x="95" y="290" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <size key="titleShadowOffset" width="2" height="1"/>
+                                <state key="normal" title="アーティスト" backgroundImage="bailey-zindel-149134">
+                                    <color key="titleColor" red="0.98465489630000003" green="0.95407183220000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="artist:" destination="dtg-y0-wdD" eventType="touchUpInside" id="gMD-qG-CXO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTe-cx-nbC">
+                                <rect key="frame" x="95" y="117" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <size key="titleShadowOffset" width="2" height="1"/>
+                                <state key="normal" title="ジャンル" backgroundImage="xavier-sotomayor-191952">
+                                    <color key="titleColor" red="0.98465489630000003" green="0.95407183220000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="genre:" destination="dtg-y0-wdD" eventType="touchUpInside" id="By6-1x-9h7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tou-DX-K95">
+                                <rect key="frame" x="16" y="492" width="60" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <size key="titleShadowOffset" width="2" height="1"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.98465489630000003" green="0.95407183220000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="back:" destination="dtg-y0-wdD" eventType="touchUpInside" id="0Wy-OO-BQw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="Xul-y8-elU" id="wyo-Dz-tRI"/>
+                        <outlet property="image1" destination="cTe-cx-nbC" id="hoa-sK-6E2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ItO-KP-M7W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8977.5" y="-7482.0422535211264"/>
         </scene>
         <!--Tyu2 View Controller-->
         <scene sceneID="F6L-P9-t5d">
@@ -4945,6 +5055,7 @@
         <image name="aa" width="500" height="750"/>
         <image name="apiru" width="800" height="1200"/>
         <image name="apiru2-1" width="1242" height="1863"/>
+        <image name="bailey-zindel-149134" width="6000" height="4000"/>
         <image name="base" width="300" height="200"/>
         <image name="came" width="400" height="314"/>
         <image name="drum" width="120" height="180"/>
@@ -4959,10 +5070,12 @@
         <image name="pianp" width="300" height="200"/>
         <image name="ppp" width="1246" height="966"/>
         <image name="recrec" width="400" height="300"/>
+        <image name="rob-bye-141863" width="4032" height="3024"/>
         <image name="sexy" width="1242" height="828"/>
         <image name="sexyse" width="1242" height="828"/>
         <image name="syusyu" width="400" height="267"/>
         <image name="tabtab-1" width="500" height="392"/>
+        <image name="xavier-sotomayor-191952" width="2832" height="4240"/>
         <image name="xxxxx1" width="750" height="1334"/>
         <image name="zsb0lk7jaxg-annie-spratt-1" width="500" height="751"/>
         <image name="zyyke-1" width="500" height="749"/>
