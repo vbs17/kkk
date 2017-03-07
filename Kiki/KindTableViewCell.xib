@@ -26,7 +26,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLD-Kg-DWt">
-                        <rect key="frame" x="276" y="8" width="55" height="39"/>
+                        <rect key="frame" x="275" y="8" width="56" height="39"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
                         <state key="normal" title="決定">

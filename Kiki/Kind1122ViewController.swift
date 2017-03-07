@@ -24,6 +24,8 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
                                   "Rock",
                                   "Other"
     ]]
+    
+     fileprivate let mySections: NSArray = ["Genre"]
 
     var songData:URL!
     var image:UIImage!
@@ -198,7 +200,7 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
 
 
     @IBAction func hougo(_ sender: Any) {
-        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind") as! KindViewcontroller
+        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind") as! KindViewController
         recviewcontroller.songData = self.songData
         recviewcontroller.image = self.image
         recviewcontroller.byou = self.byou
@@ -209,7 +211,7 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
     
     @IBAction func yougo(_ sender: Any) {
-        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1") as! Kind1ViewcontrollerViewcontroller
+        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1") as! Kind1ViewcontrollerViewController
         recviewcontroller.songData = self.songData
         recviewcontroller.image = self.image
         recviewcontroller.byou = self.byou
@@ -224,7 +226,7 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-       
+        
     }
     func saveSong(uuid: String) {
         let realSongdata = try? Data(contentsOf: URL(fileURLWithPath: songData.path))
@@ -305,12 +307,6 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
     
     
-    
-    
-    
-    
-    
-    //セクションの数を返す.
     func numberOfSections(in tableView: UITableView) -> Int {
         return mySections.count
     }
@@ -320,7 +316,10 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
         return mySections[section] as? String
     }
     
-    //テーブルに表示する配列の総数を返す.
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AllItems[section].count
     }

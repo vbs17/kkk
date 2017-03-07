@@ -482,8 +482,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.reloadData()
     }
     
-    @IBOutlet weak var youho: UIButton!
-    @IBAction func genre1(_ sender: Any) {let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1122") as! Kind1122ViewcontrollerViewController
+    @IBAction func genre1(_ sender: Any) {let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1122") as! Kind1122ViewController
         recviewcontroller.songData = self.songData
         recviewcontroller.image = self.image
         recviewcontroller.byou = self.byou
@@ -493,8 +492,10 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.present(recviewcontroller, animated: false, completion: nil)
         
     }
-    @IBAction func hougo(_ sender: Any) {
-        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind") as! KindViewcontroller
+    
+    
+    @IBAction func yougo(_ sender: Any) {
+        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1") as! Kind1ViewcontrollerViewController
         recviewcontroller.songData = self.songData
         recviewcontroller.image = self.image
         recviewcontroller.byou = self.byou
@@ -502,7 +503,11 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         recviewcontroller.original = self.original
         recviewcontroller.cover = self.cover
         self.present(recviewcontroller, animated: false, completion: nil)
+
     }
+    
+    @IBOutlet weak var houho: UIButton!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -510,7 +515,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         let nib = UINib(nibName: "KindTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "Cell")
         tappedCellPos = nil
-        youho.isEnabled = false
+        houho.isEnabled = false
         
     }
     //ここ

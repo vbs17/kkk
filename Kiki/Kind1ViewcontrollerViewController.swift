@@ -1027,7 +1027,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
     }
     
     @IBAction func yougo(_ sender: Any) {
-        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1") as! Kind1ViewcontrollerViewcontroller
+        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1") as! Kind1ViewcontrollerViewController
         recviewcontroller.songData = self.songData
         recviewcontroller.image = self.image
         recviewcontroller.byou = self.byou
@@ -1037,9 +1037,10 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
         self.present(recviewcontroller, animated: false, completion: nil)
         
     }
-    @IBOutlet weak var houho: UIButton!
+    @IBOutlet weak var youho: UIButton!
+    
     @IBAction func genre1(_ sender: Any) {
-        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1122") as! Kind1122ViewcontrollerViewController
+        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1122") as! Kind1122ViewController
         recviewcontroller.songData = self.songData
         recviewcontroller.image = self.image
         recviewcontroller.byou = self.byou
@@ -1049,6 +1050,18 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
         self.present(recviewcontroller, animated: false, completion: nil)
 
     }
+    @IBAction func hougo(_ sender: Any) {
+        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind") as! KindViewController
+        recviewcontroller.songData = self.songData
+        recviewcontroller.image = self.image
+        recviewcontroller.byou = self.byou
+        recviewcontroller.songname = self.songname
+        recviewcontroller.original = self.original
+        recviewcontroller.cover = self.cover
+        self.present(recviewcontroller, animated: false, completion: nil)
+
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -1056,7 +1069,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
         let nib = UINib(nibName: "Kind1TableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "CCell")
         tappedCellPos = nil
-        houho.isEnabled = false
+        youho.isEnabled = false
         
     }
     
@@ -1205,10 +1218,10 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
 
         
     
-    @IBAction func hougo(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
+    //@IBAction func hougo(_ sender: Any) {
+//        self.dismiss(animated: false, completion: nil)
 
-    }
+    //}
 
     
 
