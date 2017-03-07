@@ -16,8 +16,6 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
     var playSong:AVAudioPlayer!
     var timer = Timer()
     var timer2 = Timer()
-    //var back: UIButton!
-    //var tableView: UITableView!
     var playingIndexPath:IndexPath!
     var dataLastVal:Double!
     let DisplayDataNumber = 2;
@@ -67,7 +65,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
             cell.backButton.isEnabled = true
         } else {//それ以外のセル
             cell.nami.progress = 0
-            cell.onlabel2.text = "0:00"
+            cell.onLabel.text = "0:00"
             cell.backButton.isEnabled = false
         }
         //100個あるなら100個分のデータを表示させる
@@ -88,7 +86,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
                 image = postData3.image
             }
         }
-        cell.iimageView.image = image
+        cell.imageViewView.image = image
         if (image == nil) {
             // Firebaseからイメージ読み込み                                                    //post
             FIRDatabase.database().reference().child(CommonConst.image11).child(genre).child(postData1.id!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
@@ -112,7 +110,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
             })
         }
         
-        cell.go.addTarget(self, action: #selector(pro(_:event:)), for: UIControlEvents.touchUpInside)
+        cell.goButton.addTarget(self, action: #selector(pro(_:event:)), for: UIControlEvents.touchUpInside)
         cell.playButton.addTarget(self, action:#selector(handleButton(_:event:)), for: UIControlEvents.touchUpInside)
         cell.backButton.addTarget(self, action:#selector(back(_:event:)), for: UIControlEvents.touchUpInside)
         cell.star1.addTarget(self, action: #selector(hoshi(_:event:)), for: UIControlEvents.touchUpInside)
@@ -163,7 +161,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
                 
                 print(snapshot.childrenCount)
                 
-                var workArray:[Post1Data] = []
+                var workArray:[PostData111] = []
                 for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
                     print(child)
                     let postData = PostData111(snapshot: child, myId: uid!)
@@ -212,8 +210,9 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
         tableView.dataSource = self
         let nib = UINib(nibName: "HHOOTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "HHOOO")
-        back.layer.cornerRadius = 37
-        back.clipsToBounds = true
+        //ここ？button
+        button.layer.cornerRadius = 37
+        button.clipsToBounds = true
         let tblBackColor: UIColor = UIColor.clear
         tableView.backgroundColor = tblBackColor
         
@@ -257,7 +256,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
                 guard let `self` = self else { return }
                 
                 
-                var workArray:[Post1Data] = []
+                var workArray:[PostData111] = []
                 for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
                     print(child )
                     let postData = PostData111(snapshot: child, myId: uid!)
@@ -434,7 +433,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
     }
     
     func mada(){
-        label.text = "誰もまだ投稿していません.君の音楽を投稿して一番乗りになろう！"
+        labek.text = "誰もまだ投稿していません.君の音楽を投稿して一番乗りになろう！"
     }
     
     
@@ -477,7 +476,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
                     if cell != nil {
                         playSong.stop()
                         cell!.nami.progress = 0
-                        cell!.onlabel2.text = "0:00"
+                        cell!.onLabel.text = "0:00"
                         cell?.backButton.isEnabled = false
                     }}
                 
@@ -486,7 +485,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
                 //ここもポイント
                 cell?.playButton.isEnabled = false
                 cell?.hyouka.isEnabled = false
-                cell?.go.isEnabled = false
+                cell?.goButton.isEnabled = false
                 tableView.isUserInteractionEnabled = false
                 SVProgressHUD.setDefaultMaskType(.none)
                 SVProgressHUD.show(withStatus:"クールな音質に仕上げています😎(最大5秒) 　　　　　　　　　　　　　　　　                　　　　　　このオリジナルソングが君のセンスにあえば左上のProfileボタンをタップして俺に連絡をとってくれ😎あ、あと最高のヘッドホンで聞いてくれよな😜")
@@ -499,7 +498,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
                     SVProgressHUD.dismiss()
                     cell?.playButton.isEnabled = true
                     cell?.hyouka.isEnabled = true
-                    cell?.go.isEnabled = true
+                    cell?.goButton.isEnabled = true
                     self.tableView.isUserInteractionEnabled = true
                     
                     
@@ -543,7 +542,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
     func back(_ sender: UIButton, event:UIEvent) {
         
         let cell = tableView.cellForRow(at: playingIndexPath) as! HHOOTableViewCell?
-        cell!.onlabel2.text = "0:00"
+        cell!.onLabel.text = "0:00"
         
         playSong.stop()
         timer.invalidate()
@@ -569,7 +568,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
     func updatePlayingTime() {
         let cell = tableView.cellForRow(at: playingIndexPath) as! HHOOTableViewCell?
         if (cell != nil) && (playSong.currentTime >= 0.1) {
-            cell!.onlabel2.text = formatTimeString(playSong.currentTime)
+            cell!.onLabel.text = formatTimeString(playSong.currentTime)
             cell!.nami.progress = Float(playSong.currentTime / playSong.duration)
         }
     }
@@ -578,7 +577,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
         let cell = tableView.cellForRow(at: playingIndexPath) as! HHOOTableViewCell?
         timer.invalidate()
         if cell != nil {
-            cell!.onlabel2.text = formatTimeString(playSong.duration)
+            cell!.onLabel.text = formatTimeString(playSong.duration)
             cell!.nami.progress = 0
         }
     }

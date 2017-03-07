@@ -31,8 +31,8 @@ class HHOOTableViewCell: UITableViewCell {
 
     }
 
+    @IBOutlet weak var imageViewView: UIImageView!
     @IBOutlet weak var view: UIView!
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var hyouka: UIButton!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label: UILabel!
@@ -97,7 +97,7 @@ class HHOOTableViewCell: UITableViewCell {
     
     
     
-    func setPostData(_ postData: Post1Data) {
+    func setPostData(_ postData: PostData111) {
         if ( postData.cover == "C" && postData.original == "" ) {
             label.backgroundColor = UIColor(red:1.0, green:1.0, blue:0.8, alpha:1.0)
         }
@@ -115,7 +115,7 @@ class HHOOTableViewCell: UITableViewCell {
         
         if(postData.uid == nil){
             
-            go.isEnabled = false
+            goButton.isEnabled = false
             
         }
         
@@ -148,7 +148,7 @@ class HHOOTableViewCell: UITableViewCell {
         label2.text = postData.byou
     }
     
-    func setPostData1(_ postData: Post1Data) {
+    func setPostData1(_ postData: PostData111) {
         let stars = postData.star
         
         var average: Int = 0

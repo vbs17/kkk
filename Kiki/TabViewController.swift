@@ -33,7 +33,7 @@ class TabViewController: UIViewController {
     }
     @IBAction func recpic(_ sender: AnyObject) {
         //Syuru
-        let TopViewController = self.storyboard?.instantiateViewController(withIdentifier: "Syuru")
+        let TopViewController = self.storyboard?.instantiateViewController(withIdentifier: "Genre")
             self.present(TopViewController!, animated: true, completion: nil)
     }
     @IBAction func music(_ sender: AnyObject) {
