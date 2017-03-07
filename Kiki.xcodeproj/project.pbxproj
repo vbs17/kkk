@@ -37,6 +37,10 @@
 		B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */; };
 		B05E343F1DC8B57F00C271D3 /* PostData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343E1DC8B57F00C271D3 /* PostData2.swift */; };
 		B05E791F1E6E88C6002940C2 /* GenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E791E1E6E88C6002940C2 /* GenreViewController.swift */; };
+		B05E79211E6ED4D2002940C2 /* Kind1122ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E79201E6ED4D2002940C2 /* Kind1122ViewController.swift */; };
+		B05E79241E6ED5B8002940C2 /* Kind1122TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E79221E6ED5B8002940C2 /* Kind1122TableViewCell.swift */; };
+		B05E79251E6ED5B8002940C2 /* Kind1122TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B05E79231E6ED5B8002940C2 /* Kind1122TableViewCell.xib */; };
+		B05E79271E6EDF80002940C2 /* PostData111.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E79261E6EDF80002940C2 /* PostData111.swift */; };
 		B05F57741DDEBD05006DB9A5 /* SyutyuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F57731DDEBD05006DB9A5 /* SyutyuViewController.swift */; };
 		B05F57761DDF4937006DB9A5 /* Syutyu1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F57751DDF4937006DB9A5 /* Syutyu1ViewController.swift */; };
 		B05F57781DDF4942006DB9A5 /* Syutyu2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F57771DDF4942006DB9A5 /* Syutyu2ViewController.swift */; };
@@ -153,6 +157,10 @@
 		B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProIViewController.swift; sourceTree = "<group>"; };
 		B05E343E1DC8B57F00C271D3 /* PostData2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData2.swift; sourceTree = "<group>"; };
 		B05E791E1E6E88C6002940C2 /* GenreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreViewController.swift; sourceTree = "<group>"; };
+		B05E79201E6ED4D2002940C2 /* Kind1122ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kind1122ViewController.swift; sourceTree = "<group>"; };
+		B05E79221E6ED5B8002940C2 /* Kind1122TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kind1122TableViewCell.swift; sourceTree = "<group>"; };
+		B05E79231E6ED5B8002940C2 /* Kind1122TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Kind1122TableViewCell.xib; sourceTree = "<group>"; };
+		B05E79261E6EDF80002940C2 /* PostData111.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData111.swift; sourceTree = "<group>"; };
 		B05F57731DDEBD05006DB9A5 /* SyutyuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyutyuViewController.swift; sourceTree = "<group>"; };
 		B05F57751DDF4937006DB9A5 /* Syutyu1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu1ViewController.swift; sourceTree = "<group>"; };
 		B05F57771DDF4942006DB9A5 /* Syutyu2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu2ViewController.swift; sourceTree = "<group>"; };
@@ -375,9 +383,10 @@
 			isa = PBXGroup;
 			children = (
 				B071D9671DB4E5040017E287 /* PostData.swift */,
+				B07B5ACD1E456E0A00AE5B0D /* Post1Data.swift */,
+				B05E79261E6EDF80002940C2 /* PostData111.swift */,
 				B06606551DFC4B3100FD3E4C /* PostData3.swift */,
 				B05E343E1DC8B57F00C271D3 /* PostData2.swift */,
-				B07B5ACD1E456E0A00AE5B0D /* Post1Data.swift */,
 				B07B5ACF1E456E2200AE5B0D /* Post2Data2.swift */,
 				B07B5AD11E456E2F00AE5B0D /* Post3Data3.swift */,
 				B071D9651DB4D6140017E287 /* File.swift */,
@@ -403,6 +412,8 @@
 				B0F582AA1DB38E5300654519 /* KindTableViewCell.xib */,
 				B07B5AD51E45718700AE5B0D /* Kind1TableViewCell.swift */,
 				B07B5AD61E45718700AE5B0D /* Kind1TableViewCell.xib */,
+				B05E79221E6ED5B8002940C2 /* Kind1122TableViewCell.swift */,
+				B05E79231E6ED5B8002940C2 /* Kind1122TableViewCell.xib */,
 			);
 			name = KindCell;
 			sourceTree = "<group>";
@@ -498,6 +509,7 @@
 				B0A9A1731DB1FDE00021D1CF /* OkViewController.swift */,
 				B0190A201DB20FE400FA066D /* KindViewController.swift */,
 				B07B5AD31E456FC000AE5B0D /* Kind1ViewcontrollerViewController.swift */,
+				B05E79201E6ED4D2002940C2 /* Kind1122ViewController.swift */,
 				B07B5AD91E45755B00AE5B0D /* KindCell */,
 			);
 			name = "音源投稿";
@@ -649,6 +661,7 @@
 				B069682A1DC610C200274DB1 /* HomeTableViewCell1.xib in Resources */,
 				B07B5AE41E45831B00AE5B0D /* Home11TableViewCell.xib in Resources */,
 				B054F5DA1E46BC9A007AFC5D /* Home22TableViewCell.xib in Resources */,
+				B05E79251E6ED5B8002940C2 /* Kind1122TableViewCell.xib in Resources */,
 				B0A78FDB1DACFF6500AC0513 /* Main.storyboard in Resources */,
 				B00501C51DB6428500319866 /* ItiranTableViewCell.xib in Resources */,
 				B0C4AA5E1E4ABE3B00CD6B43 /* Itiran333TableViewCell.xib in Resources */,
@@ -774,6 +787,7 @@
 				B0FA38301E50640200CB8D53 /* Tyu5ViewController.swift in Sources */,
 				B0A78FD81DACFF6500AC0513 /* ViewController.swift in Sources */,
 				B06633201E4B9AB900AA8635 /* Syutyu7ViewController.swift in Sources */,
+				B05E79271E6EDF80002940C2 /* PostData111.swift in Sources */,
 				B07B5ADF1E45806F00AE5B0D /* Itiran11ViewController.swift in Sources */,
 				B06633361E4B9F3600AA8635 /* Oth8ViewController.swift in Sources */,
 				B03151761DAE6A06007EE64C /* PlayViewController.swift in Sources */,
@@ -799,6 +813,7 @@
 				B066332E1E4B9F1900AA8635 /* Oth4ViewController.swift in Sources */,
 				B0F132CA1E46AC140040115D /* PostData44.swift in Sources */,
 				B07B5AD21E456E2F00AE5B0D /* Post3Data3.swift in Sources */,
+				B05E79211E6ED4D2002940C2 /* Kind1122ViewController.swift in Sources */,
 				B05F57781DDF4942006DB9A5 /* Syutyu2ViewController.swift in Sources */,
 				B0F132D01E46ADDF0040115D /* Kind22ViewController.swift in Sources */,
 				B07B5AD41E456FC000AE5B0D /* Kind1ViewcontrollerViewController.swift in Sources */,
@@ -810,6 +825,7 @@
 				B00501C41DB6428500319866 /* ItiranTableViewCell.swift in Sources */,
 				B07B5AD01E456E2200AE5B0D /* Post2Data2.swift in Sources */,
 				B0F132CD1E46AC880040115D /* Syugo11TableViewCell.swift in Sources */,
+				B05E79241E6ED5B8002940C2 /* Kind1122TableViewCell.swift in Sources */,
 				B0BA8ADC1DDD79A800F00E38 /* TyuViewController.swift in Sources */,
 				B042A0191DB985180068D205 /* SyugoViewController.swift in Sources */,
 				B066332A1E4B9F0B00AA8635 /* Oth2ViewController.swift in Sources */,

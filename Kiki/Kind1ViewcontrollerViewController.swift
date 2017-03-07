@@ -11,7 +11,6 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
     
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var you: UIButton!
     
     fileprivate let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     let AllItems: [[String]]  = [["Aaron Neville",
@@ -1027,6 +1026,29 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
         tableView.reloadData()
     }
     
+    @IBAction func yougo(_ sender: Any) {
+        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1") as! Kind1ViewcontrollerViewcontroller
+        recviewcontroller.songData = self.songData
+        recviewcontroller.image = self.image
+        recviewcontroller.byou = self.byou
+        recviewcontroller.songname = self.songname
+        recviewcontroller.original = self.original
+        recviewcontroller.cover = self.cover
+        self.present(recviewcontroller, animated: false, completion: nil)
+        
+    }
+    @IBOutlet weak var houho: UIButton!
+    @IBAction func genre1(_ sender: Any) {
+        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1122") as! Kind1122ViewcontrollerViewController
+        recviewcontroller.songData = self.songData
+        recviewcontroller.image = self.image
+        recviewcontroller.byou = self.byou
+        recviewcontroller.songname = self.songname
+        recviewcontroller.original = self.original
+        recviewcontroller.cover = self.cover
+        self.present(recviewcontroller, animated: false, completion: nil)
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -1034,7 +1056,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
         let nib = UINib(nibName: "Kind1TableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "CCell")
         tappedCellPos = nil
-        you.isEnabled = false
+        houho.isEnabled = false
         
     }
     

@@ -482,20 +482,19 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.reloadData()
     }
     
-    @IBOutlet weak var houho: UIButton!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        let nib = UINib(nibName: "KindTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "Cell")
-        tappedCellPos = nil
-        houho.isEnabled = false
+    @IBOutlet weak var youho: UIButton!
+    @IBAction func genre1(_ sender: Any) {let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1122") as! Kind1122ViewcontrollerViewController
+        recviewcontroller.songData = self.songData
+        recviewcontroller.image = self.image
+        recviewcontroller.byou = self.byou
+        recviewcontroller.songname = self.songname
+        recviewcontroller.original = self.original
+        recviewcontroller.cover = self.cover
+        self.present(recviewcontroller, animated: false, completion: nil)
         
     }
-    //ここ
-    @IBAction func yougo(_ sender: Any) {
-        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1") as! Kind1ViewcontrollerViewController
+    @IBAction func hougo(_ sender: Any) {
+        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind") as! KindViewcontroller
         recviewcontroller.songData = self.songData
         recviewcontroller.image = self.image
         recviewcontroller.byou = self.byou
@@ -504,6 +503,17 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         recviewcontroller.cover = self.cover
         self.present(recviewcontroller, animated: false, completion: nil)
     }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        let nib = UINib(nibName: "KindTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "Cell")
+        tappedCellPos = nil
+        youho.isEnabled = false
+        
+    }
+    //ここ
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! KindTableViewCell
