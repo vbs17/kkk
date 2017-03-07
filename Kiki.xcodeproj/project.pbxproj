@@ -15,7 +15,6 @@
 		B00501C41DB6428500319866 /* ItiranTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00501C11DB6428500319866 /* ItiranTableViewCell.swift */; };
 		B00501C51DB6428500319866 /* ItiranTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B00501C21DB6428500319866 /* ItiranTableViewCell.xib */; };
 		B007C1BA1DE95D92006F1883 /* MergeAudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = B007C1B91DE95D92006F1883 /* MergeAudioFile.m */; };
-		B00AA2E51E6710C300190CEB /* FuckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00AA2E41E6710C300190CEB /* FuckViewController.swift */; };
 		B00C67AC1E3D6FD10026E775 /* RockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C67AB1E3D6FD10026E775 /* RockViewController.swift */; };
 		B00C67AE1E3D6FDD0026E775 /* Rock2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C67AD1E3D6FDD0026E775 /* Rock2ViewController.swift */; };
 		B00C67B01E3D6FE90026E775 /* Rock3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C67AF1E3D6FE90026E775 /* Rock3ViewController.swift */; };
@@ -37,6 +36,7 @@
 		B05E343B1DC8A53800C271D3 /* ProViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343A1DC8A53800C271D3 /* ProViewController.swift */; };
 		B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */; };
 		B05E343F1DC8B57F00C271D3 /* PostData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343E1DC8B57F00C271D3 /* PostData2.swift */; };
+		B05E791F1E6E88C6002940C2 /* GenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E791E1E6E88C6002940C2 /* GenreViewController.swift */; };
 		B05F57741DDEBD05006DB9A5 /* SyutyuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F57731DDEBD05006DB9A5 /* SyutyuViewController.swift */; };
 		B05F57761DDF4937006DB9A5 /* Syutyu1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F57751DDF4937006DB9A5 /* Syutyu1ViewController.swift */; };
 		B05F57781DDF4942006DB9A5 /* Syutyu2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F57771DDF4942006DB9A5 /* Syutyu2ViewController.swift */; };
@@ -84,6 +84,7 @@
 		B07B5AE71E45872700AE5B0D /* Home11ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B5AE61E45872700AE5B0D /* Home11ViewController.swift */; };
 		B07E94E71DCDC766009537A7 /* ProIdouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */; };
 		B088CB221DDB34C7007CE03D /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088CB211DDB34C7007CE03D /* Photos.framework */; };
+		B0A786D31E679BF400B0C782 /* greatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A786D21E679BF400B0C782 /* greatViewController.swift */; };
 		B0A78FD61DACFF6500AC0513 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */; };
 		B0A78FD81DACFF6500AC0513 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A78FD71DACFF6500AC0513 /* ViewController.swift */; };
 		B0A78FDB1DACFF6500AC0513 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A78FD91DACFF6500AC0513 /* Main.storyboard */; };
@@ -128,7 +129,6 @@
 		B00501C21DB6428500319866 /* ItiranTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItiranTableViewCell.xib; sourceTree = "<group>"; };
 		B007C1B81DE95D92006F1883 /* MergeAudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MergeAudioFile.h; sourceTree = "<group>"; };
 		B007C1B91DE95D92006F1883 /* MergeAudioFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MergeAudioFile.m; sourceTree = "<group>"; };
-		B00AA2E41E6710C300190CEB /* FuckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuckViewController.swift; sourceTree = "<group>"; };
 		B00C67AB1E3D6FD10026E775 /* RockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RockViewController.swift; sourceTree = "<group>"; };
 		B00C67AD1E3D6FDD0026E775 /* Rock2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rock2ViewController.swift; sourceTree = "<group>"; };
 		B00C67AF1E3D6FE90026E775 /* Rock3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rock3ViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +152,7 @@
 		B05E343A1DC8A53800C271D3 /* ProViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProViewController.swift; sourceTree = "<group>"; };
 		B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProIViewController.swift; sourceTree = "<group>"; };
 		B05E343E1DC8B57F00C271D3 /* PostData2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData2.swift; sourceTree = "<group>"; };
+		B05E791E1E6E88C6002940C2 /* GenreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreViewController.swift; sourceTree = "<group>"; };
 		B05F57731DDEBD05006DB9A5 /* SyutyuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyutyuViewController.swift; sourceTree = "<group>"; };
 		B05F57751DDF4937006DB9A5 /* Syutyu1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu1ViewController.swift; sourceTree = "<group>"; };
 		B05F57771DDF4942006DB9A5 /* Syutyu2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu2ViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +200,7 @@
 		B07B5AE61E45872700AE5B0D /* Home11ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home11ViewController.swift; sourceTree = "<group>"; };
 		B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProIdouViewController.swift; sourceTree = "<group>"; };
 		B088CB211DDB34C7007CE03D /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		B0A786D21E679BF400B0C782 /* greatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = greatViewController.swift; sourceTree = "<group>"; };
 		B0A78FD21DACFF6400AC0513 /* Kiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0A78FD71DACFF6500AC0513 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -466,7 +468,8 @@
 			isa = PBXGroup;
 			children = (
 				B0A78FD91DACFF6500AC0513 /* Main.storyboard */,
-				B00AA2E41E6710C300190CEB /* FuckViewController.swift */,
+				B0A786D21E679BF400B0C782 /* greatViewController.swift */,
+				B05E791E1E6E88C6002940C2 /* GenreViewController.swift */,
 				B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */,
 				B0D594FA1E4C27AF00689507 /* oth */,
 				B03032E21E44508500D2059E /* syutyu */,
@@ -763,6 +766,7 @@
 				B00D7CF51DCEB5190042D04F /* MixerMeter.m in Sources */,
 				B0BA8AE01DDD79D800F00E38 /* Tyu3ViewController.swift in Sources */,
 				B071309D1DC2352E00B8EEC1 /* Play2ViewController.swift in Sources */,
+				B05E791F1E6E88C6002940C2 /* GenreViewController.swift in Sources */,
 				B066331E1E4B9AAE00AA8635 /* Syutyu6ViewController.swift in Sources */,
 				B00467F61E3995380033859A /* Apiru2ViewController.swift in Sources */,
 				B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */,
@@ -778,6 +782,7 @@
 				B05F577A1DDF4B0E006DB9A5 /* Syutyu3ViewController.swift in Sources */,
 				B071D96F1DB4EA9B0017E287 /* HomeViewController.swift in Sources */,
 				B07B5AE31E45831B00AE5B0D /* Home11TableViewCell.swift in Sources */,
+				B0A786D31E679BF400B0C782 /* greatViewController.swift in Sources */,
 				B071309B1DC22D8800B8EEC1 /* 2TViewController.swift in Sources */,
 				B0B4481F1DD5AD04001DDD89 /* IkuTableViewCell.swift in Sources */,
 				B071D9661DB4D6140017E287 /* File.swift in Sources */,
@@ -787,7 +792,6 @@
 				B071D9751DB50E670017E287 /* SetViewController.swift in Sources */,
 				B05F57761DDF4937006DB9A5 /* Syutyu1ViewController.swift in Sources */,
 				B071D9731DB50C4E0017E287 /* LoginViewController.swift in Sources */,
-				B00AA2E51E6710C300190CEB /* FuckViewController.swift in Sources */,
 				B054F5D61E46B7CE007AFC5D /* Home111ViewController.swift in Sources */,
 				B06633221E4B9AC100AA8635 /* Syutyu8ViewController.swift in Sources */,
 				B0BA8ADE1DDD79BC00F00E38 /* Tyu2ViewController.swift in Sources */,
