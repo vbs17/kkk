@@ -8,9 +8,9 @@ import SVProgressHUD
 import ReachabilitySwift
 
 class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewDelegate,AVAudioPlayerDelegate {
-    var postArray: [Post1Data] = []
+    var postArray: [PostData111] = []
     var postArray2:[Post2Data2] = []
-    var postArray3:[Post3Data3] = []
+    var postArray3:[Post4Data4] = []
     var observing = false
     var genre: String!
     var playSong:AVAudioPlayer!
@@ -54,7 +54,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CElll", for: indexPath) as! Home11TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HHOOO", for: indexPath) as! HHOOTableViewCell
         //cell.hyouka.setTitleColor(UIColor.white, for: UIControlState())
         cell.hyouka.setTitleColor(UIColor.black, for: UIControlState())
         cell.edittingFlag = false
@@ -91,10 +91,10 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
         cell.iimageView.image = image
         if (image == nil) {
             // Firebaseからイメージ読み込み                                                    //post
-            FIRDatabase.database().reference().child(CommonConst.image1).child(genre).child(postData1.id!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
+            FIRDatabase.database().reference().child(CommonConst.image11).child(genre).child(postData1.id!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                 guard let `self` = self else { return }
                 //ジャケットのimage
-                let postData3 = Post3Data3(snapshot: snapshot, myId: postData1.uid!)
+                let postData3 = Post4Data4(snapshot: snapshot, myId: postData1.uid!)
                 // すでに登録済みでなければ登録
                 //ここわからん
                 //このおかげでデータの取得するかどうか判別できるようになるとかかも
@@ -158,7 +158,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
             let uid = FIRAuth.auth()?.currentUser?.uid
             print("getFirebaseData")
             
-            FIRDatabase.database().reference().child(CommonConst.PostPATH1).child(self.genre).queryOrdered(byChild: "time").queryEnding(atValue: self.dataLastVal).queryLimited(toLast: UInt(DisplayDataNumber)+1).observeSingleEvent(of: .value, with: {[weak self] snapshot in
+            FIRDatabase.database().reference().child(CommonConst.PostPATH11).child(self.genre).queryOrdered(byChild: "time").queryEnding(atValue: self.dataLastVal).queryLimited(toLast: UInt(DisplayDataNumber)+1).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                 guard let `self` = self else { return }
                 
                 print(snapshot.childrenCount)
@@ -166,7 +166,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
                 var workArray:[Post1Data] = []
                 for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
                     print(child)
-                    let postData = Post1Data(snapshot: child, myId: uid!)
+                    let postData = PostData111(snapshot: child, myId: uid!)
                     if postData.time != self.dataLastVal {
                         workArray.insert(postData, at: 0)
                     }
@@ -210,8 +210,8 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        let nib = UINib(nibName: "Home11TableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "CElll")
+        let nib = UINib(nibName: "HHOOTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "HHOOO")
         back.layer.cornerRadius = 37
         back.clipsToBounds = true
         let tblBackColor: UIColor = UIColor.clear
@@ -247,20 +247,20 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        timer2 = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(Home11ViewController.mada), userInfo: nil, repeats: false)
+        timer2 = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(HHHOmeViewController.mada), userInfo: nil, repeats: false)
         
         
         let uid = FIRAuth.auth()?.currentUser?.uid
         
         if observing == false {
-            FIRDatabase.database().reference().child(CommonConst.PostPATH1).child(genre).queryOrdered(byChild: "time").queryLimited(toLast: UInt(DisplayDataNumber)).observeSingleEvent(of: .value, with: {[weak self] snapshot in
+            FIRDatabase.database().reference().child(CommonConst.PostPATH11).child(genre).queryOrdered(byChild: "time").queryLimited(toLast: UInt(DisplayDataNumber)).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                 guard let `self` = self else { return }
                 
                 
                 var workArray:[Post1Data] = []
                 for child in snapshot.children.allObjects as! [FIRDataSnapshot]{
                     print(child )
-                    let postData = Post1Data(snapshot: child, myId: uid!)
+                    let postData = PostData111(snapshot: child, myId: uid!)
                     print(postData.time ?? "")
                     workArray.insert(postData, at: 0)
                 }
@@ -277,11 +277,11 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
                     print("getFirstData error")
             })
             
-            FIRDatabase.database().reference().child(CommonConst.PostPATH1).child(genre).observe(.childChanged, with: {[weak self] snapshot in
+            FIRDatabase.database().reference().child(CommonConst.PostPATH11).child(genre).observe(.childChanged, with: {[weak self] snapshot in
                 
                 if let uid = FIRAuth.auth()?.currentUser?.uid {
                     guard let `self` = self else { return }
-                    let postData = Post1Data(snapshot: snapshot, myId: uid)
+                    let postData = PostData111(snapshot: snapshot, myId: uid)
                     
                     var index: Int = 0
                     for post in self.postArray {
@@ -331,7 +331,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
     
     func hyoukaGo(_ sender:UIButton, event:UIEvent){
         let indexPath = getIndexPath(event)
-        let cell = tableView.cellForRow(at: indexPath!) as! Home11TableViewCell?
+        let cell = tableView.cellForRow(at: indexPath!) as! HHOOTableViewCell?
         let ud = UserDefaults.standard
         let isSavePlofile = ud.bool(forKey: CommonConst.IsSavePlofileData )
         if isSavePlofile == true {
@@ -388,7 +388,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
         let point = touch!.location(in: self.tableView)
         let indexPath = tableView.indexPathForRow(at: point)
         let postData = postArray[indexPath!.row]
-        let cell = tableView.cellForRow(at: indexPath!) as! Home11TableViewCell?
+        let cell = tableView.cellForRow(at: indexPath!) as! HHOOTableViewCell?
         //cell!.hyouka.setTitleColor(UIColor.yellow, for: UIControlState())
         cell!.hyouka.setTitleColor(UIColor.black, for: UIControlState())
         if let uid = FIRAuth.auth()?.currentUser?.uid {
@@ -428,7 +428,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
         let original = postData.original
         let cover = postData.cover
         let uid:NSString = postData.uid! as NSString
-        let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH1).child(genre)
+        let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH11).child(genre)
         let postData2 = ["time":time!,"songname":name!,"ongen":song!,"byou":byou!,"star":star,"original":original!,"cover":cover!,"uid":uid] as [String : Any]
         postRef.child(postData.id!).setValue(postData2)
     }
@@ -460,7 +460,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
             let point = touch!.location(in: self.tableView)
             let indexPath = tableView.indexPathForRow(at: point)
             let postData = postArray[indexPath!.row]
-            let cell = tableView.cellForRow(at: indexPath!) as! Home11TableViewCell?
+            let cell = tableView.cellForRow(at: indexPath!) as! HHOOTableViewCell?
             //cell?.backButton.isEnabled = true
             if indexPath == playingIndexPath{
                 if playSong.isPlaying == true{
@@ -469,11 +469,11 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
                 }else{
                     timer.invalidate()
                     playSong.play()
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(Home11ViewController.updatePlayingTime), userInfo: nil, repeats: true)
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(HHHOmeViewController.updatePlayingTime), userInfo: nil, repeats: true)
                 }
             } else { //他の曲を再生した時再生中の曲がこうなる
                 if playingIndexPath != nil {
-                    let cell = tableView.cellForRow(at: playingIndexPath) as! Home11TableViewCell?
+                    let cell = tableView.cellForRow(at: playingIndexPath) as! HHOOTableViewCell?
                     if cell != nil {
                         playSong.stop()
                         cell!.nami.progress = 0
@@ -491,7 +491,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
                 SVProgressHUD.setDefaultMaskType(.none)
                 SVProgressHUD.show(withStatus:"クールな音質に仕上げています😎(最大5秒) 　　　　　　　　　　　　　　　　                　　　　　　このオリジナルソングが君のセンスにあえば左上のProfileボタンをタップして俺に連絡をとってくれ😎あ、あと最高のヘッドホンで聞いてくれよな😜")
                 
-                FIRDatabase.database().reference().child(CommonConst.songData1).child(postData.song!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
+                FIRDatabase.database().reference().child(CommonConst.songData11).child(postData.song!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                     guard let `self` = self else { return }
                     if self.observing == false {
                         return
@@ -514,7 +514,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
                     cell!.playSong = self.playSong
                     self.playSong.prepareToPlay()
                     self.playSong.play()
-                    self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(Home11ViewController.updatePlayingTime), userInfo: nil, repeats: true)
+                    self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(HHHOmeViewController.updatePlayingTime), userInfo: nil, repeats: true)
                     cell?.backButton.isEnabled = true
                 })
             } } else {
@@ -542,7 +542,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
     
     func back(_ sender: UIButton, event:UIEvent) {
         
-        let cell = tableView.cellForRow(at: playingIndexPath) as! Home11TableViewCell?
+        let cell = tableView.cellForRow(at: playingIndexPath) as! HHOOTableViewCell?
         cell!.onlabel2.text = "0:00"
         
         playSong.stop()
@@ -550,7 +550,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
         playSong.prepareToPlay()
         playSong.currentTime = 0
         playSong.play()
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(Home11ViewController.updatePlayingTime), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(HHHOmeViewController.updatePlayingTime), userInfo: nil, repeats: true)
     }
     
     func formatTimeString(_ d: Double) -> String {
@@ -567,7 +567,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
     }
     
     func updatePlayingTime() {
-        let cell = tableView.cellForRow(at: playingIndexPath) as! Home11TableViewCell?
+        let cell = tableView.cellForRow(at: playingIndexPath) as! HHOOTableViewCell?
         if (cell != nil) && (playSong.currentTime >= 0.1) {
             cell!.onlabel2.text = formatTimeString(playSong.currentTime)
             cell!.nami.progress = Float(playSong.currentTime / playSong.duration)
@@ -575,7 +575,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        let cell = tableView.cellForRow(at: playingIndexPath) as! Home11TableViewCell?
+        let cell = tableView.cellForRow(at: playingIndexPath) as! HHOOTableViewCell?
         timer.invalidate()
         if cell != nil {
             cell!.onlabel2.text = formatTimeString(playSong.duration)

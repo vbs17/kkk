@@ -32,6 +32,7 @@
 		B04662181E6EF8ED00EB5EE7 /* HHHOmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04662171E6EF8ED00EB5EE7 /* HHHOmeViewController.swift */; };
 		B046621B1E6EFBE400EB5EE7 /* HHOOTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04662191E6EFBE400EB5EE7 /* HHOOTableViewCell.swift */; };
 		B046621C1E6EFBE400EB5EE7 /* HHOOTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B046621A1E6EFBE400EB5EE7 /* HHOOTableViewCell.xib */; };
+		B046621E1E6EFF7B00EB5EE7 /* Post4Data4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B046621D1E6EFF7B00EB5EE7 /* Post4Data4.swift */; };
 		B054F5D41E46B6BE007AFC5D /* Itiran111ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054F5D31E46B6BE007AFC5D /* Itiran111ViewController.swift */; };
 		B054F5D61E46B7CE007AFC5D /* Home111ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054F5D51E46B7CE007AFC5D /* Home111ViewController.swift */; };
 		B054F5D91E46BC9A007AFC5D /* Home22TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054F5D71E46BC9A007AFC5D /* Home22TableViewCell.swift */; };
@@ -154,6 +155,7 @@
 		B04662171E6EF8ED00EB5EE7 /* HHHOmeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHHOmeViewController.swift; sourceTree = "<group>"; };
 		B04662191E6EFBE400EB5EE7 /* HHOOTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHOOTableViewCell.swift; sourceTree = "<group>"; };
 		B046621A1E6EFBE400EB5EE7 /* HHOOTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HHOOTableViewCell.xib; sourceTree = "<group>"; };
+		B046621D1E6EFF7B00EB5EE7 /* Post4Data4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post4Data4.swift; sourceTree = "<group>"; };
 		B054F5D31E46B6BE007AFC5D /* Itiran111ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Itiran111ViewController.swift; sourceTree = "<group>"; };
 		B054F5D51E46B7CE007AFC5D /* Home111ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home111ViewController.swift; sourceTree = "<group>"; };
 		B054F5D71E46BC9A007AFC5D /* Home22TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home22TableViewCell.swift; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 				B05E343E1DC8B57F00C271D3 /* PostData2.swift */,
 				B07B5ACF1E456E2200AE5B0D /* Post2Data2.swift */,
 				B07B5AD11E456E2F00AE5B0D /* Post3Data3.swift */,
+				B046621D1E6EFF7B00EB5EE7 /* Post4Data4.swift */,
 				B071D9651DB4D6140017E287 /* File.swift */,
 			);
 			name = PostData;
@@ -764,6 +767,7 @@
 				B05F57741DDEBD05006DB9A5 /* SyutyuViewController.swift in Sources */,
 				B00C67B01E3D6FE90026E775 /* Rock3ViewController.swift in Sources */,
 				B071D9711DB509FA0017E287 /* TabViewController.swift in Sources */,
+				B046621E1E6EFF7B00EB5EE7 /* Post4Data4.swift in Sources */,
 				B0B4481C1DD5ACE4001DDD89 /* IkuViewController.swift in Sources */,
 				B066332C1E4B9F1200AA8635 /* Oth3ViewController.swift in Sources */,
 				B00501BE1DB6420800319866 /* ItiranViewController.swift in Sources */,
