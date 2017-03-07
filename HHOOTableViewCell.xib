@@ -209,8 +209,7 @@
                 <outlet property="backButton" destination="h9i-X8-gFF" id="fhu-Ce-tdm"/>
                 <outlet property="goButton" destination="UEI-sI-XPK" id="FF4-SW-Sr1"/>
                 <outlet property="hyouka" destination="VvK-Kd-ozn" id="OcH-Qq-Dnh"/>
-                <outlet property="imageView" destination="0PA-ES-MRS" id="n06-ec-l6S"/>
-                <outlet property="imageView1" destination="WGV-uX-Kbc" id="cGJ-s5-bUZ"/>
+                <outlet property="imageView1" destination="WGV-uX-Kbc" id="BfH-lk-gN6"/>
                 <outlet property="imageViewView" destination="0PA-ES-MRS" id="3Ke-d2-eHt"/>
                 <outlet property="label" destination="DCs-xC-KMy" id="V7P-hP-eCR"/>
                 <outlet property="label2" destination="QOL-ax-2SX" id="1ip-On-Q4A"/>
