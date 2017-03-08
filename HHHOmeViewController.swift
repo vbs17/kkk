@@ -18,7 +18,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
     var timer2 = Timer()
     var playingIndexPath:IndexPath!
     var dataLastVal:Double!
-    let DisplayDataNumber = 2;
+    let DisplayDataNumber = 1;
 
     
     @IBOutlet weak var labek: UILabel!
@@ -433,7 +433,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
     }
     
     func mada(){
-        labek.text = "誰もまだ投稿していません.君の音楽を投稿して一番乗りになろう！"
+        labek.text = "接続環境が悪いです"
     }
     
     

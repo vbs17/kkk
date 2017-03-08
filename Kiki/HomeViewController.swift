@@ -21,7 +21,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     //var tableView: UITableView!
     var playingIndexPath:IndexPath!
     var dataLastVal:Double!
-    let DisplayDataNumber = 2;
+    let DisplayDataNumber = 1;
     
     @IBOutlet weak var back: UIButton!
     @IBOutlet weak var tableView: UITableView!
