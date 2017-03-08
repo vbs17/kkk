@@ -115,13 +115,125 @@ class TabViewController: UIViewController {
     var genre:String!
     
     @IBAction func country(_ sender: Any) {
+        let reachability = Reachability()!
+        if reachability.isReachable {
+            let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "HHOO") as! HHHOmeViewController
+            genre = "Country"
+            homeviewcontroller.genre = genre
+            self.present(homeviewcontroller, animated: true, completion: nil)
+            
+        } else {
+            let alert = UIAlertController()
+            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
+            let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
+            alert.setValue(attributedTitle, forKey: "attributedTitle")
+            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.black]
+            let attributedMessage = NSAttributedString(string: "接続状態が不安定です", attributes: attributedMessageAttr)
+            alert.view.tintColor = UIColor.black
+            alert.setValue(attributedMessage, forKey: "attributedMessage")
+            let subview = alert.view.subviews.first! as UIView
+            let alertContentView = subview.subviews.first! as UIView
+            alertContentView.backgroundColor = UIColor.white
+            
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
+                (action: UIAlertAction!) -> Void in
+            })
+            alert.addAction(defaultAction)
+            present(alert, animated: true, completion: nil)
+            alert.view.tintColor = UIColor.black
+            
+        }
     }
 
 @IBAction func Folk(_ sender: Any) {
+    let reachability = Reachability()!
+    if reachability.isReachable {
+        let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "HHOO") as! HHHOmeViewController
+        genre = "Folk"
+        homeviewcontroller.genre = genre
+        self.present(homeviewcontroller, animated: true, completion: nil)
+        
+    } else {
+        let alert = UIAlertController()
+        let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
+        let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
+        alert.setValue(attributedTitle, forKey: "attributedTitle")
+        let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.black]
+        let attributedMessage = NSAttributedString(string: "接続状態が不安定です", attributes: attributedMessageAttr)
+        alert.view.tintColor = UIColor.black
+        alert.setValue(attributedMessage, forKey: "attributedMessage")
+        let subview = alert.view.subviews.first! as UIView
+        let alertContentView = subview.subviews.first! as UIView
+        alertContentView.backgroundColor = UIColor.white
+        
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
+            (action: UIAlertAction!) -> Void in
+        })
+        alert.addAction(defaultAction)
+        present(alert, animated: true, completion: nil)
+        alert.view.tintColor = UIColor.black
+        
+    }
     }
     @IBAction func Funk(_ sender: Any) {
+        let reachability = Reachability()!
+        if reachability.isReachable {
+            let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "HHOO") as! HHHOmeViewController
+            genre = "Funk"
+            homeviewcontroller.genre = genre
+            self.present(homeviewcontroller, animated: true, completion: nil)
+            
+        } else {
+            let alert = UIAlertController()
+            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
+            let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
+            alert.setValue(attributedTitle, forKey: "attributedTitle")
+            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.black]
+            let attributedMessage = NSAttributedString(string: "接続状態が不安定です", attributes: attributedMessageAttr)
+            alert.view.tintColor = UIColor.black
+            alert.setValue(attributedMessage, forKey: "attributedMessage")
+            let subview = alert.view.subviews.first! as UIView
+            let alertContentView = subview.subviews.first! as UIView
+            alertContentView.backgroundColor = UIColor.white
+            
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
+                (action: UIAlertAction!) -> Void in
+            })
+            alert.addAction(defaultAction)
+            present(alert, animated: true, completion: nil)
+            alert.view.tintColor = UIColor.black
+            
+        }
     }
     @IBAction func Cla(_ sender: Any) {
+        let reachability = Reachability()!
+        if reachability.isReachable {
+            let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "HHOO") as! HHHOmeViewController
+            genre = "Classical"
+            homeviewcontroller.genre = genre
+            self.present(homeviewcontroller, animated: true, completion: nil)
+            
+        } else {
+            let alert = UIAlertController()
+            let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
+            let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
+            alert.setValue(attributedTitle, forKey: "attributedTitle")
+            let attributedMessageAttr = [NSForegroundColorAttributeName: UIColor.black]
+            let attributedMessage = NSAttributedString(string: "接続状態が不安定です", attributes: attributedMessageAttr)
+            alert.view.tintColor = UIColor.black
+            alert.setValue(attributedMessage, forKey: "attributedMessage")
+            let subview = alert.view.subviews.first! as UIView
+            let alertContentView = subview.subviews.first! as UIView
+            alertContentView.backgroundColor = UIColor.white
+            
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
+                (action: UIAlertAction!) -> Void in
+            })
+            alert.addAction(defaultAction)
+            present(alert, animated: true, completion: nil)
+            alert.view.tintColor = UIColor.black
+            
+        }
     }
     
     @IBAction func bl(_ sender: Any) {

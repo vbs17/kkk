@@ -433,7 +433,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
     }
     
     func mada(){
-        labek.text = "接続環境が悪いです"
+        labek.text = "接続状態が不安定です"
     }
     
     
