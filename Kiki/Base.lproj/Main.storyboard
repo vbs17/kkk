@@ -26,7 +26,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Hq-gZ-0e1">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="1200"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kuuhef1wkwg-omar-yassen-1" translatesAutoresizingMaskIntoConstraints="NO" id="cbL-JX-PFB">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="laura-wielo-133931" translatesAutoresizingMaskIntoConstraints="NO" id="9iC-EM-nhE">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -34,7 +34,7 @@
                                         <rect key="frame" x="23" y="30" width="115" height="115"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <size key="titleShadowOffset" width="2" height="1"/>
-                                        <state key="normal" title="Blues" backgroundImage="bailey-zindel-149134">
+                                        <state key="normal" title="Blues">
                                             <color key="titleColor" red="0.98465489630000003" green="0.95407183220000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -46,7 +46,7 @@
                                         <rect key="frame" x="180" y="30" width="115" height="115"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <size key="titleShadowOffset" width="2" height="1"/>
-                                        <state key="normal" title="Rock" backgroundImage="apiru2">
+                                        <state key="normal" title="Rock">
                                             <color key="titleColor" red="0.98465489630000003" green="0.95407183220000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -58,7 +58,7 @@
                                         <rect key="frame" x="180" y="187" width="115" height="115"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <size key="titleShadowOffset" width="2" height="1"/>
-                                        <state key="normal" title="Pop" backgroundImage="anthony-delanoix-15928">
+                                        <state key="normal" title="Pop">
                                             <color key="titleColor" red="0.98465489630000003" green="0.95407183220000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -70,7 +70,7 @@
                                         <rect key="frame" x="23" y="187" width="115" height="115"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <size key="titleShadowOffset" width="2" height="1"/>
-                                        <state key="normal" title="Metal" backgroundImage="jez-timms-157470">
+                                        <state key="normal" title="Metal">
                                             <color key="titleColor" red="0.98465489630000003" green="0.95407183220000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -82,7 +82,7 @@
                                         <rect key="frame" x="23" y="343" width="115" height="115"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <size key="titleShadowOffset" width="2" height="1"/>
-                                        <state key="normal" title="Electronic" backgroundImage="luca-bravo-204056">
+                                        <state key="normal" title="Electronic">
                                             <color key="titleColor" red="0.98465489630000003" green="0.95407183220000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -94,7 +94,7 @@
                                         <rect key="frame" x="180" y="343" width="115" height="115"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <size key="titleShadowOffset" width="2" height="1"/>
-                                        <state key="normal" title="R&amp;B" backgroundImage="claus-grunstaudl-147900">
+                                        <state key="normal" title="R&amp;B">
                                             <color key="titleColor" red="0.98465489630000003" green="0.95407183220000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -106,7 +106,7 @@
                                         <rect key="frame" x="180" y="500" width="115" height="115"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <size key="titleShadowOffset" width="2" height="1"/>
-                                        <state key="normal" title="Jazz" backgroundImage="jens-thekkeveettil-2538">
+                                        <state key="normal" title="Jazz">
                                             <color key="titleColor" red="0.98465489630000003" green="0.95407183220000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -118,7 +118,7 @@
                                         <rect key="frame" x="23" y="500" width="115" height="115"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <size key="titleShadowOffset" width="2" height="1"/>
-                                        <state key="normal" title="Hip hop" backgroundImage="gabriel-barletta-87524">
+                                        <state key="normal" title="Hip hop">
                                             <color key="titleColor" red="0.98465489630000003" green="0.95407183220000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -163,7 +163,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kK-hJ-edF">
-                                        <rect key="frame" x="197" y="982" width="115" height="115"/>
+                                        <rect key="frame" x="180" y="982" width="115" height="115"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <size key="titleShadowOffset" width="2" height="1"/>
                                         <state key="normal" title="Button">
@@ -175,7 +175,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZE-aJ-92a">
-                                        <rect key="frame" x="8" y="976" width="115" height="115"/>
+                                        <rect key="frame" x="23" y="976" width="115" height="115"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <size key="titleShadowOffset" width="2" height="1"/>
                                         <state key="normal" title="Button">
@@ -199,13 +199,13 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1200" id="BSZ-7T-FSy"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.98465489630000003" green="0.95407183220000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4Hq-gZ-0e1" firstAttribute="leading" secondItem="N9x-Xg-FCw" secondAttribute="leading" id="KN6-YZ-eIR"/>
                             <constraint firstAttribute="trailing" secondItem="4Hq-gZ-0e1" secondAttribute="trailing" id="SXR-PR-6Wa"/>
@@ -235,7 +235,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jo7-yi-CRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8462" y="-7816"/>
+            <point key="canvasLocation" x="8461.875" y="-7816.9014084507044"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="oay-y2-Rqy">
@@ -5495,14 +5495,10 @@
         <image name="IMG_3894" width="750" height="1334"/>
         <image name="IMG_3945" width="750" height="1334"/>
         <image name="aa" width="500" height="750"/>
-        <image name="anthony-delanoix-15928" width="5616" height="3744"/>
         <image name="apiru" width="800" height="1200"/>
-        <image name="apiru2" width="1242" height="1863"/>
         <image name="apiru2-1" width="1242" height="1863"/>
-        <image name="bailey-zindel-149134" width="6000" height="4000"/>
         <image name="base" width="300" height="200"/>
         <image name="came" width="400" height="314"/>
-        <image name="claus-grunstaudl-147900" width="3482" height="2611"/>
         <image name="dasai" width="2706" height="2029"/>
         <image name="dasai2" width="600" height="400"/>
         <image name="dasai3" width="530" height="794"/>
@@ -5512,14 +5508,11 @@
         <image name="drum" width="120" height="180"/>
         <image name="fi9qq0fwyvq-jon-tyson" width="600" height="800"/>
         <image name="fuck" width="1242" height="933"/>
-        <image name="gabriel-barletta-87524" width="6000" height="4000"/>
         <image name="guitrar" width="300" height="200"/>
         <image name="hha" width="300" height="200"/>
-        <image name="jens-thekkeveettil-2538" width="4368" height="2912"/>
-        <image name="jez-timms-157470" width="6016" height="4016"/>
         <image name="kesiki" width="500" height="500"/>
         <image name="kuuhef1wkwg-omar-yassen-1" width="1242" height="1868"/>
-        <image name="luca-bravo-204056" width="4589" height="3059"/>
+        <image name="laura-wielo-133931" width="3808" height="2539"/>
         <image name="nna" width="300" height="169"/>
         <image name="oreo" width="400" height="267"/>
         <image name="pianp" width="300" height="200"/>
