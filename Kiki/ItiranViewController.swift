@@ -4,7 +4,10 @@ import UIKit
 import ReachabilitySwift
 
 
-class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+
+class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
     
     
     @IBOutlet weak var tableVView: UITableView!
@@ -476,7 +479,8 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let cell = tableVView.dequeueReusableCell(withIdentifier: "Celll") as! ItiranTableViewCell
-        for post in cell{
+
+            for post in cell{
             if (post.label.text == genre1) {
             if(shine == true){
                 cell.imageViewVV.backgroundColor = UIColor.red
@@ -485,7 +489,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         
         }
-      }
+    }
     }
     
     
