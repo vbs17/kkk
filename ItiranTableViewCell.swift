@@ -7,6 +7,7 @@ class ItiranTableViewCell: UITableViewCell {
     
     @IBOutlet weak var label: UILabel!
 
+    @IBOutlet weak var imageViewVV: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
     }

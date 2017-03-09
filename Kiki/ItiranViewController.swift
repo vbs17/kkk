@@ -3,10 +3,11 @@
 import UIKit
 import ReachabilitySwift
 
+
 class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableVView: UITableView!
     
     @IBAction func back(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
@@ -459,6 +460,10 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                   "9mm Parabellum Bullet"]]
     
     var genre:String!
+    var genre1:String!
+    var shine:Bool?
+
+
 
     @IBOutlet weak var hou: UIButton!
     @IBOutlet weak var cho: UILabel!
@@ -466,15 +471,34 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Itiran11") as! Itiran11ViewController
         self.present(homeviewcontroller, animated: false, completion: nil)
 
-        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let cell = tableVView.dequeueReusableCell(withIdentifier: "Celll") as! ItiranTableViewCell
+        for post in cell{
+            if (post.label.text == genre1) {
+            if(shine == true){
+                cell.imageViewVV.backgroundColor = UIColor.red
+            }else{
+                cell.imageViewVV.backgroundColor = UIColor.white
+            }
+        
+        }
+      }
+    }
+    
+    
+        
+        
+    
     
        override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableVView.delegate = self
+        tableVView.dataSource = self
         let nib = UINib(nibName: "ItiranTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "Celll")
+        tableVView.register(nib, forCellReuseIdentifier: "Celll")
         hou.isEnabled = false
     }
 
@@ -483,7 +507,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let reachability = Reachability()!
         if reachability.isReachable {
             let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Home") as! HomeViewController
-            genre =  AllItems[indexPath.section][indexPath.row]
+            genre = AllItems[indexPath.section][indexPath.row]
             homeviewcontroller.genre = genre
             self.present(homeviewcontroller, animated: true, completion: nil)
             
@@ -517,9 +541,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return AllItems[section].count
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+   
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Celll", for: indexPath) as! ItiranTableViewCell
@@ -540,8 +562,8 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let contentsOffsetYFloat:Float = Float(self.tableView.contentOffset.y)
-        let diffFloat:Float = Float(self.tableView.contentSize.height - self.tableView.bounds.size.height)
+        let contentsOffsetYFloat:Float = Float(self.tableVView.contentOffset.y)
+        let diffFloat:Float = Float(self.tableVView.contentSize.height - self.tableVView.bounds.size.height)
         let contentsOffsetY:NSDecimalNumber = NSDecimalNumber(value: contentsOffsetYFloat)
         let diff:NSDecimalNumber = NSDecimalNumber(value: diffFloat)
         if(contentsOffsetY.subtracting(diff)==0)
@@ -557,7 +579,6 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
 }
 
-    
 
 
 

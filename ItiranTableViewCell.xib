@@ -25,9 +25,14 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gG7-4K-55R">
+                        <rect key="frame" x="310" y="16" width="21" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="imageViewVV" destination="gG7-4K-55R" id="ejv-OD-r7s"/>
                 <outlet property="label" destination="k2Q-hG-Ia9" id="CIC-zr-HBS"/>
             </connections>
             <point key="canvasLocation" x="265.5" y="269.5"/>
