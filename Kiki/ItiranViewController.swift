@@ -465,7 +465,6 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var genre:String!
     var genre1:String!
     var shine:Bool?
-    var tag:Int!
 
 
 
@@ -477,13 +476,28 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Celll", for: indexPath) as! ItiranTableViewCell
+        let items = AllItems[indexPath.section][indexPath.row]
+        for item in items{
+            if(item.section.row) == (genre1.row.section){
+            if(shine == true){
+                cell.imageViewVV.backgroundColor = UIColor.red
+            }
+        }
+        cell.label.text = items
+        
+        return cell
+      }
+    }
+
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let cell = tableVView.dequeueReusableCell(withIdentifier: "Celll") as! ItiranTableViewCell
         for iti in AllItems{
-            if ((iti) == (genre1)) {
+            if ((iti.count) == (genre1.hash.hashValue)) {
                 if(shine == true){
-                    cell.label.tag =
                     cell.imageViewVV.backgroundColor = UIColor.red
                 }else{
                     cell.imageViewVV.backgroundColor = UIColor.white
@@ -543,12 +557,6 @@ override func viewDidLoad() {
     
    
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Celll", for: indexPath) as! ItiranTableViewCell
-        let items = AllItems[indexPath.section][indexPath.row]
-        cell.label.text = items
-        return cell
-    }
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
