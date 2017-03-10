@@ -465,6 +465,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var genre:String!
     var genre1:String!
     var shine:Bool?
+    var tag:Int!
 
 
 
@@ -479,9 +480,10 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let cell = tableVView.dequeueReusableCell(withIdentifier: "Celll") as! ItiranTableViewCell
-        for post in cell{
-            if (cell.label.text == genre1) {
+        for iti in AllItems{
+            if ((iti) == (genre1)) {
                 if(shine == true){
+                    cell.label.tag =
                     cell.imageViewVV.backgroundColor = UIColor.red
                 }else{
                     cell.imageViewVV.backgroundColor = UIColor.white
@@ -490,9 +492,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
     }
-
-    
-        
+           
 override func viewDidLoad() {
         super.viewDidLoad()
         tableVView.delegate = self

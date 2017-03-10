@@ -1006,19 +1006,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
                                     "ZZ TOP"
         ]]
     
-    var songData:URL!
-    var image:UIImage!
-    //var songname:UITextField!
-    //var byou:UILabel!
-    var songname:String!
-    var byou:String!
-    var genre = ""
-    var tappedCellPos:IndexPath! //タップされたCellのindexPath
-    var buttonOriginalColor:UIColor!//ボタンの元の色
-    var isRowSelected:Bool = false//現在行が選択状態か否か
-    var original:  NSString?
-    var cover: NSString?
-    
+   
     override func viewWillAppear(_ animated: Bool) {
         tappedCellPos = nil
         genre = ""
@@ -1062,32 +1050,20 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
 
         
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        let nib = UINib(nibName: "Kind1TableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "CCell")
-        tappedCellPos = nil
-        youho.isEnabled = false
-        
-    }
-    
-    //値を設定
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CCell", for: indexPath) as! Kind1TableViewCell
-        cell.delegate = self
-        //ここ
-        cell.button.backgroundColor = UIColor.lightGray
-        if (tappedCellPos != nil){
-            if (tappedCellPos == indexPath){
-                cell.button.backgroundColor = UIColor.green
-            }
-        }
-        let items = AllItems[indexPath.section][indexPath.row]
-        cell.label.text = items
-        return cell
-    }
+   
+    var songData:URL!
+    var image:UIImage!
+    //var songname:UITextField!
+    //var byou:UILabel!
+    var songname:String!
+    var byou:String!
+    var genre = ""
+    var tappedCellPos:IndexPath! //タップされたCellのindexPath
+    var buttonOriginalColor:UIColor!//ボタンの元の色
+    var isRowSelected:Bool = false//現在行が選択状態か否か
+    var original:  NSString?
+    var cover: NSString?
+    //let cell = tableVView.dequeueReusableCell(withIdentifier: "Celll") as! ItiranTableViewCell
 
     
     func buttonPressed(_ tableViewCell: Kind1TableViewCell) {
@@ -1124,6 +1100,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
                 tableViewCell.button.backgroundColor = UIColor.green
                 // ジャンルを決定
                 genre = AllItems[indexPath!.section][indexPath!.row]
+                //cell.label.tag = AllItems[indexPath!.row]
                 // 行が選択されている
                 isRowSelected = true
                 // タップされたセルのindexPathを保存
@@ -1155,7 +1132,33 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
     }
 
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        let nib = UINib(nibName: "Kind1TableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "CCell")
+        tappedCellPos = nil
+        youho.isEnabled = false
+        
+    }
     
+    //値を設定
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CCell", for: indexPath) as! Kind1TableViewCell
+        cell.delegate = self
+        //ここ
+        cell.button.backgroundColor = UIColor.lightGray
+        if (tappedCellPos != nil){
+            if (tappedCellPos == indexPath){
+                cell.button.backgroundColor = UIColor.green
+            }
+        }
+        let items = AllItems[indexPath.section][indexPath.row]
+        cell.label.text = items
+        return cell
+    }
+
     
     
     @IBAction func post(_ sender: Any) {
