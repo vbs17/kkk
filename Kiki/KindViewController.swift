@@ -711,26 +711,55 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func savePost(uuid: String) {
-        // 投稿
-        let songName = songname
-        let kazu = byou
-        let genre11:NSString = (self.genre2 as NSString?)!
-        let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
-        let time = NSDate.timeIntervalSinceReferenceDate
-        let original:NSString = (self.original as NSString?)!
-        let cover:NSString = (self.cover as NSString?)!
-        let postData = ["time":time,"byou": kazu!, "songname": songName!, "ongen": uuid,"original":original,"cover":cover,"genre":genre11, "uid":uid] as [String : Any]
-        let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).child(uuid)
-        
-        postRef.setValue(postData) { (error, ref) in
-            if (error == nil) {
-                // 画像保存完了
-                SVProgressHUD.dismiss()
-                // 先頭に戻る
-                self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
+        var postArray: [PostData2] = []
+        let postData = postArray
+        if let uid = FIRAuth.auth()?.currentUser?.uid {
+            if postData.genre {
+                var index = -1
+                for genreId in postData.genre {
+                    if genreId == uid {
+                        index = postData.genre.indexOf(genreId)!
+                        break
+                    }
+                }
+                postData.genre.removeAtIndex(index)
             } else {
-                // 保存エラー
-                self.showErrorAlert()
+                postData.genre.append(uid)
+            }
+            
+            if self.image == nil {
+                let imageData = postData.image
+            }
+            let name1 = postData.name
+            let line1 = postData.line
+            let twitter1 = postData.twitter
+            let facebook1 = postData.facebook
+            let den1 = postData.den
+            let ta1 = postData.ta
+            let genre = postData.genre
+            let postData1 = ["name": name1, "image": imageData!.base64EncodedString(options: .lineLength64Characters), "line": line1, "facebook": facebook1, "twitter":twitter1,"den":den1,"ta":ta1,"genre":genre,"uid":uid] as [String : Any]
+            let postRef1 = FIRDatabase.database().reference().child(CommonConst.Profile)
+            postRef.child(postData.id!).setValue(postData1)
+            
+            let songName = songname
+            let kazu = byou
+            let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
+            let time = NSDate.timeIntervalSinceReferenceDate
+            let original:NSString = (self.original as NSString?)!
+            let cover:NSString = (self.cover as NSString?)!
+            let postData = ["time":time,"byou": kazu!, "songname": songName!, "ongen": uuid,"original":original,"cover":cover,"uid":uid] as [String : Any]
+            let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).child(uuid)
+            postRef.child(postData.id!).setValue(post)
+            postRef.setValue(postData) { (error, ref) in
+                if (error == nil) {
+                    // 画像保存完了
+                    SVProgressHUD.dismiss()
+                    // 先頭に戻る
+                    self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
+                } else {
+                    // 保存エラー
+                    self.showErrorAlert()
+                }
             }
         }
     }

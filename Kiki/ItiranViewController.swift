@@ -477,28 +477,12 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        let uid = FIRAuth.auth()?.currentUser?.uid
-        FIRDatabase.database().reference().child(CommonConst.PostPATH11).child(self.genre!).queryOrdered(byChild: "time").observeSingleEvent(of: .value, with: {[weak self] snapshot in
-            guard let `self` = self else { return }
-            self.tableVView.reloadData()
-            let postData = PostData(snapshot: snapshot, myId: snapshot.key)
-            if ( postData.uid == uid ) {
-                
-                self.genre1 = postData.genre
-                
-            }
-            else {
-            }
-        })
-        
-    }
-    
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Celll", for: indexPath) as! ItiranTableViewCell
         let items = AllItems[indexPath.section][indexPath.row]
-    
+        cell.imageViewVV.backgroundColor = UIColor.clear
         cell.label.text = items
         if items == genre1{
             cell.imageViewVV.backgroundColor = UIColor.red

@@ -13,13 +13,11 @@ class Post1Data: NSObject {
     var star: Array<[String:String]> = []
     var time: Double?
     var uid: String?
-    var genre: String?
 
     
     init(snapshot: FIRDataSnapshot, myId: String) {
         id = snapshot.key
         let valueDictionary = snapshot.value as! [String: AnyObject]
-        genre = valueDictionary["genre"] as? String
         byou = valueDictionary["byou"] as? String
         name = valueDictionary["songname"] as? String
         song = valueDictionary["ongen"] as? String

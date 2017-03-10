@@ -15,12 +15,13 @@ class Post2Data2: NSObject {
     var den: String?
     var ta: String?
     var uid: String?
-    
+    var genre: String?
+
     
     init(snapshot: FIRDataSnapshot, myId: String){
         id = snapshot.key
         let valueDictionary = snapshot.value as! [String: AnyObject]
-        
+        genre = valueDictionary["genre"] as? String
         let imageString = valueDictionary["image"] as? String
         image = UIImage(data: Data(base64Encoded: imageString!, options: .ignoreUnknownCharacters)!)
         name = valueDictionary["name"] as? String
