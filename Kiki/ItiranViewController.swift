@@ -2,7 +2,9 @@
 
 import UIKit
 import ReachabilitySwift
-
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 
 class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -462,10 +464,8 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                  ["80kidz",
                                   "9mm Parabellum Bullet"]]
     
-    var genre:String!
+    var genre:String?
     var genre1:String?
-    var shine:Bool?
-    var genre3:String?
 
 
 
@@ -477,14 +477,30 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child(CommonConst.PostPATH11).child(self.genre!).queryOrdered(byChild: "time").observeSingleEvent(of: .value, with: {[weak self] snapshot in
+            guard let `self` = self else { return }
+            self.tableVView.reloadData()
+            let postData = PostData(snapshot: snapshot, myId: snapshot.key)
+            if ( postData.uid == uid ) {
+                
+                self.genre1 = postData.genre
+                
+            }
+            else {
+            }
+        })
+        
+    }
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let ud = UserDefaults.standard
-        genre3 = ud.object(forKey: "CommonConst.genre1") as! String?
         let cell = tableView.dequeueReusableCell(withIdentifier: "Celll", for: indexPath) as! ItiranTableViewCell
         let items = AllItems[indexPath.section][indexPath.row]
+    
         cell.label.text = items
-        cell.imageViewVV.backgroundColor = UIColor.clear
-        if items == genre3 {
+        if items == genre1{
             cell.imageViewVV.backgroundColor = UIColor.red
         } else {
             cell.imageViewVV.backgroundColor = UIColor.clear

@@ -616,8 +616,6 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
                 //let itiranviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Itiran") as! ItiranViewController
                 //itiranviewcontroller.genre1 = genre2
                 //itiranviewcontroller.shine = true
-                let ud = UserDefaults.standard
-                ud.set(genre2, forKey: CommonConst.genre1)
                 let ongen = UUID().uuidString
                 print("Post")
                 saveSong(uuid: ongen)
@@ -716,11 +714,12 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         // 投稿
         let songName = songname
         let kazu = byou
+        let genre11:NSString = (self.genre2 as NSString?)!
         let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
         let time = NSDate.timeIntervalSinceReferenceDate
         let original:NSString = (self.original as NSString?)!
         let cover:NSString = (self.cover as NSString?)!
-        let postData = ["time":time,"byou": kazu!, "songname": songName!, "ongen": uuid,"original":original,"cover":cover, "uid":uid] as [String : Any]
+        let postData = ["time":time,"byou": kazu!, "songname": songName!, "ongen": uuid,"original":original,"cover":cover,"genre":genre11, "uid":uid] as [String : Any]
         let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).child(uuid)
         
         postRef.setValue(postData) { (error, ref) in
