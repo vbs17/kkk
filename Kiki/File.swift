@@ -26,4 +26,8 @@ struct CommonConst {
     static let IsTutorial = "IsTutorial"
     static let IsTutorial2 = "IsTutorial2"
     static let IsTutorial3 = "IsTutorial3"
+    
+    static let genre1 = "GENRE"
+
+    
 }

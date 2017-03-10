@@ -465,6 +465,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var genre:String!
     var genre1:String?
     var shine:Bool?
+    var genre3:String?
 
 
 
@@ -477,11 +478,13 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let ud = UserDefaults.standard
+        genre3 = ud.object(forKey: "CommonConst.genre1") as! String?
         let cell = tableView.dequeueReusableCell(withIdentifier: "Celll", for: indexPath) as! ItiranTableViewCell
         let items = AllItems[indexPath.section][indexPath.row]
         cell.label.text = items
         cell.imageViewVV.backgroundColor = UIColor.clear
-        if items == genre1 {
+        if items == genre3 {
             cell.imageViewVV.backgroundColor = UIColor.red
         } else {
             cell.imageViewVV.backgroundColor = UIColor.clear

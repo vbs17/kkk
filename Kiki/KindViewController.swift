@@ -613,9 +613,11 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         if isRowSelected {
             let reachability = Reachability()!
             if reachability.isReachable {
-                let itiranviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Itiran") as! ItiranViewController
-                itiranviewcontroller.genre1 = genre2
-                itiranviewcontroller.shine = true
+                //let itiranviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Itiran") as! ItiranViewController
+                //itiranviewcontroller.genre1 = genre2
+                //itiranviewcontroller.shine = true
+                let ud = UserDefaults.standard
+                ud.set(genre2, forKey: CommonConst.genre1)
                 let ongen = UUID().uuidString
                 print("Post")
                 saveSong(uuid: ongen)
