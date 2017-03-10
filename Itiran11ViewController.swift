@@ -1013,6 +1013,19 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
             self.dismiss(animated: false, completion: nil)
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cellll", for: indexPath) as! Itiran1TableViewCell
+        let items = AllItems[indexPath.section][indexPath.row]
+        cell.label.text = items
+        cell.imageViewV.backgroundColor = UIColor.clear
+        if items == genre1 {
+            cell.imageViewV.backgroundColor = UIColor.red
+        } else {
+            cell.imageViewV.backgroundColor = UIColor.clear
+        }
+        return cell
+    }
+
 
     
     override func viewDidLoad() {
@@ -1069,12 +1082,9 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
         super.didReceiveMemoryWarning()
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cellll", for: indexPath) as! Itiran1TableViewCell
-        let items = AllItems[indexPath.section][indexPath.row]
-        cell.label.text = items
-        return cell
-    }
+   
+
+    
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -1101,6 +1111,5 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
 
-    
-    
 }
+

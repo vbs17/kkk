@@ -480,8 +480,11 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "Celll", for: indexPath) as! ItiranTableViewCell
         let items = AllItems[indexPath.section][indexPath.row]
         cell.label.text = items
+        cell.imageViewVV.backgroundColor = UIColor.clear
         if items == genre1 {
             cell.imageViewVV.backgroundColor = UIColor.red
+        } else {
+            cell.imageViewVV.backgroundColor = UIColor.clear
         }
         return cell
       }

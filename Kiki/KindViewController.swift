@@ -469,6 +469,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     var songname:String!
     var byou:String!
     var genre = ""
+    var genre2:String?
     var tappedCellPos:IndexPath! //タップされたCellのindexPath
     var buttonOriginalColor:UIColor!//ボタンの元の色
     var isRowSelected:Bool = false//現在行が選択状態か否か
@@ -546,6 +547,8 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
             tableViewCell.button.backgroundColor = UIColor.green
             // ジャンルを決定
             genre = AllItems[indexPath!.section][indexPath!.row]
+            genre2 = genre
+
             // 行が選択されている
             isRowSelected = true
             // タップされたセルのindexPathを保存
@@ -570,6 +573,8 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
                 tableViewCell.button.backgroundColor = UIColor.green
                 // ジャンルを決定
                 genre = AllItems[indexPath!.section][indexPath!.row]
+                genre2 = genre
+
                 // 行が選択されている
                 isRowSelected = true
                 // タップされたセルのindexPathを保存
@@ -592,6 +597,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
             tableViewCell.button.backgroundColor = UIColor.green
             // ジャンルを決定
             genre = AllItems[indexPath!.section][indexPath!.row]
+            genre2 = genre
             // 行が選択されている
             isRowSelected = true
             // タップされたセルのindexPathを保存
@@ -608,7 +614,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
             let reachability = Reachability()!
             if reachability.isReachable {
                 let itiranviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Itiran") as! ItiranViewController
-                itiranviewcontroller.genre1 = genre
+                itiranviewcontroller.genre1 = genre2
                 itiranviewcontroller.shine = true
                 let ongen = UUID().uuidString
                 print("Post")
