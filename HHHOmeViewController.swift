@@ -18,7 +18,7 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
     var timer2 = Timer()
     var playingIndexPath:IndexPath!
     var dataLastVal:Double!
-    let DisplayDataNumber = 1;
+    let DisplayDataNumber = 2;
 
     
     @IBOutlet weak var labek: UILabel!

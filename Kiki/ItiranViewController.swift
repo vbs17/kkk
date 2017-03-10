@@ -476,27 +476,10 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        let cell = tableVView.dequeueReusableCell(withIdentifier: "Celll") as! ItiranTableViewCell
-        for post in cell{
-            if (post.label.text == genre1) {
-                if(shine == true){
-                    cell.imageViewVV.backgroundColor = UIColor.red
-                }else{
-                    cell.imageViewVV.backgroundColor = UIColor.white
-                }
-                
-            }
-        }
-    }
-    
+       
     
         
-        
-    
-    
-       override func viewDidLoad() {
+override func viewDidLoad() {
         super.viewDidLoad()
         tableVView.delegate = self
         tableVView.dataSource = self

@@ -23,7 +23,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
     //var tableView: UITableView!
     var playingIndexPath:IndexPath!
     var dataLastVal:Double!
-    let DisplayDataNumber = 1;
+    let DisplayDataNumber = 2;
 
     @IBOutlet weak var back: UIButton!
     @IBOutlet weak var tableView: UITableView!
