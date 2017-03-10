@@ -20,8 +20,8 @@ class PostData2: NSObject{
     init(snapshot: FIRDataSnapshot, myId: String){
         id = snapshot.key
         let valueDictionary = snapshot.value as! [String: AnyObject]
-        if let genre = valueDictionary["genre"] as? [String] {
-            self.genre = genre
+        if let genre5 = valueDictionary["genre"] as? [String] {
+            self.genre = genre5
         }
         for genreId in genre {
             if genreId == myId {
