@@ -463,7 +463,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                   "9mm Parabellum Bullet"]]
     
     var genre:String!
-    var genre1:String!
+    var genre1:String?
     var shine:Bool?
 
 
@@ -479,33 +479,16 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Celll", for: indexPath) as! ItiranTableViewCell
         let items = AllItems[indexPath.section][indexPath.row]
-        for item in items{
-            if(item.section.row) == (genre1.row.section){
-            if(shine == true){
-                cell.imageViewVV.backgroundColor = UIColor.red
-            }
-        }
         cell.label.text = items
-        
+        if items == genre1 {
+            cell.imageViewVV.backgroundColor = UIColor.red
+        }
         return cell
       }
-    }
+    
 
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        let cell = tableVView.dequeueReusableCell(withIdentifier: "Celll") as! ItiranTableViewCell
-        for iti in AllItems{
-            if ((iti.count) == (genre1.hash.hashValue)) {
-                if(shine == true){
-                    cell.imageViewVV.backgroundColor = UIColor.red
-                }else{
-                    cell.imageViewVV.backgroundColor = UIColor.white
-                }
-                
-            }
-        }
-    }
+    
            
 override func viewDidLoad() {
         super.viewDidLoad()

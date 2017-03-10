@@ -1165,7 +1165,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
         if isRowSelected {
             let reachability = Reachability()!
             if reachability.isReachable {
-                let itiranviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Itiran") as! ItiranViewController
+                let itiranviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Itiran11") as! Itiran11ViewController
                 itiranviewcontroller.genre1 = genre
                 itiranviewcontroller.shine = true
                 let ongen = UUID().uuidString

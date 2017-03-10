@@ -1004,6 +1004,8 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
                                     "ZZ TOP"
         ]]
     var genre:String!
+    var genre1:String?
+    var shine:Bool?
     
     @IBOutlet weak var you: UIButton!
     @IBOutlet weak var hou: UIButton!
