@@ -12,8 +12,8 @@ class SanPostData: NSObject {
     init(snapshot: FIRDataSnapshot, myId: String) {
         let valueDictionary = snapshot.value as! [String: AnyObject]
         
-        if let users2 = valueDictionary["users"] as? [String] {
-            self.users = users2
+        if let users2 = valueDictionary["users"] as? [String?] {
+            self.users = users2 as! [String]
         }
 
         for usersId in users {
@@ -22,7 +22,5 @@ class SanPostData: NSObject {
                 break
            }
         }
-
-
-  }
+    }
 }

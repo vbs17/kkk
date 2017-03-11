@@ -465,8 +465,6 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                   "9mm Parabellum Bullet"]]
     
     var genre:String?
-    var genre1:String?
-
 
 
     @IBOutlet weak var hou: UIButton!
@@ -481,19 +479,21 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Celll", for: indexPath) as! ItiranTableViewCell
-        let uid = FIRAuth.auth()?.currentUser?.uid
-        let items = AllItems[indexPath.section][indexPath.row]
-        cell.label.text = items
-        let genreRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genre!)
-        genreRef.observeSingleEvent(of .value, with: { (snapshot) in
+        let genreName = AllItems[indexPath.section][indexPath.row]
+        cell.label.text = genreName
+        let genreRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genreName)
+        genreRef.observeSingleEvent(of: .value, with: {(snapshot) in
             if snapshot.exists() {
-                if (snapshot.genre == uid){
-                    //登録していないジャンルのcellを特定するにはどうすればいいんやろ
+                let uid = FIRAuth.auth()?.currentUser?.uid
+                let genreData = SanPostData(snapshot: snapshot, myId: uid!)
+                for Genre in genreData {
+                    if (Genre.users == uid) {
+                    if(genreName == snapshot.key){
                 cell.imageViewVV.backgroundColor = UIColor.red
             }else{
                 cell.imageViewVV.backgroundColor = UIColor.clear
             }
-            }})
+                    }}}})
         return cell
     }
     

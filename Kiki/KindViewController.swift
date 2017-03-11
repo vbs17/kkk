@@ -723,7 +723,6 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
                     self.saveGenreUser()
                     print("savePost")
                 } else {
-                    // 保存エラー
                     self.showErrorAlert()
                 }
             }
