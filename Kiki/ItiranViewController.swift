@@ -481,16 +481,27 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Celll", for: indexPath) as! ItiranTableViewCell
+        let uid = FIRAuth.auth()?.currentUser?.uid
         let items = AllItems[indexPath.section][indexPath.row]
-        cell.imageViewVV.backgroundColor = UIColor.clear
         cell.label.text = items
-        if items == genre1{
-            cell.imageViewVV.backgroundColor = UIColor.red
-        } else {
-            cell.imageViewVV.backgroundColor = UIColor.clear
-        }
+        let genreRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genre!)
+        genreRef.observeSingleEvent(of .value, with: { (snapshot) in
+            if snapshot.exists() {
+                if (snapshot.genre == uid){
+                    //登録していないジャンルのcellを特定するにはどうすればいいんやろ
+                cell.imageViewVV.backgroundColor = UIColor.red
+            }else{
+                cell.imageViewVV.backgroundColor = UIColor.clear
+            }
+            }})
         return cell
-      }
+    }
+    
+    
+    
+    
+    
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
