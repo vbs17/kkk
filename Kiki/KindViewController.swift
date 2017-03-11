@@ -730,20 +730,15 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     
     //usersの配列要素をクリアする
-    func saveGenreUser(uuid: String){
-            sanpostArray.users = []
+    func saveGenreUser{
             let genre = genre2
-            let users = sanpostArray.users
-            let time = (sanpostArray.date?.timeIntervalSinceReferenceDate)! as TimeInterval
-            let post = ["time": time,"genre": genre,"users": users] as [String : Any]
-            let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser)
+            let post = ["users": []]
+            let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genre!)
             postRef.child(sanpostArray.id!).setValue(post){ (error, ref) in
             if (error == nil) {
                 SVProgressHUD.dismiss()
-                // 先頭に戻る
                 self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
             } else {
-                // 保存エラー
                 self.showErrorAlert()
             }
         }
