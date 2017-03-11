@@ -19,6 +19,7 @@
 		B00C67AE1E3D6FDD0026E775 /* Rock2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C67AD1E3D6FDD0026E775 /* Rock2ViewController.swift */; };
 		B00C67B01E3D6FE90026E775 /* Rock3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C67AF1E3D6FE90026E775 /* Rock3ViewController.swift */; };
 		B00D7CF51DCEB5190042D04F /* MixerMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = B00D7CF41DCEB5190042D04F /* MixerMeter.m */; };
+		B010718D1E737D7A00A31F2D /* SanPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B010718C1E737D7A00A31F2D /* SanPostData.swift */; };
 		B0190A211DB20FE400FA066D /* KindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0190A201DB20FE400FA066D /* KindViewController.swift */; };
 		B020D0AB1E0F405A005A1363 /* PostData4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B020D0AA1E0F405A005A1363 /* PostData4.swift */; };
 		B029E58A1DE1A17C00C7EDDF /* IyaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029E5891DE1A17C00C7EDDF /* IyaViewController.swift */; };
@@ -142,6 +143,7 @@
 		B00D7CF21DCEB5180042D04F /* Kiki-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kiki-Bridging-Header.h"; sourceTree = "<group>"; };
 		B00D7CF31DCEB5190042D04F /* MixerMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixerMeter.h; sourceTree = "<group>"; };
 		B00D7CF41DCEB5190042D04F /* MixerMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MixerMeter.m; sourceTree = "<group>"; };
+		B010718C1E737D7A00A31F2D /* SanPostData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SanPostData.swift; sourceTree = "<group>"; };
 		B0190A201DB20FE400FA066D /* KindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KindViewController.swift; sourceTree = "<group>"; };
 		B020D0AA1E0F405A005A1363 /* PostData4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData4.swift; sourceTree = "<group>"; };
 		B029E5891DE1A17C00C7EDDF /* IyaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IyaViewController.swift; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 				B07B5ACF1E456E2200AE5B0D /* Post2Data2.swift */,
 				B07B5AD11E456E2F00AE5B0D /* Post3Data3.swift */,
 				B046621D1E6EFF7B00EB5EE7 /* Post4Data4.swift */,
+				B010718C1E737D7A00A31F2D /* SanPostData.swift */,
 				B071D9651DB4D6140017E287 /* File.swift */,
 			);
 			name = PostData;
@@ -835,6 +838,7 @@
 				B06633281E4B9F0200AA8635 /* OthViewController.swift in Sources */,
 				B06633241E4B9ACA00AA8635 /* Syutyu9ViewController.swift in Sources */,
 				B00501C41DB6428500319866 /* ItiranTableViewCell.swift in Sources */,
+				B010718D1E737D7A00A31F2D /* SanPostData.swift in Sources */,
 				B07B5AD01E456E2200AE5B0D /* Post2Data2.swift in Sources */,
 				B0F132CD1E46AC880040115D /* Syugo11TableViewCell.swift in Sources */,
 				B05E79241E6ED5B8002940C2 /* Kind1122TableViewCell.swift in Sources */,

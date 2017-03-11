@@ -711,36 +711,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func savePost(uuid: String) {
-        var postArray: [PostData2] = []
-        let postData = postArray
-        if let uid = FIRAuth.auth()?.currentUser?.uid {
-            if postData.genre {
-                var index = -1
-                for genreId in postData.genre {
-                    if genreId == uid {
-                        index = postData.genre.indexOf(genreId)!
-                        break
-                    }
-                }
-                postData.genre.removeAtIndex(index)
-            } else {
-                postData.genre.append(uid)
-            }
-            
-            if self.image == nil {
-                let imageData = postData.image
-            }
-            let name1 = postData.name
-            let line1 = postData.line
-            let twitter1 = postData.twitter
-            let facebook1 = postData.facebook
-            let den1 = postData.den
-            let ta1 = postData.ta
-            let genre = postData.genre
-            let postData1 = ["name": name1, "image": imageData!.base64EncodedString(options: .lineLength64Characters), "line": line1, "facebook": facebook1, "twitter":twitter1,"den":den1,"ta":ta1,"genre":genre,"uid":uid] as [String : Any]
-            let postRef1 = FIRDatabase.database().reference().child(CommonConst.Profile)
-            postRef.child(postData.id!).setValue(postData1)
-            
+    
             let songName = songname
             let kazu = byou
             let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
@@ -749,20 +720,44 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
             let cover:NSString = (self.cover as NSString?)!
             let postData = ["time":time,"byou": kazu!, "songname": songName!, "ongen": uuid,"original":original,"cover":cover,"uid":uid] as [String : Any]
             let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).child(uuid)
-            postRef.child(postData.id!).setValue(post)
             postRef.setValue(postData) { (error, ref) in
                 if (error == nil) {
-                    // 画像保存完了
-                    SVProgressHUD.dismiss()
-                    // 先頭に戻る
-                    self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
+                    self.saveGenreUser(uuid: uuid)
+                    print("savePost")
                 } else {
                     // 保存エラー
                     self.showErrorAlert()
                 }
             }
         }
-    }
+    
+    //usersの配列要素をクリアする
+    func saveGenreUser(uuid: String){
+            let sanpostData:[SanPostData] = []
+            sanpostData.users = []
+            let time = (sanpostData.date?.timeIntervalSinceReferenceDate)! as TimeInterval
+            let users = sanpostData.users
+            let post = ["time": time, "users": users] as [String : Any]
+            let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser)
+            postRef.child(sanpostData.id!).setValue(post){ (error, ref) in
+            if (error == nil) {
+                SVProgressHUD.dismiss()
+                // 先頭に戻る
+                self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
+            } else {
+                // 保存エラー
+                self.showErrorAlert()
+            }
+        }
+      }
+    
+  
+    
+
+
+    
+    
+    
     
     
     func showErrorAlert() {
@@ -803,9 +798,9 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    
 }
+
+
 
 
 
