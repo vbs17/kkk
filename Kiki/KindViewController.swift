@@ -734,7 +734,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
             let genre = genre2
             let post = ["users": []]
             let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genre!)
-            postRef.child(sanpostArray.id!).setValue(post){ (error, ref) in
+            postRef.setValue(post){ (error, ref) in
             if (error == nil) {
                 SVProgressHUD.dismiss()
                 self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
