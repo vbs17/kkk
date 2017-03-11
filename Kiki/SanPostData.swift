@@ -5,6 +5,7 @@ import Firebase
 import FirebaseDatabase
 
 class SanPostData: NSObject {
+    //ここuidです
     var users: [String] = []
     var sansyoued: Bool = false
     

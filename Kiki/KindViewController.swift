@@ -720,7 +720,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
             let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre).child(uuid)
             postRef.setValue(postData) { (error, ref) in
                 if (error == nil) {
-                    self.saveGenreUser(uuid: uuid)
+                    self.saveGenreUser()
                     print("savePost")
                 } else {
                     // 保存エラー
@@ -730,7 +730,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     
     //usersの配列要素をクリアする
-    func saveGenreUser{
+    func saveGenreUser(){
             let genre = genre2
             let post = ["users": []]
             let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genre!)
