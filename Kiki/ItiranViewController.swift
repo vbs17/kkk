@@ -492,9 +492,20 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
       }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let genreRef = FIRDatabase.database().reference().child(CommonConst.GenreUser)
+        genreRef.observe(.childAdded, with: { snapshot in
+            self.tableVView.reloadData()
 
-    
-    
+        })
+        genreRef.observe(.childChanged, with: { snapshot in
+            self.tableVView.reloadData()
+
+            
+        })
+    }
+
            
 override func viewDidLoad() {
         super.viewDidLoad()
