@@ -475,6 +475,8 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     var isRowSelected:Bool = false//現在行が選択状態か否か
     var original:  NSString?
     var cover: NSString?
+    var sanpostArray: [SanPostData] = []
+
     
     override func viewWillAppear(_ animated: Bool) {
         tappedCellPos = nil
@@ -607,15 +609,11 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-    //FIRDatabase.database().reference().child(CommonConst.PostPATH).child(genre) に保存
     
     @IBAction func post(_ sender: AnyObject) {
         if isRowSelected {
             let reachability = Reachability()!
             if reachability.isReachable {
-                //let itiranviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Itiran") as! ItiranViewController
-                //itiranviewcontroller.genre1 = genre2
-                //itiranviewcontroller.shine = true
                 let ongen = UUID().uuidString
                 print("Post")
                 saveSong(uuid: ongen)
@@ -733,13 +731,13 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //usersの配列要素をクリアする
     func saveGenreUser(uuid: String){
-            let sanpostData:[SanPostData] = []
-            sanpostData.users = []
-            let time = (sanpostData.date?.timeIntervalSinceReferenceDate)! as TimeInterval
-            let users = sanpostData.users
-            let post = ["time": time, "users": users] as [String : Any]
+            sanpostArray.users = []
+            let genre = genre2
+            let users = sanpostArray.users
+            let time = (sanpostArray.date?.timeIntervalSinceReferenceDate)! as TimeInterval
+            let post = ["time": time,"genre": genre,"users": users] as [String : Any]
             let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser)
-            postRef.child(sanpostData.id!).setValue(post){ (error, ref) in
+            postRef.child(sanpostArray.id!).setValue(post){ (error, ref) in
             if (error == nil) {
                 SVProgressHUD.dismiss()
                 // 先頭に戻る
