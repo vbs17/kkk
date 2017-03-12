@@ -510,12 +510,6 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    
-    
-    
-    
-    
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let genreRef = FIRDatabase.database().reference().child(CommonConst.GenreUser)
