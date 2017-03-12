@@ -501,12 +501,12 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let g = genreData.users
                 for Genre in g {
                     if (Genre == uid) {
-                    if(genreName == snapshot.key){
-                cell.imageViewVV.backgroundColor = UIColor.red
-            }else{
+                    //if(genreName == snapshot.key){
                 cell.imageViewVV.backgroundColor = UIColor.clear
+            }else{
+                cell.imageViewVV.backgroundColor = UIColor.red
             }
-                    }}}})
+                    }}})
         return cell
     }
     
@@ -546,6 +546,11 @@ override func viewDidLoad() {
         if reachability.isReachable {
             let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Home") as! HomeViewController
             genre = AllItems[indexPath.section][indexPath.row]
+            let uid = FIRAuth.auth()?.currentUser?.uid
+            let user = uid
+            let post = ["users": user] as [String : Any]
+            let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genre!).child(user!)
+            postRef.setValue(post)
             homeviewcontroller.genre = genre
             self.present(homeviewcontroller, animated: true, completion: nil)
             
