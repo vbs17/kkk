@@ -6,10 +6,9 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
+import Swift
 
-class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    
+class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     
     @IBOutlet weak var tableVView: UITableView!
@@ -475,6 +474,19 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     }
     
+    
+        var count: String = ""
+        
+        func next() -> String? {
+            if count == "" {
+                return nil
+            } else {
+                return count
+            }
+        }
+    
+    
+    
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -486,8 +498,9 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
             if snapshot.exists() {
                 let uid = FIRAuth.auth()?.currentUser?.uid
                 let genreData = SanPostData(snapshot: snapshot, myId: uid!)
-                for Genre in genreData {
-                    if (Genre.users == uid) {
+                let g = genreData.users
+                for Genre in g {
+                    if (Genre == uid) {
                     if(genreName == snapshot.key){
                 cell.imageViewVV.backgroundColor = UIColor.red
             }else{
