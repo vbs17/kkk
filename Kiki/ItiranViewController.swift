@@ -538,18 +538,17 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Celll", for: indexPath) as! ItiranTableViewCell
         let reachability = Reachability()!
+        let uid = FIRAuth.auth()?.currentUser?.uid
         if reachability.isReachable {
             var genreArray = cell.sanPostData
             if let users = genreArray?.users {
-            if let uid = FIRAuth.auth()?.currentUser?.uid {
-                if (genreArray?.users == uid) {
                     if let index = genreArray?.users.index(of: uid) {
                         genreArray?.users.remove(at: index)
-                    }
+                    
                 } else {
-                    genreArray?.users.append(uid)
+                    genreArray?.users.append(uid!)
                 }
-                let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genre!).child(users)
+                let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genre!)
                 let users = ["users": genreArray?.users]
                 postRef.updateChildValues(users)
                 
@@ -559,7 +558,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
             homeviewcontroller.genre = genre
             self.present(homeviewcontroller, animated: true, completion: nil)
             
-        } else {
+    } else {
             let alert = UIAlertController()
             let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
             let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
@@ -579,7 +578,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
             present(alert, animated: true, completion: nil)
             alert.view.tintColor = UIColor.black
             
-            }}}
+            }}
         
         
     
@@ -616,10 +615,11 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
     }
-    
-    
-    
 }
+    
+    
+    
+
 
 
 
