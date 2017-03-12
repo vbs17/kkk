@@ -4,6 +4,7 @@ import UIKit
 
 class ItiranTableViewCell: UITableViewCell {
     
+   var sanPostData: SanPostData?
     
     @IBOutlet weak var label: UILabel!
 
@@ -15,6 +16,9 @@ class ItiranTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+    }
+    func setPostData(_ postData: SanPostData){
+            self.sanPostData = postData
     }
     
 }

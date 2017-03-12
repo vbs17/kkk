@@ -19,7 +19,8 @@ class SanPostData: NSObject {
         if let users2 = valueDictionary["users"] as? [String?] {
             self.users = users2 as! [String]
         }
-
+        
+       
         for usersId in users {
             if usersId == myId {
                 sansyoued = true

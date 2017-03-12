@@ -16,4 +16,5 @@ class Itiran1TableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    
 }

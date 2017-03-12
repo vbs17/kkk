@@ -730,10 +730,10 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     //usersの配列要素をクリアする
     func saveGenreUser(){
-            let genre = genre2
-            let post = ["users": [],"genre": genre] as [String : Any]
-            let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genre!)
-            postRef.setValue(post){ (error, ref) in
+        let genre = genre2
+        let post = ["users": [],"genre": genre] as [String : Any]
+        let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genre!)
+        postRef.setValue(post){ (error, ref) in
             if (error == nil) {
                 SVProgressHUD.dismiss()
                 self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
@@ -741,7 +741,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.showErrorAlert()
             }
         }
-      }
+    }
     
   
     

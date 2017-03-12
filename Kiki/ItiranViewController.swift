@@ -486,7 +486,30 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableVView.delegate = self
+        tableVView.dataSource = self
+        let nib = UINib(nibName: "ItiranTableViewCell", bundle: nil)
+        tableVView.register(nib, forCellReuseIdentifier: "Celll")
+        hou.isEnabled = false
+    }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let genreRef = FIRDatabase.database().reference().child(CommonConst.GenreUser)
+        genreRef.observe(.childAdded, with: { snapshot in
+            self.tableVView.reloadData()
+            
+        })
+        genreRef.observe(.childChanged, with: { snapshot in
+            self.tableVView.reloadData()
+            
+            
+        })
+    }
+
+
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -498,6 +521,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
             if snapshot.exists() {
                 let uid = FIRAuth.auth()?.currentUser?.uid
                 let genreData = SanPostData(snapshot: snapshot, myId: uid!)
+                cell.setPostData(genreData)
                 let g = genreData.users
                 for Genre in g {
                     if (Genre == uid) {
@@ -510,41 +534,28 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        let genreRef = FIRDatabase.database().reference().child(CommonConst.GenreUser)
-        genreRef.observe(.childAdded, with: { snapshot in
-            self.tableVView.reloadData()
-
-        })
-        genreRef.observe(.childChanged, with: { snapshot in
-            self.tableVView.reloadData()
-
-            
-        })
-    }
-
-           
-override func viewDidLoad() {
-        super.viewDidLoad()
-        tableVView.delegate = self
-        tableVView.dataSource = self
-        let nib = UINib(nibName: "ItiranTableViewCell", bundle: nil)
-        tableVView.register(nib, forCellReuseIdentifier: "Celll")
-        hou.isEnabled = false
-    }
-
     //Cellが選択された際に呼び出される.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Celll", for: indexPath) as! ItiranTableViewCell
         let reachability = Reachability()!
         if reachability.isReachable {
+            var genreArray = cell.sanPostData
+            if let users = genreArray?.users {
+            if let uid = FIRAuth.auth()?.currentUser?.uid {
+                if (genreArray?.users == uid) {
+                    if let index = genreArray?.users.index(of: uid) {
+                        genreArray?.users.remove(at: index)
+                    }
+                } else {
+                    genreArray?.users.append(uid)
+                }
+                let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genre!).child(users)
+                let users = ["users": genreArray?.users]
+                postRef.updateChildValues(users)
+                
+            }
             let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Home") as! HomeViewController
             genre = AllItems[indexPath.section][indexPath.row]
-            let uid = FIRAuth.auth()?.currentUser?.uid
-            let user = uid
-            let post = ["users": user] as [String : Any]
-            let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genre!).child(user!)
-            postRef.setValue(post)
             homeviewcontroller.genre = genre
             self.present(homeviewcontroller, animated: true, completion: nil)
             
@@ -568,10 +579,10 @@ override func viewDidLoad() {
             present(alert, animated: true, completion: nil)
             alert.view.tintColor = UIColor.black
             
-        }
+            }}}
         
         
-    }
+    
     
     //テーブルに表示する配列の総数を返す.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
