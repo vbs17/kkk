@@ -11,6 +11,10 @@ class ItiranTableViewCell: UITableViewCell {
     @IBOutlet weak var imageViewVV: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        imageViewVV.layer.cornerRadius = 2
+        imageViewVV.clipsToBounds = true
+        imageViewVV.layer.borderWidth = 2
+        imageViewVV.layer.borderColor = UIColor.purple.cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
