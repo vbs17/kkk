@@ -4,7 +4,7 @@ import UIKit
 
 class ItiranTableViewCell: UITableViewCell {
     
-   var sanPostData: SanPostData?
+   var sanPostData: SanPostData!
     
     @IBOutlet weak var label: UILabel!
 

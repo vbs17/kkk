@@ -511,19 +511,21 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
 
 
-    
+    //セル表示、描画時処理
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Celll", for: indexPath) as! ItiranTableViewCell
         let genreName = AllItems[indexPath.section][indexPath.row]
         cell.label.text = genreName
         let genreRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genreName)
         genreRef.observeSingleEvent(of: .value, with: {(snapshot) in
+            //ジャンル名が登録されてるorされてない
             if snapshot.exists() {
                 let uid = FIRAuth.auth()?.currentUser?.uid
                 let genreData = SanPostData(snapshot: snapshot, myId: uid!)
                 cell.setPostData(genreData)
                 let g = genreData.users
                 for Genre in g {
+                    //１個１個表示させていくのでこれでok
                     if (Genre == uid) {
                     //if(genreName == snapshot.key){
                 cell.imageViewVV.backgroundColor = UIColor.clear
@@ -540,6 +542,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let reachability = Reachability()!
         let uid = FIRAuth.auth()?.currentUser?.uid
         if reachability.isReachable {
+            //セルに持たせておいた sanPostData: SanPostData? を取得
             var genreArray = cell.sanPostData
             if let users = genreArray?.users {
                     if let index = genreArray?.users.index(of: uid) {
