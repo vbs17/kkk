@@ -558,7 +558,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     if (id.sansyoued == false){
                         id.users.append(uid)
                         id.sansyoued = true
-                        let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genre!)
+                        let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genreName2)
                         let users = ["users": id.users]
                         postRef.updateChildValues(users)
                     }
