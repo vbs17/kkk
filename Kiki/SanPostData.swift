@@ -7,7 +7,7 @@ import FirebaseDatabase
 class SanPostData: NSObject {
     var genre: [String] = []
     var users: [String] = []
-    //どう使うか未定
+
     
     init(snapshot: FIRDataSnapshot, myId: String) {
         let valueDictionary = snapshot.value as! [String: AnyObject]
