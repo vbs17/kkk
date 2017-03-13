@@ -522,14 +522,17 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
             if snapshot.exists() {
                 let uid = FIRAuth.auth()?.currentUser?.uid
                 let genreData = SanPostData(snapshot: snapshot, myId: uid!)
+                //SanPostDataゲット
                 cell.setPostData(genreData)
+                //gにはそのジャンルに登録されている各uidが格納
                 let g = genreData.users
                 for Genre in g {
-                    //１個１個表示させていくのでこれでok
+                    //自分のuidがあるかどうか調査
                     if (Genre == uid) {
-                    //if(genreName == snapshot.key){
+                        //すでに登録されてるなら点滅しない
                 cell.imageViewVV.backgroundColor = UIColor.clear
             }else{
+                        //点滅する
                 cell.imageViewVV.backgroundColor = UIColor.red
             }
                     }}})
@@ -544,10 +547,10 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if reachability.isReachable {
             //セルに持たせておいた sanPostData: SanPostData? を取得
             var genreArray = cell.sanPostData
-            if let users = genreArray?.users {
+            //一人でも登録してるやつがいるかどうか調査
+            if let Users = genreArray?.users {
                     if let index = genreArray?.users.index(of: uid) {
-                        genreArray?.users.remove(at: index)
-                    
+                  return
                 } else {
                     genreArray?.users.append(uid!)
                 }
