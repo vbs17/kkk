@@ -496,19 +496,36 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         hou.isEnabled = false
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        let genreRef = FIRDatabase.database().reference().child(CommonConst.GenreUser)
-        genreRef.observe(.childAdded, with: { snapshot in
-            self.tableVView.reloadData()
-            
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        FIRDatabase.database().reference().child(CommonConst.GenreUser).observe(.childAdded, with: {[weak self] snapshot in
+            if let uid = FIRAuth.auth()?.currentUser?.uid {
+                guard let `self` = self else { return }
+                let postData = SanPostData(snapshot: snapshot, myId: uid)
+                self.genreArray.insert(postData, at: 0)
+                
+                self.tableVView.reloadData()
+            }
         })
-        genreRef.observe(.childChanged, with: { snapshot in
-            self.tableVView.reloadData()
+        FIRDatabase.database().reference().child(CommonConst.GenreUser).observe(.childChanged, with: {[weak self] snapshot in
             
-            
-        })
-    }
+            if let uid = FIRAuth.auth()?.currentUser?.uid {
+                guard let `self` = self else { return }
+                let postData = SanPostData(snapshot: snapshot, myId: uid)
+                var index: Int = NSNotFound
+                for post in self.genreArray{
+                    if post.genre == postData.genre {
+                        index = self.genreArray.index(of: post)!
+                        break
+                    }
+                }
+                if index != NSNotFound {
+                    self.genreArray.remove(at: index)
+                    self.genreArray.insert(postData, at: index)
+                }
+                self.tableVView.reloadData()
+            }
+        })}
 
 
 
