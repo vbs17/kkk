@@ -517,23 +517,19 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "Celll", for: indexPath) as! ItiranTableViewCell
         let genreName = AllItems[indexPath.section][indexPath.row]
         cell.label.text = genreName
-        let genreRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genreName)
-        genreRef.observeSingleEvent(of: .value, with: {(snapshot) in
-            //ジャンルが登録されていたら
-            if snapshot.exists()
-            {
-                cell.setPostData(self.genreArray[indexPath.row])
-                let sanPostData = self.genreArray[indexPath.row]
-                for id in self.genreArray{
-                    if (sanPostData.genre == id.genre){
-                         cell.imageViewVV.backgroundColor = UIColor.clear
-                    }else{
-                        cell.imageViewVV.backgroundColor = UIColor.red
-                    }
-                }}})
-                return cell
+        cell.imageViewVV.backgroundColor = UIColor.clear
+        for id in self.genreArray{
+            if (cell.label.text == id.genre){
+                if (genreArray.sansyoued == true){
+                    cell.imageViewVV.backgroundColor = UIColor.clear
+                }else{
+                    cell.imageViewVV.backgroundColor = UIColor.red
+                }
             }
-        
+        }
+        return cell
+    }
+    
     //Cellが選択された際に呼び出される.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Celll", for: indexPath) as! ItiranTableViewCell
