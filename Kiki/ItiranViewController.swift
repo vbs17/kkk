@@ -518,24 +518,24 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.label.text = genreName
         let genreRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genreName)
         genreRef.observeSingleEvent(of: .value, with: {(snapshot) in
-            //ジャンル名が登録されてるorされてない
-            if snapshot.exists() {
+            if snapshot.exists()
+            {
                 let uid = FIRAuth.auth()?.currentUser?.uid
                 let genreData = SanPostData(snapshot: snapshot, myId: uid!)
-                //SanPostDataゲット
                 cell.setPostData(genreData)
-                //gにはそのジャンルに登録されている各uidが格納
                 let g = genreData.users
-                for Genre in g {
-                    //自分のuidがあるかどうか調査
-                    if (Genre == uid) {
-                        //すでに登録されてるなら点滅しない
-                cell.imageViewVV.backgroundColor = UIColor.clear
-            }else{
-                        //点滅する
-                cell.imageViewVV.backgroundColor = UIColor.red
-            }
-                    }}})
+                if g != nil{
+                    for Genre in g {
+                        if (Genre == uid) {
+                            cell.imageViewVV.backgroundColor = UIColor.clear
+                            print("点滅しない")
+                        }else{
+                            cell.imageViewVV.backgroundColor = UIColor.red
+                            print("点滅")
+                            if (cell.imageViewVV.backgroundColor == UIColor.red){break}
+                        }
+                        
+                    }}}})
         return cell
     }
     
