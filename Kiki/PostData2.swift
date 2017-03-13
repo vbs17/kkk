@@ -14,21 +14,12 @@ class PostData2: NSObject{
     var den: String?
     var ta: String?
     var uid: String?
-    var genre: [String] = []
-    var genred: Bool = false
+    
 
     init(snapshot: FIRDataSnapshot, myId: String){
         id = snapshot.key
         let valueDictionary = snapshot.value as! [String: AnyObject]
-        if let genre5 = valueDictionary["genre"] as? [String] {
-            self.genre = genre5
-        }
-        for genreId in genre {
-            if genreId == myId {
-                genred = true
-                break
-            }
-        }
+       
         let imageString = valueDictionary["image"] as? String
         image = UIImage(data: Data(base64Encoded: imageString!, options: .ignoreUnknownCharacters)!)
         name = valueDictionary["name"] as? String

@@ -464,6 +464,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                   "9mm Parabellum Bullet"]]
     
     var genre:String?
+    var genreArray:[SanPostData] = []
 
 
     @IBOutlet weak var hou: UIButton!
@@ -518,27 +519,21 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.label.text = genreName
         let genreRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genreName)
         genreRef.observeSingleEvent(of: .value, with: {(snapshot) in
+            //ジャンルが登録されていたら
             if snapshot.exists()
             {
-                let uid = FIRAuth.auth()?.currentUser?.uid
-                let genreData = SanPostData(snapshot: snapshot, myId: uid!)
-                cell.setPostData(genreData)
-                let g = genreData.users
-                if g != nil{
-                    for Genre in g {
-                        if (Genre == uid) {
-                            cell.imageViewVV.backgroundColor = UIColor.clear
-                            print("点滅しない")
-                        }else{
-                            cell.imageViewVV.backgroundColor = UIColor.red
-                            print("点滅")
-                            if (cell.imageViewVV.backgroundColor == UIColor.red){break}
-                        }
-                        
-                    }}}})
-        return cell
-    }
-    
+                cell.setPostData(self.genreArray[indexPath.row])
+                let sanPostData = self.genreArray[indexPath.row]
+                for id in self.genreArray{
+                    if (sanPostData.genre == id.genre){
+                         cell.imageViewVV.backgroundColor = UIColor.clear
+                    }else{
+                        cell.imageViewVV.backgroundColor = UIColor.red
+                    }
+                }}})
+                return cell
+            }
+        
     //Cellが選択された際に呼び出される.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Celll", for: indexPath) as! ItiranTableViewCell
