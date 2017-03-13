@@ -8,7 +8,6 @@ class SanPostData: NSObject {
     var genre: [String] = []
     var users: [String] = []
     //どう使うか未定
-    var sansyoued: Bool = false
     
     init(snapshot: FIRDataSnapshot, myId: String) {
         let valueDictionary = snapshot.value as! [String: AnyObject]
@@ -21,12 +20,5 @@ class SanPostData: NSObject {
             self.users = users2 as! [String]
         }
         
-        //どう使うか未定
-        for usersId in users {
-            if usersId == myId {
-                sansyoued = true
-                break
            }
-        }
-    }
 }
