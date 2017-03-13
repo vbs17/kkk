@@ -543,16 +543,16 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Celll", for: indexPath) as! ItiranTableViewCell
         let reachability = Reachability()!
-        let uid = FIRAuth.auth()?.currentUser?.uid
+        let uid = (FIRAuth.auth()?.currentUser?.uid)! as String
         if reachability.isReachable {
             //セルに持たせておいた sanPostData: SanPostData? を取得
-            var genreArray = cell.sanPostData
+            let genreArray = cell.sanPostData
             //一人でも登録してるやつがいるかどうか調査
-            if let Users = genreArray?.users {
-                    if let index = genreArray?.users.index(of: uid) {
+            if (genreArray?.users) != nil {
+                    if (genreArray?.users.index(of:uid)) != nil {
                   return
                 } else {
-                    genreArray?.users.append(uid!)
+                    genreArray?.users.append(uid)
                 }
                 let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genre!)
                 let users = ["users": genreArray?.users]
