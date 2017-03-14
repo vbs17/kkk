@@ -44,9 +44,6 @@ class TabViewController: UIViewController {
         home.clipsToBounds = true
         home.layer.borderWidth = 1
         home.layer.borderColor = UIColor.white.cgColor
-       
-        
-        
         blues.layer.cornerRadius = 5
         blues.clipsToBounds = true
         blues.layer.borderWidth = 3
