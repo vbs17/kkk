@@ -566,7 +566,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aa" translatesAutoresizingMaskIntoConstraints="NO" id="ocJ-Ed-eKL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="recording4" translatesAutoresizingMaskIntoConstraints="NO" id="ocJ-Ed-eKL">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -3320,7 +3320,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4FA-kF-0cf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recording9" translatesAutoresizingMaskIntoConstraints="NO" id="4FA-kF-0cf">
                                 <rect key="frame" x="0.0" y="60" width="320" height="420"/>
                             </imageView>
                         </subviews>
@@ -4031,6 +4031,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hX-6Q-Zck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1299" y="-1883"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yQv-CU-bbJ">
+            <objects>
+                <viewController id="w2E-b1-j9O" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="18O-Lv-8NK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xto-O4-RbT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PFp-00-E8F">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="recording3" translatesAutoresizingMaskIntoConstraints="NO" id="BK2-3m-Hd2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebq-Ss-yZD">
+                                <rect key="frame" x="90" y="113" width="141" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <size key="titleShadowOffset" width="1" height="2"/>
+                                <state key="normal" title="ジャンル" backgroundImage="con">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ea9-LA-6ix">
+                                <rect key="frame" x="90" y="297" width="141" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <size key="titleShadowOffset" width="1" height="2"/>
+                                <state key="normal" title="アーティスト" backgroundImage="xavier-sotomayor-191952">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h0y-vz-iyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2124.375" y="-1876.056338028169"/>
         </scene>
         <!--Send View Controller-->
         <scene sceneID="Cma-uh-jPi">
@@ -5151,7 +5195,6 @@
         <image name="IMG_3945" width="750" height="1334"/>
         <image name="R&amp;B" width="300" height="300"/>
         <image name="Rock" width="300" height="300"/>
-        <image name="aa" width="500" height="750"/>
         <image name="apiru" width="800" height="1200"/>
         <image name="apiru2-1" width="1242" height="1863"/>
         <image name="base" width="300" height="200"/>
@@ -5173,6 +5216,9 @@
         <image name="pop" width="300" height="300"/>
         <image name="ppiiaa" width="500" height="333"/>
         <image name="ppp" width="1246" height="966"/>
+        <image name="recording3" width="500" height="375"/>
+        <image name="recording4" width="500" height="333"/>
+        <image name="recording9" width="700" height="467"/>
         <image name="recrec" width="400" height="300"/>
         <image name="rob2" width="777" height="777"/>
         <image name="scott-gruber-41185" width="500" height="333"/>
@@ -5180,6 +5226,7 @@
         <image name="sexyse" width="1242" height="828"/>
         <image name="syusyu" width="400" height="267"/>
         <image name="tabtab-1" width="500" height="392"/>
+        <image name="xavier-sotomayor-191952" width="2832" height="4240"/>
         <image name="xxxxx1" width="750" height="1334"/>
         <image name="zsb0lk7jaxg-annie-spratt-1" width="500" height="751"/>
         <image name="zyyke-1" width="500" height="749"/>

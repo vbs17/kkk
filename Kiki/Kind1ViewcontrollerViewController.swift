@@ -1167,7 +1167,6 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
             if reachability.isReachable {
                 let itiranviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Itiran11") as! Itiran11ViewController
                 itiranviewcontroller.genre1 = genre
-                itiranviewcontroller.shine = true
                 let ongen = UUID().uuidString
                 print("Post")
                 saveSong(uuid: ongen)

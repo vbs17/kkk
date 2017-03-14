@@ -1005,12 +1005,35 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
         ]]
     var genre:String!
     var genre1:String?
-    var shine:Bool?
     
     @IBOutlet weak var you: UIButton!
     @IBOutlet weak var hou: UIButton!
         @IBAction func hougo(_ sender: Any) {
+            self.saveData()
             self.dismiss(animated: false, completion: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.readData()
+    }
+    func saveData(){
+        let ud = UserDefaults.standard
+        let offset =  self.tableView.contentOffset
+        let onset = NSStringFromCGPoint(offset)
+        ud.set(onset, forKey: "Iti")
+        ud.synchronize()
+    }
+    
+    func readData(){
+        let ud2 = UserDefaults.standard
+        let str = ud2.object(forKey: "Iti")
+        if (str == nil) {
+            return
+        }else{
+            let point = CGPointFromString(str as! String)
+            self.tableView.contentOffset = point
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

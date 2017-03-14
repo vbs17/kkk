@@ -476,15 +476,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
-        var count: String = ""
-        
-        func next() -> String? {
-            if count == "" {
-                return nil
-            } else {
-                return count
-            }
-        }
+    
     
     
     override func viewDidLoad() {
