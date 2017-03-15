@@ -49,7 +49,7 @@ class OkViewController: UIViewController,UITextFieldDelegate {
     //ここ実験
     @IBAction func OKGo(_ sender: AnyObject) {
          if (text.text != nil && text.text != ""){
-        let kindviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1122") as! Kind1122ViewController
+        let kindviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Sentaku") as! SentakuVViewController
         kindviewcontroller.songData = songData
         kindviewcontroller.image = imageView.image
         kindviewcontroller.byou = byou.text!

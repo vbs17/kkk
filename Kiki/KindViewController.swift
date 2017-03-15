@@ -479,25 +479,42 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     
     override func viewWillAppear(_ animated: Bool) {
+        self.readData()
         tappedCellPos = nil
         genre = ""
         isRowSelected = false
         tableView.reloadData()
     }
     
-    @IBAction func genre1(_ sender: Any) {let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1122") as! Kind1122ViewController
-        recviewcontroller.songData = self.songData
-        recviewcontroller.image = self.image
-        recviewcontroller.byou = self.byou
-        recviewcontroller.songname = self.songname
-        recviewcontroller.original = self.original
-        recviewcontroller.cover = self.cover
-        self.present(recviewcontroller, animated: false, completion: nil)
+    func saveData(){
+        let ud = UserDefaults.standard
+        let offset =  self.tableView.contentOffset
+        let onset = NSStringFromCGPoint(offset)
+        ud.set(onset, forKey: "Iti2")
+        ud.synchronize()
+    }
+    
+    func readData(){
+        let ud2 = UserDefaults.standard
+        let str = ud2.object(forKey: "Iti2")
+        if (str == nil) {
+            return
+        }else{
+            let point = CGPointFromString(str as! String)
+            self.tableView.contentOffset = point
+        }
+    }
+
+    @IBAction func Back(_ sender: Any) {
+        self.saveData()
+        self.dismiss(animated: false, completion: nil)
         
     }
     
+       
     
     @IBAction func yougo(_ sender: Any) {
+        self.saveData()
         let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1") as! Kind1ViewcontrollerViewController
         recviewcontroller.songData = self.songData
         recviewcontroller.image = self.image

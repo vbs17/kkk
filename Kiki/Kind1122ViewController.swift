@@ -29,8 +29,6 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
 
     var songData:URL!
     var image:UIImage!
-    //var songname:UITextField!
-    //var byou:UILabel!
     var songname:String!
     var byou:String!
     var genre = ""
@@ -47,6 +45,11 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
         tableView.reloadData()
     }
 
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,9 +58,6 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
         let nib = UINib(nibName: "Kind1122TableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "CCCell")
         tappedCellPos = nil
-        genre1.isEnabled = false
-        
-        
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CCCell", for: indexPath) as! Kind1122TableViewCell
@@ -199,29 +199,7 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
 
 
-    @IBAction func hougo(_ sender: Any) {
-        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind") as! KindViewController
-        recviewcontroller.songData = self.songData
-        recviewcontroller.image = self.image
-        recviewcontroller.byou = self.byou
-        recviewcontroller.songname = self.songname
-        recviewcontroller.original = self.original
-        recviewcontroller.cover = self.cover
-        self.present(recviewcontroller, animated: false, completion: nil)
-    }
     
-    @IBAction func yougo(_ sender: Any) {
-        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1") as! Kind1ViewcontrollerViewController
-        recviewcontroller.songData = self.songData
-        recviewcontroller.image = self.image
-        recviewcontroller.byou = self.byou
-        recviewcontroller.songname = self.songname
-        recviewcontroller.original = self.original
-        recviewcontroller.cover = self.cover
-        self.present(recviewcontroller, animated: false, completion: nil)
-    }
-    
-    @IBOutlet weak var genre1: UIButton!
     
 
     override func didReceiveMemoryWarning() {
