@@ -14,6 +14,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableVView: UITableView!
     
     @IBAction func back(_ sender: AnyObject) {
+        self.saveData()
         self.dismiss(animated: true, completion: nil)
     }
     fileprivate let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","X","Y","Z","number"]
@@ -490,6 +491,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.readData()
         FIRDatabase.database().reference().child(CommonConst.GenreUser).observe(.childAdded, with: {[weak self] snapshot in
             if let uid = FIRAuth.auth()?.currentUser?.uid {
                 guard let `self` = self else { return }
@@ -518,6 +520,26 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.tableVView.reloadData()
             }
         })}
+
+    
+    func saveData(){
+        let ud = UserDefaults.standard
+        let offset =  self.tableVView.contentOffset
+        let onset = NSStringFromCGPoint(offset)
+        ud.set(onset, forKey: "Iti2")
+        ud.synchronize()
+    }
+    
+    func readData(){
+        let ud2 = UserDefaults.standard
+        let str = ud2.object(forKey: "Iti2")
+        if (str == nil) {
+            return
+        }else{
+            let point = CGPointFromString(str as! String)
+            self.tableVView.contentOffset = point
+        }
+    }
 
 
 
