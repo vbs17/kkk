@@ -8,7 +8,8 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func bacl(_ sender: Any) {
-     self.view.window!.rootViewController!.dismiss(animated: true, completion: nil)
+        self.saveData()
+        self.view.window!.rootViewController!.dismiss(animated: true, completion: nil)
     }
         fileprivate let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     let AllItems: [[String]]  = [["Aaron Neville",
