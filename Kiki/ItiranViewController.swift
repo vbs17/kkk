@@ -471,6 +471,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var hou: UIButton!
     @IBOutlet weak var cho: UILabel!
     @IBAction func you(_ sender: Any) {
+        self.saveData()
         let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Itiran11") as! Itiran11ViewController
         self.present(homeviewcontroller, animated: false, completion: nil)
 
