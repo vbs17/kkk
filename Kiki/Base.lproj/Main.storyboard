@@ -3878,7 +3878,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zsb0lk7jaxg-annie-spratt-1" translatesAutoresizingMaskIntoConstraints="NO" id="WSd-h2-WGP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recording5" translatesAutoresizingMaskIntoConstraints="NO" id="WSd-h2-WGP">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="482"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hj2-VD-ta4">
@@ -3967,7 +3967,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.14156763950000001" green="0.25016361259999997" blue="0.056587610849999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.10460961539999999" green="0.20523494640000001" blue="0.273456686" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="iHg-Lp-WH1" secondAttribute="trailing" constant="38" id="EeC-Hl-9JU"/>
                                     <constraint firstAttribute="bottom" secondItem="57N-lo-X0c" secondAttribute="bottom" constant="33" id="Gd1-p7-WHw"/>
@@ -4052,7 +4052,7 @@
                                 <rect key="frame" x="90" y="319" width="141" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <size key="titleShadowOffset" width="1" height="2"/>
                                 <state key="normal" title="アーティスト" backgroundImage="xavier-sotomayor-191952">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4065,16 +4065,17 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="投稿先を選ぼう" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQV-Yo-Jhg">
                                 <rect key="frame" x="28" y="42" width="262" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="2" height="1"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ea9-LA-6ix">
                                 <rect key="frame" x="90" y="149" width="141" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <size key="titleShadowOffset" width="1" height="2"/>
                                 <state key="normal" title="ジャンル" backgroundImage="con">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4109,7 +4110,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zyyke-1" translatesAutoresizingMaskIntoConstraints="NO" id="htG-PC-cXM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zyke" translatesAutoresizingMaskIntoConstraints="NO" id="htG-PC-cXM">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAJ-gL-CUg">
@@ -4192,7 +4193,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1vll_mwhgcm-ornella-binni" translatesAutoresizingMaskIntoConstraints="NO" id="pAn-dF-Wmc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aa" translatesAutoresizingMaskIntoConstraints="NO" id="pAn-dF-Wmc">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
@@ -5146,7 +5147,6 @@
     <resources>
         <image name="0009" width="1242" height="828"/>
         <image name="11113" width="1242" height="828"/>
-        <image name="1vll_mwhgcm-ornella-binni" width="500" height="750"/>
         <image name="2222" width="1242" height="975"/>
         <image name="223-1" width="800" height="1200"/>
         <image name="33" width="500" height="331"/>
@@ -5165,6 +5165,7 @@
         <image name="IMG_3945" width="750" height="1334"/>
         <image name="R&amp;B" width="300" height="300"/>
         <image name="Rock" width="300" height="300"/>
+        <image name="aa" width="500" height="750"/>
         <image name="apiru" width="800" height="1200"/>
         <image name="apiru2-1" width="1242" height="1863"/>
         <image name="base" width="300" height="200"/>
@@ -5188,6 +5189,7 @@
         <image name="ppp" width="1246" height="966"/>
         <image name="rec1" width="580" height="387"/>
         <image name="recording4" width="500" height="333"/>
+        <image name="recording5" width="500" height="333"/>
         <image name="recrec" width="400" height="300"/>
         <image name="scott-gruber-41185" width="500" height="333"/>
         <image name="sexy" width="1242" height="828"/>
@@ -5196,7 +5198,6 @@
         <image name="tabtab-1" width="500" height="392"/>
         <image name="xavier-sotomayor-191952" width="2832" height="4240"/>
         <image name="xxxxx1" width="750" height="1334"/>
-        <image name="zsb0lk7jaxg-annie-spratt-1" width="500" height="751"/>
-        <image name="zyyke-1" width="500" height="749"/>
+        <image name="zyke" width="500" height="355"/>
     </resources>
 </document>

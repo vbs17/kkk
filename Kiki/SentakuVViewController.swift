@@ -22,11 +22,7 @@ class SentakuVViewController: UIViewController {
         art.clipsToBounds = true
         art.layer.borderWidth = 2
         art.layer.borderColor = UIColor.white.cgColor
-        lb.layer.cornerRadius = 5
-        lb.clipsToBounds = true
-        lb.layer.borderWidth = 4
-        lb.layer.borderColor = UIColor.white.cgColor
-
+        
     }
 
     override func didReceiveMemoryWarning() {
