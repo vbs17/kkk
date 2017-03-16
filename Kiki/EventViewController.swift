@@ -17,13 +17,16 @@ class EventViewController: UIViewController {
         da.layer.cornerRadius = 2
         da.clipsToBounds = true
         da.layer.borderWidth = 3
-        da.layer.borderColor = UIColor.white.cgColor
+        da.layer.borderColor = UIColor.black.cgColor
         sa.layer.cornerRadius = 2
         sa.clipsToBounds = true
         sa.layer.borderWidth = 3
-        sa.layer.borderColor = UIColor.white.cgColor
+        sa.layer.borderColor = UIColor.black.cgColor
 
         
+    }
+    @IBAction func ba(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +43,8 @@ class EventViewController: UIViewController {
     @IBAction func d(_ sender: Any) {
     }
     @IBAction func back(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        let ProViewController = self.storyboard?.instantiateViewController(withIdentifier: "Dyu")
+        self.present(ProViewController!, animated: true, completion: nil)
     }
 
 }
