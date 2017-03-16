@@ -527,7 +527,7 @@ class TabViewController: UIViewController {
         self.present(ProViewController!, animated: true, completion: nil)
     }
     @IBAction func path(_ sender: AnyObject) {
-        let HomeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Itiran1")
+        let HomeViewController = self.storyboard?.instantiateViewController(withIdentifier: "TU")
         self.present(HomeViewController!, animated: false, completion: nil)
     }
     @IBAction func recpic(_ sender: AnyObject) {

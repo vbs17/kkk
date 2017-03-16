@@ -94,6 +94,7 @@
 		B07B5AE71E45872700AE5B0D /* Home11ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B5AE61E45872700AE5B0D /* Home11ViewController.swift */; };
 		B07E94E71DCDC766009537A7 /* ProIdouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */; };
 		B088CB221DDB34C7007CE03D /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088CB211DDB34C7007CE03D /* Photos.framework */; };
+		B099ECE61E7AE04100A907D7 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099ECE51E7AE04100A907D7 /* EventViewController.swift */; };
 		B0A78FD61DACFF6500AC0513 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */; };
 		B0A78FD81DACFF6500AC0513 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A78FD71DACFF6500AC0513 /* ViewController.swift */; };
 		B0A78FDB1DACFF6500AC0513 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A78FD91DACFF6500AC0513 /* Main.storyboard */; };
@@ -219,6 +220,7 @@
 		B07B5AE61E45872700AE5B0D /* Home11ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home11ViewController.swift; sourceTree = "<group>"; };
 		B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProIdouViewController.swift; sourceTree = "<group>"; };
 		B088CB211DDB34C7007CE03D /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		B099ECE51E7AE04100A907D7 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		B0A78FD21DACFF6400AC0513 /* Kiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0A78FD71DACFF6500AC0513 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 				B00C67AB1E3D6FD10026E775 /* RockViewController.swift */,
 				B00C67AD1E3D6FDD0026E775 /* Rock2ViewController.swift */,
 				B00C67AF1E3D6FE90026E775 /* Rock3ViewController.swift */,
+				B099ECE51E7AE04100A907D7 /* EventViewController.swift */,
 			);
 			name = rocktyu;
 			sourceTree = "<group>";
@@ -775,6 +778,7 @@
 				B071D9711DB509FA0017E287 /* TabViewController.swift in Sources */,
 				B046621E1E6EFF7B00EB5EE7 /* Post4Data4.swift in Sources */,
 				B0B4481C1DD5ACE4001DDD89 /* IkuViewController.swift in Sources */,
+				B099ECE61E7AE04100A907D7 /* EventViewController.swift in Sources */,
 				B066332C1E4B9F1200AA8635 /* Oth3ViewController.swift in Sources */,
 				B00501BE1DB6420800319866 /* ItiranViewController.swift in Sources */,
 				B06835C31E792BCC00CD1B1A /* SentakuVViewController.swift in Sources */,
