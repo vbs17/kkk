@@ -21,7 +21,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     //var tableView: UITableView!
     var playingIndexPath:IndexPath!
     var dataLastVal:Double!
-    let DisplayDataNumber = 2;
+    let DisplayDataNumber = 1;
     
     @IBOutlet weak var back: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -561,7 +561,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     }
     
     
-    
+    //こいつか黒幕
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -578,6 +578,10 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             cell!.onlabel2.text = formatTimeString(playSong.currentTime)
             cell!.nami.progress = Float(playSong.currentTime / playSong.duration)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return self.view.frame.size.height
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
