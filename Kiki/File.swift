@@ -29,6 +29,5 @@ struct CommonConst {
     
     static let GenreUser = "GenreUser"
     static let GenreUser2 = "GenreUser2"
-    static let GenreUser3 = "GenreUser3"
 
 }

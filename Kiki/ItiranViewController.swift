@@ -583,6 +583,12 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     homeviewcontroller.genre = genre
                     self.present(homeviewcontroller, animated: true, completion: nil)
                     
+                }else{
+                    let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Home") as! HomeViewController
+                    genre = AllItems[indexPath.section][indexPath.row]
+                    homeviewcontroller.genre = genre
+                    self.present(homeviewcontroller, animated: true, completion: nil)
+                    
                 }}} else {
             let alert = UIAlertController()
             let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]

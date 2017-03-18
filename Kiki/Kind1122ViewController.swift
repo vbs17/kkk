@@ -32,7 +32,6 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
     var songname:String!
     var byou:String!
     var genre = ""
-    var genre2:String!
     var tappedCellPos:IndexPath! //タップされたCellのindexPath
     var buttonOriginalColor:UIColor!//ボタンの元の色
     var isRowSelected:Bool = false//現在行が選択状態か否か
@@ -147,7 +146,7 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
             if reachability.isReachable {
                 let ongen = UUID().uuidString
                 print("Post")
-                saveSong(uuid: ongen)
+                saveSong(ongen)
                 print("saveSong")
                 SVProgressHUD.setDefaultMaskType(.clear)
                 SVProgressHUD.show()
@@ -207,7 +206,7 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
         super.didReceiveMemoryWarning()
         
     }
-    func saveSong(uuid: String) {
+    func saveSong(_ uuid: String) {
         let realSongdata = try? Data(contentsOf: URL(fileURLWithPath: songData.path))
         let realsong = realSongdata!.base64EncodedString(options: [])
         let songDataRef = FIRDatabase.database().reference().child(CommonConst.songData11).child(uuid)
@@ -215,7 +214,7 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
             if (error == nil) {
                 // 音源保存完了
                 // 次に画像保存
-                self.saveImage(uuid: uuid)
+                self.saveImage(uuid)
                 print("saveImage")
             } else {
                 // 保存エラー
@@ -224,7 +223,7 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
         }
     }
     
-    func saveImage(uuid: String) {
+    func saveImage(_ uuid: String) {
         // 画像保存
         let size = CGSize(width: 1242, height: 828)
         UIGraphicsBeginImageContext(size)
@@ -238,7 +237,7 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
             if (error == nil) {
                 // 画像保存完了
                 // 次に投稿保存
-                self.savePost(uuid: uuid)
+                self.savePost(uuid)
                 print("savePost")
             } else {
                 // 保存エラー
@@ -247,33 +246,18 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
         }
     }
     
-    func savePost(uuid: String) {
+    func savePost(_ uuid: String) {
         // 投稿
         let songName = songname
         let kazu = byou
         let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
-        let time = NSDate.timeIntervalSinceReferenceDate
+        let time = Date.timeIntervalSinceReferenceDate
         let original:NSString = (self.original as NSString?)!
         let cover:NSString = (self.cover as NSString?)!
         let postData = ["time":time,"byou": kazu!, "songname": songName!, "ongen": uuid,"original":original,"cover":cover, "uid":uid] as [String : Any]
         let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH11).child(genre).child(uuid)
         
         postRef.setValue(postData) { (error, ref) in
-            if (error == nil) {
-                self.savePost(uuid: uuid)
-                print("saveGenreUser")
-            } else {
-                // 保存エラー
-                self.showErrorAlert()
-            }
-        }
-    }
-    
-    func saveGenreUser(){
-        let genre = genre2
-        let post = ["users": [],"genre": genre!] as [String : Any]
-        let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser2).child(genre!)
-        postRef.setValue(post){ (error, ref) in
             if (error == nil) {
                 SVProgressHUD.dismiss()
                 self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
@@ -282,7 +266,8 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
             }
         }
     }
-
+    
+    
     
     
     func showErrorAlert() {

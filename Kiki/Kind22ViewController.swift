@@ -1104,7 +1104,7 @@ class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDat
         }
         
     }
-    func saveImage(uuid: String) {
+    func saveImage(_ uuid: String) {
         // 画像保存
         let size = CGSize(width: 1242, height: 828)
         UIGraphicsBeginImageContext(size)
@@ -1118,7 +1118,7 @@ class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDat
             if (error == nil) {
                 // 画像保存完了
                 // 次に投稿保存
-                self.savePost(uuid: uuid)
+                self.savePost(uuid)
             } else {
                 // 保存エラー
                 self.showErrorAlert()
@@ -1127,14 +1127,14 @@ class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDat
     }
     
     
-    func savePost(uuid: String) {
+    func savePost(_ uuid: String) {
         // 投稿
         let hiniti1 = hiniti
         let zikoku1 = zikoku
         let path1 = path
         let station1 = station
         let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
-        let time = NSDate.timeIntervalSinceReferenceDate
+        let time = Date.timeIntervalSinceReferenceDate
         let postData1 = ["time":time,"hiniti": hiniti1!,"zikoku": zikoku1!, "station": station1!, "path":path1!,"uid":uid] as [String : Any]
         
         let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH22).child(genre).child(uuid)
@@ -1169,7 +1169,7 @@ class Kind22ViewController: UIViewController,UITableViewDelegate, UITableViewDat
         let reachability = Reachability()!
         if reachability.isReachable {
         let image = UUID().uuidString
-        saveImage(uuid: image)
+        saveImage(image)
         SVProgressHUD.setDefaultMaskType(.clear)
         SVProgressHUD.show()
         } else {

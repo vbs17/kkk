@@ -16,6 +16,5 @@ target 'Kiki' do
   pod 'Fabric'
   pod 'Reachability'
   pod 'ReachabilitySwift', '~> 3'
-  pod 'GoogleMaps'
   
 end

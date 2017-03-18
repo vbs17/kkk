@@ -633,7 +633,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
             if reachability.isReachable {
                 let ongen = UUID().uuidString
                 print("Post")
-                saveSong(uuid: ongen)
+                saveSong(ongen)
                 print("saveSong")
                 SVProgressHUD.setDefaultMaskType(.clear)
                 SVProgressHUD.show()
@@ -685,7 +685,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    func saveSong(uuid: String) {
+    func saveSong(_ uuid: String) {
         let realSongdata = try? Data(contentsOf: URL(fileURLWithPath: songData.path))
         let realsong = realSongdata!.base64EncodedString(options: [])
         let songDataRef = FIRDatabase.database().reference().child(CommonConst.songData).child(uuid)
@@ -693,7 +693,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
             if (error == nil) {
                 // 音源保存完了
                 // 次に画像保存
-                self.saveImage(uuid: uuid)
+                self.saveImage(uuid)
                 print("saveImage")
             } else {
                 // 保存エラー
@@ -702,7 +702,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    func saveImage(uuid: String) {
+    func saveImage(_ uuid: String) {
         // 画像保存
         let size = CGSize(width: 1242, height: 828)
         UIGraphicsBeginImageContext(size)
@@ -716,7 +716,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
             if (error == nil) {
                 // 画像保存完了
                 // 次に投稿保存
-                self.savePost(uuid: uuid)
+                self.savePost(uuid)
                 print("savePost")
             } else {
                 // 保存エラー
@@ -725,12 +725,12 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    func savePost(uuid: String) {
+    func savePost(_ uuid: String) {
     
             let songName = songname
             let kazu = byou
             let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
-            let time = NSDate.timeIntervalSinceReferenceDate
+            let time = Date.timeIntervalSinceReferenceDate
             let original:NSString = (self.original as NSString?)!
             let cover:NSString = (self.cover as NSString?)!
             let postData = ["time":time,"byou": kazu!, "songname": songName!, "ongen": uuid,"original":original,"cover":cover,"uid":uid] as [String : Any]
@@ -738,7 +738,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
             postRef.setValue(postData) { (error, ref) in
                 if (error == nil) {
                     self.saveGenreUser()
-                    print("savePost")
+                    print("saveGenreUser")
                 } else {
                     self.showErrorAlert()
                 }

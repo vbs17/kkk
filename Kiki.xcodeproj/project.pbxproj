@@ -129,7 +129,6 @@
 		B0FA382E1E5063FC00CB8D53 /* Tyu4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA382D1E5063FC00CB8D53 /* Tyu4ViewController.swift */; };
 		B0FA38301E50640200CB8D53 /* Tyu5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA382F1E50640200CB8D53 /* Tyu5ViewController.swift */; };
 		B0FE1D211E7D31EE00995736 /* SanPostData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE1D201E7D31EE00995736 /* SanPostData2.swift */; };
-		B0FE1D231E7D323500995736 /* SanPostData3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE1D221E7D323500995736 /* SanPostData3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -261,7 +260,6 @@
 		B0FA382D1E5063FC00CB8D53 /* Tyu4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tyu4ViewController.swift; sourceTree = "<group>"; };
 		B0FA382F1E50640200CB8D53 /* Tyu5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tyu5ViewController.swift; sourceTree = "<group>"; };
 		B0FE1D201E7D31EE00995736 /* SanPostData2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SanPostData2.swift; sourceTree = "<group>"; };
-		B0FE1D221E7D323500995736 /* SanPostData3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SanPostData3.swift; sourceTree = "<group>"; };
 		B8D29CE5422BA1688C21C169 /* Pods-Kiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiki.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kiki/Pods-Kiki.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -417,7 +415,6 @@
 				B046621D1E6EFF7B00EB5EE7 /* Post4Data4.swift */,
 				B010718C1E737D7A00A31F2D /* SanPostData.swift */,
 				B0FE1D201E7D31EE00995736 /* SanPostData2.swift */,
-				B0FE1D221E7D323500995736 /* SanPostData3.swift */,
 				B071D9651DB4D6140017E287 /* File.swift */,
 			);
 			name = PostData;
@@ -649,7 +646,7 @@
 					B0A78FD11DACFF6400AC0513 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 9G469ZT4Z2;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -801,7 +798,6 @@
 				B00501BB1DB610D200319866 /* HomeTableViewCell.swift in Sources */,
 				B07B5AD71E45718700AE5B0D /* Kind1TableViewCell.swift in Sources */,
 				B046621B1E6EFBE400EB5EE7 /* HHOOTableViewCell.swift in Sources */,
-				B0FE1D231E7D323500995736 /* SanPostData3.swift in Sources */,
 				B05E343B1DC8A53800C271D3 /* ProViewController.swift in Sources */,
 				B06633301E4B9F2000AA8635 /* Oth5ViewController.swift in Sources */,
 				B06968261DC60F7700274DB1 /* HomeViewController1.swift in Sources */,

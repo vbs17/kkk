@@ -1072,6 +1072,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
             tableViewCell.button.backgroundColor = UIColor.green
             // ジャンルを決定
             genre = AllItems[indexPath!.section][indexPath!.row]
+            genre2 = genre
             // 行が選択されている
             isRowSelected = true
             // タップされたセルのindexPathを保存
@@ -1096,6 +1097,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
                 tableViewCell.button.backgroundColor = UIColor.green
                 // ジャンルを決定
                 genre = AllItems[indexPath!.section][indexPath!.row]
+                genre2 = genre
                 //cell.label.tag = AllItems[indexPath!.row]
                 // 行が選択されている
                 isRowSelected = true
@@ -1119,6 +1121,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
             tableViewCell.button.backgroundColor = UIColor.green
             // ジャンルを決定
             genre = AllItems[indexPath!.section][indexPath!.row]
+            genre2 = genre
             // 行が選択されている
             isRowSelected = true
             // タップされたセルのindexPathを保存
@@ -1163,7 +1166,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
             if reachability.isReachable {
                 let ongen = UUID().uuidString
                 print("Post")
-                saveSong(uuid: ongen)
+                saveSong(ongen)
                 print("saveSong")
                 SVProgressHUD.setDefaultMaskType(.clear)
                 SVProgressHUD.show()
@@ -1225,7 +1228,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
 
   
 
-    func saveSong(uuid: String) {
+    func saveSong(_ uuid: String) {
         let realSongdata = try? Data(contentsOf: URL(fileURLWithPath: songData.path))
         let realsong = realSongdata!.base64EncodedString(options: [])
         let songDataRef = FIRDatabase.database().reference().child(CommonConst.songData1).child(uuid)
@@ -1233,7 +1236,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
             if (error == nil) {
                 // 音源保存完了
                 // 次に画像保存
-                self.saveImage(uuid: uuid)
+                self.saveImage(uuid)
                 print("saveImage")
             } else {
                 // 保存エラー
@@ -1242,7 +1245,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
         }
     }
     
-    func saveImage(uuid: String) {
+    func saveImage(_ uuid: String) {
         // 画像保存
         let size = CGSize(width: 1242, height: 828)
         UIGraphicsBeginImageContext(size)
@@ -1254,7 +1257,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
         let postRef3 = FIRDatabase.database().reference().child(CommonConst.image1).child(genre).child(uuid)
         postRef3.setValue(postData3) { (error, ref) in
             if (error == nil) {
-                self.savePost(uuid: uuid)
+                self.savePost(uuid)
                 print("savePost")
             } else {
                 self.showErrorAlert()
@@ -1262,12 +1265,12 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
         }
     }
     
-    func savePost(uuid: String) {
+    func savePost(_ uuid: String) {
         // 投稿
         let songName = songname
         let kazu = byou
         let uid:NSString = (FIRAuth.auth()?.currentUser?.uid)! as NSString
-        let time = NSDate.timeIntervalSinceReferenceDate
+        let time = Date.timeIntervalSinceReferenceDate
         let original:NSString = (self.original as NSString?)!
         let cover:NSString = (self.cover as NSString?)!
         let postData = ["time":time,"byou": kazu!, "songname": songName!, "ongen": uuid,"original":original,"cover":cover, "uid":uid] as [String : Any]
@@ -1275,7 +1278,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
         
         postRef.setValue(postData) { (error, ref) in
             if (error == nil) {
-                self.savePost(uuid: uuid)
+                self.saveGenreUser()
                 print("saveGenreUser")
 
             } else {

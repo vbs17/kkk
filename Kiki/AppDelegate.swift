@@ -6,7 +6,6 @@ import FirebaseDatabase
 import AVFoundation
 import Fabric
 import TwitterKit
-import GoogleMaps
 
 
 @UIApplicationMain
@@ -14,7 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
 
-    let cGoogleMapsAPIKey = "AIzaSyDQnBftsU3SgoluKQaxUHho2jyoYpK2FoE"
     
     
     func login(){
@@ -36,7 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let ProfileRef = FIRDatabase.database().reference(withPath: CommonConst.Profile).child(uid!)
             ProfileRef.keepSynced(true)
         }
-        GMSServices.provideAPIKey(cGoogleMapsAPIKey)
         
         return true
     }
