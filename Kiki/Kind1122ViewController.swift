@@ -32,6 +32,7 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
     var songname:String!
     var byou:String!
     var genre = ""
+    var genre2:String!
     var tappedCellPos:IndexPath! //タップされたCellのindexPath
     var buttonOriginalColor:UIColor!//ボタンの元の色
     var isRowSelected:Bool = false//現在行が選択状態か否か
@@ -259,16 +260,29 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         postRef.setValue(postData) { (error, ref) in
             if (error == nil) {
-                // 画像保存完了
-                SVProgressHUD.dismiss()
-                // 先頭に戻る
-                self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
+                self.savePost(uuid: uuid)
+                print("saveGenreUser")
             } else {
                 // 保存エラー
                 self.showErrorAlert()
             }
         }
     }
+    
+    func saveGenreUser(){
+        let genre = genre2
+        let post = ["users": [],"genre": genre!] as [String : Any]
+        let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser2).child(genre!)
+        postRef.setValue(post){ (error, ref) in
+            if (error == nil) {
+                SVProgressHUD.dismiss()
+                self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
+            } else {
+                self.showErrorAlert()
+            }
+        }
+    }
+
     
     
     func showErrorAlert() {

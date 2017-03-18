@@ -1053,6 +1053,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
     var songname:String!
     var byou:String!
     var genre = ""
+    var genre2:String!
     var tappedCellPos:IndexPath! //タップされたCellのindexPath
     var buttonOriginalColor:UIColor!//ボタンの元の色
     var isRowSelected:Bool = false//現在行が選択状態か否か
@@ -1160,8 +1161,6 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
         if isRowSelected {
             let reachability = Reachability()!
             if reachability.isReachable {
-                let itiranviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Itiran11") as! Itiran11ViewController
-                itiranviewcontroller.genre1 = genre
                 let ongen = UUID().uuidString
                 print("Post")
                 saveSong(uuid: ongen)
@@ -1218,13 +1217,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
 
         
     
-    //@IBAction func hougo(_ sender: Any) {
-//        self.dismiss(animated: false, completion: nil)
-
-    //}
-
-    
-
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -1261,12 +1254,9 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
         let postRef3 = FIRDatabase.database().reference().child(CommonConst.image1).child(genre).child(uuid)
         postRef3.setValue(postData3) { (error, ref) in
             if (error == nil) {
-                // 画像保存完了
-                // 次に投稿保存
                 self.savePost(uuid: uuid)
                 print("savePost")
             } else {
-                // 保存エラー
                 self.showErrorAlert()
             }
         }
@@ -1285,16 +1275,29 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
         
         postRef.setValue(postData) { (error, ref) in
             if (error == nil) {
-                // 画像保存完了
-                SVProgressHUD.dismiss()
-                // 先頭に戻る
-                self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
+                self.savePost(uuid: uuid)
+                print("saveGenreUser")
+
             } else {
-                // 保存エラー
                 self.showErrorAlert()
             }
         }
     }
+    
+    func saveGenreUser(){
+        let genre = genre2
+        let post = ["users": [],"genre": genre!] as [String : Any]
+        let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser2).child(genre!)
+        postRef.setValue(post){ (error, ref) in
+            if (error == nil) {
+                SVProgressHUD.dismiss()
+                self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
+            } else {
+                self.showErrorAlert()
+            }
+        }
+    }
+
     
     
     func showErrorAlert() {

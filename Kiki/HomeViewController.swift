@@ -21,7 +21,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     //var tableView: UITableView!
     var playingIndexPath:IndexPath!
     var dataLastVal:Double!
-    let DisplayDataNumber = 1;
+    let DisplayDataNumber = 2;
     
     @IBOutlet weak var back: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -145,7 +145,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }
         
     }
-    //postdataやfile.swiftを照らし合わせたらいける
+
     func getFirebaseData() {
         let reachability = Reachability()!
         if reachability.isReachable {
@@ -580,9 +580,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.view.frame.size.height
-    }
+    
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         let cell = tableView.cellForRow(at: playingIndexPath) as! HomeTableViewCell?

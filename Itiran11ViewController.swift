@@ -1,7 +1,10 @@
 
-
 import UIKit
 import ReachabilitySwift
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
+import Swift
 
 class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -1004,8 +1007,10 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
                                     "Zwan",
                                     "ZZ TOP"
         ]]
+    
     var genre:String!
-    var genre1:String?
+    var genreArray:[SanPostData2] = []
+
     
     @IBOutlet weak var you: UIButton!
     @IBOutlet weak var hou: UIButton!
@@ -1014,10 +1019,7 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
             self.dismiss(animated: false, completion: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.readData()
-    }
+   
     func saveData(){
         let ud = UserDefaults.standard
         let offset =  self.tableView.contentOffset
@@ -1037,15 +1039,53 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.readData()
+        FIRDatabase.database().reference().child(CommonConst.GenreUser2).observe(.childAdded, with: {[weak self] snapshot in
+            if let uid = FIRAuth.auth()?.currentUser?.uid {
+                guard let `self` = self else { return }
+                let postData = SanPostData2(snapshot: snapshot, myId: uid)
+                self.genreArray.insert(postData, at: 0)
+                
+                self.tableView.reloadData()
+            }
+        })
+        FIRDatabase.database().reference().child(CommonConst.GenreUser2).observe(.childChanged, with: {[weak self] snapshot in
+            
+            if let uid = FIRAuth.auth()?.currentUser?.uid {
+                guard let `self` = self else { return }
+                let postData = SanPostData2(snapshot: snapshot, myId: uid)
+                var index: Int = NSNotFound
+                for post in self.genreArray{
+                    if post.genre == postData.genre {
+                        index = self.genreArray.index(of: post)!
+                        break
+                    }
+                }
+                if index != NSNotFound {
+                    self.genreArray.remove(at: index)
+                    self.genreArray.insert(postData, at: index)
+                }
+                self.tableView.reloadData()
+            }
+        })
+    }
+
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cellll", for: indexPath) as! Itiran1TableViewCell
-        let items = AllItems[indexPath.section][indexPath.row]
-        cell.label.text = items
+        let genreName = AllItems[indexPath.section][indexPath.row]
+        cell.label.text = genreName
         cell.imageViewV.backgroundColor = UIColor.clear
-        if items == genre1 {
-            cell.imageViewV.backgroundColor = UIColor.red
-        } else {
-            cell.imageViewV.backgroundColor = UIColor.clear
+        for id in self.genreArray{
+            if (cell.label.text == id.genre){
+                if (id.sansyoued == true){
+                    cell.imageViewV.backgroundColor = UIColor.clear
+                }else{
+                    cell.imageViewV.backgroundColor = UIColor.red
+                }
+            }
         }
         return cell
     }
@@ -1066,13 +1106,24 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
     //Cellが選択された際に呼び出される.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let reachability = Reachability()!
+        let uid = (FIRAuth.auth()?.currentUser?.uid)! as String
+        let genreName2 = AllItems[indexPath.section][indexPath.row]
         if reachability.isReachable {
-            let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Home11") as! Home11ViewController
-            genre =  AllItems[indexPath.section][indexPath.row]
-            homeviewcontroller.genre = genre
-            self.present(homeviewcontroller, animated: true, completion: nil)
-            
-        } else {
+            for id in self.genreArray{
+                if (genreName2 == id.genre){
+                    if (id.sansyoued == false){
+                        id.users.append(uid)
+                        id.sansyoued = true
+                        let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser2).child(genreName2)
+                        let users = ["users": id.users]
+                        postRef.updateChildValues(users)
+                    }
+                    let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Home11") as! Home11ViewController
+                    genre = AllItems[indexPath.section][indexPath.row]
+                    homeviewcontroller.genre = genre
+                    self.present(homeviewcontroller, animated: true, completion: nil)
+                    
+                }}} else {
             let alert = UIAlertController()
             let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
             let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)

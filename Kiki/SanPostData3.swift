@@ -4,7 +4,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class SanPostData: NSObject {
+class SanPostData3: NSObject {
     var genre: String?
     var users: [String] = []
     var sansyoued: Bool = false

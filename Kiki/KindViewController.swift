@@ -469,7 +469,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     var songname:String!
     var byou:String!
     var genre = ""
-    var genre2:String?
+    var genre2:String!
     var tappedCellPos:IndexPath! //タップされたCellのindexPath
     var buttonOriginalColor:UIColor!//ボタンの元の色
     var isRowSelected:Bool = false//現在行が選択状態か否か
@@ -748,7 +748,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
     //usersの配列要素をクリアする
     func saveGenreUser(){
         let genre = genre2
-        let post = ["users": [],"genre": genre] as [String : Any]
+        let post = ["users": [],"genre": genre!] as [String : Any]
         let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genre!)
         postRef.setValue(post){ (error, ref) in
             if (error == nil) {

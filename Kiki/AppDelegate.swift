@@ -6,6 +6,7 @@ import FirebaseDatabase
 import AVFoundation
 import Fabric
 import TwitterKit
+import GoogleMaps
 
 
 @UIApplicationMain
@@ -13,6 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
 
+    let cGoogleMapsAPIKey = "AIzaSyDQnBftsU3SgoluKQaxUHho2jyoYpK2FoE"
+    
+    
     func login(){
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController: TabViewController = storyboard.instantiateViewController(withIdentifier: "Tab") as! TabViewController
@@ -32,20 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let ProfileRef = FIRDatabase.database().reference(withPath: CommonConst.Profile).child(uid!)
             ProfileRef.keepSynced(true)
         }
-        //let ud = UserDefaults.standard
-        //let isTutorial = ud.bool(forKey: CommonConst.IsTutorial )
-       
-        //こいつ
-        //if isTutorial == false {
-         //   let storyboard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
-           // let viewController:UIViewController = storyboard.instantiateViewController(withIdentifier: "Tyu")
-           // self.window?.rootViewController = viewController
-            //self.window?.makeKey()
-            
-           // return true
-        //}
-        
-        
+        GMSServices.provideAPIKey(cGoogleMapsAPIKey)
         
         return true
     }
@@ -61,11 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let ns = NotificationCenter.default
         ns.post(name: Notification.Name(rawValue: ApplicationDidEnterBackgroundNotification), object: nil)
     }
-    
-    
-    
-    
-    
     
     func applicationWillEnterForeground(_ application: UIApplication) {
     }
