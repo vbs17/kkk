@@ -1109,7 +1109,8 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
         let uid = (FIRAuth.auth()?.currentUser?.uid)! as String
         let genreName2 = AllItems[indexPath.section][indexPath.row]
         if reachability.isReachable {
-            for id in self.genreArray {
+            self.saveData()
+                for id in self.genreArray {
                 if (genreName2 == id.genre) {
                     if (id.sansyoued == false) {
                         id.users.append(uid)
