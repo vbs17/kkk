@@ -1109,21 +1109,24 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
         let uid = (FIRAuth.auth()?.currentUser?.uid)! as String
         let genreName2 = AllItems[indexPath.section][indexPath.row]
         if reachability.isReachable {
-            for id in self.genreArray{
-                if (genreName2 == id.genre){
-                    if (id.sansyoued == false){
+            for id in self.genreArray {
+                if (genreName2 == id.genre) {
+                    if (id.sansyoued == false) {
                         id.users.append(uid)
                         id.sansyoued = true
                         let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser2).child(genreName2)
                         let users = ["users": id.users]
                         postRef.updateChildValues(users)
+                        break;
                     }
-                    let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Home11") as! Home11ViewController
-                    genre = AllItems[indexPath.section][indexPath.row]
-                    homeviewcontroller.genre = genre
-                    self.present(homeviewcontroller, animated: true, completion: nil)
-                    
-                }}} else {
+                }
+            }
+            let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Home11") as! Home11ViewController
+            genre = AllItems[indexPath.section][indexPath.row]
+            homeviewcontroller.genre = genre
+            self.present(homeviewcontroller, animated: true, completion: nil)
+            
+            } else {
             let alert = UIAlertController()
             let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
             let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)

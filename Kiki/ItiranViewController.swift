@@ -569,28 +569,24 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let uid = (FIRAuth.auth()?.currentUser?.uid)! as String
         let genreName2 = AllItems[indexPath.section][indexPath.row]
         if reachability.isReachable {
-            for id in self.genreArray{
-                if (genreName2 == id.genre){
-                    if (id.sansyoued == false){
+            for id in self.genreArray {
+                if (genreName2 == id.genre) {
+                    if (id.sansyoued == false) {
                         id.users.append(uid)
                         id.sansyoued = true
                         let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genreName2)
                         let users = ["users": id.users]
                         postRef.updateChildValues(users)
+                        break;
                     }
-                    let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Home") as! HomeViewController
-                    genre = AllItems[indexPath.section][indexPath.row]
-                    homeviewcontroller.genre = genre
-                    self.present(homeviewcontroller, animated: true, completion: nil)
-                    
-                }else{
-                    let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Home") as! HomeViewController
-                    genre = AllItems[indexPath.section][indexPath.row]
-                    homeviewcontroller.genre = genre
-                    self.present(homeviewcontroller, animated: true, completion: nil)
-                    
-                }}} else {
-            let alert = UIAlertController()
+                }
+            }
+            let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Home") as! HomeViewController
+            genre = AllItems[indexPath.section][indexPath.row]
+            homeviewcontroller.genre = genre
+            self.present(homeviewcontroller, animated: true, completion: nil)
+            
+            } else {            let alert = UIAlertController()
             let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
             let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
             alert.setValue(attributedTitle, forKey: "attributedTitle")
