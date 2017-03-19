@@ -521,6 +521,8 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.tableVView.reloadData()
             }
         })
+
+
     }
 
     
