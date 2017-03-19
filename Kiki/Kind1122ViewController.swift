@@ -17,12 +17,11 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
                                   "Funk",
                                   "Hip Hop",
                                   "Jazz",
-                                  "Latin",
                                   "Metal",
                                   "Pop",
                                   "R&B",
-                                  "Rock",
-                                  "Other"
+                                  "Rock"
+                                  
     ]]
     
      fileprivate let mySections: NSArray = ["Genre"]
@@ -46,7 +45,7 @@ class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
 
     @IBAction func back(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: true, completion: nil)
 
     }
     

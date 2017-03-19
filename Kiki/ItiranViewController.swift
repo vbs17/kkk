@@ -524,6 +524,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     
+    
     func saveData(){
         let ud = UserDefaults.standard
         let offset =  self.tableVView.contentOffset
@@ -543,6 +544,20 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
 
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let blinkCell = cell as! ItiranTableViewCell
+        blinkCell.imageViewVV.backgroundColor = UIColor.clear
+        for id in self.genreArray{
+            if (blinkCell.label.text == id.genre){
+                if (id.sansyoued == true){
+                    blinkCell.imageViewVV.backgroundColor = UIColor.clear
+                }else{
+                    blinkCell.imageViewVV.backgroundColor = UIColor.red
+                }
+            }
+        }
+
+    }
 
 
     //セル表示、描画時処理
@@ -550,16 +565,6 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "Celll", for: indexPath) as! ItiranTableViewCell
         let genreName = AllItems[indexPath.section][indexPath.row]
         cell.label.text = genreName
-        cell.imageViewVV.backgroundColor = UIColor.clear
-        for id in self.genreArray{
-            if (cell.label.text == id.genre){
-                if (id.sansyoued == true){
-                    cell.imageViewVV.backgroundColor = UIColor.clear
-                }else{
-                    cell.imageViewVV.backgroundColor = UIColor.red
-                }
-            }
-        }
         return cell
     }
     

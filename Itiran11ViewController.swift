@@ -1019,6 +1019,18 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
             self.dismiss(animated: false, completion: nil)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        let nib = UINib(nibName: "Itiran1TableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "Cellll")
+        you.isEnabled = false
+        
+        
+    }
+
+    
    
     func saveData(){
         let ud = UserDefaults.standard
@@ -1092,16 +1104,6 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
 
 
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        let nib = UINib(nibName: "Itiran1TableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "Cellll")
-        you.isEnabled = false
-
-
-    }
     
     //Cellが選択された際に呼び出される.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
