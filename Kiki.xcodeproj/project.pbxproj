@@ -128,6 +128,7 @@
 		B0F582AC1DB38E5300654519 /* KindTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F582AA1DB38E5300654519 /* KindTableViewCell.xib */; };
 		B0FA382E1E5063FC00CB8D53 /* Tyu4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA382D1E5063FC00CB8D53 /* Tyu4ViewController.swift */; };
 		B0FA38301E50640200CB8D53 /* Tyu5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA382F1E50640200CB8D53 /* Tyu5ViewController.swift */; };
+		B0FDA58E1E7D5538003FF2A0 /* EAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA58D1E7D5538003FF2A0 /* EAViewController.swift */; };
 		B0FE1D211E7D31EE00995736 /* SanPostData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE1D201E7D31EE00995736 /* SanPostData2.swift */; };
 /* End PBXBuildFile section */
 
@@ -259,6 +260,7 @@
 		B0F582AA1DB38E5300654519 /* KindTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KindTableViewCell.xib; sourceTree = "<group>"; };
 		B0FA382D1E5063FC00CB8D53 /* Tyu4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tyu4ViewController.swift; sourceTree = "<group>"; };
 		B0FA382F1E50640200CB8D53 /* Tyu5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tyu5ViewController.swift; sourceTree = "<group>"; };
+		B0FDA58D1E7D5538003FF2A0 /* EAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EAViewController.swift; sourceTree = "<group>"; };
 		B0FE1D201E7D31EE00995736 /* SanPostData2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SanPostData2.swift; sourceTree = "<group>"; };
 		B8D29CE5422BA1688C21C169 /* Pods-Kiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiki.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kiki/Pods-Kiki.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -546,6 +548,7 @@
 			isa = PBXGroup;
 			children = (
 				B071D9701DB509FA0017E287 /* TabViewController.swift */,
+				B0FDA58D1E7D5538003FF2A0 /* EAViewController.swift */,
 				B0BA8ADB1DDD79A800F00E38 /* TyuViewController.swift */,
 				B0BA8ADD1DDD79BC00F00E38 /* Tyu2ViewController.swift */,
 				B0BA8ADF1DDD79D800F00E38 /* Tyu3ViewController.swift */,
@@ -789,6 +792,7 @@
 				B0B4481C1DD5ACE4001DDD89 /* IkuViewController.swift in Sources */,
 				B099ECE61E7AE04100A907D7 /* EventViewController.swift in Sources */,
 				B066332C1E4B9F1200AA8635 /* Oth3ViewController.swift in Sources */,
+				B0FDA58E1E7D5538003FF2A0 /* EAViewController.swift in Sources */,
 				B00501BE1DB6420800319866 /* ItiranViewController.swift in Sources */,
 				B06835C31E792BCC00CD1B1A /* SentakuVViewController.swift in Sources */,
 				B0E6CE341E384D4200DCDB9C /* ApiruViewController.swift in Sources */,

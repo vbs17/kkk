@@ -68,14 +68,14 @@ class ApiruViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        let ud = UserDefaults.standard
-        let isTutorial3 = ud.bool(forKey: CommonConst.IsTutorial3 )
-        if isTutorial3 == false {
-            let storyboard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
-            let viewController:UIViewController = storyboard.instantiateViewController(withIdentifier: "RockViewControllerNavi")
-            self.present(viewController, animated: false, completion: nil)
-        }
-    }
+    //override func viewDidAppear(_ animated: Bool) {
+      //  super.viewDidAppear(animated)
+        //let ud = UserDefaults.standard
+        //let isTutorial3 = ud.bool(forKey: CommonConst.IsTutorial3 )
+        //if isTutorial3 == false {
+          //  let storyboard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+            //let viewController:UIViewController = storyboard.instantiateViewController(withIdentifier: "RockViewControllerNavi")
+            //self.present(viewController, animated: false, completion: nil)
+        //}
+    //}
 }
