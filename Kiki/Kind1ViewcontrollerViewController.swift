@@ -1053,7 +1053,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
     var songname:String!
     var byou:String!
     var genre = ""
-    var genre2:String!
+    //var genre2:String!
     var tappedCellPos:IndexPath! //タップされたCellのindexPath
     var buttonOriginalColor:UIColor!//ボタンの元の色
     var isRowSelected:Bool = false//現在行が選択状態か否か
@@ -1072,7 +1072,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
             tableViewCell.button.backgroundColor = UIColor.green
             // ジャンルを決定
             genre = AllItems[indexPath!.section][indexPath!.row]
-            genre2 = genre
+            //genre2 = genre
             // 行が選択されている
             isRowSelected = true
             // タップされたセルのindexPathを保存
@@ -1097,7 +1097,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
                 tableViewCell.button.backgroundColor = UIColor.green
                 // ジャンルを決定
                 genre = AllItems[indexPath!.section][indexPath!.row]
-                genre2 = genre
+                //genre2 = genre
                 //cell.label.tag = AllItems[indexPath!.row]
                 // 行が選択されている
                 isRowSelected = true
@@ -1121,7 +1121,7 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
             tableViewCell.button.backgroundColor = UIColor.green
             // ジャンルを決定
             genre = AllItems[indexPath!.section][indexPath!.row]
-            genre2 = genre
+            //genre2 = genre
             // 行が選択されている
             isRowSelected = true
             // タップされたセルのindexPathを保存
@@ -1278,8 +1278,8 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
         
         postRef.setValue(postData) { (error, ref) in
             if (error == nil) {
-                self.saveGenreUser()
-                print("saveGenreUser")
+                SVProgressHUD.dismiss()
+                self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
 
             } else {
                 self.showErrorAlert()
@@ -1287,19 +1287,19 @@ class Kind1ViewcontrollerViewController: UIViewController, UITableViewDelegate, 
         }
     }
     
-    func saveGenreUser(){
-        let genre = genre2
-        let post = ["users": [],"genre": genre!] as [String : Any]
-        let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser2).child(genre!)
-        postRef.setValue(post){ (error, ref) in
-            if (error == nil) {
-                SVProgressHUD.dismiss()
-                self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
-            } else {
-                self.showErrorAlert()
-            }
-        }
-    }
+    //func saveGenreUser(){
+      //  let genre = genre2
+        //let post = ["users": [],"genre": genre!] as [String : Any]
+        //let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser2).child(genre!)
+        //postRef.setValue(post){ (error, ref) in
+          //  if (error == nil) {
+            //    SVProgressHUD.dismiss()
+              //  self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
+            //} else {
+            //    self.showErrorAlert()
+            //}
+        //}
+    //}
 
     
     

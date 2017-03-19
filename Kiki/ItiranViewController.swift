@@ -465,7 +465,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                   "9mm Parabellum Bullet"]]
     
     var genre:String?
-    var genreArray:[SanPostData] = []
+    //var genreArray:[SanPostData] = []
 
 
     @IBOutlet weak var hou: UIButton!
@@ -493,37 +493,38 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.readData()
-        FIRDatabase.database().reference().child(CommonConst.GenreUser).observe(.childAdded, with: {[weak self] snapshot in
-            if let uid = FIRAuth.auth()?.currentUser?.uid {
-                guard let `self` = self else { return }
-                let postData = SanPostData(snapshot: snapshot, myId: uid)
-                self.genreArray.insert(postData, at: 0)
-                
-                self.tableVView.reloadData()
-            }
-        })
-        FIRDatabase.database().reference().child(CommonConst.GenreUser).observe(.childChanged, with: {[weak self] snapshot in
-            
-            if let uid = FIRAuth.auth()?.currentUser?.uid {
-                guard let `self` = self else { return }
-                let postData = SanPostData(snapshot: snapshot, myId: uid)
-                var index: Int = NSNotFound
-                for post in self.genreArray{
-                    if post.genre == postData.genre {
-                        index = self.genreArray.index(of: post)!
-                        break
-                    }
-                }
-                if index != NSNotFound {
-                    self.genreArray.remove(at: index)
-                    self.genreArray.insert(postData, at: index)
-                }
-                self.tableVView.reloadData()
-            }
-        })
-
-
     }
+        //FIRDatabase.database().reference().child(CommonConst.GenreUser).observe(.childAdded, with: {[weak self] snapshot in
+          //  if let uid = FIRAuth.auth()?.currentUser?.uid {
+           //     guard let `self` = self else { return }
+           //     let postData = SanPostData(snapshot: snapshot, myId: uid)
+             //   self.genreArray.insert(postData, at: 0)
+                
+         //       self.tableVView.reloadData()
+     //       }
+     //   })
+     //   FIRDatabase.database().reference().child(CommonConst.GenreUser).observe(.childChanged, with: {[weak self] snapshot in
+            
+       //     if let uid = FIRAuth.auth()?.currentUser?.uid {
+        //        guard let `self` = self else { return }
+          //      let postData = SanPostData(snapshot: snapshot, myId: uid)
+          //      var index: Int = NSNotFound
+           //     for post in self.genreArray{
+           //         if post.genre == postData.genre {
+//index = self.genreArray.index(of: post)!
+              //          break
+            //        }
+             //   }
+             //   if index != NSNotFound {
+              //      self.genreArray.remove(at: index)
+              //      self.genreArray.insert(postData, at: index)
+              //  }
+              //  self.tableVView.reloadData()
+        //    }
+        //})
+
+
+ 
 
     
     
@@ -546,20 +547,20 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
 
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let blinkCell = cell as! ItiranTableViewCell
-        blinkCell.imageViewVV.backgroundColor = UIColor.clear
-        for id in self.genreArray{
-            if (blinkCell.label.text == id.genre){
-                if (id.sansyoued == true){
-                    blinkCell.imageViewVV.backgroundColor = UIColor.clear
-                }else{
-                    blinkCell.imageViewVV.backgroundColor = UIColor.red
-                }
-            }
-        }
+   // func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+   //     let blinkCell = cell as! ItiranTableViewCell
+     //   blinkCell.imageViewVV.backgroundColor = UIColor.clear
+       // for id in self.genreArray{
+         //   if (blinkCell.label.text == id.genre){
+           //     if (id.sansyoued == true){
+             //       blinkCell.imageViewVV.backgroundColor = UIColor.clear
+               // }else{
+                 //   blinkCell.imageViewVV.backgroundColor = UIColor.red
+                //}
+       //     }
+        //}
 
-    }
+    //}
 
 
     //セル表示、描画時処理
@@ -573,28 +574,13 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //Cellが選択された際に呼び出される.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let reachability = Reachability()!
-        let uid = (FIRAuth.auth()?.currentUser?.uid)! as String
-        let genreName2 = AllItems[indexPath.section][indexPath.row]
         if reachability.isReachable {
-            self.saveData()
-            for id in self.genreArray {
-                if (genreName2 == id.genre) {
-                    if (id.sansyoued == false) {
-                        id.users.append(uid)
-                        id.sansyoued = true
-                        let postRef = FIRDatabase.database().reference().child(CommonConst.GenreUser).child(genreName2)
-                        let users = ["users": id.users]
-                        postRef.updateChildValues(users)
-                        break;
-                    }
-                }
-            }
             let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Home") as! HomeViewController
-            genre = AllItems[indexPath.section][indexPath.row]
+            genre =  AllItems[indexPath.section][indexPath.row]
             homeviewcontroller.genre = genre
             self.present(homeviewcontroller, animated: true, completion: nil)
             
-            } else {            let alert = UIAlertController()
+        } else {            let alert = UIAlertController()
             let attributedTitleAttr = [NSForegroundColorAttributeName: UIColor.black]
             let attributedTitle = NSAttributedString(string: "MUST", attributes: attributedTitleAttr)
             alert.setValue(attributedTitle, forKey: "attributedTitle")
@@ -613,9 +599,10 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
             present(alert, animated: true, completion: nil)
             alert.view.tintColor = UIColor.black
             
-            }}
-        
-        
+        }
+    }
+    
+    
     
     
     //テーブルに表示する配列の総数を返す.
