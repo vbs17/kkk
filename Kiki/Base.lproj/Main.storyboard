@@ -47,7 +47,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <size key="titleShadowOffset" width="2" height="1"/>
-                                <state key="normal" title="Latin" backgroundImage="scott-gruber-41185">
+                                <state key="normal" title="Latin" backgroundImage="man2">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -61,7 +61,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <size key="titleShadowOffset" width="2" height="1"/>
-                                <state key="normal" title="Other" backgroundImage="scott-gruber-41185">
+                                <state key="normal" title="Other" backgroundImage="nainoa-shizuru-80385">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -70,7 +70,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEz-t1-RWj">
-                                <rect key="frame" x="5" y="465" width="46" height="39"/>
+                                <rect key="frame" x="5" y="509" width="46" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="⬅︎">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -274,7 +274,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <size key="titleShadowOffset" width="2" height="1"/>
-                                <state key="normal" title="Country" backgroundImage="country">
+                                <state key="normal" title="Country" backgroundImage="man">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -288,7 +288,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <size key="titleShadowOffset" width="2" height="1"/>
-                                <state key="normal" title="Folk" backgroundImage="folkfolk">
+                                <state key="normal" title="Folk" backgroundImage="man3">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -301,8 +301,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <size key="titleShadowOffset" width="2" height="1"/>
-                                <state key="normal" title="Reggae">
+                                <size key="titleShadowOffset" width="-2" height="2"/>
+                                <state key="normal" title="Reggae" backgroundImage="man1">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -5661,7 +5661,6 @@
         <image name="apiru2-1" width="1242" height="1863"/>
         <image name="base" width="300" height="200"/>
         <image name="con" width="1242" height="932"/>
-        <image name="country" width="777" height="518"/>
         <image name="dasai" width="2706" height="2029"/>
         <image name="dasai2" width="600" height="400"/>
         <image name="dasai3" width="530" height="794"/>
@@ -5670,14 +5669,18 @@
         <image name="dasai6" width="730" height="485"/>
         <image name="ele" width="500" height="333"/>
         <image name="fi9qq0fwyvq-jon-tyson" width="600" height="800"/>
-        <image name="folkfolk" width="500" height="333"/>
         <image name="funk" width="500" height="750"/>
         <image name="guitrar" width="300" height="200"/>
         <image name="hha" width="300" height="200"/>
         <image name="jazz" width="500" height="333"/>
         <image name="john-mark-kuznietsov-36571" width="300" height="450"/>
         <image name="kesiki" width="500" height="500"/>
+        <image name="man" width="400" height="266"/>
+        <image name="man1" width="400" height="266"/>
+        <image name="man2" width="340" height="261"/>
+        <image name="man3" width="300" height="215"/>
         <image name="metal" width="300" height="300"/>
+        <image name="nainoa-shizuru-80385" width="350" height="233"/>
         <image name="nna" width="300" height="169"/>
         <image name="pianp" width="300" height="200"/>
         <image name="pop" width="300" height="300"/>
