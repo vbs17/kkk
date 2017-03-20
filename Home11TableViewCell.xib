@@ -79,11 +79,11 @@
                         </constraints>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0z7-5D-GGx">
-                        <rect key="frame" x="55" y="0.0" width="324" height="48"/>
+                        <rect key="frame" x="0.0" y="0.0" width="379" height="48"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="48" id="am8-Fy-9J4"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <nil key="highlightedColor"/>
                         <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <size key="shadowOffset" width="1" height="1"/>
@@ -185,7 +185,7 @@
                     <constraint firstItem="4zX-BC-7Jj" firstAttribute="bottom" secondItem="VZp-Uc-lz9" secondAttribute="bottom" constant="-16" id="LfL-ev-rSL"/>
                     <constraint firstItem="QGV-iQ-etQ" firstAttribute="leading" secondItem="XhU-Du-DBC" secondAttribute="leading" constant="4" id="MvD-dl-tZx"/>
                     <constraint firstItem="QGV-iQ-etQ" firstAttribute="top" secondItem="0V7-7j-r0q" secondAttribute="bottom" constant="19" id="NqP-xM-UvF"/>
-                    <constraint firstItem="0z7-5D-GGx" firstAttribute="leading" secondItem="XhU-Du-DBC" secondAttribute="leading" constant="55" id="Q6h-Rp-kEF"/>
+                    <constraint firstItem="0z7-5D-GGx" firstAttribute="leading" secondItem="XhU-Du-DBC" secondAttribute="leading" id="Q6h-Rp-kEF"/>
                     <constraint firstItem="nKm-SQ-ksl" firstAttribute="leading" secondItem="XhU-Du-DBC" secondAttribute="leading" constant="10" id="ZIj-71-63a"/>
                     <constraint firstItem="DMD-U2-frO" firstAttribute="top" secondItem="0V7-7j-r0q" secondAttribute="bottom" constant="8" id="Zph-3I-vbV"/>
                     <constraint firstItem="VUA-lX-c98" firstAttribute="leading" secondItem="4zX-BC-7Jj" secondAttribute="trailing" constant="1" id="aY2-0t-mT5"/>

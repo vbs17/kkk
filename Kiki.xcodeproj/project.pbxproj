@@ -93,6 +93,7 @@
 		B07B5AE41E45831B00AE5B0D /* Home11TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07B5AE21E45831B00AE5B0D /* Home11TableViewCell.xib */; };
 		B07B5AE71E45872700AE5B0D /* Home11ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B5AE61E45872700AE5B0D /* Home11ViewController.swift */; };
 		B07E94E71DCDC766009537A7 /* ProIdouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */; };
+		B081CF291E7F7EDA0090DEE3 /* Genre2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B081CF281E7F7EDA0090DEE3 /* Genre2ViewController.swift */; };
 		B088CB221DDB34C7007CE03D /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088CB211DDB34C7007CE03D /* Photos.framework */; };
 		B099ECE61E7AE04100A907D7 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099ECE51E7AE04100A907D7 /* EventViewController.swift */; };
 		B099ECE81E7AE7D100A907D7 /* DyuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099ECE71E7AE7D100A907D7 /* DyuViewController.swift */; };
@@ -223,6 +224,7 @@
 		B07B5AE21E45831B00AE5B0D /* Home11TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Home11TableViewCell.xib; sourceTree = "<group>"; };
 		B07B5AE61E45872700AE5B0D /* Home11ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home11ViewController.swift; sourceTree = "<group>"; };
 		B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProIdouViewController.swift; sourceTree = "<group>"; };
+		B081CF281E7F7EDA0090DEE3 /* Genre2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Genre2ViewController.swift; path = ../Genre2ViewController.swift; sourceTree = "<group>"; };
 		B088CB211DDB34C7007CE03D /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		B099ECE51E7AE04100A907D7 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		B099ECE71E7AE7D100A907D7 /* DyuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DyuViewController.swift; sourceTree = "<group>"; };
@@ -548,6 +550,7 @@
 			isa = PBXGroup;
 			children = (
 				B071D9701DB509FA0017E287 /* TabViewController.swift */,
+				B081CF281E7F7EDA0090DEE3 /* Genre2ViewController.swift */,
 				B0FDA58D1E7D5538003FF2A0 /* EAViewController.swift */,
 				B0BA8ADB1DDD79A800F00E38 /* TyuViewController.swift */,
 				B0BA8ADD1DDD79BC00F00E38 /* Tyu2ViewController.swift */,
@@ -848,6 +851,7 @@
 				B0BA8ADE1DDD79BC00F00E38 /* Tyu2ViewController.swift in Sources */,
 				B0C4AA591E4ABE2500CD6B43 /* Itiran222TableViewCell.swift in Sources */,
 				B066332E1E4B9F1900AA8635 /* Oth4ViewController.swift in Sources */,
+				B081CF291E7F7EDA0090DEE3 /* Genre2ViewController.swift in Sources */,
 				B0F132CA1E46AC140040115D /* PostData44.swift in Sources */,
 				B07B5AD21E456E2F00AE5B0D /* Post3Data3.swift in Sources */,
 				B05E79211E6ED4D2002940C2 /* Kind1122ViewController.swift in Sources */,

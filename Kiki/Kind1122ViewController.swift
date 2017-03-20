@@ -9,18 +9,21 @@ import ReachabilitySwift
 class Kind1122ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, Kind1122TableViewCellDelegate {
     @IBOutlet weak var tableView: UITableView!
     
-    let AllItems: [[String]]  = [["Blues",
-                                  "Classical",
+    let AllItems: [[String]]  = [["Rock",
+                                  "Blues",
                                   "Country",
-                                  "Electronic",
                                   "Folk",
-                                  "Funk",
-                                  "Hip Hop",
-                                  "Jazz",
-                                  "Metal",
                                   "Pop",
+                                  "Metal",
+                                  "Electronic",
                                   "R&B",
-                                  "Rock"
+                                  "Reggae",
+                                  "Hip Hop",
+                                  "Funk",
+                                  "Jazz",
+                                  "Classical",
+                                  "Latin",
+                                  "Other"
                                   
     ]]
     

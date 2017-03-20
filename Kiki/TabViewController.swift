@@ -176,7 +176,7 @@ class TabViewController: UIViewController {
         let reachability = Reachability()!
         if reachability.isReachable {
             let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "HHOO") as! HHHOmeViewController
-            genre = "Funk"
+            genre = "Reggae"
             homeviewcontroller.genre = genre
             self.present(homeviewcontroller, animated: true, completion: nil)
             
@@ -267,6 +267,11 @@ class TabViewController: UIViewController {
     }
 
         
+    @IBAction func go(_ sender: Any) {
+        let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Genre2")
+        self.present(homeviewcontroller!, animated: false, completion: nil)
+        
+    }
     
     @IBAction func ro(_ sender: Any) {
         let reachability = Reachability()!

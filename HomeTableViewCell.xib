@@ -79,11 +79,11 @@
                         </constraints>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaL-Xe-lim">
-                        <rect key="frame" x="55" y="0.0" width="324" height="48"/>
+                        <rect key="frame" x="0.0" y="0.0" width="379" height="48"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="48" id="8aB-Ir-hka"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <nil key="highlightedColor"/>
                         <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <size key="shadowOffset" width="1" height="1"/>
@@ -178,7 +178,7 @@
                     <constraint firstItem="tVi-dn-N8j" firstAttribute="top" secondItem="u3u-h6-Vbs" secondAttribute="bottom" constant="5" id="1NX-3Y-C2I"/>
                     <constraint firstAttribute="trailing" secondItem="8M8-gA-MVL" secondAttribute="trailing" id="5CX-JP-ur9"/>
                     <constraint firstAttribute="trailing" secondItem="VaL-Xe-lim" secondAttribute="trailing" id="Dcw-bb-Gya"/>
-                    <constraint firstItem="VaL-Xe-lim" firstAttribute="leading" secondItem="s93-Vu-Lzl" secondAttribute="leading" constant="55" id="Dsz-En-EAu"/>
+                    <constraint firstItem="VaL-Xe-lim" firstAttribute="leading" secondItem="s93-Vu-Lzl" secondAttribute="leading" id="Dsz-En-EAu"/>
                     <constraint firstItem="QlZ-eq-EF1" firstAttribute="top" secondItem="u3u-h6-Vbs" secondAttribute="bottom" constant="5" id="Fcm-oH-H9T"/>
                     <constraint firstItem="8M8-gA-MVL" firstAttribute="leading" secondItem="s93-Vu-Lzl" secondAttribute="leading" id="HBE-8b-us3"/>
                     <constraint firstItem="QlZ-eq-EF1" firstAttribute="leading" secondItem="s93-Vu-Lzl" secondAttribute="leading" constant="13" id="HBI-7a-XGf"/>
