@@ -575,6 +575,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let reachability = Reachability()!
         if reachability.isReachable {
+            self.saveData()
             let homeviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Home") as! HomeViewController
             genre =  AllItems[indexPath.section][indexPath.row]
             homeviewcontroller.genre = genre

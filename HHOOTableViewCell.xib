@@ -79,7 +79,7 @@
                         </constraints>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCs-xC-KMy">
-                        <rect key="frame" x="0.0" y="0.0" width="379" height="48"/>
+                        <rect key="frame" x="55" y="0.0" width="324" height="48"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="48" id="hbg-OG-J7g"/>
                         </constraints>
@@ -184,7 +184,7 @@
                     <constraint firstItem="WGV-uX-Kbc" firstAttribute="top" secondItem="USK-Ve-Je9" secondAttribute="top" constant="2" id="GYc-EO-FaQ"/>
                     <constraint firstItem="UEI-sI-XPK" firstAttribute="top" secondItem="USK-Ve-Je9" secondAttribute="top" id="Jd2-cq-fy4"/>
                     <constraint firstAttribute="trailing" secondItem="DCs-xC-KMy" secondAttribute="trailing" id="JrK-eN-dnq"/>
-                    <constraint firstItem="DCs-xC-KMy" firstAttribute="leading" secondItem="USK-Ve-Je9" secondAttribute="leading" id="K8Y-Bk-tiw"/>
+                    <constraint firstItem="DCs-xC-KMy" firstAttribute="leading" secondItem="USK-Ve-Je9" secondAttribute="leading" constant="55" id="K8Y-Bk-tiw"/>
                     <constraint firstItem="QOL-ax-2SX" firstAttribute="leading" secondItem="lX3-hq-QLD" secondAttribute="trailing" constant="1" id="KAp-Ku-7X4"/>
                     <constraint firstAttribute="trailing" secondItem="IzZ-7a-6yH" secondAttribute="trailing" id="SGI-jX-A5j"/>
                     <constraint firstItem="lX3-hq-QLD" firstAttribute="bottom" secondItem="o5l-pA-cMv" secondAttribute="bottom" constant="-16" id="UxB-Fh-4hh"/>

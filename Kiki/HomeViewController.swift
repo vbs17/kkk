@@ -482,7 +482,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 tableView.isUserInteractionEnabled = false
                 
                 SVProgressHUD.setDefaultMaskType(.none)
-                SVProgressHUD.show(withStatus:"クールな音質に仕上げています😎(最大5秒) 　　　　　　　　　　　　　　　　                　　　　　　このオリジナルソングが君のセンスにあえば左上のProfileボタンをタップして俺に連絡をとってくれ😎あ、あと最高のヘッドホンで聞いてくれよな😜")
+                SVProgressHUD.show(withStatus:"クールな音質に仕上げています😎(最大5秒) 　　　　　　　　　　　　　　　　                　　　　　　このソングが君のセンスにあえば左上のProfileボタンをタップして俺に連絡をとってくれ😎あ、あと最高のヘッドホンで聞いてくれよな😜")
                 
                 FIRDatabase.database().reference().child(CommonConst.songData).child(postData.song!).observeSingleEvent(of: .value, with: {[weak self] snapshot in
                     guard let `self` = self else { return }
