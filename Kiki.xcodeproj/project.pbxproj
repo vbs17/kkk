@@ -15,9 +15,6 @@
 		B00501C41DB6428500319866 /* ItiranTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00501C11DB6428500319866 /* ItiranTableViewCell.swift */; };
 		B00501C51DB6428500319866 /* ItiranTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B00501C21DB6428500319866 /* ItiranTableViewCell.xib */; };
 		B007C1BA1DE95D92006F1883 /* MergeAudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = B007C1B91DE95D92006F1883 /* MergeAudioFile.m */; };
-		B00C67AC1E3D6FD10026E775 /* RockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C67AB1E3D6FD10026E775 /* RockViewController.swift */; };
-		B00C67AE1E3D6FDD0026E775 /* Rock2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C67AD1E3D6FDD0026E775 /* Rock2ViewController.swift */; };
-		B00C67B01E3D6FE90026E775 /* Rock3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C67AF1E3D6FE90026E775 /* Rock3ViewController.swift */; };
 		B00D7CF51DCEB5190042D04F /* MixerMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = B00D7CF41DCEB5190042D04F /* MixerMeter.m */; };
 		B010718D1E737D7A00A31F2D /* SanPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B010718C1E737D7A00A31F2D /* SanPostData.swift */; };
 		B0190A211DB20FE400FA066D /* KindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0190A201DB20FE400FA066D /* KindViewController.swift */; };
@@ -46,32 +43,13 @@
 		B05E79241E6ED5B8002940C2 /* Kind1122TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E79221E6ED5B8002940C2 /* Kind1122TableViewCell.swift */; };
 		B05E79251E6ED5B8002940C2 /* Kind1122TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B05E79231E6ED5B8002940C2 /* Kind1122TableViewCell.xib */; };
 		B05E79271E6EDF80002940C2 /* PostData111.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E79261E6EDF80002940C2 /* PostData111.swift */; };
-		B05F57741DDEBD05006DB9A5 /* SyutyuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F57731DDEBD05006DB9A5 /* SyutyuViewController.swift */; };
-		B05F57761DDF4937006DB9A5 /* Syutyu1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F57751DDF4937006DB9A5 /* Syutyu1ViewController.swift */; };
-		B05F57781DDF4942006DB9A5 /* Syutyu2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F57771DDF4942006DB9A5 /* Syutyu2ViewController.swift */; };
-		B05F577A1DDF4B0E006DB9A5 /* Syutyu3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F57791DDF4B0E006DB9A5 /* Syutyu3ViewController.swift */; };
-		B05F577C1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F577B1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift */; };
 		B06606561DFC4B3100FD3E4C /* PostData3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06606551DFC4B3100FD3E4C /* PostData3.swift */; };
-		B066331C1E4B9AA400AA8635 /* Syutyu5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066331B1E4B9AA400AA8635 /* Syutyu5ViewController.swift */; };
-		B066331E1E4B9AAE00AA8635 /* Syutyu6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066331D1E4B9AAE00AA8635 /* Syutyu6ViewController.swift */; };
-		B06633201E4B9AB900AA8635 /* Syutyu7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066331F1E4B9AB900AA8635 /* Syutyu7ViewController.swift */; };
-		B06633221E4B9AC100AA8635 /* Syutyu8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06633211E4B9AC100AA8635 /* Syutyu8ViewController.swift */; };
-		B06633241E4B9ACA00AA8635 /* Syutyu9ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06633231E4B9ACA00AA8635 /* Syutyu9ViewController.swift */; };
-		B06633281E4B9F0200AA8635 /* OthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06633271E4B9F0200AA8635 /* OthViewController.swift */; };
-		B066332A1E4B9F0B00AA8635 /* Oth2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06633291E4B9F0B00AA8635 /* Oth2ViewController.swift */; };
-		B066332C1E4B9F1200AA8635 /* Oth3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066332B1E4B9F1200AA8635 /* Oth3ViewController.swift */; };
-		B066332E1E4B9F1900AA8635 /* Oth4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066332D1E4B9F1900AA8635 /* Oth4ViewController.swift */; };
-		B06633301E4B9F2000AA8635 /* Oth5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066332F1E4B9F2000AA8635 /* Oth5ViewController.swift */; };
-		B06633321E4B9F2700AA8635 /* Oth6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06633311E4B9F2700AA8635 /* Oth6ViewController.swift */; };
-		B06633341E4B9F2F00AA8635 /* Oth7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06633331E4B9F2F00AA8635 /* Oth7ViewController.swift */; };
-		B06633361E4B9F3600AA8635 /* Oth8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06633351E4B9F3600AA8635 /* Oth8ViewController.swift */; };
 		B06835C31E792BCC00CD1B1A /* SentakuVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06835C21E792BCC00CD1B1A /* SentakuVViewController.swift */; };
 		B06968221DC60D6E00274DB1 /* PostData1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06968211DC60D6E00274DB1 /* PostData1.swift */; };
 		B06968241DC60E1400274DB1 /* Itiran1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06968231DC60E1400274DB1 /* Itiran1ViewController.swift */; };
 		B06968261DC60F7700274DB1 /* HomeViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06968251DC60F7700274DB1 /* HomeViewController1.swift */; };
 		B06968291DC610C200274DB1 /* HomeTableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06968271DC610C200274DB1 /* HomeTableViewCell1.swift */; };
 		B069682A1DC610C200274DB1 /* HomeTableViewCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = B06968281DC610C200274DB1 /* HomeTableViewCell1.xib */; };
-		B06B00451DDD4131000C545D /* OreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06B00441DDD4131000C545D /* OreViewController.swift */; };
 		B071309B1DC22D8800B8EEC1 /* 2TViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071309A1DC22D8700B8EEC1 /* 2TViewController.swift */; };
 		B071309D1DC2352E00B8EEC1 /* Play2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071309C1DC2352E00B8EEC1 /* Play2ViewController.swift */; };
 		B071D9661DB4D6140017E287 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071D9651DB4D6140017E287 /* File.swift */; };
@@ -144,9 +122,6 @@
 		B00501C21DB6428500319866 /* ItiranTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItiranTableViewCell.xib; sourceTree = "<group>"; };
 		B007C1B81DE95D92006F1883 /* MergeAudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MergeAudioFile.h; sourceTree = "<group>"; };
 		B007C1B91DE95D92006F1883 /* MergeAudioFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MergeAudioFile.m; sourceTree = "<group>"; };
-		B00C67AB1E3D6FD10026E775 /* RockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RockViewController.swift; sourceTree = "<group>"; };
-		B00C67AD1E3D6FDD0026E775 /* Rock2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rock2ViewController.swift; sourceTree = "<group>"; };
-		B00C67AF1E3D6FE90026E775 /* Rock3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rock3ViewController.swift; sourceTree = "<group>"; };
 		B00D7CF21DCEB5180042D04F /* Kiki-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kiki-Bridging-Header.h"; sourceTree = "<group>"; };
 		B00D7CF31DCEB5190042D04F /* MixerMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixerMeter.h; sourceTree = "<group>"; };
 		B00D7CF41DCEB5190042D04F /* MixerMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MixerMeter.m; sourceTree = "<group>"; };
@@ -177,32 +152,13 @@
 		B05E79221E6ED5B8002940C2 /* Kind1122TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kind1122TableViewCell.swift; sourceTree = "<group>"; };
 		B05E79231E6ED5B8002940C2 /* Kind1122TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Kind1122TableViewCell.xib; sourceTree = "<group>"; };
 		B05E79261E6EDF80002940C2 /* PostData111.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData111.swift; sourceTree = "<group>"; };
-		B05F57731DDEBD05006DB9A5 /* SyutyuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyutyuViewController.swift; sourceTree = "<group>"; };
-		B05F57751DDF4937006DB9A5 /* Syutyu1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu1ViewController.swift; sourceTree = "<group>"; };
-		B05F57771DDF4942006DB9A5 /* Syutyu2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu2ViewController.swift; sourceTree = "<group>"; };
-		B05F57791DDF4B0E006DB9A5 /* Syutyu3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu3ViewController.swift; sourceTree = "<group>"; };
-		B05F577B1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu4ViewController.swift; sourceTree = "<group>"; };
 		B06606551DFC4B3100FD3E4C /* PostData3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData3.swift; sourceTree = "<group>"; };
-		B066331B1E4B9AA400AA8635 /* Syutyu5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu5ViewController.swift; sourceTree = "<group>"; };
-		B066331D1E4B9AAE00AA8635 /* Syutyu6ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu6ViewController.swift; sourceTree = "<group>"; };
-		B066331F1E4B9AB900AA8635 /* Syutyu7ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu7ViewController.swift; sourceTree = "<group>"; };
-		B06633211E4B9AC100AA8635 /* Syutyu8ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu8ViewController.swift; sourceTree = "<group>"; };
-		B06633231E4B9ACA00AA8635 /* Syutyu9ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syutyu9ViewController.swift; sourceTree = "<group>"; };
-		B06633271E4B9F0200AA8635 /* OthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OthViewController.swift; sourceTree = "<group>"; };
-		B06633291E4B9F0B00AA8635 /* Oth2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oth2ViewController.swift; sourceTree = "<group>"; };
-		B066332B1E4B9F1200AA8635 /* Oth3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oth3ViewController.swift; sourceTree = "<group>"; };
-		B066332D1E4B9F1900AA8635 /* Oth4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oth4ViewController.swift; sourceTree = "<group>"; };
-		B066332F1E4B9F2000AA8635 /* Oth5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oth5ViewController.swift; sourceTree = "<group>"; };
-		B06633311E4B9F2700AA8635 /* Oth6ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oth6ViewController.swift; sourceTree = "<group>"; };
-		B06633331E4B9F2F00AA8635 /* Oth7ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oth7ViewController.swift; sourceTree = "<group>"; };
-		B06633351E4B9F3600AA8635 /* Oth8ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oth8ViewController.swift; sourceTree = "<group>"; };
 		B06835C21E792BCC00CD1B1A /* SentakuVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentakuVViewController.swift; sourceTree = "<group>"; };
 		B06968211DC60D6E00274DB1 /* PostData1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData1.swift; sourceTree = "<group>"; };
 		B06968231DC60E1400274DB1 /* Itiran1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Itiran1ViewController.swift; path = ../Itiran1ViewController.swift; sourceTree = "<group>"; };
 		B06968251DC60F7700274DB1 /* HomeViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController1.swift; path = ../HomeViewController1.swift; sourceTree = "<group>"; };
 		B06968271DC610C200274DB1 /* HomeTableViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell1.swift; sourceTree = "<group>"; };
 		B06968281DC610C200274DB1 /* HomeTableViewCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell1.xib; sourceTree = "<group>"; };
-		B06B00441DDD4131000C545D /* OreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OreViewController.swift; sourceTree = "<group>"; };
 		B071309A1DC22D8700B8EEC1 /* 2TViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 2TViewController.swift; sourceTree = "<group>"; };
 		B071309C1DC2352E00B8EEC1 /* Play2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Play2ViewController.swift; sourceTree = "<group>"; };
 		B071D9651DB4D6140017E287 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
@@ -331,29 +287,9 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		B03032E21E44508500D2059E /* syutyu */ = {
-			isa = PBXGroup;
-			children = (
-				B05F57731DDEBD05006DB9A5 /* SyutyuViewController.swift */,
-				B05F57751DDF4937006DB9A5 /* Syutyu1ViewController.swift */,
-				B05F57771DDF4942006DB9A5 /* Syutyu2ViewController.swift */,
-				B05F57791DDF4B0E006DB9A5 /* Syutyu3ViewController.swift */,
-				B05F577B1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift */,
-				B066331B1E4B9AA400AA8635 /* Syutyu5ViewController.swift */,
-				B066331D1E4B9AAE00AA8635 /* Syutyu6ViewController.swift */,
-				B066331F1E4B9AB900AA8635 /* Syutyu7ViewController.swift */,
-				B06633211E4B9AC100AA8635 /* Syutyu8ViewController.swift */,
-				B06633231E4B9ACA00AA8635 /* Syutyu9ViewController.swift */,
-			);
-			name = syutyu;
-			sourceTree = "<group>";
-		};
 		B03032E31E44508F00D2059E /* rocktyu */ = {
 			isa = PBXGroup;
 			children = (
-				B00C67AB1E3D6FD10026E775 /* RockViewController.swift */,
-				B00C67AD1E3D6FDD0026E775 /* Rock2ViewController.swift */,
-				B00C67AF1E3D6FE90026E775 /* Rock3ViewController.swift */,
 				B099ECE51E7AE04100A907D7 /* EventViewController.swift */,
 				B099ECE71E7AE7D100A907D7 /* DyuViewController.swift */,
 				B099ECE91E7AEA2300A907D7 /* sineViewController.swift */,
@@ -512,8 +448,6 @@
 			children = (
 				B0A78FD91DACFF6500AC0513 /* Main.storyboard */,
 				B0A78FD51DACFF6500AC0513 /* AppDelegate.swift */,
-				B0D594FA1E4C27AF00689507 /* oth */,
-				B03032E21E44508500D2059E /* syutyu */,
 				B03032E31E44508F00D2059E /* rocktyu */,
 				B0BA8AE11DDD7E7500F00E38 /* LoginAka */,
 				B0479DB51E0FF69000B5B9B3 /* postData2 */,
@@ -587,22 +521,6 @@
 			name = itiran222333cell;
 			sourceTree = "<group>";
 		};
-		B0D594FA1E4C27AF00689507 /* oth */ = {
-			isa = PBXGroup;
-			children = (
-				B06B00441DDD4131000C545D /* OreViewController.swift */,
-				B06633271E4B9F0200AA8635 /* OthViewController.swift */,
-				B06633291E4B9F0B00AA8635 /* Oth2ViewController.swift */,
-				B066332B1E4B9F1200AA8635 /* Oth3ViewController.swift */,
-				B066332D1E4B9F1900AA8635 /* Oth4ViewController.swift */,
-				B066332F1E4B9F2000AA8635 /* Oth5ViewController.swift */,
-				B06633311E4B9F2700AA8635 /* Oth6ViewController.swift */,
-				B06633331E4B9F2F00AA8635 /* Oth7ViewController.swift */,
-				B06633351E4B9F3600AA8635 /* Oth8ViewController.swift */,
-			);
-			name = oth;
-			sourceTree = "<group>";
-		};
 		B0F132D11E46B1270040115D /* Syugocell */ = {
 			isa = PBXGroup;
 			children = (
@@ -653,7 +571,7 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 9G469ZT4Z2;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -788,13 +706,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B05F57741DDEBD05006DB9A5 /* SyutyuViewController.swift in Sources */,
-				B00C67B01E3D6FE90026E775 /* Rock3ViewController.swift in Sources */,
 				B071D9711DB509FA0017E287 /* TabViewController.swift in Sources */,
 				B046621E1E6EFF7B00EB5EE7 /* Post4Data4.swift in Sources */,
 				B0B4481C1DD5ACE4001DDD89 /* IkuViewController.swift in Sources */,
 				B099ECE61E7AE04100A907D7 /* EventViewController.swift in Sources */,
-				B066332C1E4B9F1200AA8635 /* Oth3ViewController.swift in Sources */,
 				B0FDA58E1E7D5538003FF2A0 /* EAViewController.swift in Sources */,
 				B00501BE1DB6420800319866 /* ItiranViewController.swift in Sources */,
 				B06835C31E792BCC00CD1B1A /* SentakuVViewController.swift in Sources */,
@@ -806,12 +721,8 @@
 				B07B5AD71E45718700AE5B0D /* Kind1TableViewCell.swift in Sources */,
 				B046621B1E6EFBE400EB5EE7 /* HHOOTableViewCell.swift in Sources */,
 				B05E343B1DC8A53800C271D3 /* ProViewController.swift in Sources */,
-				B06633301E4B9F2000AA8635 /* Oth5ViewController.swift in Sources */,
 				B06968261DC60F7700274DB1 /* HomeViewController1.swift in Sources */,
 				B071D9681DB4E5040017E287 /* PostData.swift in Sources */,
-				B00C67AC1E3D6FD10026E775 /* RockViewController.swift in Sources */,
-				B05F577C1DDF4BA0006DB9A5 /* Syutyu4ViewController.swift in Sources */,
-				B06633341E4B9F2F00AA8635 /* Oth7ViewController.swift in Sources */,
 				B007C1BA1DE95D92006F1883 /* MergeAudioFile.m in Sources */,
 				B07B5AE71E45872700AE5B0D /* Home11ViewController.swift in Sources */,
 				B0ABF85C1DB0EE21001987E7 /* SendViewController.swift in Sources */,
@@ -819,21 +730,17 @@
 				B0BA8AE01DDD79D800F00E38 /* Tyu3ViewController.swift in Sources */,
 				B071309D1DC2352E00B8EEC1 /* Play2ViewController.swift in Sources */,
 				B05E791F1E6E88C6002940C2 /* GenreViewController.swift in Sources */,
-				B066331E1E4B9AAE00AA8635 /* Syutyu6ViewController.swift in Sources */,
 				B00467F61E3995380033859A /* Apiru2ViewController.swift in Sources */,
 				B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */,
 				B029E58A1DE1A17C00C7EDDF /* IyaViewController.swift in Sources */,
 				B0FA38301E50640200CB8D53 /* Tyu5ViewController.swift in Sources */,
 				B04662181E6EF8ED00EB5EE7 /* HHHOmeViewController.swift in Sources */,
 				B0A78FD81DACFF6500AC0513 /* ViewController.swift in Sources */,
-				B06633201E4B9AB900AA8635 /* Syutyu7ViewController.swift in Sources */,
 				B05E79271E6EDF80002940C2 /* PostData111.swift in Sources */,
 				B07B5ADF1E45806F00AE5B0D /* Itiran11ViewController.swift in Sources */,
-				B06633361E4B9F3600AA8635 /* Oth8ViewController.swift in Sources */,
 				B03151761DAE6A06007EE64C /* PlayViewController.swift in Sources */,
 				B0F582AB1DB38E5300654519 /* KindTableViewCell.swift in Sources */,
 				B05E343F1DC8B57F00C271D3 /* PostData2.swift in Sources */,
-				B05F577A1DDF4B0E006DB9A5 /* Syutyu3ViewController.swift in Sources */,
 				B071D96F1DB4EA9B0017E287 /* HomeViewController.swift in Sources */,
 				B099ECEA1E7AEA2300A907D7 /* sineViewController.swift in Sources */,
 				B07B5AE31E45831B00AE5B0D /* Home11TableViewCell.swift in Sources */,
@@ -844,26 +751,19 @@
 				B0A9A1741DB1FDE00021D1CF /* OkViewController.swift in Sources */,
 				B0FA382E1E5063FC00CB8D53 /* Tyu4ViewController.swift in Sources */,
 				B071D9751DB50E670017E287 /* SetViewController.swift in Sources */,
-				B05F57761DDF4937006DB9A5 /* Syutyu1ViewController.swift in Sources */,
 				B071D9731DB50C4E0017E287 /* LoginViewController.swift in Sources */,
 				B054F5D61E46B7CE007AFC5D /* Home111ViewController.swift in Sources */,
-				B06633221E4B9AC100AA8635 /* Syutyu8ViewController.swift in Sources */,
 				B0BA8ADE1DDD79BC00F00E38 /* Tyu2ViewController.swift in Sources */,
 				B0C4AA591E4ABE2500CD6B43 /* Itiran222TableViewCell.swift in Sources */,
-				B066332E1E4B9F1900AA8635 /* Oth4ViewController.swift in Sources */,
 				B081CF291E7F7EDA0090DEE3 /* Genre2ViewController.swift in Sources */,
 				B0F132CA1E46AC140040115D /* PostData44.swift in Sources */,
 				B07B5AD21E456E2F00AE5B0D /* Post3Data3.swift in Sources */,
 				B05E79211E6ED4D2002940C2 /* Kind1122ViewController.swift in Sources */,
-				B05F57781DDF4942006DB9A5 /* Syutyu2ViewController.swift in Sources */,
 				B0F132D01E46ADDF0040115D /* Kind22ViewController.swift in Sources */,
 				B07B5AD41E456FC000AE5B0D /* Kind1ViewcontrollerViewController.swift in Sources */,
 				B099ECE81E7AE7D100A907D7 /* DyuViewController.swift in Sources */,
 				B06968241DC60E1400274DB1 /* Itiran1ViewController.swift in Sources */,
-				B066331C1E4B9AA400AA8635 /* Syutyu5ViewController.swift in Sources */,
 				B042A0171DB983620068D205 /* BasyoViewController.swift in Sources */,
-				B06633281E4B9F0200AA8635 /* OthViewController.swift in Sources */,
-				B06633241E4B9ACA00AA8635 /* Syutyu9ViewController.swift in Sources */,
 				B00501C41DB6428500319866 /* ItiranTableViewCell.swift in Sources */,
 				B010718D1E737D7A00A31F2D /* SanPostData.swift in Sources */,
 				B07B5AD01E456E2200AE5B0D /* Post2Data2.swift in Sources */,
@@ -871,14 +771,12 @@
 				B05E79241E6ED5B8002940C2 /* Kind1122TableViewCell.swift in Sources */,
 				B0BA8ADC1DDD79A800F00E38 /* TyuViewController.swift in Sources */,
 				B042A0191DB985180068D205 /* SyugoViewController.swift in Sources */,
-				B066332A1E4B9F0B00AA8635 /* Oth2ViewController.swift in Sources */,
 				B042A01E1DB98BB30068D205 /* SyugoTableViewCell.swift in Sources */,
 				B054F5D41E46B6BE007AFC5D /* Itiran111ViewController.swift in Sources */,
 				B06606561DFC4B3100FD3E4C /* PostData3.swift in Sources */,
 				B0FE1D211E7D31EE00995736 /* SanPostData2.swift in Sources */,
 				B0A78FD61DACFF6500AC0513 /* AppDelegate.swift in Sources */,
 				B0C4AA5D1E4ABE3B00CD6B43 /* Itiran333TableViewCell.swift in Sources */,
-				B00C67AE1E3D6FDD0026E775 /* Rock2ViewController.swift in Sources */,
 				B042A0221DB991150068D205 /* SyuruViewController.swift in Sources */,
 				B07B5ACE1E456E0A00AE5B0D /* Post1Data.swift in Sources */,
 				B06968291DC610C200274DB1 /* HomeTableViewCell1.swift in Sources */,
@@ -886,8 +784,6 @@
 				B07E94E71DCDC766009537A7 /* ProIdouViewController.swift in Sources */,
 				B042A01B1DB98A840068D205 /* Kind2ViewController.swift in Sources */,
 				B07B5ADC1E457F0000AE5B0D /* Itiran1TableViewCell.swift in Sources */,
-				B06B00451DDD4131000C545D /* OreViewController.swift in Sources */,
-				B06633321E4B9F2700AA8635 /* Oth6ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1009,7 +905,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9G469ZT4Z2;
 				ENABLE_BITCODE = YES;
@@ -1021,6 +917,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mycompany.Giggsister;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b12fca75-5060-4f29-969e-607b63d73d43";
+				PROVISIONING_PROFILE_SPECIFIER = Supersonic;
 				SWIFT_OBJC_BRIDGING_HEADER = "Kiki/Kiki-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1035,7 +933,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 9G469ZT4Z2;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1047,6 +945,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mycompany.Giggsister;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b12fca75-5060-4f29-969e-607b63d73d43";
+				PROVISIONING_PROFILE_SPECIFIER = Supersonic;
 				SWIFT_OBJC_BRIDGING_HEADER = "Kiki/Kiki-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
