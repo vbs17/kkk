@@ -60,13 +60,7 @@ class PlayViewController: UIViewController {
         ok.clipsToBounds = true
     }
     //ここら辺
-    @IBAction func kasane(_ sender: AnyObject) {
-        playSong.stop()
-        timer.invalidate()
-        let recviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Iya") as! IyaViewController
-        recviewcontroller.songData = songData
-        self.present(recviewcontroller, animated: true, completion: nil)
-    }
+    
     
     //再生
     @IBAction func goPlay(_ sender: AnyObject) {

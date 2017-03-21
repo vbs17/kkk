@@ -19,7 +19,6 @@
 		B010718D1E737D7A00A31F2D /* SanPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B010718C1E737D7A00A31F2D /* SanPostData.swift */; };
 		B0190A211DB20FE400FA066D /* KindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0190A201DB20FE400FA066D /* KindViewController.swift */; };
 		B020D0AB1E0F405A005A1363 /* PostData4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B020D0AA1E0F405A005A1363 /* PostData4.swift */; };
-		B029E58A1DE1A17C00C7EDDF /* IyaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029E5891DE1A17C00C7EDDF /* IyaViewController.swift */; };
 		B03151761DAE6A06007EE64C /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03151751DAE6A06007EE64C /* PlayViewController.swift */; };
 		B04662181E6EF8ED00EB5EE7 /* HHHOmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04662171E6EF8ED00EB5EE7 /* HHHOmeViewController.swift */; };
 		B046621B1E6EFBE400EB5EE7 /* HHOOTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04662191E6EFBE400EB5EE7 /* HHOOTableViewCell.swift */; };
@@ -36,8 +35,6 @@
 		B06606561DFC4B3100FD3E4C /* PostData3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06606551DFC4B3100FD3E4C /* PostData3.swift */; };
 		B06835C31E792BCC00CD1B1A /* SentakuVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06835C21E792BCC00CD1B1A /* SentakuVViewController.swift */; };
 		B06968221DC60D6E00274DB1 /* PostData1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06968211DC60D6E00274DB1 /* PostData1.swift */; };
-		B071309B1DC22D8800B8EEC1 /* 2TViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071309A1DC22D8700B8EEC1 /* 2TViewController.swift */; };
-		B071309D1DC2352E00B8EEC1 /* Play2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071309C1DC2352E00B8EEC1 /* Play2ViewController.swift */; };
 		B071D9661DB4D6140017E287 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071D9651DB4D6140017E287 /* File.swift */; };
 		B071D9681DB4E5040017E287 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071D9671DB4E5040017E287 /* PostData.swift */; };
 		B071D96F1DB4EA9B0017E287 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071D96E1DB4EA9B0017E287 /* HomeViewController.swift */; };
@@ -104,7 +101,6 @@
 		B010718C1E737D7A00A31F2D /* SanPostData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SanPostData.swift; sourceTree = "<group>"; };
 		B0190A201DB20FE400FA066D /* KindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KindViewController.swift; sourceTree = "<group>"; };
 		B020D0AA1E0F405A005A1363 /* PostData4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData4.swift; sourceTree = "<group>"; };
-		B029E5891DE1A17C00C7EDDF /* IyaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IyaViewController.swift; sourceTree = "<group>"; };
 		B03151751DAE6A06007EE64C /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		B04662171E6EF8ED00EB5EE7 /* HHHOmeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHHOmeViewController.swift; sourceTree = "<group>"; };
 		B04662191E6EFBE400EB5EE7 /* HHOOTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHOOTableViewCell.swift; sourceTree = "<group>"; };
@@ -121,8 +117,6 @@
 		B06606551DFC4B3100FD3E4C /* PostData3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData3.swift; sourceTree = "<group>"; };
 		B06835C21E792BCC00CD1B1A /* SentakuVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentakuVViewController.swift; sourceTree = "<group>"; };
 		B06968211DC60D6E00274DB1 /* PostData1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData1.swift; sourceTree = "<group>"; };
-		B071309A1DC22D8700B8EEC1 /* 2TViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 2TViewController.swift; sourceTree = "<group>"; };
-		B071309C1DC2352E00B8EEC1 /* Play2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Play2ViewController.swift; sourceTree = "<group>"; };
 		B071D9651DB4D6140017E287 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		B071D9671DB4E5040017E287 /* PostData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
 		B071D96E1DB4EA9B0017E287 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Kiki/HomeViewController.swift; sourceTree = "<group>"; };
@@ -210,17 +204,6 @@
 				1B6FEAA645A78AA6AC4A2E2B /* Pods_Kiki.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B00467F31E38A93C0033859A /* m */ = {
-			isa = PBXGroup;
-			children = (
-				B029E5891DE1A17C00C7EDDF /* IyaViewController.swift */,
-				B071309A1DC22D8700B8EEC1 /* 2TViewController.swift */,
-				B071309C1DC2352E00B8EEC1 /* Play2ViewController.swift */,
-			);
-			name = m;
-			path = Kiki;
 			sourceTree = "<group>";
 		};
 		B00501BA1DB610D200319866 /* 音源表示 */ = {
@@ -346,7 +329,6 @@
 			isa = PBXGroup;
 			children = (
 				B0A78FD41DACFF6500AC0513 /* Kiki */,
-				B00467F31E38A93C0033859A /* m */,
 				B0A78FD31DACFF6400AC0513 /* Products */,
 				4F50CD36192A9453F20C1EFD /* Pods */,
 				561F2EC0FDDD07A1BF6D0786 /* Frameworks */,
@@ -451,7 +433,7 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 9G469ZT4Z2;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -598,11 +580,9 @@
 				B0ABF85C1DB0EE21001987E7 /* SendViewController.swift in Sources */,
 				B00D7CF51DCEB5190042D04F /* MixerMeter.m in Sources */,
 				B0BA8AE01DDD79D800F00E38 /* Tyu3ViewController.swift in Sources */,
-				B071309D1DC2352E00B8EEC1 /* Play2ViewController.swift in Sources */,
 				B05E791F1E6E88C6002940C2 /* GenreViewController.swift in Sources */,
 				B00467F61E3995380033859A /* Apiru2ViewController.swift in Sources */,
 				B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */,
-				B029E58A1DE1A17C00C7EDDF /* IyaViewController.swift in Sources */,
 				B0FA38301E50640200CB8D53 /* Tyu5ViewController.swift in Sources */,
 				B04662181E6EF8ED00EB5EE7 /* HHHOmeViewController.swift in Sources */,
 				B0A78FD81DACFF6500AC0513 /* ViewController.swift in Sources */,
@@ -614,7 +594,6 @@
 				B071D96F1DB4EA9B0017E287 /* HomeViewController.swift in Sources */,
 				B099ECEA1E7AEA2300A907D7 /* sineViewController.swift in Sources */,
 				B07B5AE31E45831B00AE5B0D /* Home11TableViewCell.swift in Sources */,
-				B071309B1DC22D8800B8EEC1 /* 2TViewController.swift in Sources */,
 				B071D9661DB4D6140017E287 /* File.swift in Sources */,
 				B020D0AB1E0F405A005A1363 /* PostData4.swift in Sources */,
 				B0A9A1741DB1FDE00021D1CF /* OkViewController.swift in Sources */,
@@ -685,7 +664,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: kei ikeuchi (3GYBS2HRPV)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -707,6 +687,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -732,7 +713,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: kei ikeuchi (3GYBS2HRPV)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -747,6 +729,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -761,9 +744,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 9G469ZT4Z2;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -773,8 +756,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mycompany.Giggsister;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b12fca75-5060-4f29-969e-607b63d73d43";
-				PROVISIONING_PROFILE_SPECIFIER = Supersonic;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kiki/Kiki-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -789,8 +772,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 9G469ZT4Z2;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -801,8 +784,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mycompany.Giggsister;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b12fca75-5060-4f29-969e-607b63d73d43";
-				PROVISIONING_PROFILE_SPECIFIER = Supersonic;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kiki/Kiki-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
