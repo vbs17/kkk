@@ -804,6 +804,7 @@
 				PROVISIONING_PROFILE = "b12fca75-5060-4f29-969e-607b63d73d43";
 				PROVISIONING_PROFILE_SPECIFIER = Supersonic;
 				SWIFT_OBJC_BRIDGING_HEADER = "Kiki/Kiki-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
