@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		354A3F113F48C667976D4459 /* Pods_Kiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6FEAA645A78AA6AC4A2E2B /* Pods_Kiki.framework */; };
+		B001821A1E816A7300065228 /* OreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00182191E816A7300065228 /* OreViewController.swift */; };
 		B00467F61E3995380033859A /* Apiru2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00467F51E3995380033859A /* Apiru2ViewController.swift */; };
 		B00501BB1DB610D200319866 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00501B81DB610D200319866 /* HomeTableViewCell.swift */; };
 		B00501BC1DB610D200319866 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B00501B91DB610D200319866 /* HomeTableViewCell.xib */; };
@@ -87,6 +88,7 @@
 /* Begin PBXFileReference section */
 		1B6FEAA645A78AA6AC4A2E2B /* Pods_Kiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E6B0D253A1C1620CEF05707 /* Pods-Kiki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiki.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kiki/Pods-Kiki.release.xcconfig"; sourceTree = "<group>"; };
+		B00182191E816A7300065228 /* OreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OreViewController.swift; sourceTree = "<group>"; };
 		B00467F51E3995380033859A /* Apiru2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apiru2ViewController.swift; sourceTree = "<group>"; };
 		B00501B81DB610D200319866 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		B00501B91DB610D200319866 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				B071D9701DB509FA0017E287 /* TabViewController.swift */,
+				B00182191E816A7300065228 /* OreViewController.swift */,
 				B081CF281E7F7EDA0090DEE3 /* Genre2ViewController.swift */,
 				B0FDA58D1E7D5538003FF2A0 /* EAViewController.swift */,
 				B0BA8ADB1DDD79A800F00E38 /* TyuViewController.swift */,
@@ -610,6 +613,7 @@
 				B00501C41DB6428500319866 /* ItiranTableViewCell.swift in Sources */,
 				B010718D1E737D7A00A31F2D /* SanPostData.swift in Sources */,
 				B07B5AD01E456E2200AE5B0D /* Post2Data2.swift in Sources */,
+				B001821A1E816A7300065228 /* OreViewController.swift in Sources */,
 				B05E79241E6ED5B8002940C2 /* Kind1122TableViewCell.swift in Sources */,
 				B0BA8ADC1DDD79A800F00E38 /* TyuViewController.swift in Sources */,
 				B06606561DFC4B3100FD3E4C /* PostData3.swift in Sources */,
