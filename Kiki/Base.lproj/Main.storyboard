@@ -2961,7 +2961,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="button" destination="P1z-jp-0q6" id="ma3-dB-V5v"/>
                         <outlet property="labek" destination="9ji-5i-es0" id="CzD-x5-ayl"/>
                         <outlet property="tableView" destination="3em-BR-Pqy" id="2So-FW-XEO"/>
                     </connections>

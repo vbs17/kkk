@@ -211,8 +211,6 @@ class HHHOmeViewController: UIViewController,UITableViewDataSource, UITableViewD
         let nib = UINib(nibName: "HHOOTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "HHOOO")
         //ここ？button
-        button.layer.cornerRadius = 37
-        button.clipsToBounds = true
         let tblBackColor: UIColor = UIColor.clear
         tableView.backgroundColor = tblBackColor
         
