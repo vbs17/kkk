@@ -505,12 +505,7 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
 
-    @IBAction func Back(_ sender: Any) {
-        self.saveData()
-        self.dismiss(animated: true, completion: nil)
         
-    }
-    
        
     
     @IBAction func yougo(_ sender: Any) {

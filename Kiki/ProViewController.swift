@@ -97,7 +97,7 @@ class ProViewController: UIViewController,UITextFieldDelegate{
     }
     
     @IBAction func back(_ sender: AnyObject) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: false, completion: nil)
     }
     
     

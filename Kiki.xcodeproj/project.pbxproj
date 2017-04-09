@@ -28,8 +28,6 @@
 		B05E343B1DC8A53800C271D3 /* ProViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343A1DC8A53800C271D3 /* ProViewController.swift */; };
 		B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */; };
 		B05E343F1DC8B57F00C271D3 /* PostData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343E1DC8B57F00C271D3 /* PostData2.swift */; };
-		B05E791F1E6E88C6002940C2 /* GenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E791E1E6E88C6002940C2 /* GenreViewController.swift */; };
-		B05E79211E6ED4D2002940C2 /* Kind1122ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E79201E6ED4D2002940C2 /* Kind1122ViewController.swift */; };
 		B05E79241E6ED5B8002940C2 /* Kind1122TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E79221E6ED5B8002940C2 /* Kind1122TableViewCell.swift */; };
 		B05E79251E6ED5B8002940C2 /* Kind1122TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B05E79231E6ED5B8002940C2 /* Kind1122TableViewCell.xib */; };
 		B05E79271E6EDF80002940C2 /* PostData111.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E79261E6EDF80002940C2 /* PostData111.swift */; };
@@ -75,6 +73,7 @@
 		B0CB1E0E1E1393A20083C8A4 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0CB1E0D1E1393A20083C8A4 /* SVProgressHUD.framework */; };
 		B0E108701E52E447009829AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0E1086F1E52E447009829AD /* GoogleService-Info.plist */; };
 		B0E6CE341E384D4200DCDB9C /* ApiruViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E6CE331E384D4200DCDB9C /* ApiruViewController.swift */; };
+		B0EA97B41E9A863600CC478C /* AAAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EA97B31E9A863600CC478C /* AAAViewController.swift */; };
 		B0F132C81E46AC080040115D /* PostData11.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F132C71E46AC080040115D /* PostData11.swift */; };
 		B0F132CA1E46AC140040115D /* PostData44.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F132C91E46AC140040115D /* PostData44.swift */; };
 		B0F582AB1DB38E5300654519 /* KindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F582A91DB38E5300654519 /* KindTableViewCell.swift */; };
@@ -111,8 +110,6 @@
 		B05E343A1DC8A53800C271D3 /* ProViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProViewController.swift; sourceTree = "<group>"; };
 		B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProIViewController.swift; sourceTree = "<group>"; };
 		B05E343E1DC8B57F00C271D3 /* PostData2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData2.swift; sourceTree = "<group>"; };
-		B05E791E1E6E88C6002940C2 /* GenreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenreViewController.swift; path = Kiki/GenreViewController.swift; sourceTree = "<group>"; };
-		B05E79201E6ED4D2002940C2 /* Kind1122ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kind1122ViewController.swift; sourceTree = "<group>"; };
 		B05E79221E6ED5B8002940C2 /* Kind1122TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kind1122TableViewCell.swift; sourceTree = "<group>"; };
 		B05E79231E6ED5B8002940C2 /* Kind1122TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Kind1122TableViewCell.xib; sourceTree = "<group>"; };
 		B05E79261E6EDF80002940C2 /* PostData111.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData111.swift; sourceTree = "<group>"; };
@@ -160,6 +157,7 @@
 		B0CB1E0D1E1393A20083C8A4 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = "../../Library/Developer/Xcode/DerivedData/Kiki-emylnmdojkctwwgdpvdjadsaiqvm/Build/Products/Debug-iphonesimulator/SVProgressHUD/SVProgressHUD.framework"; sourceTree = "<group>"; };
 		B0E1086F1E52E447009829AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B0E6CE331E384D4200DCDB9C /* ApiruViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiruViewController.swift; sourceTree = "<group>"; };
+		B0EA97B31E9A863600CC478C /* AAAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAAViewController.swift; sourceTree = "<group>"; };
 		B0F132C71E46AC080040115D /* PostData11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData11.swift; sourceTree = "<group>"; };
 		B0F132C91E46AC140040115D /* PostData44.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData44.swift; sourceTree = "<group>"; };
 		B0F582A91DB38E5300654519 /* KindTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KindTableViewCell.swift; sourceTree = "<group>"; };
@@ -216,7 +214,6 @@
 				B04662171E6EF8ED00EB5EE7 /* HHHOmeViewController.swift */,
 				B00501BD1DB6420800319866 /* ItiranViewController.swift */,
 				B07B5ADE1E45806F00AE5B0D /* Itiran11ViewController.swift */,
-				B05E791E1E6E88C6002940C2 /* GenreViewController.swift */,
 				B07B5AE51E45870E00AE5B0D /* Homecell */,
 				B07B5AE01E45821F00AE5B0D /* itirancell */,
 			);
@@ -374,7 +371,6 @@
 				B06835C21E792BCC00CD1B1A /* SentakuVViewController.swift */,
 				B0190A201DB20FE400FA066D /* KindViewController.swift */,
 				B07B5AD31E456FC000AE5B0D /* Kind1ViewcontrollerViewController.swift */,
-				B05E79201E6ED4D2002940C2 /* Kind1122ViewController.swift */,
 				B07B5AD91E45755B00AE5B0D /* KindCell */,
 			);
 			name = "音源投稿";
@@ -384,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				B071D9701DB509FA0017E287 /* TabViewController.swift */,
+				B0EA97B31E9A863600CC478C /* AAAViewController.swift */,
 				B00182191E816A7300065228 /* OreViewController.swift */,
 				B081CF281E7F7EDA0090DEE3 /* Genre2ViewController.swift */,
 				B0FDA58D1E7D5538003FF2A0 /* EAViewController.swift */,
@@ -583,7 +580,6 @@
 				B0ABF85C1DB0EE21001987E7 /* SendViewController.swift in Sources */,
 				B00D7CF51DCEB5190042D04F /* MixerMeter.m in Sources */,
 				B0BA8AE01DDD79D800F00E38 /* Tyu3ViewController.swift in Sources */,
-				B05E791F1E6E88C6002940C2 /* GenreViewController.swift in Sources */,
 				B00467F61E3995380033859A /* Apiru2ViewController.swift in Sources */,
 				B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */,
 				B0FA38301E50640200CB8D53 /* Tyu5ViewController.swift in Sources */,
@@ -607,7 +603,6 @@
 				B081CF291E7F7EDA0090DEE3 /* Genre2ViewController.swift in Sources */,
 				B0F132CA1E46AC140040115D /* PostData44.swift in Sources */,
 				B07B5AD21E456E2F00AE5B0D /* Post3Data3.swift in Sources */,
-				B05E79211E6ED4D2002940C2 /* Kind1122ViewController.swift in Sources */,
 				B07B5AD41E456FC000AE5B0D /* Kind1ViewcontrollerViewController.swift in Sources */,
 				B099ECE81E7AE7D100A907D7 /* DyuViewController.swift in Sources */,
 				B00501C41DB6428500319866 /* ItiranTableViewCell.swift in Sources */,
@@ -620,6 +615,7 @@
 				B0FE1D211E7D31EE00995736 /* SanPostData2.swift in Sources */,
 				B0A78FD61DACFF6500AC0513 /* AppDelegate.swift in Sources */,
 				B07B5ACE1E456E0A00AE5B0D /* Post1Data.swift in Sources */,
+				B0EA97B41E9A863600CC478C /* AAAViewController.swift in Sources */,
 				B0F132C81E46AC080040115D /* PostData11.swift in Sources */,
 				B07E94E71DCDC766009537A7 /* ProIdouViewController.swift in Sources */,
 				B07B5ADC1E457F0000AE5B0D /* Itiran1TableViewCell.swift in Sources */,

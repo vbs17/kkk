@@ -27,10 +27,6 @@ class OkViewController: UIViewController,UITextFieldDelegate {
         imageView.image = image
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
         self.view.addGestureRecognizer(tapGesture)
-
-
-    
-
     }
     
     func dismissKeyboard(){
@@ -46,11 +42,11 @@ class OkViewController: UIViewController,UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    //ここ実験
+
     @IBAction func OKGo(_ sender: AnyObject) {
          if (text.text != nil && text.text != ""){
-        let kindviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Sentaku") as! SentakuVViewController
-        kindviewcontroller.songData = songData
+        let kindviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind") as! KindViewController
+            kindviewcontroller.songData = songData
         kindviewcontroller.image = imageView.image
         kindviewcontroller.byou = byou.text!
         kindviewcontroller.songname = text.text!

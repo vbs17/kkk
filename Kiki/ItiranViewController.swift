@@ -15,7 +15,7 @@ class ItiranViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func back(_ sender: AnyObject) {
         self.saveData()
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: false, completion: nil)
     }
     fileprivate let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","X","Y","Z","number"]
     

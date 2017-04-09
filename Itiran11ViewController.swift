@@ -12,7 +12,7 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func bacl(_ sender: Any) {
         self.saveData()
-        self.view.window!.rootViewController!.dismiss(animated: true, completion: nil)
+        self.view.window!.rootViewController!.dismiss(animated: false, completion: nil)
     }
         fileprivate let mySections: NSArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     let AllItems: [[String]]  = [["Aaron Neville",

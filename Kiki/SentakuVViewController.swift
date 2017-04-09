@@ -45,16 +45,4 @@ class SentakuVViewController: UIViewController {
         self.present(kindviewcontroller, animated: true, completion: nil)
         
     }
-    @IBAction func Art(_ sender: Any) {
-        let kindviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "Kind1122") as! Kind1122ViewController
-        kindviewcontroller.songData = songData
-        kindviewcontroller.image = self.image
-        kindviewcontroller.byou = self.byou
-        kindviewcontroller.songname = self.songname
-        kindviewcontroller.original = self.original
-        kindviewcontroller.cover = self.cover
-        self.present(kindviewcontroller, animated: true, completion: nil)
-        
-        
-    }
 }
