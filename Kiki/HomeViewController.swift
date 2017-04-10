@@ -125,7 +125,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let postData = postArray[indexPath!.row]
         let pro = self.storyboard?.instantiateViewController(withIdentifier: "Pi") as! ProIdouViewController
         pro.uid = postData.uid
-        self.present(pro, animated: true, completion: nil)
+        self.present(pro, animated: false, completion: nil)
         
         
     }

@@ -24,6 +24,8 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
     var playingIndexPath:IndexPath!
     var dataLastVal:Double!
     let DisplayDataNumber = 2;
+    
+    @IBOutlet weak var imageViewView: UIImageView!
 
     @IBOutlet weak var back: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -134,7 +136,7 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
         let postData = postArray[indexPath!.row]
         let pro = self.storyboard?.instantiateViewController(withIdentifier: "Pi") as! ProIdouViewController
         pro.uid = postData.uid
-        self.present(pro, animated: true, completion: nil)
+        self.present(pro, animated: false, completion: nil)
         
         
     }
@@ -436,7 +438,9 @@ class Home11ViewController: UIViewController,UITableViewDataSource, UITableViewD
     }
     
     func mada(){
-        label.text = "誰もまだ投稿していません.君の音楽を投稿して一番乗りになろう！"
+        label.text = "君の音楽を投稿して一番乗りになろう！"
+        imageViewView.image = UIImage(named: "william-1")
+
     }
     
     

@@ -21,18 +21,12 @@
 		B0190A211DB20FE400FA066D /* KindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0190A201DB20FE400FA066D /* KindViewController.swift */; };
 		B020D0AB1E0F405A005A1363 /* PostData4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B020D0AA1E0F405A005A1363 /* PostData4.swift */; };
 		B03151761DAE6A06007EE64C /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03151751DAE6A06007EE64C /* PlayViewController.swift */; };
-		B04662181E6EF8ED00EB5EE7 /* HHHOmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04662171E6EF8ED00EB5EE7 /* HHHOmeViewController.swift */; };
-		B046621B1E6EFBE400EB5EE7 /* HHOOTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04662191E6EFBE400EB5EE7 /* HHOOTableViewCell.swift */; };
-		B046621C1E6EFBE400EB5EE7 /* HHOOTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B046621A1E6EFBE400EB5EE7 /* HHOOTableViewCell.xib */; };
 		B046621E1E6EFF7B00EB5EE7 /* Post4Data4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B046621D1E6EFF7B00EB5EE7 /* Post4Data4.swift */; };
 		B05E343B1DC8A53800C271D3 /* ProViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343A1DC8A53800C271D3 /* ProViewController.swift */; };
 		B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */; };
 		B05E343F1DC8B57F00C271D3 /* PostData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E343E1DC8B57F00C271D3 /* PostData2.swift */; };
-		B05E79241E6ED5B8002940C2 /* Kind1122TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E79221E6ED5B8002940C2 /* Kind1122TableViewCell.swift */; };
-		B05E79251E6ED5B8002940C2 /* Kind1122TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B05E79231E6ED5B8002940C2 /* Kind1122TableViewCell.xib */; };
 		B05E79271E6EDF80002940C2 /* PostData111.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E79261E6EDF80002940C2 /* PostData111.swift */; };
 		B06606561DFC4B3100FD3E4C /* PostData3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06606551DFC4B3100FD3E4C /* PostData3.swift */; };
-		B06835C31E792BCC00CD1B1A /* SentakuVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06835C21E792BCC00CD1B1A /* SentakuVViewController.swift */; };
 		B06968221DC60D6E00274DB1 /* PostData1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06968211DC60D6E00274DB1 /* PostData1.swift */; };
 		B071D9661DB4D6140017E287 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071D9651DB4D6140017E287 /* File.swift */; };
 		B071D9681DB4E5040017E287 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B071D9671DB4E5040017E287 /* PostData.swift */; };
@@ -53,7 +47,6 @@
 		B07B5AE41E45831B00AE5B0D /* Home11TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07B5AE21E45831B00AE5B0D /* Home11TableViewCell.xib */; };
 		B07B5AE71E45872700AE5B0D /* Home11ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B5AE61E45872700AE5B0D /* Home11ViewController.swift */; };
 		B07E94E71DCDC766009537A7 /* ProIdouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */; };
-		B081CF291E7F7EDA0090DEE3 /* Genre2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B081CF281E7F7EDA0090DEE3 /* Genre2ViewController.swift */; };
 		B088CB221DDB34C7007CE03D /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088CB211DDB34C7007CE03D /* Photos.framework */; };
 		B099ECE61E7AE04100A907D7 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099ECE51E7AE04100A907D7 /* EventViewController.swift */; };
 		B099ECE81E7AE7D100A907D7 /* DyuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099ECE71E7AE7D100A907D7 /* DyuViewController.swift */; };
@@ -103,18 +96,12 @@
 		B0190A201DB20FE400FA066D /* KindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KindViewController.swift; sourceTree = "<group>"; };
 		B020D0AA1E0F405A005A1363 /* PostData4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData4.swift; sourceTree = "<group>"; };
 		B03151751DAE6A06007EE64C /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
-		B04662171E6EF8ED00EB5EE7 /* HHHOmeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHHOmeViewController.swift; sourceTree = "<group>"; };
-		B04662191E6EFBE400EB5EE7 /* HHOOTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHOOTableViewCell.swift; sourceTree = "<group>"; };
-		B046621A1E6EFBE400EB5EE7 /* HHOOTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HHOOTableViewCell.xib; sourceTree = "<group>"; };
 		B046621D1E6EFF7B00EB5EE7 /* Post4Data4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post4Data4.swift; sourceTree = "<group>"; };
 		B05E343A1DC8A53800C271D3 /* ProViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProViewController.swift; sourceTree = "<group>"; };
 		B05E343C1DC8AF1200C271D3 /* ProIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProIViewController.swift; sourceTree = "<group>"; };
 		B05E343E1DC8B57F00C271D3 /* PostData2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData2.swift; sourceTree = "<group>"; };
-		B05E79221E6ED5B8002940C2 /* Kind1122TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kind1122TableViewCell.swift; sourceTree = "<group>"; };
-		B05E79231E6ED5B8002940C2 /* Kind1122TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Kind1122TableViewCell.xib; sourceTree = "<group>"; };
 		B05E79261E6EDF80002940C2 /* PostData111.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData111.swift; sourceTree = "<group>"; };
 		B06606551DFC4B3100FD3E4C /* PostData3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData3.swift; sourceTree = "<group>"; };
-		B06835C21E792BCC00CD1B1A /* SentakuVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentakuVViewController.swift; sourceTree = "<group>"; };
 		B06968211DC60D6E00274DB1 /* PostData1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData1.swift; sourceTree = "<group>"; };
 		B071D9651DB4D6140017E287 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		B071D9671DB4E5040017E287 /* PostData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
@@ -135,7 +122,6 @@
 		B07B5AE21E45831B00AE5B0D /* Home11TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Home11TableViewCell.xib; sourceTree = "<group>"; };
 		B07B5AE61E45872700AE5B0D /* Home11ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home11ViewController.swift; sourceTree = "<group>"; };
 		B07E94E61DCDC766009537A7 /* ProIdouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProIdouViewController.swift; sourceTree = "<group>"; };
-		B081CF281E7F7EDA0090DEE3 /* Genre2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Genre2ViewController.swift; path = ../Genre2ViewController.swift; sourceTree = "<group>"; };
 		B088CB211DDB34C7007CE03D /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		B099ECE51E7AE04100A907D7 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		B099ECE71E7AE7D100A907D7 /* DyuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DyuViewController.swift; sourceTree = "<group>"; };
@@ -211,7 +197,6 @@
 			children = (
 				B071D96E1DB4EA9B0017E287 /* HomeViewController.swift */,
 				B07B5AE61E45872700AE5B0D /* Home11ViewController.swift */,
-				B04662171E6EF8ED00EB5EE7 /* HHHOmeViewController.swift */,
 				B00501BD1DB6420800319866 /* ItiranViewController.swift */,
 				B07B5ADE1E45806F00AE5B0D /* Itiran11ViewController.swift */,
 				B07B5AE51E45870E00AE5B0D /* Homecell */,
@@ -278,8 +263,6 @@
 				B0F582AA1DB38E5300654519 /* KindTableViewCell.xib */,
 				B07B5AD51E45718700AE5B0D /* Kind1TableViewCell.swift */,
 				B07B5AD61E45718700AE5B0D /* Kind1TableViewCell.xib */,
-				B05E79221E6ED5B8002940C2 /* Kind1122TableViewCell.swift */,
-				B05E79231E6ED5B8002940C2 /* Kind1122TableViewCell.xib */,
 			);
 			name = KindCell;
 			sourceTree = "<group>";
@@ -302,8 +285,6 @@
 				B00501B91DB610D200319866 /* HomeTableViewCell.xib */,
 				B07B5AE11E45831B00AE5B0D /* Home11TableViewCell.swift */,
 				B07B5AE21E45831B00AE5B0D /* Home11TableViewCell.xib */,
-				B04662191E6EFBE400EB5EE7 /* HHOOTableViewCell.swift */,
-				B046621A1E6EFBE400EB5EE7 /* HHOOTableViewCell.xib */,
 			);
 			name = Homecell;
 			sourceTree = "<group>";
@@ -368,7 +349,6 @@
 				B03151751DAE6A06007EE64C /* PlayViewController.swift */,
 				B0ABF85B1DB0EE21001987E7 /* SendViewController.swift */,
 				B0A9A1731DB1FDE00021D1CF /* OkViewController.swift */,
-				B06835C21E792BCC00CD1B1A /* SentakuVViewController.swift */,
 				B0190A201DB20FE400FA066D /* KindViewController.swift */,
 				B07B5AD31E456FC000AE5B0D /* Kind1ViewcontrollerViewController.swift */,
 				B07B5AD91E45755B00AE5B0D /* KindCell */,
@@ -382,7 +362,6 @@
 				B071D9701DB509FA0017E287 /* TabViewController.swift */,
 				B0EA97B31E9A863600CC478C /* AAAViewController.swift */,
 				B00182191E816A7300065228 /* OreViewController.swift */,
-				B081CF281E7F7EDA0090DEE3 /* Genre2ViewController.swift */,
 				B0FDA58D1E7D5538003FF2A0 /* EAViewController.swift */,
 				B0BA8ADB1DDD79A800F00E38 /* TyuViewController.swift */,
 				B0BA8ADD1DDD79BC00F00E38 /* Tyu2ViewController.swift */,
@@ -468,11 +447,9 @@
 				B0E108701E52E447009829AD /* GoogleService-Info.plist in Resources */,
 				B0F582AC1DB38E5300654519 /* KindTableViewCell.xib in Resources */,
 				B0A78FE01DACFF6500AC0513 /* LaunchScreen.storyboard in Resources */,
-				B046621C1E6EFBE400EB5EE7 /* HHOOTableViewCell.xib in Resources */,
 				B0A78FDD1DACFF6500AC0513 /* Assets.xcassets in Resources */,
 				B00501BC1DB610D200319866 /* HomeTableViewCell.xib in Resources */,
 				B07B5AE41E45831B00AE5B0D /* Home11TableViewCell.xib in Resources */,
-				B05E79251E6ED5B8002940C2 /* Kind1122TableViewCell.xib in Resources */,
 				B0A78FDB1DACFF6500AC0513 /* Main.storyboard in Resources */,
 				B00501C51DB6428500319866 /* ItiranTableViewCell.xib in Resources */,
 				B07B5ADD1E457F0000AE5B0D /* Itiran1TableViewCell.xib in Resources */,
@@ -566,13 +543,11 @@
 				B099ECE61E7AE04100A907D7 /* EventViewController.swift in Sources */,
 				B0FDA58E1E7D5538003FF2A0 /* EAViewController.swift in Sources */,
 				B00501BE1DB6420800319866 /* ItiranViewController.swift in Sources */,
-				B06835C31E792BCC00CD1B1A /* SentakuVViewController.swift in Sources */,
 				B0E6CE341E384D4200DCDB9C /* ApiruViewController.swift in Sources */,
 				B0190A211DB20FE400FA066D /* KindViewController.swift in Sources */,
 				B06968221DC60D6E00274DB1 /* PostData1.swift in Sources */,
 				B00501BB1DB610D200319866 /* HomeTableViewCell.swift in Sources */,
 				B07B5AD71E45718700AE5B0D /* Kind1TableViewCell.swift in Sources */,
-				B046621B1E6EFBE400EB5EE7 /* HHOOTableViewCell.swift in Sources */,
 				B05E343B1DC8A53800C271D3 /* ProViewController.swift in Sources */,
 				B071D9681DB4E5040017E287 /* PostData.swift in Sources */,
 				B007C1BA1DE95D92006F1883 /* MergeAudioFile.m in Sources */,
@@ -583,7 +558,6 @@
 				B00467F61E3995380033859A /* Apiru2ViewController.swift in Sources */,
 				B05E343D1DC8AF1200C271D3 /* ProIViewController.swift in Sources */,
 				B0FA38301E50640200CB8D53 /* Tyu5ViewController.swift in Sources */,
-				B04662181E6EF8ED00EB5EE7 /* HHHOmeViewController.swift in Sources */,
 				B0A78FD81DACFF6500AC0513 /* ViewController.swift in Sources */,
 				B05E79271E6EDF80002940C2 /* PostData111.swift in Sources */,
 				B07B5ADF1E45806F00AE5B0D /* Itiran11ViewController.swift in Sources */,
@@ -600,7 +574,6 @@
 				B071D9751DB50E670017E287 /* SetViewController.swift in Sources */,
 				B071D9731DB50C4E0017E287 /* LoginViewController.swift in Sources */,
 				B0BA8ADE1DDD79BC00F00E38 /* Tyu2ViewController.swift in Sources */,
-				B081CF291E7F7EDA0090DEE3 /* Genre2ViewController.swift in Sources */,
 				B0F132CA1E46AC140040115D /* PostData44.swift in Sources */,
 				B07B5AD21E456E2F00AE5B0D /* Post3Data3.swift in Sources */,
 				B07B5AD41E456FC000AE5B0D /* Kind1ViewcontrollerViewController.swift in Sources */,
@@ -609,7 +582,6 @@
 				B010718D1E737D7A00A31F2D /* SanPostData.swift in Sources */,
 				B07B5AD01E456E2200AE5B0D /* Post2Data2.swift in Sources */,
 				B001821A1E816A7300065228 /* OreViewController.swift in Sources */,
-				B05E79241E6ED5B8002940C2 /* Kind1122TableViewCell.swift in Sources */,
 				B0BA8ADC1DDD79A800F00E38 /* TyuViewController.swift in Sources */,
 				B06606561DFC4B3100FD3E4C /* PostData3.swift in Sources */,
 				B0FE1D211E7D31EE00995736 /* SanPostData2.swift in Sources */,
