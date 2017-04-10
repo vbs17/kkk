@@ -26,6 +26,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     @IBOutlet weak var back: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var lbl: UILabel!
     
    
@@ -427,7 +428,8 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     }
     
     func mada(){
-        lbl.text = "誰もまだ投稿していません.君の音楽を投稿して一番乗りになろう！"
+        lbl.text = "君の音楽を投稿して一番乗りになろう！"
+        imageView.image = UIImage(named: "william-1")
     }
     
     
