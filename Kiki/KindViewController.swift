@@ -490,13 +490,13 @@ class KindViewController: UIViewController, UITableViewDelegate, UITableViewData
         let ud = UserDefaults.standard
         let offset =  self.tableView.contentOffset
         let onset = NSStringFromCGPoint(offset)
-        ud.set(onset, forKey: "Iti2")
+        ud.set(onset, forKey: "Iti11")
         ud.synchronize()
     }
     
     func readData(){
         let ud2 = UserDefaults.standard
-        let str = ud2.object(forKey: "Iti2")
+        let str = ud2.object(forKey: "Iti11")
         if (str == nil) {
             return
         }else{

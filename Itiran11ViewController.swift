@@ -1035,13 +1035,13 @@ class Itiran11ViewController: UIViewController, UITableViewDelegate, UITableView
         let ud = UserDefaults.standard
         let offset =  self.tableView.contentOffset
         let onset = NSStringFromCGPoint(offset)
-        ud.set(onset, forKey: "Iti")
+        ud.set(onset, forKey: "Iti222")
         ud.synchronize()
     }
     
     func readData(){
         let ud2 = UserDefaults.standard
-        let str = ud2.object(forKey: "Iti")
+        let str = ud2.object(forKey: "Iti222")
         if (str == nil) {
             return
         }else{
